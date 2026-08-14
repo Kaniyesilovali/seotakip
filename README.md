@@ -58,8 +58,20 @@ sitemap, meta, hız, iç link, orphan, indeks, AI bot, GEO, kelime fırsatı/dü
 - [~] Hız / Core Web Vitals — `scripts/pagespeed.js` hazır; **ücretsiz PageSpeed API anahtarı** bekliyor (aşağıya bak)
 - [~] Otomasyon — `.github/workflows/tarama.yml` hazır; GitHub'a **push** bekliyor
 - [~] Aşama 3 — Search Console (`scripts/searchconsole.js`) hazır; **servis hesabı** bekliyor (aşağıda)
-- [ ] Aşama 4 — AI içerik üretici (Auto SEO Blog) — Gemini/Groq free tier veya Claude API
+- [~] Aşama 4 — AI içerik üretici (`scripts/aiblog.js`) hazır; **Gemini API anahtarı** bekliyor (aşağıda)
 - [ ] Aşama 5 — GEO/AI bot takibi + Telegram uyarı + PDF rapor
+
+## AI İçerik / Auto SEO Blog kurulumu (ücretsiz, Gemini)
+
+1. [Google AI Studio → Get API key](https://aistudio.google.com/apikey) → ücretsiz anahtar al
+2. `.env`'e ekle: `GEMINI_API_KEY=SENIN_ANAHTARIN` (istersen `GEMINI_MODEL=gemini-2.0-flash`)
+3. Üretilebilecek fırsat kelimelerini listele: `npm run icerik`
+4. Bir konu için içerik üret: `npm run icerik -- <siteId> "<anahtar kelime>"`
+   (veya panelde "AI İçerik / Blog" bölümünden komutu kopyala)
+5. Tüm sitelerin ilk fırsatı için toplu: `node scripts/aiblog.js --firsatlar`
+
+Üretilen içerik: `data/icerikler/<slug>.md` (sitene yapıştır) + panelde "Üretilen içerikler"de listelenir
+(başlık, meta, gövde markdown, FAQ). Gemini free tier günde bol miktarda ücretsiz istek verir.
 
 ## Search Console kurulumu (ücretsiz, gerçek sıralama + anahtar kelime)
 

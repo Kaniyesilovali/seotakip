@@ -355,6 +355,7 @@ async function main() {
     siteler,
     degisiklikler,
     raporlar: onceki.raporlar || [],
+    uretilenIcerikler: onceki.uretilenIcerikler || [],
     uyarilar,
   };
 

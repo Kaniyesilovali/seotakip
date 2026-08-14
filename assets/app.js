@@ -384,25 +384,49 @@ const VIEWS = {
   },
 
   icerik(){
-    return bolumBaslik('AI Icerik / Auto SEO Blog','Anahtar kelimeye gore SEO uyumlu blog yazisi uretir.') + `
-      <div class="mb-4">${asamaRozeti(4)}</div>
-      <div class="grid gap-4 lg:grid-cols-2">
-        <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-5 space-y-3">
-          <p class="text-sm font-medium text-white">Yeni icerik uret</p>
-          <select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-300">
-            ${(VERI.siteler||[]).map(s=>`<option>${s.ad}</option>`).join('')}
-          </select>
-          <input placeholder="hedef anahtar kelime (or. girne veteriner)" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm" />
-          <select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-300">
-            <option>Blog yazisi (800-1200 kelime)</option><option>Hizmet sayfasi metni</option><option>Meta title + description</option>
-          </select>
-          <button disabled class="w-full py-2 rounded-lg bg-indigo-600/40 text-indigo-200 text-sm cursor-not-allowed">Uret (Asama 4'te aktif)</button>
-          <p class="text-[11px] text-slate-500">Ucretsiz secenek: Gemini / Groq free tier. Claude ile de baglanabilir.</p>
-        </div>
-        <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-5">
-          <p class="text-sm font-medium text-white mb-2">Uretilen icerikler</p>
-          ${bosDurum('Henuz icerik uretilmedi.')}
-        </div>
+    const firsatlar = [];
+    (VERI.siteler||[]).forEach(s => (s.icerikBoslugu||[]).forEach(g => { if (g.tip==='firsat') firsatlar.push({ siteId:s.id, site:s.ad, kelime:g.kelime, poz:g.rakipPoz }); }));
+    const uretilen = VERI.uretilenIcerikler || [];
+
+    const oneriSatir = (f,i) => `<tr class="border-t border-slate-800">
+      <td class="py-2 px-3 text-slate-200">${f.kelime}</td>
+      <td class="py-2 px-3 text-slate-400">${f.site}</td>
+      <td class="py-2 px-3 text-center">${chip('#'+f.poz,'amber')}</td>
+      <td class="py-2 px-3 text-center">
+        <input id="cmd-${i}" class="hidden" value='node scripts/aiblog.js ${f.siteId} "${f.kelime}"'>
+        <button onclick="kopyala('cmd-${i}',this)" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700">komutu kopyala</button>
+      </td></tr>`;
+
+    const icerikKart = (c,i) => `<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-3">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0"><p class="font-medium text-white">${c.baslik}</p>
+          <p class="text-[11px] text-slate-500">${c.site} · "${c.kelime}" · ${c.kelimeSayisi} kelime · ${c.tarih}</p></div>
+        <button onclick="document.getElementById('body-${i}').classList.toggle('hidden')" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 shrink-0">goster/gizle</button>
+      </div>
+      <p class="text-xs text-slate-400 mt-2">${c.metaAciklama}</p>
+      <div id="body-${i}" class="hidden mt-3">
+        <div class="flex justify-end mb-1"><button onclick="kopyala('md-${i}',this)" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700">markdown kopyala</button></div>
+        <textarea id="md-${i}" readonly rows="14" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-300 resize-y">${(c.govde||'').replace(/</g,'&lt;')}</textarea>
+      </div></div>`;
+
+    return bolumBaslik('AI Icerik / Auto SEO Blog','Gemini ile SEO uyumlu icerik uret (ucretsiz). Firsat kelimelerine gore konu onerisi + uretilen yazilar.') + `
+      <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-5 text-sm text-slate-400 leading-relaxed">
+        <p class="text-white font-medium mb-1">Nasil calisir?</p>
+        1) <code class="text-indigo-400">.env</code>'e <code class="text-indigo-400">GEMINI_API_KEY</code> ekle (<a href="https://aistudio.google.com/apikey" target="_blank" class="text-indigo-400 underline">bedava al</a>) →
+        2) asagidaki bir konunun <b>komutunu kopyalayip</b> terminalde calistir →
+        3) uretilen yazi burada listelenir, <b>markdown'i kopyalayip</b> sitene yapistir.
+      </div>
+      <div class="mb-6">
+        <p class="text-sm font-semibold text-white mb-2">Onerilen konular <span class="text-[11px] text-slate-500">(Search Console firsat kelimeleri)</span></p>
+        ${firsatlar.length ? `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
+          <table class="w-full text-sm min-w-[520px]"><thead class="text-xs text-slate-400 text-left">
+          <tr><th class="py-2 px-3">Kelime</th><th class="py-2 px-3">Site</th><th class="py-2 px-3 text-center">Poz</th><th class="py-2 px-3 text-center">Uret</th></tr>
+          </thead><tbody>${firsatlar.map(oneriSatir).join('')}</tbody></table></div>`
+          : bosDurum('Firsat kelimesi yok — once Search Console baglayip npm run gsc calistir.')}
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-white mb-2">Uretilen icerikler ${uretilen.length?chip(uretilen.length,'emerald'):''}</p>
+        ${uretilen.length ? uretilen.map(icerikKart).join('') : bosDurum('Henuz icerik uretilmedi. Yukaridan bir konunun komutunu calistir.')}
       </div>`;
   },
 

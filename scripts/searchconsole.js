@@ -57,12 +57,18 @@ function adaylar(siteUrl) {
 }
 
 async function siteVerisi(site) {
-  let property = null, rows = null;
+  // Tum erisilebilir property adaylarini dene, VERISI EN COK olani sec (bos http:// varyantina takilmasin).
+  let property = null, rows = null, erisilenVarBos = false;
   for (const aday of [...new Set(adaylar(site.url))]) {
-    try { rows = await saQuery(aday, BASLANGIC, BITIS); property = aday; break; }
-    catch (e) { /* 403/404 -> sonraki aday */ }
+    try {
+      const r = await saQuery(aday, BASLANGIC, BITIS);
+      erisilenVarBos = true;
+      if (rows == null || r.length > rows.length) { rows = r; property = aday; }
+      if (r.length > 0 && aday.startsWith('sc-domain:')) break; // domain property + veri = en iyisi
+    } catch (e) { /* 403/404 -> sonraki aday */ }
   }
-  if (!property) return { hata: 'property bulunamadi (servis hesabi bu siteye ekli mi?)' };
+  if (property == null) return { hata: 'property bulunamadi (servis hesabi bu siteye ekli mi?)' };
+  if (rows.length === 0) return { property, siralama: [], firsat: [], bos: true };
 
   // onceki donem (trend)
   let oncekiRows = [];
@@ -112,6 +118,7 @@ async function main() {
     process.stdout.write(`\n▶ ${site.ad} …`);
     const d = await siteVerisi(site);
     if (d.hata) { console.log(` ✕ ${d.hata}`); continue; }
+    if (d.bos) { console.log(` ⚠ property bagli ama VERI YOK: ${d.property} — dogru property'e (https/www veya domain) ekle`); continue; }
     const hedef = veri.siteler.find(s => s.id === site.id);
     if (!hedef) continue;
 
