@@ -1,0 +1,51 @@
+{
+  "$aciklama": "Tum siteler burada tanimlanir. Yeni proje eklemek icin bu diziye yeni bir blok ekle; panel ve tum script'ler otomatik kapsar.",
+  "ayarlar": {
+    "maxSayfa": 200,
+    "istekAralikMs": 400,
+    "zamanAsimiMs": 15000,
+    "kullaniciAjani": "SeoTakipBot/1.0 (+ozel panel taramasi)"
+  },
+  "siteler": [
+    {
+      "id": "animare",
+      "ad": "Animare",
+      "url": "https://animare.vet",
+      "aktif": true,
+      "diller": ["tr", "en"],
+      "not": "Next.js statik export"
+    },
+    {
+      "id": "magusapsikoloji",
+      "ad": "Magusa Psikoloji",
+      "url": "https://magusapsikoloji.com",
+      "aktif": true,
+      "diller": ["tr", "en"],
+      "not": "Eleventy statik site"
+    },
+    {
+      "id": "taxsi",
+      "ad": "The Taxsi",
+      "url": "https://thetaxsi.com",
+      "aktif": true,
+      "diller": ["tr", "en"],
+      "not": ""
+    },
+    {
+      "id": "luxeva",
+      "ad": "Luxeva Cyprus",
+      "url": "https://luxeva-cyprus.com",
+      "aktif": true,
+      "diller": ["tr"],
+      "not": ""
+    },
+    {
+      "id": "proje5",
+      "ad": "5. Proje (yakinda)",
+      "url": "",
+      "aktif": false,
+      "diller": [],
+      "not": "URL belli olunca doldur ve aktif:true yap"
+    }
+  ]
+}

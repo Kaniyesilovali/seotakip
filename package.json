@@ -1,0 +1,22 @@
+{
+  "name": "seotakip",
+  "version": "0.1.0",
+  "description": "5 site icin statik SEO/GEO takip paneli + Node tarama script'leri",
+  "type": "module",
+  "scripts": {
+    "panel": "npx serve -l 3000 .",
+    "tara-hepsi": "node scripts/crawl.js && node scripts/pagespeed.js",
+    "crawl": "node scripts/crawl.js",
+    "hiz": "node scripts/pagespeed.js"
+  },
+  "keywords": [
+    "seo",
+    "geo",
+    "crawler",
+    "dashboard"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}
