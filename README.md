@@ -23,11 +23,32 @@ Panel (index.html + Tailwind)  →  data/data.json  ←  scripts/*.js (Node)
 
 ## Yeni site ekleme
 
-`sites.config.json` içindeki `siteler` dizisine yeni blok ekle, `aktif: true` yap. Panel ve tüm script'ler otomatik kapsar — kod değişmez.
+Üç yol var; hepsi aynı `sites.config.json` dosyasını günceller, panel ve tüm script'ler otomatik kapsar — kod değişmez.
+
+**1) Panelden (en pratik).** `npm run panel` ile aç, sağ üstteki **+ Site** butonuna bas, adresi yaz, kaydet. "Ekledikten sonra hemen tara" kutusu işaretliyse tarama arka planda başlar. Ayarlar bölümünden site pasife alınabilir/silinebilir.
+
+**2) Terminalden.**
+
+```bash
+npm run site-ekle                                   # soru-cevap
+npm run site-ekle -- ornek.com                      # ad/id otomatik üretilir
+npm run site-ekle -- ornek.com "Örnek Site" tr,en   # ad ve diller elle
+npm run site-ekle -- ornek.com --tara               # ekle + hemen tara
+npm run siteler                                     # kayıtlı siteleri listele
+npm run site-ekle -- --pasif ornek                  # taramadan çıkar
+npm run site-ekle -- --aktif ornek                  # tekrar taramaya al
+npm run site-ekle -- --sil ornek                    # tamamen sil
+```
+
+id ve görünen ad boş bırakılırsa alan adından üretilir, aynı alan adı iki kez eklenemez, `http://` yazmak zorunlu değil.
+
+**3) Elle.** `sites.config.json` içindeki `siteler` dizisine blok ekleyip `aktif: true` yap.
+
+> Not: FTP'ye yüklenen (dist/) sürüm statiktir, dosyaya yazamaz. Orada **+ Site** formu yapıştırmaya hazır JSON bloğunu üretir; asıl ekleme yerelde yapılır.
 
 ## Çalıştırma
 
-Panel'i yerelde görmek için (fetch çalışsın diye küçük sunucu):
+Panel'i yerelde görmek için (fetch + site ekleme API'si çalışsın diye küçük sunucu):
 
 ```bash
 npm run panel   # http://localhost:3000

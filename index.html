@@ -46,7 +46,7 @@
           <input id="arama" oninput="aramaYap(this.value)" placeholder="site ara…" class="w-48 bg-slate-900 border border-slate-800 rounded-lg pl-3 pr-3 py-1.5 text-sm focus:outline-none focus:border-indigo-500" />
         </div>
         <span id="veriRozet" class="text-[11px] px-2 py-1 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/20">ornek veri</span>
-        <button onclick="siteEkleBilgi()" class="text-sm px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition">+ Site</button>
+        <button onclick="siteEkleAc()" class="text-sm px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition">+ Site</button>
         <button onclick="location.reload()" class="text-sm px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">Yenile</button>
       </header>
 
@@ -54,6 +54,9 @@
       <main id="icerik" class="flex-1 overflow-y-auto p-4 sm:p-6"></main>
     </div>
   </div>
+
+  <!-- modal kabi (site ekleme formu buraya cizilir) -->
+  <div id="modal"></div>
 
   <script src="assets/fallback-data.js"></script>
   <script src="assets/app.js"></script>

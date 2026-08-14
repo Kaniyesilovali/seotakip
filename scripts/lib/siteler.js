@@ -15,7 +15,13 @@ export function oku() {
 }
 
 export function yaz(cfg) {
-  fs.writeFileSync(CFG_YOL, JSON.stringify(cfg, null, 2) + '\n');
+  // kisa metin dizilerini ("diller") tek satirda tut — dosyanin mevcut bicimi bozulmasin
+  const metin = JSON.stringify(cfg, null, 2)
+    .replace(/\[\s*\n\s*("(?:[^"\\]|\\.)*"(?:,\s*\n\s*"(?:[^"\\]|\\.)*")*)\s*\n\s*\]/g, (tam, ic) => {
+      const tekSatir = '[' + ic.replace(/\s*\n\s*/g, ' ') + ']';
+      return tekSatir.length <= 80 ? tekSatir : tam;
+    });
+  fs.writeFileSync(CFG_YOL, metin + '\n');
 }
 
 // https://www.ornek-site.com/  ->  ornek-site

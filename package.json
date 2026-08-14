@@ -4,7 +4,9 @@
   "description": "5 site icin statik SEO/GEO takip paneli + Node tarama script'leri",
   "type": "module",
   "scripts": {
-    "panel": "npx serve -l 3000 .",
+    "panel": "node scripts/panel.js",
+    "site-ekle": "node scripts/site-ekle.js",
+    "siteler": "node scripts/site-ekle.js --liste",
     "tara-hepsi": "node scripts/crawl.js && (node scripts/pagespeed.js || true) && (node scripts/searchconsole.js || true)",
     "crawl": "node scripts/crawl.js",
     "hiz": "node scripts/pagespeed.js",

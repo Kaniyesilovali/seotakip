@@ -45,6 +45,7 @@ const trendRenk = (t) => t?.startsWith('+') ? 'text-emerald-400' : t?.startsWith
 const puanRenk  = (p) => p >= 80 ? 'text-emerald-400' : p >= 65 ? 'text-amber-400' : 'text-rose-400';
 const puanHalka = (p) => p >= 80 ? '#34d399' : p >= 65 ? '#fbbf24' : '#fb7185';
 const kisaUrl   = (u) => (u || '').replace(/^https?:\/\//, '');
+const kacir     = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function chip(metin, renk) {
   const r = {
@@ -303,7 +304,7 @@ const VIEWS = {
       <td class="py-3 px-3 text-center">${(s.kirikLinkler?.length||0)?`<span class="text-rose-400">${s.kirikLinkler.length}</span>`:'<span class="text-emerald-400">0</span>'}</td>
       <td class="py-3 px-3 text-center">${sslChip(s.ssl)}</td>
     </tr>`;
-    return bolumBaslik('Siteler','Takip edilen tum siteler. Yeni site eklemek icin sites.config.json duzenlenir.') + `
+    return bolumBaslik('Siteler','Takip edilen tum siteler. Yeni site icin ust bardaki "+ Site" butonu.') + `
       <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
         <table class="w-full text-sm min-w-[560px]"><thead class="text-xs text-slate-400 text-left">
           <tr><th class="py-2.5 px-3">Site</th><th class="py-2.5 px-3 text-center">SEO</th>
@@ -400,7 +401,7 @@ const VIEWS = {
     const icerikKart = (c,i) => `<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-3">
       <div class="flex items-start justify-between gap-3">
         <div class="min-w-0"><p class="font-medium text-white">${c.baslik}</p>
-          <p class="text-[11px] text-slate-500">${c.site} · "${c.kelime}" · ${c.kelimeSayisi} kelime · ${c.tarih}</p></div>
+          <p class="text-[11px] text-slate-500">${c.site} · "${c.kelime}" · ${c.kelimeSayisi} kelime · ${c.tarih} ${c.kaynak?'· '+c.kaynak:''}</p></div>
         <button onclick="document.getElementById('body-${i}').classList.toggle('hidden')" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 shrink-0">goster/gizle</button>
       </div>
       <p class="text-xs text-slate-400 mt-2">${c.metaAciklama}</p>
@@ -409,12 +410,18 @@ const VIEWS = {
         <textarea id="md-${i}" readonly rows="14" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-300 resize-y">${(c.govde||'').replace(/</g,'&lt;')}</textarea>
       </div></div>`;
 
-    return bolumBaslik('AI Icerik / Auto SEO Blog','Gemini ile SEO uyumlu icerik uret (ucretsiz). Firsat kelimelerine gore konu onerisi + uretilen yazilar.') + `
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-5 text-sm text-slate-400 leading-relaxed">
-        <p class="text-white font-medium mb-1">Nasil calisir?</p>
-        1) <code class="text-indigo-400">.env</code>'e <code class="text-indigo-400">GEMINI_API_KEY</code> ekle (<a href="https://aistudio.google.com/apikey" target="_blank" class="text-indigo-400 underline">bedava al</a>) →
-        2) asagidaki bir konunun <b>komutunu kopyalayip</b> terminalde calistir →
-        3) uretilen yazi burada listelenir, <b>markdown'i kopyalayip</b> sitene yapistir.
+    return bolumBaslik('AI Icerik / Auto SEO Blog','SEO uyumlu icerik uret. Firsat kelimelerine gore konu onerisi + uretilen yazilar.') + `
+      <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-5 text-sm text-slate-400 leading-relaxed space-y-3">
+        <div>
+          <p class="text-white font-medium mb-1">Secenek A — Claude ile (onerilen)</p>
+          Bu Claude oturumunda soyle de: <span class="text-indigo-300">"&lt;site&gt; icin '&lt;kelime&gt;' icerigi yaz"</span>.
+          Claude SEO skill'iyle uretir ve panele ekler. Claude Pro/Code aboneligini kullanir — ekstra anahtar/maliyet yok.
+        </div>
+        <div class="border-t border-slate-800 pt-3">
+          <p class="text-white font-medium mb-1">Secenek B — Gemini ile (otomatik/toplu)</p>
+          <code class="text-indigo-400">.env</code>'e <code class="text-indigo-400">GEMINI_API_KEY</code> ekle (<a href="https://aistudio.google.com/apikey" target="_blank" class="text-indigo-400 underline">bedava al</a>) →
+          asagidaki bir konunun <b>komutunu kopyalayip</b> terminalde calistir. Sohbetsiz/toplu uretim icin.
+        </div>
       </div>
       <div class="mb-6">
         <p class="text-sm font-semibold text-white mb-2">Onerilen konular <span class="text-[11px] text-slate-500">(Search Console firsat kelimeleri)</span></p>
@@ -673,21 +680,29 @@ const VIEWS = {
   },
 
   ayarlar(){
+    const canli = yazilabilirMi();
+    const kaynak = canli ? KONFIG.siteler : (VERI.siteler||[]);
     const site = (s)=>`<tr class="border-t border-slate-800">
-      <td class="py-2 px-3 text-white">${s.ad}</td>
-      <td class="py-2 px-3 text-indigo-400">${kisaUrl(s.url)||'<span class=\"text-slate-600\">— (yakinda)</span>'}</td>
-      <td class="py-2 px-3 text-center">${s.aktif?chip('aktif','emerald'):chip('pasif','slate')}</td></tr>`;
+      <td class="py-2 px-3 text-white">${kacir(s.ad)}${s.not?`<span class="block text-[11px] text-slate-500">${kacir(s.not)}</span>`:''}</td>
+      <td class="py-2 px-3 text-indigo-400">${kacir(kisaUrl(s.url))||'<span class="text-slate-600">—</span>'}</td>
+      <td class="py-2 px-3 text-center">${(s.diller||[]).map(d=>chip(d,'slate')).join(' ')||'<span class="text-slate-600">—</span>'}</td>
+      <td class="py-2 px-3 text-center">${s.aktif?chip('aktif','emerald'):chip('pasif','slate')}</td>
+      ${canli?`<td class="py-2 px-3 text-right whitespace-nowrap">
+        <button onclick="siteDurumDegistir('${s.id}',${!s.aktif})" class="text-[11px] px-2 py-1 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700">${s.aktif?'pasife al':'aktif et'}</button>
+        <button onclick="siteSil('${s.id}','${kacir(s.ad).replace(/'/g,'&#39;')}')" class="text-[11px] px-2 py-1 rounded-md bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-300 ml-1">sil</button></td>`:''}
+    </tr>`;
     return bolumBaslik('Ayarlar','Site tanimlari ve otomasyon. Kaynak: sites.config.json') + `
       <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto mb-6">
-        <div class="px-3 py-2 border-b border-slate-800 flex items-center justify-between">
+        <div class="px-3 py-2 border-b border-slate-800 flex items-center justify-between gap-2">
           <span class="font-medium text-white">Tanimli siteler</span>
-          <span class="text-[11px] text-slate-500">duzenlemek icin sites.config.json</span></div>
-        <table class="w-full text-sm min-w-[420px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Ad</th><th class="py-2 px-3">URL</th><th class="py-2 px-3 text-center">Durum</th></tr>
-        </thead><tbody>${(VERI.siteler||[]).map(site).join('')}
-          <tr class="border-t border-slate-800"><td class="py-2 px-3 text-slate-500">5. Proje</td>
-          <td class="py-2 px-3 text-slate-600">— (yakinda)</td><td class="py-2 px-3 text-center">${chip('pasif','slate')}</td></tr>
-        </tbody></table></div>
+          ${canli
+            ? `<button onclick="siteEkleAc()" class="text-xs px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500">+ Site ekle</button>`
+            : `<span class="text-[11px] text-slate-500">salt okunur — duzenlemek icin: <span class="text-indigo-300">npm run panel</span> veya <span class="text-indigo-300">npm run site-ekle</span></span>`}
+        </div>
+        <table class="w-full text-sm min-w-[520px]"><thead class="text-xs text-slate-400 text-left">
+          <tr><th class="py-2 px-3">Ad</th><th class="py-2 px-3">URL</th><th class="py-2 px-3 text-center">Diller</th>
+          <th class="py-2 px-3 text-center">Durum</th>${canli?'<th class="py-2 px-3 text-right">Islem</th>':''}</tr>
+        </thead><tbody>${kaynak.map(site).join('')}</tbody></table></div>
       <div class="grid gap-4 sm:grid-cols-3">
         ${karo('Otomasyon','GitHub Actions','her gece tarar — ucretsiz')}
         ${karo('Yayin','GitHub Pages','sunucu yok — ucretsiz')}
@@ -775,11 +790,155 @@ function menuAc(){ el('yanmenu').classList.remove('-translate-x-full'); el('perd
 function menuKapat(){ if(window.innerWidth<1024){ el('yanmenu').classList.add('-translate-x-full'); el('perde').classList.add('hidden'); } }
 window.menuAc=menuAc; window.menuKapat=menuKapat;
 
-function siteEkleBilgi(){
-  git('ayarlar');
-  alert('Yeni site eklemek icin sites.config.json dosyasindaki "siteler" dizisine yeni blok ekleyip aktif:true yap. Panel ve tum script\'ler otomatik kapsar.');
+// ============ SITE EKLE / YONET ============
+// KONFIG yalnizca panel yerelde "npm run panel" ile acildiginda dolar (yazma API'si).
+// FTP'ye yuklenen statik surumde null kalir; o zaman form JSON blogu uretip kopyalatir.
+let KONFIG = null;
+const yazilabilirMi = () => !!KONFIG?.yazilabilir;
+
+async function konfigYukle(){
+  try{
+    const r = await fetch('api/siteler',{cache:'no-store'});
+    if(!r.ok) return null;
+    const d = await r.json();
+    return Array.isArray(d?.siteler) ? d : null;
+  }catch{ return null; }
 }
-window.siteEkleBilgi=siteEkleBilgi;
+
+// istemci tarafinda id/ad tahmini (statik surumde JSON blogu uretmek icin)
+function urlDuzeltIstemci(girdi){
+  let s=String(girdi||'').trim();
+  if(!s) throw new Error('Site adresi bos olamaz.');
+  if(!/^https?:\/\//i.test(s)) s='https://'+s;
+  let u; try{ u=new URL(s); }catch{ throw new Error('Gecersiz adres: '+girdi); }
+  if(!u.hostname.includes('.')) throw new Error('Gecersiz alan adi: '+u.hostname);
+  return u.origin;
+}
+const idTahmin = (url) => new URL(url).hostname.replace(/^www\./,'').split('.')[0].replace(/[^a-z0-9]+/gi,'').toLowerCase()||'site';
+const adTahmin = (url) => new URL(url).hostname.replace(/^www\./,'').split('.')[0].replace(/[-_]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+
+// ---- modal iskeleti ----
+function modalAc(icerik){
+  el('modal').innerHTML = `<div class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm grid place-items-center p-4" onclick="if(event.target===this)modalKapat()">
+    <div class="w-full max-w-lg rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl">${icerik}</div></div>`;
+}
+function modalKapat(){ el('modal').innerHTML=''; }
+function modalHata(m){ const h=el('modalHata'); if(h){ h.textContent=m; h.classList.remove('hidden'); } }
+window.modalKapat=modalKapat;
+
+function bildir(mesaj){
+  const t=document.createElement('div');
+  t.className='fixed bottom-5 right-5 z-50 max-w-sm px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 text-sm shadow-lg';
+  t.textContent=mesaj; document.body.appendChild(t);
+  setTimeout(()=>t.remove(), 6000);
+}
+
+const alanSinif='w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500';
+
+function siteEkleAc(){
+  const canli = yazilabilirMi();
+  modalAc(`
+    <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
+      <h3 class="font-semibold text-white">Yeni site ekle</h3>
+      <button onclick="modalKapat()" class="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button>
+    </div>
+    <div class="p-5 space-y-3">
+      <div><label class="block text-xs text-slate-400 mb-1">Site adresi *</label>
+        <input id="yeniUrl" placeholder="ornek.com" class="${alanSinif}" onkeydown="if(event.key==='Enter')siteKaydet()" /></div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="block text-xs text-slate-400 mb-1">Gorunen ad <span class="text-slate-600">(bos = otomatik)</span></label>
+          <input id="yeniAd" placeholder="Ornek Site" class="${alanSinif}" /></div>
+        <div><label class="block text-xs text-slate-400 mb-1">Diller <span class="text-slate-600">(virgullu)</span></label>
+          <input id="yeniDiller" placeholder="tr,en" class="${alanSinif}" /></div>
+      </div>
+      <div><label class="block text-xs text-slate-400 mb-1">Not <span class="text-slate-600">(istege bagli)</span></label>
+        <input id="yeniNot" placeholder="orn. Eleventy statik site" class="${alanSinif}" /></div>
+      ${canli ? `<label class="flex items-center gap-2 text-xs text-slate-400 pt-1">
+        <input id="yeniTara" type="checkbox" checked class="accent-indigo-500" /> Ekledikten sonra hemen tara</label>` : ''}
+      <p id="modalHata" class="hidden text-xs text-rose-300 bg-rose-500/10 border border-rose-500/20 rounded-lg px-3 py-2"></p>
+      ${canli ? '' : `<p class="text-[11px] text-slate-500 leading-relaxed border-t border-slate-800 pt-3">
+        Bu, panelin statik (yayin) surumu — dosyaya yazamaz. <span class="text-slate-400">Kaydet</span> hazir JSON blogunu uretir,
+        sites.config.json icine yapistirirsin. Dogrudan eklemek icin paneli yerelde <span class="text-indigo-300">npm run panel</span> ile ac.</p>`}
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-3.5 border-t border-slate-800">
+      <button onclick="modalKapat()" class="text-sm px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700">Vazgec</button>
+      <button id="kaydetBtn" onclick="siteKaydet()" class="text-sm px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500">${canli?'Kaydet':'JSON uret'}</button>
+    </div>`);
+  setTimeout(()=>el('yeniUrl')?.focus(),0);
+}
+window.siteEkleAc=siteEkleAc;
+window.siteEkleBilgi=siteEkleAc; // eski buton adi
+
+async function siteKaydet(){
+  const govde = {
+    url: el('yeniUrl').value, ad: el('yeniAd').value,
+    diller: el('yeniDiller').value, not: el('yeniNot').value,
+    tara: !!el('yeniTara')?.checked,
+  };
+  if(!yazilabilirMi()) return jsonBlokGoster(govde);
+  const btn = el('kaydetBtn'); btn.disabled=true; btn.textContent='Kaydediliyor…';
+  try{
+    const r = await fetch('api/siteler',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(govde)});
+    const d = await r.json();
+    if(!r.ok) throw new Error(d.hata || ('sunucu hatasi '+r.status));
+    KONFIG = await konfigYukle();
+    modalKapat();
+    git('ayarlar');
+    bildir(`${d.site.ad} eklendi. ` + (d.tarama?.baslatildi ? 'Tarama basladi — bitince paneli yenile.' : 'Veri icin: npm run tara-hepsi'));
+  }catch(e){
+    modalHata(e.message); btn.disabled=false; btn.textContent='Kaydet';
+  }
+}
+window.siteKaydet=siteKaydet;
+
+// statik surum: yapistirmaya hazir JSON blogu
+function jsonBlokGoster(g){
+  let url;
+  try{ url = urlDuzeltIstemci(g.url); }catch(e){ return modalHata(e.message); }
+  const diller = (g.diller||'').split(',').map(d=>d.trim().toLowerCase()).filter(Boolean);
+  const blok = JSON.stringify({
+    id: idTahmin(url), ad: (g.ad||'').trim() || adTahmin(url), url,
+    aktif: true, diller: diller.length?diller:['tr'], not: (g.not||'').trim(),
+  }, null, 2).split('\n').map(s => '    ' + s).join('\n');
+  modalAc(`
+    <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
+      <h3 class="font-semibold text-white">sites.config.json'a ekle</h3>
+      <button onclick="modalKapat()" class="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button></div>
+    <div class="p-5 space-y-3">
+      <p class="text-xs text-slate-400">Asagidaki blogu <span class="text-slate-200">sites.config.json</span> icindeki <span class="text-slate-200">"siteler"</span> dizisinin sonuna ekle (onceki blogun sonuna virgul koymayi unutma).</p>
+      <pre id="jsonBlok" class="text-[11px] leading-relaxed bg-slate-950 border border-slate-800 rounded-lg p-3 overflow-x-auto text-slate-300">${kacir(blok)}</pre>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-3.5 border-t border-slate-800">
+      <button onclick="modalKapat()" class="text-sm px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700">Kapat</button>
+      <button onclick="jsonKopyala(this)" class="text-sm px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500">Kopyala</button>
+    </div>`);
+}
+function jsonKopyala(btn){
+  const metin = el('jsonBlok').textContent;
+  navigator.clipboard?.writeText(metin).then(()=>{ btn.textContent='Kopyalandi ✓'; },()=>{ btn.textContent='Kopyalanamadi'; });
+}
+window.jsonKopyala=jsonKopyala;
+
+async function siteDurumDegistir(id, aktif){
+  try{
+    const r = await fetch('api/siteler/'+encodeURIComponent(id),{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({aktif})});
+    const d = await r.json(); if(!r.ok) throw new Error(d.hata||'http '+r.status);
+    KONFIG = await konfigYukle(); git('ayarlar');
+    bildir(`${d.site.ad} ${aktif?'aktif edildi':'pasife alindi'}.`);
+  }catch(e){ alert('Guncellenemedi: '+e.message); }
+}
+window.siteDurumDegistir=siteDurumDegistir;
+
+async function siteSil(id, ad){
+  if(!confirm(`"${ad}" takipten cikarilsin mi? (sites.config.json'dan silinir)`)) return;
+  try{
+    const r = await fetch('api/siteler/'+encodeURIComponent(id),{method:'DELETE'});
+    const d = await r.json(); if(!r.ok) throw new Error(d.hata||'http '+r.status);
+    KONFIG = await konfigYukle(); git('ayarlar');
+    bildir(`${d.site.ad} silindi.`);
+  }catch(e){ alert('Silinemedi: '+e.message); }
+}
+window.siteSil=siteSil;
 
 // ============ BASLAT ============
 async function veriYukle(){
@@ -797,7 +956,7 @@ async function veriYukle(){
 
 (async () => {
   try{
-    VERI = await veriYukle();
+    [VERI, KONFIG] = await Promise.all([veriYukle(), konfigYukle()]);
     const t = new Date(VERI.guncelleme);
     el('menuGuncelleme').textContent = 'Guncelleme: ' + (isNaN(t)?VERI.guncelleme:t.toLocaleString('tr-TR'));
     menuCiz();
