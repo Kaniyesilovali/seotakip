@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: '0 3 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:      # bot'un yazdigi veri dosyalari tetiklemesin (dongu onleme)
+      - 'data/**'
+      - 'assets/fallback-data.js'
 
 permissions:
   contents: write   # data.json'u geri commit'leyebilmek icin
@@ -43,5 +48,5 @@ jobs:
           git config user.name "seo-tarama-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/data.json assets/fallback-data.js data/history/ || true
-          git commit -m "otomatik tarama: $(date -u +%Y-%m-%d)" || echo "degisiklik yok"
+          git commit -m "otomatik tarama: $(date -u +%Y-%m-%d) [skip ci]" || echo "degisiklik yok"
           git push || echo "push atlandi"
