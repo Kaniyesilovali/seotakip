@@ -6,34 +6,34 @@ Evcil hayvanınız ailenizin bir parçası ve onun sağlığı için doğru bir 
 
 ## Neden Doğru Klinik Seçimi Bu Kadar Önemli?
 
-Bir veteriner kliniği yalnızca hastalık anında gidilen bir yer değildir. Düzenli kontroller, aşılar ve koruyucu bakım, evcil hayvanınızın uzun ve sağlıklı bir yaşam sürmesinin temelidir. Doğru klinik, hem rutin ihtiyaçlarınızda hem de beklenmedik acil durumlarda yanınızda olur.
+Bir veteriner kliniği yalnızca hastalık anında gidilen bir yer değildir. Düzenli [genel muayene](/tr/hizmetler/genel-muayene/), aşılar ve koruyucu bakım, evcil hayvanınızın uzun ve sağlıklı bir yaşam sürmesinin temelidir. Doğru klinik, hem rutin ihtiyaçlarınızda hem de beklenmedik acil durumlarda yanınızda olur.
 
 İyi bir **Kıbrıs veteriner kliniği**, güven veren bir ekip, şeffaf bilgilendirme ve hayvan dostu bir yaklaşımla fark yaratır. Bu yüzden seçim yaparken sadece en yakın kliniği değil, ihtiyaçlarınıza en uygun olanı değerlendirmek gerekir.
 
 ## İyi Bir Klinikte Bulunması Gereken Hizmetler
 
-Kliniği ziyaret etmeden önce sunulan hizmetleri araştırmak zaman kazandırır. Kapsamlı bir veteriner kliniğinde genellikle şunları bulmayı beklemelisiniz:
+Kliniği ziyaret etmeden önce sunulan [hizmetleri](/tr/hizmetler/) araştırmak zaman kazandırır. Kapsamlı bir veteriner kliniğinde genellikle şunları bulmayı beklemelisiniz:
 
 ### Rutin Kontrol ve Aşılar
 
 - Düzenli sağlık taramaları ve genel muayene
-- Kuduz ve karma aşılar dahil aşı takibi
+- Kuduz ve karma aşılar dahil [aşılama](/tr/hizmetler/asilama/) takibi
 - İç ve dış parazit (pire, kene, solucan) korunması
 - Mikroçip uygulaması ve kimliklendirme
 
 ### Teşhis ve Tedavi
 
-Modern bir klinik, doğru teşhis için temel laboratuvar ve görüntüleme imkânlarına sahip olmalıdır. Kan tahlili, röntgen ve ultrason gibi olanaklar, sorunların erken yakalanmasını sağlar.
+Modern bir klinik, doğru teşhis için temel [laboratuvar](/tr/hizmetler/laboratuvar/) ve [radyoloji](/tr/hizmetler/radyoloji/) imkânlarına sahip olmalıdır. Kan tahlili, röntgen ve ultrason gibi olanaklar, sorunların erken yakalanmasını sağlar.
 
 ### Cerrahi ve Diş Bakımı
 
-Kısırlaştırma, yara müdahaleleri ve diş temizliği gibi işlemler, deneyimli bir ekip ve uygun steril ortam gerektirir. Diş sağlığı çoğu zaman göz ardı edilir; oysa evcil hayvanlarda ciddi sağlık sorunlarına yol açabilir.
+[Cerrahi](/tr/hizmetler/cerrahi/) müdahaleler, kısırlaştırma ve [diş bakımı](/tr/hizmetler/dis-bakimi/) gibi işlemler, deneyimli bir ekip ve uygun steril ortam gerektirir. Diş sağlığı çoğu zaman göz ardı edilir; oysa evcil hayvanlarda ciddi sağlık sorunlarına yol açabilir.
 
 ## Acil Durumlar: Nöbetçi Veteriner Neden Kritik?
 
-Kazalar ve ani rahatsızlıklar mesai saatlerini beklemez. Bu nedenle seçtiğiniz kliniğin **acil durum ve nöbetçi veteriner** hizmeti sunup sunmadığını önceden öğrenmek hayat kurtarır.
+Kazalar ve ani rahatsızlıklar mesai saatlerini beklemez. Bu nedenle seçtiğiniz kliniğin [acil hizmet](/tr/hizmetler/acil-hizmet/) sunup sunmadığını önceden öğrenmek hayat kurtarır.
 
-Bir acil durumda hızlı hareket etmek önemlidir. Aşağıdaki belirtiler vakit kaybetmeden veterinere başvurmanızı gerektirir:
+Bir acil durumda hızlı hareket etmek önemlidir. Hangi belirtilerin acil olduğunu önceden bilmek için [acil veteriner belirtileri](/tr/blog/acil-veteriner-belirtileri/) rehberimize göz atabilirsiniz. Aşağıdaki durumlar vakit kaybetmeden veterinere başvurmanızı gerektirir:
 
 - Nefes almakta zorlanma
 - Sürekli kusma veya ishal
@@ -41,13 +41,13 @@ Bir acil durumda hızlı hareket etmek önemlidir. Aşağıdaki belirtiler vakit
 - Ciddi yaralanma veya aşırı kanama
 - Hareketsizlik veya bilinç bulanıklığı
 
-Kliniğin acil iletişim bilgilerini ve nöbet saatlerini önceden not almanız, panik anında büyük kolaylık sağlar.
+Kliniğin [iletişim](/tr/iletisim/) bilgilerini ve nöbet saatlerini önceden not almanız, panik anında büyük kolaylık sağlar.
 
 ## Doğru Kliniği Seçerken 5 İpucu
 
 Bir **Kıbrıs veteriner kliniği** seçerken şu adımları izleyebilirsiniz:
 
-1. **Deneyim ve uzmanlık:** Ekibin tecrübesini ve varsa özel ilgi alanlarını (egzotik hayvanlar, cerrahi vб.) araştırın.
+1. **Deneyim ve uzmanlık:** Ekibin tecrübesini ve varsa özel ilgi alanlarını araştırın.
 2. **Hijyen ve ekipman:** Klinik temiz, düzenli ve güncel ekipmanla donatılmış olmalı.
 3. **Ulaşılabilirlik:** Ev veya iş yerinize yakınlığı ve acil durumda ulaşılabilirliği değerlendirin.
 4. **İletişim:** İyi bir veteriner, işlemleri ve seçenekleri sabırla açıklar; sorularınızı yanıtsız bırakmaz.
@@ -55,7 +55,7 @@ Bir **Kıbrıs veteriner kliniği** seçerken şu adımları izleyebilirsiniz:
 
 ## Koruyucu Bakım: En İyi Tedavi Önlemektir
 
-Düzenli kontroller sayesinde birçok sağlık sorunu, ciddileşmeden fark edilir. Yılda en az bir kez genel muayene, aşı takviminin güncel tutulması ve dengeli beslenme, evcil hayvanınızın yaşam kalitesini doğrudan etkiler. İyi bir klinik, size yalnızca tedavi değil, koruyucu bakım konusunda da rehberlik eder.
+Düzenli kontroller sayesinde birçok sağlık sorunu, ciddileşmeden fark edilir. Yılda en az bir kez genel muayene, aşı takviminin güncel tutulması ve dengeli beslenme, evcil hayvanınızın yaşam kalitesini doğrudan etkiler. Aşıların ne zaman yapılacağını planlamak için [köpek aşı takvimi](/tr/blog/kopek-asi-takvimi/) yazımız yol gösterici olabilir. İyi bir klinik, size yalnızca tedavi değil, koruyucu bakım konusunda da rehberlik eder.
 
 ## Sonuç
 

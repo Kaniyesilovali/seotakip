@@ -265,6 +265,7 @@ async function siteTara(site) {
     seo: { puan },
     uptime, ssl,
     sayfalar: { taranan: toplam, indekslenebilir: toplam - noindex, noindex },
+    sayfaYollari: [...sayfalar.keys()].map(u => { try { return new URL(u).pathname; } catch { return u; } }).slice(0, 150),
     kirikLinkler,
     eksikMeta,
     schema: { varMi: schemaVar, gecerli: schemaGecerli, tipler: schemaTipler },

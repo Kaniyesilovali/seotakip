@@ -30,11 +30,15 @@ const slugla = (s) => s.toLowerCase()
   .replace(/ı/g,'i').replace(/ş/g,'s').replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ö/g,'o').replace(/ç/g,'c')
   .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0, 60);
 
-async function uret(site, kelime, dil) {
+async function uret(site, kelime, dil, sayfalar = []) {
+  const icLinkNot = sayfalar.length
+    ? `\nIC LINK: Govde icinde, ASAGIDAKI GERCEK sayfalardan uygun olanlara markdown link ver ([metin](/yol)). SADECE bu listedekileri kullan, URL uydurma:\n${sayfalar.slice(0, 40).map(p => '- ' + p).join('\n')}`
+    : '';
   const prompt = `Sen uzman bir SEO icerik yazarisin. "${site.ad}" (${site.url}) sitesi icin, ${dil} dilinde,
 "${kelime}" anahtar kelimesini hedefleyen SEO uyumlu bir blog yazisi uret.
 Kurallar: dogal ve akici dil, anahtar kelimeyi basligda ve ilk paragrafta kullan, H2/H3 alt basliklar,
-600-1000 kelime govde, spam yok, gercekci bilgi. Yalnizca GECERLI JSON dondur, baska hicbir sey yazma:
+600-1000 kelime govde, spam yok, gercekci bilgi.${icLinkNot}
+Yalnizca GECERLI JSON dondur, baska hicbir sey yazma:
 {
   "baslik": "60 karakteri gecmeyen, anahtar kelimeli baslik",
   "metaAciklama": "155 karakteri gecmeyen meta description",
@@ -75,8 +79,9 @@ async function tekUret(veri, siteId, kelime) {
     kelime = f.kelime;
   }
   anahtarSart();
-  process.stdout.write(`\n▶ ${site.ad} — "${kelime}" icin icerik uretiliyor (${MODEL})…`);
-  const c = await uret(site, kelime, dil);
+  const sayfalar = (veri.siteler.find(s => s.id === siteId) || {}).sayfaYollari || [];
+  process.stdout.write(`\n▶ ${site.ad} — "${kelime}" icin icerik uretiliyor (${MODEL}${sayfalar.length ? ', ' + sayfalar.length + ' ic link adayi' : ''})…`);
+  const c = await uret(site, kelime, dil, sayfalar);
   const slug = slugla(kelime);
 
   // markdown dosyasi (kullanicinin sitesine yapistirmasi icin)
