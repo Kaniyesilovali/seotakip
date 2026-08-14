@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-14T11:46:31.054Z",
+  "guncelleme": "2026-08-14T13:24:25.158Z",
   "ozet": {
     "toplamSite": 4,
     "ortalamaSeoPuan": 91,
@@ -19,8 +19,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 380,
-        "sonKontrol": "2026-08-14T11:42:06.641Z"
+        "yanitMs": 1441,
+        "sonKontrol": "2026-08-14T13:18:36.892Z"
       },
       "ssl": {
         "gecerli": true,
@@ -82,7 +82,14 @@
           "/en/privacy"
         ]
       },
-      "hiz": null,
+      "hiz": {
+        "mobilPuan": 67,
+        "masaustuPuan": 81,
+        "lcp": 9.7,
+        "inp": 0,
+        "cls": 0,
+        "kaynak": "lab"
+      },
       "indeks": null,
       "aiBotlar": null,
       "geo": null,
@@ -103,8 +110,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 156,
-        "sonKontrol": "2026-08-14T11:42:45.321Z"
+        "yanitMs": 716,
+        "sonKontrol": "2026-08-14T13:19:30.170Z"
       },
       "ssl": {
         "gecerli": true,
@@ -161,7 +168,14 @@
         "ortLink": 25.2,
         "orphan": []
       },
-      "hiz": null,
+      "hiz": {
+        "mobilPuan": 85,
+        "masaustuPuan": 98,
+        "lcp": 3.6,
+        "inp": 14,
+        "cls": 0,
+        "kaynak": "lab"
+      },
       "indeks": null,
       "aiBotlar": null,
       "geo": null,
@@ -182,8 +196,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 393,
-        "sonKontrol": "2026-08-14T11:43:57.174Z"
+        "yanitMs": 1338,
+        "sonKontrol": "2026-08-14T13:20:58.272Z"
       },
       "ssl": {
         "gecerli": true,
@@ -239,7 +253,14 @@
         "ortLink": 25.7,
         "orphan": []
       },
-      "hiz": null,
+      "hiz": {
+        "mobilPuan": 89,
+        "masaustuPuan": 97,
+        "lcp": 3.6,
+        "inp": 0,
+        "cls": 0,
+        "kaynak": "lab"
+      },
       "indeks": null,
       "aiBotlar": null,
       "geo": null,
@@ -260,8 +281,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 126,
-        "sonKontrol": "2026-08-14T11:46:14.043Z"
+        "yanitMs": 327,
+        "sonKontrol": "2026-08-14T13:24:02.424Z"
       },
       "ssl": {
         "gecerli": true,
@@ -381,7 +402,14 @@
           "/en"
         ]
       },
-      "hiz": null,
+      "hiz": {
+        "mobilPuan": 79,
+        "masaustuPuan": 95,
+        "lcp": 4.1,
+        "inp": 0,
+        "cls": 0,
+        "kaynak": "lab"
+      },
       "indeks": null,
       "aiBotlar": null,
       "geo": null,
