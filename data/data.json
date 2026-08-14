@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-14T14:25:56.572Z",
+  "guncelleme": "2026-08-14T18:19:00.753Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 90,
@@ -96,7 +96,11 @@
         "dususVar": false
       },
       "aiBotlar": null,
-      "geo": null,
+      "geo": {
+        "chatgpt": false,
+        "perplexity": false,
+        "gemini": false
+      },
       "siralama": [
         {
           "kelime": "gönyeli veteriner",
@@ -247,7 +251,23 @@
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
-      "_indeksGercek": true
+      "_indeksGercek": true,
+      "geoDetay": [
+        {
+          "soru": "best veterinary clinic Kyrenia North Cyprus",
+          "motor": "arama/AI ozet",
+          "gorundu": false,
+          "not": "AI cevabi Animates, VetPetite, Petline'i onerdi; Animare hic anilmadi"
+        },
+        {
+          "soru": "Animare veterinary clinic Cyprus (marka sorgusu)",
+          "motor": "arama/AI ozet",
+          "gorundu": false,
+          "not": "AI Animare'i bulamadi; Animates/Anima ile karistirdi - ciddi marka karisikligi riski"
+        }
+      ],
+      "geoTarih": "2026-08-14",
+      "_geoGercek": true
     },
     {
       "id": "magusapsikoloji",
