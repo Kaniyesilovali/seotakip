@@ -48,7 +48,12 @@ async function saQuery(property, startDate, endDate) {
 // site icin dogru property formatini bul (sc-domain / url-prefix)
 function adaylar(siteUrl) {
   const host = new URL(siteUrl).host.replace(/^www\./, '');
-  return [`sc-domain:${host}`, `https://${host}/`, `https://www.${host}/`, siteUrl.replace(/\/?$/, '/')];
+  return [
+    `sc-domain:${host}`,
+    `https://${host}/`, `https://www.${host}/`,
+    `http://${host}/`, `http://www.${host}/`,
+    siteUrl.replace(/\/?$/, '/'),
+  ];
 }
 
 async function siteVerisi(site) {

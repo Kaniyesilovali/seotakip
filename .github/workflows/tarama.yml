@@ -3,13 +3,8 @@ name: SEO Tarama (otomatik)
 # Her gece 06:00 TR (03:00 UTC) + istenirse elle tetikleme
 on:
   schedule:
-    - cron: '0 3 * * *'
-  workflow_dispatch:
-  push:
-    branches: [main]
-    paths-ignore:      # bot'un yazdigi veri dosyalari tetiklemesin (dongu onleme)
-      - 'data/**'
-      - 'assets/fallback-data.js'
+    - cron: '0 3 * * *'   # her gece 06:00 TR
+  workflow_dispatch:       # Actions sekmesinden elle tetikleme
 
 permissions:
   contents: write   # data.json'u geri commit'leyebilmek icin
