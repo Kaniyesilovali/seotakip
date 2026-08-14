@@ -57,9 +57,26 @@ sitemap, meta, hız, iç link, orphan, indeks, AI bot, GEO, kelime fırsatı/dü
       sitemap, schema, canonical, iç link, orphan, on-page, tracking. `npm run crawl` ile çalışır.
 - [~] Hız / Core Web Vitals — `scripts/pagespeed.js` hazır; **ücretsiz PageSpeed API anahtarı** bekliyor (aşağıya bak)
 - [~] Otomasyon — `.github/workflows/tarama.yml` hazır; GitHub'a **push** bekliyor
-- [ ] Aşama 3 — Google Search Console (gerçek sıralama + anahtar kelime + içerik boşluğu)
+- [~] Aşama 3 — Search Console (`scripts/searchconsole.js`) hazır; **servis hesabı** bekliyor (aşağıda)
 - [ ] Aşama 4 — AI içerik üretici (Auto SEO Blog) — Gemini/Groq free tier veya Claude API
 - [ ] Aşama 5 — GEO/AI bot takibi + Telegram uyarı + PDF rapor
+
+## Search Console kurulumu (ücretsiz, gerçek sıralama + anahtar kelime)
+
+Servis hesabı yöntemi — interaktif giriş yok, otomasyonda da çalışır:
+
+1. [Google Cloud Console](https://console.cloud.google.com/) → yeni proje → **"Search Console API"yi etkinleştir**
+2. **IAM & Admin → Service Accounts → Create** → oluştur → **Keys → Add key → JSON** indir
+3. İnen JSON'u proje köküne **`gsc-key.json`** olarak koy (gitignore'da, repoya gitmez)
+4. Her Search Console property'sinde: **Ayarlar → Kullanıcılar ve izinler → Kullanıcı ekle**
+   → servis hesabının e-postası (`xxx@proje.iam.gserviceaccount.com`) → **"Sınırlı"** izin yeter
+5. Çalıştır: `npm run gsc`
+
+Doldurur: her sitenin gerçek **sıralaması** (Anahtar Kelime bölümü), **fırsat kelimeleri**
+(İçerik Boşluğu — 2. sayfadaki yüksek gösterimli kelimeler) ve **indeks** sayıları (sitemap'ten).
+
+**Otomasyon için:** aynı JSON'un tamamını GitHub repo secret'ı olarak `GSC_KEY_JSON` adıyla ekle;
+workflow gece taramasında sıralamayı da otomatik çeker.
 
 ## PageSpeed API anahtarı (ücretsiz, ~2 dk)
 

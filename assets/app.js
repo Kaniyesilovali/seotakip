@@ -585,21 +585,28 @@ const VIEWS = {
     const bloklar = siteler().map(s => {
       const list = s.icerikBoslugu || [];
       if (!list.length) return '';
-      const satir = (g) => `<tr class="border-t border-slate-800">
+      const firsatMi = list.some(g => g.tip === 'firsat');
+      const konumBaslik = firsatMi ? 'Senin pozisyonun' : 'Rakip siralaniyor';
+      const satir = (g) => {
+        const konum = g.tip === 'firsat'
+          ? `<span class="text-amber-300">#${g.rakipPoz}</span> <span class="text-slate-600">(sayfa ${Math.ceil(g.rakipPoz/10)})</span>`
+          : `${g.rakip} <span class="text-slate-600">#${g.rakipPoz}</span>`;
+        return `<tr class="border-t border-slate-800">
         <td class="py-2 px-3 text-slate-200">${g.kelime}</td>
-        <td class="py-2 px-3 text-center text-slate-300">~${g.hacim}</td>
-        <td class="py-2 px-3 text-slate-400">${g.rakip} <span class="text-slate-600">#${g.rakipPoz}</span></td>
-        <td class="py-2 px-3 text-center">${g.hacim>=500?chip('yuksek firsat','emerald'):chip('firsat','amber')}</td></tr>`;
+        <td class="py-2 px-3 text-center text-slate-300">${g.hacim}</td>
+        <td class="py-2 px-3 text-slate-400">${konum}</td>
+        <td class="py-2 px-3 text-center">${g.hacim>=200?chip('yuksek firsat','emerald'):chip('firsat','amber')}</td></tr>`;
+      };
       return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto mb-4">
         <div class="px-3 py-2 border-b border-slate-800 font-medium text-white">${s.ad}</div>
         <table class="w-full text-sm min-w-[520px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Kelime (sende yok)</th><th class="py-2 px-3 text-center">Arama hacmi</th>
-          <th class="py-2 px-3">Rakip siralaniyor</th><th class="py-2 px-3 text-center">Durum</th></tr>
+          <tr><th class="py-2 px-3">Kelime</th><th class="py-2 px-3 text-center">Gosterim/hacim</th>
+          <th class="py-2 px-3">${konumBaslik}</th><th class="py-2 px-3 text-center">Durum</th></tr>
         </thead><tbody>${list.map(satir).join('')}</tbody></table></div>`;
     }).join('');
-    return bolumBaslik('Icerik Boslugu','Rakiplerin siralandigi ama sende olmayan kelimeler = yazacagin bir sonraki icerikler.') +
-      `<div class="mb-4">${asamaRozeti(3)} <span class="text-xs text-slate-500 ml-1">gercek veri Search Console + rakip taramasiyla gelir</span></div>` +
-      (bloklar || bosDurum('Icerik boslugu tespit edilmedi.'));
+    return bolumBaslik('Icerik Boslugu / Firsat','Search Console verisiyle: 2. sayfada (pozisyon 8-20) yuksek gosterimli kelimelerin = az itmeyle 1. sayfaya cikacak firsatlar. Rakip bazli bosluk manuel rakip ekleyince gelir.') +
+      `<div class="mb-4">${asamaRozeti(3)} <span class="text-xs text-slate-500 ml-1">gercek veri Search Console baglaninca gelir</span></div>` +
+      (bloklar || bosDurum('Henuz firsat verisi yok — Search Console baglaninca dolacak.'));
   },
 
   araclar(){

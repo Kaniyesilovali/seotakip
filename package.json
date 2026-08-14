@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "panel": "npx serve -l 3000 .",
-    "tara-hepsi": "node scripts/crawl.js && node scripts/pagespeed.js",
+    "tara-hepsi": "node scripts/crawl.js && (node scripts/pagespeed.js || true) && (node scripts/searchconsole.js || true)",
     "crawl": "node scripts/crawl.js",
-    "hiz": "node scripts/pagespeed.js"
+    "hiz": "node scripts/pagespeed.js",
+    "gsc": "node scripts/searchconsole.js"
   },
   "keywords": [
     "seo",
@@ -17,6 +18,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "google-auth-library": "^11.0.2"
   }
 }

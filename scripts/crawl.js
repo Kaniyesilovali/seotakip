@@ -309,6 +309,14 @@ async function main() {
       rakip: eski._rakipGercek ? eski.rakip : [],
       kanibalizasyon: [],
       icerikBoslugu: eski._gapGercek ? eski.icerikBoslugu : [],
+      // gercek-veri bayraklarini sonraki taramaya tasi (yoksa GSC/PageSpeed verisi silinir)
+      ...(eski._hizGercek ? { _hizGercek: true } : {}),
+      ...(eski._siralamaGercek ? { _siralamaGercek: true } : {}),
+      ...(eski._gapGercek ? { _gapGercek: true } : {}),
+      ...(eski._indeksGercek ? { _indeksGercek: true } : {}),
+      ...(eski._botGercek ? { _botGercek: true } : {}),
+      ...(eski._geoGercek ? { _geoGercek: true } : {}),
+      ...(eski._rakipGercek ? { _rakipGercek: true } : {}),
     });
     process.stdout.write(`  ✓ ${site.ad}: puan ${tarama.seo.puan}, ${tarama.sayfalar.taranan} sayfa, ${tarama.kirikLinkler.length} kirik link\n`);
   }

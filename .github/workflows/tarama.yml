@@ -43,6 +43,18 @@ jobs:
             echo "PAGESPEED_KEY secret yok — hiz olcumu atlandi"
           fi
 
+      - name: Search Console (servis hesabi varsa)
+        env:
+          GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
+        run: |
+          if [ -n "$GSC_KEY_JSON" ]; then
+            printf '%s' "$GSC_KEY_JSON" > gsc-key.json
+            node scripts/searchconsole.js || echo "search console atlandi"
+            rm -f gsc-key.json
+          else
+            echo "GSC_KEY_JSON secret yok — siralama/anahtar kelime atlandi"
+          fi
+
       - name: Sonucu commit'le
         run: |
           git config user.name "seo-tarama-bot"
