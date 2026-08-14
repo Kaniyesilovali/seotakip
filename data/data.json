@@ -19,8 +19,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 380,
-        "sonKontrol": "2026-08-14T11:42:06.641Z"
+        "yanitMs": 1441,
+        "sonKontrol": "2026-08-14T13:18:36.892Z"
       },
       "ssl": {
         "gecerli": true,
@@ -83,10 +83,10 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 67,
-        "masaustuPuan": 81,
+        "mobilPuan": 62,
+        "masaustuPuan": 56,
         "lcp": 9.7,
-        "inp": 0,
+        "inp": 53,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -261,8 +261,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 156,
-        "sonKontrol": "2026-08-14T11:42:45.321Z"
+        "yanitMs": 716,
+        "sonKontrol": "2026-08-14T13:19:30.170Z"
       },
       "ssl": {
         "gecerli": true,
@@ -320,11 +320,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 85,
-        "masaustuPuan": 98,
-        "lcp": 3.6,
-        "inp": 14,
-        "cls": 0,
+        "mobilPuan": 0,
+        "masaustuPuan": 94,
+        "lcp": null,
+        "inp": null,
+        "cls": null,
         "kaynak": "lab"
       },
       "indeks": {
@@ -480,8 +480,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 393,
-        "sonKontrol": "2026-08-14T11:43:57.174Z"
+        "yanitMs": 1338,
+        "sonKontrol": "2026-08-14T13:20:58.272Z"
       },
       "ssl": {
         "gecerli": true,
@@ -538,11 +538,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 89,
-        "masaustuPuan": 97,
-        "lcp": 3.6,
+        "mobilPuan": 78,
+        "masaustuPuan": 0,
+        "lcp": 4.2,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.02,
         "kaynak": "lab"
       },
       "indeks": {
@@ -692,8 +692,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 126,
-        "sonKontrol": "2026-08-14T11:46:14.043Z"
+        "yanitMs": 327,
+        "sonKontrol": "2026-08-14T13:24:02.424Z"
       },
       "ssl": {
         "gecerli": true,
@@ -814,11 +814,11 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 79,
+        "mobilPuan": 77,
         "masaustuPuan": 95,
-        "lcp": 4.1,
+        "lcp": 4.5,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.04,
         "kaynak": "lab"
       },
       "indeks": null,
