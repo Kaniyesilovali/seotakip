@@ -40,12 +40,12 @@
       "not": ""
     },
     {
-      "id": "proje5",
-      "ad": "5. Proje (yakinda)",
-      "url": "",
-      "aktif": false,
-      "diller": [],
-      "not": "URL belli olunca doldur ve aktif:true yap"
+      "id": "kktcsigorta",
+      "ad": "KKTC Sigorta Merkezi",
+      "url": "https://kktcsigortamerkezi.com",
+      "aktif": true,
+      "diller": ["tr"],
+      "not": ""
     }
   ]
 }

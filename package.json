@@ -8,7 +8,8 @@
     "tara-hepsi": "node scripts/crawl.js && (node scripts/pagespeed.js || true) && (node scripts/searchconsole.js || true)",
     "crawl": "node scripts/crawl.js",
     "hiz": "node scripts/pagespeed.js",
-    "gsc": "node scripts/searchconsole.js"
+    "gsc": "node scripts/searchconsole.js",
+    "build": "node scripts/build.js"
   },
   "keywords": [
     "seo",

@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-14T14:02:04.752Z",
+  "guncelleme": "2026-08-14T14:25:56.572Z",
   "ozet": {
-    "toplamSite": 4,
-    "ortalamaSeoPuan": 91,
-    "toplamKirikLink": 12,
+    "toplamSite": 5,
+    "ortalamaSeoPuan": 90,
+    "toplamKirikLink": 14,
     "acilUyari": 0
   },
   "siteler": [
@@ -13,14 +13,14 @@
       "url": "https://animare.vet",
       "aktif": true,
       "seo": {
-        "puan": 93,
+        "puan": 89,
         "onceki": 93,
-        "trend": "+0"
+        "trend": "-4"
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 1441,
-        "sonKontrol": "2026-08-14T13:18:36.892Z"
+        "yanitMs": 4713,
+        "sonKontrol": "2026-08-14T14:18:02.327Z"
       },
       "ssl": {
         "gecerli": true,
@@ -83,10 +83,10 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 62,
-        "masaustuPuan": 56,
-        "lcp": 9.7,
-        "inp": 53,
+        "mobilPuan": 67,
+        "masaustuPuan": 85,
+        "lcp": 11.4,
+        "inp": 207,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -261,8 +261,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 716,
-        "sonKontrol": "2026-08-14T13:19:30.170Z"
+        "yanitMs": 573,
+        "sonKontrol": "2026-08-14T14:18:43.623Z"
       },
       "ssl": {
         "gecerli": true,
@@ -320,11 +320,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 0,
-        "masaustuPuan": 94,
-        "lcp": null,
-        "inp": null,
-        "cls": null,
+        "mobilPuan": 85,
+        "masaustuPuan": 99,
+        "lcp": 4.1,
+        "inp": 52,
+        "cls": 0,
         "kaynak": "lab"
       },
       "indeks": {
@@ -480,8 +480,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 1338,
-        "sonKontrol": "2026-08-14T13:20:58.272Z"
+        "yanitMs": 318,
+        "sonKontrol": "2026-08-14T14:19:52.986Z"
       },
       "ssl": {
         "gecerli": true,
@@ -538,9 +538,9 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 78,
-        "masaustuPuan": 0,
-        "lcp": 4.2,
+        "mobilPuan": 88,
+        "masaustuPuan": 93,
+        "lcp": 3.6,
         "inp": 0,
         "cls": 0.02,
         "kaynak": "lab"
@@ -692,8 +692,8 @@
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 327,
-        "sonKontrol": "2026-08-14T13:24:02.424Z"
+        "yanitMs": 110,
+        "sonKontrol": "2026-08-14T14:22:17.347Z"
       },
       "ssl": {
         "gecerli": true,
@@ -814,11 +814,11 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 77,
-        "masaustuPuan": 95,
-        "lcp": 4.5,
+        "mobilPuan": 82,
+        "masaustuPuan": 96,
+        "lcp": 3.9,
         "inp": 0,
-        "cls": 0.04,
+        "cls": 0.02,
         "kaynak": "lab"
       },
       "indeks": null,
@@ -828,10 +828,232 @@
       "rakip": [],
       "kanibalizasyon": [],
       "icerikBoslugu": [],
-      "_hizGercek": true
+      "_hizGercek": true,
+      "_siralamaGercek": true,
+      "_gapGercek": true
+    },
+    {
+      "id": "kktcsigorta",
+      "ad": "KKTC Sigorta Merkezi",
+      "url": "https://kktcsigortamerkezi.com",
+      "aktif": true,
+      "seo": {
+        "puan": 90,
+        "onceki": 90,
+        "trend": "0"
+      },
+      "uptime": {
+        "durum": "up",
+        "yanitMs": 114,
+        "sonKontrol": "2026-08-14T14:22:34.303Z"
+      },
+      "ssl": {
+        "gecerli": true,
+        "bitis": "2026-11-01",
+        "kalanGun": 79
+      },
+      "sayfalar": {
+        "taranan": 69,
+        "indekslenebilir": 69,
+        "noindex": 0
+      },
+      "kirikLinkler": [
+        {
+          "kaynak": "/tr/sirketler/axa-sigorta",
+          "hedef": "https://www.axasigorta.com.tr/kibris-subemiz",
+          "kod": 404
+        },
+        {
+          "kaynak": "/tr/sirketler/creditwest-sigorta",
+          "hedef": "https://www.creditwestinsurance.com",
+          "kod": 403
+        }
+      ],
+      "eksikMeta": {
+        "title": 0,
+        "description": 0,
+        "h1": 0
+      },
+      "schema": {
+        "varMi": true,
+        "gecerli": true,
+        "tipler": [
+          "WebSite",
+          "Blog",
+          "BlogPosting",
+          "FAQPage",
+          "Organization",
+          "BreadcrumbList",
+          "ItemList"
+        ]
+      },
+      "sitemap": {
+        "varMi": true,
+        "urlSayisi": 69,
+        "erisilemez": 0
+      },
+      "robots": {
+        "varMi": true,
+        "sorun": false
+      },
+      "canonical": {
+        "eksik": 0,
+        "hatali": 0
+      },
+      "hreflang": {
+        "sorun": false
+      },
+      "onpage": {
+        "altEksik": 0,
+        "ogEksik": 0,
+        "tracking": [],
+        "keywordYogunluk": "olculmedi"
+      },
+      "iclink": {
+        "ortLink": 24,
+        "orphan": []
+      },
+      "hiz": {
+        "mobilPuan": 80,
+        "masaustuPuan": 98,
+        "lcp": 3.6,
+        "inp": 0,
+        "cls": 0,
+        "kaynak": "lab"
+      },
+      "indeks": null,
+      "aiBotlar": null,
+      "geo": null,
+      "siralama": [
+        {
+          "kelime": "kktc sağlık sigortası öğrenci ücreti",
+          "pozisyon": 5,
+          "onceki": 5,
+          "gosterim": 18,
+          "tik": 2
+        },
+        {
+          "kelime": "güven sigorta",
+          "pozisyon": 7,
+          "onceki": 7,
+          "gosterim": 23,
+          "tik": 0
+        },
+        {
+          "kelime": "creditwest pert",
+          "pozisyon": 6,
+          "onceki": 6,
+          "gosterim": 22,
+          "tik": 0
+        },
+        {
+          "kelime": "dağlı sigorta",
+          "pozisyon": 8,
+          "onceki": 8,
+          "gosterim": 14,
+          "tik": 0
+        },
+        {
+          "kelime": "kktcsigorta",
+          "pozisyon": 7,
+          "onceki": 7,
+          "gosterim": 9,
+          "tik": 0
+        },
+        {
+          "kelime": "bicare sigorta",
+          "pozisyon": 6,
+          "onceki": 6,
+          "gosterim": 8,
+          "tik": 0
+        },
+        {
+          "kelime": "şeker sigorta kktc",
+          "pozisyon": 8,
+          "onceki": 8,
+          "gosterim": 8,
+          "tik": 0
+        },
+        {
+          "kelime": "kapital sigorta",
+          "pozisyon": 6,
+          "onceki": 6,
+          "gosterim": 7,
+          "tik": 0
+        },
+        {
+          "kelime": "kıbrıs özel sağlık sigortası oturma izni",
+          "pozisyon": 7,
+          "onceki": 7,
+          "gosterim": 7,
+          "tik": 0
+        },
+        {
+          "kelime": "lightstar insurance ltd",
+          "pozisyon": 5,
+          "onceki": 5,
+          "gosterim": 6,
+          "tik": 0
+        },
+        {
+          "kelime": "metehan sınır kapısı sigorta çalışma saatleri",
+          "pozisyon": 12,
+          "onceki": 12,
+          "gosterim": 6,
+          "tik": 0
+        },
+        {
+          "kelime": "north prime insurance kktc",
+          "pozisyon": 8,
+          "onceki": 8,
+          "gosterim": 6,
+          "tik": 0
+        },
+        {
+          "kelime": "ascan sigorta",
+          "pozisyon": 9,
+          "onceki": 9,
+          "gosterim": 5,
+          "tik": 0
+        },
+        {
+          "kelime": "axa sigorta kktc",
+          "pozisyon": 10,
+          "onceki": 10,
+          "gosterim": 5,
+          "tik": 0
+        },
+        {
+          "kelime": "kktc sigorta şirketleri",
+          "pozisyon": 11,
+          "onceki": 11,
+          "gosterim": 4,
+          "tik": 0
+        }
+      ],
+      "rakip": [],
+      "kanibalizasyon": [],
+      "icerikBoslugu": [
+        {
+          "kelime": "dağlı sigorta",
+          "hacim": 14,
+          "rakipPoz": 8,
+          "tip": "firsat"
+        }
+      ],
+      "_hizGercek": true,
+      "_siralamaGercek": true,
+      "_gapGercek": true
     }
   ],
-  "degisiklikler": [],
+  "degisiklikler": [
+    {
+      "site": "animare",
+      "tip": "dusus",
+      "mesaj": "SEO puani 93 → 89 (-4)",
+      "tarih": "2026-08-14"
+    }
+  ],
   "raporlar": [
     {
       "ad": "Haftalik ozet — 08 Agu",
@@ -849,6 +1071,11 @@
       "seviye": "uyari",
       "site": "luxeva",
       "mesaj": "12 kirik link tespit edildi"
+    },
+    {
+      "seviye": "uyari",
+      "site": "kktcsigorta",
+      "mesaj": "2 kirik link tespit edildi"
     }
   ]
 }
