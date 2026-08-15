@@ -27,11 +27,17 @@ dist/
 ├── index.html
 ├── .htaccess
 ├── assets/
+│   ├── panel.css
 │   ├── app.js
 │   └── fallback-data.js
 └── data/
     └── data.json
 ```
+
+Build ayrıca `index.html` içindeki varlık adreslerine içerik hash'i ekler
+(`assets/app.js?v=43a82cb6`). Bu yüzden **`index.html` ile `assets/` her zaman birlikte
+yüklenmeli** — yalnızca birini yüklersen tarayıcı yeni HTML ile eski JS/CSS'i eşleştirip
+paneli bozuk açar.
 
 ## 2. FileZilla ile yükle
 
@@ -39,9 +45,11 @@ dist/
 2. Sağ panelde (sunucu) web köküne gir — genelde **`public_html`** (veya `www` / `htdocs`)
    - Ana alan adında yayınlamak istiyorsan: `public_html/` içine
    - Alt klasörde istiyorsan (ör. `site.com/seo`): `public_html/seo/` oluştur, oraya
-3. Sol panelde (bilgisayarın) **`dist/` klasörünün İÇİNE** gir
-4. `dist/` içindeki **her şeyi seç** (index.html, .htaccess, assets, data) → sağ panele **sürükle**
-5. Yükleme bitince tarayıcıda alan adını aç — panel açılır
+3. **Sunucu → Gizli dosyaları göstermeye zorla**'yı işaretle. `.htaccess` nokta ile başlayan
+   gizli bir dosya; bu açık değilse FileZilla onu ne solda gösterir ne de yükler
+4. Sol panelde (bilgisayarın) **`dist/` klasörünün İÇİNE** gir
+5. `dist/` içindeki **her şeyi seç** (index.html, .htaccess, assets, data) → sağ panele **sürükle**
+6. Yükleme bitince tarayıcıda alan adını aç — panel açılır
 
 ## 3. Veriyi güncelleme (sonraki taramalar)
 
@@ -52,8 +60,17 @@ npm run tara-hepsi   # 5 siteyi tara (crawl + hız + Search Console)
 npm run build        # dist/ yenilenir
 ```
 
-Sonra FileZilla'da **sadece `dist/data/data.json`** dosyasını sunucudaki `data/data.json`
-üzerine yükle (üzerine yaz). Tüm paneli tekrar yüklemene gerek yok — tek dosya yeter.
+Sonra FileZilla'da neyi yükleyeceğin **neyin değiştiğine** bağlı:
+
+| Değişen | Yüklenecek |
+|---|---|
+| Sadece tarama verisi (`npm run tara-hepsi`) | `dist/data/data.json` → sunucudaki `data/data.json` üzerine |
+| Panel kodu/tasarımı (`assets/*`, `index.html`) | `dist/index.html` **ve** `dist/assets/` klasörünün tamamı birlikte |
+| Emin değilsen | `dist/` içindekilerin hepsi (156 KB, birkaç saniye) |
+
+FileZilla'da üzerine yazarken çıkan diyalogda **"Overwrite"** + "Always use this action"
+seçmen yeterli. Transfer modu **Binary** olsun (Transfer → Transfer Type → Binary);
+Auto/ASCII modunda `data.json` bozulabilir.
 
 > İpucu: Bu adımı otomatikleştirmek istersen, hosting FTP bilgilerini kullanan küçük bir
 > yükleme script'i de eklenebilir. Şimdilik manuel akış bu.
