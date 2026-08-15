@@ -68,7 +68,7 @@ function kadran(puan, boyut=92){
       <circle cx="${c}" cy="${c}" r="${r.toFixed(1)}" fill="none" stroke="${puanRenk(puan)}" stroke-width="${sw.toFixed(1)}" stroke-linecap="round"
         stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 ${c} ${c})"/>
     </svg>
-    <span class="v"><b style="font-size:${fs}px">${puan??'–'}</b><s style="font-size:${ls}px">SEO skoru</s></span>
+    <span class="v"><b style="font-size:${fs}px">${puan??'–'}</b><s style="font-size:${ls}px">skor</s></span>
   </span>`;
 }
 
@@ -508,7 +508,7 @@ window.git = git;
 function aramaYap(v){ ARAMA=(v||'').toLowerCase().trim(); git(AKTIF); }
 window.aramaYap = aramaYap;
 function menuAc(){ el('yanmenu').classList.add('acik'); el('perde').classList.add('acik'); }
-function menuKapat(){ if(window.innerWidth<=900){ el('yanmenu').classList.remove('acik'); el('perde').classList.remove('acik'); } }
+function menuKapat(){ if(window.innerWidth<=640){ el('yanmenu').classList.remove('acik'); el('perde').classList.remove('acik'); } }
 window.menuAc=menuAc; window.menuKapat=menuKapat;
 function siteEkleBilgi(){ git('ayarlar'); alert('Yeni site: sites.config.json dosyasındaki "siteler" dizisine blok ekleyip aktif:true yap. Panel ve tüm script\'ler otomatik kapsar.'); }
 window.siteEkleBilgi = siteEkleBilgi;

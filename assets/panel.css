@@ -77,7 +77,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---- site filtresi (tum bolumlerde) ---- */
 .filtre{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 18px;padding:10px 12px;
-  background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  position:sticky;top:70px;z-index:8;box-shadow:0 6px 18px -12px rgba(0,0,0,.6)}
 .filtre .fl{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--faint);font-family:var(--disp);margin-right:4px}
 .fcip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:20px;border:1px solid var(--line2);
   background:transparent;color:var(--muted);cursor:pointer;transition:.12s}
@@ -163,8 +164,9 @@ label.fl{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(-
 .modal-arka{position:fixed;inset:0;background:rgba(6,9,15,.7);backdrop-filter:blur(3px);display:grid;place-items:center;z-index:60;padding:20px}
 .modal{background:var(--panel);border:1px solid var(--line2);border-radius:16px;max-width:460px;width:100%;padding:20px}
 
-@media(max-width:900px){
+/* menu sadece gercek mobilde (<=640px) cekmece olur; ustunde hep sabit/gorunur */
+@media(max-width:640px){
   .yan{transform:translateX(-100%)} .yan.acik{transform:none}
   .ana{margin-left:0} .menu-dugme{display:grid;place-items:center} .perde.acik{display:block}
+  .ara{display:none} .grid{grid-template-columns:1fr}
 }
-@media(max-width:520px){ .ara{display:none} .grid{grid-template-columns:1fr} }
