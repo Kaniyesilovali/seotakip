@@ -489,7 +489,7 @@ function menuCiz(){
     if(m.id==='uyarilar' && VERI.uyarilar?.length) rz=`<span class="rz rz-bad">${VERI.uyarilar.length}</span>`;
     else if(m.id==='degisim' && VERI.degisiklikler?.length) rz=`<span class="rz rz-info">${VERI.degisiklikler.length}</span>`;
     else if(m.id==='oneri') rz=`<span class="rz rz-warn">${tumOneriler().length}</span>`;
-    return `<button class="nav-btn" data-id="${m.id}" onclick="git('${m.id}')"><span class="ik">${m.ik}</span><span>${m.ad}</span>${rz}</button>`;
+    return `<button class="nav-btn" data-id="${m.id}" data-ad="${m.ad}" onclick="git('${m.id}')"><span class="ik">${m.ik}</span><span>${m.ad}</span>${rz}</button>`;
   };
   el('nav').innerHTML = MENU_GRUPLARI.map(g=>`<p class="nav-grup">${g.grup}</p>`+g.items.map(buton).join('')).join('');
 }
@@ -509,7 +509,8 @@ function aramaYap(v){ ARAMA=(v||'').toLowerCase().trim(); git(AKTIF); }
 window.aramaYap = aramaYap;
 function menuAc(){ el('yanmenu').classList.add('acik'); el('perde').classList.add('acik'); }
 function menuKapat(){ if(window.innerWidth<=640){ el('yanmenu').classList.remove('acik'); el('perde').classList.remove('acik'); } }
-window.menuAc=menuAc; window.menuKapat=menuKapat;
+function menuDaralt(){ document.body.classList.toggle('dar'); localStorage.setItem('seotakip_dar', document.body.classList.contains('dar')?'1':''); }
+window.menuAc=menuAc; window.menuKapat=menuKapat; window.menuDaralt=menuDaralt;
 function siteEkleBilgi(){ git('ayarlar'); alert('Yeni site: sites.config.json dosyasındaki "siteler" dizisine blok ekleyip aktif:true yap. Panel ve tüm script\'ler otomatik kapsar.'); }
 window.siteEkleBilgi = siteEkleBilgi;
 
@@ -525,6 +526,7 @@ async function veriYukle(){
 }
 (async()=>{
   try{
+    if(localStorage.getItem('seotakip_dar')) document.body.classList.add('dar'); // daralt tercihini hatirla
     VERI = await veriYukle();
     const t = new Date(VERI.guncelleme);
     el('menuGuncelleme').textContent = 'son tarama: ' + (isNaN(t)?VERI.guncelleme:t.toLocaleString('tr-TR'));
