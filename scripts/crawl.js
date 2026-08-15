@@ -206,12 +206,15 @@ async function siteTara(site) {
   // 5) kirik link kontrol (ic + dis, sinirli)
   const kontrolListe = [...new Set([...linkGrafi.keys(), ...tumDisLink])].slice(0, MAX_LINK_KONTROL);
   const durumlar = await linkleriKontrol(kontrolListe);
+  // gercek kirik: 404/410, baglanti hatasi (0) veya 5xx sunucu hatasi.
+  // 401/403/405/408/429/999 = bot-engelleme / rate-limit / erisim -> gercek kirik DEGIL (dis sosyal linkler bunu doner).
+  const kirikSayilir = (kod) => kod === 404 || kod === 410 || kod === 0 || (kod >= 500 && kod < 600);
   // kaynak sayfa esle
   const kirikLinkler = [];
   for (const [sayfaUrl, p] of sayfalar) {
     for (const l of [...p.icLink, ...p.disLink]) {
       const kod = durumlar.get(l);
-      if (kod && (kod >= 400 || kod === 0)) {
+      if (kod != null && kirikSayilir(kod)) {
         kirikLinkler.push({ kaynak: new URL(sayfaUrl).pathname || '/', hedef: l.length > 60 ? l.slice(0, 60) + '…' : l, kod: kod || 0 });
         if (kirikLinkler.length >= 50) break;
       }
@@ -242,7 +245,7 @@ async function siteTara(site) {
 
   // sitemap erisilemez: sitemap URL'lerinden kacinin taramada 4xx/erisilemez oldugu (ornek: kontrol edilenler)
   let sitemapErisilemez = 0;
-  if (sm.varMi) sm.urller.slice(0, 50).forEach(u => { const k = durumlar.get(normalize(u)); if (k && k >= 400) sitemapErisilemez++; });
+  if (sm.varMi) sm.urller.slice(0, 50).forEach(u => { const k = durumlar.get(normalize(u)); if (k != null && kirikSayilir(k)) sitemapErisilemez++; });
 
   // SEO puani (0-100 basit heuristik)
   let puan = 100;

@@ -1,107 +1,111 @@
-// SEO/GEO Takip Paneli - yonetim bari + bolum yonlendirme + cizim
+// SEO/GEO Nöbet Paneli — cizim katmani (mekanik/kontrol-odasi temasi)
 // Tek veri kaynagi: data/data.json (file:// ise assets/fallback-data.js).
 
 const el = (id) => document.getElementById(id);
-let VERI = null;
-let AKTIF = 'genel';
-let ARAMA = '';
+let VERI = null, AKTIF = 'genel', ARAMA = '', SECILI_SITE = '';
 
-// ---- menu tanimi (gruplu) ----
+// ---- menu (gruplu) ----
 const MENU_GRUPLARI = [
   { grup: 'Genel', items: [
-    { id: 'genel',    ad: 'Genel Bakis',        ikon: '▣' },
-    { id: 'oneri',    ad: 'Oneriler / Aksiyon', ikon: '★' },
-    { id: 'siteler',  ad: 'Siteler',            ikon: '❏' },
-    { id: 'degisim',  ad: 'Degisiklik Izleyici',ikon: '⇄' },
-    { id: 'uyarilar', ad: 'Uyarilar',           ikon: '!' },
+    { id:'genel', ad:'Genel Bakış', ik:'▣' },
+    { id:'oneri', ad:'Öneriler', ik:'★' },
+    { id:'siteler', ad:'Siteler', ik:'❏' },
+    { id:'degisim', ad:'Değişiklik İzleyici', ik:'⇄' },
+    { id:'uyarilar', ad:'Uyarılar', ik:'!' },
   ]},
-  { grup: 'Teknik SEO', items: [
-    { id: 'denetim',  ad: 'SEO Denetim',        ikon: '✓' },
-    { id: 'kirik',    ad: 'Kirik Linkler',      ikon: '⚿' },
-    { id: 'hiz',      ad: 'Hiz / Core Vitals',  ikon: '⚡' },
-    { id: 'iclink',   ad: 'Ic Linkleme',        ikon: '⋔' },
-    { id: 'indeks',   ad: 'Indeks Monitoru',    ikon: '⊞' },
+  { grup:'Teknik SEO', items:[
+    { id:'denetim', ad:'SEO Denetim', ik:'✓' },
+    { id:'kirik', ad:'Kırık Linkler', ik:'⚿' },
+    { id:'hiz', ad:'Hız / Core Vitals', ik:'⚡' },
+    { id:'iclink', ad:'İç Linkleme', ik:'⋔' },
+    { id:'indeks', ad:'İndeks Monitörü', ik:'⊞' },
   ]},
-  { grup: 'Icerik & Siralama', items: [
-    { id: 'kelime',   ad: 'Anahtar Kelime',     ikon: '#' },
-    { id: 'gap',      ad: 'Icerik Boslugu',     ikon: '◫' },
-    { id: 'rakip',    ad: 'Rakip Analizi',      ikon: '⚔' },
-    { id: 'icerik',   ad: 'AI Icerik / Blog',   ikon: '✎' },
+  { grup:'İçerik & Sıralama', items:[
+    { id:'kelime', ad:'Anahtar Kelime', ik:'#' },
+    { id:'gap', ad:'İçerik Boşluğu', ik:'◫' },
+    { id:'rakip', ad:'Rakip Analizi', ik:'⚔' },
+    { id:'icerik', ad:'AI İçerik / Blog', ik:'✎' },
   ]},
-  { grup: 'GEO / AI', items: [
-    { id: 'geo',      ad: 'GEO Gorunurluk',     ikon: '◎' },
-    { id: 'botlar',   ad: 'AI Bot Takibi',      ikon: '⟲' },
+  { grup:'GEO / AI', items:[
+    { id:'geo', ad:'GEO Görünürlük', ik:'◎' },
+    { id:'botlar', ad:'AI Bot Takibi', ik:'⟲' },
   ]},
-  { grup: 'Cikti', items: [
-    { id: 'raporlar', ad: 'Raporlar',           ikon: '▤' },
-    { id: 'araclar',  ad: 'Araclar',            ikon: '⚒' },
-    { id: 'ayarlar',  ad: 'Ayarlar',            ikon: '⚙' },
+  { grup:'Çıktı', items:[
+    { id:'raporlar', ad:'Raporlar', ik:'▤' },
+    { id:'araclar', ad:'Araçlar', ik:'⚒' },
+    { id:'ayarlar', ad:'Ayarlar', ik:'⚙' },
   ]},
 ];
 const MENU = MENU_GRUPLARI.flatMap(g => g.items);
+const FILTRELI = new Set(['genel','oneri','siteler','denetim','kirik','hiz','iclink','indeks','kelime','gap','rakip','geo','botlar','uyarilar']);
 
-// ============ YARDIMCILAR ============
-const trendRenk = (t) => t?.startsWith('+') ? 'text-emerald-400' : t?.startsWith('-') ? 'text-rose-400' : 'text-slate-400';
-const puanRenk  = (p) => p >= 80 ? 'text-emerald-400' : p >= 65 ? 'text-amber-400' : 'text-rose-400';
-const puanHalka = (p) => p >= 80 ? '#34d399' : p >= 65 ? '#fbbf24' : '#fb7185';
-const kisaUrl   = (u) => (u || '').replace(/^https?:\/\//, '');
-const kacir     = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// ============ TON / RENK ============
+const puanTon = (p)=> p>=80?'ok':p>=65?'warn':'bad';
+const puanRenk = (p)=> ({ok:'#3FCE7C',warn:'#F5B23B',bad:'#F0607A'}[puanTon(p)]);
+const posTon = (p)=> p==null?'mut':p<=10?'ok':p<=20?'warn':'bad';
+const hizTon = (h)=> h==null?'mut':h>=90?'ok':h>=50?'warn':'bad';
+const linkTon = (k)=> k===0?'ok':'bad';
+const kisaUrl = (u)=> (u||'').replace(/^https?:\/\//,'');
 
-function chip(metin, renk) {
-  const r = {
-    emerald:'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
-    amber:'bg-amber-500/10 text-amber-300 border-amber-500/20',
-    rose:'bg-rose-500/10 text-rose-300 border-rose-500/20',
-    slate:'bg-slate-700/40 text-slate-300 border-slate-600/40',
-    violet:'bg-violet-500/10 text-violet-300 border-violet-500/20',
-  };
-  return `<span class="text-[11px] px-2 py-0.5 rounded-md border ${r[renk]||r.slate}">${metin}</span>`;
-}
-const durumChip = (ok, iyi, kotu) => ok ? chip(iyi,'emerald') : chip(kotu,'rose');
+// ============ BILESEN YARDIMCILARI ============
+function cip(metin, tip=''){ return `<span class="cip ${tip}">${metin}</span>`; }
+const durumCip = (ok, iyi, kotu)=> ok ? cip(iyi,'ok') : cip(kotu,'bad');
 
-function sslChip(ssl){
-  if(!ssl?.gecerli) return chip('SSL yok','rose');
+function sslCip(ssl){
+  if(!ssl?.gecerli) return cip('SSL yok','bad');
   const g = ssl.kalanGun;
-  return chip('SSL '+g+'g', g<=14?'rose':g<=30?'amber':'emerald');
+  return cip('SSL '+g+'g', g<=14?'bad':g<=30?'warn':'ok');
 }
 
-function karo(baslik, deger, alt, renk){
-  return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4">
-    <p class="text-xs text-slate-400 mb-1">${baslik}</p>
-    <p class="text-2xl font-semibold ${renk||'text-white'}">${deger}</p>
-    <p class="text-xs text-slate-500 mt-1">${alt||''}</p></div>`;
+function kadran(puan, boyut=92){
+  const r = boyut*0.36, C = 2*Math.PI*r, off = C*(1-(puan??0)/100);
+  const tickR = boyut*0.445, c = boyut/2, sw = boyut*0.076;
+  const fs = Math.round(boyut*0.33), ls = Math.round(boyut*0.10);
+  return `<span class="skor" style="width:${boyut}px;height:${boyut}px">
+    <svg width="${boyut}" height="${boyut}" viewBox="0 0 ${boyut} ${boyut}">
+      <circle cx="${c}" cy="${c}" r="${tickR.toFixed(1)}" fill="none" stroke="#2b3a5a" stroke-width="1.5" stroke-dasharray="1.1 7" stroke-linecap="round"/>
+      <circle cx="${c}" cy="${c}" r="${r.toFixed(1)}" fill="none" stroke="#1d2740" stroke-width="${sw.toFixed(1)}"/>
+      <circle cx="${c}" cy="${c}" r="${r.toFixed(1)}" fill="none" stroke="${puanRenk(puan)}" stroke-width="${sw.toFixed(1)}" stroke-linecap="round"
+        stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 ${c} ${c})"/>
+    </svg>
+    <span class="v"><b style="font-size:${fs}px">${puan??'–'}</b><s style="font-size:${ls}px">SEO skoru</s></span>
+  </span>`;
 }
 
-function halkaSVG(p){
-  const r=26, c=2*Math.PI*r, dash=(p/100)*c;
-  return `<svg width="60" height="60" viewBox="0 0 64 64" class="shrink-0">
-    <circle cx="32" cy="32" r="${r}" fill="none" stroke="#1e293b" stroke-width="6"/>
-    <circle cx="32" cy="32" r="${r}" fill="none" stroke="${puanHalka(p)}" stroke-width="6"
-      stroke-linecap="round" stroke-dasharray="${dash} ${c}" transform="rotate(-90 32 32)"/>
-    <text x="32" y="37" text-anchor="middle" font-size="15" font-weight="600" fill="#e2e8f0">${p}</text></svg>`;
+const mt = (label, val, unit, ton='')=> `<div class="mt"><div class="ml">${label}</div><div class="mv ${ton?'t-'+ton:''}">${val}${unit?`<small>${unit}</small>`:''}</div></div>`;
+
+function karo(baslik, deger, alt, ton){
+  return `<div class="karo"><div class="kl">${baslik}</div><div class="kv ${ton?'t-'+ton:''}">${deger}</div><div class="ks">${alt||''}</div></div>`;
 }
 
-function bolumBaslik(baslik, aciklama){
-  return `<div class="mb-5"><h2 class="text-lg font-semibold text-white">${baslik}</h2>
-    <p class="text-sm text-slate-400">${aciklama}</p></div>`;
+function tbadge(trend){
+  if(!trend || trend==='+0' || trend==='0') return `<span class="tbadge" style="background:#16203a;color:var(--muted)">– sabit</span>`;
+  const up = trend.startsWith('+');
+  const c = up?'var(--ok)':'var(--bad)', bg = up?'var(--ok-dim)':'var(--bad-dim)';
+  return `<span class="tbadge" style="background:${bg};color:${c}">${up?'▲':'▼'} SEO ${trend}</span>`;
 }
 
-function bosDurum(metin){
-  return `<div class="rounded-xl bg-slate-900/40 border border-dashed border-slate-800 p-8 text-center text-slate-500 text-sm">${metin}</div>`;
+function bolumBaslik(eyebrow, baslik, aciklama){
+  return `<div class="bolum-baslik"><div class="eyebrow">${eyebrow}</div><h2>${baslik}</h2><p>${aciklama}</p></div>`;
 }
+const bosDurum = (m)=> `<div class="bos">${m}</div>`;
+const asamaRozeti = (n)=> `<span class="asama">Aşama ${n}</span>`;
+const stBaslik = (baslik, sayi, more)=> `<div class="st"><h3>${baslik}</h3>${sayi!=null?`<span class="count">${sayi}</span>`:''}${more?`<button class="more" onclick="${more}">tümü →</button>`:''}</div>`;
 
-function asamaRozeti(no){
-  return `<span class="text-[11px] px-2 py-0.5 rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Asama ${no}</span>`;
+// site filtresi
+function filtreBar(){
+  const c = (id,ad)=>`<button class="fcip ${SECILI_SITE===id?'aktif':''}" onclick="siteSec('${id}')">${ad}</button>`;
+  return `<div class="filtre"><span class="fl">Site</span>${c('','Tümü')}${(VERI.siteler||[]).map(s=>c(s.id,s.ad)).join('')}</div>`;
 }
+function siteSec(id){ SECILI_SITE = id; git(AKTIF); }
+window.siteSec = siteSec;
 
-// filtrelenmis siteler (arama)
-const siteler = () => (VERI?.siteler||[]).filter(s => !ARAMA || (s.ad+s.url).toLowerCase().includes(ARAMA));
+const siteler = ()=> (VERI?.siteler||[]).filter(s =>
+  (!SECILI_SITE || s.id===SECILI_SITE) && (!ARAMA || (s.ad+s.url).toLowerCase().includes(ARAMA)));
 
-// ============ ONERI / DEGERLENDIRME MOTORU (kurallı, ucretsiz) ============
-const ONCELIK_SIRA = { kritik: 0, yuksek: 1, orta: 2, dusuk: 3 };
-const ONCELIK_RENK = { kritik: 'rose', yuksek: 'rose', orta: 'amber', dusuk: 'slate' };
-const ETKI = { kritik: 4, yuksek: 3, orta: 2, dusuk: 1 };
-// efor: 1 kolay, 2 orta, 3 zor
+// ============ ÖNERİ / DEĞERLENDİRME MOTORU ============
+const ONCELIK_SIRA = { kritik:0, yuksek:1, orta:2, dusuk:3 };
+const ETKI = { kritik:4, yuksek:3, orta:2, dusuk:1 };
 const EFOR = {
   'SSL':1,'Kirik link':1,'Sitemap':1,'Meta':1,'Gorsel alt':1,'Olcum':1,'Schema':1,'AI bot':1,
   'Ic link':2,'Orphan':2,'CLS':2,'LCP':2,'Kelime firsati':2,'Kelime dususu':2,'Indeks':2,'Icerik':2,'Kanibalizasyon':2,'Icerik boslugu':2,
@@ -113,855 +117,417 @@ function oneriUret(s){
   const o = [];
   const ekle = (alan, oncelik, mesaj) => {
     const efor = EFOR[alan] || 2;
-    const hizliKazanim = efor === 1 && (oncelik === 'kritik' || oncelik === 'yuksek');
-    o.push({ site: s.ad, siteId: s.id, alan, oncelik, mesaj, efor, etki: ETKI[oncelik], hizliKazanim });
+    o.push({ site:s.ad, siteId:s.id, alan, oncelik, mesaj, efor, etki:ETKI[oncelik], hizliKazanim: efor===1 && (oncelik==='kritik'||oncelik==='yuksek') });
   };
-
-  if (s.ssl && !s.ssl.gecerli) ekle('SSL', 'kritik', 'SSL yok/gecersiz — hemen kur.');
-  else if (s.ssl && s.ssl.kalanGun <= 30) ekle('SSL', s.ssl.kalanGun <= 14 ? 'kritik' : 'yuksek', `SSL ${s.ssl.kalanGun} gun sonra doluyor — yenile.`);
-
-  if (s.kirikLinkler?.length) ekle('Kirik link', 'yuksek', `${s.kirikLinkler.length} kirik link var — 404'leri duzelt veya yonlendir.`);
-  if (!s.schema?.gecerli) ekle('Schema', 'orta', 'JSON-LD schema yok — LocalBusiness/Organization ekle (AI gorunurlugu icin de sart).');
-  if (!s.sitemap?.varMi) ekle('Sitemap', 'yuksek', 'sitemap.xml yok — olustur ve Search Console\'a gonder.');
-  else if (s.sitemap.erisilemez > 0) ekle('Sitemap', 'orta', `Sitemap'te ${s.sitemap.erisilemez} erisilemez URL var — temizle.`);
-
-  const em = s.eksikMeta || {}; const meta = (em.title||0)+(em.description||0)+(em.h1||0);
-  if (meta) ekle('Meta', 'orta', `${meta} sayfada eksik title/description/H1 — doldur.`);
-
-  const op = s.onpage || {};
-  if (op.altEksik > 10) ekle('Gorsel alt', 'dusuk', `${op.altEksik} gorselde alt text yok — ekle (erisilebilirlik + gorsel SEO).`);
-  if (!op.tracking?.length) ekle('Olcum', 'orta', 'GA4/GTM yok — trafigi olcemezsin, kur.');
-  if (op.keywordYogunluk === 'dusuk') ekle('Icerik', 'dusuk', 'Anahtar kelime yogunlugu dusuk — konu derinligini ve ilgili terimleri artir.');
-
-  const h = s.hiz || {};
-  if (h.mobilPuan != null && h.mobilPuan < 50) ekle('Hiz', 'yuksek', `Mobil hiz ${h.mobilPuan}/100 — kritik. Gorsel/JS optimize et.`);
-  else if (h.mobilPuan != null && h.mobilPuan < 90) ekle('Hiz', 'dusuk', `Mobil hiz ${h.mobilPuan}/100 — iyilestir.`);
-  if (h.cls > 0.25) ekle('CLS', 'orta', `CLS ${h.cls} yuksek — layout kaymasi var, gorsel/reklam alanlarina boyut ver.`);
-  if (h.lcp > 4) ekle('LCP', 'orta', `LCP ${h.lcp}s yavas — en buyuk gorseli optimize et / preload.`);
-
-  const ic = s.iclink || {};
-  if (ic.ortLink != null && ic.ortLink < 5) ekle('Ic link', 'orta', `Ortalama ${ic.ortLink} ic link/sayfa — AZ. En az 5-8 hedefle, onemli sayfalara link ver.`);
-  if (ic.orphan?.length) ekle('Orphan', 'orta', `${ic.orphan.length} oksuz sayfa var — menu veya ilgili yazilardan link ver.`);
-
-  if (s.indeks?.dususVar) ekle('Indeks', 'yuksek', 'Indekslenen sayfa sayisi dustu — Search Console kapsam hatalarina bak.');
-  else if (s.indeks?.indekssiz > 0) ekle('Indeks', 'dusuk', `${s.indeks.indekssiz} sayfa indekslenmemis — nedenini incele.`);
-
-  // AI bot / GEO onerileri yalnizca o veri gercekten olculduyse (Asama 5). Veri yoksa uydurma uyari uretme.
-  if (s.aiBotlar) {
-    const b = s.aiBotlar;
-    if (((b.gptbot||0)+(b.claudebot||0)+(b.perplexitybot||0)) < 20) ekle('AI bot', 'orta', 'AI botlari siteni az tariyor — llms.txt ekle, robots.txt\'de AI botlarina izin ver, icerigi netlestir.');
-  }
-  if (s.geo && (s.geo.chatgpt === false && s.geo.perplexity === false && s.geo.gemini === false)) {
-    ekle('GEO', 'orta', 'Hicbir AI motorunda gorunmuyorsun — schema + net cevap formatli icerik + guclu marka sinyali gerek.');
-  }
-
-  (s.siralama || []).forEach(k => {
-    if (k.pozisyon >= 4 && k.pozisyon <= 10 && (k.gosterim||0) >= 500)
-      ekle('Kelime firsati', 'yuksek', `"${k.kelime}" #${k.pozisyon} + yuksek gosterim — az itmeyle ilk 3'e girer, ONCELIK VER.`);
-    else if (k.pozisyon >= 11 && k.pozisyon <= 20)
-      ekle('Kelime firsati', 'orta', `"${k.kelime}" #${k.pozisyon} (2. sayfa) — icerigi guclendir, 1. sayfaya tasi.`);
-    if (k.onceki && k.pozisyon > k.onceki)
-      ekle('Kelime dususu', 'orta', `"${k.kelime}" ${k.onceki}→${k.pozisyon} dustu — sayfayi ve rakipleri incele.`);
+  if (s.ssl && !s.ssl.gecerli) ekle('SSL','kritik','SSL yok/geçersiz — hemen kur.');
+  else if (s.ssl && s.ssl.kalanGun<=30) ekle('SSL', s.ssl.kalanGun<=14?'kritik':'yuksek', `SSL ${s.ssl.kalanGun} gün sonra doluyor — yenile.`);
+  if (s.kirikLinkler?.length) ekle('Kirik link','yuksek', `${s.kirikLinkler.length} kırık link — 404'leri düzelt veya yönlendir.`);
+  if (!s.schema?.gecerli) ekle('Schema','orta','JSON-LD schema yok — LocalBusiness/Organization ekle.');
+  if (!s.sitemap?.varMi) ekle('Sitemap','yuksek','sitemap.xml yok — oluştur ve Search Console\'a gönder.');
+  else if (s.sitemap.erisilemez>0) ekle('Sitemap','orta', `Sitemap'te ${s.sitemap.erisilemez} erişilemez URL — temizle.`);
+  const em = s.eksikMeta||{}; const meta = (em.title||0)+(em.description||0)+(em.h1||0);
+  if (meta) ekle('Meta','orta', `${meta} sayfada eksik title/description/H1 — doldur.`);
+  const op = s.onpage||{};
+  if (op.altEksik>10) ekle('Gorsel alt','dusuk', `${op.altEksik} görselde alt text yok — ekle.`);
+  if (!op.tracking?.length) ekle('Olcum','orta','GA4/GTM yok — trafiği ölçemezsin, kur.');
+  if (op.keywordYogunluk==='dusuk') ekle('Icerik','dusuk','Anahtar kelime yoğunluğu düşük — konu derinliğini artır.');
+  const h = s.hiz||{};
+  if (h.mobilPuan!=null && h.mobilPuan<50) ekle('Hiz','yuksek', `Mobil hız ${h.mobilPuan}/100 — kritik. Görsel/JS optimize et.`);
+  else if (h.mobilPuan!=null && h.mobilPuan<90) ekle('Hiz','dusuk', `Mobil hız ${h.mobilPuan}/100 — iyileştir.`);
+  if (h.cls>0.25) ekle('CLS','orta', `CLS ${h.cls} yüksek — layout kayması var, boyut ver.`);
+  if (h.lcp>4) ekle('LCP','orta', `LCP ${h.lcp}s yavaş — en büyük görseli optimize et / preload.`);
+  const ic = s.iclink||{};
+  if (ic.ortLink!=null && ic.ortLink<5) ekle('Ic link','orta', `Ortalama ${ic.ortLink} iç link/sayfa — AZ. En az 5-8 hedefle.`);
+  if (ic.orphan?.length) ekle('Orphan','orta', `${ic.orphan.length} öksüz sayfa — menü/ilgili yazılardan link ver.`);
+  if (s.indeks?.dususVar) ekle('Indeks','yuksek','İndekslenen sayfa düştü — Search Console kapsam hatalarına bak.');
+  else if (s.indeks?.indekssiz>0) ekle('Indeks','dusuk', `${s.indeks.indekssiz} sayfa indekslenmemiş — nedenini incele.`);
+  if (s.aiBotlar){ const b=s.aiBotlar; if (((b.gptbot||0)+(b.claudebot||0)+(b.perplexitybot||0))<20) ekle('AI bot','orta','AI botları siteni az tarıyor — llms.txt ekle, robots\'ta izin ver.'); }
+  if (s.geo && s.geo.chatgpt===false && s.geo.perplexity===false && s.geo.gemini===false) ekle('GEO','orta','Hiçbir AI motorunda görünmüyorsun — schema + net cevap formatlı içerik gerek.');
+  (s.siralama||[]).forEach(k=>{
+    if (k.pozisyon>=4 && k.pozisyon<=10 && (k.gosterim||0)>=500) ekle('Kelime firsati','yuksek', `"${k.kelime}" #${k.pozisyon} + yüksek gösterim — az itmeyle ilk 3'e girer.`);
+    else if (k.pozisyon>=11 && k.pozisyon<=20) ekle('Kelime firsati','orta', `"${k.kelime}" #${k.pozisyon} (2. sayfa) — içeriği güçlendir.`);
+    if (k.onceki && k.pozisyon>k.onceki) ekle('Kelime dususu','orta', `"${k.kelime}" ${k.onceki}→${k.pozisyon} düştü — incele.`);
   });
-
-  (s.kanibalizasyon || []).forEach(k =>
-    ekle('Kanibalizasyon', 'orta', `"${k.kelime}" icin ${k.sayfalar.length} sayfa yarisiyor (${k.sayfalar.join(', ')}) — birini ana yap, digerlerini birlestir/yonlendir.`));
-
-  (s.icerikBoslugu || []).forEach(g =>
-    ekle('Icerik boslugu', g.hacim >= 500 ? 'yuksek' : 'orta', `"${g.kelime}" (~${g.hacim} arama) — rakip ${g.rakip} #${g.rakipPoz}'de, sende yok. Bu konuda icerik yaz.`));
-
+  (s.kanibalizasyon||[]).forEach(k=> ekle('Kanibalizasyon','orta', `"${k.kelime}" için ${k.sayfalar.length} sayfa yarışıyor — birini ana yap, diğerlerini birleştir.`));
+  (s.icerikBoslugu||[]).forEach(g=> ekle('Icerik boslugu', g.hacim>=500?'yuksek':'orta', `"${g.kelime}" (~${g.hacim} gösterim) — içeriği güçlendir/yaz.`));
   return o;
 }
+const tumOneriler = ()=> siteler().flatMap(oneriUret).sort((a,b)=> ONCELIK_SIRA[a.oncelik]-ONCELIK_SIRA[b.oncelik]);
+const icLinkYorum = (n)=> n==null?{metin:'–',ton:'mut'} : n<5?{metin:'AZ',ton:'warn'} : n<=15?{metin:'ideal',ton:'ok'} : {metin:'ÇOK',ton:'warn'};
 
-function tumOneriler(){
-  return (VERI?.siteler || []).flatMap(oneriUret).sort((a,b) => ONCELIK_SIRA[a.oncelik]-ONCELIK_SIRA[b.oncelik]);
-}
-
-// ic link degerlendirmesi
-function icLinkYorum(n){
-  if (n == null) return { metin: '-', renk: 'slate' };
-  if (n < 5)  return { metin: 'AZ', renk: 'amber' };
-  if (n <= 15) return { metin: 'ideal', renk: 'emerald' };
-  return { metin: 'COK', renk: 'amber' };
-}
-
-// ============ MANUEL RAKIP (localStorage) ============
+// ============ MANUEL RAKİP (localStorage) ============
 const RAKIP_KEY = 'seotakip_rakipler_v1';
-function rakipEkGetir(){ try { return JSON.parse(localStorage.getItem(RAKIP_KEY)) || {}; } catch(e){ return {}; } }
-function rakipEkKaydet(o){ localStorage.setItem(RAKIP_KEY, JSON.stringify(o)); }
+const rakipEkGetir = ()=> { try{ return JSON.parse(localStorage.getItem(RAKIP_KEY))||{}; }catch{ return {}; } };
+const rakipEkKaydet = (o)=> localStorage.setItem(RAKIP_KEY, JSON.stringify(o));
 function rakipEkle(){
-  const siteId = el('rk-site').value;
-  const kelime = el('rk-kelime').value.trim();
+  const siteId = el('rk-site').value, kelime = el('rk-kelime').value.trim();
   const ad = el('rk-ad').value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');
-  if (!kelime || !ad) { alert('Anahtar kelime ve rakip alan adi gerekli.'); return; }
-  const store = rakipEkGetir();
-  (store[siteId] = store[siteId] || []).push({ ad, kelime, biz: null, rakipPoz: null, manuel: true });
-  rakipEkKaydet(store);
-  git('rakip');
+  if(!kelime||!ad){ alert('Anahtar kelime ve rakip alan adı gerekli.'); return; }
+  const st = rakipEkGetir(); (st[siteId]=st[siteId]||[]).push({ad,kelime,biz:null,rakipPoz:null,manuel:true});
+  rakipEkKaydet(st); git('rakip');
 }
-function rakipSil(siteId, idx){ const s = rakipEkGetir(); if (s[siteId]) { s[siteId].splice(idx,1); rakipEkKaydet(s); git('rakip'); } }
+function rakipSil(siteId, i){ const s=rakipEkGetir(); if(s[siteId]){ s[siteId].splice(i,1); rakipEkKaydet(s); git('rakip'); } }
 window.rakipEkle = rakipEkle; window.rakipSil = rakipSil;
 
-// ============ ARAC URETICILER (llms.txt, robots, schema) ============
+// ============ ARAÇ ÜRETİCİLER ============
 let ARAC_SITE = null;
-function aracSite(){ return (VERI?.siteler||[]).find(s => s.id === ARAC_SITE) || (VERI?.siteler||[])[0]; }
+const aracSite = ()=> (VERI?.siteler||[]).find(s=>s.id===ARAC_SITE) || (VERI?.siteler||[])[0];
 function aracDegis(){ ARAC_SITE = el('arac-site').value; git('araclar'); }
 window.aracDegis = aracDegis;
-
-function uretLlms(s){
-  return `# ${s.ad}\n`+
-    `> ${s.ad} — ${kisaUrl(s.url)} resmi sitesi.\n\n`+
-    `## Hakkinda\n- Site: ${s.url}\n- Diller: ${(s.diller||['tr']).join(', ')}\n\n`+
-    `## Onemli sayfalar\n- [Ana sayfa](${s.url})\n- [Hizmetler](${s.url}/hizmetler)\n- [Iletisim](${s.url}/iletisim)\n\n`+
-    `## Not\nBu icerik AI asistanlarinin siteyi dogru ozetlemesi icindir. Detaylari kendine gore duzenle.\n`;
-}
-function uretRobots(s){
-  return `# ${s.ad} — AI bot erisimi (robots.txt'e ekle)\n`+
-    `User-agent: GPTBot\nAllow: /\n\n`+
-    `User-agent: OAI-SearchBot\nAllow: /\n\n`+
-    `User-agent: ChatGPT-User\nAllow: /\n\n`+
-    `User-agent: ClaudeBot\nAllow: /\n\n`+
-    `User-agent: PerplexityBot\nAllow: /\n\n`+
-    `User-agent: Google-Extended\nAllow: /\n\n`+
-    `Sitemap: ${s.url}/sitemap.xml\n`;
-}
-function uretSchema(s){
-  const obj = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": s.ad,
-    "url": s.url,
-    "image": s.url + "/logo.png",
-    "telephone": "+90 ___ ___ __ __",
-    "address": { "@type": "PostalAddress", "addressLocality": "___", "addressCountry": "CY" },
-    "sameAs": ["https://facebook.com/___", "https://instagram.com/___"]
-  };
-  return JSON.stringify(obj, null, 2);
-}
-function kopyala(id, btn){
-  const t = el(id); const metin = t.value != null ? t.value : t.textContent;
-  const ok = () => { if (btn) { const o = btn.textContent; btn.textContent = 'kopyalandi ✓'; setTimeout(()=>btn.textContent=o, 1200); } };
-  if (navigator.clipboard) navigator.clipboard.writeText(metin).then(ok, ok); else ok();
-}
+const uretLlms = (s)=> `# ${s.ad}\n> ${s.ad} — ${kisaUrl(s.url)} resmi sitesi.\n\n## Hakkında\n- Site: ${s.url}\n- Diller: ${(s.diller||['tr']).join(', ')}\n\n## Önemli sayfalar\n- [Ana sayfa](${s.url})\n- [Hizmetler](${s.url}/hizmetler)\n- [İletişim](${s.url}/iletisim)\n`;
+const uretRobots = (s)=> `# ${s.ad} — AI bot erişimi (robots.txt'e ekle)\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${s.url}/sitemap.xml\n`;
+const uretSchema = (s)=> JSON.stringify({ "@context":"https://schema.org","@type":"LocalBusiness","name":s.ad,"url":s.url,"image":s.url+"/logo.png","telephone":"+90 ___ ___ __ __","address":{"@type":"PostalAddress","addressLocality":"___","addressCountry":"CY"},"sameAs":["https://facebook.com/___","https://instagram.com/___"] }, null, 2);
+function kopyala(id, btn){ const t=el(id); const m = t.value!=null?t.value:t.textContent; const ok=()=>{ if(btn){ const o=btn.textContent; btn.textContent='kopyalandı ✓'; setTimeout(()=>btn.textContent=o,1200); } }; if(navigator.clipboard) navigator.clipboard.writeText(m).then(ok,ok); else ok(); }
 window.kopyala = kopyala;
 
-// ============ HAFTALIK AKILLI OZET (kurallı) ============
 function haftalikOzetUret(){
   const t = tumOneriler();
-  const k = t.filter(o=>o.oncelik==='kritik').length;
-  const y = t.filter(o=>o.oncelik==='yuksek').length;
-  const hizli = t.filter(o=>o.hizliKazanim).length;
-  const deg = VERI.degisiklikler || [];
-  const artis = deg.filter(d=>d.tip==='artis');
-  const dusus = deg.filter(d=>d.tip==='dusus' || d.tip==='yeni-kirik');
-  let s = `Bu hafta ${VERI.ozet?.toplamSite} site takip edildi; ortalama SEO puani ${VERI.ozet?.ortalamaSeoPuan}/100. `;
-  s += k ? `${k} kritik ve ${y} yuksek oncelikli sorun var — once bunlari kapat. ` : `Kritik sorun yok; ${y} yuksek oncelikli madde mevcut. `;
-  if (hizli) s += `${hizli} adet "hizli kazanim" (yuksek etki, kolay) var, bunlarla basla. `;
-  if (artis.length) s += `Olumlu: ${artis.map(a=>a.mesaj).join('; ')}. `;
-  if (dusus.length) s += `Dikkat: ${dusus.map(a=>a.mesaj).join('; ')}. `;
+  const k = t.filter(o=>o.oncelik==='kritik').length, y = t.filter(o=>o.oncelik==='yuksek').length, hizli = t.filter(o=>o.hizliKazanim).length;
+  const deg = VERI.degisiklikler||[];
+  const artis = deg.filter(d=>d.tip==='artis'), dusus = deg.filter(d=>d.tip==='dusus'||d.tip==='yeni-kirik');
+  let s = `Bu hafta ${(VERI.siteler||[]).length} site takip edildi; ortalama SEO puanı ${VERI.ozet?.ortalamaSeoPuan}/100. `;
+  s += k ? `${k} kritik ve ${y} yüksek öncelikli sorun var — önce bunları kapat. ` : `Kritik sorun yok; ${y} yüksek öncelikli madde var. `;
+  if(hizli) s += `${hizli} adet hızlı kazanım (yüksek etki, kolay) var. `;
+  if(artis.length) s += `Olumlu: ${artis.map(a=>a.mesaj).join('; ')}. `;
+  if(dusus.length) s += `Dikkat: ${dusus.map(a=>a.mesaj).join('; ')}. `;
   const ilk3 = t.slice(0,3).map(a=>`(${a.site}) ${a.mesaj}`).join('  |  ');
-  if (ilk3) s += `Onerilen ilk 3 aksiyon: ${ilk3}`;
+  if(ilk3) s += `Önerilen ilk 3 aksiyon: ${ilk3}`;
   return s;
 }
 
-// ============ BOLUMLER ============
-const VIEWS = {
+// ============ BÖLÜMLER ============
+function siteKart(s){
+  const sr = s.siralama||[];
+  const ortPoz = sr.length ? +(sr.reduce((a,k)=>a+k.pozisyon,0)/sr.length).toFixed(1) : null;
+  const top = sr[0];
+  return `<div class="kart">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="dot bg-${s.uptime?.durum==='up'?'ok':'bad'}"></span>
+        <div><b style="font-family:var(--disp);font-weight:600;font-size:16px">${s.ad}</b>
+          <a href="${s.url}" target="_blank" rel="noopener" style="display:block;font-size:12.5px;color:var(--muted)">${kisaUrl(s.url)}</a></div>
+      </div>${tbadge(s.seo?.trend)}
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
+      ${kadran(s.seo?.puan, 92)}
+      <div class="mgrid" style="flex:1;grid-template-columns:1fr 1fr">
+        ${mt('Sıralanan kelime', sr.length, '', sr.length?'':'mut')}
+        ${mt('Ort. pozisyon', ortPoz??'—', '', posTon(ortPoz))}
+        ${mt('Kırık link', (s.kirikLinkler?.length||0)===0?'0':s.kirikLinkler.length, '', linkTon(s.kirikLinkler?.length||0))}
+        ${mt('Mobil hız', s.hiz?.mobilPuan??'—', s.hiz?'/100':'', hizTon(s.hiz?.mobilPuan))}
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)">
+      ${top ? `<span>en iyi kelime</span> <span style="color:var(--text);font-weight:500">${top.kelime}</span> <span style="margin-left:auto;font-family:var(--disp);font-weight:600;color:var(--text)">#${top.pozisyon}</span>`
+            : `<span>Search Console verisi yok</span>`}
+    </div>
+  </div>`;
+}
 
+const VIEWS = {
   genel(){
-    const o = VERI.ozet||{};
     const kartlar = siteler().map(siteKart).join('') || bosDurum('Aramaya uyan site yok.');
     const ilk3 = tumOneriler().slice(0,3);
-    const aksiyonSerit = ilk3.length ? `
-      <div class="rounded-xl bg-gradient-to-r from-indigo-950/60 to-slate-900/60 border border-indigo-900/40 p-4 mb-6">
-        <div class="flex items-center justify-between mb-2">
-          <p class="text-sm font-semibold text-white flex items-center gap-2"><span class="text-amber-400">★</span> Oncelikli aksiyonlar</p>
-          <button onclick="git('oneri')" class="text-xs text-indigo-300 hover:underline">tumunu gor →</button>
-        </div>
-        <ul class="space-y-1.5">${ilk3.map(a=>`<li class="flex items-start gap-2 text-sm">
-          ${chip(a.oncelik, ONCELIK_RENK[a.oncelik])}
-          <span class="text-slate-300 flex-1"><span class="text-slate-500">[${a.site}]</span> ${a.mesaj}</span></li>`).join('')}</ul>
-      </div>` : '';
-    return aksiyonSerit + `
-      <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-        ${karo('Takip edilen site', o.toplamSite, 'aktif')}
-        ${karo('Ortalama SEO puani', o.ortalamaSeoPuan, '100 uzerinden', puanRenk(o.ortalamaSeoPuan))}
-        ${karo('Toplam kirik link', o.toplamKirikLink, o.toplamKirikLink?'duzeltilmeli':'temiz', o.toplamKirikLink?'text-rose-400':'text-emerald-400')}
-        ${karo('Acil uyari', o.acilUyari, 'dikkat', o.acilUyari?'text-amber-400':'text-emerald-400')}
-      </section>
-      ${uyariBloku(VERI.uyarilar)}
-      <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-3 mt-6">${kartlar}</section>`;
-  },
-
-  siteler(){
-    const satir = (s) => `<tr class="border-t border-slate-800 hover:bg-slate-800/30">
-      <td class="py-3 px-3"><div class="flex items-center gap-2">
-        <span class="h-2 w-2 rounded-full ${s.uptime?.durum==='up'?'bg-emerald-400':'bg-rose-400'}"></span>
-        <span class="font-medium text-white">${s.ad}</span></div>
-        <a href="${s.url}" target="_blank" class="text-xs text-indigo-400 hover:underline">${kisaUrl(s.url)}</a></td>
-      <td class="py-3 px-3 text-center ${puanRenk(s.seo?.puan)} font-semibold">${s.seo?.puan??'-'}</td>
-      <td class="py-3 px-3 text-center ${trendRenk(s.seo?.trend)}">${s.seo?.trend??'0'}</td>
-      <td class="py-3 px-3 text-center">${s.sayfalar?.taranan??'-'}</td>
-      <td class="py-3 px-3 text-center">${(s.kirikLinkler?.length||0)?`<span class="text-rose-400">${s.kirikLinkler.length}</span>`:'<span class="text-emerald-400">0</span>'}</td>
-      <td class="py-3 px-3 text-center">${sslChip(s.ssl)}</td>
-    </tr>`;
-    return bolumBaslik('Siteler','Takip edilen tum siteler. Yeni site icin ust bardaki "+ Site" butonu.') + `
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-        <table class="w-full text-sm min-w-[560px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2.5 px-3">Site</th><th class="py-2.5 px-3 text-center">SEO</th>
-          <th class="py-2.5 px-3 text-center">Trend</th><th class="py-2.5 px-3 text-center">Sayfa</th>
-          <th class="py-2.5 px-3 text-center">Kirik</th><th class="py-2.5 px-3 text-center">SSL</th></tr>
-        </thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
-  },
-
-  kirik(){
-    const bloklar = siteler().map(s => {
-      const list = s.kirikLinkler||[];
-      if(!list.length) return '';
-      const satir = (k) => `<tr class="border-t border-slate-800">
-        <td class="py-2 px-3 text-slate-300">${k.kaynak}</td>
-        <td class="py-2 px-3 text-slate-400">${k.hedef}</td>
-        <td class="py-2 px-3 text-center">${chip(k.kod,'rose')}</td></tr>`;
-      return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto mb-4">
-        <div class="px-3 py-2 border-b border-slate-800 flex items-center justify-between">
-          <span class="font-medium text-white">${s.ad}</span>${chip(list.length+' kirik link','rose')}</div>
-        <table class="w-full text-sm min-w-[520px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Kaynak sayfa</th><th class="py-2 px-3">Hedef</th><th class="py-2 px-3 text-center">Kod</th></tr>
-        </thead><tbody>${list.map(satir).join('')}</tbody></table></div>`;
-    }).join('');
-    return bolumBaslik('Kirik Linkler','Tum sitelerde 404/500 veren baglantilar.') +
-      (bloklar || bosDurum('🎉 Hic kirik link yok. Tum baglantilar saglam.'));
-  },
-
-  denetim(){
-    const satir = (s) => {
-      const em = s.eksikMeta||{}; const eksik = (em.title||0)+(em.description||0)+(em.h1||0);
-      const op = s.onpage||{};
-      return `<tr class="border-t border-slate-800 hover:bg-slate-800/30">
-        <td class="py-3 px-3 font-medium text-white">${s.ad}</td>
-        <td class="py-3 px-3 text-center">${eksik?chip(eksik,'amber'):chip('0','emerald')}</td>
-        <td class="py-3 px-3 text-center">${durumChip(s.schema?.gecerli,'OK','yok')}</td>
-        <td class="py-3 px-3 text-center">${durumChip(s.sitemap?.varMi && s.sitemap.erisilemez===0,'OK','sorun')}</td>
-        <td class="py-3 px-3 text-center">${durumChip((s.canonical?.eksik||0)+(s.canonical?.hatali||0)===0,'OK','sorun')}</td>
-        <td class="py-3 px-3 text-center">${durumChip(!s.hreflang?.sorun,'OK','sorun')}</td>
-        <td class="py-3 px-3 text-center">${(op.altEksik||0)?chip(op.altEksik,'amber'):chip('0','emerald')}</td>
-        <td class="py-3 px-3 text-center">${(op.ogEksik||0)?chip(op.ogEksik,'amber'):chip('0','emerald')}</td>
-        <td class="py-3 px-3 text-center">${op.tracking?.length?chip(op.tracking.join('+'),'emerald'):chip('yok','rose')}</td>
-      </tr>`;
-    };
-    return bolumBaslik('SEO Denetim','Meta, schema, sitemap, canonical, hreflang + on-page (alt text, OG, tracking kodu).') + `
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-        <table class="w-full text-sm min-w-[760px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2.5 px-3">Site</th><th class="py-2.5 px-3 text-center">Eksik meta</th>
-          <th class="py-2.5 px-3 text-center">Schema</th><th class="py-2.5 px-3 text-center">Sitemap</th>
-          <th class="py-2.5 px-3 text-center">Canonical</th><th class="py-2.5 px-3 text-center">hreflang</th>
-          <th class="py-2.5 px-3 text-center">Eksik alt</th><th class="py-2.5 px-3 text-center">OG eksik</th>
-          <th class="py-2.5 px-3 text-center">Tracking</th></tr>
-        </thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
-  },
-
-  kelime(){
-    const bloklar = siteler().map(s => {
-      const list = s.siralama||[];
-      if(!list.length) return '';
-      const satir = (k) => {
-        const yon = k.pozisyon<k.onceki?'▲':k.pozisyon>k.onceki?'▼':'–';
-        const renk = k.pozisyon<k.onceki?'text-emerald-400':k.pozisyon>k.onceki?'text-rose-400':'text-slate-500';
-        return `<tr class="border-t border-slate-800">
-          <td class="py-2 px-3 text-slate-200">${k.kelime}</td>
-          <td class="py-2 px-3 text-center font-semibold">#${k.pozisyon}</td>
-          <td class="py-2 px-3 text-center ${renk}">${yon} ${Math.abs((k.onceki||k.pozisyon)-k.pozisyon)||''}</td>
-          <td class="py-2 px-3 text-center text-slate-400">${k.gosterim??'-'}</td></tr>`;
-      };
-      return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto mb-4">
-        <div class="px-3 py-2 border-b border-slate-800 font-medium text-white">${s.ad}</div>
-        <table class="w-full text-sm min-w-[480px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Anahtar kelime</th><th class="py-2 px-3 text-center">Pozisyon</th>
-          <th class="py-2 px-3 text-center">Degisim</th><th class="py-2 px-3 text-center">Gosterim</th></tr>
-        </thead><tbody>${list.map(satir).join('')}</tbody></table></div>`;
-    }).join('');
-    return bolumBaslik('Anahtar Kelime & Siralama','Google Search Console verisiyle beslenecek (Asama 3, ucretsiz).') +
-      `<div class="mb-4">${asamaRozeti(3)} <span class="text-xs text-slate-500 ml-1">gercek veri Search Console baglaninca gelir</span></div>` +
-      (bloklar || bosDurum('Henuz siralama verisi yok.'));
-  },
-
-  icerik(){
-    const firsatlar = [];
-    (VERI.siteler||[]).forEach(s => (s.icerikBoslugu||[]).forEach(g => { if (g.tip==='firsat') firsatlar.push({ siteId:s.id, site:s.ad, kelime:g.kelime, poz:g.rakipPoz }); }));
-    const uretilen = VERI.uretilenIcerikler || [];
-
-    const oneriSatir = (f,i) => `<tr class="border-t border-slate-800">
-      <td class="py-2 px-3 text-slate-200">${f.kelime}</td>
-      <td class="py-2 px-3 text-slate-400">${f.site}</td>
-      <td class="py-2 px-3 text-center">${chip('#'+f.poz,'amber')}</td>
-      <td class="py-2 px-3 text-center">
-        <input id="cmd-${i}" class="hidden" value='node scripts/aiblog.js ${f.siteId} "${f.kelime}"'>
-        <button onclick="kopyala('cmd-${i}',this)" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700">komutu kopyala</button>
-      </td></tr>`;
-
-    const icerikKart = (c,i) => `<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-3">
-      <div class="flex items-start justify-between gap-3">
-        <div class="min-w-0"><p class="font-medium text-white">${c.baslik}</p>
-          <p class="text-[11px] text-slate-500">${c.site} · "${c.kelime}" · ${c.kelimeSayisi} kelime · ${c.tarih} ${c.kaynak?'· '+c.kaynak:''}</p></div>
-        <button onclick="document.getElementById('body-${i}').classList.toggle('hidden')" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 shrink-0">goster/gizle</button>
-      </div>
-      <p class="text-xs text-slate-400 mt-2">${c.metaAciklama}</p>
-      <div id="body-${i}" class="hidden mt-3">
-        <div class="flex justify-end mb-1"><button onclick="kopyala('md-${i}',this)" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700">markdown kopyala</button></div>
-        <textarea id="md-${i}" readonly rows="14" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-300 resize-y">${(c.govde||'').replace(/</g,'&lt;')}</textarea>
-      </div></div>`;
-
-    return bolumBaslik('AI Icerik / Auto SEO Blog','SEO uyumlu icerik uret. Firsat kelimelerine gore konu onerisi + uretilen yazilar.') + `
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-5 text-sm text-slate-400 leading-relaxed space-y-3">
-        <div>
-          <p class="text-white font-medium mb-1">Secenek A — Claude ile (onerilen)</p>
-          Bu Claude oturumunda soyle de: <span class="text-indigo-300">"&lt;site&gt; icin '&lt;kelime&gt;' icerigi yaz"</span>.
-          Claude SEO skill'iyle uretir ve panele ekler. Claude Pro/Code aboneligini kullanir — ekstra anahtar/maliyet yok.
-        </div>
-        <div class="border-t border-slate-800 pt-3">
-          <p class="text-white font-medium mb-1">Secenek B — Gemini ile (otomatik/toplu)</p>
-          <code class="text-indigo-400">.env</code>'e <code class="text-indigo-400">GEMINI_API_KEY</code> ekle (<a href="https://aistudio.google.com/apikey" target="_blank" class="text-indigo-400 underline">bedava al</a>) →
-          asagidaki bir konunun <b>komutunu kopyalayip</b> terminalde calistir. Sohbetsiz/toplu uretim icin.
-        </div>
-      </div>
-      <div class="mb-6">
-        <p class="text-sm font-semibold text-white mb-2">Onerilen konular <span class="text-[11px] text-slate-500">(Search Console firsat kelimeleri)</span></p>
-        ${firsatlar.length ? `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-          <table class="w-full text-sm min-w-[520px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Kelime</th><th class="py-2 px-3">Site</th><th class="py-2 px-3 text-center">Poz</th><th class="py-2 px-3 text-center">Uret</th></tr>
-          </thead><tbody>${firsatlar.map(oneriSatir).join('')}</tbody></table></div>`
-          : bosDurum('Firsat kelimesi yok — once Search Console baglayip npm run gsc calistir.')}
-      </div>
-      <div>
-        <p class="text-sm font-semibold text-white mb-2">Uretilen icerikler ${uretilen.length?chip(uretilen.length,'emerald'):''}</p>
-        ${uretilen.length ? uretilen.map(icerikKart).join('') : bosDurum('Henuz icerik uretilmedi. Yukaridan bir konunun komutunu calistir.')}
-      </div>`;
-  },
-
-  geo(){
-    const kaynaklar = ['chatgpt','perplexity','gemini'];
-    const adlar = {chatgpt:'ChatGPT', perplexity:'Perplexity', gemini:'Gemini'};
-    const satir = (s) => `<tr class="border-t border-slate-800 hover:bg-slate-800/30">
-      <td class="py-3 px-3 font-medium text-white">${s.ad}</td>
-      ${kaynaklar.map(k=>`<td class="py-3 px-3 text-center">${(s.geo?.[k])?chip('goruluyor','violet'):chip('yok','slate')}</td>`).join('')}
-    </tr>`;
-    return bolumBaslik('GEO / AI Gorunurluk','Markanin AI motorlarinda cikip cikmadigi (Asama 5).') + `
-      <div class="mb-4">${asamaRozeti(5)}</div>
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-        <table class="w-full text-sm min-w-[480px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2.5 px-3">Site</th>${kaynaklar.map(k=>`<th class="py-2.5 px-3 text-center">${adlar[k]}</th>`).join('')}</tr>
-        </thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
-  },
-
-  uyarilar(){
-    return bolumBaslik('Uyarilar','SSL bitisi, site cokusu, kirik link ve denetim sorunlari.') + uyariBloku(VERI.uyarilar, true);
+    const aksiyon = ilk3.length ? `<div class="liste">${ilk3.map(a=>`<div class="li">
+      <span class="pri ${a.oncelik}">${a.oncelik}</span><div class="txt">${a.hizliKazanim?'<span class="t-warn">⚡ </span>':''}${a.mesaj}</div>
+      <span class="site">${a.site}</span></div>`).join('')}</div>` : bosDurum('Aksiyon gerektiren bir şey yok.');
+    return bolumBaslik('Genel Bakış','Siteler','Her sitenin kendi sağlık kadranı ve metrikleri. Önce en acil işler.') +
+      filtreBar() +
+      stBaslik('Öncelikli işler', ilk3.length, "git('oneri')") + aksiyon +
+      stBaslik('Tüm siteler', siteler().length) +
+      `<div class="grid">${kartlar}</div>`;
   },
 
   oneri(){
     let list = tumOneriler();
-    if (ARAMA) list = list.filter(o => (o.site).toLowerCase().includes(ARAMA));
-    const say = (p) => list.filter(o => o.oncelik===p).length;
-    const eforChip = (e) => chip(EFOR_AD[e], e===1?'emerald':e===2?'amber':'rose');
-    const satir = (o) => `<li class="flex items-start gap-3 py-2.5 px-3 border-t border-slate-800">
-      <span class="shrink-0 mt-0.5">${chip(o.oncelik, ONCELIK_RENK[o.oncelik])}</span>
-      <div class="flex-1 min-w-0">
-        <p class="text-sm text-slate-200">${o.hizliKazanim?'<span class="text-amber-400">⚡ </span>':''}${o.mesaj}</p>
-        <p class="text-[11px] text-slate-500">[${o.site}] · ${o.alan}</p>
-      </div>
-      <span class="shrink-0 mt-0.5 flex items-center gap-1"><span class="text-[10px] text-slate-600">efor</span>${eforChip(o.efor)}</span></li>`;
+    const say = (p)=> list.filter(o=>o.oncelik===p).length;
+    const eforCip = (e)=> cip(EFOR_AD[e], e===1?'ok':e===2?'warn':'bad');
+    const hizli = list.filter(o=>o.hizliKazanim);
+    const satir = (o)=> `<div class="li">
+      <span class="pri ${o.oncelik}">${o.oncelik}</span>
+      <div class="txt">${o.hizliKazanim?'<span class="t-warn">⚡ </span>':''}${o.mesaj}<s>[${o.site}] · ${o.alan}</s></div>
+      <span class="site" style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:var(--faint)">efor</span>${eforCip(o.efor)}</span></div>`;
+    return bolumBaslik('Değerlendirme','Öneriler / Aksiyon','Her sorun önceliklendirilmiş + etki/efor skoruyla. ⚡ işaretliler önce yapılmalı.') +
+      filtreBar() +
+      `<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:18px">
+        ${karo('Kritik', say('kritik'), 'hemen', say('kritik')?'bad':'ok')}
+        ${karo('Yüksek', say('yuksek'), 'bu hafta', say('yuksek')?'bad':'ok')}
+        ${karo('Orta', say('orta'), 'planla', 'warn')}
+        ${karo('Düşük', say('dusuk'), 'fırsat buldukça')}
+      </div>` +
+      (hizli.length ? stBaslik('⚡ Hızlı kazanımlar', hizli.length) + `<div class="liste" style="margin-bottom:8px">${hizli.map(satir).join('')}</div>` : '') +
+      stBaslik('Tüm öneriler', list.length) +
+      (list.length ? `<div class="liste">${list.map(satir).join('')}</div>` : bosDurum('🎉 Aksiyon gerektiren bir şey yok.'));
+  },
 
-    const hizli = list.filter(o => o.hizliKazanim);
-    const hizliBlok = hizli.length ? `
-      <div class="rounded-xl bg-gradient-to-r from-emerald-950/50 to-slate-900/60 border border-emerald-900/40 p-4 mb-5">
-        <p class="text-sm font-semibold text-white mb-2 flex items-center gap-2"><span class="text-amber-400">⚡</span> Hizli Kazanimlar <span class="text-[11px] text-slate-400 font-normal">(yuksek etki + kolay)</span></p>
-        <ul class="space-y-1.5">${hizli.map(o=>`<li class="text-sm text-slate-300"><span class="text-slate-500">[${o.site}]</span> ${o.mesaj}</li>`).join('')}</ul>
-      </div>` : '';
+  siteler(){
+    const satir = (s)=> `<tr>
+      <td><div style="display:flex;align-items:center;gap:8px"><span class="dot bg-${s.uptime?.durum==='up'?'ok':'bad'}"></span>
+        <div><div class="site-ad">${s.ad}</div><a href="${s.url}" target="_blank" style="font-size:12px;color:var(--signal)">${kisaUrl(s.url)}</a></div></div></td>
+      <td class="ort t-${puanTon(s.seo?.puan)}" style="font-family:var(--disp);font-weight:600">${s.seo?.puan??'–'}</td>
+      <td class="ort">${tbadge(s.seo?.trend)}</td>
+      <td class="ort">${s.sayfalar?.taranan??'–'}</td>
+      <td class="ort">${(s.kirikLinkler?.length||0)?`<span class="t-bad">${s.kirikLinkler.length}</span>`:'<span class="t-ok">0</span>'}</td>
+      <td class="ort">${sslCip(s.ssl)}</td></tr>`;
+    return bolumBaslik('Genel','Siteler','Takip edilen tüm siteler. Yeni site için sites.config.json.') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:640px"><thead><tr>
+        <th>Site</th><th class="ort">SEO</th><th class="ort">Trend</th><th class="ort">Sayfa</th><th class="ort">Kırık</th><th class="ort">SSL</th>
+      </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+  },
 
-    return bolumBaslik('Oneriler / Aksiyon', 'Her sorun onceliklendirilmis + etki/efor skoruyla. ⚡ isaretliler once yapilmali (yuksek etki, dusuk efor).') + `
-      <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
-        ${karo('Kritik', say('kritik'), 'hemen', say('kritik')?'text-rose-400':'text-emerald-400')}
-        ${karo('Yuksek', say('yuksek'), 'bu hafta', say('yuksek')?'text-rose-300':'text-emerald-400')}
-        ${karo('Orta', say('orta'), 'planla', 'text-amber-400')}
-        ${karo('Dusuk', say('dusuk'), 'firsat buldukca', 'text-slate-300')}
-      </section>
-      ${hizliBlok}
-      ${list.length ? `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-hidden"><ul>${list.map(satir).join('')}</ul></div>`
-        : bosDurum('🎉 Aksiyon gerektiren bir sey yok. Her sey yolunda.')}`;
+  denetim(){
+    const satir = (s)=>{ const em=s.eksikMeta||{}; const eksik=(em.title||0)+(em.description||0)+(em.h1||0); const op=s.onpage||{};
+      return `<tr><td class="site-ad">${s.ad}</td>
+        <td class="ort">${eksik?cip(eksik,'warn'):cip('0','ok')}</td>
+        <td class="ort">${durumCip(s.schema?.gecerli,'OK','yok')}</td>
+        <td class="ort">${durumCip(s.sitemap?.varMi&&s.sitemap.erisilemez===0,'OK','sorun')}</td>
+        <td class="ort">${durumCip((s.canonical?.eksik||0)+(s.canonical?.hatali||0)===0,'OK','sorun')}</td>
+        <td class="ort">${durumCip(!s.hreflang?.sorun,'OK','sorun')}</td>
+        <td class="ort">${(op.altEksik||0)?cip(op.altEksik,'warn'):cip('0','ok')}</td>
+        <td class="ort">${op.tracking?.length?cip(op.tracking.join('+'),'ok'):cip('yok','bad')}</td></tr>`; };
+    return bolumBaslik('Teknik SEO','SEO Denetim','Meta, schema, sitemap, canonical, hreflang + on-page (alt text, tracking).') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:720px"><thead><tr>
+        <th>Site</th><th class="ort">Eksik meta</th><th class="ort">Schema</th><th class="ort">Sitemap</th><th class="ort">Canonical</th><th class="ort">hreflang</th><th class="ort">Alt eksik</th><th class="ort">Tracking</th>
+      </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+  },
+
+  kirik(){
+    const bloklar = siteler().map(s=>{ const list=s.kirikLinkler||[]; if(!list.length) return '';
+      const satir=(k)=>`<tr><td>${k.kaynak}</td><td style="color:var(--muted)">${k.hedef}</td><td class="ort">${cip(k.kod,'bad')}</td></tr>`;
+      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}${cip(list.length+' kırık link','bad')}</div>
+        <table class="tablo" style="min-width:520px"><thead><tr><th>Kaynak sayfa</th><th>Hedef</th><th class="ort">Kod</th></tr></thead>
+        <tbody>${list.map(satir).join('')}</tbody></table></div>`; }).join('');
+    return bolumBaslik('Teknik SEO','Kırık Linkler','404/410/5xx veren bağlantılar. Rate-limit (429) sayılmaz.') + filtreBar() +
+      (bloklar || bosDurum('🎉 Kırık link yok.'));
   },
 
   hiz(){
-    const vitalChip=(deger,iyi,orta)=>chip(deger, deger<=iyi?'emerald':deger<=orta?'amber':'rose');
-    const satir=(s)=>{const h=s.hiz||{};return `<tr class="border-t border-slate-800 hover:bg-slate-800/30">
-      <td class="py-3 px-3 font-medium text-white">${s.ad}</td>
-      <td class="py-3 px-3 text-center ${puanRenk(h.mobilPuan)}">${h.mobilPuan??'-'}</td>
-      <td class="py-3 px-3 text-center ${puanRenk(h.masaustuPuan)}">${h.masaustuPuan??'-'}</td>
-      <td class="py-3 px-3 text-center">${vitalChip(h.lcp,2.5,4)+' s'}</td>
-      <td class="py-3 px-3 text-center">${vitalChip(h.inp,200,500)+' ms'}</td>
-      <td class="py-3 px-3 text-center">${vitalChip(h.cls,0.1,0.25)}</td></tr>`;};
-    return bolumBaslik('Hiz / Core Web Vitals','LCP, INP, CLS + mobil/masaustu hiz. Google PageSpeed API ile bedava.') +
-      `<div class="mb-4">${asamaRozeti(2)} <span class="text-xs text-slate-500 ml-1">PageSpeed API baglaninca gercek gelir</span></div>
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-        <table class="w-full text-sm min-w-[560px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2.5 px-3">Site</th><th class="py-2.5 px-3 text-center">Mobil</th>
-          <th class="py-2.5 px-3 text-center">Masaustu</th><th class="py-2.5 px-3 text-center">LCP</th>
-          <th class="py-2.5 px-3 text-center">INP</th><th class="py-2.5 px-3 text-center">CLS</th></tr>
-        </thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+    const vc = (v,iyi,orta,birim)=> v==null?cip('–','mut'):cip(v+(birim||''), v<=iyi?'ok':v<=orta?'warn':'bad');
+    const satir=(s)=>{ const h=s.hiz||{}; return `<tr><td class="site-ad">${s.ad}</td>
+      <td class="ort t-${hizTon(h.mobilPuan)}" style="font-family:var(--disp);font-weight:600">${h.mobilPuan??'–'}</td>
+      <td class="ort t-${hizTon(h.masaustuPuan)}" style="font-family:var(--disp);font-weight:600">${h.masaustuPuan??'–'}</td>
+      <td class="ort">${vc(h.lcp,2.5,4,' s')}</td><td class="ort">${vc(h.inp,200,500,' ms')}</td><td class="ort">${vc(h.cls,0.1,0.25,'')}</td></tr>`; };
+    return bolumBaslik('Teknik SEO','Hız / Core Web Vitals','LCP, INP, CLS + mobil/masaüstü. Google PageSpeed API.') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:560px"><thead><tr>
+        <th>Site</th><th class="ort">Mobil</th><th class="ort">Masaüstü</th><th class="ort">LCP</th><th class="ort">INP</th><th class="ort">CLS</th>
+      </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+  },
+
+  iclink(){
+    const satir=(s)=>{ const i=s.iclink||{}; const orphan=i.orphan||[]; const y=icLinkYorum(i.ortLink);
+      return `<tr><td class="site-ad">${s.ad}</td><td class="ort">${i.ortLink??'–'}</td><td class="ort">${cip(y.metin,y.ton==='ok'?'ok':y.ton==='warn'?'warn':'')}</td>
+      <td class="ort">${orphan.length?cip(orphan.length,'warn'):cip('0','ok')}</td><td style="color:var(--muted);font-size:12px">${orphan.length?orphan.join('<br>'):'—'}</td></tr>`; };
+    return bolumBaslik('Teknik SEO','İç Linkleme & Orphan','Değerlendirme: <5 az, 5-15 ideal, >15 çok. Öksüz sayfalar hiç iç link almıyor.') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:620px"><thead><tr>
+        <th>Site</th><th class="ort">Ort. iç link/sayfa</th><th class="ort">Değerlendirme</th><th class="ort">Orphan</th><th>Orphan sayfalar</th>
+      </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
   },
 
   indeks(){
-    const satir=(s)=>{const i=s.indeks||{};return `<tr class="border-t border-slate-800 hover:bg-slate-800/30">
-      <td class="py-3 px-3 font-medium text-white">${s.ad}</td>
-      <td class="py-3 px-3 text-center text-emerald-400">${i.indeksli??'-'}</td>
-      <td class="py-3 px-3 text-center ${(i.indekssiz||0)?'text-amber-400':'text-slate-400'}">${i.indekssiz??'-'}</td>
-      <td class="py-3 px-3 text-center">${i.dususVar?chip('dusus var','rose'):chip('stabil','emerald')}</td></tr>`;};
-    return bolumBaslik('Indeks Monitoru','Sayfalar Google\'da indeksli mi, dusen sayfa var mi. Search Console ile bedava.') +
-      `<div class="mb-4">${asamaRozeti(3)}</div>
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-        <table class="w-full text-sm min-w-[480px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2.5 px-3">Site</th><th class="py-2.5 px-3 text-center">Indeksli</th>
-          <th class="py-2.5 px-3 text-center">Indekssiz</th><th class="py-2.5 px-3 text-center">Durum</th></tr>
-        </thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+    const satir=(s)=>{ const i=s.indeks; if(!i) return `<tr><td class="site-ad">${s.ad}</td><td class="ort" colspan="3" style="color:var(--faint)">veri yok (Search Console)</td></tr>`;
+      return `<tr><td class="site-ad">${s.ad}</td><td class="ort t-ok">${i.indeksli}</td><td class="ort ${i.indekssiz?'t-warn':''}">${i.indekssiz}</td>
+      <td class="ort">${i.dususVar?cip('düşüş var','bad'):cip('stabil','ok')}</td></tr>`; };
+    return bolumBaslik('Teknik SEO','İndeks Monitörü','Sayfalar Google\'da indeksli mi. Search Console verisi.') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:480px"><thead><tr>
+        <th>Site</th><th class="ort">İndeksli</th><th class="ort">İndekssiz</th><th class="ort">Durum</th>
+      </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
   },
 
-  botlar(){
-    const satir=(s)=>{const b=s.aiBotlar||{};return `<tr class="border-t border-slate-800 hover:bg-slate-800/30">
-      <td class="py-3 px-3 font-medium text-white">${s.ad}</td>
-      <td class="py-3 px-3 text-center">${chip('GPTBot '+(b.gptbot??0), b.gptbot?'violet':'slate')}</td>
-      <td class="py-3 px-3 text-center">${chip('ClaudeBot '+(b.claudebot??0), b.claudebot?'violet':'slate')}</td>
-      <td class="py-3 px-3 text-center">${chip('PerplexityBot '+(b.perplexitybot??0), b.perplexitybot?'violet':'slate')}</td>
-      <td class="py-3 px-3 text-center text-slate-400">${b.sonZiyaret??'-'}</td></tr>`;};
-    return bolumBaslik('AI Bot Takibi','ChatGPT/Claude/Perplexity botlari siteni taradı mi (son 30 gun, sunucu logundan).') +
-      `<div class="mb-4">${asamaRozeti(5)} <span class="text-xs text-slate-500 ml-1">GEO icin kritik: AI botu gelmezse AI cevaplarinda cikamazsin</span></div>
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-        <table class="w-full text-sm min-w-[640px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2.5 px-3">Site</th><th class="py-2.5 px-3 text-center">OpenAI</th>
-          <th class="py-2.5 px-3 text-center">Anthropic</th><th class="py-2.5 px-3 text-center">Perplexity</th>
-          <th class="py-2.5 px-3 text-center">Son ziyaret</th></tr>
-        </thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+  kelime(){
+    const bloklar = siteler().map(s=>{ const list=s.siralama||[]; if(!list.length) return '';
+      const satir=(k)=>{ const yon=k.pozisyon<k.onceki?'▲':k.pozisyon>k.onceki?'▼':'–'; const rk=k.pozisyon<k.onceki?'t-ok':k.pozisyon>k.onceki?'t-bad':'t-mut';
+        return `<tr><td>${k.kelime}</td><td class="ort" style="font-family:var(--disp);font-weight:600">#${k.pozisyon}</td>
+        <td class="ort ${rk}">${yon} ${Math.abs((k.onceki||k.pozisyon)-k.pozisyon)||''}</td><td class="ort" style="color:var(--muted)">${k.gosterim??'–'}</td>
+        <td class="ort" style="color:var(--muted)">${k.tik??'–'}</td></tr>`; };
+      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}</div>
+        <table class="tablo" style="min-width:520px"><thead><tr><th>Anahtar kelime</th><th class="ort">Pozisyon</th><th class="ort">Değişim</th><th class="ort">Gösterim</th><th class="ort">Tık</th></tr></thead>
+        <tbody>${list.map(satir).join('')}</tbody></table></div>`; }).join('');
+    return bolumBaslik('İçerik & Sıralama','Anahtar Kelime','Search Console gerçek sıralama + trend.') + filtreBar() +
+      `<div style="margin-bottom:14px">${asamaRozeti(3)}</div>` + (bloklar || bosDurum('Henüz sıralama verisi yok — Search Console bağla.'));
   },
 
-  degisim(){
-    const list=VERI.degisiklikler||[];
-    const renk={dusus:'rose','yeni-kirik':'rose',artis:'emerald','yeni-sayfa':'violet'};
-    const ikon={dusus:'▼','yeni-kirik':'⚠',artis:'▲','yeni-sayfa':'＋'};
-    const satir=(d)=>`<li class="flex items-start gap-3 py-2.5 px-1 border-t border-slate-800">
-      <span class="text-${renk[d.tip]||'slate'}-400 text-xs mt-0.5">${ikon[d.tip]||'•'}</span>
-      <div class="flex-1"><p class="text-sm text-slate-200">${d.mesaj}</p>
-        <p class="text-[11px] text-slate-500">[${d.site}] · ${d.tarih}</p></div></li>`;
-    return bolumBaslik('Degisiklik Izleyici','Iki tarama arasi farklar: dusen puan, yeni kirik link, siralama degisimi, yeni sayfa.') +
-      (list.length?`<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-3"><ul>${list.map(satir).join('')}</ul></div>`:bosDurum('Son taramada degisiklik yok.'));
+  gap(){
+    const bloklar = siteler().map(s=>{ const list=s.icerikBoslugu||[]; if(!list.length) return '';
+      const firsatMi = list.some(g=>g.tip==='firsat');
+      const satir=(g)=>{ const konum = g.tip==='firsat' ? `<span class="t-warn">#${g.rakipPoz}</span> <span style="color:var(--faint)">(sayfa ${Math.ceil(g.rakipPoz/10)})</span>` : `${g.rakip} <span style="color:var(--faint)">#${g.rakipPoz}</span>`;
+        return `<tr><td>${g.kelime}</td><td class="ort">${g.hacim}</td><td>${konum}</td><td class="ort">${g.hacim>=200?cip('yüksek fırsat','ok'):cip('fırsat','warn')}</td></tr>`; };
+      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}</div>
+        <table class="tablo" style="min-width:520px"><thead><tr><th>Kelime</th><th class="ort">Gösterim</th><th>${firsatMi?'Senin pozisyonun':'Rakip'}</th><th class="ort">Durum</th></tr></thead>
+        <tbody>${list.map(satir).join('')}</tbody></table></div>`; }).join('');
+    return bolumBaslik('İçerik & Sıralama','İçerik Boşluğu / Fırsat','2. sayfada yüksek gösterimli kelimeler = az itmeyle 1. sayfaya çıkacak fırsatlar.') + filtreBar() +
+      `<div style="margin-bottom:14px">${asamaRozeti(3)}</div>` + (bloklar || bosDurum('Henüz fırsat verisi yok.'));
   },
 
   rakip(){
     const store = rakipEkGetir();
-    const form = `<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-5">
-      <p class="text-sm font-medium text-white mb-3">Rakip ekle <span class="text-[11px] text-slate-500 font-normal">(tarayicinda saklanir)</span></p>
-      <div class="grid gap-2 sm:grid-cols-[1fr_1fr_1fr_auto]">
-        <select id="rk-site" class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-300">
-          ${(VERI.siteler||[]).filter(s=>s.aktif!==false).map(s=>`<option value="${s.id}">${s.ad}</option>`).join('')}</select>
-        <input id="rk-kelime" placeholder="anahtar kelime" class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm" />
-        <input id="rk-ad" placeholder="rakip alan adi (or. rakip.com)" class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm" />
-        <button onclick="rakipEkle()" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-sm">+ Ekle</button>
-      </div>
-      <p class="text-[11px] text-slate-500 mt-2">Pozisyonlar Asama 3'te SERP kontrolu ile otomatik dolar. Su an manuel takip listesi.</p>
-    </div>`;
-
-    const bloklar = siteler().map(s => {
-      const list = [ ...(s.rakip||[]), ...((store[s.id]||[])) ];
-      if (!list.length) return '';
-      const satir = (r, i, manuelBaslangic) => {
-        const olculdu = r.biz != null && r.rakipPoz != null;
-        const onde = olculdu && r.biz < r.rakipPoz;
-        const durum = !olculdu ? chip('olcum bekliyor','slate') : onde ? chip('ondesin','emerald') : chip('geridesin','rose');
-        const silBtn = r.manuel ? `<button onclick="rakipSil('${s.id}',${i-manuelBaslangic})" class="text-rose-400 hover:text-rose-300 text-xs">sil</button>` : '';
-        return `<tr class="border-t border-slate-800">
-          <td class="py-2 px-3 text-slate-200">${r.kelime}${r.manuel?' <span class="text-[10px] text-indigo-400">(manuel)</span>':''}</td>
-          <td class="py-2 px-3 text-slate-400">${r.ad}</td>
-          <td class="py-2 px-3 text-center font-semibold">${r.biz!=null?'#'+r.biz:'—'}</td>
-          <td class="py-2 px-3 text-center text-slate-400">${r.rakipPoz!=null?'#'+r.rakipPoz:'—'}</td>
-          <td class="py-2 px-3 text-center">${durum}</td>
-          <td class="py-2 px-3 text-center">${silBtn}</td></tr>`;
-      };
-      const manuelBaslangic = (s.rakip||[]).length;
-      return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto mb-4">
-        <div class="px-3 py-2 border-b border-slate-800 font-medium text-white">${s.ad}</div>
-        <table class="w-full text-sm min-w-[600px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Kelime</th><th class="py-2 px-3">Rakip</th>
-          <th class="py-2 px-3 text-center">Sen</th><th class="py-2 px-3 text-center">Rakip</th>
-          <th class="py-2 px-3 text-center">Durum</th><th class="py-2 px-3"></th></tr>
-        </thead><tbody>${list.map((r,i)=>satir(r,i,manuelBaslangic)).join('')}</tbody></table></div>`;
-    }).join('');
-
-    return bolumBaslik('Rakip Analizi','Rakipleri manuel ekle; pozisyonlar SERP kontroluyle dolar. Senin bosluklarin burada gorunur.') +
-      form + (bloklar || bosDurum('Henuz rakip yok. Yukaridan ekle.'));
+    const form = `<div class="kart" style="margin-bottom:18px">
+      <p style="font-family:var(--disp);font-weight:600;margin:0 0 11px">Rakip ekle <span style="font-size:11px;color:var(--faint);font-weight:400">(tarayıcında saklanır)</span></p>
+      <div style="display:grid;gap:8px;grid-template-columns:1fr 1fr 1fr auto">
+        <select id="rk-site" class="alan">${(VERI.siteler||[]).map(s=>`<option value="${s.id}">${s.ad}</option>`).join('')}</select>
+        <input id="rk-kelime" class="alan" placeholder="anahtar kelime" />
+        <input id="rk-ad" class="alan" placeholder="rakip alan adı" />
+        <button class="btn primary" onclick="rakipEkle()">+ Ekle</button>
+      </div></div>`;
+    const bloklar = siteler().map(s=>{ const list=[...(s.rakip||[]), ...((store[s.id]||[]))]; if(!list.length) return '';
+      const manuelBas=(s.rakip||[]).length;
+      const satir=(r,i)=>{ const olculdu=r.biz!=null&&r.rakipPoz!=null; const onde=olculdu&&r.biz<r.rakipPoz;
+        const durum = !olculdu?cip('ölçüm bekliyor',''):onde?cip('öndesin','ok'):cip('geridesin','bad');
+        const sil = r.manuel?`<button class="btn mini" style="border-color:var(--bad);color:var(--bad)" onclick="rakipSil('${s.id}',${i-manuelBas})">sil</button>`:'';
+        return `<tr><td>${r.kelime}${r.manuel?' <span class="t-sig" style="font-size:10px">(manuel)</span>':''}</td><td style="color:var(--muted)">${r.ad}</td>
+        <td class="ort" style="font-family:var(--disp);font-weight:600">${r.biz!=null?'#'+r.biz:'—'}</td><td class="ort" style="color:var(--muted)">${r.rakipPoz!=null?'#'+r.rakipPoz:'—'}</td>
+        <td class="ort">${durum}</td><td class="ort">${sil}</td></tr>`; };
+      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}</div>
+        <table class="tablo" style="min-width:600px"><thead><tr><th>Kelime</th><th>Rakip</th><th class="ort">Sen</th><th class="ort">Rakip</th><th class="ort">Durum</th><th></th></tr></thead>
+        <tbody>${list.map(satir).join('')}</tbody></table></div>`; }).join('');
+    return bolumBaslik('İçerik & Sıralama','Rakip Analizi','Rakipleri manuel ekle; pozisyonlar SERP kontrolüyle dolar.') + filtreBar() + form + (bloklar || bosDurum('Henüz rakip yok. Yukarıdan ekle.'));
   },
 
-  iclink(){
-    const satir=(s)=>{const i=s.iclink||{};const orphan=i.orphan||[];const y=icLinkYorum(i.ortLink);
-      return `<tr class="border-t border-slate-800 hover:bg-slate-800/30 align-top">
-      <td class="py-3 px-3 font-medium text-white">${s.ad}</td>
-      <td class="py-3 px-3 text-center text-slate-300">${i.ortLink??'-'}</td>
-      <td class="py-3 px-3 text-center">${chip(y.metin, y.renk)}</td>
-      <td class="py-3 px-3 text-center">${orphan.length?chip(orphan.length,'amber'):chip('0','emerald')}</td>
-      <td class="py-3 px-3 text-slate-400 text-xs">${orphan.length?orphan.join('<br>'):'—'}</td></tr>`;};
-    return bolumBaslik('Ic Linkleme & Orphan Sayfalar','Degerlendirme: <5 az, 5-15 ideal, >15 cok. Oksuz sayfalar hic ic link almiyor.') +
-      `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto">
-        <table class="w-full text-sm min-w-[620px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2.5 px-3">Site</th><th class="py-2.5 px-3 text-center">Ort. ic link/sayfa</th>
-          <th class="py-2.5 px-3 text-center">Degerlendirme</th>
-          <th class="py-2.5 px-3 text-center">Orphan</th><th class="py-2.5 px-3">Orphan sayfalar</th></tr>
-        </thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+  icerik(){
+    const firsatlar = [];
+    (VERI.siteler||[]).forEach(s => (s.icerikBoslugu||[]).forEach(g=>{ if(g.tip==='firsat') firsatlar.push({siteId:s.id,site:s.ad,kelime:g.kelime,poz:g.rakipPoz}); }));
+    const uretilen = VERI.uretilenIcerikler||[];
+    const oneriSatir = (f,i)=>`<tr><td>${f.kelime}</td><td style="color:var(--muted)">${f.site}</td><td class="ort">${cip('#'+f.poz,'warn')}</td>
+      <td class="ort"><input id="cmd-${i}" class="gizli" value='node scripts/aiblog.js ${f.siteId} "${f.kelime}"'><button class="btn mini" onclick="kopyala('cmd-${i}',this)">komutu kopyala</button></td></tr>`;
+    const kart = (c,i)=>`<div class="kart" style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;gap:12px">
+      <div><p style="font-family:var(--disp);font-weight:600;margin:0">${c.baslik}</p><p style="font-size:11px;color:var(--faint);margin:2px 0 0">${c.site} · "${c.kelime}" · ${c.kelimeSayisi} kelime · ${c.tarih}${c.kaynak?' · '+c.kaynak:''}</p></div>
+      <button class="btn mini" onclick="document.getElementById('body-${i}').classList.toggle('gizli')">göster/gizle</button></div>
+      <p style="font-size:12.5px;color:var(--muted);margin:9px 0 0">${c.metaAciklama||''}</p>
+      <div id="body-${i}" class="gizli" style="margin-top:11px"><div style="text-align:right;margin-bottom:5px"><button class="btn mini" onclick="kopyala('md-${i}',this)">markdown kopyala</button></div>
+        <textarea id="md-${i}" class="alan" readonly rows="12">${(c.govde||'').replace(/</g,'&lt;')}</textarea></div></div>`;
+    return bolumBaslik('İçerik & Sıralama','AI İçerik / Auto SEO Blog','SEO uyumlu içerik üret. Fırsat kelimelerine göre konu önerisi + üretilen yazılar.') +
+      `<div class="kart" style="margin-bottom:18px;font-size:13.5px;color:var(--muted);line-height:1.6">
+        <p style="color:var(--text);font-weight:600;margin:0 0 4px">Nasıl çalışır?</p>
+        <b>A — Claude ile (önerilen):</b> Bu Claude oturumunda "&lt;site&gt; için '&lt;kelime&gt;' içeriği yaz" de. SEO skill'iyle üretir, panele ekler.<br>
+        <b>B — Gemini ile:</b> <code style="color:var(--signal)">.env</code>'e <code style="color:var(--signal)">GEMINI_API_KEY</code> ekle, aşağıdan komutu kopyala.</div>` +
+      stBaslik('Önerilen konular', firsatlar.length) +
+      (firsatlar.length ? `<div class="tablo-kap"><table class="tablo" style="min-width:520px"><thead><tr><th>Kelime</th><th>Site</th><th class="ort">Poz</th><th class="ort">Üret</th></tr></thead><tbody>${firsatlar.map(oneriSatir).join('')}</tbody></table></div>` : bosDurum('Fırsat kelimesi yok — Search Console bağla.')) +
+      stBaslik('Üretilen içerikler', uretilen.length) +
+      (uretilen.length ? uretilen.map(kart).join('') : bosDurum('Henüz içerik üretilmedi.'));
   },
 
-  gap(){
-    const bloklar = siteler().map(s => {
-      const list = s.icerikBoslugu || [];
-      if (!list.length) return '';
-      const firsatMi = list.some(g => g.tip === 'firsat');
-      const konumBaslik = firsatMi ? 'Senin pozisyonun' : 'Rakip siralaniyor';
-      const satir = (g) => {
-        const konum = g.tip === 'firsat'
-          ? `<span class="text-amber-300">#${g.rakipPoz}</span> <span class="text-slate-600">(sayfa ${Math.ceil(g.rakipPoz/10)})</span>`
-          : `${g.rakip} <span class="text-slate-600">#${g.rakipPoz}</span>`;
-        return `<tr class="border-t border-slate-800">
-        <td class="py-2 px-3 text-slate-200">${g.kelime}</td>
-        <td class="py-2 px-3 text-center text-slate-300">${g.hacim}</td>
-        <td class="py-2 px-3 text-slate-400">${konum}</td>
-        <td class="py-2 px-3 text-center">${g.hacim>=200?chip('yuksek firsat','emerald'):chip('firsat','amber')}</td></tr>`;
-      };
-      return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto mb-4">
-        <div class="px-3 py-2 border-b border-slate-800 font-medium text-white">${s.ad}</div>
-        <table class="w-full text-sm min-w-[520px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Kelime</th><th class="py-2 px-3 text-center">Gosterim/hacim</th>
-          <th class="py-2 px-3">${konumBaslik}</th><th class="py-2 px-3 text-center">Durum</th></tr>
-        </thead><tbody>${list.map(satir).join('')}</tbody></table></div>`;
-    }).join('');
-    return bolumBaslik('Icerik Boslugu / Firsat','Search Console verisiyle: 2. sayfada (pozisyon 8-20) yuksek gosterimli kelimelerin = az itmeyle 1. sayfaya cikacak firsatlar. Rakip bazli bosluk manuel rakip ekleyince gelir.') +
-      `<div class="mb-4">${asamaRozeti(3)} <span class="text-xs text-slate-500 ml-1">gercek veri Search Console baglaninca gelir</span></div>` +
-      (bloklar || bosDurum('Henuz firsat verisi yok — Search Console baglaninca dolacak.'));
+  geo(){
+    const k = ['chatgpt','perplexity','gemini'], ad = {chatgpt:'ChatGPT',perplexity:'Perplexity',gemini:'Gemini'};
+    const satir=(s)=> `<tr><td class="site-ad">${s.ad}</td>${k.map(x=>`<td class="ort">${s.geo?(s.geo[x]?cip('görülüyor','sig'):cip('yok','')):cip('ölçülmedi','mut')}</td>`).join('')}</tr>`;
+    const detay = siteler().flatMap(s=>(s.geoDetay||[]).map(d=>({s:s.ad,...d})));
+    return bolumBaslik('GEO / AI','GEO Görünürlük','Marka AI motorlarında (ChatGPT/Perplexity/Gemini) çıkıyor mu.') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:480px"><thead><tr><th>Site</th>${k.map(x=>`<th class="ort">${ad[x]}</th>`).join('')}</tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>` +
+      (detay.length ? stBaslik('Kontrol detayları', detay.length) + `<div class="liste">${detay.map(d=>`<div class="li"><span class="pri ${d.gorundu?'dusuk':'orta'}">${d.gorundu?'var':'yok'}</span><div class="txt">${d.not}<s>[${d.s}] · ${d.soru}</s></div></div>`).join('')}</div>` : '');
   },
 
-  araclar(){
-    const s = aracSite();
-    if (!s) return bosDurum('Once site tanimla.');
-    const alan = (baslik, aciklama, id, icerik) => `
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-4">
-        <div class="flex items-center justify-between mb-1">
-          <p class="text-sm font-medium text-white">${baslik}</p>
-          <button onclick="kopyala('${id}', this)" class="text-xs px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700">Kopyala</button>
-        </div>
-        <p class="text-[11px] text-slate-500 mb-2">${aciklama}</p>
-        <textarea id="${id}" readonly rows="7" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-300 resize-y">${iceric(icerik)}</textarea>
-      </div>`;
-    function iceric(x){ return String(x).replace(/</g,'&lt;'); }
-    return bolumBaslik('Araclar','Hazir dosya ureticiler — kopyala, sitene yapistir. Tamamen ucretsiz.') + `
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 mb-5">
-        <label class="text-xs text-slate-400">Site sec:</label>
-        <select id="arac-site" onchange="aracDegis()" class="ml-2 bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-sm text-slate-300">
-          ${(VERI.siteler||[]).filter(x=>x.aktif!==false).map(x=>`<option value="${x.id}" ${x.id===s.id?'selected':''}>${x.ad}</option>`).join('')}
-        </select>
-      </div>
-      ${alan('llms.txt', 'AI asistanlarinin siteni dogru ozetlemesi icin. Site kokune /llms.txt olarak koy.', 'out-llms', uretLlms(s))}
-      ${alan('robots.txt — AI bot erisimi', 'AI botlarinin siteni taramasina izin ver (GEO icin sart). robots.txt\'e ekle.', 'out-robots', uretRobots(s))}
-      ${alan('Schema (JSON-LD)', 'LocalBusiness yapisal veri. ___ alanlarini doldur, sayfa head bolumune JSON-LD script etiketi icinde koy.', 'out-schema', uretSchema(s))}`;
+  botlar(){
+    const satir=(s)=>{ const b=s.aiBotlar; if(!b) return `<tr><td class="site-ad">${s.ad}</td><td class="ort" colspan="5" style="color:var(--faint)">log yok — botlog.js çalıştır</td></tr>`;
+      return `<tr><td class="site-ad">${s.ad}</td><td class="ort">${cip('GPTBot '+(b.gptbot||0), b.gptbot?'sig':'')}</td>
+      <td class="ort">${cip('ClaudeBot '+(b.claudebot||0), b.claudebot?'sig':'')}</td><td class="ort">${cip('Perplexity '+(b.perplexitybot||0), b.perplexitybot?'sig':'')}</td>
+      <td class="ort">${cip('Google '+(b.google||0), b.google?'sig':'')}</td><td class="ort" style="color:var(--muted)">${b.sonZiyaret||'–'}</td></tr>`; };
+    return bolumBaslik('GEO / AI','AI Bot Takibi','ChatGPT/Claude/Perplexity botları siteni taradı mı (sunucu logundan).') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:660px"><thead><tr><th>Site</th><th class="ort">OpenAI</th><th class="ort">Anthropic</th><th class="ort">Perplexity</th><th class="ort">Google</th><th class="ort">Son ziyaret</th></tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+  },
+
+  degisim(){
+    const list = VERI.degisiklikler||[];
+    const renk={dusus:'bad','yeni-kirik':'bad',artis:'ok','yeni-sayfa':'sig'};
+    const ik={dusus:'▼','yeni-kirik':'⚠',artis:'▲','yeni-sayfa':'＋'};
+    const satir=(d)=>`<div class="li"><span class="t-${renk[d.tip]||'mut'}" style="font-size:12px">${ik[d.tip]||'•'}</span>
+      <div class="txt">${d.mesaj}<s>[${d.site}] · ${d.tarih}</s></div></div>`;
+    return bolumBaslik('Genel','Değişiklik İzleyici','İki tarama arası farklar: düşen puan, yeni kırık link, sıralama değişimi.') +
+      (list.length?`<div class="liste">${list.map(satir).join('')}</div>`:bosDurum('Son taramada değişiklik yok.'));
+  },
+
+  uyarilar(){
+    return bolumBaslik('Genel','Uyarılar','SSL bitişi, site çöküşü, kırık link ve denetim sorunları.') + filtreBar() + uyariBloku(VERI.uyarilar, true);
   },
 
   raporlar(){
-    const list=VERI.raporlar||[];
-    const kart=(r)=>`<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 flex items-center justify-between">
-      <div><p class="text-sm font-medium text-white">${r.ad}</p><p class="text-[11px] text-slate-500">${r.tur} · ${r.tarih}</p></div>
-      <button disabled class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 cursor-not-allowed">PDF (Asama 5)</button></div>`;
-    const ozet = `<div class="rounded-xl bg-gradient-to-r from-indigo-950/50 to-slate-900/60 border border-indigo-900/40 p-4 mb-5">
-      <p class="text-sm font-semibold text-white mb-2 flex items-center gap-2"><span class="text-indigo-300">✦</span> Haftalik Akilli Ozet</p>
-      <p class="text-sm text-slate-300 leading-relaxed">${haftalikOzetUret()}</p>
-      <p class="text-[11px] text-slate-500 mt-2">Kurallı motorla uretildi (ucretsiz). Asama 4'te AI ile daha akici hale getirilebilir.</p></div>`;
-    return bolumBaslik('Raporlar','Otomatik haftalik ozet + indirilebilir raporlar.') + ozet +
-      `<div class="mb-4">${asamaRozeti(5)} <span class="text-xs text-slate-500 ml-1">PDF/e-posta cikti Asama 5'te</span></div>
-      <div class="grid gap-3 sm:grid-cols-2">${list.map(kart).join('')||bosDurum('Henuz rapor uretilmedi.')}</div>`;
+    const list = VERI.raporlar||[];
+    const kart=(r)=>`<div class="karo" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div><p style="font-family:var(--disp);font-weight:600;margin:0">${r.ad}</p><p style="font-size:11px;color:var(--faint);margin:2px 0 0">${r.tur} · ${r.tarih}</p></div>
+      <button class="btn mini" disabled style="opacity:.5">PDF (Aşama 5)</button></div>`;
+    return bolumBaslik('Çıktı','Raporlar','Otomatik haftalık özet + indirilebilir raporlar.') +
+      `<div class="kart" style="margin-bottom:18px"><p style="font-family:var(--disp);font-weight:600;margin:0 0 7px"><span class="t-sig">✦</span> Haftalık Akıllı Özet</p>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin:0">${haftalikOzetUret()}</p></div>` +
+      `<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${list.map(kart).join('')||bosDurum('Henüz rapor yok.')}</div>`;
+  },
+
+  araclar(){
+    const s = aracSite(); if(!s) return bosDurum('Önce site tanımla.');
+    const alan = (baslik,acik,id,icerik)=>`<div class="kart" style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <p style="font-family:var(--disp);font-weight:600;margin:0">${baslik}</p><button class="btn mini" onclick="kopyala('${id}',this)">Kopyala</button></div>
+      <p style="font-size:11px;color:var(--faint);margin:0 0 8px">${acik}</p><textarea id="${id}" class="alan" readonly rows="7">${String(icerik).replace(/</g,'&lt;')}</textarea></div>`;
+    return bolumBaslik('Çıktı','Araçlar','Hazır dosya üreticiler — kopyala, sitene yapıştır. Ücretsiz.') +
+      `<div class="kart" style="margin-bottom:18px"><label class="fl">Site seç:</label>
+        <select id="arac-site" class="alan" style="width:auto;display:inline-block;margin-left:8px" onchange="aracDegis()">${(VERI.siteler||[]).map(x=>`<option value="${x.id}" ${x.id===s.id?'selected':''}>${x.ad}</option>`).join('')}</select></div>` +
+      alan('llms.txt','AI asistanlarının siteni doğru özetlemesi için. Site köküne /llms.txt koy.','out-llms',uretLlms(s)) +
+      alan('robots.txt — AI bot erişimi','AI botlarına izin ver (GEO için şart). robots.txt\'e ekle.','out-robots',uretRobots(s)) +
+      alan('Schema (JSON-LD)','LocalBusiness yapısal veri. ___ alanlarını doldur, head bölümüne koy.','out-schema',uretSchema(s));
   },
 
   ayarlar(){
-    const canli = yazilabilirMi();
-    const kaynak = canli ? KONFIG.siteler : (VERI.siteler||[]);
-    const site = (s)=>`<tr class="border-t border-slate-800">
-      <td class="py-2 px-3 text-white">${kacir(s.ad)}${s.not?`<span class="block text-[11px] text-slate-500">${kacir(s.not)}</span>`:''}</td>
-      <td class="py-2 px-3 text-indigo-400">${kacir(kisaUrl(s.url))||'<span class="text-slate-600">—</span>'}</td>
-      <td class="py-2 px-3 text-center">${(s.diller||[]).map(d=>chip(d,'slate')).join(' ')||'<span class="text-slate-600">—</span>'}</td>
-      <td class="py-2 px-3 text-center">${s.aktif?chip('aktif','emerald'):chip('pasif','slate')}</td>
-      ${canli?`<td class="py-2 px-3 text-right whitespace-nowrap">
-        <button onclick="siteDurumDegistir('${s.id}',${!s.aktif})" class="text-[11px] px-2 py-1 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700">${s.aktif?'pasife al':'aktif et'}</button>
-        <button onclick="siteSil('${s.id}','${kacir(s.ad).replace(/'/g,'&#39;')}')" class="text-[11px] px-2 py-1 rounded-md bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-300 ml-1">sil</button></td>`:''}
-    </tr>`;
-    return bolumBaslik('Ayarlar','Site tanimlari ve otomasyon. Kaynak: sites.config.json') + `
-      <div class="rounded-xl bg-slate-900/60 border border-slate-800 overflow-x-auto mb-6">
-        <div class="px-3 py-2 border-b border-slate-800 flex items-center justify-between gap-2">
-          <span class="font-medium text-white">Tanimli siteler</span>
-          ${canli
-            ? `<button onclick="siteEkleAc()" class="text-xs px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500">+ Site ekle</button>`
-            : `<span class="text-[11px] text-slate-500">salt okunur — duzenlemek icin: <span class="text-indigo-300">npm run panel</span> veya <span class="text-indigo-300">npm run site-ekle</span></span>`}
-        </div>
-        <table class="w-full text-sm min-w-[520px]"><thead class="text-xs text-slate-400 text-left">
-          <tr><th class="py-2 px-3">Ad</th><th class="py-2 px-3">URL</th><th class="py-2 px-3 text-center">Diller</th>
-          <th class="py-2 px-3 text-center">Durum</th>${canli?'<th class="py-2 px-3 text-right">Islem</th>':''}</tr>
-        </thead><tbody>${kaynak.map(site).join('')}</tbody></table></div>
-      <div class="grid gap-4 sm:grid-cols-3">
-        ${karo('Otomasyon','GitHub Actions','her gece tarar — ucretsiz')}
-        ${karo('Yayin','GitHub Pages','sunucu yok — ucretsiz')}
-        ${karo('Uyari kanali','Telegram','kurulacak (Asama 5)')}
-      </div>`;
+    const site=(s)=>`<tr><td class="site-ad">${s.ad}</td><td style="color:var(--signal)">${kisaUrl(s.url)||'<span style=\"color:var(--faint)\">— (yakında)</span>'}</td><td class="ort">${s.aktif?cip('aktif','ok'):cip('pasif','')}</td></tr>`;
+    return bolumBaslik('Çıktı','Ayarlar','Site tanımları ve otomasyon. Kaynak: sites.config.json') +
+      `<div class="tablo-kap" style="margin-bottom:18px"><div class="tablo-bas">Tanımlı siteler<span style="font-size:11px;color:var(--faint)">sites.config.json</span></div>
+        <table class="tablo" style="min-width:420px"><thead><tr><th>Ad</th><th>URL</th><th class="ort">Durum</th></tr></thead><tbody>${(VERI.siteler||[]).map(site).join('')}</tbody></table></div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+        ${karo('Otomasyon','GitHub Actions','her gece tarar — ücretsiz')}
+        ${karo('Yayın','FileZilla / FTP','statik — sunucu yok')}
+        ${karo('Veri','data.json','tek kaynak')}</div>`;
   },
 };
 
-// ---- ortak: uyari bloku ----
-function uyariBloku(list, tamSayfa){
-  if(!list || !list.length) return tamSayfa ? bosDurum('Aktif uyari yok. Her sey yolunda.') : '';
-  const satir = (u) => {
-    const kritik = u.seviye==='kritik';
-    return `<li class="flex items-start gap-2 py-1.5 px-1">
-      <span class="${kritik?'text-rose-400':'text-amber-400'} mt-0.5 text-xs">${kritik?'●':'▲'}</span>
-      <span class="text-sm text-slate-300"><span class="text-slate-500">[${u.site}]</span> ${u.mesaj}</span></li>`;
-  };
-  return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4">
-    <h3 class="text-sm font-semibold text-white mb-2 flex items-center gap-2">Uyarilar
-      ${chip(list.length,'rose')}</h3>
-    <ul class="divide-y divide-slate-800/60">${list.map(satir).join('')}</ul></div>`;
+function uyariBloku(list, tam){
+  if(!list || !list.length) return tam?bosDurum('Aktif uyarı yok. Her şey yolunda.'):'';
+  const filtreli = SECILI_SITE ? list.filter(u=>u.site===SECILI_SITE) : list;
+  if(!filtreli.length) return bosDurum('Bu sitede uyarı yok.');
+  const satir=(u)=>`<div class="li"><span class="t-${u.seviye==='kritik'?'bad':'warn'}" style="font-size:12px">${u.seviye==='kritik'?'●':'▲'}</span>
+    <div class="txt"><span style="color:var(--faint)">[${u.site}]</span> ${u.mesaj}</div></div>`;
+  return `<div class="liste">${filtreli.map(satir).join('')}</div>`;
 }
 
-// ---- site karti (genel bakis) ----
-function siteKart(s){
-  const geoRozet=(ad,v)=>`<span class="text-[11px] px-2 py-0.5 rounded-md border ${v?'bg-violet-500/10 text-violet-300 border-violet-500/20':'bg-slate-800/50 text-slate-500 border-slate-700/40'}">${ad}</span>`;
-  const kirik=s.kirikLinkler?.length||0;
-  const em=s.eksikMeta||{}; const eksik=(em.title||0)+(em.description||0)+(em.h1||0);
-  const sr=(k)=>{const yon=k.pozisyon<k.onceki?'▲':k.pozisyon>k.onceki?'▼':'–';const rk=k.pozisyon<k.onceki?'text-emerald-400':k.pozisyon>k.onceki?'text-rose-400':'text-slate-500';
-    return `<div class="flex items-center justify-between text-xs py-1"><span class="text-slate-300 truncate mr-2">${k.kelime}</span>
-      <span class="flex items-center gap-1 shrink-0"><span class="font-semibold text-slate-200">#${k.pozisyon}</span><span class="${rk}">${yon}</span></span></div>`;};
-  return `<div class="rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-slate-700 transition">
-    <div class="flex items-start justify-between gap-3 mb-3">
-      <div class="min-w-0"><div class="flex items-center gap-2">
-        <span class="h-2 w-2 rounded-full ${s.uptime?.durum==='up'?'bg-emerald-400':'bg-rose-400'} inline-block"></span>
-        <h3 class="font-semibold text-white truncate">${s.ad}</h3></div>
-        <a href="${s.url}" target="_blank" rel="noopener" class="text-xs text-indigo-400 hover:underline truncate block">${kisaUrl(s.url)}</a></div>
-      ${halkaSVG(s.seo?.puan??0)}</div>
-    <div class="flex flex-wrap gap-1.5 mb-3">
-      <span class="text-[11px] ${trendRenk(s.seo?.trend)}">SEO ${s.seo?.trend??'0'}</span>
-      ${sslChip(s.ssl)}${chip((s.sayfalar?.taranan??0)+' sayfa','slate')}
-      ${kirik?chip(kirik+' kirik link','rose'):chip('link temiz','emerald')}
-      ${eksik?chip(eksik+' eksik meta','amber'):chip('meta tam','emerald')}</div>
-    <div class="grid grid-cols-2 gap-1.5 mb-3">
-      ${durumChip(s.schema?.gecerli,'schema OK','schema yok')}
-      ${durumChip(s.sitemap?.varMi&&s.sitemap.erisilemez===0,'sitemap OK','sitemap sorunu')}
-      ${durumChip((s.canonical?.eksik||0)+(s.canonical?.hatali||0)===0,'canonical OK','canonical sorunu')}
-      ${durumChip(!s.hreflang?.sorun,'hreflang OK','hreflang sorunu')}</div>
-    <div class="mb-3"><p class="text-[11px] text-slate-500 mb-1">AI gorunurlugu (GEO)</p>
-      <div class="flex gap-1.5">${geoRozet('ChatGPT',s.geo?.chatgpt)}${geoRozet('Perplexity',s.geo?.perplexity)}${geoRozet('Gemini',s.geo?.gemini)}</div></div>
-    ${s.siralama?.length?`<div class="border-t border-slate-800 pt-2"><p class="text-[11px] text-slate-500 mb-1">Anahtar kelime siralamasi</p>${s.siralama.slice(0,4).map(sr).join('')}</div>`:`<div class="border-t border-slate-800 pt-2 text-[11px] text-slate-600">siralama verisi yok</div>`}
-  </div>`;
-}
-
-// ============ YONLENDIRME ============
+// ============ YÖNLENDİRME ============
 function menuCiz(){
-  const buton = (m) => {
-    const rozet = m.id==='uyarilar' && VERI.uyarilar?.length ? `<span class="ml-auto text-[10px] px-1.5 rounded bg-rose-500/20 text-rose-300">${VERI.uyarilar.length}</span>`
-      : m.id==='degisim' && VERI.degisiklikler?.length ? `<span class="ml-auto text-[10px] px-1.5 rounded bg-indigo-500/20 text-indigo-300">${VERI.degisiklikler.length}</span>`
-      : m.id==='oneri' ? `<span class="ml-auto text-[10px] px-1.5 rounded bg-amber-500/20 text-amber-300">${tumOneriler().length}</span>` : '';
-    return `<button data-id="${m.id}" onclick="git('${m.id}')" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition">
-      <span class="w-4 text-center text-slate-500">${m.ikon}</span><span>${m.ad}</span>${rozet}</button>`;
+  const buton=(m)=>{
+    let rz='';
+    if(m.id==='uyarilar' && VERI.uyarilar?.length) rz=`<span class="rz rz-bad">${VERI.uyarilar.length}</span>`;
+    else if(m.id==='degisim' && VERI.degisiklikler?.length) rz=`<span class="rz rz-info">${VERI.degisiklikler.length}</span>`;
+    else if(m.id==='oneri') rz=`<span class="rz rz-warn">${tumOneriler().length}</span>`;
+    return `<button class="nav-btn" data-id="${m.id}" onclick="git('${m.id}')"><span class="ik">${m.ik}</span><span>${m.ad}</span>${rz}</button>`;
   };
-  el('nav').innerHTML = MENU_GRUPLARI.map(g =>
-    `<p class="px-3 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-slate-600">${g.grup}</p>` +
-    g.items.map(buton).join('')
-  ).join('');
+  el('nav').innerHTML = MENU_GRUPLARI.map(g=>`<p class="nav-grup">${g.grup}</p>`+g.items.map(buton).join('')).join('');
 }
 
 function git(id){
   AKTIF = id;
   const m = MENU.find(x=>x.id===id);
   el('sayfaBaslik').textContent = m.ad;
-  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('nav-aktif', b.dataset.id===id));
-  el('icerik').innerHTML = VIEWS[id] ? VIEWS[id]() : bosDurum('bolum bulunamadi');
+  document.querySelectorAll('#nav .nav-btn').forEach(b=> b.classList.toggle('aktif', b.dataset.id===id));
+  el('icerik').innerHTML = VIEWS[id] ? VIEWS[id]() : bosDurum('bölüm bulunamadı');
   el('icerik').scrollTop = 0;
   menuKapat();
 }
 window.git = git;
 
-function aramaYap(v){ ARAMA = (v||'').toLowerCase().trim(); if(['genel','oneri','siteler','kirik','denetim','kelime','geo','hiz','indeks','botlar','rakip','iclink','gap'].includes(AKTIF)) git(AKTIF); }
+function aramaYap(v){ ARAMA=(v||'').toLowerCase().trim(); git(AKTIF); }
 window.aramaYap = aramaYap;
-
-function menuAc(){ el('yanmenu').classList.remove('-translate-x-full'); el('perde').classList.remove('hidden'); }
-function menuKapat(){ if(window.innerWidth<1024){ el('yanmenu').classList.add('-translate-x-full'); el('perde').classList.add('hidden'); } }
+function menuAc(){ el('yanmenu').classList.add('acik'); el('perde').classList.add('acik'); }
+function menuKapat(){ if(window.innerWidth<=900){ el('yanmenu').classList.remove('acik'); el('perde').classList.remove('acik'); } }
 window.menuAc=menuAc; window.menuKapat=menuKapat;
+function siteEkleBilgi(){ git('ayarlar'); alert('Yeni site: sites.config.json dosyasındaki "siteler" dizisine blok ekleyip aktif:true yap. Panel ve tüm script\'ler otomatik kapsar.'); }
+window.siteEkleBilgi = siteEkleBilgi;
 
-// ============ SITE EKLE / YONET ============
-// KONFIG yalnizca panel yerelde "npm run panel" ile acildiginda dolar (yazma API'si).
-// FTP'ye yuklenen statik surumde null kalir; o zaman form JSON blogu uretip kopyalatir.
-let KONFIG = null;
-const yazilabilirMi = () => !!KONFIG?.yazilabilir;
-
-async function konfigYukle(){
-  try{
-    const r = await fetch('api/siteler',{cache:'no-store'});
-    if(!r.ok) return null;
-    const d = await r.json();
-    return Array.isArray(d?.siteler) ? d : null;
-  }catch{ return null; }
-}
-
-// istemci tarafinda id/ad tahmini (statik surumde JSON blogu uretmek icin)
-function urlDuzeltIstemci(girdi){
-  let s=String(girdi||'').trim();
-  if(!s) throw new Error('Site adresi bos olamaz.');
-  if(!/^https?:\/\//i.test(s)) s='https://'+s;
-  let u; try{ u=new URL(s); }catch{ throw new Error('Gecersiz adres: '+girdi); }
-  if(!u.hostname.includes('.')) throw new Error('Gecersiz alan adi: '+u.hostname);
-  return u.origin;
-}
-const idTahmin = (url) => new URL(url).hostname.replace(/^www\./,'').split('.')[0].replace(/[^a-z0-9]+/gi,'').toLowerCase()||'site';
-const adTahmin = (url) => new URL(url).hostname.replace(/^www\./,'').split('.')[0].replace(/[-_]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-
-// ---- modal iskeleti ----
-function modalAc(icerik){
-  el('modal').innerHTML = `<div class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm grid place-items-center p-4" onclick="if(event.target===this)modalKapat()">
-    <div class="w-full max-w-lg rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl">${icerik}</div></div>`;
-}
-function modalKapat(){ el('modal').innerHTML=''; }
-function modalHata(m){ const h=el('modalHata'); if(h){ h.textContent=m; h.classList.remove('hidden'); } }
-window.modalKapat=modalKapat;
-
-function bildir(mesaj){
-  const t=document.createElement('div');
-  t.className='fixed bottom-5 right-5 z-50 max-w-sm px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 text-sm shadow-lg';
-  t.textContent=mesaj; document.body.appendChild(t);
-  setTimeout(()=>t.remove(), 6000);
-}
-
-const alanSinif='w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500';
-
-function siteEkleAc(){
-  const canli = yazilabilirMi();
-  modalAc(`
-    <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
-      <h3 class="font-semibold text-white">Yeni site ekle</h3>
-      <button onclick="modalKapat()" class="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button>
-    </div>
-    <div class="p-5 space-y-3">
-      <div><label class="block text-xs text-slate-400 mb-1">Site adresi *</label>
-        <input id="yeniUrl" placeholder="ornek.com" class="${alanSinif}" onkeydown="if(event.key==='Enter')siteKaydet()" /></div>
-      <div class="grid grid-cols-2 gap-3">
-        <div><label class="block text-xs text-slate-400 mb-1">Gorunen ad <span class="text-slate-600">(bos = otomatik)</span></label>
-          <input id="yeniAd" placeholder="Ornek Site" class="${alanSinif}" /></div>
-        <div><label class="block text-xs text-slate-400 mb-1">Diller <span class="text-slate-600">(virgullu)</span></label>
-          <input id="yeniDiller" placeholder="tr,en" class="${alanSinif}" /></div>
-      </div>
-      <div><label class="block text-xs text-slate-400 mb-1">Not <span class="text-slate-600">(istege bagli)</span></label>
-        <input id="yeniNot" placeholder="orn. Eleventy statik site" class="${alanSinif}" /></div>
-      ${canli ? `<label class="flex items-center gap-2 text-xs text-slate-400 pt-1">
-        <input id="yeniTara" type="checkbox" checked class="accent-indigo-500" /> Ekledikten sonra hemen tara</label>` : ''}
-      <p id="modalHata" class="hidden text-xs text-rose-300 bg-rose-500/10 border border-rose-500/20 rounded-lg px-3 py-2"></p>
-      ${canli ? '' : `<p class="text-[11px] text-slate-500 leading-relaxed border-t border-slate-800 pt-3">
-        Bu, panelin statik (yayin) surumu — dosyaya yazamaz. <span class="text-slate-400">Kaydet</span> hazir JSON blogunu uretir,
-        sites.config.json icine yapistirirsin. Dogrudan eklemek icin paneli yerelde <span class="text-indigo-300">npm run panel</span> ile ac.</p>`}
-    </div>
-    <div class="flex justify-end gap-2 px-5 py-3.5 border-t border-slate-800">
-      <button onclick="modalKapat()" class="text-sm px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700">Vazgec</button>
-      <button id="kaydetBtn" onclick="siteKaydet()" class="text-sm px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500">${canli?'Kaydet':'JSON uret'}</button>
-    </div>`);
-  setTimeout(()=>el('yeniUrl')?.focus(),0);
-}
-window.siteEkleAc=siteEkleAc;
-window.siteEkleBilgi=siteEkleAc; // eski buton adi
-
-async function siteKaydet(){
-  const govde = {
-    url: el('yeniUrl').value, ad: el('yeniAd').value,
-    diller: el('yeniDiller').value, not: el('yeniNot').value,
-    tara: !!el('yeniTara')?.checked,
-  };
-  if(!yazilabilirMi()) return jsonBlokGoster(govde);
-  const btn = el('kaydetBtn'); btn.disabled=true; btn.textContent='Kaydediliyor…';
-  try{
-    const r = await fetch('api/siteler',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(govde)});
-    const d = await r.json();
-    if(!r.ok) throw new Error(d.hata || ('sunucu hatasi '+r.status));
-    KONFIG = await konfigYukle();
-    modalKapat();
-    git('ayarlar');
-    bildir(`${d.site.ad} eklendi. ` + (d.tarama?.baslatildi ? 'Tarama basladi — bitince paneli yenile.' : 'Veri icin: npm run tara-hepsi'));
-  }catch(e){
-    modalHata(e.message); btn.disabled=false; btn.textContent='Kaydet';
-  }
-}
-window.siteKaydet=siteKaydet;
-
-// statik surum: yapistirmaya hazir JSON blogu
-function jsonBlokGoster(g){
-  let url;
-  try{ url = urlDuzeltIstemci(g.url); }catch(e){ return modalHata(e.message); }
-  const diller = (g.diller||'').split(',').map(d=>d.trim().toLowerCase()).filter(Boolean);
-  const blok = JSON.stringify({
-    id: idTahmin(url), ad: (g.ad||'').trim() || adTahmin(url), url,
-    aktif: true, diller: diller.length?diller:['tr'], not: (g.not||'').trim(),
-  }, null, 2).split('\n').map(s => '    ' + s).join('\n');
-  modalAc(`
-    <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
-      <h3 class="font-semibold text-white">sites.config.json'a ekle</h3>
-      <button onclick="modalKapat()" class="text-slate-500 hover:text-slate-300 text-lg leading-none">✕</button></div>
-    <div class="p-5 space-y-3">
-      <p class="text-xs text-slate-400">Asagidaki blogu <span class="text-slate-200">sites.config.json</span> icindeki <span class="text-slate-200">"siteler"</span> dizisinin sonuna ekle (onceki blogun sonuna virgul koymayi unutma).</p>
-      <pre id="jsonBlok" class="text-[11px] leading-relaxed bg-slate-950 border border-slate-800 rounded-lg p-3 overflow-x-auto text-slate-300">${kacir(blok)}</pre>
-    </div>
-    <div class="flex justify-end gap-2 px-5 py-3.5 border-t border-slate-800">
-      <button onclick="modalKapat()" class="text-sm px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700">Kapat</button>
-      <button onclick="jsonKopyala(this)" class="text-sm px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500">Kopyala</button>
-    </div>`);
-}
-function jsonKopyala(btn){
-  const metin = el('jsonBlok').textContent;
-  navigator.clipboard?.writeText(metin).then(()=>{ btn.textContent='Kopyalandi ✓'; },()=>{ btn.textContent='Kopyalanamadi'; });
-}
-window.jsonKopyala=jsonKopyala;
-
-async function siteDurumDegistir(id, aktif){
-  try{
-    const r = await fetch('api/siteler/'+encodeURIComponent(id),{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({aktif})});
-    const d = await r.json(); if(!r.ok) throw new Error(d.hata||'http '+r.status);
-    KONFIG = await konfigYukle(); git('ayarlar');
-    bildir(`${d.site.ad} ${aktif?'aktif edildi':'pasife alindi'}.`);
-  }catch(e){ alert('Guncellenemedi: '+e.message); }
-}
-window.siteDurumDegistir=siteDurumDegistir;
-
-async function siteSil(id, ad){
-  if(!confirm(`"${ad}" takipten cikarilsin mi? (sites.config.json'dan silinir)`)) return;
-  try{
-    const r = await fetch('api/siteler/'+encodeURIComponent(id),{method:'DELETE'});
-    const d = await r.json(); if(!r.ok) throw new Error(d.hata||'http '+r.status);
-    KONFIG = await konfigYukle(); git('ayarlar');
-    bildir(`${d.site.ad} silindi.`);
-  }catch(e){ alert('Silinemedi: '+e.message); }
-}
-window.siteSil=siteSil;
-
-// ============ BASLAT ============
+// ============ BAŞLAT ============
 async function veriYukle(){
   try{
     const r = await fetch('data/data.json',{cache:'no-store'});
     if(!r.ok) throw new Error('http '+r.status);
     const d = await r.json();
-    if(!d._not) el('veriRozet').classList.add('hidden');
+    if(!d._not) el('veriRozet').style.display='none';
     return d;
-  }catch(e){
-    if(window.SEO_FALLBACK) return window.SEO_FALLBACK;
-    throw e;
-  }
+  }catch(e){ if(window.SEO_FALLBACK) return window.SEO_FALLBACK; throw e; }
 }
-
-(async () => {
+(async()=>{
   try{
-    [VERI, KONFIG] = await Promise.all([veriYukle(), konfigYukle()]);
+    VERI = await veriYukle();
     const t = new Date(VERI.guncelleme);
-    el('menuGuncelleme').textContent = 'Guncelleme: ' + (isNaN(t)?VERI.guncelleme:t.toLocaleString('tr-TR'));
-    menuCiz();
-    git('genel');
-  }catch(e){
-    el('icerik').innerHTML = bosDurum('Veri yuklenemedi. Panel\'i sunucuyla ac: npx serve · ('+e.message+')');
-  }
+    el('menuGuncelleme').textContent = 'son tarama: ' + (isNaN(t)?VERI.guncelleme:t.toLocaleString('tr-TR'));
+    menuCiz(); git('genel');
+  }catch(e){ el('icerik').innerHTML = bosDurum('Veri yüklenemedi. Panel\'i sunucuyla aç: npx serve · ('+e.message+')'); }
 })();
