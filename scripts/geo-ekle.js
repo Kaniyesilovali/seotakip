@@ -4,7 +4,7 @@
 //
 // JSON bicimi:
 //   { "siteId":"animare",
-//     "geo": {"chatgpt":false,"perplexity":true,"gemini":false},
+//     "geo": {"chatgpt":false,"perplexity":true,"gemini":false,"claude":true},
 //     "detay":[{"soru":"...","motor":"perplexity","gorundu":true,"not":"..."}] }
 //
 // Kullanim:  node scripts/geo-ekle.js <geo.json>
@@ -27,7 +27,7 @@ const site = veri.siteler.find(s => s.id === g.siteId);
 if (!site) { console.error(`✕ site bulunamadi: ${g.siteId}`); process.exit(1); }
 
 site.geo = {
-  chatgpt: !!g.geo.chatgpt, perplexity: !!g.geo.perplexity, gemini: !!g.geo.gemini,
+  chatgpt: !!g.geo.chatgpt, perplexity: !!g.geo.perplexity, gemini: !!g.geo.gemini, claude: !!g.geo.claude,
 };
 if (g.detay) site.geoDetay = g.detay;
 site.geoTarih = new Date().toISOString().slice(0, 10);
@@ -38,4 +38,4 @@ fs.writeFileSync(veriYolu, JSON.stringify(veri, null, 2));
 fs.writeFileSync(path.join(KOK, 'assets', 'fallback-data.js'), 'window.SEO_FALLBACK = ' + JSON.stringify(veri) + ';\n');
 
 const g2 = site.geo;
-console.log(`✓ ${site.ad} GEO: ChatGPT ${g2.chatgpt?'✓':'✗'} · Perplexity ${g2.perplexity?'✓':'✗'} · Gemini ${g2.gemini?'✓':'✗'}${g.detay?` (${g.detay.length} sorgu)`:''}`);
+console.log(`✓ ${site.ad} GEO: ChatGPT ${g2.chatgpt?'✓':'✗'} · Perplexity ${g2.perplexity?'✓':'✗'} · Gemini ${g2.gemini?'✓':'✗'} · Claude ${g2.claude?'✓':'✗'}${g.detay?` (${g.detay.length} sorgu)`:''}`);
