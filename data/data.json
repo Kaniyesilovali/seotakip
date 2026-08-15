@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-15T03:49:39.655Z",
+  "guncelleme": "2026-08-15T12:16:51.579Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 85,
@@ -153,9 +153,68 @@
         "kaynak": "lab"
       },
       "indeks": {
-        "indeksli": 0,
-        "indekssiz": 38,
-        "dususVar": false
+        "indeksli": 8,
+        "indekssiz": 4,
+        "aksiyonGereken": 4,
+        "kontrolEdilen": 12,
+        "toplamSayfa": 60,
+        "dususVar": false,
+        "nedenler": [
+          {
+            "neden": "Gönderildi ve indekslendi",
+            "adet": 8,
+            "sorun": false,
+            "cozum": "",
+            "ornekler": [
+              "/tr",
+              "/en",
+              "/tr/hizmetler"
+            ]
+          },
+          {
+            "neden": "Google bu URL'i bilmiyor",
+            "adet": 2,
+            "sorun": true,
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
+            "ornekler": [
+              "/en/contact",
+              "/en/services/general-checkup"
+            ]
+          },
+          {
+            "neden": "'noindex' etiketiyle hariç tutuldu",
+            "adet": 2,
+            "sorun": true,
+            "cozum": "Kasıtlı değilse <meta name=\"robots\" content=\"noindex\"> etiketini kaldır.",
+            "ornekler": [
+              "/tr/gizlilik",
+              "/en/privacy"
+            ]
+          }
+        ],
+        "sorunlu": [
+          {
+            "yol": "/en/contact",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/gizlilik",
+            "neden": "'noindex' etiketiyle hariç tutuldu",
+            "cozum": "Kasıtlı değilse <meta name=\"robots\" content=\"noindex\"> etiketini kaldır."
+          },
+          {
+            "yol": "/en/privacy",
+            "neden": "'noindex' etiketiyle hariç tutuldu",
+            "cozum": "Kasıtlı değilse <meta name=\"robots\" content=\"noindex\"> etiketini kaldır."
+          },
+          {
+            "yol": "/en/services/general-checkup",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          }
+        ],
+        "tarih": "2026-08-15T12:16:51.578Z"
       },
       "aiBotlar": null,
       "geo": {
@@ -313,8 +372,8 @@
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
-      "_indeksGercek": true,
-      "_geoGercek": true
+      "_geoGercek": true,
+      "_indeksGercek": true
     },
     {
       "id": "magusapsikoloji",
@@ -480,11 +539,7 @@
         "cls": 0,
         "kaynak": "lab"
       },
-      "indeks": {
-        "indeksli": 0,
-        "indekssiz": 84,
-        "dususVar": false
-      },
+      "indeks": null,
       "aiBotlar": null,
       "geo": null,
       "siralama": [
@@ -618,8 +673,7 @@
       ],
       "_hizGercek": true,
       "_siralamaGercek": true,
-      "_gapGercek": true,
-      "_indeksGercek": true
+      "_gapGercek": true
     },
     {
       "id": "taxsi",
@@ -850,11 +904,7 @@
         "cls": 0,
         "kaynak": "lab"
       },
-      "indeks": {
-        "indeksli": 0,
-        "indekssiz": 378,
-        "dususVar": false
-      },
+      "indeks": null,
       "aiBotlar": null,
       "geo": null,
       "siralama": [
@@ -982,8 +1032,7 @@
       ],
       "_hizGercek": true,
       "_siralamaGercek": true,
-      "_gapGercek": true,
-      "_indeksGercek": true
+      "_gapGercek": true
     },
     {
       "id": "luxeva",
