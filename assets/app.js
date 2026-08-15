@@ -481,10 +481,16 @@ const VIEWS = {
   },
 
   ayarlar(){
-    const site=(s)=>`<tr><td class="site-ad">${s.ad}</td><td style="color:var(--signal)">${kisaUrl(s.url)||'<span style=\"color:var(--faint)\">— (yakında)</span>'}</td><td class="ort">${s.aktif?cip('aktif','ok'):cip('pasif','')}</td></tr>`;
+    const duzenlenir = API_VAR === true;
+    const liste = SITE_CFG || VERI.siteler || [];
+    const eylem=(s)=> duzenlenir
+      ? `<td class="ort" style="white-space:nowrap"><button class="btn mini" onclick="siteDurum('${s.id}',${!s.aktif})">${s.aktif?'pasife al':'aktif et'}</button>
+         <button class="btn mini" style="margin-left:5px;color:var(--bad)" onclick="siteSil('${s.id}')">sil</button></td>` : '';
+    const site=(s)=>`<tr><td class="site-ad">${s.ad}</td><td style="color:var(--signal)">${kisaUrl(s.url)||'<span style=\"color:var(--faint)\">— (yakında)</span>'}</td><td class="ort">${s.aktif?cip('aktif','ok'):cip('pasif','')}</td>${eylem(s)}</tr>`;
     return bolumBaslik('Çıktı','Ayarlar','Site tanımları ve otomasyon. Kaynak: sites.config.json') +
-      `<div class="tablo-kap" style="margin-bottom:18px"><div class="tablo-bas">Tanımlı siteler<span style="font-size:11px;color:var(--faint)">sites.config.json</span></div>
-        <table class="tablo" style="min-width:420px"><thead><tr><th>Ad</th><th>URL</th><th class="ort">Durum</th></tr></thead><tbody>${(VERI.siteler||[]).map(site).join('')}</tbody></table></div>
+      `<div class="tablo-kap" style="margin-bottom:18px"><div class="tablo-bas">Tanımlı siteler<span style="font-size:11px;color:var(--faint)">${
+        duzenlenir ? 'sites.config.json — düzenlenebilir (npm run panel)' : 'sites.config.json — yayın sürümü salt-okunur'}</span></div>
+        <table class="tablo" style="min-width:420px"><thead><tr><th>Ad</th><th>URL</th><th class="ort">Durum</th>${duzenlenir?'<th class="ort">İşlem</th>':''}</tr></thead><tbody>${liste.map(site).join('')}</tbody></table></div>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
         ${karo('Otomasyon','GitHub Actions','her gece tarar — ücretsiz')}
         ${karo('Yayın','FileZilla / FTP','statik — sunucu yok')}
@@ -530,8 +536,148 @@ function menuAc(){ el('yanmenu').classList.add('acik'); el('perde').classList.ad
 function menuKapat(){ if(window.innerWidth<=640){ el('yanmenu').classList.remove('acik'); el('perde').classList.remove('acik'); } }
 function menuDaralt(){ document.body.classList.toggle('dar'); localStorage.setItem('seotakip_dar', document.body.classList.contains('dar')?'1':''); }
 window.menuAc=menuAc; window.menuKapat=menuKapat; window.menuDaralt=menuDaralt;
-function siteEkleBilgi(){ git('ayarlar'); alert('Yeni site: sites.config.json dosyasındaki "siteler" dizisine blok ekleyip aktif:true yap. Panel ve tüm script\'ler otomatik kapsar.'); }
-window.siteEkleBilgi = siteEkleBilgi;
+// ============ SITE EKLEME ============
+// Yerelde (npm run panel) yonetim API'si acikitr -> form dogrudan sites.config.json'a yazar.
+// Yayindaki statik surumde API yoktur -> ayni form, yapistirilacak JSON blogunu uretir.
+
+function modalKapat(){ el('modal').innerHTML=''; document.removeEventListener('keydown', modalEsc); }
+function modalEsc(e){ if(e.key==='Escape') modalKapat(); }
+function modalAc(icerik){
+  el('modal').innerHTML = `<div class="modal-arka" onclick="if(event.target===this)modalKapat()">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Yeni site ekle">${icerik}</div></div>`;
+  document.addEventListener('keydown', modalEsc);
+}
+window.modalKapat = modalKapat;
+
+let API_VAR = null;   // null = henuz bakilmadi
+let SITE_CFG = null;  // API varken sites.config.json'un canli hali
+async function apiVarMi(){
+  if(API_VAR !== null) return API_VAR;
+  if(location.protocol === 'file:') return (API_VAR = false);
+  API_VAR = await siteCfgYenile();
+  return API_VAR;
+}
+async function siteCfgYenile(){
+  try{
+    const r = await fetch('api/siteler', { cache:'no-store' });
+    const d = r.ok ? await r.json() : null;
+    if(!d?.yazilabilir) return false;
+    SITE_CFG = d.siteler || [];
+    return true;
+  }catch{ return false; }
+}
+
+// scripts/lib/siteler.js ile ayni kurallar (statik surumde blok uretmek icin)
+function urlDuzelt(girdi){
+  let s = String(girdi||'').trim();
+  if(!s) throw new Error('Adres boş olamaz.');
+  if(!/^https?:\/\//i.test(s)) s = 'https://' + s;
+  let u; try{ u = new URL(s); }catch{ throw new Error('Geçersiz adres: ' + girdi); }
+  if(!u.hostname.includes('.')) throw new Error('Geçersiz alan adı: ' + u.hostname);
+  return u.origin;
+}
+const kokHost = (u)=> new URL(u).hostname.replace(/^www\./,'');
+function idUret(url, mevcut=[]){
+  const taban = kokHost(url).split('.')[0].replace(/[^a-z0-9]+/gi,'').toLowerCase() || 'site';
+  let id = taban, n = 2;
+  while(mevcut.includes(id)) id = taban + (n++);
+  return id;
+}
+const adUret = (url)=> kokHost(url).split('.')[0].replace(/[-_]+/g,' ').replace(/\b\w/g, c=>c.toUpperCase());
+
+async function siteEkle(){
+  const canli = await apiVarMi();
+  const alan = (id,etiket,ipucu,deger='')=>`<label class="fl" for="${id}">${etiket}</label>
+    <input id="${id}" class="alan" style="margin:4px 0 11px" placeholder="${ipucu}" value="${deger}" onkeydown="if(event.key==='Enter')siteEkleGonder()" />`;
+  modalAc(`
+    <p style="font-family:var(--disp);font-weight:600;margin:0 0 3px">Yeni site ekle</p>
+    <p style="font-size:11px;color:var(--faint);margin:0 0 15px">${canli
+      ? 'sites.config.json dosyasına doğrudan yazılır'
+      : 'yayındaki panel salt-okunur — hazır blok üretilir, sites.config.json’a yapıştır'}</p>
+    ${alan('se-url','Adres *','ornek.com')}
+    ${alan('se-ad','Ad (boşsa adresten üretilir)','Örnek Site')}
+    ${alan('se-dil','Diller (virgülle)','tr, en','tr')}
+    ${alan('se-not','Not (opsiyonel)','WordPress / Next.js …')}
+    ${canli ? `<label style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);margin:2px 0 4px">
+      <input type="checkbox" id="se-tara" /> ekledikten sonra taramayı başlat</label>` : ''}
+    <p id="se-hata" style="display:none;color:var(--bad);font-size:12.5px;margin:8px 0 0"></p>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:15px">
+      <button class="btn" onclick="modalKapat()">Vazgeç</button>
+      <button class="btn primary" id="se-gonder" onclick="siteEkleGonder()">${canli?'Ekle':'Blok üret'}</button>
+    </div>`);
+  el('se-url').focus();
+}
+window.siteEkle = siteEkle;
+window.siteEkleBilgi = siteEkle; // eski buton adi
+
+async function siteEkleGonder(){
+  const hataGoster = (m)=>{ const h=el('se-hata'); h.textContent=m; h.style.display='block'; };
+  const g = {
+    url: el('se-url').value, ad: el('se-ad').value.trim(),
+    diller: el('se-dil').value, not: el('se-not').value.trim(),
+    tara: !!el('se-tara')?.checked,
+  };
+  let tamUrl;
+  try{ tamUrl = urlDuzelt(g.url); }catch(e){ return hataGoster(e.message); }
+  const mevcut = SITE_CFG || VERI.siteler || [];
+  const cakisan = mevcut.find(s=> s.url && kokHost(s.url) === kokHost(tamUrl));
+  if(cakisan) return hataGoster(`Bu adres zaten kayıtlı: ${cakisan.ad}`);
+
+  const btn = el('se-gonder'); btn.disabled = true; btn.textContent = 'kaydediliyor…';
+  if(await apiVarMi()){
+    try{
+      const r = await fetch('api/siteler', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(g) });
+      const d = await r.json();
+      if(!r.ok) throw new Error(d.hata || ('http ' + r.status));
+      await siteCfgYenile();
+      return siteEklendiEkrani(d.site, d.tarama);
+    }catch(e){
+      btn.disabled = false; btn.textContent = 'Ekle';
+      return hataGoster('Eklenemedi: ' + e.message);
+    }
+  }
+  // statik surum: yapistirilacak blogu uret
+  const diller = g.diller.split(',').map(d=>d.trim().toLowerCase()).filter(Boolean);
+  siteEklendiEkrani({
+    id: idUret(tamUrl, mevcut.map(s=>s.id)),
+    ad: g.ad || adUret(tamUrl), url: tamUrl, aktif: true,
+    diller: diller.length ? [...new Set(diller)] : ['tr'], not: g.not,
+  }, null, true);
+}
+window.siteEkleGonder = siteEkleGonder;
+
+async function siteYonet(id, ayar){
+  try{
+    const r = await fetch('api/siteler/' + encodeURIComponent(id), ayar);
+    const d = await r.json();
+    if(!r.ok) throw new Error(d.hata || ('http ' + r.status));
+    await siteCfgYenile();
+    git('ayarlar');
+  }catch(e){ alert('İşlem başarısız: ' + e.message); }
+}
+const siteDurum = (id, aktif)=> siteYonet(id, { method:'PATCH', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ aktif }) });
+function siteSil(id){
+  const s = (SITE_CFG||[]).find(x=>x.id===id);
+  if(!confirm(`${s?.ad || id} sites.config.json'dan tamamen silinsin mi?`)) return;
+  return siteYonet(id, { method:'DELETE' });
+}
+window.siteDurum = siteDurum; window.siteSil = siteSil;
+
+function siteEklendiEkrani(site, tarama, sadeceBlok){
+  const blok = JSON.stringify(site, null, 2).replace(/</g,'&lt;');
+  modalAc(`
+    <p style="font-family:var(--disp);font-weight:600;margin:0 0 3px">
+      <span class="t-ok">${sadeceBlok?'◧':'✓'}</span> ${site.ad}</p>
+    <p style="font-size:11px;color:var(--faint);margin:0 0 13px">${sadeceBlok
+      ? 'Bu bloğu bilgisayarındaki sites.config.json → "siteler" dizisine ekle, sonra: npm run tara-hepsi && npm run build'
+      : 'sites.config.json güncellendi.' + (tarama?.baslatildi ? ' Tarama başladı; bitince paneli yenile.' : ' Sırada: npm run tara-hepsi && npm run build')}</p>
+    <div style="text-align:right;margin-bottom:5px"><button class="btn mini" onclick="kopyala('se-blok',this)">Kopyala</button></div>
+    <textarea id="se-blok" class="alan" readonly rows="8">${blok}</textarea>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px">
+      <button class="btn" onclick="siteEkle()">Bir tane daha</button>
+      <button class="btn primary" onclick="modalKapat();git('ayarlar')">Tamam</button>
+    </div>`);
+}
 
 // ============ BAŞLAT ============
 async function veriYukle(){
@@ -547,6 +693,7 @@ async function veriYukle(){
   try{
     if(localStorage.getItem('seotakip_dar')) document.body.classList.add('dar'); // daralt tercihini hatirla
     VERI = await veriYukle();
+    await apiVarMi(); // yerel panelde site ekleme/silme acilir; yayinda sessizce kapali kalir
     const t = new Date(VERI.guncelleme);
     el('menuGuncelleme').textContent = 'son tarama: ' + (isNaN(t)?VERI.guncelleme:t.toLocaleString('tr-TR'));
     menuCiz(); git('genel');

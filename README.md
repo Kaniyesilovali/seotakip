@@ -25,7 +25,11 @@ Panel (index.html + Tailwind)  →  data/data.json  ←  scripts/*.js (Node)
 
 Üç yol var; hepsi aynı `sites.config.json` dosyasını günceller, panel ve tüm script'ler otomatik kapsar — kod değişmez.
 
-**1) Panelden (en pratik).** `npm run panel` ile aç, sağ üstteki **+ Site** butonuna bas, adresi yaz, kaydet. "Ekledikten sonra hemen tara" kutusu işaretliyse tarama arka planda başlar. Ayarlar bölümünden site pasife alınabilir/silinebilir.
+**1) Panelden (en pratik).** `npm run panel` ile aç, sağ üstteki **+ Site** butonuna bas, adresi yaz, kaydet. "Ekledikten sonra taramayı başlat" kutusu işaretliyse tarama arka planda başlar. Ayarlar bölümünden site pasife alınabilir/silinebilir.
+
+> Yayındaki panelde (FTP'ye yüklenen `dist/`) yazma yoktur — orada **+ Site** aynı formu açar ama
+> kaydetmek yerine `sites.config.json`'a yapıştırılacak hazır bloğu üretir. Tarama zaten senin
+> bilgisayarında çalıştığı için site tanımı da orada yaşamalı.
 
 **2) Terminalden.**
 
