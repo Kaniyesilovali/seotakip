@@ -35,7 +35,7 @@ dist/
 ```
 
 Build ayrıca `index.html` içindeki varlık adreslerine içerik hash'i ekler
-(`assets/app.js?v=43a82cb6`). Bu yüzden **`index.html` ile `assets/` her zaman birlikte
+(ör. `assets/app.js?v=d9970bdc` — dosya her değiştiğinde hash de değişir). Bu yüzden **`index.html` ile `assets/` her zaman birlikte
 yüklenmeli** — yalnızca birini yüklersen tarayıcı yeni HTML ile eski JS/CSS'i eşleştirip
 paneli bozuk açar.
 
@@ -66,7 +66,7 @@ Sonra FileZilla'da neyi yükleyeceğin **neyin değiştiğine** bağlı:
 |---|---|
 | Sadece tarama verisi (`npm run tara-hepsi`) | `dist/data/data.json` → sunucudaki `data/data.json` üzerine |
 | Panel kodu/tasarımı (`assets/*`, `index.html`) | `dist/index.html` **ve** `dist/assets/` klasörünün tamamı birlikte |
-| Emin değilsen | `dist/` içindekilerin hepsi (156 KB, birkaç saniye) |
+| Emin değilsen | `dist/` içindekilerin hepsi (~165 KB, birkaç saniye) |
 
 FileZilla'da üzerine yazarken çıkan diyalogda **"Overwrite"** + "Always use this action"
 seçmen yeterli. Transfer modu **Binary** olsun (Transfer → Transfer Type → Binary);
@@ -77,6 +77,15 @@ Auto/ASCII modunda `data.json` bozulabilir.
 
 ## Notlar
 
-- Panel **Tailwind CDN** kullanır → sunucuda internet erişimi olduğu sürece sorunsuz çalışır.
+- Panelin tüm stili kendi `assets/panel.css` dosyasındadır; dışarıdan sadece **Google Fonts**
+  (Space Grotesk + Inter) çekilir. Font'a erişilemezse panel yine çalışır, sadece yazı tipi
+  sistem font'una düşer.
+- **"+ Site" yayında salt-okunur.** Buton formu açar ama sunucuya yazamaz; yerine
+  `sites.config.json`'a yapıştırılacak hazır bloğu üretir. Gerçek ekleme kendi bilgisayarında:
+  `npm run panel` → **+ Site**, ya da `npm run site-ekle -- ornek.com`. Tarama zaten sende
+  çalıştığı için site tanımı da orada yaşar.
+- Panel açılışta bir kez `api/siteler` adresini yoklar; statik sunucuda bu **404 döner ve
+  normaldir** (panel sessizce salt-okunur moda geçer). Access log'da bu satırı görünce
+  endişelenme.
 - `.htaccess` (Apache host'larda) `data.json`'u önbelleğe almaz; yeni veriyi yükleyince hemen görünür.
 - Nginx host isen `.htaccess` yok sayılır; panel yine çalışır, sadece tarayıcıda sert yenile (Cmd+Shift+R) gerekebilir.
