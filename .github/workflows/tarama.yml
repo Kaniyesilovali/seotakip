@@ -51,10 +51,29 @@ jobs:
             echo "GSC_KEY_JSON secret yok — siralama/anahtar kelime atlandi"
           fi
 
+      - name: Haftalik rapor (pazartesileri + elle tetiklemede)
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node scripts/rapor.js || echo "rapor atlandi"
+          else
+            echo "pazartesi degil — rapor uretilmedi"
+          fi
+
+      - name: Telegram uyari (token varsa)
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -n "$TELEGRAM_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            node scripts/telegram.js || echo "telegram gonderimi basarisiz — durum dosyasi guncellenmedi"
+          else
+            echo "TELEGRAM_TOKEN/TELEGRAM_CHAT_ID secret yok — uyari atlandi"
+          fi
+
       - name: Sonucu commit'le
         run: |
           git config user.name "seo-tarama-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/data.json data/indeks-cache.json assets/fallback-data.js data/history/ || true
+          git add data/data.json data/indeks-cache.json assets/fallback-data.js data/history/ data/raporlar/ data/uyari-durumu.json || true
           git commit -m "otomatik tarama: $(date -u +%Y-%m-%d) [skip ci]" || echo "degisiklik yok"
           git push || echo "push atlandi"

@@ -104,60 +104,11 @@ const siteler = ()=> (VERI?.siteler||[]).filter(s =>
   (!SECILI_SITE || s.id===SECILI_SITE) && (!ARAMA || (s.ad+s.url).toLowerCase().includes(ARAMA)));
 
 // ============ ÖNERİ / DEĞERLENDİRME MOTORU ============
-const ONCELIK_SIRA = { kritik:0, yuksek:1, orta:2, dusuk:3 };
-const ETKI = { kritik:4, yuksek:3, orta:2, dusuk:1 };
-const EFOR = {
-  'SSL':1,'Kirik link':1,'Sitemap':1,'Meta':1,'Gorsel alt':1,'Olcum':1,'Schema':1,'AI bot':1,
-  'Ic link':2,'Orphan':2,'CLS':2,'LCP':2,'Kelime firsati':2,'Kelime dususu':2,'Indeks':2,'Icerik':2,'Kanibalizasyon':2,'Icerik boslugu':2,
-  'Hiz':3,'GEO':3
-};
-const EFOR_AD = { 1:'kolay', 2:'orta', 3:'zor' };
+// Motorun kendisi assets/oneri-motoru.js'te (index.html'de bu dosyadan ONCE yuklenir).
+// Ayni motoru scripts/rapor.js de kullanir; panel ile rapor asla ayrisamasin diye.
+// Buradan gelen globaller: ONCELIK_SIRA, ETKI, EFOR, EFOR_AD, oneriUret, onerileriTopla, haftalikOzet
 
-function oneriUret(s){
-  const o = [];
-  const ekle = (alan, oncelik, mesaj) => {
-    const efor = EFOR[alan] || 2;
-    o.push({ site:s.ad, siteId:s.id, alan, oncelik, mesaj, efor, etki:ETKI[oncelik], hizliKazanim: efor===1 && (oncelik==='kritik'||oncelik==='yuksek') });
-  };
-  if (s.ssl && !s.ssl.gecerli) ekle('SSL','kritik','SSL yok/geçersiz — hemen kur.');
-  else if (s.ssl && s.ssl.kalanGun<=30) ekle('SSL', s.ssl.kalanGun<=14?'kritik':'yuksek', `SSL ${s.ssl.kalanGun} gün sonra doluyor — yenile.`);
-  if (s.kirikLinkler?.length) ekle('Kirik link','yuksek', `${s.kirikLinkler.length} kırık link — 404'leri düzelt veya yönlendir.`);
-  if (!s.schema?.gecerli) ekle('Schema','orta','JSON-LD schema yok — LocalBusiness/Organization ekle.');
-  if (!s.sitemap?.varMi) ekle('Sitemap','yuksek','sitemap.xml yok — oluştur ve Search Console\'a gönder.');
-  else if (s.sitemap.erisilemez>0) ekle('Sitemap','orta', `Sitemap'te ${s.sitemap.erisilemez} erişilemez URL — temizle.`);
-  const em = s.eksikMeta||{}; const meta = (em.title||0)+(em.description||0)+(em.h1||0);
-  if (meta) ekle('Meta','orta', `${meta} sayfada eksik title/description/H1 — doldur.`);
-  const op = s.onpage||{};
-  if (op.altEksik>10) ekle('Gorsel alt','dusuk', `${op.altEksik} görselde alt text yok — ekle.`);
-  if (!op.tracking?.length) ekle('Olcum','orta','GA4/GTM yok — trafiği ölçemezsin, kur.');
-  if (op.keywordYogunluk==='dusuk') ekle('Icerik','dusuk','Anahtar kelime yoğunluğu düşük — konu derinliğini artır.');
-  const h = s.hiz||{};
-  if (h.mobilPuan!=null && h.mobilPuan<50) ekle('Hiz','yuksek', `Mobil hız ${h.mobilPuan}/100 — kritik. Görsel/JS optimize et.`);
-  else if (h.mobilPuan!=null && h.mobilPuan<90) ekle('Hiz','dusuk', `Mobil hız ${h.mobilPuan}/100 — iyileştir.`);
-  if (h.cls>0.25) ekle('CLS','orta', `CLS ${h.cls} yüksek — layout kayması var, boyut ver.`);
-  if (h.lcp>4) ekle('LCP','orta', `LCP ${h.lcp}s yavaş — en büyük görseli optimize et / preload.`);
-  const ic = s.iclink||{};
-  if (ic.ortLink!=null && ic.ortLink<5) ekle('Ic link','orta', `Ortalama ${ic.ortLink} iç link/sayfa — AZ. En az 5-8 hedefle.`);
-  if (ic.orphan?.length) ekle('Orphan','orta', `${ic.orphan.length} öksüz sayfa — menü/ilgili yazılardan link ver.`);
-  if (s.indeks?.dususVar) ekle('Indeks','yuksek','İndekslenen sayfa düştü — Search Console kapsam hatalarına bak.');
-  // Sadece AKSIYON GEREKTIREN nedenler oneri uretir. "Alternatif sayfa"/"yonlendirme" gibi
-  // normal durumlar indekssiz sayilir ama yapilacak bir sey yoktur -> oneri cikarmaz.
-  (s.indeks?.nedenler||[]).filter(n=>n.sorun).forEach(n=>{
-    const onc = /404|5xx|robots|401|403/.test(n.neden) ? 'yuksek' : n.adet>=5 ? 'orta' : 'dusuk';
-    ekle('Indeks', onc, `${n.adet} sayfa: ${n.neden} — ${n.cozum||'Search Console → URL Denetleme ile incele.'}`);
-  });
-  if (s.aiBotlar){ const b=s.aiBotlar; if (((b.gptbot||0)+(b.claudebot||0)+(b.perplexitybot||0))<20) ekle('AI bot','orta','AI botları siteni az tarıyor — llms.txt ekle, robots\'ta izin ver.'); }
-  if (s.geo && !s.geo.chatgpt && !s.geo.perplexity && !s.geo.gemini && !s.geo.claude) ekle('GEO','orta','Hiçbir AI motorunda görünmüyorsun — schema + net cevap formatlı içerik gerek.');
-  (s.siralama||[]).forEach(k=>{
-    if (k.pozisyon>=4 && k.pozisyon<=10 && (k.gosterim||0)>=500) ekle('Kelime firsati','yuksek', `"${k.kelime}" #${k.pozisyon} + yüksek gösterim — az itmeyle ilk 3'e girer.`);
-    else if (k.pozisyon>=11 && k.pozisyon<=20) ekle('Kelime firsati','orta', `"${k.kelime}" #${k.pozisyon} (2. sayfa) — içeriği güçlendir.`);
-    if (k.onceki && k.pozisyon>k.onceki) ekle('Kelime dususu','orta', `"${k.kelime}" ${k.onceki}→${k.pozisyon} düştü — incele.`);
-  });
-  (s.kanibalizasyon||[]).forEach(k=> ekle('Kanibalizasyon','orta', `"${k.kelime}" için ${k.sayfalar.length} sayfa yarışıyor — birini ana yap, diğerlerini birleştir.`));
-  (s.icerikBoslugu||[]).forEach(g=> ekle('Icerik boslugu', g.hacim>=500?'yuksek':'orta', `"${g.kelime}" (~${g.hacim} gösterim) — içeriği güçlendir/yaz.`));
-  return o;
-}
-const tumOneriler = ()=> siteler().flatMap(oneriUret).sort((a,b)=> ONCELIK_SIRA[a.oncelik]-ONCELIK_SIRA[b.oncelik]);
+const tumOneriler = ()=> onerileriTopla(siteler());
 const icLinkYorum = (n)=> n==null?{metin:'–',ton:'mut'} : n<5?{metin:'AZ',ton:'warn'} : n<=15?{metin:'ideal',ton:'ok'} : {metin:'ÇOK',ton:'warn'};
 
 // ============ MANUEL RAKİP (localStorage) ============
@@ -185,20 +136,9 @@ const uretSchema = (s)=> JSON.stringify({ "@context":"https://schema.org","@type
 function kopyala(id, btn){ const t=el(id); const m = t.value!=null?t.value:t.textContent; const ok=()=>{ if(btn){ const o=btn.textContent; btn.textContent='kopyalandı ✓'; setTimeout(()=>btn.textContent=o,1200); } }; if(navigator.clipboard) navigator.clipboard.writeText(m).then(ok,ok); else ok(); }
 window.kopyala = kopyala;
 
-function haftalikOzetUret(){
-  const t = tumOneriler();
-  const k = t.filter(o=>o.oncelik==='kritik').length, y = t.filter(o=>o.oncelik==='yuksek').length, hizli = t.filter(o=>o.hizliKazanim).length;
-  const deg = VERI.degisiklikler||[];
-  const artis = deg.filter(d=>d.tip==='artis'), dusus = deg.filter(d=>d.tip==='dusus'||d.tip==='yeni-kirik');
-  let s = `Bu hafta ${(VERI.siteler||[]).length} site takip edildi; ortalama SEO puanı ${VERI.ozet?.ortalamaSeoPuan}/100. `;
-  s += k ? `${k} kritik ve ${y} yüksek öncelikli sorun var — önce bunları kapat. ` : `Kritik sorun yok; ${y} yüksek öncelikli madde var. `;
-  if(hizli) s += `${hizli} adet hızlı kazanım (yüksek etki, kolay) var. `;
-  if(artis.length) s += `Olumlu: ${artis.map(a=>a.mesaj).join('; ')}. `;
-  if(dusus.length) s += `Dikkat: ${dusus.map(a=>a.mesaj).join('; ')}. `;
-  const ilk3 = t.slice(0,3).map(a=>`(${a.site}) ${a.mesaj}`).join('  |  ');
-  if(ilk3) s += `Önerilen ilk 3 aksiyon: ${ilk3}`;
-  return s;
-}
+// Ozet metnini motor uretir (rapor ile ayni cumleler cikssin diye); burada sadece
+// panelin o anki site filtresi uygulanir.
+const haftalikOzetUret = ()=> haftalikOzet(siteler(), tumOneriler(), VERI.degisiklikler, VERI.ozet?.ortalamaSeoPuan);
 
 // ============ BÖLÜMLER ============
 function siteKart(s){
@@ -458,13 +398,18 @@ const VIEWS = {
 
   raporlar(){
     const list = VERI.raporlar||[];
+    // r.dosya varsa rapor gercekten uretilmis demektir (npm run rapor) -> yeni sekmede acilir,
+    // PDF'i raporun kendi "PDF kaydet" dugmesi verir. Dosyasi olmayan eski kayitlar pasif kalir.
     const kart=(r)=>`<div class="karo" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
       <div><p style="font-family:var(--disp);font-weight:600;margin:0">${r.ad}</p><p style="font-size:11px;color:var(--faint);margin:2px 0 0">${r.tur} · ${r.tarih}</p></div>
-      <button class="btn mini" disabled style="opacity:.5">PDF (Aşama 5)</button></div>`;
+      ${r.dosya
+        ? `<a class="btn mini" href="${r.dosya}" target="_blank" rel="noopener">Aç / PDF</a>`
+        : `<button class="btn mini" disabled style="opacity:.5" title="Bu kayıt için dosya yok — npm run rapor ile yeniden üret">dosya yok</button>`}</div>`;
     return bolumBaslik('Çıktı','Raporlar','Otomatik haftalık özet + indirilebilir raporlar.') +
       `<div class="kart" style="margin-bottom:18px"><p style="font-family:var(--disp);font-weight:600;margin:0 0 7px"><span class="t-sig">✦</span> Haftalık Akıllı Özet</p>
         <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin:0">${haftalikOzetUret()}</p></div>` +
-      `<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${list.map(kart).join('')||bosDurum('Henüz rapor yok.')}</div>`;
+      `<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${list.map(kart).join('')||bosDurum('Henüz rapor yok — bilgisayarında "npm run rapor" çalıştır.')}</div>` +
+      `<p style="font-size:11.5px;color:var(--faint);margin:14px 0 0">Yeni rapor: <code>npm run rapor</code> (haftalık) · <code>npm run rapor -- aylik</code> · tek site için <code>npm run rapor -- --site=animare</code></p>`;
   },
 
   araclar(){

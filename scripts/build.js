@@ -18,10 +18,13 @@ const DIST = path.join(KOK, 'dist');
 const DOSYALAR = [
   'index.html',
   'assets/panel.css',
+  'assets/oneri-motoru.js',
   'assets/app.js',
   'assets/fallback-data.js',
   'data/data.json',
 ];
+// uretilmis raporlar (varsa) — her biri kendi kendine yeten tek HTML dosyasi
+const RAPOR_KLASORU = path.join(KOK, 'data', 'raporlar');
 const YASAK = ['.env', 'gsc-key.json', 'sites.config.json', 'package.json'];
 
 fs.rmSync(DIST, { recursive: true, force: true });
@@ -31,6 +34,14 @@ for (const f of DOSYALAR) {
   fs.copyFileSync(path.join(KOK, f), dst);
 }
 
+// raporlar: data.json'daki kayitlar dosyaya isaret ediyor, o dosyalar da yuklenmeli
+if (fs.existsSync(RAPOR_KLASORU)) {
+  const hedef = path.join(DIST, 'data', 'raporlar');
+  fs.mkdirSync(hedef, { recursive: true });
+  for (const f of fs.readdirSync(RAPOR_KLASORU).filter(f => f.endsWith('.html')))
+    fs.copyFileSync(path.join(RAPOR_KLASORU, f), path.join(hedef, f));
+}
+
 // ---- onbellek kirma ----
 // index.html + varliklar birlikte degisir; ziyaretcinin tarayicisi eskisini onbellekten
 // verirse panel bozuk acilir (yeni HTML + eski JS/CSS). Varlik adresine icerik hash'i ekleyip
@@ -38,7 +49,7 @@ for (const f of DOSYALAR) {
 const hash = (dosya) => crypto.createHash('md5').update(fs.readFileSync(path.join(DIST, dosya))).digest('hex').slice(0, 8);
 const HTML = path.join(DIST, 'index.html');
 let html = fs.readFileSync(HTML, 'utf8');
-for (const varlik of ['assets/panel.css', 'assets/app.js', 'assets/fallback-data.js']) {
+for (const varlik of ['assets/panel.css', 'assets/oneri-motoru.js', 'assets/app.js', 'assets/fallback-data.js']) {
   const oncesi = html;
   html = html.replaceAll(varlik, `${varlik}?v=${hash(varlik)}`);
   if (html === oncesi) console.warn(`! uyari: index.html icinde ${varlik} referansi bulunamadi`);

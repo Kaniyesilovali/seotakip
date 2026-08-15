@@ -28,10 +28,13 @@ dist/
 ├── .htaccess
 ├── assets/
 │   ├── panel.css
+│   ├── oneri-motoru.js
 │   ├── app.js
 │   └── fallback-data.js
 └── data/
-    └── data.json
+    ├── data.json
+    └── raporlar/            ← varsa (npm run rapor ile üretilen HTML raporlar)
+        └── 2026-08-15-haftalik.html
 ```
 
 Build ayrıca `index.html` içindeki varlık adreslerine içerik hash'i ekler
@@ -65,6 +68,7 @@ Sonra FileZilla'da neyi yükleyeceğin **neyin değiştiğine** bağlı:
 | Değişen | Yüklenecek |
 |---|---|
 | Sadece tarama verisi (`npm run tara-hepsi`) | `dist/data/data.json` → sunucudaki `data/data.json` üzerine |
+| Yeni rapor ürettin (`npm run rapor`) | `dist/data/data.json` **ve** `dist/data/raporlar/` klasörü (panel rapora oradan link verir) |
 | Panel kodu/tasarımı (`assets/*`, `index.html`) | `dist/index.html` **ve** `dist/assets/` klasörünün tamamı birlikte |
 | Emin değilsen | `dist/` içindekilerin hepsi (~165 KB, birkaç saniye) |
 

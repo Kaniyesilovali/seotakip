@@ -13,6 +13,8 @@
     "gsc": "node scripts/searchconsole.js",
     "indeks": "node scripts/indeks.js",
     "icerik": "node scripts/aiblog.js",
+    "rapor": "node scripts/rapor.js",
+    "uyar": "node scripts/telegram.js",
     "build": "node scripts/build.js"
   },
   "keywords": [
