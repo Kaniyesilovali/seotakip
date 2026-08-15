@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-15T12:16:51.579Z",
+  "guncelleme": "2026-08-15T19:29:21.464Z",
   "ozet": {
     "toplamSite": 5,
-    "ortalamaSeoPuan": 85,
-    "toplamKirikLink": 13,
+    "ortalamaSeoPuan": 87,
+    "toplamKirikLink": 16,
     "acilUyari": 0
   },
   "siteler": [
@@ -13,14 +13,15 @@
       "url": "https://animare.vet",
       "aktif": true,
       "seo": {
-        "puan": 89,
-        "onceki": 89,
-        "trend": "+0"
+        "puan": 84,
+        "onceki": 80,
+        "trend": "+4"
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 2532,
-        "sonKontrol": "2026-08-15T03:39:33.866Z"
+        "yanitMs": 2377,
+        "sonKontrol": "2026-08-15T19:22:43.075Z",
+        "medyanMs": 148
       },
       "ssl": {
         "gecerli": true,
@@ -95,6 +96,11 @@
         "/en/blog/cat-and-dog-food-range"
       ],
       "kirikLinkler": [],
+      "kirikOzet": {
+        "ic": 0,
+        "dis": 0,
+        "dogrulanmamis": 0
+      },
       "eksikMeta": {
         "title": 0,
         "description": 0,
@@ -111,7 +117,64 @@
           "BreadcrumbList",
           "Service",
           "BlogPosting"
+        ],
+        "eksikAlan": [
+          {
+            "alan": "BlogPosting.image",
+            "adet": 30
+          }
+        ],
+        "sorunluSayfa": 30
+      },
+      "icerik": {
+        "ortKelime": 495,
+        "inceSayfa": 16,
+        "esik": 200,
+        "ornekler": [
+          {
+            "yol": "/tr/hizmetler/radyoloji",
+            "kelime": 140
+          },
+          {
+            "yol": "/tr/hizmetler/laboratuvar",
+            "kelime": 151
+          },
+          {
+            "yol": "/tr/hizmetler/pet-kuafor",
+            "kelime": 157
+          },
+          {
+            "yol": "/tr/hizmetler/acil-hizmet",
+            "kelime": 159
+          },
+          {
+            "yol": "/tr/hizmetler/cerrahi",
+            "kelime": 163
+          },
+          {
+            "yol": "/en/services/radiology",
+            "kelime": 168
+          },
+          {
+            "yol": "/tr/hizmetler/beslenme-danismanligi",
+            "kelime": 169
+          },
+          {
+            "yol": "/tr/iletisim",
+            "kelime": 171
+          },
+          {
+            "yol": "/tr/hizmetler/asilama",
+            "kelime": 171
+          },
+          {
+            "yol": "/tr/hizmetler/dis-bakimi",
+            "kelime": 171
+          }
         ]
+      },
+      "llms": {
+        "varMi": false
       },
       "sitemap": {
         "varMi": true,
@@ -372,8 +435,8 @@
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
-      "_geoGercek": true,
-      "_indeksGercek": true
+      "_indeksGercek": true,
+      "_geoGercek": true
     },
     {
       "id": "magusapsikoloji",
@@ -381,14 +444,15 @@
       "url": "https://magusapsikoloji.com",
       "aktif": true,
       "seo": {
-        "puan": 80,
-        "onceki": 100,
-        "trend": "-20"
+        "puan": 93,
+        "onceki": 93,
+        "trend": "+0"
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 816,
-        "sonKontrol": "2026-08-15T03:40:33.990Z"
+        "yanitMs": 186,
+        "sonKontrol": "2026-08-15T19:23:25.840Z",
+        "medyanMs": 70
       },
       "ssl": {
         "gecerli": true,
@@ -487,6 +551,11 @@
         "/terapi-sureci.html"
       ],
       "kirikLinkler": [],
+      "kirikOzet": {
+        "ic": 0,
+        "dis": 0,
+        "dogrulanmamis": 0
+      },
       "eksikMeta": {
         "title": 0,
         "description": 0,
@@ -501,7 +570,52 @@
           "Article",
           "FAQPage",
           "MedicalOrganization"
+        ],
+        "eksikAlan": [
+          {
+            "alan": "LocalBusiness.telephone",
+            "adet": 32
+          }
+        ],
+        "sorunluSayfa": 32
+      },
+      "icerik": {
+        "ortKelime": 547,
+        "inceSayfa": 7,
+        "esik": 200,
+        "ornekler": [
+          {
+            "yol": "/iletisim.html",
+            "kelime": 70
+          },
+          {
+            "yol": "/en/contact.html",
+            "kelime": 88
+          },
+          {
+            "yol": "/blog/beyin-beden.html",
+            "kelime": 175
+          },
+          {
+            "yol": "/hizmetler/aile-terapisi.html",
+            "kelime": 181
+          },
+          {
+            "yol": "/hizmetler/ogrenci-danismanlik.html",
+            "kelime": 194
+          },
+          {
+            "yol": "/hizmetler",
+            "kelime": 196
+          },
+          {
+            "yol": "/hizmetler/bdt-terapisi.html",
+            "kelime": 199
+          }
         ]
+      },
+      "llms": {
+        "varMi": false
       },
       "sitemap": {
         "varMi": true,
@@ -681,14 +795,15 @@
       "url": "https://thetaxsi.com",
       "aktif": true,
       "seo": {
-        "puan": 92,
-        "onceki": 96,
-        "trend": "-4"
+        "puan": 96,
+        "onceki": 92,
+        "trend": "+4"
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 1546,
-        "sonKontrol": "2026-08-15T03:41:56.677Z"
+        "yanitMs": 389,
+        "sonKontrol": "2026-08-15T19:24:42.968Z",
+        "medyanMs": 235
       },
       "ssl": {
         "gecerli": true,
@@ -853,6 +968,11 @@
         "/ru/marshruty/transfer-aeroport-pafos-karshiyaka"
       ],
       "kirikLinkler": [],
+      "kirikOzet": {
+        "ic": 0,
+        "dis": 0,
+        "dogrulanmamis": 0
+      },
       "eksikMeta": {
         "title": 0,
         "description": 0,
@@ -868,7 +988,18 @@
           "FAQPage",
           "Service",
           "BreadcrumbList"
-        ]
+        ],
+        "eksikAlan": [],
+        "sorunluSayfa": 0
+      },
+      "icerik": {
+        "ortKelime": 520,
+        "inceSayfa": 0,
+        "esik": 200,
+        "ornekler": []
+      },
+      "llms": {
+        "varMi": true
       },
       "sitemap": {
         "varMi": true,
@@ -1040,19 +1171,20 @@
       "url": "https://luxeva-cyprus.com",
       "aktif": true,
       "seo": {
-        "puan": 74,
-        "onceki": 74,
+        "puan": 73,
+        "onceki": 73,
         "trend": "+0"
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 411,
-        "sonKontrol": "2026-08-15T03:45:18.685Z"
+        "yanitMs": 179,
+        "sonKontrol": "2026-08-15T19:28:03.588Z",
+        "medyanMs": 71
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-10-30",
-        "kalanGun": 77
+        "kalanGun": 76
       },
       "sayfalar": {
         "taranan": 30,
@@ -1095,64 +1227,93 @@
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/collection.html",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/live-shots.html",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/reviews.html",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/about.html",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/contact.html",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/blog/choosing-jewellery-in-cyp…",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/blog/where-to-buy-handbags-nor…",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/blog/cyprus-capsule-wardrobe.h…",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/blog/how-to-tell-real-leather.…",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/blog/shoes-for-the-cyprus-heat…",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/blog/what-to-wear-cyprus-summe…",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         },
         {
           "kaynak": "/en",
           "hedef": "https://www.luxeva-cyprus.com/blog/bag-care-sun-salt-sea.htm…",
-          "kod": 404
+          "kod": 404,
+          "ic": true,
+          "sayilir": true
         }
       ],
+      "kirikOzet": {
+        "ic": 12,
+        "dis": 0,
+        "dogrulanmamis": 0
+      },
       "eksikMeta": {
         "title": 0,
         "description": 0,
@@ -1168,7 +1329,27 @@
           "BreadcrumbList",
           "Blog",
           "BlogPosting"
+        ],
+        "eksikAlan": [],
+        "sorunluSayfa": 0
+      },
+      "icerik": {
+        "ortKelime": 634,
+        "inceSayfa": 2,
+        "esik": 200,
+        "ornekler": [
+          {
+            "yol": "/yorumlar.html",
+            "kelime": 65
+          },
+          {
+            "yol": "/en/reviews.html",
+            "kelime": 89
+          }
         ]
+      },
+      "llms": {
+        "varMi": true
       },
       "sitemap": {
         "varMi": true,
@@ -1224,14 +1405,15 @@
       "url": "https://kktcsigortamerkezi.com",
       "aktif": true,
       "seo": {
-        "puan": 90,
-        "onceki": 90,
+        "puan": 88,
+        "onceki": 88,
         "trend": "+0"
       },
       "uptime": {
         "durum": "up",
-        "yanitMs": 406,
-        "sonKontrol": "2026-08-15T03:45:42.371Z"
+        "yanitMs": 134,
+        "sonKontrol": "2026-08-15T19:28:21.966Z",
+        "medyanMs": 124
       },
       "ssl": {
         "gecerli": true,
@@ -1316,11 +1498,39 @@
       ],
       "kirikLinkler": [
         {
+          "kaynak": "/tr/sirketler/as-can-sigorta",
+          "hedef": "http://ascansigorta.com",
+          "kod": 500,
+          "ic": false,
+          "sayilir": true
+        },
+        {
           "kaynak": "/tr/sirketler/axa-sigorta",
           "hedef": "https://www.axasigorta.com.tr/kibris-subemiz",
-          "kod": 404
+          "kod": 404,
+          "ic": false,
+          "sayilir": true
+        },
+        {
+          "kaynak": "/tr/sirketler/grand-plus-insurance",
+          "hedef": "https://www.grandplusinsurance.com",
+          "kod": 0,
+          "ic": false,
+          "sayilir": true
+        },
+        {
+          "kaynak": "/tr/sirketler/turk-sigorta",
+          "hedef": "https://www.turksigorta.com",
+          "kod": 0,
+          "ic": false,
+          "sayilir": true
         }
       ],
+      "kirikOzet": {
+        "ic": 0,
+        "dis": 4,
+        "dogrulanmamis": 0
+      },
       "eksikMeta": {
         "title": 0,
         "description": 0,
@@ -1337,7 +1547,64 @@
           "Organization",
           "BreadcrumbList",
           "ItemList"
+        ],
+        "eksikAlan": [
+          {
+            "alan": "BlogPosting.image",
+            "adet": 5
+          },
+          {
+            "alan": "BlogPosting.author",
+            "adet": 5
+          }
+        ],
+        "sorunluSayfa": 5
+      },
+      "icerik": {
+        "ortKelime": 445,
+        "inceSayfa": 9,
+        "esik": 200,
+        "ornekler": [
+          {
+            "yol": "/tr/rehber/konu/yabancilar",
+            "kelime": 45
+          },
+          {
+            "yol": "/tr/rehber/konu/hasar",
+            "kelime": 46
+          },
+          {
+            "yol": "/tr/rehber/konu/sinir-gecisi",
+            "kelime": 47
+          },
+          {
+            "yol": "/tr/rehber/konu/ayrim",
+            "kelime": 81
+          },
+          {
+            "yol": "/tr/iletisim",
+            "kelime": 90
+          },
+          {
+            "yol": "/tr/hakkimizda",
+            "kelime": 120
+          },
+          {
+            "yol": "/tr/gizlilik",
+            "kelime": 126
+          },
+          {
+            "yol": "/tr/duzeltme",
+            "kelime": 164
+          },
+          {
+            "yol": "/tr/yasal-uyari",
+            "kelime": 181
+          }
         ]
+      },
+      "llms": {
+        "varMi": false
       },
       "sitemap": {
         "varMi": true,
@@ -1500,40 +1767,42 @@
   ],
   "degisiklikler": [
     {
-      "site": "magusapsikoloji",
-      "tip": "dusus",
-      "mesaj": "SEO puani 100 → 80 (-20)",
-      "tarih": "2026-08-15"
-    },
-    {
-      "site": "magusapsikoloji",
-      "tip": "yeni-kirik",
-      "mesaj": "50 yeni kirik link",
+      "site": "animare",
+      "tip": "artis",
+      "mesaj": "SEO puani 80 → 84 (+4)",
       "tarih": "2026-08-15"
     },
     {
       "site": "taxsi",
-      "tip": "dusus",
-      "mesaj": "SEO puani 96 → 92 (-4)",
+      "tip": "artis",
+      "mesaj": "SEO puani 92 → 96 (+4)",
       "tarih": "2026-08-15"
     },
     {
-      "site": "luxeva",
-      "tip": "yeni-kirik",
-      "mesaj": "30 yeni kirik link",
+      "site": "kktcsigorta",
+      "tip": "yeni-sayfa",
+      "mesaj": "6 sayfa eklendi",
       "tarih": "2026-08-15"
     }
   ],
   "raporlar": [
     {
-      "ad": "Haftalik ozet — 08 Agu",
-      "tarih": "2026-08-11",
-      "tur": "haftalik"
+      "ad": "Haftalık rapor — 15 Ağustos 2026",
+      "tarih": "2026-08-15",
+      "tur": "haftalik",
+      "dosya": "data/raporlar/2026-08-15-haftalik.html"
     },
     {
-      "ad": "Aylik SEO raporu — Temmuz",
-      "tarih": "2026-08-01",
-      "tur": "aylik"
+      "ad": "Animare — haftalık rapor",
+      "tarih": "2026-08-15",
+      "tur": "haftalik",
+      "dosya": "data/raporlar/2026-08-15-haftalik-animare.html"
+    },
+    {
+      "ad": "Aylık rapor — 15 Ağustos 2026",
+      "tarih": "2026-08-15",
+      "tur": "aylik",
+      "dosya": "data/raporlar/2026-08-15-aylik.html"
     }
   ],
   "uretilenIcerikler": [
@@ -1577,13 +1846,63 @@
   "uyarilar": [
     {
       "seviye": "uyari",
+      "site": "animare",
+      "mesaj": "30 sayfada schema alani eksik (BlogPosting.image) — zengin sonuc cikmaz"
+    },
+    {
+      "seviye": "uyari",
+      "site": "animare",
+      "mesaj": "16 sayfa 200 kelimenin altinda (ince icerik)"
+    },
+    {
+      "seviye": "uyari",
+      "site": "animare",
+      "mesaj": "llms.txt yok — AI motorlari icin site ozeti ekle"
+    },
+    {
+      "seviye": "uyari",
+      "site": "magusapsikoloji",
+      "mesaj": "32 sayfada schema alani eksik (LocalBusiness.telephone) — zengin sonuc cikmaz"
+    },
+    {
+      "seviye": "uyari",
+      "site": "magusapsikoloji",
+      "mesaj": "7 sayfa 200 kelimenin altinda (ince icerik)"
+    },
+    {
+      "seviye": "uyari",
+      "site": "magusapsikoloji",
+      "mesaj": "llms.txt yok — AI motorlari icin site ozeti ekle"
+    },
+    {
+      "seviye": "uyari",
       "site": "luxeva",
-      "mesaj": "12 kirik link tespit edildi"
+      "mesaj": "12 kirik IC link — kendi sayfalarina 404 veriyor"
+    },
+    {
+      "seviye": "uyari",
+      "site": "luxeva",
+      "mesaj": "2 sayfa 200 kelimenin altinda (ince icerik)"
+    },
+    {
+      "seviye": "bilgi",
+      "site": "kktcsigorta",
+      "mesaj": "4 kirik dis link — hedef site kapanmis, linki kaldir"
     },
     {
       "seviye": "uyari",
       "site": "kktcsigorta",
-      "mesaj": "1 kirik link tespit edildi"
+      "mesaj": "5 sayfada schema alani eksik (BlogPosting.image) — zengin sonuc cikmaz"
+    },
+    {
+      "seviye": "uyari",
+      "site": "kktcsigorta",
+      "mesaj": "9 sayfa 200 kelimenin altinda (ince icerik)"
+    },
+    {
+      "seviye": "uyari",
+      "site": "kktcsigorta",
+      "mesaj": "llms.txt yok — AI motorlari icin site ozeti ekle"
     }
   ]
 }

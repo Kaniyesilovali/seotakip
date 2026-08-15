@@ -15,11 +15,14 @@ Panel (index.html + Tailwind)  →  data/data.json  ←  scripts/*.js (Node)
 
 - `index.html` — panel arayüzü
 - `assets/app.js` — data.json'u okuyup çizen kod
+- `assets/oneri-motoru.js` — öneri/değerlendirme motoru (panel + rapor + Telegram ortak kullanır)
 - `assets/fallback-data.js` — `file://` ile açınca kullanılan örnek veri
 - `data/data.json` — tüm sitelerin son durumu (script'ler üretir)
-- `data/history/` — tarih tarih arşiv (trend grafiği için)
+- `data/history/` — tarih tarih arşiv (trend grafiği + rapor karşılaştırması için)
+- `data/raporlar/` — `npm run rapor` çıktısı (kendi kendine yeten HTML raporlar)
+- `data/uyari-durumu.json` — Telegram'a nelerin bildirildiği (tekrar bildirmeyi önler)
 - `sites.config.json` — sitelerin tanımı (**yeni proje eklemek için burayı düzenle**)
-- `scripts/` — tarama script'leri (sıradaki aşamada eklenecek)
+- `scripts/` — tarama, rapor ve uyarı script'leri
 
 ## Yeni site ekleme
 
@@ -70,21 +73,65 @@ Ya da `index.html`'e çift tıkla — örnek veriyle açılır.
 
 ## Öneri/değerlendirme motoru
 
-`assets/app.js` içindeki `oneriUret()` her siteyi kurallarla değerlendirir: öncelik (kritik→düşük),
-etki/efor skoru, "hızlı kazanım" tespiti. AI gerektirmez, ücretsiz. Kapsam: SSL, kırık link, schema,
-sitemap, meta, hız, iç link, orphan, indeks, AI bot, GEO, kelime fırsatı/düşüşü, kanibalizasyon, içerik boşluğu.
+`assets/oneri-motoru.js` içindeki `oneriUret()` her siteyi kurallarla değerlendirir: öncelik (kritik→düşük),
+etki/efor skoru, "hızlı kazanım" tespiti. AI gerektirmez, ücretsiz. Kapsam: SSL, kırık link (iç/dış ayrı),
+schema (varlık + zorunlu alan), sitemap, meta, ince içerik, llms.txt, hız, iç link, orphan, indeks, AI bot,
+GEO, kelime fırsatı/düşüşü, kanibalizasyon, içerik boşluğu.
+
+Motor tek dosyada ve hem tarayıcıda (panel) hem Node'da (`rapor.js`, `telegram.js`) çalışır —
+panelde gördüğün öneri ile rapordaki/Telegram'daki uyarı aynı koddan çıkar, ayrışamaz.
+
+## SEO puanı nasıl hesaplanır
+
+`scripts/crawl.js` içinde, 100'den başlayıp ceza düşen bir heuristik. Ağırlıklı bir model değil.
+
+| Kontrol | Ceza | Tavan |
+|---|---|---|
+| Kırık **iç** link (404/410) | adet × 3 | −20 (kırıklar toplamı) |
+| Kırık **dış** link (404/410 veya doğrulanmış 5xx/bağlantı hatası) | adet × 1 | " |
+| Eksik meta description | adet × 1 | −12 |
+| Eksik title | adet × 2 | −8 |
+| Eksik H1 | adet × 1 | −8 |
+| Geçerli schema yok | −8 | — |
+| Sitemap yok | −8 | — |
+| robots.txt yok | −4 | — |
+| Canonical eksik | adet | −6 |
+| Sayfa başına iç link < 5 | −5 | — |
+| Orphan sayfa | adet | −6 |
+| 10'dan fazla alt eksik | −4 | — |
+| Tracking kodu yok | −4 | — |
+| Yanıt süresi (taranan sayfaların **medyanı**) | > 1500ms: −3 · > 3000ms: −6 | — |
+| **Schema alan eksiği** (oransal) | sorunlu sayfa oranı × 10 | −10 |
+| **İnce içerik** (< 200 kelime, oransal) | ince sayfa oranı × 8 | −8 |
+| **llms.txt yok** | −2 | — |
+
+Son üç kontrol **oransal**: 30/60 sayfa ile 300/600 sayfa aynı cezayı alır. Üstteki eski kontroller
+hâlâ mutlak sayıya bakıyor — bilinçli fark, dönüştürülmesi ayrı bir iş.
+
+Kırık linklerde iki koruma var: (1) kendi sitendeki 404 ile başkasının sunucusundaki hata aynı
+ağırlıkta değil, (2) geçici kodlar (5xx / bağlantı hatası) **ancak iki tarama üst üste kırıkken**
+sayılır — tek seferlik kesinti puanı oynatmaz. Doğrulanmamışlar panelde görünür ama puana girmez.
+
+Yanıt süresinde de aynı mantık: tek anasayfa ölçümü çok gürültülü (aynı site bir koşuda 299ms,
+diğerinde 4713ms verebiliyor), o yüzden puanlama **taranan tüm sayfaların medyanını** kullanır.
+`uptime.yanitMs` anasayfa ölçümü olarak panelde kalır; `uptime.medyanMs` puana giren değerdir.
+
+> Bu puan **Semrush Site Health ile karşılaştırılabilir değildir.** Semrush ~101 kontrolün ağırlıklı
+> geçme oranını verir; buradaki 16 kontrolün sabit ceza toplamıdır. İki sayının yakın çıkması tesadüftür.
 
 ## Durum
 
 - [x] Aşama 1 — Panel iskeleti + yönetim barı + 19 bölüm
 - [x] Öneri/değerlendirme katmanı + araç üreticiler (llms.txt/robots/schema) + manuel rakip
-- [x] Aşama 2 — Crawler (`scripts/crawl.js`): 4 canlı siteyi tarar → kırık link, meta, SSL,
-      sitemap, schema, canonical, iç link, orphan, on-page, tracking. `npm run crawl` ile çalışır.
+- [x] Aşama 2 — Crawler (`scripts/crawl.js`): 5 canlı siteyi tarar → kırık link, meta, SSL, sitemap,
+      schema (zorunlu alan doğrulaması dahil), canonical, iç link, orphan, on-page, tracking,
+      kelime sayısı, llms.txt. `npm run crawl` ile çalışır.
 - [~] Hız / Core Web Vitals — `scripts/pagespeed.js` hazır; **ücretsiz PageSpeed API anahtarı** bekliyor (aşağıya bak)
 - [~] Otomasyon — `.github/workflows/tarama.yml` hazır; GitHub'a **push** bekliyor
 - [~] Aşama 3 — Search Console (`scripts/searchconsole.js`) hazır; **servis hesabı** bekliyor (aşağıda)
 - [~] Aşama 4 — AI içerik üretici (`scripts/aiblog.js`) hazır; **Gemini API anahtarı** bekliyor (aşağıda)
-- [ ] Aşama 5 — GEO/AI bot takibi + Telegram uyarı + PDF rapor
+- [x] Aşama 5 — GEO/AI bot takibi (`geo-ekle.js` + `botlog.js`), HTML/PDF rapor (`rapor.js`),
+      Telegram uyarı (`telegram.js`; **bot token'ı** bekliyor — aşağıda)
 
 ## AI İçerik / Auto SEO Blog kurulumu (ücretsiz, Gemini)
 
@@ -146,6 +193,49 @@ Hız/Core Web Vitals bölümü bu anahtarı ister (Google anahtarsız erişimi k
 4. Çalıştır: `npm run hiz`
 
 Günde 25.000 istek ücretsiz. `.env` gitignore'da — repoya gitmez.
+
+## Raporlar (`npm run rapor`)
+
+Son tarama verisinden kendi kendine yeten tek bir HTML dosyası üretir — `data/raporlar/` altına.
+Panel → **Raporlar** bölümünde "Aç / PDF" düğmesiyle açılır.
+
+```bash
+npm run rapor                     # haftalık, tüm siteler
+npm run rapor -- aylik            # aylık (30 gün önceki anlık görüntüyle karşılaştırır)
+npm run rapor -- --site=animare   # tek site
+```
+
+İçinde: yönetici özeti, site skor tablosu (geçen haftaya göre farkla), kritik+yüksek aksiyon
+listesi, hızlı kazanımlar, değişiklikler, site detayları, açık uyarılar.
+
+**PDF:** ek paket kurulmaz. Rapor tarayıcıda açılır → sağ üstteki **"PDF kaydet"** → yazdırma
+penceresinde hedefi "PDF olarak kaydet" seç. Sayfa düzeni A4'e göre ayarlı, düğme çıktıya girmez.
+
+Karşılaştırma verisi `data/history/YYYY-MM-DD.json` dosyalarından gelir; hedef tarihte dosya
+yoksa ona en yakın eski dosya kullanılır ve rapor başlığında hangi tarihle kıyaslandığı yazar.
+
+## Telegram uyarı (`npm run uyar`)
+
+Kritik durumları telefonuna düşürür. Ücretsiz, ek paket yok.
+
+1. Telegram'da **@BotFather** → `/newbot` → bot adını ver → sana bir **token** verir
+2. Kendi botunla sohbet aç ve bir mesaj yolla (bot, sen yazmadan sana yazamaz)
+3. `https://api.telegram.org/bot<TOKEN>/getUpdates` adresini aç → `"chat":{"id":123456789}`
+4. `.env`'e ekle: `TELEGRAM_TOKEN=...` ve `TELEGRAM_CHAT_ID=...`
+5. Dene: `npm run uyar -- --test`
+
+```bash
+npm run uyar              # sadece DEĞİŞEN durumları yollar (spam yok)
+npm run uyar -- --hepsi   # o anki tüm açık kritik durumu yollar
+npm run uyar -- --kuru    # hiçbir şey yollamaz, mesajı ekrana basar
+```
+
+Bildirilenler: site erişilemiyor, SSL geçersiz/≤14 gün, SEO puanı 10+ düşüş, kırık iç link,
+indeks düşüşü, motorun ürettiği kritik öneriler.
+
+Gönderilenler `data/uyari-durumu.json`'da tutulur — aynı sorun her taramada tekrar bildirilmez,
+sadece **yeni çıkan** ve **kapanan** maddeler yazılır. Gönderim başarısız olursa durum dosyası
+güncellenmez, uyarı bir sonraki çalıştırmada tekrar denenir.
 
 ## Otomasyon (GitHub Actions — her gece, bilgisayar kapalıyken)
 
