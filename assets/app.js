@@ -140,9 +140,14 @@ function oneriUret(s){
   if (ic.ortLink!=null && ic.ortLink<5) ekle('Ic link','orta', `Ortalama ${ic.ortLink} iç link/sayfa — AZ. En az 5-8 hedefle.`);
   if (ic.orphan?.length) ekle('Orphan','orta', `${ic.orphan.length} öksüz sayfa — menü/ilgili yazılardan link ver.`);
   if (s.indeks?.dususVar) ekle('Indeks','yuksek','İndekslenen sayfa düştü — Search Console kapsam hatalarına bak.');
-  else if (s.indeks?.indekssiz>0) ekle('Indeks','dusuk', `${s.indeks.indekssiz} sayfa indekslenmemiş — nedenini incele.`);
+  // Sadece AKSIYON GEREKTIREN nedenler oneri uretir. "Alternatif sayfa"/"yonlendirme" gibi
+  // normal durumlar indekssiz sayilir ama yapilacak bir sey yoktur -> oneri cikarmaz.
+  (s.indeks?.nedenler||[]).filter(n=>n.sorun).forEach(n=>{
+    const onc = /404|5xx|robots|401|403/.test(n.neden) ? 'yuksek' : n.adet>=5 ? 'orta' : 'dusuk';
+    ekle('Indeks', onc, `${n.adet} sayfa: ${n.neden} — ${n.cozum||'Search Console → URL Denetleme ile incele.'}`);
+  });
   if (s.aiBotlar){ const b=s.aiBotlar; if (((b.gptbot||0)+(b.claudebot||0)+(b.perplexitybot||0))<20) ekle('AI bot','orta','AI botları siteni az tarıyor — llms.txt ekle, robots\'ta izin ver.'); }
-  if (s.geo && s.geo.chatgpt===false && s.geo.perplexity===false && s.geo.gemini===false) ekle('GEO','orta','Hiçbir AI motorunda görünmüyorsun — schema + net cevap formatlı içerik gerek.');
+  if (s.geo && !s.geo.chatgpt && !s.geo.perplexity && !s.geo.gemini && !s.geo.claude) ekle('GEO','orta','Hiçbir AI motorunda görünmüyorsun — schema + net cevap formatlı içerik gerek.');
   (s.siralama||[]).forEach(k=>{
     if (k.pozisyon>=4 && k.pozisyon<=10 && (k.gosterim||0)>=500) ekle('Kelime firsati','yuksek', `"${k.kelime}" #${k.pozisyon} + yüksek gösterim — az itmeyle ilk 3'e girer.`);
     else if (k.pozisyon>=11 && k.pozisyon<=20) ekle('Kelime firsati','orta', `"${k.kelime}" #${k.pozisyon} (2. sayfa) — içeriği güçlendir.`);
@@ -324,13 +329,27 @@ const VIEWS = {
   },
 
   indeks(){
-    const satir=(s)=>{ const i=s.indeks; if(!i) return `<tr><td class="site-ad">${s.ad}</td><td class="ort" colspan="3" style="color:var(--faint)">veri yok (Search Console)</td></tr>`;
-      return `<tr><td class="site-ad">${s.ad}</td><td class="ort t-ok">${i.indeksli}</td><td class="ort ${i.indekssiz?'t-warn':''}">${i.indekssiz}</td>
+    const satir=(s)=>{ const i=s.indeks;
+      if(!i || !i.nedenler) return `<tr><td class="site-ad">${s.ad}</td><td class="ort" colspan="4" style="color:var(--faint)">veri yok — <code>npm run indeks</code> çalıştır</td></tr>`;
+      const oran = i.kontrolEdilen ? Math.round(i.indeksli/i.kontrolEdilen*100) : 0;
+      return `<tr><td class="site-ad">${s.ad}</td><td class="ort t-ok">${i.indeksli}</td>
+      <td class="ort ${i.aksiyonGereken?'t-warn':''}">${i.aksiyonGereken??i.indekssiz}</td>
+      <td class="ort">${oran}%<span style="color:var(--faint)"> (${i.kontrolEdilen}/${i.toplamSayfa??i.kontrolEdilen})</span></td>
       <td class="ort">${i.dususVar?cip('düşüş var','bad'):cip('stabil','ok')}</td></tr>`; };
-    return bolumBaslik('Teknik SEO','İndeks Monitörü','Sayfalar Google\'da indeksli mi. Search Console verisi.') + filtreBar() +
-      `<div class="tablo-kap"><table class="tablo" style="min-width:480px"><thead><tr>
-        <th>Site</th><th class="ort">İndeksli</th><th class="ort">İndekssiz</th><th class="ort">Durum</th>
-      </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
+
+    // neden kirilimi: asil teshis burada
+    const bloklar = siteler().filter(s=>s.indeks?.nedenler?.length).map(s=>{
+      const nsatir=(n)=>`<tr><td>${n.sorun?'⚠':'·'} ${n.neden}</td><td class="ort" style="font-family:var(--disp);font-weight:600">${n.adet}</td>
+        <td style="color:var(--muted);font-size:12px">${n.cozum||'—'}</td>
+        <td style="color:var(--faint);font-size:11px">${(n.ornekler||[]).join('<br>')}</td></tr>`;
+      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}</div>
+        <table class="tablo" style="min-width:640px"><thead><tr><th>Neden</th><th class="ort">Sayfa</th><th>Ne yapmalı</th><th>Örnek</th></tr></thead>
+        <tbody>${s.indeks.nedenler.map(nsatir).join('')}</tbody></table></div>`; }).join('');
+
+    return bolumBaslik('Teknik SEO','İndeks Monitörü','URL Inspection API ile sayfa sayfa gerçek indeks durumu. ⚠ işaretli nedenler aksiyon ister; diğerleri normaldir.') + filtreBar() +
+      `<div class="tablo-kap" style="margin-bottom:18px"><table class="tablo" style="min-width:560px"><thead><tr>
+        <th>Site</th><th class="ort">İndeksli</th><th class="ort">Aksiyon gereken</th><th class="ort">İndeks oranı</th><th class="ort">Durum</th>
+      </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>` + bloklar;
   },
 
   kelime(){
@@ -406,11 +425,11 @@ const VIEWS = {
   },
 
   geo(){
-    const k = ['chatgpt','perplexity','gemini'], ad = {chatgpt:'ChatGPT',perplexity:'Perplexity',gemini:'Gemini'};
-    const satir=(s)=> `<tr><td class="site-ad">${s.ad}</td>${k.map(x=>`<td class="ort">${s.geo?(s.geo[x]?cip('görülüyor','sig'):cip('yok','')):cip('ölçülmedi','mut')}</td>`).join('')}</tr>`;
+    const k = ['chatgpt','perplexity','gemini','claude'], ad = {chatgpt:'ChatGPT',perplexity:'Perplexity',gemini:'Gemini',claude:'Claude'};
+    const satir=(s)=> `<tr><td class="site-ad">${s.ad}</td>${k.map(x=>`<td class="ort">${s.geo&&s.geo[x]!==undefined?(s.geo[x]?cip('görülüyor','sig'):cip('yok','')):cip('ölçülmedi','mut')}</td>`).join('')}</tr>`;
     const detay = siteler().flatMap(s=>(s.geoDetay||[]).map(d=>({s:s.ad,...d})));
-    return bolumBaslik('GEO / AI','GEO Görünürlük','Marka AI motorlarında (ChatGPT/Perplexity/Gemini) çıkıyor mu.') + filtreBar() +
-      `<div class="tablo-kap"><table class="tablo" style="min-width:480px"><thead><tr><th>Site</th>${k.map(x=>`<th class="ort">${ad[x]}</th>`).join('')}</tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>` +
+    return bolumBaslik('GEO / AI','GEO Görünürlük','Marka AI motorlarında (ChatGPT/Perplexity/Gemini/Claude) çıkıyor mu.') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:560px"><thead><tr><th>Site</th>${k.map(x=>`<th class="ort">${ad[x]}</th>`).join('')}</tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>` +
       (detay.length ? stBaslik('Kontrol detayları', detay.length) + `<div class="liste">${detay.map(d=>`<div class="li"><span class="pri ${d.gorundu?'dusuk':'orta'}">${d.gorundu?'var':'yok'}</span><div class="txt">${d.not}<s>[${d.s}] · ${d.soru}</s></div></div>`).join('')}</div>` : '');
   },
 

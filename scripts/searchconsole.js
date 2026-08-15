@@ -96,19 +96,6 @@ async function siteVerisi(site) {
   return { property, siralama, firsat };
 }
 
-// indeks: Sitemaps API (submitted/indexed)
-async function indeksVerisi(property) {
-  try {
-    const url = `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(property)}/sitemaps`;
-    const res = await client.request({ url });
-    const sm = res.data.sitemap || [];
-    let submitted = 0, indexed = 0;
-    sm.forEach(s => (s.contents || []).forEach(c => { submitted += +(c.submitted || 0); indexed += +(c.indexed || 0); }));
-    if (!submitted) return null;
-    return { indeksli: indexed, indekssiz: Math.max(0, submitted - indexed), dususVar: false };
-  } catch { return null; }
-}
-
 async function main() {
   const veri = JSON.parse(fs.readFileSync(veriYolu, 'utf8'));
   const aktif = (cfg.siteler || []).filter(s => s.aktif !== false && s.url);
@@ -127,8 +114,9 @@ async function main() {
     hedef.icerikBoslugu = d.firsat;
     hedef._gapGercek = true;
 
-    // NOT: GSC Sitemaps API'sindeki "indexed" alani kullanimdan kalkti (hep 0). Gercek indeks
-    // sayisi URL Inspection API ister (per-URL, kotali) -> ileride. Simdilik indeks'i doldurmuyoruz.
+    // NOT: indeks verisi burada DOLDURULMAZ. Sitemaps API'sindeki "indexed" alani kullanimdan
+    // kalkti (hep 0 doner) -> yanlis sayi uretiyordu. Gercek indeks durumu URL Inspection API
+    // ister (URL basina 1 istek, kotali): scripts/indeks.js.
 
     console.log(` ✓ ${d.siralama.length} kelime, ${d.firsat.length} firsat [${d.property}]`);
   }

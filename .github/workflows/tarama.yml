@@ -45,6 +45,7 @@ jobs:
           if [ -n "$GSC_KEY_JSON" ]; then
             printf '%s' "$GSC_KEY_JSON" > gsc-key.json
             node scripts/searchconsole.js || echo "search console atlandi"
+            node scripts/indeks.js || echo "indeks denetimi atlandi"
             rm -f gsc-key.json
           else
             echo "GSC_KEY_JSON secret yok — siralama/anahtar kelime atlandi"
@@ -54,6 +55,6 @@ jobs:
         run: |
           git config user.name "seo-tarama-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/data.json assets/fallback-data.js data/history/ || true
+          git add data/data.json data/indeks-cache.json assets/fallback-data.js data/history/ || true
           git commit -m "otomatik tarama: $(date -u +%Y-%m-%d) [skip ci]" || echo "degisiklik yok"
           git push || echo "push atlandi"

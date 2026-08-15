@@ -102,14 +102,34 @@ Servis hesabı yöntemi — interaktif giriş yok, otomasyonda da çalışır:
 2. **IAM & Admin → Service Accounts → Create** → oluştur → **Keys → Add key → JSON** indir
 3. İnen JSON'u proje köküne **`gsc-key.json`** olarak koy (gitignore'da, repoya gitmez)
 4. Her Search Console property'sinde: **Ayarlar → Kullanıcılar ve izinler → Kullanıcı ekle**
-   → servis hesabının e-postası (`xxx@proje.iam.gserviceaccount.com`) → **"Sınırlı"** izin yeter
+   → servis hesabının e-postası (`xxx@proje.iam.gserviceaccount.com`) → **"Tam"** izin ver
+   (sıralama için "Sınırlı" yeter, ama **İndeks Monitörü "Tam" ister** — aşağıya bak)
 5. Çalıştır: `npm run gsc`
 
-Doldurur: her sitenin gerçek **sıralaması** (Anahtar Kelime bölümü), **fırsat kelimeleri**
-(İçerik Boşluğu — 2. sayfadaki yüksek gösterimli kelimeler) ve **indeks** sayıları (sitemap'ten).
+Doldurur: her sitenin gerçek **sıralaması** (Anahtar Kelime bölümü) ve **fırsat kelimeleri**
+(İçerik Boşluğu — 2. sayfadaki yüksek gösterimli kelimeler).
 
 **Otomasyon için:** aynı JSON'un tamamını GitHub repo secret'ı olarak `GSC_KEY_JSON` adıyla ekle;
 workflow gece taramasında sıralamayı da otomatik çeker.
+
+## İndeks Monitörü (`npm run indeks`)
+
+Sayfaların Google'da gerçekten indeksli olup olmadığını **URL Inspection API** ile sayfa sayfa sorar
+ve indekslenmeyenler için *nedeni* + *ne yapılacağını* panele yazar.
+
+> Neden ayrı script: GSC Sitemaps API'sindeki `indexed` alanı kullanımdan kalktı, hep `0` dönüyor.
+> Ondan hesaplanan "X sayfa indekslenmemiş" sayısı yanlıştı — o yol tamamen kaldırıldı.
+
+- **İzin:** servis hesabına **"Tam"** izni şart. "Sınırlı" ile API `403` döner (script bunu açıkça söyler).
+- **Kota:** site başına günde 2000 URL. Sonuçlar `data/indeks-cache.json`'da tutulur; her çalışmada
+  yalnızca **7 günden eski** kayıtlar tazelenir, çalışma başına site başına **100 URL** sorulur.
+  Böylece gece taraması kotayı yakmaz, liste birkaç günde tam tur atar.
+- **Parametreler:** `--limit=300` (bu çalışmada kaç URL), `--tazelik=3` (kaç günde bir tazele),
+  `--site=animare` (tek site).
+
+Panelde **Teknik SEO → İndeks Monitörü**: site başına indeksli/aksiyon gereken sayısı + neden kırılımı.
+`⚠` işaretli nedenler gerçek problem; `·` işaretliler ("Alternatif sayfa", "Yönlendirme") normaldir ve
+öneri üretmez.
 
 ## PageSpeed API anahtarı (ücretsiz, ~2 dk)
 
