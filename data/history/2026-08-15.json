@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-15T03:49:39.655Z",
+  "guncelleme": "2026-08-15T03:47:04.726Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 85,
@@ -145,10 +145,10 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 61,
-        "masaustuPuan": 82,
-        "lcp": 12,
-        "inp": 55,
+        "mobilPuan": 67,
+        "masaustuPuan": 85,
+        "lcp": 11.4,
+        "inp": 207,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -724,10 +724,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 83,
+        "mobilPuan": 85,
         "masaustuPuan": 99,
-        "lcp": 3.7,
-        "inp": 92,
+        "lcp": 4.1,
+        "inp": 52,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -1094,11 +1094,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 70,
-        "masaustuPuan": 91,
-        "lcp": 5.8,
+        "mobilPuan": 88,
+        "masaustuPuan": 93,
+        "lcp": 3.6,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.02,
         "kaynak": "lab"
       },
       "indeks": {
@@ -1552,9 +1552,9 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 81,
+        "mobilPuan": 82,
         "masaustuPuan": 96,
-        "lcp": 4.1,
+        "lcp": 3.9,
         "inp": 0,
         "cls": 0.02,
         "kaynak": "lab"
@@ -1723,7 +1723,7 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 82,
+        "mobilPuan": 80,
         "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
