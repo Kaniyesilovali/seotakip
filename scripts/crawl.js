@@ -11,6 +11,7 @@ import tls from 'node:tls';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ayristir as robotsAyristir, izinVar, botOzeti, icerikSinyali, tamamenKapali } from './lib/robots.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const KOK = path.resolve(__dirname, '..');
@@ -58,19 +59,51 @@ const bekle = (ms) => new Promise(r => setTimeout(r, ms));
 const bugun = () => new Date().toISOString();
 
 // ---- tek istek (zaman asimli) ----
-async function istek(url, method = 'GET') {
+// Yonlendirmeleri ELLE izliyoruz (redirect:'manual'): 'follow' kullanildiginda 301/302
+// bilgisi kayboluyordu, oysa "hangi sayfa nereye yonleniyor" panelde gosterilecek veri.
+const YONLENDIRME_KODU = new Set([301, 302, 303, 307, 308]);
+async function istek(url, method = 'GET', { maxAdim = 5 } = {}) {
+  const t0 = Date.now();
+  let hedef = url;
+  const zincir = [];   // [{ url, kod, hedef }]
+  for (let adim = 0; ; adim++) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), ZAMANASIMI);
+    try {
+      const r = await fetch(hedef, { method, redirect: 'manual', signal: ctrl.signal, headers: { 'User-Agent': UA } });
+      const konum = r.headers.get('location');
+      if (YONLENDIRME_KODU.has(r.status) && konum && adim < maxAdim) {
+        let sonraki = null;
+        try { sonraki = new URL(konum, hedef).toString(); } catch {}
+        if (sonraki && sonraki !== hedef) {
+          zincir.push({ url: hedef, kod: r.status, hedef: sonraki });
+          hedef = sonraki;
+          continue;   // sonraki halkaya git
+        }
+      }
+      let html = '';
+      if (method === 'GET' && (r.headers.get('content-type') || '').includes('text/html')) html = await r.text();
+      return { ok: true, status: r.status, url: hedef, html, sure: Date.now() - t0,
+        contentType: r.headers.get('content-type') || '', zincir };
+    } catch (e) {
+      return { ok: false, status: 0, hata: e.name === 'AbortError' ? 'timeout' : e.message, sure: Date.now() - t0, zincir };
+    } finally { clearTimeout(t); }
+  }
+}
+
+// duz metin dosyalari (robots.txt): icerik tipinden bagimsiz govdeyi verir.
+// Soft-404 yapan sunucular HTML dondurur -> onu "dosya yok" say.
+async function metinGetir(url) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), ZAMANASIMI);
-  const t0 = Date.now();
   try {
-    const r = await fetch(url, { method, redirect: 'follow', signal: ctrl.signal, headers: { 'User-Agent': UA } });
-    const sure = Date.now() - t0;
-    let html = '';
-    if (method === 'GET' && (r.headers.get('content-type') || '').includes('text/html')) html = await r.text();
-    return { ok: true, status: r.status, url: r.url, html, sure, contentType: r.headers.get('content-type') || '' };
-  } catch (e) {
-    return { ok: false, status: 0, hata: e.name === 'AbortError' ? 'timeout' : e.message, sure: Date.now() - t0 };
-  } finally { clearTimeout(t); }
+    const r = await fetch(url, { redirect: 'follow', signal: ctrl.signal, headers: { 'User-Agent': UA } });
+    if (!r.ok || r.status >= 400) return { ok: false, status: r.status, metin: null };
+    const metin = await r.text();
+    const htmlMi = /text\/html/.test(r.headers.get('content-type') || '') || /^\s*<(!doctype|html)/i.test(metin);
+    return { ok: !htmlMi, status: r.status, metin: htmlMi ? null : metin };
+  } catch { return { ok: false, status: 0, metin: null }; }
+  finally { clearTimeout(t); }
 }
 
 // ---- SSL bitis tarihi ----
@@ -107,9 +140,10 @@ async function xmlGetir(url) {
 }
 const locCek = (xml) => [...(xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g))].map(m => m[1].trim());
 
-async function sitemapUrller(kokUrl) {
-  const xml = await xmlGetir(new URL('/sitemap.xml', kokUrl).toString());
-  if (xml == null) return { varMi: false, urller: [] };
+// Tek bir sitemap dosyasini (gerekirse index'ini) okur.
+async function sitemapOku(url) {
+  const xml = await xmlGetir(url);
+  if (xml == null) return null;
   let urller = locCek(xml);
   // sitemap index ise (loc'lar .xml gosteriyorsa) alt sitemap'leri de cek (tek seviye)
   if (/<sitemapindex/i.test(xml) && urller.length) {
@@ -121,7 +155,23 @@ async function sitemapUrller(kokUrl) {
     }
     urller = alt;
   }
-  return { varMi: true, urller: [...new Set(urller)] };
+  return urller;
+}
+
+// robots.txt'te bildirilen sitemap'ler + varsayilan /sitemap.xml.
+// Bildirilenleri okumak onemli: siteler urun/blog haritasini ayri dosyada tutabiliyor
+// (ornek: luxeva'nin /urun-sitemap.xml'i) ve o sayfalar yoksa denetim eksik kalir.
+async function sitemapUrller(kokUrl, bildirilen = []) {
+  const adaylar = [...new Set([...bildirilen, new URL('/sitemap.xml', kokUrl).toString()])];
+  const urller = [];
+  const bulunan = [];
+  for (const aday of adaylar.slice(0, 10)) {
+    const liste = await sitemapOku(aday);
+    if (liste == null) continue;
+    bulunan.push(aday);
+    urller.push(...liste);
+  }
+  return { varMi: bulunan.length > 0, dosyalar: bulunan, urller: [...new Set(urller)] };
 }
 
 // ---- tek sayfayi ayristir ----
@@ -212,10 +262,12 @@ async function siteTara(site, eski = {}) {
   const ssl = await sslKontrol(host.replace(/^www\./, ''));
   const uptime = { durum: anasayfa.ok && anasayfa.status < 400 ? 'up' : 'down', yanitMs: anasayfa.sure || null, sonKontrol: bugun() };
 
-  // 2) robots + sitemap
-  const robotsR = await istek(new URL('/robots.txt', kok).toString());
-  const robots = { varMi: robotsR.ok && robotsR.status < 400, sorun: false };
-  const sm = await sitemapUrller(kok);
+  // 2) robots.txt — artik GOVDESI ayristiriliyor. "AI motorlari bu siteyi tarayabiliyor mu"
+  //    sorusunun cevabi burada; eskiden sadece dosyanin var olup olmadigina bakiyorduk.
+  const robotsR = await metinGetir(new URL('/robots.txt', kok).toString());
+  const rob = robotsAyristir(robotsR.ok ? robotsR.metin : null);
+  const robotsVar = robotsR.ok && !!robotsR.metin;
+  const sm = await sitemapUrller(kok, rob.sitemapler);
 
   // 2b) llms.txt (AI motorlari icin site ozeti). HTML donen sunucular soft-404 yapiyor -> onu yok say.
   const llmsR = await istek(new URL('/llms.txt', kok).toString());
@@ -237,18 +289,55 @@ async function siteTara(site, eski = {}) {
   const linkGrafi = new Map();  // hedef -> kac sayfadan link aldi
   const tumDisLink = new Set();
   const gorulen = new Set();
+  const kayit = [];             // her URL icin TEK durum satiri: saglam/sorunlu/kirik/yonlendirme/engelli
   let ekQueue = [...kuyruk];
+
+  // Kendi botumuza robots.txt ile kapatilmis sayfayi TARAMAYIZ; "engelli" diye kaydederiz.
+  const BOT_ADI = UA.split('/')[0];
+  const yolCek = (u) => { try { return new URL(u).pathname || '/'; } catch { return u; } };
 
   for (let idx = 0; idx < ekQueue.length && sayfalar.size < MAX_SAYFA; idx++) {
     const u = ekQueue[idx];
     if (!u || gorulen.has(u)) continue;
     gorulen.add(u);
-    const r = (idx === 0 && anasayfa.html && normalize(anasayfa.url) === u) ? anasayfa : await istek(u, 'GET');
+    const yol = yolCek(u);
+
+    const izin = izinVar(rob, BOT_ADI, yol);
+    if (!izin.izin) { kayit.push({ yol, durum: 'engelli', kural: izin.kural }); continue; }
+
+    const r = (idx === 0 && anasayfa.html && !anasayfa.zincir?.length && normalize(anasayfa.url) === u)
+      ? anasayfa : await istek(u, 'GET');
     if (idx !== 0) await bekle(ARALIK);
-    if (!r.ok || r.status >= 400 || !r.html) continue;
+
+    // Yonlendirme: satiri "yonlendirme" olarak kapat, icerik analizi HEDEF sayfada yapilsin.
+    // AMA once eleme: normalize() sondaki egik cizgiyi atiyor, oysa cogu site /tr/ ile
+    // calisiyor -> istek /tr'ye gidip 308 ile /tr/'ye donuyor. Bu SITENIN yonlendirmesi
+    // degil, bizim normalize'imizin yan etkisi. Hedef ayni sayfaya normalize oluyorsa
+    // yonlendirme sayma, sayfayi normal analiz et.
+    const hedefUrl = r.zincir?.length ? normalize(r.url) : null;
+    if (hedefUrl && hedefUrl !== u) {
+      kayit.push({ yol, kod: r.zincir[0].kod, durum: 'yonlendirme', adim: r.zincir.length,
+        hedef: ayniHost(hedefUrl, host) ? yolCek(hedefUrl) : hedefUrl });
+      if (ayniHost(hedefUrl, host) && !gorulen.has(hedefUrl) && ekQueue.length < MAX_SAYFA) ekQueue.push(hedefUrl);
+      continue;
+    }
+    if (!r.ok || r.status >= 400) { kayit.push({ yol, kod: r.ok ? r.status : 0, durum: 'kirik', hata: r.hata || null }); continue; }
+    if (!r.html) { kayit.push({ yol, kod: r.status, durum: 'saglam', not: 'HTML degil' }); continue; }
+
     if (r.sure != null) sureler.push(r.sure);
     const p = sayfaAyristir(r.html, u, host);
     sayfalar.set(u, p);
+    // sayfa duzeyinde sorun listesi -> "saglam" mi "sorunlu" mu
+    const sorunlar = [];
+    if (!p.title) sorunlar.push('title yok');
+    if (!p.desc) sorunlar.push('description yok');
+    if (p.h1 === 0) sorunlar.push('H1 yok');
+    if (!p.canonical) sorunlar.push('canonical yok');
+    if (p.kelime < INCE_ESIK) sorunlar.push(`ince icerik (${p.kelime} kelime)`);
+    if (p.semaEksik.length) sorunlar.push(`schema alani eksik (${[...new Set(p.semaEksik)].slice(0, 2).join(', ')})`);
+    if (p.imgYok) sorunlar.push(`${p.imgYok} gorselde alt yok`);
+    if (p.noindex) sorunlar.push('noindex');
+    kayit.push({ yol, kod: r.status, durum: sorunlar.length ? 'sorunlu' : 'saglam', sorunlar });
     p.icLink.forEach(l => { linkGrafi.set(l, (linkGrafi.get(l) || 0) + 1); });
     p.disLink.forEach(l => tumDisLink.add(l));
     // sitemap yoksa yeni ic linkleri kuyruga ekle
@@ -340,6 +429,34 @@ async function siteTara(site, eski = {}) {
   const medyanMs = medyan(sureler);
   uptime.medyanMs = medyanMs;
 
+  // 6b) robots.txt ozeti + AI bot erisimi
+  // Bot izinleri KUYRUKTAKI tum yollara gore hesaplanir (bizim taramadigimiz "engelli"
+  // sayfalar da dahil) — Google/AI botunun gordugu tablo bu.
+  const tumYollar = [...new Set([...kuyruk, ...gorulen].map(yolCek))];
+  const botlar = botOzeti(rob, tumYollar);
+  const robots = {
+    varMi: robotsVar,
+    sorun: rob.hatalar.length > 0,
+    hatalar: rob.hatalar.slice(0, 5),
+    sitemapSatiri: rob.sitemapler.length > 0,
+    kuralSayisi: [...rob.gruplar.values()].reduce((a, g) => a + g.allow.length + g.disallow.length, 0),
+    grupSayisi: rob.gruplar.size,
+    aiSinyal: icerikSinyali(rob),
+    bizeKapali: robotsVar ? tamamenKapali(rob, BOT_ADI) : false,
+    botlar,
+    engelliAi: botlar.filter(b => b.ai && !b.izin).length,
+    toplamAi: botlar.filter(b => b.ai).length,
+  };
+
+  // 6c) sayfa durum kirilimi (Semrush "Crawled Pages" karsiligi) — her URL tek satir
+  const say = (d) => kayit.filter(k => k.durum === d).length;
+  const sayfaDurum = {
+    toplam: kayit.length,
+    saglam: say('saglam'), sorunlu: say('sorunlu'), kirik: say('kirik'),
+    yonlendirme: say('yonlendirme'), engelli: say('engelli'),
+  };
+  const sec = (d, n) => kayit.filter(k => k.durum === d).slice(0, n);
+
   // SEO puani (0-100 basit heuristik)
   let puan = 100;
   puan -= Math.min(20, kirikCeza);
@@ -348,7 +465,7 @@ async function siteTara(site, eski = {}) {
   puan -= Math.min(8, eksikMeta.h1 * 1);
   puan -= schemaGecerli ? 0 : 8;
   puan -= sm.varMi ? 0 : 8;
-  puan -= robots.varMi ? 0 : 4;
+  puan -= robotsVar ? 0 : 4;
   puan -= canonicalEksik > 0 ? Math.min(6, canonicalEksik) : 0;
   puan -= ortLink < 5 ? 5 : 0;
   puan -= orphan.length ? Math.min(6, orphan.length) : 0;
@@ -376,8 +493,14 @@ async function siteTara(site, eski = {}) {
       eksikAlan: semaEksikAlan, sorunluSayfa: semaSorunluSayfa },
     icerik: { ortKelime, inceSayfa, esik: INCE_ESIK, ornekler: inceOrnekler },
     llms,
-    sitemap: { varMi: sm.varMi, urlSayisi: sm.urller.length, erisilemez: sitemapErisilemez },
+    sitemap: { varMi: sm.varMi, urlSayisi: sm.urller.length, erisilemez: sitemapErisilemez, dosyalar: sm.dosyalar },
     robots,
+    sayfaDurum,
+    // ornek listeler: panelde "hangi sayfa" sorusunu cevaplar, dosyayi sismesin diye sinirli
+    kirikSayfalar: sec('kirik', 30),
+    yonlendirmeler: sec('yonlendirme', 30),
+    engelliSayfalar: sec('engelli', 30),
+    sorunluSayfalar: sec('sorunlu', 50),
     canonical: { eksik: canonicalEksik, hatali: 0 },
     hreflang: { sorun: (site.diller?.length > 1) ? !hreflangVar : false },
     onpage: { altEksik, ogEksik, tracking, keywordYogunluk: 'olculmedi' },
@@ -392,7 +515,11 @@ async function main() {
   try { onceki = JSON.parse(fs.readFileSync(veriYolu, 'utf8')); } catch {}
   const oncekiSiteler = Object.fromEntries((onceki.siteler || []).map(s => [s.id, s]));
 
-  const aktif = (cfg.siteler || []).filter(s => s.aktif !== false && s.url);
+  // --site=<id>: sadece o siteyi tara, digerlerini onceki data.json'dan oldugu gibi koru.
+  // (Tek siteyi dogrulamak icin 5 siteyi bastan taramak gerekmesin.)
+  const argSite = (process.argv.find(a => a.startsWith('--site=')) || '').split('=')[1] || null;
+  const aktif = (cfg.siteler || []).filter(s => s.aktif !== false && s.url && (!argSite || s.id === argSite));
+  if (argSite && !aktif.length) { console.error(`✕ --site=${argSite}: sites.config.json'da boyle bir aktif site yok`); process.exit(1); }
   const siteler = [];
 
   for (const site of aktif) {
@@ -426,21 +553,38 @@ async function main() {
       ...(eski._geoGercek ? { _geoGercek: true } : {}),
       ...(eski._rakipGercek ? { _rakipGercek: true } : {}),
     });
-    const ko = tarama.kirikOzet;
+    const ko = tarama.kirikOzet, sd = tarama.sayfaDurum, rb = tarama.robots;
     process.stdout.write(`  ✓ ${site.ad}: puan ${tarama.seo.puan}, ${tarama.sayfalar.taranan} sayfa, kirik ${ko.ic} ic / ${ko.dis} dis${ko.dogrulanmamis ? ` (+${ko.dogrulanmamis} dogrulanmamis)` : ''}\n`);
+    process.stdout.write(`     durum: ${sd.saglam} saglam · ${sd.sorunlu} sorunlu · ${sd.kirik} kirik · ${sd.yonlendirme} yonlendirme · ${sd.engelli} engelli` +
+      ` | AI botu: ${rb.toplamAi - rb.engelliAi}/${rb.toplamAi} serbest\n`);
   }
 
+  // --site= ile tek site tarandiysa digerleri onceki dosyadan aynen tasinir
+  const tumSiteler = argSite
+    ? [...(onceki.siteler || []).filter(s => s.id !== argSite), ...siteler]
+        .sort((a, b) => (cfg.siteler || []).findIndex(c => c.id === a.id) - (cfg.siteler || []).findIndex(c => c.id === b.id))
+    : siteler;
+
   // ozet
-  const ortalama = siteler.length ? Math.round(siteler.reduce((a, s) => a + s.seo.puan, 0) / siteler.length) : 0;
-  const toplamKirik = siteler.reduce((a, s) => a + s.kirikLinkler.length, 0);
+  const ortalama = tumSiteler.length ? Math.round(tumSiteler.reduce((a, s) => a + s.seo.puan, 0) / tumSiteler.length) : 0;
+  const toplamKirik = tumSiteler.reduce((a, s) => a + s.kirikLinkler.length, 0);
 
   // uyarilar
   const uyarilar = [];
-  siteler.forEach(s => {
+  tumSiteler.forEach(s => {
     if (s.ssl?.gecerli && s.ssl.kalanGun <= 30) uyarilar.push({ seviye: s.ssl.kalanGun <= 14 ? 'kritik' : 'uyari', site: s.id, mesaj: `SSL sertifikasi ${s.ssl.kalanGun} gun sonra doluyor (${s.ssl.bitis})` });
     if (!s.ssl?.gecerli) uyarilar.push({ seviye: 'kritik', site: s.id, mesaj: 'SSL sertifikasi gecersiz/erisilemez' });
     if (s.uptime?.durum === 'down') uyarilar.push({ seviye: 'kritik', site: s.id, mesaj: 'Site erisilemez (down)' });
     if (!s.sitemap?.varMi) uyarilar.push({ seviye: 'uyari', site: s.id, mesaj: 'sitemap.xml bulunamadi' });
+    // robots.txt / AI bot erisimi
+    const rb = s.robots || {};
+    if (rb.bizeKapali) uyarilar.push({ seviye: 'kritik', site: s.id, mesaj: 'robots.txt bu taramayi engelliyor — sayfalar denetlenemedi' });
+    if (rb.sorun) uyarilar.push({ seviye: 'uyari', site: s.id, mesaj: `robots.txt'te ${rb.hatalar.length} sozdizimi hatasi (satir ${rb.hatalar.map(h => h.satirNo).join(', ')})` });
+    if (rb.engelliAi) {
+      const kapali = (rb.botlar || []).filter(b => b.ai && !b.izin).map(b => b.ad);
+      uyarilar.push({ seviye: 'uyari', site: s.id, mesaj: `${rb.engelliAi}/${rb.toplamAi} AI botu robots.txt ile engelli (${kapali.slice(0, 4).join(', ')}${kapali.length > 4 ? '…' : ''}) — AI cevaplarinda kaynak gosterilemezsin` });
+    }
+    if (s.sayfaDurum?.kirik) uyarilar.push({ seviye: 'uyari', site: s.id, mesaj: `${s.sayfaDurum.kirik} sayfa taramada hata verdi (404/5xx)` });
     if (s.kirikOzet?.ic) uyarilar.push({ seviye: 'uyari', site: s.id, mesaj: `${s.kirikOzet.ic} kirik IC link — kendi sayfalarina 404 veriyor` });
     if (s.kirikOzet?.dis) uyarilar.push({ seviye: 'bilgi', site: s.id, mesaj: `${s.kirikOzet.dis} kirik dis link — hedef site kapanmis, linki kaldir` });
     if (s.hreflang?.sorun) uyarilar.push({ seviye: 'uyari', site: s.id, mesaj: 'hreflang etiketleri eksik/tutarsiz' });
@@ -456,7 +600,10 @@ async function main() {
     const e = oncekiSiteler[s.id]; if (!e) return;
     if (e.seo?.puan != null && e.seo.puan !== s.seo.puan)
       degisiklikler.push({ site: s.id, tip: s.seo.puan > e.seo.puan ? 'artis' : 'dusus', mesaj: `SEO puani ${e.seo.puan} → ${s.seo.puan} (${s.seo.trend})`, tarih: bugun().slice(0, 10) });
-    const yeniKirik = s.kirikLinkler.length - (e.kirikLinkler?.length || 0);
+    // Sadece DOGRULANMIS kiriklar sayilir — gecici hatalar (0/5xx) puana girmedigi gibi
+    // "yeni kirik link" uyarisi da uretmemeli, yoksa her sunucu hickirigi alarm oluyor.
+    const sayilirAdet = (x) => (x.kirikLinkler || []).filter(k => k.sayilir).length;
+    const yeniKirik = sayilirAdet(s) - sayilirAdet(e);
     if (yeniKirik > 0) degisiklikler.push({ site: s.id, tip: 'yeni-kirik', mesaj: `${yeniKirik} yeni kirik link`, tarih: bugun().slice(0, 10) });
     const sayfaFark = s.sayfalar.taranan - (e.sayfalar?.taranan || 0);
     if (sayfaFark !== 0) degisiklikler.push({ site: s.id, tip: sayfaFark > 0 ? 'yeni-sayfa' : 'silinen-sayfa', mesaj: `${Math.abs(sayfaFark)} sayfa ${sayfaFark > 0 ? 'eklendi' : 'azaldi'}`, tarih: bugun().slice(0, 10) });
@@ -471,8 +618,8 @@ async function main() {
 
   const cikti = {
     guncelleme: bugun(),
-    ozet: { toplamSite: siteler.length, ortalamaSeoPuan: ortalama, toplamKirikLink: toplamKirik, acilUyari },
-    siteler,
+    ozet: { toplamSite: tumSiteler.length, ortalamaSeoPuan: ortalama, toplamKirikLink: toplamKirik, acilUyari },
+    siteler: tumSiteler,
     degisiklikler,
     raporlar: sonHal.raporlar || onceki.raporlar || [],
     uretilenIcerikler: sonHal.uretilenIcerikler || onceki.uretilenIcerikler || [],

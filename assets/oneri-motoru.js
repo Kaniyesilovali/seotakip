@@ -13,7 +13,8 @@
 const ONCELIK_SIRA = { kritik: 0, yuksek: 1, orta: 2, dusuk: 3 };
 const ETKI = { kritik: 4, yuksek: 3, orta: 2, dusuk: 1 };
 const EFOR = {
-  'SSL':1,'Kirik link':1,'Sitemap':1,'Meta':1,'Gorsel alt':1,'Olcum':1,'Schema':1,'AI bot':1,'llms.txt':1,'Schema alan':1,
+  'SSL':1,'Kirik link':1,'Sitemap':1,'Meta':1,'Gorsel alt':1,'Olcum':1,'Schema':1,'AI bot':1,'llms.txt':1,'Schema alan':1,'Robots':1,
+  'Kirik sayfa':2,'Yonlendirme':2,
   'Ince icerik':3,
   'Ic link':2,'Orphan':2,'CLS':2,'LCP':2,'Kelime firsati':2,'Kelime dususu':2,'Indeks':2,'Icerik':2,'Kanibalizasyon':2,'Icerik boslugu':2,
   'Hiz':3,'GEO':3
@@ -40,6 +41,19 @@ function oneriUret(s){
   if (s.icerik?.inceSayfa) ekle('Ince icerik', s.icerik.inceSayfa >= (s.sayfalar?.taranan||0)/2 ? 'yuksek':'orta',
     `${s.icerik.inceSayfa} sayfa ${s.icerik.esik} kelimenin altında (ort. ${s.icerik.ortKelime}) — içeriği derinleştir.`);
   if (s.llms && !s.llms.varMi) ekle('llms.txt','orta','llms.txt yok — Araçlar sekmesinden üretip köke koy.');
+  // robots.txt govdesi (crawl.js ayristiriyor): AI bot erisimi + sozdizimi + engelli sayfa
+  const rb = s.robots || {};
+  if (rb.bizeKapali) ekle('Robots','kritik','robots.txt taramayı tamamen engelliyor — denetim yapılamıyor, kuralı gevşet.');
+  if (rb.sorun) ekle('Robots','orta', `robots.txt'te ${rb.hatalar?.length||0} sözdizimi hatası (satır ${(rb.hatalar||[]).map(h=>h.satirNo).join(', ')}) — o satırlar hiçbir bota uygulanmıyor.`);
+  if (rb.engelliAi) {
+    const kapali = (rb.botlar||[]).filter(b=>b.ai && !b.izin);
+    ekle('AI bot', rb.engelliAi >= (rb.toplamAi||1)/2 ? 'yuksek' : 'orta',
+      `${rb.engelliAi}/${rb.toplamAi} AI botu robots.txt ile engelli (${kapali.slice(0,3).map(b=>b.ad).join(', ')}${kapali.length>3?'…':''}) — bu motorlar seni kaynak gösteremez. Bilinçli tercihse yok say.`);
+  }
+  if (rb.aiSinyal && rb.aiSinyal['ai-train'] === 'no')
+    ekle('AI bot','dusuk','robots.txt\'te Content-Signal ai-train=no — model eğitimine kapalısın (arama/alıntı etkilenmez).');
+  if (s.sayfaDurum?.kirik) ekle('Kirik sayfa','yuksek', `${s.sayfaDurum.kirik} sayfa taramada hata verdi (404/5xx) — sitemap'te duruyor ama açılmıyor.`);
+  if (s.sayfaDurum?.yonlendirme) ekle('Yonlendirme','dusuk', `${s.sayfaDurum.yonlendirme} sayfa yönlendiriliyor — sitemap/iç linkleri son adrese güncelle.`);
   if (!s.sitemap?.varMi) ekle('Sitemap','yuksek','sitemap.xml yok — oluştur ve Search Console\'a gönder.');
   else if (s.sitemap.erisilemez>0) ekle('Sitemap','orta', `Sitemap'te ${s.sitemap.erisilemez} erişilemez URL — temizle.`);
   const em = s.eksikMeta||{}; const meta = (em.title||0)+(em.description||0)+(em.h1||0);

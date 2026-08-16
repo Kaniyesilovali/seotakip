@@ -149,6 +149,40 @@ body.dar .nav-btn:hover::after{content:attr(data-ad);position:absolute;left:54px
 .karo .kv{font-family:var(--disp);font-weight:600;font-size:30px;font-variant-numeric:tabular-nums;line-height:1;margin-top:8px}
 .karo .ks{font-size:12px;color:var(--faint);margin-top:6px}
 
+/* ---- tematik saglik kartlari (Site Sagligi bolumu) ---- */
+.tema-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:12px}
+.tema{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 15px;display:flex;flex-direction:column;gap:11px}
+.tema-ust{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;font-size:13.5px}
+.tema-ust .tema-ik{width:16px;text-align:center;color:var(--faint);font-weight:400}
+.tema-ust > .cip,.tema-ust > .tbadge{margin-left:auto}
+.tema-rozet{margin-left:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px}
+.tema-ust .more{margin-left:auto;font-size:12.5px;color:var(--signal);background:none;border:0;cursor:pointer;font:inherit}
+.tema-orta{display:flex;align-items:center;gap:12px}
+.tema-not{font-size:12px;color:var(--muted);line-height:1.55}
+.not{font-size:11px;color:var(--faint);line-height:1.5;margin:11px 0 0}
+
+/* kalem listesi: ad — deger — ceza */
+.kalem{list-style:none;margin:0;padding:9px 0 0;border-top:1px solid var(--line);display:grid;gap:6px}
+/* min-width:0 SART: .kalem bir grid, grid ogesinin varsayilan min-width:auto degeri
+   uzun alt etiketle sutunu sisirip degeri kartin disina itiyor. */
+.kalem li{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;line-height:1.45;min-width:0}
+/* k-ad taban genisligi 0: uzun alt etiket kutuyu buyutup degeri disari itmesin */
+.kalem .k-ad{color:var(--muted);flex:1 1 0;min-width:0}
+.kalem .k-dg{font-family:var(--disp);color:var(--text);font-variant-numeric:tabular-nums;
+  text-align:right;flex:0 0 auto;max-width:55%}
+/* kelime ICINDE bolme yok: "60" iki satira dusmesin. Uzun degerler bosluktan sarar. */
+.kalem .k-cz{font-family:var(--disp);font-size:11px;color:var(--bad);min-width:26px;text-align:right}
+.kalem li.gecti .k-cz{color:var(--ok)}
+.kalem .k-cz.uyar{color:var(--warn)}
+.kalem li.bilgi .k-ad,.kalem li.bilgi .k-dg{color:var(--faint)}
+.kalem .k-nokta{width:8px;height:8px;border-radius:2px;flex:none;align-self:center}
+.kalem .k-ad s{display:block;text-decoration:none;color:var(--faint);font-size:11px;margin-top:1px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* yigin cubugu (sorun kalemleri dagilimi) */
+.cubuk{display:flex;height:9px;border-radius:6px;overflow:hidden;background:#0f1725;border:1px solid var(--line)}
+.cubuk i{display:block;height:100%}
+
 /* ---- tablo ---- */
 .tablo-kap{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow-x:auto}
 .tablo-bas{padding:11px 15px;border-bottom:1px solid var(--line);font-family:var(--disp);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:space-between;gap:10px}

@@ -8,6 +8,7 @@ let VERI = null, AKTIF = 'genel', ARAMA = '', SECILI_SITE = '';
 const MENU_GRUPLARI = [
   { grup: 'Genel', items: [
     { id:'genel', ad:'Genel Bakış', ik:'▣' },
+    { id:'saglik', ad:'Site Sağlığı', ik:'◍' },
     { id:'oneri', ad:'Öneriler', ik:'★' },
     { id:'siteler', ad:'Siteler', ik:'❏' },
     { id:'degisim', ad:'Değişiklik İzleyici', ik:'⇄' },
@@ -37,7 +38,7 @@ const MENU_GRUPLARI = [
   ]},
 ];
 const MENU = MENU_GRUPLARI.flatMap(g => g.items);
-const FILTRELI = new Set(['genel','oneri','siteler','denetim','kirik','hiz','iclink','indeks','kelime','gap','rakip','geo','botlar','uyarilar']);
+const FILTRELI = new Set(['genel','saglik','oneri','siteler','denetim','kirik','hiz','iclink','indeks','kelime','gap','rakip','geo','botlar','uyarilar']);
 
 // ============ TON / RENK ============
 const puanTon = (p)=> p>=80?'ok':p>=65?'warn':'bad';
@@ -70,6 +71,21 @@ function kadran(puan, boyut=92){
     </svg>
     <span class="v"><b style="font-size:${fs}px">${puan??'–'}</b><s style="font-size:${ls}px">skor</s></span>
   </span>`;
+}
+
+// tematik halka: kadranin kucuk kardesi. puan null ise "olculmedi" (kesik gri cember).
+function halka(puan, boyut=62){
+  const r = boyut*0.38, C = 2*Math.PI*r, c = boyut/2, sw = boyut*0.10;
+  const olculmedi = puan==null;
+  const off = C*(1-(puan??0)/100);
+  const iz = olculmedi
+    ? `<circle cx="${c}" cy="${c}" r="${r.toFixed(1)}" fill="none" stroke="#2b3a5a" stroke-width="${sw.toFixed(1)}" stroke-dasharray="3 5"/>`
+    : `<circle cx="${c}" cy="${c}" r="${r.toFixed(1)}" fill="none" stroke="#1d2740" stroke-width="${sw.toFixed(1)}"/>
+       <circle cx="${c}" cy="${c}" r="${r.toFixed(1)}" fill="none" stroke="${puanRenk(puan)}" stroke-width="${sw.toFixed(1)}" stroke-linecap="round"
+         stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 ${c} ${c})"/>`;
+  return `<span class="skor" style="width:${boyut}px;height:${boyut}px">
+    <svg width="${boyut}" height="${boyut}" viewBox="0 0 ${boyut} ${boyut}">${iz}</svg>
+    <span class="v"><b style="font-size:${Math.round(boyut*0.30)}px;color:${olculmedi?'var(--faint)':'var(--text)'}">${olculmedi?'–':puan}</b></span></span>`;
 }
 
 const mt = (label, val, unit, ton='')=> `<div class="mt"><div class="ml">${label}</div><div class="mv ${ton?'t-'+ton:''}">${val}${unit?`<small>${unit}</small>`:''}</div></div>`;
@@ -181,6 +197,159 @@ const VIEWS = {
       stBaslik('Öncelikli işler', ilk3.length, "git('oneri')") + aksiyon +
       stBaslik('Tüm siteler', siteler().length) +
       `<div class="grid">${kartlar}</div>`;
+  },
+
+  // Tematik saglik: hesabin tamami assets/saglik-motoru.js'te (siteSaglik/portfoySaglik/…).
+  // Burada sadece cizim var. "Puani etkiler" halkalari crawl.js'in ceza kalemlerinden
+  // turer; "ayri olcum" halkalari puana girmeyen bagimsiz olcumlerdir.
+  saglik(){
+    const list = siteler();
+    const bas = bolumBaslik('Genel','Site Sağlığı',
+      'Tek puan yerine kırılım: hangi başlık puandan ne götürüyor. <b>puanı etkiler</b> rozetli halkalar SEO puanının kendisinden türer; <b>ayrı ölçüm</b> rozetliler puana girmez ama sorun çıkarır.');
+    if(!list.length) return bas + filtreBar() + bosDurum('Aramaya uyan site yok.');
+
+    const tek = list.length===1 ? list[0] : null;
+    const sag = tek ? siteSaglik(tek) : null;
+    const port = portfoySaglik(list);
+    const dag = sayfaDagilim(list);
+    const ai = aiSaglik(list);
+    const onr = tumOneriler();
+    const sirali = [...list].sort((a,b)=>(b.seo?.puan||0)-(a.seo?.puan||0));
+    const ortalama = Math.round(list.reduce((a,s)=>a+(s.seo?.puan||0),0)/list.length);
+
+    // --- 1) saglik kadrani ---
+    const kart1 = `<div class="kart"><div class="tema-ust"><b>${tek?tek.ad:'Portföy sağlığı'}</b>
+        ${tek?tbadge(tek.seo?.trend):`<span class="cip">${list.length} site</span>`}</div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:12px">${kadran(tek?tek.seo?.puan:ortalama, 86)}
+        <div style="flex:1;font-size:12.5px;color:var(--muted);line-height:1.7">${ tek
+          ? `Ceza toplamı <b class="t-bad">−${sag.ceza}</b> → <b style="color:var(--text)">${sag.hesaplanan}</b> puan.<br>
+             ${sag.uyum?'<span class="t-ok">✓</span> crawl.js ile birebir tutuyor.':`<span class="t-warn">⚠</span> crawl.js ${sag.puan} diyor — formüller ayrışmış.`}`
+          : `en iyi <b style="color:var(--text)">${sirali[0].ad}</b> ${sirali[0].seo?.puan}<br>
+             en zayıf <b style="color:var(--text)">${sirali[sirali.length-1].ad}</b> ${sirali[sirali.length-1].seo?.puan}<br>
+             <span style="color:var(--faint)">tek sitenin kırılımı için üstten site seç</span>` }</div></div></div>`;
+
+    // --- 2) sayfa durum kirilimi (Semrush "Crawled Pages" karsiligi) ---
+    // Bu bes durum ORTUSMEZ, toplami taranan URL sayisidir. Altindaki sorun turleri ise cakisir.
+    const PAL = ['#F5B23B','#E8933B','#6E8BFF','#43D6C4','#8593AC','#F0607A'];
+    const D = dag.durum;
+    const DURUM = D ? [
+      { ad:'Sağlam', adet:D.saglam, renk:'var(--ok)' },
+      { ad:'Sorunlu', adet:D.sorunlu, renk:'var(--warn)' },
+      { ad:'Kırık', adet:D.kirik, renk:'var(--bad)' },
+      { ad:'Yönlendirme', adet:D.yonlendirme, renk:'var(--info)' },
+      { ad:'robots ile engelli', adet:D.engelli, renk:'#8593AC' },
+    ].filter(x=>x.adet>0) : [];
+    const sorunToplam = dag.kalemler.reduce((a,k)=>a+k.adet,0);
+    const kart2 = `<div class="kart"><div class="tema-ust"><b>Taranan sayfalar</b><span class="cip">${D?D.toplam:dag.taranan}</span></div>
+      ${ D ? `<div class="cubuk" style="margin:12px 0 10px" role="img" aria-label="sayfa durumu dağılımı">${
+            DURUM.map(x=>`<i style="width:${(x.adet/D.toplam*100).toFixed(1)}%;background:${x.renk}" title="${x.ad}: ${x.adet}"></i>`).join('')}</div>
+          <ul class="kalem" style="border:0;padding:0">${DURUM.map(x=>
+            `<li><span class="k-nokta" style="background:${x.renk}"></span><span class="k-ad">${x.ad}</span><span class="k-dg">${x.adet}</span></li>`).join('')}
+            ${dag.noindex?`<li><span class="k-nokta" style="background:var(--line2)"></span><span class="k-ad">bunlardan noindex</span><span class="k-dg">${dag.noindex}</span></li>`:''}</ul>`
+        : `<p class="not">Sayfa durumu kırılımı yok — <code>npm run crawl</code> ile yeniden tara.</p>` }
+      ${ sorunToplam ? `<ul class="kalem" style="margin-top:10px">${dag.kalemler.map((k,i)=>
+          `<li><span class="k-nokta" style="background:${k.ton==='bad'?'var(--bad)':PAL[i%PAL.length]}"></span><span class="k-ad">${k.ad}</span><span class="k-dg">${k.adet}</span></li>`).join('')}</ul>
+        <p class="not">Alttaki sorun türleri çakışır: bir sayfa hem ince hem schema'sız olabilir.</p>` : '' }</div>`;
+
+    // --- 3) AI / GEO sagligi ---
+    const kart3 = ai ? `<div class="kart"><div class="tema-ust"><b>AI arama hazırlığı</b><span class="cip sig">${ai.toplamSite} site</span></div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:11px">${halka(ai.puan, 72)}
+        <ul class="kalem" style="border:0;padding:0;flex:1">${ai.bilesen.map(b=>
+          `<li><span class="k-ad" title="${b.aciklama}">${b.ad}</span><span class="k-dg t-${puanTon(b.puan)}">${b.puan}%</span></li>`).join('')}</ul></div>
+      ${ ai.gorunurluk.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:11px">${ai.gorunurluk.map(g=>
+          cip(`${g.motor} ${g.gorulen}/${g.olculen}`, g.gorulen?'sig':'')).join('')}</div>` : '' }
+      <p class="not">Ölçülmeyen: ${ai.eksikOlcum.join(' · ')}</p></div>` : '';
+
+    // --- 3b) AI aramaya kapali (Semrush "Blocked from AI Search" karsiligi) ---
+    const bot = aiBotEngeli(list);
+    const kartBot = bot ? `<div class="kart"><div class="tema-ust"><b>AI aramaya kapalı</b>
+        ${bot.engelliOlanlar.length?cip(bot.engelliOlanlar.length+' bot','bad'):cip('yok','ok')}</div>
+      <p class="not" style="margin:7px 0 0">robots.txt kurallarına göre — ${bot.taranan} sayfa üzerinden.</p>
+      ${ bot.engelliOlanlar.length
+        ? `<ul class="kalem" style="margin-top:9px;border:0;padding:0">${bot.engelliOlanlar.slice(0,6).map(b=>
+            `<li><span class="k-ad">${b.ad}<s>${b.sirket} · ${b.not}</s></span>
+             <span class="k-dg t-bad">${b.engelliSayfa}</span></li>`).join('')}</ul>`
+        : `<div style="font-size:12.5px;color:var(--ok);margin-top:9px">Hiçbir AI botu engellenmiyor.</div>` }
+      ${ bot.sinyaller.length ? `<p class="not">Content-Signal: ${bot.sinyaller.map(x=>`${x.site} → ${x.ham}`).join(' · ')}</p>` : '' }</div>` : '';
+
+    // --- 4) aksiyon ---
+    const say = (p)=> onr.filter(o=>o.oncelik===p).length;
+    const hizli = onr.filter(o=>o.hizliKazanim).length;
+    const kart4 = `<div class="kart"><div class="tema-ust"><b>Aksiyon</b>
+        <button class="more" onclick="git('oneri')" style="margin-left:auto">tümü →</button></div>
+      <div class="mgrid" style="grid-template-columns:1fr 1fr;margin-top:11px">
+        ${mt('Kritik', say('kritik'), '', say('kritik')?'bad':'ok')}
+        ${mt('Yüksek', say('yuksek'), '', say('yuksek')?'bad':'ok')}
+        ${mt('Orta', say('orta'), '', 'warn')}
+        ${mt('⚡ Hızlı kazanım', hizli, '', hizli?'sig':'mut')}</div>
+      <p class="not">Aynı öneri motoru (assets/oneri-motoru.js) panel, rapor ve Telegram bildiriminde ortak.</p></div>`;
+
+    // --- tematik halkalar ---
+    const rozet = (k)=> k.tip==='puan'
+      ? (k.ceza ? cip(`−${k.ceza} puan`,'bad') : cip('puanı etkiler','ok'))
+      : cip('ayrı ölçüm','');
+    // "−3" yalnizca puana giren kategorilerde puan demek. Olcum kategorilerinde ceza
+    // sadece "burada sorun var" isaretidir -> puan dusuyormus gibi gostermemek icin "!".
+    const kalemSatir = (kl, tip)=> `<li class="${kl.bilgi?'bilgi':kl.ceza?'':'gecti'}">
+      <span class="k-ad">${kl.ad}</span><span class="k-dg">${kl.deger}</span>
+      <span class="k-cz ${tip==='olcum'&&kl.ceza?'uyar':''}">${kl.bilgi?'':!kl.ceza?'✓':tip==='puan'?'−'+kl.ceza:'!'}</span></li>`;
+    // portfoy modunda halka, SADECE olculebilmis sitelerin ortalamasi -> kapsami rozetle goster,
+    // yoksa "1 sitede olculen indeks orani" 5 sitenin durumu sanilir.
+    const kapsam = (k)=> (k.olculen!=null && k.olculen<k.toplam)
+      ? cip(`${k.olculen}/${k.toplam} site`, k.olculen?'warn':'') : '';
+    const temaKart = (k)=> `<div class="tema">
+      <div class="tema-ust"><span class="tema-ik">${k.ik}</span><b>${k.ad}</b>
+        <span class="tema-rozet">${rozet(k)}${kapsam(k)}</span></div>
+      <div class="tema-orta">${halka(k.puan)}<div class="tema-not">${k.puan==null?'ölçülmedi — '+k.aciklama:k.aciklama}</div></div>
+      ${ k.kalemler?.length ? `<ul class="kalem">${k.kalemler.map(kl=>kalemSatir(kl,k.tip)).join('')}</ul>`
+        : `<ul class="kalem"><li class="bilgi"><span class="k-ad">ölçülen site</span><span class="k-dg">${k.olculen}/${k.toplam}</span></li></ul>` }</div>`;
+
+    const kategoriler = tek ? sag.kategoriler : port.kategoriler;
+    const puanlilar = kategoriler.filter(k=>k.tip==='puan');
+    const olcumler  = kategoriler.filter(k=>k.tip==='olcum');
+
+    // --- coklu site: kategori x site matrisi ---
+    const hucre = (p)=> p==null ? '<span style="color:var(--faint)">–</span>'
+      : `<span class="t-${puanTon(p)}" style="font-family:var(--disp);font-weight:600">${p}</span>`;
+    const matris = tek ? '' : stBaslik('Site × kategori', list.length) +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:${180+kategoriler.length*74}px"><thead><tr><th>Site</th>
+        ${kategoriler.map(k=>`<th class="ort" title="${k.ad}">${k.kisa||k.ad}</th>`).join('')}</tr></thead>
+        <tbody>${port.siteler.map(({site,saglik})=>`<tr><td class="site-ad">${site.ad}</td>
+          ${saglik.kategoriler.map(k=>`<td class="ort">${hucre(k.puan)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+
+    // --- AI bot erisim tablosu (bot × site) ---
+    const robotslu = list.filter(s=>s.robots?.botlar?.length);
+    const botTablo = bot ? stBaslik('AI bot erişimi (robots.txt)', bot.botlar.length) +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:${340+robotslu.length*95}px"><thead><tr>
+        <th>Bot</th><th>Ne için</th>${robotslu.map(s=>`<th class="ort">${s.ad}</th>`).join('')}</tr></thead>
+        <tbody>${bot.botlar.map(b=>`<tr>
+          <td><span class="site-ad">${b.ad}</span> <span style="color:var(--faint);font-size:11px">${b.sirket}</span></td>
+          <td style="color:var(--muted);font-size:12px">${b.not}${b.ai?'':' '+cip('AI değil','')}</td>
+          ${robotslu.map(s=>{ const x=(s.robots.botlar||[]).find(y=>y.id===b.id);
+            return `<td class="ort">${!x?'–':x.izin?cip('serbest','ok'):cip(x.tamKapali?'tamamen kapalı':x.engelliSayfa+' sayfa','bad')}</td>`;}).join('')}
+        </tr>`).join('')}</tbody></table></div>
+      <p class="not">Engelli botlar siteni tarayamaz; ChatGPT/Claude/Perplexity cevaplarında kaynak gösteremezsin. Açmak için Araçlar → robots.txt bloğunu kullan.</p>` : '';
+
+    // --- sorunlu sayfa listeleri (tek site seciliyken) ---
+    const sayfaListe = (baslik, list2, sutun)=> !list2?.length ? '' :
+      `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${baslik}${cip(list2.length,'')}</div>
+        <table class="tablo" style="min-width:520px"><thead><tr><th>Sayfa</th>${sutun.map(s=>`<th class="${s.ort?'ort':''}">${s.ad}</th>`).join('')}</tr></thead>
+        <tbody>${list2.map(k=>`<tr><td>${k.yol}</td>${sutun.map(s=>`<td class="${s.ort?'ort':''}" style="color:var(--muted);font-size:12px">${s.al(k)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    const detay = !tek ? '' : (
+      sayfaListe('Taramada hata veren sayfalar', tek.kirikSayfalar, [{ad:'Kod',ort:true,al:k=>cip(k.kod||k.hata||'hata','bad')}]) +
+      sayfaListe('Yönlendirmeler', tek.yonlendirmeler, [{ad:'Kod',ort:true,al:k=>cip(k.kod,'')},{ad:'Hedef',al:k=>k.hedef}]) +
+      sayfaListe('robots.txt ile engelli sayfalar', tek.engelliSayfalar, [{ad:'Kural',al:k=>`<code>${k.kural||'—'}</code>`}]) +
+      sayfaListe('Sorunlu sayfalar', tek.sorunluSayfalar, [{ad:'Sorun',al:k=>(k.sorunlar||[]).join(' · ')}])
+    );
+    const detayBaslik = detay ? stBaslik('Sayfa dökümü', tek.sayfaDurum?.toplam) : '';
+
+    return bas + filtreBar() +
+      `<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(270px,1fr))">${kart1}${kart2}${kart3}${kartBot}${kart4}</div>` +
+      stBaslik('Puanı oluşturan başlıklar', puanlilar.length) +
+      `<div class="tema-grid">${puanlilar.map(temaKart).join('')}</div>` +
+      stBaslik('Ayrı ölçümler', olcumler.length) +
+      `<div class="tema-grid">${olcumler.map(temaKart).join('')}</div>` +
+      botTablo + matris + detayBaslik + detay;
   },
 
   oneri(){

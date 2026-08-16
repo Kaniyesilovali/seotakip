@@ -1,13 +1,13 @@
 # SEO / GEO Takip Paneli
 
-5 aktif site için tek panelden SEO + GEO takibi. Statik HTML + Tailwind (frontend),
+5 aktif site için tek panelden SEO + GEO takibi. Statik HTML + kendi CSS'i (frontend, framework yok),
 Node.js script'leri (otomasyon), ortada tek `data/data.json` buluşma noktası.
 Tamamen ücretsiz çalışacak şekilde tasarlandı (GitHub Actions + GitHub Pages).
 
 ## Mimari
 
 ```
-Panel (index.html + Tailwind)  →  data/data.json  ←  scripts/*.js (Node)
+Panel (index.html + panel.css) →  data/data.json  ←  scripts/*.js (Node)
         okur                        tek kaynak            yazar
 ```
 
@@ -16,6 +16,8 @@ Panel (index.html + Tailwind)  →  data/data.json  ←  scripts/*.js (Node)
 - `index.html` — panel arayüzü
 - `assets/app.js` — data.json'u okuyup çizen kod
 - `assets/oneri-motoru.js` — öneri/değerlendirme motoru (panel + rapor + Telegram ortak kullanır)
+- `assets/saglik-motoru.js` — tematik sağlık skorları (Site Sağlığı bölümünün hesabı)
+- `scripts/lib/robots.js` — robots.txt ayrıştırıcı + yol eşleştirici (AI bot erişimi buradan çıkar)
 - `assets/fallback-data.js` — `file://` ile açınca kullanılan örnek veri
 - `data/data.json` — tüm sitelerin son durumu (script'ler üretir)
 - `data/history/` — tarih tarih arşiv (trend grafiği + rapor karşılaştırması için)
@@ -63,9 +65,15 @@ npm run panel   # http://localhost:3000
 
 Ya da `index.html`'e çift tıkla — örnek veriyle açılır.
 
+Tarama tüm aktif siteleri gezer; tek siteyi tazelemek için:
+
+```bash
+npm run crawl -- --site=animare   # diğer siteler data.json'da olduğu gibi kalır
+```
+
 ## Panel bölümleri
 
-**Genel:** Genel Bakış · Öneriler/Aksiyon (değerlendirme motoru) · Siteler · Değişiklik İzleyici · Uyarılar
+**Genel:** Genel Bakış · Site Sağlığı (tematik kırılım) · Öneriler/Aksiyon (değerlendirme motoru) · Siteler · Değişiklik İzleyici · Uyarılar
 **Teknik SEO:** SEO Denetim · Kırık Linkler · Hız/Core Vitals · İç Linkleme · İndeks Monitörü
 **İçerik & Sıralama:** Anahtar Kelime · İçerik Boşluğu · Rakip Analizi (manuel ekleme) · AI İçerik/Blog
 **GEO / AI:** GEO Görünürlük · AI Bot Takibi
@@ -75,7 +83,8 @@ Ya da `index.html`'e çift tıkla — örnek veriyle açılır.
 
 `assets/oneri-motoru.js` içindeki `oneriUret()` her siteyi kurallarla değerlendirir: öncelik (kritik→düşük),
 etki/efor skoru, "hızlı kazanım" tespiti. AI gerektirmez, ücretsiz. Kapsam: SSL, kırık link (iç/dış ayrı),
-schema (varlık + zorunlu alan), sitemap, meta, ince içerik, llms.txt, hız, iç link, orphan, indeks, AI bot,
+schema (varlık + zorunlu alan), sitemap, meta, ince içerik, llms.txt, hız, iç link, orphan, indeks,
+robots.txt (sözdizimi + AI bot erişimi + Content-Signal), kırık/yönlendirilen sayfa, AI bot,
 GEO, kelime fırsatı/düşüşü, kanibalizasyon, içerik boşluğu.
 
 Motor tek dosyada ve hem tarayıcıda (panel) hem Node'da (`rapor.js`, `telegram.js`) çalışır —
@@ -118,6 +127,60 @@ diğerinde 4713ms verebiliyor), o yüzden puanlama **taranan tüm sayfaların me
 
 > Bu puan **Semrush Site Health ile karşılaştırılabilir değildir.** Semrush ~101 kontrolün ağırlıklı
 > geçme oranını verir; buradaki 16 kontrolün sabit ceza toplamıdır. İki sayının yakın çıkması tesadüftür.
+
+## Site Sağlığı (tematik halkalar)
+
+Tek puan "neden 80?" sorusunu cevaplamıyordu. **Site Sağlığı** bölümü aynı puanı başlıklara ayırır.
+Hesap `assets/saglik-motoru.js`'te; öneri motoru gibi hem tarayıcıda hem Node'da çalışır.
+
+İki tür kategori var, karıştırılmamalı:
+
+| Tür | Ne demek | Kategoriler (bütçe = düşebilecek en çok puan) |
+|---|---|---|
+| **puanı etkiler** | Cezaları doğrudan yukarıdaki tablodan gelir | Taranabilirlik (44) · On-page & Meta (36) · Markup/Schema (18) · İç Linkleme (11) · İçerik Derinliği (8) · Sunucu Yanıtı (6) · AI Hazırlığı (2) |
+| **ayrı ölçüm** | SEO puanına **girmez**, kendi eşiğiyle ölçülür | HTTPS & SSL · Site Hızı · Core Web Vitals · Uluslararası SEO (hreflang) · İndeks Durumu |
+
+Halka değeri = `100 × (1 − kategori cezası ÷ bütçe)`. "Puanı etkiler" kategorilerinin cezaları
+toplandığında **100 − `seo.puan`** çıkar; tek site seçiliyken kartın üstünde bu mutabakat yazar
+(`✓ crawl.js ile birebir tutuyor`). Tutmuyorsa iki dosyadaki formül ayrışmış demektir —
+`crawl.js`'teki puanlama bloğunu değiştirirken `saglik-motoru.js`'i de güncelle.
+
+Dürüstlük notları (panelde de yazıyor):
+
+- **Taranan sayfalar** kartı her URL'yi tek bir duruma koyar: sağlam / sorunlu / kırık /
+  yönlendirme / robots ile engelli. Bu beşi örtüşmez, toplamı taranan URL sayısını verir.
+  Altındaki **sorun türleri** (ince içerik, schema alanı, eksik meta…) ise çakışır — bir sayfa
+  aynı anda birkaçında olabilir.
+- **Core Web Vitals** kaynağı `lab` (Lighthouse) ise gerçek kullanıcı (CrUX) verisi değildir; lab
+  ölçümünde INP alınamaz, o yüzden hesaba katılmaz.
+- Portföy görünümünde bir kategori sitelerin sadece bir kısmında ölçülebildiyse halkanın yanında
+  kapsam rozeti çıkar (ör. `1/5 site`) — eksik ölçüm tam gibi görünmesin.
+
+## robots.txt ve AI bot erişimi
+
+`scripts/lib/robots.js` robots.txt'i Google'ın spesifikasyonuna göre ayrıştırır: aynı user-agent'a
+ait gruplar birleştirilir (Cloudflare'in yönettiği dosyalarda iki ayrı `User-agent: *` bloğu
+olabiliyor), eşleşmede **en uzun kural kazanır**, eşitlikte `Allow` üstündür, `*` ve `$` desteklenir.
+
+Bundan üç şey çıkıyor:
+
+1. **AI bot erişimi** — GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, PerplexityBot,
+   Google-Extended, Applebot-Extended, CCBot, Bytespider, meta-externalagent + karşılaştırma için
+   Googlebot/Bingbot. Panelde "AI aramaya kapalı" kartı ve bot × site tablosu bunu gösterir.
+   Bir bot engelliyse o motor seni cevabında kaynak gösteremez.
+2. **Kendi taramamız** — robots.txt bize kapattığı sayfayı **taramıyoruz**; o sayfalar "engelli"
+   olarak raporlanır. Site tamamen kapalıysa kritik uyarı çıkar.
+3. **Sitemap keşfi** — robots.txt'te bildirilen `Sitemap:` satırları da okunur. Bu sayede ayrı
+   dosyada duran ürün/blog haritaları da denetime girer (Luxeva'nın `/urun-sitemap.xml`'i böyle
+   bulundu: 66 ürün sayfası daha).
+
+`Content-Signal` gibi standart dışı satırlar hata sayılmaz, ayrıca gösterilir (`ai-train=no` gibi
+bir bildirim varsa panel bunu yazar).
+
+> **AI botunu engellemek puanı düşürmez.** Bilinçli bir tercih olabilir; panel bunu ölçüm ve öneri
+> olarak gösterir, SEO puanına karıştırmaz. Aynı şekilde robots.txt sözdizimi hataları ve kırık
+> sayfalar da şimdilik puana girmez — puan formülü kasten değiştirilmedi ki eski taramalarla
+> karşılaştırılabilirliği bozulmasın.
 
 ## Durum
 
