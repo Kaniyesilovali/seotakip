@@ -62,9 +62,17 @@ paneli bozuk açar.
 Panel `data/data.json`'u okur. Yeni tarama sonucunu canlıya yansıtmak için:
 
 ```bash
+git pull             # gece taraması varsa önce onu al (aşağıya bak)
 npm run tara-hepsi   # 5 siteyi tara (crawl + hız + Search Console)
 npm run build        # dist/ yenilenir
 ```
+
+> **`git pull`'u atlama.** GitHub Actions her gece 06:00 TR'de siteleri tarayıp
+> `data/data.json`, `data/history/`, `data/raporlar/` ve `assets/fallback-data.js`
+> dosyalarını repo'ya geri commit'liyor (`.github/workflows/tarama.yml`). Pull etmeden
+> `npm run build` çalıştırırsan `dist/`'e gece taraması değil, yereldeki eski veri girer —
+> panelde dünkü tarih görünür. Sadece yayına almak istiyorsan `npm run tara-hepsi`'yi
+> hiç çalıştırmadan `git pull && npm run build` yeterli.
 
 Sonra FileZilla'da neyi yükleyeceğin **neyin değiştiğine** bağlı:
 
