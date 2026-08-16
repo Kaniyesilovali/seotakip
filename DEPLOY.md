@@ -29,12 +29,15 @@ dist/
 ├── assets/
 │   ├── panel.css
 │   ├── oneri-motoru.js
+│   ├── saglik-motoru.js
 │   ├── app.js
 │   └── fallback-data.js
 └── data/
     ├── data.json
     └── raporlar/            ← varsa (npm run rapor ile üretilen HTML raporlar)
-        └── 2026-08-15-haftalik.html
+        ├── 2026-08-15-haftalik.html
+        ├── 2026-08-15-haftalik-animare.html    ← tek site raporu
+        └── 2026-08-15-aylik.html
 ```
 
 Build ayrıca `index.html` içindeki varlık adreslerine içerik hash'i ekler
@@ -70,7 +73,7 @@ Sonra FileZilla'da neyi yükleyeceğin **neyin değiştiğine** bağlı:
 | Sadece tarama verisi (`npm run tara-hepsi`) | `dist/data/data.json` → sunucudaki `data/data.json` üzerine |
 | Yeni rapor ürettin (`npm run rapor`) | `dist/data/data.json` **ve** `dist/data/raporlar/` klasörü (panel rapora oradan link verir) |
 | Panel kodu/tasarımı (`assets/*`, `index.html`) | `dist/index.html` **ve** `dist/assets/` klasörünün tamamı birlikte |
-| Emin değilsen | `dist/` içindekilerin hepsi (~165 KB, birkaç saniye) |
+| Emin değilsen | `dist/` içindekilerin hepsi (~460 KB, birkaç saniye) |
 
 FileZilla'da üzerine yazarken çıkan diyalogda **"Overwrite"** + "Always use this action"
 seçmen yeterli. Transfer modu **Binary** olsun (Transfer → Transfer Type → Binary);
