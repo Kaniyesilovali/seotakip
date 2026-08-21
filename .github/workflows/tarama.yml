@@ -74,6 +74,15 @@ jobs:
         run: |
           git config user.name "seo-tarama-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/data.json data/indeks-cache.json assets/fallback-data.js data/history/ data/raporlar/ data/uyari-durumu.json || true
+          # DIKKAT: "git add a b yok-olan" TEK bir eksik yol yuzunden hicbir seyi
+          # stage'lemez (fatal + cikis 128). data/uyari-durumu.json yalnizca Telegram
+          # uyarisi gonderildiginde olusur; yoksa tum tarama sonucu sessizce yutuluyordu.
+          # Bu yuzden her yolu tek tek, yalnizca varsa ekliyoruz.
+          for yol in data/data.json data/indeks-cache.json assets/fallback-data.js \
+                     data/history data/raporlar data/uyari-durumu.json; do
+            if [ -e "$yol" ]; then git add "$yol"; fi
+          done
           git commit -m "otomatik tarama: $(date -u +%Y-%m-%d) [skip ci]" || echo "degisiklik yok"
-          git push || echo "push atlandi"
+          # push'u bilerek yutmuyoruz: basarisiz olursa tarama kirmizi gorunsun,
+          # yoksa gunlerce "yesil ama veri gelmiyor" durumu fark edilmiyor
+          git push
