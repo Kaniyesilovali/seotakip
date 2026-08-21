@@ -14,6 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import '../assets/sorun-katalogu.js'; // globalThis: SORUN_KATALOG, sorunOzeti, sorunlariZenginlestir
 import '../assets/oneri-motoru.js'; // globalThis: oneriUret, onerileriTopla, haftalikOzet, EFOR_AD
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -114,6 +115,27 @@ function aksiyonListesi(liste, bosMetin) {
     <span class="msj">${esc(o.mesaj)}</span>
     <span class="efor">efor: ${EFOR_AD[o.efor]}</span>
   </li>`).join('')}</ol>`;
+}
+
+// ---- bolum: denetim bulgulari ----
+// Aksiyon listesi "ne yapmali"yi soyler; bu tablo "neyi kac kere buldum"u.
+// Metinler assets/sorun-katalogu.js'ten gelir; panelde okunan cumlelerin AYNISI.
+const SEVIYE_ROZET = { kritik: 'kritik', uyari: 'yuksek', bilgi: 'orta' };
+function sorunTablosu() {
+  const ozet = globalThis.sorunOzeti(siteler);
+  if (!ozet.length) {
+    return '<p class="bos">Bu veri sorun listesi eklenmeden önce üretilmiş — <code>npm run crawl</code> ile yeniden tara.</p>';
+  }
+  const satir = (b) => `<tr>
+    <td><span class="rozet ${SEVIYE_ROZET[b.seviye]}">${esc(b.seviye.toUpperCase())}</span></td>
+    <td><b>${esc(b.baslik)}</b>${b.puana ? '' : ' <i style="color:var(--mut)">(puana girmiyor)</i>'}<br />
+      <span style="color:var(--mut)">${esc(b.nasil)}</span></td>
+    <td class="ort"><b>${b.adet}</b></td>
+    <td style="color:var(--mut)">${esc((b.siteler || []).map(x => `${x.ad} (${x.adet})`).join(' · '))}</td>
+  </tr>`;
+  return `<table class="skor"><thead><tr>
+    <th>Seviye</th><th>Sorun ve çözümü</th><th class="ort">Adet</th><th>Nerede</th>
+  </tr></thead><tbody>${ozet.map(satir).join('')}</tbody></table>`;
 }
 
 // ---- bolum: site detay ----
@@ -262,6 +284,9 @@ const html = `<!doctype html>
   ${degisiklikler.length
     ? `<ul class="duz">${degisiklikler.map(d => `<li><b>${esc(d.site)}</b> — ${esc(d.mesaj)} <span style="color:var(--mut)">(${esc(d.tarih)})</span></li>`).join('')}</ul>`
     : '<p class="bos">Son taramada kayda değer değişiklik yok.</p>'}
+
+  <h2>Denetim bulguları</h2>
+  ${sorunTablosu()}
 
   <h2>Site detayları</h2>
   ${siteler.map(siteDetay).join('')}

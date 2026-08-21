@@ -29,7 +29,10 @@ async function psi(url, strategy) {
   const u = new URL('https://www.googleapis.com/pagespeedonline/v5/runPagespeed');
   u.searchParams.set('url', url);
   u.searchParams.set('strategy', strategy);
-  u.searchParams.set('category', 'performance');
+  // Ayni istekte dort kategoriyi birden isteriz — ek maliyet yok, ek istek yok.
+  // Erisilebilirlik ve "best practices" Lighthouse'un ucretsiz verdigi ama panelde
+  // hic gosterilmeyen olcumlerdi; SEO kategorisi de bizim kendi denetimimizi capraz dogrular.
+  for (const k of ['performance', 'accessibility', 'best-practices', 'seo']) u.searchParams.append('category', k);
   if (KEY) u.searchParams.set('key', KEY);
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), 60000);
@@ -44,7 +47,9 @@ async function psi(url, strategy) {
 
 // alan (CrUX) verisi yoksa laboratuvar (lighthouse) verisine dus
 function metrikCek(data) {
-  const puan = Math.round((data?.lighthouseResult?.categories?.performance?.score ?? 0) * 100);
+  const kat = data?.lighthouseResult?.categories || {};
+  const katPuan = (ad) => kat[ad]?.score == null ? null : Math.round(kat[ad].score * 100);
+  const puan = Math.round((kat.performance?.score ?? 0) * 100);
   const alan = data?.loadingExperience?.metrics || {};
   const lab = data?.lighthouseResult?.audits || {};
   const labNum = (id) => lab[id]?.numericValue;
@@ -61,7 +66,11 @@ function metrikCek(data) {
     ? +(alan.CUMULATIVE_LAYOUT_SHIFT_SCORE.percentile / 100).toFixed(2)
     : (labNum('cumulative-layout-shift') != null ? +labNum('cumulative-layout-shift').toFixed(2) : null);
 
-  return { puan, lcp, inp, cls, alanVerisi: !!data?.loadingExperience?.metrics };
+  return { puan, lcp, inp, cls,
+    erisilebilirlik: katPuan('accessibility'),
+    enIyiUygulama: katPuan('best-practices'),
+    lighthouseSeo: katPuan('seo'),
+    alanVerisi: !!data?.loadingExperience?.metrics };
 }
 
 async function main() {
@@ -85,10 +94,13 @@ async function main() {
     hedef.hiz = {
       mobilPuan: m.puan, masaustuPuan: d.puan,
       lcp: m.lcp, inp: m.inp, cls: m.cls,
+      // Mobil olcumu esas aliriz: Google mobil-oncelikli indeksliyor.
+      erisilebilirlik: m.erisilebilirlik, enIyiUygulama: m.enIyiUygulama, lighthouseSeo: m.lighthouseSeo,
       kaynak: m.alanVerisi ? 'alan (CrUX)' : 'lab',
     };
     hedef._hizGercek = true; // crawl.js bir sonraki taramada bu alani korusun
     console.log(` ✓ mobil ${m.puan} / masaustu ${d.puan} · LCP ${m.lcp}s · CLS ${m.cls} · ${hedef.hiz.kaynak}`);
+    console.log(`     erisilebilirlik ${m.erisilebilirlik ?? '—'} · en iyi uygulama ${m.enIyiUygulama ?? '—'} · Lighthouse SEO ${m.lighthouseSeo ?? '—'}`);
   }
 
   // ozet puani yeniden hesaplama gerekmiyor (SEO puani ayri). Sadece yaz.

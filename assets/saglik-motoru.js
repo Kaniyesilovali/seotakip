@@ -18,7 +18,7 @@
 // Saf fonksiyon: DOM, fetch, dosya sistemi YOK.
 
 const TEMA_TANIM = [
-  { id:'taranabilirlik', ad:'Taranabilirlik', kisa:'Tarama',  ik:'⌕',  tip:'puan',  butce:44, aciklama:'Google sayfalara ulaşabiliyor mu: sitemap, robots.txt, canonical, kırık link.' },
+  { id:'taranabilirlik', ad:'Taranabilirlik', kisa:'Tarama',  ik:'⌕',  tip:'puan',  butce:38, aciklama:'Google sayfalara ulaşabiliyor mu: sitemap, robots.txt, canonical, kırık link.' },
   { id:'markup',        ad:'Markup / Schema', kisa:'Markup',  ik:'◆',  tip:'puan',  butce:18, aciklama:'JSON-LD var mı ve Google\'ın zengin sonuç için beklediği alanlar dolu mu.' },
   { id:'onpage',        ad:'On-page & Meta',  kisa:'On-page', ik:'≡',  tip:'puan',  butce:36, aciklama:'title / description / H1, görsel alt text ve ölçüm kodu (GA4/GTM).' },
   { id:'icerik',        ad:'İçerik Derinliği',kisa:'İçerik',  ik:'✎',  tip:'puan',  butce:8,  aciklama:'İnce sayfa oranı. Eşik altındaki sayfalar sıralamada tutunamaz.' },
@@ -61,7 +61,9 @@ function puanKategorileri(s) {
   return {
     taranabilirlik: [
       kal('sitemap.xml', s.sitemap?.varMi ? `var — ${s.sitemap.urlSayisi} URL` : 'yok', s.sitemap?.varMi ? 0 : 8),
-      kal('Sitemap erişilemez URL', s.sitemap?.erisilemez || 0, enCok(6, s.sitemap?.erisilemez || 0)),
+      // Erisilemez sitemap URL'i crawl.js'in PUANLAMASINDA YOK — burada ceza yazmak
+      // mutabakati bozuyordu (bkz. test/ucbasa.test.js "puan ... mutabik"). Bilgi olarak durur.
+      ...((s.sitemap?.erisilemez || 0) ? [kal('Sitemap erişilemez URL', `${s.sitemap.erisilemez} URL — puana girmiyor`, 0, true)] : []),
       kal('robots.txt', s.robots?.varMi ? `var — ${s.robots.kuralSayisi ?? 0} kural` : 'yok', s.robots?.varMi ? 0 : 4),
       kal('Canonical eksik', `${s.canonical?.eksik || 0} sayfa`, enCok(6, s.canonical?.eksik || 0)),
       kal('Kırık link', `${ko.ic || 0} iç / ${ko.dis || 0} dış`, kirikCeza),

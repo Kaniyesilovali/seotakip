@@ -18,6 +18,7 @@ const DIST = path.join(KOK, 'dist');
 const DOSYALAR = [
   'index.html',
   'assets/panel.css',
+  'assets/sorun-katalogu.js',
   'assets/oneri-motoru.js',
   'assets/saglik-motoru.js',
   'assets/app.js',
@@ -50,7 +51,7 @@ if (fs.existsSync(RAPOR_KLASORU)) {
 const hash = (dosya) => crypto.createHash('md5').update(fs.readFileSync(path.join(DIST, dosya))).digest('hex').slice(0, 8);
 const HTML = path.join(DIST, 'index.html');
 let html = fs.readFileSync(HTML, 'utf8');
-for (const varlik of ['assets/panel.css', 'assets/oneri-motoru.js', 'assets/saglik-motoru.js', 'assets/app.js', 'assets/fallback-data.js']) {
+for (const varlik of ['assets/panel.css', 'assets/sorun-katalogu.js', 'assets/oneri-motoru.js', 'assets/saglik-motoru.js', 'assets/app.js', 'assets/fallback-data.js']) {
   const oncesi = html;
   html = html.replaceAll(varlik, `${varlik}?v=${hash(varlik)}`);
   if (html === oncesi) console.warn(`! uyari: index.html icinde ${varlik} referansi bulunamadi`);

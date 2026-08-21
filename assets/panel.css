@@ -226,3 +226,26 @@ label.fl{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(-
   /* mobilde daraltma yok — cekmece tam genislik */
   body.dar .yan{width:236px} body.dar .ana{margin-left:0}
 }
+
+/* ---- Sorunlar bolumu (Teknik SEO -> Sorunlar) ---- */
+/* <details> kullaniyoruz: acilir-kapanir kart icin JS durumu tutmaya gerek yok. */
+.sorun-kart{ border:1px solid var(--cizgi); border-radius:10px; background:var(--kart);
+  margin-bottom:8px; overflow:hidden; }
+.sorun-kart summary{ display:flex; align-items:center; gap:9px; padding:11px 13px;
+  cursor:pointer; list-style:none; font-size:13.5px; }
+.sorun-kart summary::-webkit-details-marker{ display:none; }
+.sorun-kart summary::after{ content:'▾'; margin-left:auto; color:var(--faint); font-size:11px;
+  transition:transform .15s; }
+.sorun-kart[open] summary::after{ transform:rotate(180deg); }
+.sorun-kart summary:hover{ background:var(--kart2, rgba(255,255,255,.02)); }
+.sorun-kart summary b{ font-weight:600; }
+.sorun-nerede{ color:var(--faint); font-size:12px; margin-left:4px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.sorun-govde{ padding:0 13px 12px 31px; border-top:1px solid var(--cizgi); }
+.sorun-govde p{ margin:9px 0; font-size:13px; line-height:1.55; color:var(--metin2, var(--muted)); }
+.sorun-govde p b{ color:var(--metin, inherit); font-weight:600; }
+.sorun-govde .kalem{ margin-top:10px; }
+@media (max-width:640px){
+  .sorun-nerede{ display:none; }
+  .sorun-govde{ padding-left:13px; }
+}

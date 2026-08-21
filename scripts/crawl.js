@@ -12,9 +12,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ayristir as robotsAyristir, izinVar, botOzeti, icerikSinyali, tamamenKapali } from './lib/robots.js';
+import { metinParmakIzi, siteSorunlari, durumSinifi } from './lib/sorun-tespit.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const KOK = path.resolve(__dirname, '..');
+// SEOTAKIP_KOK: config'i ve ciktilari baska bir klasorden okuyup oraya yazar.
+// Yalnizca test icin var (test/ucbasa.test.js gecici bir kok olusturup fixture siteyi
+// tarar) — boylece test gercek data/data.json'i EZMEZ. Normal kullanimda tanimsizdir.
+const KOK = process.env.SEOTAKIP_KOK ? path.resolve(process.env.SEOTAKIP_KOK) : path.resolve(__dirname, '..');
 const cfg = JSON.parse(fs.readFileSync(path.join(KOK, 'sites.config.json'), 'utf8'));
 const A = cfg.ayarlar || {};
 const MAX_SAYFA = A.maxSayfa ?? 200;
@@ -66,6 +70,10 @@ async function istek(url, method = 'GET', { maxAdim = 5 } = {}) {
   const t0 = Date.now();
   let hedef = url;
   const zincir = [];   // [{ url, kod, hedef }]
+  // Ziyaret edilen adresler: ayni adrese ikinci kez donuluyorsa bu bir DONGU'dur
+  // (www/egik cizgi/dil on eki kurallari birbirini geri cevirdiginde olusur).
+  // Eskiden maxAdim'e dayanip son yaniti donuyorduk; donguyle uzun zincir ayirt edilmiyordu.
+  const gorulenAdres = new Set([normalizeAdim(url)]);
   for (let adim = 0; ; adim++) {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), ZAMANASIMI);
@@ -77,6 +85,11 @@ async function istek(url, method = 'GET', { maxAdim = 5 } = {}) {
         try { sonraki = new URL(konum, hedef).toString(); } catch {}
         if (sonraki && sonraki !== hedef) {
           zincir.push({ url: hedef, kod: r.status, hedef: sonraki });
+          if (gorulenAdres.has(normalizeAdim(sonraki))) {
+            return { ok: false, status: r.status, url: sonraki, dongu: true,
+              hata: 'yonlendirme dongusu', sure: Date.now() - t0, zincir };
+          }
+          gorulenAdres.add(normalizeAdim(sonraki));
           hedef = sonraki;
           continue;   // sonraki halkaya git
         }
@@ -84,12 +97,21 @@ async function istek(url, method = 'GET', { maxAdim = 5 } = {}) {
       let html = '';
       if (method === 'GET' && (r.headers.get('content-type') || '').includes('text/html')) html = await r.text();
       return { ok: true, status: r.status, url: hedef, html, sure: Date.now() - t0,
-        contentType: r.headers.get('content-type') || '', zincir };
+        contentType: r.headers.get('content-type') || '',
+        // X-Robots-Tag: noindex meta etiketi olmadan da sayfayi indeksten cikarir.
+        // Sadece <meta name="robots"> okumak eksik denetimdi.
+        xRobots: (r.headers.get('x-robots-tag') || '').toLowerCase(),
+        zincir };
     } catch (e) {
       return { ok: false, status: 0, hata: e.name === 'AbortError' ? 'timeout' : e.message, sure: Date.now() - t0, zincir };
     } finally { clearTimeout(t); }
   }
 }
+// Dongu tespitinde kullanilan normalize: SADECE hash atilir.
+// Sondaki egik cizgiyi ATMAYIZ — cogu site /tr -> 308 -> /tr/ yonlendirmesi yapar ve
+// egik cizgi silinirse bu mesru yonlendirme "dongu" gorunur (tum site 0 sayfa tarandi
+// olarak biter). Gercek dongu zaten AYNI adrese birebir geri doner.
+const normalizeAdim = (u) => { try { const x = new URL(u); x.hash = ''; return x.toString(); } catch { return String(u); } };
 
 // duz metin dosyalari (robots.txt): icerik tipinden bagimsiz govdeyi verir.
 // Soft-404 yapan sunucular HTML dondurur -> onu "dosya yok" say.
@@ -175,16 +197,30 @@ async function sitemapUrller(kokUrl, bildirilen = []) {
 }
 
 // ---- tek sayfayi ayristir ----
-function sayfaAyristir(html, sayfaUrl, host) {
+function sayfaAyristir(html, sayfaUrl, host, { xRobots = '' } = {}) {
   const $ = cheerio.load(html);
   const title = ($('title').first().text() || '').trim();
   const desc = ($('meta[name="description"]').attr('content') || '').trim();
   const h1 = $('h1').length;
-  const canonical = $('link[rel="canonical"]').attr('href') || null;
+  // Tek canonical yerine HEPSINI topluyoruz: birden fazla farkli canonical celiskili
+  // sinyaldir ve Google ikisini de yok sayabilir (canonical-cakismasi bulgusu).
+  const canonicalListe = [...new Set($('link[rel="canonical"]').map((_, el) =>
+    ($(el).attr('href') || '').trim()).get().filter(Boolean).map(h => {
+      try { return new URL(h, sayfaUrl).toString(); } catch { return h; }
+    }))];
+  const canonical = canonicalListe[0] || null;
   const robotsMeta = ($('meta[name="robots"]').attr('content') || '').toLowerCase();
-  const noindex = robotsMeta.includes('noindex');
+  // noindex iki yerden gelebilir: meta etiketi VEYA X-Robots-Tag basligi.
+  const metaNoindex = robotsMeta.includes('noindex');
+  const basligNoindex = /(^|[,\s])noindex/.test(xRobots || '');
+  const noindex = metaNoindex || basligNoindex;
+  const noindexKaynak = metaNoindex ? (basligNoindex ? 'meta + X-Robots-Tag' : 'meta robots') : (basligNoindex ? 'X-Robots-Tag' : null);
   const og = $('meta[property^="og:"]').length;
   const hreflang = $('link[rel="alternate"][hreflang]').length;
+
+  // Baslik seviyeleri, belgedeki SIRAYLA. H2'den H4'e atlama hiyerarsiyi bozar.
+  const baslikSeviyeleri = $('h1, h2, h3, h4, h5, h6')
+    .map((_, el) => Number(el.tagName.slice(1))).get();
 
   let imgYok = 0;
   $('img').each((_, el) => { const alt = $(el).attr('alt'); if (alt == null || alt.trim() === '') imgYok++; });
@@ -213,6 +249,8 @@ function sayfaAyristir(html, sayfaUrl, host) {
   klon.find('script, style, noscript, svg, nav, header, footer, form').remove();
   const metin = klon.text().replace(/\s+/g, ' ').trim();
   const kelime = metin ? metin.split(' ').length : 0;
+  // Gorunur govdenin parmak izi — iki URL ayni metni sunuyorsa yinelenen icerik.
+  const metinIzi = metinParmakIzi(metin);
 
   // tracking
   const tracking = [];
@@ -230,7 +268,8 @@ function sayfaAyristir(html, sayfaUrl, host) {
     if (ayniHost(n, host)) icLink.add(n); else disLink.add(n);
   });
 
-  return { title, desc, h1, canonical, noindex, og, hreflang, imgYok, jsonld, semaEksik, kelime,
+  return { title, desc, h1, canonical, canonicalListe, noindex, noindexKaynak, baslikSeviyeleri,
+    og, hreflang, imgYok, jsonld, semaEksik, kelime, metinIzi,
     tracking: [...new Set(tracking)], icLink: [...icLink], disLink: [...disLink] };
 }
 
@@ -286,6 +325,7 @@ async function siteTara(site, eski = {}) {
   // 4) sayfalari tara
   const sayfalar = new Map();   // url -> ayristirma
   const sureler = [];           // her basarili sayfanin yanit suresi (medyan icin)
+  const sayfaSure = new Map();  // url -> yanit ms (sayfa bazli "yavas yanit" bulgusu icin)
   const linkGrafi = new Map();  // hedef -> kac sayfadan link aldi
   const tumDisLink = new Set();
   const gorulen = new Set();
@@ -314,6 +354,12 @@ async function siteTara(site, eski = {}) {
     // calisiyor -> istek /tr'ye gidip 308 ile /tr/'ye donuyor. Bu SITENIN yonlendirmesi
     // degil, bizim normalize'imizin yan etkisi. Hedef ayni sayfaya normalize oluyorsa
     // yonlendirme sayma, sayfayi normal analiz et.
+    // Dongu: yonlendirme kendine geri donuyor -> sayfa hicbir zaman acilmaz.
+    if (r.dongu) {
+      kayit.push({ yol, kod: r.status, durum: 'yonlendirme', adim: r.zincir.length, dongu: true,
+        hedef: yolCek(r.url) });
+      continue;
+    }
     const hedefUrl = r.zincir?.length ? normalize(r.url) : null;
     if (hedefUrl && hedefUrl !== u) {
       kayit.push({ yol, kod: r.zincir[0].kod, durum: 'yonlendirme', adim: r.zincir.length,
@@ -321,11 +367,17 @@ async function siteTara(site, eski = {}) {
       if (ayniHost(hedefUrl, host) && !gorulen.has(hedefUrl) && ekQueue.length < MAX_SAYFA) ekQueue.push(hedefUrl);
       continue;
     }
-    if (!r.ok || r.status >= 400) { kayit.push({ yol, kod: r.ok ? r.status : 0, durum: 'kirik', hata: r.hata || null }); continue; }
+    if (!r.ok || r.status >= 400) {
+      // 403/429 ve bot dogrulama sayfalari "kirik" DEGIL: sayfa saglam olabilir, biz
+      // goremedik. Ayri sinif -> "sitende N kirik sayfa var" yanilsamasi olusmasin.
+      kayit.push({ yol, kod: r.ok ? r.status : 0, durum: 'kirik', hata: r.hata || null,
+        sinif: durumSinifi(r.ok ? r.status : 0, r.html || '') });
+      continue;
+    }
     if (!r.html) { kayit.push({ yol, kod: r.status, durum: 'saglam', not: 'HTML degil' }); continue; }
 
-    if (r.sure != null) sureler.push(r.sure);
-    const p = sayfaAyristir(r.html, u, host);
+    if (r.sure != null) { sureler.push(r.sure); sayfaSure.set(u, r.sure); }
+    const p = sayfaAyristir(r.html, u, host, { xRobots: r.xRobots });
     sayfalar.set(u, p);
     // sayfa duzeyinde sorun listesi -> "saglam" mi "sorunlu" mu
     const sorunlar = [];
@@ -457,6 +509,36 @@ async function siteTara(site, eski = {}) {
   };
   const sec = (d, n) => kayit.filter(k => k.durum === d).slice(0, n);
 
+  // 6d) SORUN LISTESI — panelin "Sorunlar" bolumunun kaynagi.
+  // Iki parca birlesir:
+  //   (a) sorun-tespit.js'in urettigi YENI bulgular (yinelenen title/desc/icerik,
+  //       coklu H1, baslik atlamasi, canonical cakismasi, yonlendirme zinciri/dongusu,
+  //       derin sayfa, giden link yok, title/desc uzunlugu, yavas yanit, engellenen sayfa)
+  //   (b) zaten olculen ESKI kontroller — ayni katalog altina alindi ki panelde
+  //       "bir sorunun aciklamasi ve cozumu" tek yerden gelsin.
+  // Seviye/aciklama/cozum metinleri assets/sorun-katalogu.js'te.
+  const yolHarita = new Map([...sayfalar.keys()].map(u => [u, yolCek(u)]));
+  const sorunlar = siteSorunlari({ kok: normalize(kok), sayfalar, kayit, yollar: yolHarita, sureler: sayfaSure });
+
+  // (b) mevcut kontrolleri ayni bicime cevir
+  const ornekYollar = (kosul, n = 10) => [...sayfalar.entries()].filter(([, p]) => kosul(p))
+    .slice(0, n).map(([u, p]) => ({ yol: yolHarita.get(u), deger: null }));
+  const eskiEkle = (tip, adet, ornekler) => { if (adet > 0) sorunlar.push({ tip, adet, ornekler: ornekler || [] }); };
+  eskiEkle('title-yok', eksikMeta.title, ornekYollar(p => !p.title));
+  eskiEkle('description-yok', eksikMeta.description, ornekYollar(p => !p.desc));
+  eskiEkle('h1-yok', eksikMeta.h1, ornekYollar(p => p.h1 === 0));
+  eskiEkle('canonical-yok', canonicalEksik, ornekYollar(p => !p.canonical));
+  eskiEkle('ince-icerik', inceSayfa, inceOrnekler.map(o => ({ yol: o.yol, deger: `${o.kelime} kelime` })));
+  eskiEkle('alt-eksik', altEksik, ornekYollar(p => p.imgYok > 0).map(o => ({ ...o, deger: null })));
+  eskiEkle('oksuz-sayfa', orphan.length, orphan.map(y => ({ yol: y, deger: null })));
+  eskiEkle('schema-alan-eksik', semaSorunluSayfa, semaEksikAlan.slice(0, 10).map(a => ({ yol: `${a.adet} sayfa`, deger: a.alan })));
+  if (!schemaGecerli) sorunlar.push({ tip: 'schema-yok', adet: 1, ornekler: [] });
+  eskiEkle('kirik-ic-link', kirikIc, kirikLinkler.filter(k => k.ic && k.sayilir).slice(0, 10)
+    .map(k => ({ yol: k.kaynak, deger: `-> ${k.hedef} (${k.kod})` })));
+  if (!llms.varMi) sorunlar.push({ tip: 'llms-yok', adet: 1, ornekler: [] });
+  if (robots.bizeKapali) sorunlar.push({ tip: 'robots-tamamen-kapali', adet: 1, ornekler: [] });
+  eskiEkle('robots-sozdizimi', robots.hatalar.length, robots.hatalar.map(h => ({ yol: `satir ${h.satirNo}`, deger: h.satir || null })));
+
   // SEO puani (0-100 basit heuristik)
   let puan = 100;
   puan -= Math.min(20, kirikCeza);
@@ -483,6 +565,9 @@ async function siteTara(site, eski = {}) {
 
   return {
     seo: { puan },
+    // Sorun listesi puana GIRMEZ (katalogdaki puana:false olanlar). Puan formulu
+    // eski taramalarla karsilastirilabilir kalsin diye dondurulmus durumda.
+    sorunlar,
     uptime, ssl,
     sayfalar: { taranan: toplam, indekslenebilir: toplam - noindex, noindex },
     sayfaYollari: [...sayfalar.keys()].map(u => { try { return new URL(u).pathname; } catch { return u; } }).slice(0, 150),
@@ -626,12 +711,14 @@ async function main() {
     uyarilar,
   };
 
+  fs.mkdirSync(path.dirname(veriYolu), { recursive: true });
   fs.writeFileSync(veriYolu, JSON.stringify(cikti, null, 2));
   // arsiv
   const arsivDizin = path.join(KOK, 'data', 'history');
   fs.mkdirSync(arsivDizin, { recursive: true });
   fs.writeFileSync(path.join(arsivDizin, bugun().slice(0, 10) + '.json'), JSON.stringify(cikti, null, 2));
   // panel fallback (file:// icin)
+  fs.mkdirSync(path.join(KOK, 'assets'), { recursive: true });
   fs.writeFileSync(path.join(KOK, 'assets', 'fallback-data.js'), 'window.SEO_FALLBACK = ' + JSON.stringify(cikti) + ';\n');
 
   console.log(`\n✅ Bitti. ${siteler.length} site, ortalama puan ${ortalama}, ${toplamKirik} kirik link, ${uyarilar.length} uyari.`);

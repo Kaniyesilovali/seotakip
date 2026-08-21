@@ -15,6 +15,7 @@ const MENU_GRUPLARI = [
     { id:'uyarilar', ad:'Uyarılar', ik:'!' },
   ]},
   { grup:'Teknik SEO', items:[
+    { id:'sorunlar', ad:'Sorunlar', ik:'⚑' },
     { id:'denetim', ad:'SEO Denetim', ik:'✓' },
     { id:'kirik', ad:'Kırık Linkler', ik:'⚿' },
     { id:'hiz', ad:'Hız / Core Vitals', ik:'⚡' },
@@ -38,7 +39,10 @@ const MENU_GRUPLARI = [
   ]},
 ];
 const MENU = MENU_GRUPLARI.flatMap(g => g.items);
-const FILTRELI = new Set(['genel','saglik','oneri','siteler','denetim','kirik','hiz','iclink','indeks','kelime','gap','rakip','geo','botlar','uyarilar']);
+const FILTRELI = new Set(['genel','saglik','oneri','siteler','sorunlar','denetim','kirik','hiz','iclink','indeks','kelime','gap','rakip','geo','botlar','uyarilar']);
+// Sorunlar bolumunun seviye filtresi ('' = hepsi). git() cizimi tekrar cagirdigi icin
+// modul duzeyinde tutuluyor; SECILI_SITE ile ayni desen.
+let SORUN_SEVIYE = '';
 
 // ============ TON / RENK ============
 const puanTon = (p)=> p>=80?'ok':p>=65?'warn':'bad';
@@ -115,6 +119,32 @@ function filtreBar(){
 }
 function siteSec(id){ SECILI_SITE = id; git(AKTIF); }
 window.siteSec = siteSec;
+function sorunSeviye(sv){ SORUN_SEVIYE = sv; git(AKTIF); }
+window.sorunSeviye = sorunSeviye;
+
+// Sorun listesini CSV olarak indirir. Excel'in ayraci dogru secmesi icin BOM + ";" kullanilir
+// (TR yerelinde virgul ondalik ayracidir; virgulle ayrilmis dosya tek sutuna dusuyor).
+function sorunCsv(){
+  const list = siteler();
+  const satirlar = [];
+  list.forEach(s => sorunlariZenginlestir(s.sorunlar||[])
+    .filter(b => !SORUN_SEVIYE || b.seviye===SORUN_SEVIYE)
+    .forEach(b => satirlar.push([
+      s.id, s.ad, b.seviye, b.tip, b.baslik, b.adet, b.puana?'evet':'hayir',
+      (b.ornekler||[]).map(o=>o.deger?`${o.yol} (${o.deger})`:o.yol).join(' | '),
+      b.nasil,
+    ])));
+  if(!satirlar.length){ alert('Dışa aktarılacak bulgu yok.'); return; }
+  const basliklar = ['site_id','site','seviye','tip','baslik','adet','puana_giriyor','ornekler','nasil_duzeltilir'];
+  const kacir = (v)=> `"${String(v??'').replace(/"/g,'""')}"`;
+  const csv = '﻿' + [basliklar, ...satirlar].map(r=>r.map(kacir).join(';')).join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'}));
+  a.download = `seotakip-sorunlar-${(VERI.guncelleme||'').slice(0,10)}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+}
+window.sorunCsv = sorunCsv;
 
 const siteler = ()=> (VERI?.siteler||[]).filter(s =>
   (!SECILI_SITE || s.id===SECILI_SITE) && (!ARAMA || (s.ad+s.url).toLowerCase().includes(ARAMA)));
@@ -389,6 +419,55 @@ const VIEWS = {
       </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
   },
 
+  // Sorunlar: crawl.js'in urettigi bulgu listesi, seviyeye gore.
+  // Metinler (neden/nasil) assets/sorun-katalogu.js'ten gelir — panel, rapor ve MCP
+  // ayni cumleleri okur; bir sorunun aciklamasi uc yerde ayrisamaz.
+  sorunlar(){
+    const list = siteler();
+    const varMi = list.some(s => (s.sorunlar||[]).length);
+    const bas = bolumBaslik('Teknik SEO','Sorunlar',
+      'Denetim bulgulari: her sorunun seviyesi, kaç sayfayı etkilediği, neden önemli olduğu ve nasıl düzeltileceği.');
+    if(!varMi) return bas + filtreBar() +
+      bosDurum('Bu veri son taramadan önce üretilmiş. <code>npm run crawl</code> ile yeniden tara.');
+
+    // portfoy gorunumunde tipler birlestirilir, tek site secilince o sitenin listesi
+    const hepsi = SECILI_SITE
+      ? sorunlariZenginlestir((list[0]?.sorunlar)||[]).map(b=>({...b, siteler:[{id:list[0].id, ad:list[0].ad, adet:b.adet}]}))
+      : sorunOzeti(list);
+    const say = (sv)=> hepsi.filter(b=>b.seviye===sv).reduce((a,b)=>a+b.adet,0);
+    const gorunen = SORUN_SEVIYE ? hepsi.filter(b=>b.seviye===SORUN_SEVIYE) : hepsi;
+
+    const sv = (id,ad,ton,n)=>`<button class="fcip ${SORUN_SEVIYE===id?'aktif':''}" onclick="sorunSeviye('${id}')">
+      ${ad}${n!=null?` <span class="t-${ton}">${n}</span>`:''}</button>`;
+    const seviyeBar = `<div class="filtre"><span class="fl">Seviye</span>
+      ${sv('','Hepsi','mut',hepsi.reduce((a,b)=>a+b.adet,0))}
+      ${sv('kritik','Kritik','bad',say('kritik'))}
+      ${sv('uyari','Uyarı','warn',say('uyari'))}
+      ${sv('bilgi','Bilgi','mut',say('bilgi'))}
+      <button class="fcip" onclick="sorunCsv()" title="Görünen bulguları CSV olarak indir">⤓ CSV</button></div>`;
+
+    const ton = { kritik:'bad', uyari:'warn', bilgi:'mut' };
+    const isaret = { kritik:'●', uyari:'▲', bilgi:'·' };
+    const kart = (b)=>{
+      const nerede = (b.siteler||[]).map(x=>`${x.ad} (${x.adet})`).join(' · ');
+      const orn = (b.ornekler||[]).slice(0,8)
+        .map(o=>`<li class="bilgi"><span class="k-ad">${o.yol}</span><span class="k-dg">${o.deger||''}</span></li>`).join('');
+      return `<details class="sorun-kart">
+        <summary><span class="t-${ton[b.seviye]}">${isaret[b.seviye]}</span>
+          <b>${b.baslik}</b>
+          <span class="cip ${ton[b.seviye]}">${b.adet}</span>
+          ${b.puana?'':'<span class="cip mut" title="Bu bulgu gerçek bir sorundur ama SEO puanı formülüne dahil değildir">puana girmiyor</span>'}
+          <span class="sorun-nerede">${nerede}</span></summary>
+        <div class="sorun-govde">
+          <p><b>Neden önemli:</b> ${b.neden}</p>
+          <p><b>Nasıl düzeltilir:</b> ${b.nasil}</p>
+          ${orn?`<ul class="kalem">${orn}</ul>`:''}
+        </div></details>`;
+    };
+    return bas + filtreBar() + seviyeBar +
+      (gorunen.length ? gorunen.map(kart).join('') : bosDurum('Bu seviyede bulgu yok.'));
+  },
+
   denetim(){
     const satir = (s)=>{ const em=s.eksikMeta||{}; const eksik=(em.title||0)+(em.description||0)+(em.h1||0); const op=s.onpage||{};
       return `<tr><td class="site-ad">${s.ad}</td>
@@ -420,10 +499,17 @@ const VIEWS = {
     const satir=(s)=>{ const h=s.hiz||{}; return `<tr><td class="site-ad">${s.ad}</td>
       <td class="ort t-${hizTon(h.mobilPuan)}" style="font-family:var(--disp);font-weight:600">${h.mobilPuan??'–'}</td>
       <td class="ort t-${hizTon(h.masaustuPuan)}" style="font-family:var(--disp);font-weight:600">${h.masaustuPuan??'–'}</td>
-      <td class="ort">${vc(h.lcp,2.5,4,' s')}</td><td class="ort">${vc(h.inp,200,500,' ms')}</td><td class="ort">${vc(h.cls,0.1,0.25,'')}</td></tr>`; };
-    return bolumBaslik('Teknik SEO','Hız / Core Web Vitals','LCP, INP, CLS + mobil/masaüstü. Google PageSpeed API.') + filtreBar() +
-      `<div class="tablo-kap"><table class="tablo" style="min-width:560px"><thead><tr>
+      <td class="ort">${vc(h.lcp,2.5,4,' s')}</td><td class="ort">${vc(h.inp,200,500,' ms')}</td><td class="ort">${vc(h.cls,0.1,0.25,'')}</td>
+      <td class="ort t-${hizTon(h.erisilebilirlik)}" style="font-family:var(--disp)">${h.erisilebilirlik??'–'}</td>
+      <td class="ort t-${hizTon(h.enIyiUygulama)}" style="font-family:var(--disp)">${h.enIyiUygulama??'–'}</td>
+      <td class="ort t-${hizTon(h.lighthouseSeo)}" style="font-family:var(--disp)">${h.lighthouseSeo??'–'}</td></tr>`; };
+    return bolumBaslik('Teknik SEO','Hız / Core Web Vitals',
+      'LCP, INP, CLS + mobil/masaüstü. Sağdaki üç sütun Lighthouse\'un diğer kategorileri — aynı istekten geliyor, ek maliyeti yok.') + filtreBar() +
+      `<div class="tablo-kap"><table class="tablo" style="min-width:760px"><thead><tr>
         <th>Site</th><th class="ort">Mobil</th><th class="ort">Masaüstü</th><th class="ort">LCP</th><th class="ort">INP</th><th class="ort">CLS</th>
+        <th class="ort" title="Lighthouse erişilebilirlik puanı">Erişilebilirlik</th>
+        <th class="ort" title="Lighthouse best practices puanı">En iyi uygulama</th>
+        <th class="ort" title="Lighthouse'un kendi SEO puanı — bizim denetimimizden bağımsız çapraz kontrol">LH SEO</th>
       </tr></thead><tbody>${siteler().map(satir).join('')}</tbody></table></div>`;
   },
 

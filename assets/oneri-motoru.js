@@ -14,8 +14,8 @@ const ONCELIK_SIRA = { kritik: 0, yuksek: 1, orta: 2, dusuk: 3 };
 const ETKI = { kritik: 4, yuksek: 3, orta: 2, dusuk: 1 };
 const EFOR = {
   'SSL':1,'Kirik link':1,'Sitemap':1,'Meta':1,'Gorsel alt':1,'Olcum':1,'Schema':1,'AI bot':1,'llms.txt':1,'Schema alan':1,'Robots':1,
-  'Kirik sayfa':2,'Yonlendirme':2,
-  'Ince icerik':3,
+  'Kirik sayfa':2,'Yonlendirme':2,'Canonical':1,'Yinelenen meta':1,
+  'Ince icerik':3,'Yinelenen icerik':3,'Engellenen sayfa':2,
   'Ic link':2,'Orphan':2,'CLS':2,'LCP':2,'Kelime firsati':2,'Kelime dususu':2,'Indeks':2,'Icerik':2,'Kanibalizasyon':2,'Icerik boslugu':2,
   'Hiz':3,'GEO':3
 };
@@ -84,6 +84,34 @@ function oneriUret(s){
     else if (k.pozisyon>=11 && k.pozisyon<=20) ekle('Kelime firsati','orta', `"${k.kelime}" #${k.pozisyon} (2. sayfa) — içeriği güçlendir.`);
     if (k.onceki && k.pozisyon>k.onceki) ekle('Kelime dususu','orta', `"${k.kelime}" ${k.onceki}→${k.pozisyon} düştü — incele.`);
   });
+  // ---- crawl.js'in sorun listesinden gelen YENI bulgular ----
+  // Yukaridaki kurallarin ZATEN kapsadigi tipler (title-yok, ince-icerik, kirik-ic-link...)
+  // burada YOK; iki kez oneri uretmesinler. Sadece yeni kontroller listelenir.
+  const SORUN_ONERI = {
+    'engellenen-sayfa':    ['yuksek','Engellenen sayfa', a=>`${a} sayfa bot doğrulaması/403 döndü — denetlenemedi. WAF'ta kendi tarayıcına izin ver.`],
+    'sunucu-hatasi':       ['yuksek','Kirik sayfa',      a=>`${a} sayfa 5xx veriyor — sunucu logunu incele, tekrarlarsa Google indeksten düşürür.`],
+    'yonlendirme-dongusu': ['yuksek','Yonlendirme',      a=>`${a} URL yönlendirme döngüsünde — sayfa hiç açılmıyor, kuralları çakışıyor.`],
+    'yinelenen-icerik':    ['orta',  'Yinelenen icerik', a=>`${a} sayfa aynı gövde metnini sunuyor — birini asıl yap, diğerlerine canonical ver.`],
+    'yinelenen-title':     ['orta',  'Yinelenen meta',   a=>`${a} sayfa aynı title'ı paylaşıyor — sayfalar birbiriyle yarışıyor.`],
+    'canonical-cakismasi': ['orta',  'Canonical',        a=>`${a} sayfada çelişkili canonical sinyali — Google ikisini de yok sayabilir.`],
+    'yavas-yanit':         ['orta',  'Hiz',              a=>`${a} sayfa yavaş yanıt veriyor — TTFB'yi düşür (cache/hosting).`],
+    'yinelenen-description':['dusuk','Yinelenen meta',   a=>`${a} sayfa aynı meta description'ı paylaşıyor — arama sonucunda ayırt edilemiyorlar.`],
+    'yonlendirme-zinciri': ['dusuk', 'Yonlendirme',      a=>`${a} URL birden fazla adımda yönleniyor — iç link ve sitemap'i son adrese güncelle.`],
+    'coklu-h1':            ['dusuk', 'Meta',             a=>`${a} sayfada birden fazla H1 — tek H1 bırak, diğerlerini H2 yap.`],
+    'giden-link-yok':      ['dusuk', 'Ic link',          a=>`${a} sayfadan hiç iç link çıkmıyor — link değeri orada sıkışıyor.`],
+    'derin-sayfa':         ['dusuk', 'Ic link',          a=>`${a} sayfa 3 tıklamadan derinde — önemli olanları menüye/kategoriye taşı.`],
+    'baslik-atlama':       ['dusuk', 'Meta',             a=>`${a} sayfada başlık seviyesi atlanıyor (ör. H2→H4) — hiyerarşiyi sırayla kur.`],
+    'title-uzun':          ['dusuk', 'Meta',             a=>`${a} sayfada title 60 karakteri aşıyor — arama sonucunda kesiliyor.`],
+    'title-kisa':          ['dusuk', 'Meta',             a=>`${a} sayfada title 30 karakterin altında — alaka sinyali zayıf.`],
+    'description-uzun':    ['dusuk', 'Meta',             a=>`${a} sayfada description 160 karakteri aşıyor — özet kesiliyor.`],
+    'description-kisa':    ['dusuk', 'Meta',             a=>`${a} sayfada description 70 karakterin altında — sayfayı anlatmıyor.`],
+  };
+  (s.sorunlar||[]).forEach(b=>{
+    const k = SORUN_ONERI[b.tip]; if (!k || !b.adet) return;
+    const [oncelik, alan, metin] = k;
+    ekle(alan, oncelik, metin(b.adet));
+  });
+
   (s.kanibalizasyon||[]).forEach(k=> ekle('Kanibalizasyon','orta', `"${k.kelime}" için ${k.sayfalar.length} sayfa yarışıyor — birini ana yap, diğerlerini birleştir.`));
   (s.icerikBoslugu||[]).forEach(g=> ekle('Icerik boslugu', g.hacim>=500?'yuksek':'orta', `"${g.kelime}" (~${g.hacim} gösterim) — içeriği güçlendir/yaz.`));
   return o;

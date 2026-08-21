@@ -15,7 +15,10 @@
     "icerik": "node scripts/aiblog.js",
     "rapor": "node scripts/rapor.js",
     "uyar": "node scripts/telegram.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "test": "node --test \"test/*.test.js\"",
+    "mcp": "node scripts/mcp.js",
+    "baglam": "node scripts/baglam.js"
   },
   "keywords": [
     "seo",

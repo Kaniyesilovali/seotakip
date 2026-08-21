@@ -1,0 +1,9 @@
+{
+  "$aciklama": "Panel verisini AI ajanlarina acan MCP sunucusu. Claude Code bu klasorde acildiginda otomatik baglanir; baska bir ajan icin: node scripts/mcp.js (stdio).",
+  "mcpServers": {
+    "seotakip": {
+      "command": "node",
+      "args": ["scripts/mcp.js"]
+    }
+  }
+}

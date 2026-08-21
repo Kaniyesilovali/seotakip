@@ -15,14 +15,20 @@ Panel (index.html + panel.css) →  data/data.json  ←  scripts/*.js (Node)
 
 - `index.html` — panel arayüzü
 - `assets/app.js` — data.json'u okuyup çizen kod
+- `assets/sorun-katalogu.js` — denetim bulgularının tek kaydı (seviye + neden önemli + nasıl düzeltilir)
 - `assets/oneri-motoru.js` — öneri/değerlendirme motoru (panel + rapor + Telegram ortak kullanır)
 - `assets/saglik-motoru.js` — tematik sağlık skorları (Site Sağlığı bölümünün hesabı)
 - `scripts/lib/robots.js` — robots.txt ayrıştırıcı + yol eşleştirici (AI bot erişimi buradan çıkar)
+- `scripts/lib/sorun-tespit.js` — saf tespit fonksiyonları (yinelenen içerik, başlık hiyerarşisi, tıklama derinliği…)
+- `scripts/mcp.js` — MCP sunucusu: panel verisini AI ajanlarına açar
+- `scripts/baglam.js` — proje hafızası CLI'si (`data/baglam/<siteId>.md`)
+- `test/` — kasten bozuk fixture site + birim/uçtan uca testler (`npm test`)
 - `assets/fallback-data.js` — `file://` ile açınca kullanılan örnek veri
 - `data/data.json` — tüm sitelerin son durumu (script'ler üretir)
 - `data/history/` — tarih tarih arşiv (trend grafiği + rapor karşılaştırması için)
 - `data/raporlar/` — `npm run rapor` çıktısı (kendi kendine yeten HTML raporlar)
 - `data/uyari-durumu.json` — Telegram'a nelerin bildirildiği (tekrar bildirmeyi önler)
+- `data/baglam/` — site başına kalıcı bağlam (ne iş yapıyor, hedef, rakip, önemli sayfalar)
 - `sites.config.json` — sitelerin tanımı (**yeni proje eklemek için burayı düzenle**)
 - `scripts/` — tarama, rapor ve uyarı script'leri
 
@@ -74,7 +80,7 @@ npm run crawl -- --site=animare   # diğer siteler data.json'da olduğu gibi kal
 ## Panel bölümleri
 
 **Genel:** Genel Bakış · Site Sağlığı (tematik kırılım) · Öneriler/Aksiyon (değerlendirme motoru) · Siteler · Değişiklik İzleyici · Uyarılar
-**Teknik SEO:** SEO Denetim · Kırık Linkler · Hız/Core Vitals · İç Linkleme · İndeks Monitörü
+**Teknik SEO:** Sorunlar (bulgu kataloğu + CSV) · SEO Denetim · Kırık Linkler · Hız/Core Vitals · İç Linkleme · İndeks Monitörü
 **İçerik & Sıralama:** Anahtar Kelime · İçerik Boşluğu · Rakip Analizi (manuel ekleme) · AI İçerik/Blog
 **GEO / AI:** GEO Görünürlük · AI Bot Takibi
 **Çıktı:** Raporlar (haftalık akıllı özet) · Araçlar (llms.txt/robots/schema üretici) · Ayarlar
@@ -128,6 +134,102 @@ diğerinde 4713ms verebiliyor), o yüzden puanlama **taranan tüm sayfaların me
 > Bu puan **Semrush Site Health ile karşılaştırılabilir değildir.** Semrush ~101 kontrolün ağırlıklı
 > geçme oranını verir; buradaki 16 kontrolün sabit ceza toplamıdır. İki sayının yakın çıkması tesadüftür.
 
+## Sorun kataloğu (Teknik SEO → Sorunlar)
+
+Denetim bulgularının tek kaydı `assets/sorun-katalogu.js`'te. Her bulgu tipi bir kez tanımlanır —
+**seviye** (kritik/uyarı/bilgi), **neden önemli**, **nasıl düzeltilir**, **puana giriyor mu** — ve
+panel, haftalık rapor, MCP aynı cümleleri okur. Eskiden aynı sorun üç yerde üç farklı şekilde
+yazılıydı; artık ayrışamaz.
+
+Tespitin kendisi `scripts/lib/sorun-tespit.js`'te ve **saf fonksiyon**: ağ/dosya/DOM yok, ayrıştırılmış
+sayfa girer, bulgu çıkar. Bu yüzden testlenebilir (bkz. aşağıdaki test bölümü).
+
+Kapsanan bulgular (33 tip):
+
+| Grup | Bulgular |
+|---|---|
+| Head & başlık | title yok/uzun/kısa · description yok/uzun/kısa · H1 yok · çoklu H1 · başlık seviyesi atlama |
+| İçerik | ince içerik · yinelenen title · yinelenen description · **yinelenen gövde içeriği** · görsel alt eksik |
+| İndekslenebilirlik | canonical yok · **çelişkili canonical** · **canonical başkasını gösteriyor** · noindex (meta **ve X-Robots-Tag**) |
+| HTTP & link | kırık iç link · 4xx · 5xx · **bot doğrulaması/403 ile engellenen** · öksüz sayfa · **giden link yok** |
+| Yönlendirme | **yönlendirme zinciri** · **yönlendirme döngüsü** |
+| Yapı & hız | **tıklama derinliği > 3** · **yavaş sunucu yanıtı** |
+| Diğer | schema yok · schema zorunlu alan eksiği · llms.txt yok · robots.txt sözdizimi · robots tamamen kapalı |
+
+**Kalın** olanlar yeni. Panelde seviyeye göre filtrelenir ve **CSV** olarak dışa aktarılır.
+
+> **Yeni kontroller SEO puanına GİRMEZ.** Puan formülü, eski taramalarla karşılaştırılabilirliği
+> bozmamak için kasten dondurulmuş durumda; yeni bulgular önce raporlanır. Panelde ve raporda
+> `puana girmiyor` etiketi taşırlar. Puana dahil etmek istersen `sorun-katalogu.js`'te `puana: true`
+> yap, cezayı `crawl.js`'e ekle, **ve** `saglik-motoru.js`'i güncelle (test mutabakatı zorlar).
+
+## Testler (`npm test`)
+
+```bash
+npm test                          # birim + uçtan uca, ~11 sn
+node --test test/birim.test.js    # sadece birim (ms)
+```
+
+Üç dosya:
+
+- **`test/fixture.js`** — kasten bozuk bir test sitesi. Her sayfa tek bir SEO hatası yapar
+  (title yok, yönlendirme döngüsü, öksüz sayfa, X-Robots-Tag noindex, 2.3 sn geciken yanıt…).
+  Sayfalar bellekte durur, dosya değil: 404/500/403, yönlendirme ve HTTP başlığı statik dosyayla üretilemez.
+- **`test/birim.test.js`** — tespit fonksiyonları ve katalog bütünlüğü.
+- **`test/ucbasa.test.js`** — **gerçek `crawl.js`'i** fixture siteye doğrultur ve
+  `BEKLENEN` listesindeki her bulgunun yakalandığını doğrular. Geçici bir kökte çalışır
+  (`SEOTAKIP_KOK`), gerçek `data/data.json`'a dokunmaz.
+
+Fikir OpenSEO'nun [badseo.dev](https://github.com/every-app/open-seo)'inden. İlk koşuşta iki gerçek hata yakaladı:
+
+1. `saglik-motoru.js`, `crawl.js`'te **hiç olmayan** bir cezayı (sitemap'te erişilemez URL)
+   uyguluyordu — "✓ birebir tutuyor" satırı yanlış söylüyordu. Hiçbir gerçek sitede erişilemez
+   sitemap URL'i olmadığı için yıllarca görünmemişti.
+2. Yönlendirme döngüsü tespiti sondaki eğik çizgiyi normalize ettiği için `/tr → /tr/` gibi
+   **meşru** yönlendirmeleri döngü sanıyordu (bir site "0 sayfa tarandı" ile bitti).
+   `test/ucbasa.test.js` artık bu senaryoyu ayrıca bekliyor.
+
+## MCP sunucusu (`npm run mcp`)
+
+Panel verisini AI ajanlarına açar — Claude Code, Codex, OpenClaw. Ek paket yok: MCP, stdio
+üzerinde satır başına bir JSON-RPC mesajıdır.
+
+Bu klasörde `.mcp.json` var, Claude Code burada açıldığında otomatik bağlanır. Elle eklemek için:
+
+```bash
+claude mcp add seotakip -- node /tam/yol/seotakip/scripts/mcp.js
+```
+
+Araçlar:
+
+| Araç | Ne verir |
+|---|---|
+| `siteler_listele` | Tüm siteler: puan, trend, sayfa, kritik/uyarı/bilgi sayısı |
+| `sorunlar` | Bulgular — site/seviye filtresiyle, neden + nasıl düzeltilir metniyle |
+| `oneriler` | Önceliklendirilmiş aksiyon listesi, hızlı kazanım filtresiyle |
+| `site_detay` | Tek sitenin tam durumu |
+| `saglik` | Puanın tematik kırılımı + mutabakat satırı |
+| `kelimeler` | Search Console sıralama + fırsat kelimeleri |
+| `gecmis` | Puanın tarih tarih seyri |
+| `baglam_oku` / `baglam_yaz` | Proje hafızası (aşağıda) |
+
+Araçlar JSON değil **düz metin** döner: ajanın okuması kolay, token'ı az.
+
+## Proje hafızası (`npm run baglam`)
+
+Panel teknik durumu ölçüyordu ama "bu site ne iş yapıyor, hedefi ne, rakibi kim, hangi sayfa
+önemli, nasıl bir dille yazıyoruz" hiçbir yerde yazılı değildi — her yeni oturumda (sen ya da bir
+AI ajanı) baştan soruluyordu.
+
+```bash
+npm run baglam                        # kayıtlı bağlamları listele
+npm run baglam -- animare             # göster (yoksa şablon oluştur)
+npm run baglam -- animare --duzenle   # $EDITOR ile aç
+```
+
+`data/baglam/<siteId>.md` — düz markdown. MCP üzerinden ajanlar da okuyup yazabilir
+(`baglam_oku` / `baglam_yaz`), böylece öğrenilen kalıcı bilgi bir sonraki oturuma taşınır.
+
 ## Site Sağlığı (tematik halkalar)
 
 Tek puan "neden 80?" sorusunu cevaplamıyordu. **Site Sağlığı** bölümü aynı puanı başlıklara ayırır.
@@ -137,7 +239,7 @@ Hesap `assets/saglik-motoru.js`'te; öneri motoru gibi hem tarayıcıda hem Node
 
 | Tür | Ne demek | Kategoriler (bütçe = düşebilecek en çok puan) |
 |---|---|---|
-| **puanı etkiler** | Cezaları doğrudan yukarıdaki tablodan gelir | Taranabilirlik (44) · On-page & Meta (36) · Markup/Schema (18) · İç Linkleme (11) · İçerik Derinliği (8) · Sunucu Yanıtı (6) · AI Hazırlığı (2) |
+| **puanı etkiler** | Cezaları doğrudan yukarıdaki tablodan gelir | Taranabilirlik (38) · On-page & Meta (36) · Markup/Schema (18) · İç Linkleme (11) · İçerik Derinliği (8) · Sunucu Yanıtı (6) · AI Hazırlığı (2) |
 | **ayrı ölçüm** | SEO puanına **girmez**, kendi eşiğiyle ölçülür | HTTPS & SSL · Site Hızı · Core Web Vitals · Uluslararası SEO (hreflang) · İndeks Durumu |
 
 Halka değeri = `100 × (1 − kategori cezası ÷ bütçe)`. "Puanı etkiler" kategorilerinin cezaları
