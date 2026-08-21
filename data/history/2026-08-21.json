@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-21T10:54:36.729Z",
+  "guncelleme": "2026-08-21T15:40:54.541Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 85,
-    "toplamKirikLink": 22,
+    "toplamKirikLink": 20,
     "acilUyari": 0
   },
   "siteler": [
@@ -13,15 +13,214 @@
       "url": "https://animare.vet",
       "aktif": true,
       "seo": {
-        "puan": 82,
-        "onceki": 84,
-        "trend": "-2"
+        "puan": 84,
+        "onceki": 82,
+        "trend": "+2"
       },
+      "sorunlar": [
+        {
+          "tip": "description-uzun",
+          "adet": 45,
+          "ornekler": [
+            {
+              "yol": "/tr",
+              "deger": "167 karakter"
+            },
+            {
+              "yol": "/en",
+              "deger": "165 karakter"
+            },
+            {
+              "yol": "/tr/hakkimizda",
+              "deger": "183 karakter"
+            },
+            {
+              "yol": "/en/services/general-checkup",
+              "deger": "182 karakter"
+            },
+            {
+              "yol": "/tr/hizmetler/asilama",
+              "deger": "161 karakter"
+            },
+            {
+              "yol": "/en/services/vaccination",
+              "deger": "182 karakter"
+            },
+            {
+              "yol": "/tr/hizmetler/cerrahi",
+              "deger": "178 karakter"
+            },
+            {
+              "yol": "/en/services/surgery",
+              "deger": "185 karakter"
+            },
+            {
+              "yol": "/en/services/radiology",
+              "deger": "175 karakter"
+            },
+            {
+              "yol": "/en/services/emergency",
+              "deger": "168 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "title-uzun",
+          "adet": 11,
+          "ornekler": [
+            {
+              "yol": "/tr/blog/zehirli-yiyecekler-ve-bitkiler",
+              "deger": "62 karakter"
+            },
+            {
+              "yol": "/tr/blog/kedi-kopek-otitis-eksterna",
+              "deger": "74 karakter"
+            },
+            {
+              "yol": "/en/blog/otitis-externa-cats-dogs",
+              "deger": "64 karakter"
+            },
+            {
+              "yol": "/tr/blog/kopeklerde-kene-hastaliklari",
+              "deger": "80 karakter"
+            },
+            {
+              "yol": "/en/blog/tick-borne-diseases-in-dogs",
+              "deger": "72 karakter"
+            },
+            {
+              "yol": "/tr/blog/kedi-kopek-kisirlastirma",
+              "deger": "70 karakter"
+            },
+            {
+              "yol": "/en/blog/spaying-neutering-cats-dogs",
+              "deger": "65 karakter"
+            },
+            {
+              "yol": "/tr/blog/kedilerde-kronik-bobrek-hastaligi",
+              "deger": "84 karakter"
+            },
+            {
+              "yol": "/en/blog/chronic-kidney-disease-in-cats",
+              "deger": "70 karakter"
+            },
+            {
+              "yol": "/tr/blog/kedi-kopek-mama-cesitleri",
+              "deger": "62 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "giden-link-yok",
+          "adet": 6,
+          "ornekler": [
+            {
+              "yol": "/tr/hakkimizda",
+              "deger": "hic ic link yok"
+            },
+            {
+              "yol": "/en/about",
+              "deger": "hic ic link yok"
+            },
+            {
+              "yol": "/tr/iletisim",
+              "deger": "hic ic link yok"
+            },
+            {
+              "yol": "/en/contact",
+              "deger": "hic ic link yok"
+            },
+            {
+              "yol": "/tr/hizmetler/acil-hizmet",
+              "deger": "hic ic link yok"
+            },
+            {
+              "yol": "/en/services/emergency",
+              "deger": "hic ic link yok"
+            }
+          ]
+        },
+        {
+          "tip": "ince-icerik",
+          "adet": 16,
+          "ornekler": [
+            {
+              "yol": "/tr/hizmetler/radyoloji",
+              "deger": "140 kelime"
+            },
+            {
+              "yol": "/tr/hizmetler/laboratuvar",
+              "deger": "151 kelime"
+            },
+            {
+              "yol": "/tr/hizmetler/pet-kuafor",
+              "deger": "157 kelime"
+            },
+            {
+              "yol": "/tr/hizmetler/acil-hizmet",
+              "deger": "159 kelime"
+            },
+            {
+              "yol": "/tr/hizmetler/cerrahi",
+              "deger": "163 kelime"
+            },
+            {
+              "yol": "/en/services/radiology",
+              "deger": "168 kelime"
+            },
+            {
+              "yol": "/tr/hizmetler/beslenme-danismanligi",
+              "deger": "169 kelime"
+            },
+            {
+              "yol": "/tr/iletisim",
+              "deger": "171 kelime"
+            },
+            {
+              "yol": "/tr/hizmetler/asilama",
+              "deger": "171 kelime"
+            },
+            {
+              "yol": "/tr/hizmetler/dis-bakimi",
+              "deger": "171 kelime"
+            }
+          ]
+        },
+        {
+          "tip": "oksuz-sayfa",
+          "adet": 2,
+          "ornekler": [
+            {
+              "yol": "/tr/gizlilik",
+              "deger": null
+            },
+            {
+              "yol": "/en/privacy",
+              "deger": null
+            }
+          ]
+        },
+        {
+          "tip": "schema-alan-eksik",
+          "adet": 30,
+          "ornekler": [
+            {
+              "yol": "30 sayfa",
+              "deger": "BlogPosting.image"
+            }
+          ]
+        },
+        {
+          "tip": "llms-yok",
+          "adet": 1,
+          "ornekler": []
+        }
+      ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1427,
-        "sonKontrol": "2026-08-21T10:46:46.820Z",
-        "medyanMs": 321
+        "yanitMs": 328,
+        "sonKontrol": "2026-08-21T15:34:26.846Z",
+        "medyanMs": 113
       },
       "ssl": {
         "gecerli": true,
@@ -29,11 +228,12 @@
         "kalanGun": 58
       },
       "sayfalar": {
-        "taranan": 59,
-        "indekslenebilir": 59,
+        "taranan": 60,
+        "indekslenebilir": 60,
         "noindex": 0
       },
       "sayfaYollari": [
+        "/tr",
         "/en",
         "/tr/hizmetler",
         "/en/services",
@@ -94,19 +294,11 @@
         "/tr/blog/kedi-kopek-mama-cesitleri",
         "/en/blog/cat-and-dog-food-range"
       ],
-      "kirikLinkler": [
-        {
-          "kaynak": "/tr/hizmetler",
-          "hedef": "https://animare.vet/tr/hizmetler/radyoloji",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        }
-      ],
+      "kirikLinkler": [],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 1
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -134,7 +326,7 @@
         "sorunluSayfa": 30
       },
       "icerik": {
-        "ortKelime": 497,
+        "ortKelime": 495,
         "inceSayfa": 16,
         "esik": 200,
         "ornekler": [
@@ -186,7 +378,7 @@
       "sitemap": {
         "varMi": true,
         "urlSayisi": 60,
-        "erisilemez": 1,
+        "erisilemez": 0,
         "dosyalar": [
           "https://animare.vet/sitemap.xml"
         ]
@@ -368,20 +560,13 @@
       },
       "sayfaDurum": {
         "toplam": 60,
-        "saglam": 13,
+        "saglam": 14,
         "sorunlu": 46,
-        "kirik": 1,
+        "kirik": 0,
         "yonlendirme": 0,
         "engelli": 0
       },
-      "kirikSayfalar": [
-        {
-          "yol": "/tr",
-          "kod": 523,
-          "durum": "kirik",
-          "hata": null
-        }
-      ],
+      "kirikSayfalar": [],
       "yonlendirmeler": [],
       "engelliSayfalar": [],
       "sorunluSayfalar": [
@@ -770,19 +955,17 @@
         "keywordYogunluk": "olculmedi"
       },
       "iclink": {
-        "ortLink": 4.4,
+        "ortLink": 4.5,
         "orphan": [
-          "/tr/hizmetler",
-          "/tr/hakkimizda",
           "/tr/gizlilik",
           "/en/privacy"
         ]
       },
       "hiz": {
-        "mobilPuan": 61,
-        "masaustuPuan": 82,
-        "lcp": 12,
-        "inp": 55,
+        "mobilPuan": 64,
+        "masaustuPuan": 74,
+        "lcp": 9.2,
+        "inp": 98,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -1016,14 +1199,60 @@
       "aktif": true,
       "seo": {
         "puan": 95,
-        "onceki": 93,
-        "trend": "+2"
+        "onceki": 95,
+        "trend": "+0"
       },
+      "sorunlar": [
+        {
+          "tip": "ince-icerik",
+          "adet": 7,
+          "ornekler": [
+            {
+              "yol": "/iletisim.html",
+              "deger": "70 kelime"
+            },
+            {
+              "yol": "/en/contact.html",
+              "deger": "88 kelime"
+            },
+            {
+              "yol": "/blog/beyin-beden.html",
+              "deger": "175 kelime"
+            },
+            {
+              "yol": "/hizmetler/aile-terapisi.html",
+              "deger": "181 kelime"
+            },
+            {
+              "yol": "/hizmetler/ogrenci-danismanlik.html",
+              "deger": "194 kelime"
+            },
+            {
+              "yol": "/hizmetler",
+              "deger": "196 kelime"
+            },
+            {
+              "yol": "/hizmetler/bdt-terapisi.html",
+              "deger": "199 kelime"
+            }
+          ]
+        },
+        {
+          "tip": "schema-alan-eksik",
+          "adet": 32,
+          "ornekler": [
+            {
+              "yol": "32 sayfa",
+              "deger": "LocalBusiness.telephone"
+            }
+          ]
+        }
+      ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 623,
-        "sonKontrol": "2026-08-21T10:47:42.464Z",
-        "medyanMs": 183
+        "yanitMs": 179,
+        "sonKontrol": "2026-08-21T15:35:04.009Z",
+        "medyanMs": 67
       },
       "ssl": {
         "gecerli": true,
@@ -1151,7 +1380,7 @@
         "sorunluSayfa": 32
       },
       "icerik": {
-        "ortKelime": 547,
+        "ortKelime": 554,
         "inceSayfa": 7,
         "esik": 200,
         "ornekler": [
@@ -1201,7 +1430,7 @@
         "sorun": false,
         "hatalar": [],
         "sitemapSatiri": true,
-        "kuralSayisi": 2,
+        "kuralSayisi": 3,
         "grupSayisi": 1,
         "aiSinyal": null,
         "bizeKapali": false,
@@ -1676,10 +1905,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 83,
-        "masaustuPuan": 99,
-        "lcp": 3.7,
-        "inp": 92,
+        "mobilPuan": 89,
+        "masaustuPuan": 98,
+        "lcp": 3.6,
+        "inp": 35,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -1829,11 +2058,75 @@
         "onceki": 96,
         "trend": "+0"
       },
+      "sorunlar": [
+        {
+          "tip": "title-kisa",
+          "adet": 5,
+          "ornekler": [
+            {
+              "yol": "/en/book",
+              "deger": "27 karakter"
+            },
+            {
+              "yol": "/ru/bronirovanie",
+              "deger": "29 karakter"
+            },
+            {
+              "yol": "/en/privacy",
+              "deger": "25 karakter"
+            },
+            {
+              "yol": "/en/terms",
+              "deger": "23 karakter"
+            },
+            {
+              "yol": "/tr/kullanim-kosullari",
+              "deger": "29 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "title-uzun",
+          "adet": 3,
+          "ornekler": [
+            {
+              "yol": "/tr/guzergahlar/larnaka-havalimani-catalkoy-otelleri-transfer",
+              "deger": "61 karakter"
+            },
+            {
+              "yol": "/tr/guzergahlar/larnaka-havalimani-alsancak-otelleri-transfer",
+              "deger": "61 karakter"
+            },
+            {
+              "yol": "/tr/guzergahlar/larnaka-havalimani-esentepe-otelleri-transfer",
+              "deger": "61 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "alt-eksik",
+          "adet": 3,
+          "ornekler": [
+            {
+              "yol": "/en",
+              "deger": null
+            },
+            {
+              "yol": "/tr",
+              "deger": null
+            },
+            {
+              "yol": "/ru",
+              "deger": null
+            }
+          ]
+        }
+      ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1448,
-        "sonKontrol": "2026-08-21T10:48:53.377Z",
-        "medyanMs": 352
+        "yanitMs": 399,
+        "sonKontrol": "2026-08-21T15:36:03.915Z",
+        "medyanMs": 124
       },
       "ssl": {
         "gecerli": true,
@@ -2264,9 +2557,9 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 70,
-        "masaustuPuan": 91,
-        "lcp": 5.8,
+        "mobilPuan": 67,
+        "masaustuPuan": 96,
+        "lcp": 6.5,
         "inp": 0,
         "cls": 0,
         "kaynak": "lab"
@@ -2408,14 +2701,298 @@
       "aktif": true,
       "seo": {
         "puan": 67,
-        "onceki": 57,
-        "trend": "+10"
+        "onceki": 67,
+        "trend": "+0"
       },
+      "sorunlar": [
+        {
+          "tip": "description-uzun",
+          "adet": 80,
+          "ornekler": [
+            {
+              "yol": "/",
+              "deger": "177 karakter"
+            },
+            {
+              "yol": "/blog.html",
+              "deger": "170 karakter"
+            },
+            {
+              "yol": "/blog/kuzey-kibrista-canta-nereden-alinir.html",
+              "deger": "194 karakter"
+            },
+            {
+              "yol": "/blog/hakiki-deri-nasil-anlasilir.html",
+              "deger": "174 karakter"
+            },
+            {
+              "yol": "/blog/deniz-tuz-gunes-canta-bakimi.html",
+              "deger": "161 karakter"
+            },
+            {
+              "yol": "/en",
+              "deger": "187 karakter"
+            },
+            {
+              "yol": "/en/blog/choosing-jewellery-in-cyprus.html",
+              "deger": "173 karakter"
+            },
+            {
+              "yol": "/en/about.html",
+              "deger": "172 karakter"
+            },
+            {
+              "yol": "/en/blog.html",
+              "deger": "176 karakter"
+            },
+            {
+              "yol": "/en/blog/where-to-buy-handbags-north-cyprus.html",
+              "deger": "195 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "derin-sayfa",
+          "adet": 10,
+          "ornekler": [
+            {
+              "yol": "/en/product/coach-tabby-chain",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/jwpei-noor-kahve",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/tory-burch-fleming",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/guess-anitha-suet",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/urun/siyah-tote-buyuk",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/siyah-tote-buyuk",
+              "deger": "5 tiklama"
+            },
+            {
+              "yol": "/en/product/puma-speedcat-ballet",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/guess-slingback",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/mk-milan-babet",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/steve-madden-asiel",
+              "deger": "4 tiklama"
+            }
+          ]
+        },
+        {
+          "tip": "title-kisa",
+          "adet": 9,
+          "ornekler": [
+            {
+              "yol": "/koleksiyon.html",
+              "deger": "26 karakter"
+            },
+            {
+              "yol": "/canli-cekim.html",
+              "deger": "27 karakter"
+            },
+            {
+              "yol": "/hakkimizda.html",
+              "deger": "26 karakter"
+            },
+            {
+              "yol": "/iletisim.html",
+              "deger": "24 karakter"
+            },
+            {
+              "yol": "/en/collection.html",
+              "deger": "26 karakter"
+            },
+            {
+              "yol": "/en/live-shots.html",
+              "deger": "26 karakter"
+            },
+            {
+              "yol": "/en/reviews.html",
+              "deger": "23 karakter"
+            },
+            {
+              "yol": "/en/about.html",
+              "deger": "21 karakter"
+            },
+            {
+              "yol": "/en/contact.html",
+              "deger": "23 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "title-uzun",
+          "adet": 5,
+          "ornekler": [
+            {
+              "yol": "/blog.html",
+              "deger": "63 karakter"
+            },
+            {
+              "yol": "/blog/kibrista-taki-secimi-ve-bakimi.html",
+              "deger": "67 karakter"
+            },
+            {
+              "yol": "/blog/kibris-icin-kapsul-gardirop.html",
+              "deger": "74 karakter"
+            },
+            {
+              "yol": "/en/blog/choosing-jewellery-in-cyprus.html",
+              "deger": "68 karakter"
+            },
+            {
+              "yol": "/en/blog.html",
+              "deger": "72 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "yinelenen-title",
+          "adet": 2,
+          "ornekler": [
+            {
+              "yol": "/urun/puma-speedcat-ballet, /en/product/puma-speedcat-ballet",
+              "deger": "Puma — Speedcat Ballet Sneaker — Luxeva Cyprus"
+            }
+          ]
+        },
+        {
+          "tip": "yavas-yanit",
+          "adet": 1,
+          "ornekler": [
+            {
+              "yol": "/en/product/coach-kiraz-suslu",
+              "deger": "4052 ms"
+            }
+          ]
+        },
+        {
+          "tip": "ince-icerik",
+          "adet": 68,
+          "ornekler": [
+            {
+              "yol": "/yorumlar.html",
+              "deger": "65 kelime"
+            },
+            {
+              "yol": "/en/reviews.html",
+              "deger": "89 kelime"
+            },
+            {
+              "yol": "/urun/swarovski-kolye",
+              "deger": "157 kelime"
+            },
+            {
+              "yol": "/urun/coach-kartlik",
+              "deger": "157 kelime"
+            },
+            {
+              "yol": "/urun/swarovski-saat",
+              "deger": "158 kelime"
+            },
+            {
+              "yol": "/urun/coach-bileklik",
+              "deger": "158 kelime"
+            },
+            {
+              "yol": "/urun/cizgili-blazer-elbise",
+              "deger": "159 kelime"
+            },
+            {
+              "yol": "/urun/siyah-korseli-mini",
+              "deger": "159 kelime"
+            },
+            {
+              "yol": "/urun/gucci-gunes-gozlugu",
+              "deger": "159 kelime"
+            },
+            {
+              "yol": "/urun/dkny-tasli-bileklik",
+              "deger": "159 kelime"
+            }
+          ]
+        },
+        {
+          "tip": "schema-alan-eksik",
+          "adet": 66,
+          "ornekler": [
+            {
+              "yol": "66 sayfa",
+              "deger": "Product.offers"
+            }
+          ]
+        },
+        {
+          "tip": "kirik-ic-link",
+          "adet": 13,
+          "ornekler": [
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/collection.html (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/live-shots.html (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/reviews.html (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/about.html (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/contact.html (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/exchange.html (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/blog/choosing-jewellery-in-cyp… (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/blog/where-to-buy-handbags-nor… (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/blog/cyprus-capsule-wardrobe.h… (404)"
+            },
+            {
+              "yol": "/en",
+              "deger": "-> https://www.luxeva-cyprus.com/blog/how-to-tell-real-leather.… (404)"
+            }
+          ]
+        }
+      ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 612,
-        "sonKontrol": "2026-08-21T10:52:08.506Z",
-        "medyanMs": 186
+        "yanitMs": 357,
+        "sonKontrol": "2026-08-21T15:38:27.727Z",
+        "medyanMs": 70
       },
       "ssl": {
         "gecerli": true,
@@ -3359,11 +3936,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 81,
+        "mobilPuan": 72,
         "masaustuPuan": 96,
-        "lcp": 4.1,
-        "inp": 0,
-        "cls": 0.02,
+        "lcp": 7.4,
+        "inp": 65,
+        "cls": 0,
         "kaynak": "lab"
       },
       "indeks": null,
@@ -3384,14 +3961,201 @@
       "aktif": true,
       "seo": {
         "puan": 85,
-        "onceki": 89,
-        "trend": "-4"
+        "onceki": 85,
+        "trend": "+0"
       },
+      "sorunlar": [
+        {
+          "tip": "title-uzun",
+          "adet": 59,
+          "ornekler": [
+            {
+              "yol": "/tr",
+              "deger": "81 karakter"
+            },
+            {
+              "yol": "/tr/metodoloji",
+              "deger": "79 karakter"
+            },
+            {
+              "yol": "/tr/rehber/kaza-sonrasi-ilk-48-saat",
+              "deger": "84 karakter"
+            },
+            {
+              "yol": "/tr/rehber/kktc-taban-tarife",
+              "deger": "82 karakter"
+            },
+            {
+              "yol": "/tr/rehber/kktc-turkiye-farki",
+              "deger": "103 karakter"
+            },
+            {
+              "yol": "/tr/rehber/ogrenci-saglik-sigortasi",
+              "deger": "76 karakter"
+            },
+            {
+              "yol": "/tr/rehber/sinir-gecisi-sigortasi",
+              "deger": "71 karakter"
+            },
+            {
+              "yol": "/tr/sigorta/isyeri",
+              "deger": "83 karakter"
+            },
+            {
+              "yol": "/tr/sigorta/kasko",
+              "deger": "77 karakter"
+            },
+            {
+              "yol": "/tr/sigorta/konut",
+              "deger": "82 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "description-uzun",
+          "adet": 8,
+          "ornekler": [
+            {
+              "yol": "/tr",
+              "deger": "204 karakter"
+            },
+            {
+              "yol": "/tr/rehber/kktc-taban-tarife",
+              "deger": "169 karakter"
+            },
+            {
+              "yol": "/tr/rehber/kktc-turkiye-farki",
+              "deger": "200 karakter"
+            },
+            {
+              "yol": "/tr/sigorta/kasko",
+              "deger": "180 karakter"
+            },
+            {
+              "yol": "/tr/sigorta/konut",
+              "deger": "174 karakter"
+            },
+            {
+              "yol": "/tr/sigorta/saglik",
+              "deger": "162 karakter"
+            },
+            {
+              "yol": "/tr/sigorta/trafik",
+              "deger": "185 karakter"
+            },
+            {
+              "yol": "/tr/sirketler",
+              "deger": "201 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "description-kisa",
+          "adet": 4,
+          "ornekler": [
+            {
+              "yol": "/tr/rehber/konu/ayrim",
+              "deger": "40 karakter"
+            },
+            {
+              "yol": "/tr/rehber/konu/hasar",
+              "deger": "40 karakter"
+            },
+            {
+              "yol": "/tr/rehber/konu/sinir-gecisi",
+              "deger": "47 karakter"
+            },
+            {
+              "yol": "/tr/rehber/konu/yabancilar",
+              "deger": "45 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "title-kisa",
+          "adet": 3,
+          "ornekler": [
+            {
+              "yol": "/tr/rehber",
+              "deger": "29 karakter"
+            },
+            {
+              "yol": "/tr/rehber/konu/ayrim",
+              "deger": "28 karakter"
+            },
+            {
+              "yol": "/tr/rehber/konu/hasar",
+              "deger": "28 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "ince-icerik",
+          "adet": 9,
+          "ornekler": [
+            {
+              "yol": "/tr/rehber/konu/yabancilar",
+              "deger": "45 kelime"
+            },
+            {
+              "yol": "/tr/rehber/konu/hasar",
+              "deger": "46 kelime"
+            },
+            {
+              "yol": "/tr/rehber/konu/sinir-gecisi",
+              "deger": "47 kelime"
+            },
+            {
+              "yol": "/tr/rehber/konu/ayrim",
+              "deger": "81 kelime"
+            },
+            {
+              "yol": "/tr/iletisim",
+              "deger": "90 kelime"
+            },
+            {
+              "yol": "/tr/hakkimizda",
+              "deger": "120 kelime"
+            },
+            {
+              "yol": "/tr/gizlilik",
+              "deger": "126 kelime"
+            },
+            {
+              "yol": "/tr/duzeltme",
+              "deger": "164 kelime"
+            },
+            {
+              "yol": "/tr/yasal-uyari",
+              "deger": "181 kelime"
+            }
+          ]
+        },
+        {
+          "tip": "schema-alan-eksik",
+          "adet": 5,
+          "ornekler": [
+            {
+              "yol": "5 sayfa",
+              "deger": "BlogPosting.image"
+            },
+            {
+              "yol": "5 sayfa",
+              "deger": "BlogPosting.author"
+            }
+          ]
+        },
+        {
+          "tip": "llms-yok",
+          "adet": 1,
+          "ornekler": []
+        }
+      ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 412,
-        "sonKontrol": "2026-08-21T10:53:19.910Z",
-        "medyanMs": 315
+        "yanitMs": 217,
+        "sonKontrol": "2026-08-21T15:39:39.555Z",
+        "medyanMs": 120
       },
       "ssl": {
         "gecerli": true,
@@ -3476,18 +4240,11 @@
       ],
       "kirikLinkler": [
         {
-          "kaynak": "/tr/sirketler/anadolu-sigorta",
-          "hedef": "https://kibris.anadolusigorta.com.tr",
-          "kod": 0,
-          "ic": false,
-          "sayilir": true
-        },
-        {
           "kaynak": "/tr/sirketler/as-can-sigorta",
           "hedef": "http://ascansigorta.com",
           "kod": 500,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         },
         {
           "kaynak": "/tr/sirketler/axa-sigorta",
@@ -3535,7 +4292,7 @@
       "kirikOzet": {
         "ic": 0,
         "dis": 7,
-        "dogrulanmamis": 1
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -3937,7 +4694,7 @@
         "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.02,
         "kaynak": "lab"
       },
       "indeks": null,
@@ -4068,48 +4825,24 @@
   "degisiklikler": [
     {
       "site": "animare",
-      "tip": "dusus",
-      "mesaj": "SEO puani 84 → 82 (-2)",
+      "tip": "artis",
+      "mesaj": "SEO puani 82 → 84 (+2)",
       "tarih": "2026-08-21"
     },
     {
       "site": "animare",
-      "tip": "silinen-sayfa",
-      "mesaj": "1 sayfa azaldi",
-      "tarih": "2026-08-21"
-    },
-    {
-      "site": "magusapsikoloji",
-      "tip": "artis",
-      "mesaj": "SEO puani 93 → 95 (+2)",
-      "tarih": "2026-08-21"
-    },
-    {
-      "site": "luxeva",
-      "tip": "artis",
-      "mesaj": "SEO puani 57 → 67 (+10)",
-      "tarih": "2026-08-21"
-    },
-    {
-      "site": "luxeva",
-      "tip": "yeni-kirik",
-      "mesaj": "1 yeni kirik link",
-      "tarih": "2026-08-21"
-    },
-    {
-      "site": "kktcsigorta",
-      "tip": "dusus",
-      "mesaj": "SEO puani 89 → 85 (-4)",
-      "tarih": "2026-08-21"
-    },
-    {
-      "site": "kktcsigorta",
-      "tip": "yeni-kirik",
-      "mesaj": "4 yeni kirik link",
+      "tip": "yeni-sayfa",
+      "mesaj": "1 sayfa eklendi",
       "tarih": "2026-08-21"
     }
   ],
   "raporlar": [
+    {
+      "ad": "Haftalık rapor — 21 Ağustos 2026",
+      "tarih": "2026-08-21",
+      "tur": "haftalik",
+      "dosya": "data/raporlar/2026-08-21-haftalik.html"
+    },
     {
       "ad": "Haftalık rapor — 16 Ağustos 2026",
       "tarih": "2026-08-16",
@@ -4178,11 +4911,6 @@
       "seviye": "uyari",
       "site": "animare",
       "mesaj": "7/11 AI botu robots.txt ile engelli (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended…) — AI cevaplarinda kaynak gosterilemezsin"
-    },
-    {
-      "seviye": "uyari",
-      "site": "animare",
-      "mesaj": "1 sayfa taramada hata verdi (404/5xx)"
     },
     {
       "seviye": "uyari",
