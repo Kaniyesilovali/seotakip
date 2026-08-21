@@ -307,4 +307,6 @@ güncellenmez, uyarı bir sonraki çalıştırmada tekrar denenir.
 1. Bu klasörü bir GitHub reposuna push et (private olabilir)
 2. GitHub → repo → Settings → Secrets → Actions → `PAGESPEED_KEY` ekle (opsiyonel, hız için)
 3. Actions sekmesinden "Run workflow" ile test et; sonra her gece 06:00 TR otomatik çalışır
-4. (Panel yayını için) Settings → Pages → Deploy from branch → panel internetten açılır
+4. (Panel yayını için) `.github/workflows/deploy.yml` — tarama biter bitmez `dist/`'i
+   hosting'e FTP ile yükler. `FTP_HOST` / `FTP_USER` / `FTP_PASSWORD` secret'larını
+   eklemen yeterli; ayrıntı [DEPLOY.md](DEPLOY.md)'de

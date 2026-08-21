@@ -1,94 +1,128 @@
-# Deploy — FileZilla ile manuel (FTP)
+# Deploy — otomatik (GitHub Actions → FTP)
 
-Bu panel statik: HTML + CSS + JS + `data.json`. Herhangi bir web sunucusuna (shared hosting,
-cPanel, vb.) sadece dosyaları yükleyerek çalışır. PHP/Node/veritabanı gerekmez.
+Bu panel statik: HTML + CSS + JS + `data.json`. Yayına alma artık **otomatik**:
+`.github/workflows/deploy.yml` `npm run build` çalıştırıp `dist/` içeriğini hosting'e
+FTP ile yükler. FileZilla'yı elle açman gerekmez (yedek yol olarak aşağıda duruyor).
 
-## 🔴 Önce güvenlik — ASLA yükleme
+## Ne zaman kendiliğinden deploy olur
 
-Şu dosyalar **gizli anahtar** içerir, herkese açık sunucuya **kesinlikle yüklenmemeli**:
+| Tetikleyici | Sonuç |
+|---|---|
+| `main`'e push (`index.html`, `assets/**`, `data/**`, `scripts/build.js`) | Panel kodu/tasarımı canlıya çıkar |
+| Gece taraması bitince (`tarama.yml` başarılı) | Yeni tarama verisi + raporlar canlıya çıkar |
+| Actions → **Deploy (FTP)** → Run workflow | Elle tetikleme |
 
-- `.env` (PageSpeed API anahtarın)
-- `gsc-key.json` (Google servis hesabı özel anahtarı)
-- `scripts/`, `node_modules/`, `sites.config.json`, `package.json`
+> Gece taraması `data/data.json`, `data/history/`, `data/raporlar/` ve
+> `assets/fallback-data.js` dosyalarını repo'ya `[skip ci]` ile commit'liyor. `[skip ci]`
+> push tetikleyicisini durdurduğu için deploy'u `workflow_run` ile bağladık — tarama
+> **başarıyla** bitince deploy sırayla çalışır. Tarama hata verirse yayına eski veri
+> gitmesin diye deploy atlanır.
 
-Bunları elle seçip yüklememelisin. Onun yerine **hazır `dist/` klasörünü** kullan — içinde
-sadece güvenli, herkese açık olması gereken dosyalar var.
+## 🔴 Güvenlik
 
-## 1. Deploy paketini hazırla
-
-```bash
-npm run build
-```
-
-Bu, `dist/` klasörünü oluşturur. İçinde **sadece** şunlar olur (hepsi güvenli):
+`npm run build` yalnızca güvenli dosyaları `dist/`'e kopyalar ve sonunda **sızıntı denetimi**
+yapar — `dist/` içinde `.env`, `gsc-key.json`, `sites.config.json` veya `package.json`
+bulursa build hata verip çıkar, dolayısıyla deploy da durur. Sunucuya sadece şunlar gider:
 
 ```
 dist/
 ├── index.html
 ├── .htaccess
-├── assets/
-│   ├── panel.css
-│   ├── oneri-motoru.js
-│   ├── saglik-motoru.js
-│   ├── app.js
-│   └── fallback-data.js
+├── assets/          (panel.css, app.js, oneri-motoru.js, saglik-motoru.js, fallback-data.js)
 └── data/
     ├── data.json
-    └── raporlar/            ← varsa (npm run rapor ile üretilen HTML raporlar)
-        ├── 2026-08-15-haftalik.html
-        ├── 2026-08-15-haftalik-animare.html    ← tek site raporu
-        └── 2026-08-15-aylik.html
+    └── raporlar/    (varsa üretilmiş HTML raporlar)
 ```
 
 Build ayrıca `index.html` içindeki varlık adreslerine içerik hash'i ekler
-(ör. `assets/app.js?v=d9970bdc` — dosya her değiştiğinde hash de değişir). Bu yüzden **`index.html` ile `assets/` her zaman birlikte
-yüklenmeli** — yalnızca birini yüklersen tarayıcı yeni HTML ile eski JS/CSS'i eşleştirip
-paneli bozuk açar.
+(ör. `assets/app.js?v=d9970bdc`). `index.html` ile `assets/` her zaman **birlikte**
+yüklendiği için tarayıcı yeni HTML ile eski JS/CSS'i eşleştiremez.
 
-## 2. FileZilla ile yükle
+## Tek seferlik kurulum — GitHub Secrets
 
-1. FileZilla'yı aç → hosting'inin **FTP bilgileriyle** bağlan (Host, Kullanıcı, Şifre, Port 21)
-2. Sağ panelde (sunucu) web köküne gir — genelde **`public_html`** (veya `www` / `htdocs`)
-   - Ana alan adında yayınlamak istiyorsan: `public_html/` içine
-   - Alt klasörde istiyorsan (ör. `site.com/seo`): `public_html/seo/` oluştur, oraya
-3. **Sunucu → Gizli dosyaları göstermeye zorla**'yı işaretle. `.htaccess` nokta ile başlayan
-   gizli bir dosya; bu açık değilse FileZilla onu ne solda gösterir ne de yükler
-4. Sol panelde (bilgisayarın) **`dist/` klasörünün İÇİNE** gir
-5. `dist/` içindeki **her şeyi seç** (index.html, .htaccess, assets, data) → sağ panele **sürükle**
-6. Yükleme bitince tarayıcıda alan adını aç — panel açılır
+FTP bilgilerini repo'ya **yazma**; GitHub'ın şifreli kasasına gir.
 
-## 3. Veriyi güncelleme (sonraki taramalar)
+**GitHub → repo → Settings → Secrets and variables → Actions → Secrets → New repository secret**
 
-Panel `data/data.json`'u okur. Yeni tarama sonucunu canlıya yansıtmak için:
+| Secret | Değer | Nereden |
+|---|---|---|
+| `FTP_HOST` | `ftp.alanadin.com` veya sunucu IP'si | FileZilla'daki **Host** alanı |
+| `FTP_USER` | FTP kullanıcı adı | FileZilla'daki **Kullanıcı** |
+| `FTP_PASSWORD` | FTP şifresi | FileZilla'daki **Şifre** |
+
+Varsayılanlar sana uymuyorsa aynı ekrandaki **Variables** sekmesine ekle (bunlar gizli değil,
+sadece ayar):
+
+| Variable | Varsayılan | Ne zaman değiştir |
+|---|---|---|
+| `FTP_DIR` | `public_html/` | Panel alt klasörde yayındaysa: `public_html/seo/` |
+| `FTP_PROTOCOL` | `ftp` | Hosting açık FTP kabul etmiyorsa: `ftps` (FileZilla'da "Explicit FTP over TLS" ile bağlanıyorsan bunu seç) |
+| `FTP_PORT` | `21` | Host farklı port veriyorsa |
+
+> `dangerous-clean-slate` kapalı: yükleme `dist/` dışındaki dosyaları **silmez**.
+> Sunucuda başka bir sitenin dosyaları varsa onlara dokunulmaz.
+
+## İlk deploy'u çalıştır ve doğrula
+
+1. **Actions** sekmesi → sol menüden **Deploy (FTP)** → sağdan **Run workflow** → `main`
+2. Akış yeşile dönene kadar bekle (~1 dk). "FTP ile yukle" adımını açıp yüklenen dosya
+   listesini görebilirsin
+3. Tarayıcıda alan adını aç, sert yenile (Cmd+Shift+R) — panel güncel tarihi göstermeli
+
+İlk çalıştırmada eylem sunucuya `.ftp-deploy-sync-state.json` bırakır; sonraki deploy'larda
+**sadece değişen dosyaları** yükler, bu yüzden çok hızlıdır.
+
+### Sorun çıkarsa
+
+| Hata | Sebep / çözüm |
+|---|---|
+| `530 Login incorrect` | `FTP_USER` / `FTP_PASSWORD` yanlış. cPanel'de ana hesap değil, FTP hesabı kullanıcı adı genelde `kullanici@alanadi.com` biçimindedir |
+| `ECONNREFUSED` / zaman aşımı | Host açık FTP'yi kapatmış → `FTP_PROTOCOL` variable'ını `ftps` yap |
+| Yükleniyor ama panel eski | `FTP_DIR` yanlış klasörü gösteriyor. FileZilla'da bağlanıp `index.html`'in gerçekte hangi klasörde olduğuna bak |
+| Build adımında `✕ GUVENLIK` | `dist/`'e sır dosyası girmiş — deploy bilerek durduruldu, `scripts/build.js` içindeki `DOSYALAR` listesine bak |
+
+## Yeni günlük akış
+
+Artık yayına almak için elle bir şey yapman gerekmiyor. Kendi bilgisayarında tarama
+çalıştırdıysan sadece commit'leyip push'la:
 
 ```bash
-git pull             # gece taraması varsa önce onu al (aşağıya bak)
-npm run tara-hepsi   # 5 siteyi tara (crawl + hız + Search Console)
-npm run build        # dist/ yenilenir
+npm run tara-hepsi   # istersen — gece taraması bunu zaten yapıyor
+npm run build        # istersen — sadece yerelde önizleme için
+git add data assets/fallback-data.js
+git commit -m "tarama"
+git push             # ← deploy buradan itibaren otomatik
 ```
 
-> **`git pull`'u atlama.** GitHub Actions her gece 06:00 TR'de siteleri tarayıp
-> `data/data.json`, `data/history/`, `data/raporlar/` ve `assets/fallback-data.js`
-> dosyalarını repo'ya geri commit'liyor (`.github/workflows/tarama.yml`). Pull etmeden
-> `npm run build` çalıştırırsan `dist/`'e gece taraması değil, yereldeki eski veri girer —
-> panelde dünkü tarih görünür. Sadece yayına almak istiyorsan `npm run tara-hepsi`'yi
-> hiç çalıştırmadan `git pull && npm run build` yeterli.
+`git pull`'u yine de alışkanlık edin: gece taraması repo'ya commit attığı için yerelin
+geride kalır ve push çakışır.
 
-Sonra FileZilla'da neyi yükleyeceğin **neyin değiştiğine** bağlı:
+---
+
+## Yedek yol — FileZilla ile elle deploy
+
+Actions çalışmıyorsa (hosting FTP'yi kapattı, secret süresi doldu vb.) eski yöntem hâlâ geçerli:
+
+```bash
+git pull && npm run build
+```
+
+1. FileZilla → hosting FTP bilgileriyle bağlan (Host, Kullanıcı, Şifre, Port 21)
+2. **Sunucu → Gizli dosyaları göstermeye zorla**'yı işaretle — `.htaccess` nokta ile başlar,
+   bu açık değilse FileZilla onu ne gösterir ne yükler
+3. Sağ panelde web köküne gir (genelde `public_html`)
+4. Sol panelde **`dist/` klasörünün İÇİNE** gir → içindeki **her şeyi** seç → sağa sürükle
+5. Transfer modu **Binary** olsun (Transfer → Transfer Type → Binary); Auto/ASCII modunda
+   `data.json` bozulabilir. Üzerine yazma diyalogunda **Overwrite** + "Always use this action"
+
+Neyin değiştiğine göre kısayol:
 
 | Değişen | Yüklenecek |
 |---|---|
-| Sadece tarama verisi (`npm run tara-hepsi`) | `dist/data/data.json` → sunucudaki `data/data.json` üzerine |
-| Yeni rapor ürettin (`npm run rapor`) | `dist/data/data.json` **ve** `dist/data/raporlar/` klasörü (panel rapora oradan link verir) |
-| Panel kodu/tasarımı (`assets/*`, `index.html`) | `dist/index.html` **ve** `dist/assets/` klasörünün tamamı birlikte |
-| Emin değilsen | `dist/` içindekilerin hepsi (~460 KB, birkaç saniye) |
-
-FileZilla'da üzerine yazarken çıkan diyalogda **"Overwrite"** + "Always use this action"
-seçmen yeterli. Transfer modu **Binary** olsun (Transfer → Transfer Type → Binary);
-Auto/ASCII modunda `data.json` bozulabilir.
-
-> İpucu: Bu adımı otomatikleştirmek istersen, hosting FTP bilgilerini kullanan küçük bir
-> yükleme script'i de eklenebilir. Şimdilik manuel akış bu.
+| Sadece tarama verisi | `dist/data/data.json` |
+| Yeni rapor ürettin | `dist/data/data.json` **ve** `dist/data/raporlar/` |
+| Panel kodu/tasarımı | `dist/index.html` **ve** `dist/assets/` birlikte |
+| Emin değilsen | `dist/` içindekilerin hepsi (~460 KB) |
 
 ## Notlar
 

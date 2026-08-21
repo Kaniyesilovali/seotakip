@@ -1,0 +1,59 @@
+name: Deploy (FTP)
+
+# Ne zaman calisir:
+#  1) main'e panel dosyasi push'ladiginda
+#  2) gece taramasi bitince (tarama bot commit'i "[skip ci]" tasidigi icin push
+#     tetikleyicisi calismaz — bu yuzden workflow_run ile yakaliyoruz)
+#  3) Actions sekmesinden elle
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'data/**'
+      - 'scripts/build.js'
+      - '.github/workflows/deploy.yml'
+  workflow_run:
+    workflows: ['SEO Tarama (otomatik)']
+    types: [completed]
+  workflow_dispatch:
+
+# Ayni anda iki deploy calisip FTP'de birbirini ezmesin
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # workflow_run ile geldiyse sadece tarama basarili bittiyse yayina al
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu al
+        uses: actions/checkout@v4
+
+      - name: Node kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Bagimliliklar
+        run: npm ci
+
+      - name: dist/ uret
+        # build.js sonunda sir dosyasi denetimi yapar; sizinti varsa burada patlar
+        run: npm run build
+
+      - name: FTP ile yukle
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftp' }}
+          port: ${{ vars.FTP_PORT || 21 }}
+          local-dir: ./dist/
+          server-dir: ${{ vars.FTP_DIR || 'public_html/' }}
+          # dangerous-clean-slate KAPALI: sunucuda dist/ disindaki dosyalara dokunmaz
