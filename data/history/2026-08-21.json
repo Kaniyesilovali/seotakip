@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-21T10:56:54.926Z",
+  "guncelleme": "2026-08-21T10:54:36.729Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 85,
@@ -779,10 +779,10 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 64,
-        "masaustuPuan": 74,
-        "lcp": 9.2,
-        "inp": 98,
+        "mobilPuan": 61,
+        "masaustuPuan": 82,
+        "lcp": 12,
+        "inp": 55,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -1676,10 +1676,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 89,
-        "masaustuPuan": 98,
-        "lcp": 3.6,
-        "inp": 35,
+        "mobilPuan": 83,
+        "masaustuPuan": 99,
+        "lcp": 3.7,
+        "inp": 92,
         "cls": 0,
         "kaynak": "lab"
       },
@@ -2264,9 +2264,9 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 67,
-        "masaustuPuan": 96,
-        "lcp": 6.5,
+        "mobilPuan": 70,
+        "masaustuPuan": 91,
+        "lcp": 5.8,
         "inp": 0,
         "cls": 0,
         "kaynak": "lab"
@@ -3359,11 +3359,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 72,
+        "mobilPuan": 81,
         "masaustuPuan": 96,
-        "lcp": 7.4,
-        "inp": 65,
-        "cls": 0,
+        "lcp": 4.1,
+        "inp": 0,
+        "cls": 0.02,
         "kaynak": "lab"
       },
       "indeks": null,
@@ -3937,7 +3937,7 @@
         "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
-        "cls": 0.02,
+        "cls": 0,
         "kaynak": "lab"
       },
       "indeks": null,
@@ -4110,12 +4110,6 @@
     }
   ],
   "raporlar": [
-    {
-      "ad": "Haftalık rapor — 21 Ağustos 2026",
-      "tarih": "2026-08-21",
-      "tur": "haftalik",
-      "dosya": "data/raporlar/2026-08-21-haftalik.html"
-    },
     {
       "ad": "Haftalık rapor — 16 Ağustos 2026",
       "tarih": "2026-08-16",
