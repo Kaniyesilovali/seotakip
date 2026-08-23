@@ -26,6 +26,27 @@ const MAX_SAYFA = A.maxSayfa ?? 200;
 const ARALIK = A.istekAralikMs ?? 400;
 const ZAMANASIMI = A.zamanAsimiMs ?? 15000;
 const UA = A.kullaniciAjani ?? 'SeoTakipBot/1.0';
+
+// ---- WAF gecis anahtari ----
+// User-Agent'i herkes taklit edebilir; UA'ya izin veren bir WAF kurali fiilen
+// herkese acik kapi birakir. Bunun yerine her istege gizli bir baslik koyuyoruz:
+// Cloudflare tarafinda "bu baslik bu degere esitse skip" kurali yazilir.
+// Anahtar yoksa baslik hic gonderilmez (yerel kullanim ve testler etkilenmez).
+function envDeger(k) {
+  try {
+    const e = fs.readFileSync(path.join(KOK, '.env'), 'utf8');
+    const m = e.match(new RegExp('^\\s*' + k + '\\s*=\\s*(.+?)\\s*$', 'm'));
+    return m ? m[1].replace(/^["']|["']$/g, '') : '';
+  } catch { return ''; }
+}
+const ANAHTAR = process.env.SEOTAKIP_ANAHTAR || envDeger('SEOTAKIP_ANAHTAR');
+// Anahtar YALNIZCA kendi sitelerimize gider. Kirik link kontrolu dis sitelere de
+// istek atiyor; baslik oralara da gitseydi anahtar ucuncu taraflara sizardi.
+const KENDI_HOSTLAR = new Set((cfg.siteler || [])
+  .map(x => { try { return new URL(x.url).host.replace(/^www\./, ''); } catch { return null; } })
+  .filter(Boolean));
+const bizimMi = (u) => { try { return KENDI_HOSTLAR.has(new URL(u).host.replace(/^www\./, '')); } catch { return false; } };
+const baslik = (u) => (ANAHTAR && bizimMi(u) ? { 'User-Agent': UA, 'X-Seotakip-Anahtar': ANAHTAR } : { 'User-Agent': UA });
 const MAX_LINK_KONTROL = 400; // site basina kirik-link kontrol ust siniri
 const INCE_ESIK = 200;        // bu kelimenin altindaki sayfa "ince icerik" sayilir (Semrush ile ayni esik)
 
@@ -79,7 +100,7 @@ async function istek(url, method = 'GET', { maxAdim = 5 } = {}) {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), ZAMANASIMI);
     try {
-      const r = await fetch(hedef, { method, redirect: 'manual', signal: ctrl.signal, headers: { 'User-Agent': UA } });
+      const r = await fetch(hedef, { method, redirect: 'manual', signal: ctrl.signal, headers: baslik(hedef) });
       const konum = r.headers.get('location');
       if (YONLENDIRME_KODU.has(r.status) && konum && adim < maxAdim) {
         let sonraki = null;
@@ -120,7 +141,7 @@ async function metinGetir(url) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), ZAMANASIMI);
   try {
-    const r = await fetch(url, { redirect: 'follow', signal: ctrl.signal, headers: { 'User-Agent': UA } });
+    const r = await fetch(url, { redirect: 'follow', signal: ctrl.signal, headers: baslik(url) });
     if (!r.ok || r.status >= 400) return { ok: false, status: r.status, metin: null };
     const metin = await r.text();
     const htmlMi = /text\/html/.test(r.headers.get('content-type') || '') || /^\s*<(!doctype|html)/i.test(metin);
@@ -156,7 +177,7 @@ async function xmlGetir(url) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), ZAMANASIMI);
   try {
-    const r = await fetch(url, { redirect: 'follow', signal: ctrl.signal, headers: { 'User-Agent': UA } });
+    const r = await fetch(url, { redirect: 'follow', signal: ctrl.signal, headers: baslik(url) });
     if (!r.ok || r.status >= 400) return null;
     return await r.text();
   } catch { return null; } finally { clearTimeout(t); }

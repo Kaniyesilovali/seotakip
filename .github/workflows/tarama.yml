@@ -26,6 +26,10 @@ jobs:
         run: npm ci
 
       - name: Siteleri tara
+        env:
+          # Cloudflare/WAF gecis anahtari — yoksa baslik hic gonderilmez, tarama
+          # normal calisir (challenge'a takilma riskiyle).
+          SEOTAKIP_ANAHTAR: ${{ secrets.SEOTAKIP_ANAHTAR }}
         run: node scripts/crawl.js
 
       - name: PageSpeed (anahtar varsa)

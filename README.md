@@ -191,6 +191,31 @@ Fikir OpenSEO'nun [badseo.dev](https://github.com/every-app/open-seo)'inden. İl
    **meşru** yönlendirmeleri döngü sanıyordu (bir site "0 sayfa tarandı" ile bitti).
    `test/ucbasa.test.js` artık bu senaryoyu ayrıca bekliyor.
 
+## WAF geçiş anahtarı (Cloudflare vb.)
+
+Sitelerin önünde bot koruması varsa tarayıcı challenge sayfasına düşer ve tarama
+boş veri üretir (bkz. alttaki sağlık kontrolü). Çözüm, User-Agent'a izin vermek
+**değil** — onu herkes taklit edebilir, WAF'ta herkese açık kapı bırakırsın.
+Bunun yerine gizli bir başlık:
+
+1. Uzun rastgele bir değer üret: `node -e "console.log(require('crypto').randomBytes(24).toString('base64url'))"`
+2. `.env` dosyasına ekle: `SEOTAKIP_ANAHTAR=<deger>` (dosya `.gitignore`'da)
+3. GitHub → Settings → Secrets and variables → Actions → `SEOTAKIP_ANAHTAR` olarak ekle
+   (gece taraması bunu `tarama.yml` üzerinden okur)
+4. Her Cloudflare zone'unda: Security → Security rules → Create rule → Custom rules
+   - Expression: `(http.request.headers["x-seotakip-anahtar"][0] eq "<deger>")`
+   - Action: **Skip** → All remaining custom rules + Rate limiting + Managed rules
+     + Super Bot Fight Mode + (products) Browser Integrity Check, Security Level, User Agent Blocking
+   - Kuralı listenin en üstüne al
+
+`crawl.js` başlığı **yalnızca `sites.config.json`'daki kendi host'larımıza** gönderir;
+kırık link kontrolü dış sitelere de istek attığı için anahtar oralara sızmasın diye.
+Anahtar tanımlı değilse başlık hiç gönderilmez, tarama normal çalışır.
+
+> Cloudflare Free planında 5 custom rule ve Skip action var — ek ücret gerekmez.
+> Tek istisna: Free plandaki **Bot Fight Mode** skip edilemez; Security → Bots'tan
+> kapatman gerekir (Pro'daki Super Bot Fight Mode skip edilebilir).
+
 ## Tarama sağlık kontrolü (engellenen taramalar)
 
 `scripts/lib/tarama-dogrula.js` her taramanın sonucunu **önceki taramayla** karşılaştırır.
