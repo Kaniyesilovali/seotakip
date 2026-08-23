@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Haftalık SEO / GEO raporu — 23 Ağustos 2026</title>
+<style>
+  /* Rapor ekranda da kagitta da ayni okunsun diye acik zeminli; panel temasindan bagimsiz. */
+  :root { --mur:#1b1d22; --mut:#5c6270; --cizgi:#e3e5ea; --zemin:#fff; --ok:#1a7f43; --warn:#a1670a; --bad:#c02a45; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:36px 30px 60px; background:#f4f5f7; color:var(--mur);
+         font:14px/1.6 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+  .kagit { max-width:960px; margin:0 auto; background:var(--zemin); padding:44px 46px; border:1px solid var(--cizgi); }
+  h1 { font-size:26px; margin:0 0 4px; letter-spacing:-.4px; }
+  h2 { font-size:16px; margin:34px 0 12px; padding-bottom:7px; border-bottom:2px solid var(--mur); letter-spacing:.4px; text-transform:uppercase; }
+  h3 { font-size:15px; margin:0 0 12px; }
+  h3 a { font-weight:400; font-size:12.5px; color:var(--mut); text-decoration:none; margin-left:8px; }
+  .ust { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; border-bottom:3px solid var(--mur); padding-bottom:14px; }
+  .ust .meta { text-align:right; font-size:12px; color:var(--mut); line-height:1.7; }
+  .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+  .ozet { background:#f7f8fa; border-left:3px solid var(--mur); padding:14px 16px; margin:18px 0 0; font-size:13.5px; }
+  .sayilar { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:18px 0 0; }
+  .sayilar div { border:1px solid var(--cizgi); padding:11px 13px; }
+  .sayilar span { display:block; font-size:10.5px; text-transform:uppercase; letter-spacing:.5px; color:var(--mut); }
+  .sayilar b { font-size:24px; font-weight:600; }
+  .tablo { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .tablo th { text-align:right; font-size:10.5px; text-transform:uppercase; letter-spacing:.4px; color:var(--mut);
+              border-bottom:1px solid var(--mur); padding:6px 8px; white-space:nowrap; }
+  .tablo th:first-child, .tablo td.ad { text-align:left; }
+  .tablo td { padding:9px 8px; border-bottom:1px solid var(--cizgi); text-align:right; white-space:nowrap; }
+  .tablo td.ad span { display:block; font-size:11px; color:var(--mut); font-weight:400; }
+  .tablo td.say b { font-size:15px; }
+  .d { font-size:11px; margin-left:3px; } .d.up{color:var(--ok)} .d.down{color:var(--bad)} .d.nul{color:var(--mut)}
+  ol.aksiyon { margin:0; padding-left:22px; }
+  ol.aksiyon li { margin-bottom:8px; padding-left:4px; }
+  .rozet { display:inline-block; font-size:9.5px; font-weight:700; letter-spacing:.5px; padding:2px 6px; border:1px solid; margin-right:6px; vertical-align:1px; }
+  .rozet.kritik{color:var(--bad);border-color:var(--bad)} .rozet.yuksek{color:var(--warn);border-color:var(--warn)}
+  .rozet.orta{color:var(--mut);border-color:var(--cizgi)} .rozet.dusuk{color:var(--mut);border-color:var(--cizgi)}
+  .sit { font-weight:600; margin-right:6px; }
+  .efor { font-size:11px; color:var(--mut); margin-left:6px; }
+  .site { border:1px solid var(--cizgi); padding:18px 20px; margin-bottom:14px; }
+  .kutular { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:14px; }
+  .kutu { border:1px solid var(--cizgi); padding:8px 10px; }
+  .kutu span { display:block; font-size:10px; text-transform:uppercase; letter-spacing:.4px; color:var(--mut); }
+  .kutu b { font-size:18px; font-weight:600; } .kutu i { display:block; font-style:normal; font-size:10.5px; color:var(--mut); }
+  .satir { margin:6px 0; font-size:12.5px; }
+  .geo { display:inline-block; font-size:11px; padding:1px 7px; border:1px solid; margin-right:4px; }
+  .geo.var { color:var(--ok); border-color:var(--ok); } .geo.yok { color:var(--mut); border-color:var(--cizgi); }
+  ul.mini { margin:10px 0 0; padding-left:18px; font-size:12.5px; color:#3a3f4a; }
+  ul.mini li { margin-bottom:4px; }
+  ul.duz { margin:0; padding-left:18px; font-size:13px; }
+  ul.duz li { margin-bottom:5px; }
+  .bos, .bos-i { color:var(--mut); font-style:italic; }
+  .dip { margin-top:34px; padding-top:12px; border-top:1px solid var(--cizgi); font-size:11px; color:var(--mut); }
+  .yazdir { position:fixed; top:16px; right:16px; padding:10px 16px; font-size:13px; font-weight:600;
+            background:var(--mur); color:#fff; border:0; cursor:pointer; }
+  /* --- KAGIT --- */
+  @page { size:A4; margin:14mm 12mm; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11.5px; }
+    .kagit { max-width:none; border:0; padding:0; }
+    .yazdir { display:none; }
+    h2 { margin-top:20px; }
+    .site, ol.aksiyon li, .sayilar, .tablo tr { break-inside:avoid; page-break-inside:avoid; }
+    h2 { break-after:avoid; page-break-after:avoid; }
+    a { color:inherit; text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+<button class="yazdir" onclick="window.print()">PDF kaydet / Yazdır</button>
+<div class="kagit">
+
+  <div class="ust">
+    <div>
+      <h1>Haftalık SEO / GEO raporu</h1>
+      <p style="margin:0;color:var(--mut);font-size:13px">5 site · son 7 gün</p>
+    </div>
+    <div class="meta">
+      Rapor tarihi: <b>23 Ağustos 2026</b><br />
+      Karşılaştırma: 16 Ağustos 2026<br />
+      SEO / GEO Nöbet Paneli
+    </div>
+  </div>
+
+  <div class="ozet">Bu hafta 5 site takip edildi; ortalama SEO puanı 93/100. Kritik sorun yok; 6 yüksek öncelikli madde var. 4 adet hızlı kazanım (yüksek etki, kolay) var. Olumlu: SEO puani 67 → 87 (+20). Dikkat: SEO puani 88 → 86 (-2); 2 yeni kirik link. Önerilen ilk 3 aksiyon: (Animare) 7/11 AI botu robots.txt ile engelli (GPTBot, ClaudeBot, Google-Extended…) — bu motorlar seni kaynak gösteremez. Bilinçli tercihse yok say.  |  (Animare) Mobil hız 40/100 — kritik. Görsel/JS optimize et.  |  (Magusa Psikoloji) 32 sayfada schema alanı eksik (en yaygını: LocalBusiness.telephone, 32 sayfa) — zengin sonuç çıkmaz.</div>
+
+  <div class="sayilar">
+    <div><span>Ortalama SEO puanı</span><b class="ok">93</b></div>
+    <div><span>Kritik sorun</span><b class="ok">0</b></div>
+    <div><span>Yüksek öncelikli</span><b class="warn">6</b></div>
+    <div><span>Hızlı kazanım</span><b>4</b></div>
+  </div>
+
+  <h2>Site skorları</h2>
+  <table class="tablo">
+    <thead><tr><th>Site</th><th>SEO puanı</th><th>Sayfa</th><th>Kırık iç link</th><th>İndeks</th><th>Mobil hız</th><th>Sıralama</th><th>SSL</th></tr></thead>
+    <tbody><tr>
+      <td class="ad"><b>Animare</b><span>animare.vet</span></td>
+      <td class="say"><b class="ok">99</b> <span class="d up">+15</span></td>
+      <td class="say">60</td>
+      <td class="say ok">0</td>
+      <td class="say">8/12</td>
+      <td class="say">40</td>
+      <td class="say">15 kelime · ort. #15.0</td>
+      <td class="say">56g</td>
+    </tr><tr>
+      <td class="ad"><b>Magusa Psikoloji</b><span>magusapsikoloji.com</span></td>
+      <td class="say"><b class="ok">96</b> <span class="d up">+3</span></td>
+      <td class="say">84</td>
+      <td class="say ok">0</td>
+      <td class="say">—</td>
+      <td class="say">75</td>
+      <td class="say">15 kelime · ort. #56.4</td>
+      <td class="say">43g</td>
+    </tr><tr>
+      <td class="ad"><b>The Taxsi</b><span>thetaxsi.com</span></td>
+      <td class="say"><b class="ok">96</b> <span class="d nul">±0</span></td>
+      <td class="say">200</td>
+      <td class="say ok">0</td>
+      <td class="say">—</td>
+      <td class="say">66</td>
+      <td class="say">15 kelime · ort. #45.4</td>
+      <td class="say">57g</td>
+    </tr><tr>
+      <td class="ad"><b>Luxeva Cyprus</b><span>luxeva-cyprus.com</span></td>
+      <td class="say"><b class="ok">87</b> <span class="d up">+30</span></td>
+      <td class="say">96</td>
+      <td class="say ok">0</td>
+      <td class="say">—</td>
+      <td class="say">77</td>
+      <td class="say">15 kelime · ort. #57.5</td>
+      <td class="say">68g</td>
+    </tr><tr>
+      <td class="ad"><b>KKTC Sigorta Merkezi</b><span>kktcsigortamerkezi.com</span></td>
+      <td class="say"><b class="ok">86</b> <span class="d down">-3</span></td>
+      <td class="say">69</td>
+      <td class="say ok">0</td>
+      <td class="say">—</td>
+      <td class="say">82</td>
+      <td class="say">15 kelime · ort. #7.2</td>
+      <td class="say">70g</td>
+    </tr></tbody>
+  </table>
+
+  <h2>Bu hafta yapılacaklar — kritik ve yüksek öncelik</h2>
+  <ol class="aksiyon"><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Animare</span>
+    <span class="msj">7/11 AI botu robots.txt ile engelli (GPTBot, ClaudeBot, Google-Extended…) — bu motorlar seni kaynak gösteremez. Bilinçli tercihse yok say.</span>
+    <span class="efor">efor: kolay</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Animare</span>
+    <span class="msj">Mobil hız 40/100 — kritik. Görsel/JS optimize et.</span>
+    <span class="efor">efor: zor</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Magusa Psikoloji</span>
+    <span class="msj">32 sayfada schema alanı eksik (en yaygını: LocalBusiness.telephone, 32 sayfa) — zengin sonuç çıkmaz.</span>
+    <span class="efor">efor: kolay</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Luxeva Cyprus</span>
+    <span class="msj">66 sayfada schema alanı eksik (en yaygını: Product.offers, 66 sayfa) — zengin sonuç çıkmaz.</span>
+    <span class="efor">efor: kolay</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Luxeva Cyprus</span>
+    <span class="msj">68 sayfa 200 kelimenin altında (ort. 320) — içeriği derinleştir.</span>
+    <span class="efor">efor: zor</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">KKTC Sigorta Merkezi</span>
+    <span class="msj">5 sayfada schema alanı eksik (en yaygını: BlogPosting.image, 5 sayfa) — zengin sonuç çıkmaz.</span>
+    <span class="efor">efor: kolay</span>
+  </li></ol>
+
+  <h2>Hızlı kazanımlar (yüksek etki, düşük efor)</h2>
+  <ol class="aksiyon"><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Animare</span>
+    <span class="msj">7/11 AI botu robots.txt ile engelli (GPTBot, ClaudeBot, Google-Extended…) — bu motorlar seni kaynak gösteremez. Bilinçli tercihse yok say.</span>
+    <span class="efor">efor: kolay</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Magusa Psikoloji</span>
+    <span class="msj">32 sayfada schema alanı eksik (en yaygını: LocalBusiness.telephone, 32 sayfa) — zengin sonuç çıkmaz.</span>
+    <span class="efor">efor: kolay</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">Luxeva Cyprus</span>
+    <span class="msj">66 sayfada schema alanı eksik (en yaygını: Product.offers, 66 sayfa) — zengin sonuç çıkmaz.</span>
+    <span class="efor">efor: kolay</span>
+  </li><li>
+    <span class="rozet yuksek">YÜKSEK</span>
+    <span class="sit">KKTC Sigorta Merkezi</span>
+    <span class="msj">5 sayfada schema alanı eksik (en yaygını: BlogPosting.image, 5 sayfa) — zengin sonuç çıkmaz.</span>
+    <span class="efor">efor: kolay</span>
+  </li></ol>
+
+  <h2>Son taramadaki değişiklikler</h2>
+  <ul class="duz"><li><b>luxeva</b> — SEO puani 67 → 87 (+20) <span style="color:var(--mut)">(2026-08-23)</span></li><li><b>kktcsigorta</b> — SEO puani 88 → 86 (-2) <span style="color:var(--mut)">(2026-08-23)</span></li><li><b>kktcsigorta</b> — 2 yeni kirik link <span style="color:var(--mut)">(2026-08-23)</span></li></ul>
+
+  <h2>Denetim bulguları</h2>
+  <table class="skor"><thead><tr>
+    <th>Seviye</th><th>Sorun ve çözümü</th><th class="ort">Adet</th><th>Nerede</th>
+  </tr></thead><tbody><tr>
+    <td><span class="rozet yuksek">UYARI</span></td>
+    <td><b>Schema zorunlu alani eksik</b><br />
+      <span style="color:var(--mut)">Eksik alani JSON-LD&#39;ye ekle ve Rich Results Test ile dogrula.</span></td>
+    <td class="ort"><b>103</b></td>
+    <td style="color:var(--mut)">Magusa Psikoloji (32) · Luxeva Cyprus (66) · KKTC Sigorta Merkezi (5)</td>
+  </tr><tr>
+    <td><span class="rozet yuksek">UYARI</span></td>
+    <td><b>Ince icerik</b><br />
+      <span style="color:var(--mut)">Sayfayi konuyu gercekten cevaplayacak sekilde derinlestir; derinlesemeyecekse ilgili bir sayfayla birlestir.</span></td>
+    <td class="ort"><b>87</b></td>
+    <td style="color:var(--mut)">Animare (6) · Magusa Psikoloji (4) · Luxeva Cyprus (68) · KKTC Sigorta Merkezi (9)</td>
+  </tr><tr>
+    <td><span class="rozet yuksek">UYARI</span></td>
+    <td><b>Gorsellerde alt metni yok</b><br />
+      <span style="color:var(--mut)">Her anlamli gorsele ne gosterdigini anlatan kisa bir alt yaz. Dekoratif gorsellerde alt=&quot;&quot; birak.</span></td>
+    <td class="ort"><b>3</b></td>
+    <td style="color:var(--mut)">The Taxsi (3)</td>
+  </tr><tr>
+    <td><span class="rozet orta">BILGI</span></td>
+    <td><b>Title cok uzun</b> <i style="color:var(--mut)">(puana girmiyor)</i><br />
+      <span style="color:var(--mut)">Onemli kelimeleri basa alarak 60 karakterin altina indir.</span></td>
+    <td class="ort"><b>62</b></td>
+    <td style="color:var(--mut)">The Taxsi (3) · KKTC Sigorta Merkezi (59)</td>
+  </tr><tr>
+    <td><span class="rozet orta">BILGI</span></td>
+    <td><b>Meta description cok uzun</b> <i style="color:var(--mut)">(puana girmiyor)</i><br />
+      <span style="color:var(--mut)">160 karakterin altina indir, en onemli cumleyi basa al.</span></td>
+    <td class="ort"><b>24</b></td>
+    <td style="color:var(--mut)">Animare (16) · KKTC Sigorta Merkezi (8)</td>
+  </tr><tr>
+    <td><span class="rozet orta">BILGI</span></td>
+    <td><b>Sayfa site yapisinda cok derinde</b> <i style="color:var(--mut)">(puana girmiyor)</i><br />
+      <span style="color:var(--mut)">Onemli sayfalari menuye, kategori sayfalarina veya ilgili icerik bloklarina tasi — 3 tiklamayi hedefle.</span></td>
+    <td class="ort"><b>10</b></td>
+    <td style="color:var(--mut)">Luxeva Cyprus (10)</td>
+  </tr><tr>
+    <td><span class="rozet orta">BILGI</span></td>
+    <td><b>Title cok kisa</b> <i style="color:var(--mut)">(puana girmiyor)</i><br />
+      <span style="color:var(--mut)">Ana konuyu ve ayirt edici detayi ekleyip 30 karakterin uzerine cikar.</span></td>
+    <td class="ort"><b>8</b></td>
+    <td style="color:var(--mut)">The Taxsi (5) · KKTC Sigorta Merkezi (3)</td>
+  </tr><tr>
+    <td><span class="rozet orta">BILGI</span></td>
+    <td><b>Meta description cok kisa</b> <i style="color:var(--mut)">(puana girmiyor)</i><br />
+      <span style="color:var(--mut)">70-160 karakter araligina cikar, sayfanin ne vaat ettigini yaz.</span></td>
+    <td class="ort"><b>4</b></td>
+    <td style="color:var(--mut)">KKTC Sigorta Merkezi (4)</td>
+  </tr><tr>
+    <td><span class="rozet orta">BILGI</span></td>
+    <td><b>llms.txt yok</b><br />
+      <span style="color:var(--mut)">Panel -&gt; Araclar bolumunden uretip site kokune (/llms.txt) koy.</span></td>
+    <td class="ort"><b>1</b></td>
+    <td style="color:var(--mut)">KKTC Sigorta Merkezi (1)</td>
+  </tr></tbody></table>
+
+  <h2>Site detayları</h2>
+  <section class="site">
+    <h3>Animare <a href="https://animare.vet">animare.vet</a></h3>
+    <div class="kutular">
+      <div class="kutu"><span>SEO puanı</span><b><span class="ok">99</span></b><i>2026-08-16: 84</i></div>
+      <div class="kutu"><span>Taranan sayfa</span><b>60</b><i>0 noindex</i></div>
+      <div class="kutu"><span>Kırık iç link</span><b>0</b></div>
+      <div class="kutu"><span>İnce içerik</span><b>6</b><i>< 200 kelime</i></div>
+      <div class="kutu"><span>Mobil hız</span><b>40</b><i>LCP 11.7s · CLS 0</i></div>
+      <div class="kutu"><span>İç link/sayfa</span><b>22.2</b></div>
+      <div class="kutu"><span>İndeks</span><b>8/12</b><i>4 aksiyon gerekiyor</i></div>
+      <div class="kutu"><span>SSL</span><b>56 gün</b><i>bitiş 2026-10-18</i></div>
+    </div>
+    <p class="satir"><b>GEO görünürlük:</b> <span class="geo yok">ChatGPT</span> <span class="geo yok">Perplexity</span> <span class="geo yok">Gemini</span> <span class="geo yok">Claude</span></p>
+    <p class="satir"><b>AI bot ziyareti:</b> <span class="bos-i">log yüklenmedi (node scripts/botlog.js)</span></p>
+    <p class="satir"><b>En iyi kelimeler:</b> animare <b>#6</b> · animare veteriner <b>#3</b> · lefkoşa veteriner <b>#7</b> · gönyeli veteriner <b>#1</b> · nöbetçi veteriner kktc <b>#6</b></p>
+    <p class="satir"><b>Açık aksiyon:</b> 18 madde (2 tanesi kritik/yüksek)</p>
+    <ul class="mini"><li><span class="rozet orta">ORTA</span> 6 sayfa 200 kelimenin altında (ort. 585) — içeriği derinleştir.</li><li><span class="rozet yuksek">YÜKSEK</span> 7/11 AI botu robots.txt ile engelli (GPTBot, ClaudeBot, Google-Extended…) — bu motorlar seni kaynak gösteremez. Bilinçli tercihse yok say.</li><li><span class="rozet dusuk">DÜŞÜK</span> robots.txt&#39;te Content-Signal ai-train=no — model eğitimine kapalısın (arama/alıntı etkilenmez).</li><li><span class="rozet yuksek">YÜKSEK</span> Mobil hız 40/100 — kritik. Görsel/JS optimize et.</li><li><span class="rozet orta">ORTA</span> LCP 11.7s yavaş — en büyük görseli optimize et / preload.</li><li><span class="rozet dusuk">DÜŞÜK</span> 2 sayfa: Google bu URL&#39;i bilmiyor — Sitemap&#39;e ekle ve bir yerden iç link ver.</li></ul>
+  </section><section class="site">
+    <h3>Magusa Psikoloji <a href="https://magusapsikoloji.com">magusapsikoloji.com</a></h3>
+    <div class="kutular">
+      <div class="kutu"><span>SEO puanı</span><b><span class="ok">96</span></b><i>2026-08-16: 93</i></div>
+      <div class="kutu"><span>Taranan sayfa</span><b>84</b><i>0 noindex</i></div>
+      <div class="kutu"><span>Kırık iç link</span><b>0</b></div>
+      <div class="kutu"><span>İnce içerik</span><b>4</b><i>< 200 kelime</i></div>
+      <div class="kutu"><span>Mobil hız</span><b>75</b><i>LCP 3.6s · CLS 0.09</i></div>
+      <div class="kutu"><span>İç link/sayfa</span><b>25.3</b></div>
+      <div class="kutu"><span>İndeks</span><b>—</b><i>Search Console bağlı değil</i></div>
+      <div class="kutu"><span>SSL</span><b>43 gün</b><i>bitiş 2026-10-05</i></div>
+    </div>
+    <p class="satir"><b>GEO görünürlük:</b> <span class="bos-i">ölçülmedi (npm run geo)</span></p>
+    <p class="satir"><b>AI bot ziyareti:</b> <span class="bos-i">log yüklenmedi (node scripts/botlog.js)</span></p>
+    <p class="satir"><b>En iyi kelimeler:</b> mağusa psikolog <b>#5</b> · childhood trauma treatment cyprus <b>#37</b> · panik atak belirtileri <b>#75</b> · developmental trauma treatment cyprus <b>#40</b> · gazimağusa psikolog <b>#9</b></p>
+    <p class="satir"><b>Açık aksiyon:</b> 11 madde (1 tanesi kritik/yüksek)</p>
+    <ul class="mini"><li><span class="rozet dusuk">DÜŞÜK</span> 2 link geçici hata verdi (henüz doğrulanmadı, puana yansımıyor).</li><li><span class="rozet yuksek">YÜKSEK</span> 32 sayfada schema alanı eksik (en yaygını: LocalBusiness.telephone, 32 sayfa) — zengin sonuç çıkmaz.</li><li><span class="rozet orta">ORTA</span> 4 sayfa 200 kelimenin altında (ort. 574) — içeriği derinleştir.</li><li><span class="rozet dusuk">DÜŞÜK</span> Mobil hız 75/100 — iyileştir.</li><li><span class="rozet orta">ORTA</span> &quot;panik atak belirtileri&quot; 73→75 düştü — incele.</li><li><span class="rozet orta">ORTA</span> &quot;terapi saati ne demek&quot; 53→70 düştü — incele.</li></ul>
+  </section><section class="site">
+    <h3>The Taxsi <a href="https://thetaxsi.com">thetaxsi.com</a></h3>
+    <div class="kutular">
+      <div class="kutu"><span>SEO puanı</span><b><span class="ok">96</span></b><i>2026-08-16: 96</i></div>
+      <div class="kutu"><span>Taranan sayfa</span><b>200</b><i>0 noindex</i></div>
+      <div class="kutu"><span>Kırık iç link</span><b>0</b></div>
+      <div class="kutu"><span>İnce içerik</span><b>0</b><i>< 200 kelime</i></div>
+      <div class="kutu"><span>Mobil hız</span><b>66</b><i>LCP 8.5s · CLS 0</i></div>
+      <div class="kutu"><span>İç link/sayfa</span><b>25.7</b></div>
+      <div class="kutu"><span>İndeks</span><b>—</b><i>Search Console bağlı değil</i></div>
+      <div class="kutu"><span>SSL</span><b>57 gün</b><i>bitiş 2026-10-19</i></div>
+    </div>
+    <p class="satir"><b>GEO görünürlük:</b> <span class="bos-i">ölçülmedi (npm run geo)</span></p>
+    <p class="satir"><b>AI bot ziyareti:</b> <span class="bos-i">log yüklenmedi (node scripts/botlog.js)</span></p>
+    <p class="satir"><b>En iyi kelimeler:</b> güzelyurt körfezi <b>#12</b> · güzelyurt odtü arası shuttle durağı kiralıklar <b>#28</b> · ercan airport passport control <b>#8</b> · ercan girne transfer <b>#77</b> · cyprus luxury airport transfers <b>#79</b></p>
+    <p class="satir"><b>Açık aksiyon:</b> 9 madde</p>
+    <ul class="mini"><li><span class="rozet orta">ORTA</span> GA4/GTM yok — trafiği ölçemezsin, kur.</li><li><span class="rozet dusuk">DÜŞÜK</span> Mobil hız 66/100 — iyileştir.</li><li><span class="rozet orta">ORTA</span> LCP 8.5s yavaş — en büyük görseli optimize et / preload.</li><li><span class="rozet orta">ORTA</span> &quot;güzelyurt körfezi&quot; #12 (2. sayfa) — içeriği güçlendir.</li><li><span class="rozet orta">ORTA</span> &quot;ercan arrivals&quot; #14 (2. sayfa) — içeriği güçlendir.</li><li><span class="rozet dusuk">DÜŞÜK</span> 5 sayfada title 30 karakterin altında — alaka sinyali zayıf.</li></ul>
+  </section><section class="site">
+    <h3>Luxeva Cyprus <a href="https://luxeva-cyprus.com">luxeva-cyprus.com</a></h3>
+    <div class="kutular">
+      <div class="kutu"><span>SEO puanı</span><b><span class="ok">87</span></b><i>2026-08-16: 57</i></div>
+      <div class="kutu"><span>Taranan sayfa</span><b>96</b><i>0 noindex</i></div>
+      <div class="kutu"><span>Kırık iç link</span><b>0</b></div>
+      <div class="kutu"><span>İnce içerik</span><b>68</b><i>< 200 kelime</i></div>
+      <div class="kutu"><span>Mobil hız</span><b>77</b><i>LCP 5.1s · CLS 0</i></div>
+      <div class="kutu"><span>İç link/sayfa</span><b>18.1</b></div>
+      <div class="kutu"><span>İndeks</span><b>—</b><i>Search Console bağlı değil</i></div>
+      <div class="kutu"><span>SSL</span><b>68 gün</b><i>bitiş 2026-10-30</i></div>
+    </div>
+    <p class="satir"><b>GEO görünürlük:</b> <span class="bos-i">ölçülmedi (npm run geo)</span></p>
+    <p class="satir"><b>AI bot ziyareti:</b> <span class="bos-i">log yüklenmedi (node scripts/botlog.js)</span></p>
+    <p class="satir"><b>En iyi kelimeler:</b> kıbrıs ta çanta nereden alınır <b>#8</b> · cyprus wedding guest outfit <b>#27</b> · what to wear to a wedding in cyprus <b>#7</b> · hakiki deri <b>#88</b> · jw pei cyprus <b>#8</b></p>
+    <p class="satir"><b>Açık aksiyon:</b> 7 madde (2 tanesi kritik/yüksek)</p>
+    <ul class="mini"><li><span class="rozet yuksek">YÜKSEK</span> 66 sayfada schema alanı eksik (en yaygını: Product.offers, 66 sayfa) — zengin sonuç çıkmaz.</li><li><span class="rozet yuksek">YÜKSEK</span> 68 sayfa 200 kelimenin altında (ort. 320) — içeriği derinleştir.</li><li><span class="rozet dusuk">DÜŞÜK</span> Mobil hız 77/100 — iyileştir.</li><li><span class="rozet orta">ORTA</span> LCP 5.1s yavaş — en büyük görseli optimize et / preload.</li><li><span class="rozet orta">ORTA</span> &quot;kıbrıs ta çanta fiyatları&quot; #15 (2. sayfa) — içeriği güçlendir.</li><li><span class="rozet orta">ORTA</span> &quot;kıbrıs çanta&quot; #13 (2. sayfa) — içeriği güçlendir.</li></ul>
+  </section><section class="site">
+    <h3>KKTC Sigorta Merkezi <a href="https://kktcsigortamerkezi.com">kktcsigortamerkezi.com</a></h3>
+    <div class="kutular">
+      <div class="kutu"><span>SEO puanı</span><b><span class="ok">86</span></b><i>2026-08-16: 89</i></div>
+      <div class="kutu"><span>Taranan sayfa</span><b>69</b><i>0 noindex</i></div>
+      <div class="kutu"><span>Kırık iç link</span><b>0</b></div>
+      <div class="kutu"><span>İnce içerik</span><b>9</b><i>< 200 kelime</i></div>
+      <div class="kutu"><span>Mobil hız</span><b>82</b><i>LCP 3.6s · CLS 0</i></div>
+      <div class="kutu"><span>İç link/sayfa</span><b>24</b></div>
+      <div class="kutu"><span>İndeks</span><b>—</b><i>Search Console bağlı değil</i></div>
+      <div class="kutu"><span>SSL</span><b>70 gün</b><i>bitiş 2026-11-01</i></div>
+    </div>
+    <p class="satir"><b>GEO görünürlük:</b> <span class="bos-i">ölçülmedi (npm run geo)</span></p>
+    <p class="satir"><b>AI bot ziyareti:</b> <span class="bos-i">log yüklenmedi (node scripts/botlog.js)</span></p>
+    <p class="satir"><b>En iyi kelimeler:</b> kktc sağlık sigortası öğrenci ücreti <b>#5</b> · aveon sigorta <b>#10</b> · kktc sigorta şirketleri <b>#10</b> · lightstar insurance ltd <b>#5</b> · lightstar insurance <b>#6</b></p>
+    <p class="satir"><b>Açık aksiyon:</b> 21 madde (1 tanesi kritik/yüksek)</p>
+    <ul class="mini"><li><span class="rozet dusuk">DÜŞÜK</span> 6 kırık dış link — hedef site kapanmış, linki kaldır.</li><li><span class="rozet dusuk">DÜŞÜK</span> 2 link geçici hata verdi (henüz doğrulanmadı, puana yansımıyor).</li><li><span class="rozet yuksek">YÜKSEK</span> 5 sayfada schema alanı eksik (en yaygını: BlogPosting.image, 5 sayfa) — zengin sonuç çıkmaz.</li><li><span class="rozet orta">ORTA</span> 9 sayfa 200 kelimenin altında (ort. 445) — içeriği derinleştir.</li><li><span class="rozet orta">ORTA</span> llms.txt yok — Araçlar sekmesinden üretip köke koy.</li><li><span class="rozet orta">ORTA</span> GA4/GTM yok — trafiği ölçemezsin, kur.</li></ul>
+  </section>
+
+  <h2>Açık uyarılar (10)</h2>
+  <ul class="duz"><li><span class="rozet yuksek">UYARI</span> <b>animare</b> — 7/11 AI botu robots.txt ile engelli (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended…) — AI cevaplarinda kaynak gosterilemezsin</li><li><span class="rozet yuksek">UYARI</span> <b>animare</b> — 6 sayfa 200 kelimenin altinda (ince icerik)</li><li><span class="rozet yuksek">UYARI</span> <b>magusapsikoloji</b> — 32 sayfada schema alani eksik (LocalBusiness.telephone) — zengin sonuc cikmaz</li><li><span class="rozet yuksek">UYARI</span> <b>magusapsikoloji</b> — 4 sayfa 200 kelimenin altinda (ince icerik)</li><li><span class="rozet yuksek">UYARI</span> <b>luxeva</b> — 66 sayfada schema alani eksik (Product.offers) — zengin sonuc cikmaz</li><li><span class="rozet yuksek">UYARI</span> <b>luxeva</b> — 68 sayfa 200 kelimenin altinda (ince icerik)</li><li><span class="rozet orta">BILGI</span> <b>kktcsigorta</b> — 6 kirik dis link — hedef site kapanmis, linki kaldir</li><li><span class="rozet yuksek">UYARI</span> <b>kktcsigorta</b> — 5 sayfada schema alani eksik (BlogPosting.image) — zengin sonuc cikmaz</li><li><span class="rozet yuksek">UYARI</span> <b>kktcsigorta</b> — 9 sayfa 200 kelimenin altinda (ince icerik)</li><li><span class="rozet yuksek">UYARI</span> <b>kktcsigorta</b> — llms.txt yok — AI motorlari icin site ozeti ekle</li></ul>
+
+  <p class="dip">
+    Otomatik üretildi — <b>SEO / GEO Nöbet Paneli</b> · veri kaynağı: son tarama (2026-08-23T09:17:01.026Z).<br />
+    PDF için sağ üstteki “PDF kaydet” düğmesine bas, yazdırma penceresinde hedefi “PDF olarak kaydet” seç.
+  </p>
+</div>
+</body>
+</html>

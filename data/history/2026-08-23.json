@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-23T07:56:25.791Z",
+  "guncelleme": "2026-08-23T09:13:37.307Z",
   "ozet": {
     "toplamSite": 5,
-    "ortalamaSeoPuan": 89,
-    "toplamKirikLink": 19,
+    "ortalamaSeoPuan": 93,
+    "toplamKirikLink": 10,
     "acilUyari": 0
   },
   "siteler": [
@@ -14,8 +14,8 @@
       "aktif": true,
       "seo": {
         "puan": 99,
-        "onceki": 70,
-        "trend": "+29"
+        "onceki": 99,
+        "trend": "+0"
       },
       "sorunlar": [
         {
@@ -97,9 +97,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 463,
-        "sonKontrol": "2026-08-23T07:50:02.589Z",
-        "medyanMs": 123
+        "yanitMs": 1385,
+        "sonKontrol": "2026-08-23T09:05:06.669Z",
+        "medyanMs": 378
       },
       "ssl": {
         "gecerli": true,
@@ -719,8 +719,8 @@
       "aktif": true,
       "seo": {
         "puan": 96,
-        "onceki": 66,
-        "trend": "+30"
+        "onceki": 96,
+        "trend": "+0"
       },
       "sorunlar": [
         {
@@ -758,9 +758,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 166,
-        "sonKontrol": "2026-08-23T07:50:42.119Z",
-        "medyanMs": 69
+        "yanitMs": 830,
+        "sonKontrol": "2026-08-23T09:06:03.905Z",
+        "medyanMs": 216
       },
       "ssl": {
         "gecerli": true,
@@ -858,11 +858,26 @@
         "/sss.html",
         "/terapi-sureci.html"
       ],
-      "kirikLinkler": [],
+      "kirikLinkler": [
+        {
+          "kaynak": "/en/kvkk.html",
+          "hedef": "https://www.kvkk.gov.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/kvkk.html",
+          "hedef": "https://www.kvkk.gov.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        }
+      ],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 0
+        "dogrulanmamis": 2
       },
       "eksikMeta": {
         "title": 0,
@@ -1551,8 +1566,8 @@
       "aktif": true,
       "seo": {
         "puan": 96,
-        "onceki": 66,
-        "trend": "+30"
+        "onceki": 96,
+        "trend": "+0"
       },
       "sorunlar": [
         {
@@ -1620,9 +1635,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 335,
-        "sonKontrol": "2026-08-23T07:51:49.732Z",
-        "medyanMs": 122
+        "yanitMs": 1022,
+        "sonKontrol": "2026-08-23T09:07:29.381Z",
+        "medyanMs": 398
       },
       "ssl": {
         "gecerli": true,
@@ -2199,57 +2214,11 @@
       "url": "https://luxeva-cyprus.com",
       "aktif": true,
       "seo": {
-        "puan": 67,
-        "onceki": 69,
-        "trend": "-2"
+        "puan": 87,
+        "onceki": 67,
+        "trend": "+20"
       },
       "sorunlar": [
-        {
-          "tip": "description-uzun",
-          "adet": 80,
-          "ornekler": [
-            {
-              "yol": "/",
-              "deger": "177 karakter"
-            },
-            {
-              "yol": "/blog.html",
-              "deger": "170 karakter"
-            },
-            {
-              "yol": "/blog/kuzey-kibrista-canta-nereden-alinir.html",
-              "deger": "194 karakter"
-            },
-            {
-              "yol": "/blog/hakiki-deri-nasil-anlasilir.html",
-              "deger": "174 karakter"
-            },
-            {
-              "yol": "/blog/deniz-tuz-gunes-canta-bakimi.html",
-              "deger": "161 karakter"
-            },
-            {
-              "yol": "/en",
-              "deger": "187 karakter"
-            },
-            {
-              "yol": "/en/blog/choosing-jewellery-in-cyprus.html",
-              "deger": "173 karakter"
-            },
-            {
-              "yol": "/en/about.html",
-              "deger": "172 karakter"
-            },
-            {
-              "yol": "/en/blog.html",
-              "deger": "176 karakter"
-            },
-            {
-              "yol": "/en/blog/where-to-buy-handbags-north-cyprus.html",
-              "deger": "195 karakter"
-            }
-          ]
-        },
         {
           "tip": "derin-sayfa",
           "adet": 10,
@@ -2293,84 +2262,6 @@
             {
               "yol": "/en/product/steve-madden-asiel",
               "deger": "4 tiklama"
-            }
-          ]
-        },
-        {
-          "tip": "title-kisa",
-          "adet": 9,
-          "ornekler": [
-            {
-              "yol": "/koleksiyon.html",
-              "deger": "26 karakter"
-            },
-            {
-              "yol": "/canli-cekim.html",
-              "deger": "27 karakter"
-            },
-            {
-              "yol": "/hakkimizda.html",
-              "deger": "26 karakter"
-            },
-            {
-              "yol": "/iletisim.html",
-              "deger": "24 karakter"
-            },
-            {
-              "yol": "/en/collection.html",
-              "deger": "26 karakter"
-            },
-            {
-              "yol": "/en/live-shots.html",
-              "deger": "26 karakter"
-            },
-            {
-              "yol": "/en/reviews.html",
-              "deger": "23 karakter"
-            },
-            {
-              "yol": "/en/about.html",
-              "deger": "21 karakter"
-            },
-            {
-              "yol": "/en/contact.html",
-              "deger": "23 karakter"
-            }
-          ]
-        },
-        {
-          "tip": "title-uzun",
-          "adet": 5,
-          "ornekler": [
-            {
-              "yol": "/blog.html",
-              "deger": "63 karakter"
-            },
-            {
-              "yol": "/blog/kibrista-taki-secimi-ve-bakimi.html",
-              "deger": "67 karakter"
-            },
-            {
-              "yol": "/blog/kibris-icin-kapsul-gardirop.html",
-              "deger": "74 karakter"
-            },
-            {
-              "yol": "/en/blog/choosing-jewellery-in-cyprus.html",
-              "deger": "68 karakter"
-            },
-            {
-              "yol": "/en/blog.html",
-              "deger": "72 karakter"
-            }
-          ]
-        },
-        {
-          "tip": "yinelenen-title",
-          "adet": 2,
-          "ornekler": [
-            {
-              "yol": "/urun/puma-speedcat-ballet, /en/product/puma-speedcat-ballet",
-              "deger": "Puma — Speedcat Ballet Sneaker — Luxeva Cyprus"
             }
           ]
         },
@@ -2429,64 +2320,18 @@
               "deger": "Product.offers"
             }
           ]
-        },
-        {
-          "tip": "kirik-ic-link",
-          "adet": 13,
-          "ornekler": [
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/collection.html (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/live-shots.html (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/reviews.html (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/about.html (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/contact.html (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/exchange.html (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/blog/choosing-jewellery-in-cyp… (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/blog/where-to-buy-handbags-nor… (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/blog/cyprus-capsule-wardrobe.h… (404)"
-            },
-            {
-              "yol": "/en",
-              "deger": "-> https://www.luxeva-cyprus.com/blog/how-to-tell-real-leather.… (404)"
-            }
-          ]
         }
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 779,
-        "sonKontrol": "2026-08-23T07:54:24.232Z",
-        "medyanMs": 65
+        "yanitMs": 766,
+        "sonKontrol": "2026-08-23T09:10:55.069Z",
+        "medyanMs": 210
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-10-30",
-        "kalanGun": 69
+        "kalanGun": 68
       },
       "sayfalar": {
         "taranan": 96,
@@ -2591,101 +2436,9 @@
         "/urun/karl-lagerfeld-sapka",
         "/en/product/karl-lagerfeld-sapka"
       ],
-      "kirikLinkler": [
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/collection.html",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/live-shots.html",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/reviews.html",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/about.html",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/contact.html",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/exchange.html",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/blog/choosing-jewellery-in-cyp…",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/blog/where-to-buy-handbags-nor…",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/blog/cyprus-capsule-wardrobe.h…",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/blog/how-to-tell-real-leather.…",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/blog/shoes-for-the-cyprus-heat…",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/blog/what-to-wear-cyprus-summe…",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://www.luxeva-cyprus.com/blog/bag-care-sun-salt-sea.htm…",
-          "kod": 404,
-          "ic": true,
-          "sayilir": true
-        }
-      ],
+      "kirikLinkler": [],
       "kirikOzet": {
-        "ic": 13,
+        "ic": 0,
         "dis": 0,
         "dogrulanmamis": 0
       },
@@ -3558,9 +3311,9 @@
       "url": "https://kktcsigortamerkezi.com",
       "aktif": true,
       "seo": {
-        "puan": 88,
-        "onceki": 66,
-        "trend": "+22"
+        "puan": 86,
+        "onceki": 88,
+        "trend": "-2"
       },
       "sorunlar": [
         {
@@ -3751,9 +3504,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 128,
-        "sonKontrol": "2026-08-23T07:55:33.391Z",
-        "medyanMs": 114
+        "yanitMs": 585,
+        "sonKontrol": "2026-08-23T09:12:12.346Z",
+        "medyanMs": 383
       },
       "ssl": {
         "gecerli": true,
@@ -3838,6 +3591,20 @@
       ],
       "kirikLinkler": [
         {
+          "kaynak": "/tr/sirketler/anadolu-sigorta",
+          "hedef": "https://kibris.anadolusigorta.com.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/sirketler/as-can-sigorta",
+          "hedef": "http://ascansigorta.com",
+          "kod": 500,
+          "ic": false,
+          "sayilir": false
+        },
+        {
           "kaynak": "/tr/sirketler/axa-sigorta",
           "hedef": "https://www.axasigorta.com.tr/kibris-subemiz",
           "kod": 404,
@@ -3863,7 +3630,7 @@
           "hedef": "https://www.grandplusinsurance.com",
           "kod": 0,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         },
         {
           "kaynak": "/tr/sirketler/tower-insurance",
@@ -3877,12 +3644,12 @@
           "hedef": "https://www.turksigorta.com",
           "kod": 0,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         }
       ],
       "kirikOzet": {
         "ic": 0,
-        "dis": 4,
+        "dis": 6,
         "dogrulanmamis": 2
       },
       "eksikMeta": {
@@ -4472,75 +4239,21 @@
   ],
   "degisiklikler": [
     {
-      "site": "animare",
-      "tip": "artis",
-      "mesaj": "SEO puani 70 → 99 (+29)",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "animare",
-      "tip": "yeni-sayfa",
-      "mesaj": "59 sayfa eklendi",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "magusapsikoloji",
-      "tip": "artis",
-      "mesaj": "SEO puani 66 → 96 (+30)",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "magusapsikoloji",
-      "tip": "yeni-sayfa",
-      "mesaj": "83 sayfa eklendi",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "taxsi",
-      "tip": "artis",
-      "mesaj": "SEO puani 66 → 96 (+30)",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "taxsi",
-      "tip": "yeni-sayfa",
-      "mesaj": "199 sayfa eklendi",
-      "tarih": "2026-08-23"
-    },
-    {
       "site": "luxeva",
+      "tip": "artis",
+      "mesaj": "SEO puani 67 → 87 (+20)",
+      "tarih": "2026-08-23"
+    },
+    {
+      "site": "kktcsigorta",
       "tip": "dusus",
-      "mesaj": "SEO puani 69 → 67 (-2)",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "luxeva",
-      "tip": "yeni-kirik",
-      "mesaj": "13 yeni kirik link",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "luxeva",
-      "tip": "yeni-sayfa",
-      "mesaj": "95 sayfa eklendi",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "kktcsigorta",
-      "tip": "artis",
-      "mesaj": "SEO puani 66 → 88 (+22)",
+      "mesaj": "SEO puani 88 → 86 (-2)",
       "tarih": "2026-08-23"
     },
     {
       "site": "kktcsigorta",
       "tip": "yeni-kirik",
-      "mesaj": "4 yeni kirik link",
-      "tarih": "2026-08-23"
-    },
-    {
-      "site": "kktcsigorta",
-      "tip": "yeni-sayfa",
-      "mesaj": "68 sayfa eklendi",
+      "mesaj": "2 yeni kirik link",
       "tarih": "2026-08-23"
     }
   ],
@@ -4638,11 +4351,6 @@
     {
       "seviye": "uyari",
       "site": "luxeva",
-      "mesaj": "13 kirik IC link — kendi sayfalarina 404 veriyor"
-    },
-    {
-      "seviye": "uyari",
-      "site": "luxeva",
       "mesaj": "66 sayfada schema alani eksik (Product.offers) — zengin sonuc cikmaz"
     },
     {
@@ -4653,7 +4361,7 @@
     {
       "seviye": "bilgi",
       "site": "kktcsigorta",
-      "mesaj": "4 kirik dis link — hedef site kapanmis, linki kaldir"
+      "mesaj": "6 kirik dis link — hedef site kapanmis, linki kaldir"
     },
     {
       "seviye": "uyari",
