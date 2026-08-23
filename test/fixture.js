@@ -152,9 +152,22 @@ export const BEKLENEN = [
 ];
 
 // ---- sunucu ----
+// Cloudflare "Just a moment..." ara sayfasi: 200 doner, govde 8 kelime, link/h1/
+// description yok. 23 Agustos 2026'da gercek taramayi bozan sey buydu.
+export const CHALLENGE_HTML =
+  '<html><head><title>Just a moment...</title></head><body>' +
+  '<p>Enable JavaScript and cookies to continue</p></body></html>';
+
 export function sunucuBaslat() {
   return new Promise((resolve) => {
+    // challengeAc() cagrilinca sunucu HER yola (robots.txt ve sitemap.xml dahil)
+    // ara sayfayi doner — WAF'a takilan bir taramanin birebir taklidi.
+    let challenge = false;
     const sunucu = http.createServer(async (req, res) => {
+      if (challenge) {
+        res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
+        return res.end(CHALLENGE_HTML);
+      }
       const kok = `http://${req.headers.host}`;
       const S = sayfalar(kok);
       const hamYol = new URL(req.url, kok).pathname;
@@ -186,7 +199,8 @@ export function sunucuBaslat() {
     });
     sunucu.listen(0, '127.0.0.1', () => {
       const { port } = sunucu.address();
-      resolve({ sunucu, kok: `http://127.0.0.1:${port}`, kapat: () => new Promise(r => sunucu.close(r)) });
+      resolve({ sunucu, kok: `http://127.0.0.1:${port}`, challengeAc: () => { challenge = true; },
+        kapat: () => new Promise(r => sunucu.close(r)) });
     });
   });
 }

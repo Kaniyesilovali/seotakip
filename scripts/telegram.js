@@ -79,6 +79,10 @@ const ekle = (anahtar, agirlik, metin) => olaylar.push({ anahtar, agirlik, metin
 
 for (const s of siteler) {
   const ad = s.ad || s.id;
+  // 0) tarama engellendi — panelde gorunen her sey bayat, once bunu bildir
+  if (s.taramaHatasi)
+    ekle(`tarama-basarisiz:${s.id}:${(s.taramaHatasi.tarih || '').slice(0, 10)}`, 'acil',
+      `🚧 <b>${ad}</b> tarama engellendi (${s.taramaHatasi.sayfa} sayfa gorulebildi) — panel verisi son basarili taramadan. WAF/bot dogrulamasina bak.`);
   // 1) site cokmus
   if (s.uptime && s.uptime.durum !== 'up')
     ekle(`down:${s.id}`, 'acil', `🔴 <b>${ad}</b> ERİŞİLEMİYOR (${s.uptime.durum})`);

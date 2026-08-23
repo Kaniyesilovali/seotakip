@@ -124,3 +124,36 @@ test('sondaki egik cizgi yonlendirmesi dongu sayilmaz, sayfa normal taranir', ()
   assert.ok((site.sayfaYollari || []).some(y => y.includes('egik-cizgi')),
     'sayfa icerik olarak taranmis olmali');
 });
+
+// REGRESYON: 23 Agustos 2026'da Cloudflare, tarayiciyi challenge sayfasina dusurdu.
+// crawl.js bunu gercek veri sanip 5 sitenin de iyi verisini ezdi; panel "Ortalama 0
+// ic link/sayfa", "GA4 yok", "h1 yok" gibi hayali sorunlar gosterdi ve puanlar dustu.
+// Artik saglik kontrolu bu sonucu reddedip onceki veriyi korumali.
+test('WAF challenge sayfasi: bozuk tarama eski veriyi ezmez', async () => {
+  fixture.challengeAc();
+  await calistir('node', [path.join(PROJE, 'scripts', 'crawl.js')], {
+    env: { ...process.env, SEOTAKIP_KOK: gecici }, timeout: 180000, maxBuffer: 32 * 1024 * 1024,
+  });
+  const sonra = JSON.parse(fs.readFileSync(path.join(gecici, 'data', 'data.json'), 'utf8'));
+  const s2 = sonra.siteler[0];
+
+  assert.ok(s2.taramaHatasi, 'engellenen tarama isaretlenmeli');
+  assert.equal(s2.taramaHatasi.sayfa, 1, 'challenge sayfasinda 1 sayfa gorulebilir');
+  assert.ok(s2.taramaHatasi.neden.some(n => n.kod === 'sayfa-cokusu'));
+
+  // veri korunmus mu — panelin gosterdigi her sey eski haliyle durmali
+  assert.equal(s2.sayfalar.taranan, site.sayfalar.taranan, 'sayfa sayisi korunmali');
+  assert.equal(s2.seo.puan, site.seo.puan, 'puan guncellenmemeli');
+  assert.equal(s2.iclink.ortLink, site.iclink.ortLink, 'ic link ortalamasi korunmali');
+  assert.equal(s2.icerik.ortKelime, site.icerik.ortKelime, 'kelime ortalamasi korunmali');
+  assert.deepEqual(s2.sorunlar, site.sorunlar, 'sorun listesi degismemeli');
+
+  assert.ok((sonra.uyarilar || []).some(u => u.seviye === 'kritik' && /Tarama basarisiz/i.test(u.mesaj)),
+    'kritik "tarama basarisiz" uyarisi uretilmeli');
+
+  // oneri motoru da bayat veriyi gizlememeli
+  await import('../assets/oneri-motoru.js');
+  const oneriler = globalThis.oneriUret(s2);
+  assert.ok(oneriler.some(o => o.alan === 'Tarama' && o.oncelik === 'kritik'),
+    'panelde ilk sirada "tarama engellendi" onerisi cikmali');
+});

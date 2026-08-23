@@ -178,7 +178,9 @@ node --test test/birim.test.js    # sadece birim (ms)
 - **`test/birim.test.js`** — tespit fonksiyonları ve katalog bütünlüğü.
 - **`test/ucbasa.test.js`** — **gerçek `crawl.js`'i** fixture siteye doğrultur ve
   `BEKLENEN` listesindeki her bulgunun yakalandığını doğrular. Geçici bir kökte çalışır
-  (`SEOTAKIP_KOK`), gerçek `data/data.json`'a dokunmaz.
+  (`SEOTAKIP_KOK`), gerçek `data/data.json`'a dokunmaz. Son testte fixture sunucusu
+  `challengeAc()` ile WAF moduna geçer: tarama ikinci kez koşar ve **eski verinin
+  ezilmediği** doğrulanır.
 
 Fikir OpenSEO'nun [badseo.dev](https://github.com/every-app/open-seo)'inden. İlk koşuşta iki gerçek hata yakaladı:
 
@@ -188,6 +190,38 @@ Fikir OpenSEO'nun [badseo.dev](https://github.com/every-app/open-seo)'inden. İl
 2. Yönlendirme döngüsü tespiti sondaki eğik çizgiyi normalize ettiği için `/tr → /tr/` gibi
    **meşru** yönlendirmeleri döngü sanıyordu (bir site "0 sayfa tarandı" ile bitti).
    `test/ucbasa.test.js` artık bu senaryoyu ayrıca bekliyor.
+
+## Tarama sağlık kontrolü (engellenen taramalar)
+
+`scripts/lib/tarama-dogrula.js` her taramanın sonucunu **önceki taramayla** karşılaştırır.
+WAF/bot doğrulaması (Cloudflare "Just a moment…" gibi) tarayıcıyı ara sayfaya düşürdüğünde
+sonuç teknik olarak geçerli görünür — 200 döner, HTML gelir — ama içi boştur. Bu veri iyi
+verinin üstüne yazılırsa panel hayali sorunlar gösterir.
+
+Bakılan sinyaller:
+
+| Kod | Anlamı |
+|---|---|
+| `sayfa-cokusu` | Önceki ≥10 sayfayken bu sefer ≤1 sayfa tarandı — **tek başına yeterli** |
+| `sayfa-dususu` | Sayfa sayısı %80'den fazla düştü |
+| `sitemap-bos` | sitemap.xml eskiden URL veriyordu, şimdi 0 (XML yerine HTML dönmüş) |
+| `robots-kayboldu` | robots.txt düz metin yerine HTML döndü, "yok" sayıldı |
+| `icerik-bos` | Ortalama kelime 100+'dan 30'un altına düştü |
+| `link-kayboldu` | Ortalama iç link 5+'tan 0'a düştü |
+
+`sayfa-cokusu` veya **en az iki** sinyal varsa tarama başarısız sayılır: o sitenin
+`data.json` kaydı **son başarılı taramadan olduğu gibi korunur**, üzerine `taramaHatasi`
+işareti konur. Panelde kartta/tabloda "tarama başarısız" rozeti, Öneriler'de kritik bir
+satır, Telegram'da acil uyarı çıkar. Puan, trend ve sorun listesi güncellenmez.
+
+Tek sinyal taramayı çöpe atmaz — robots.txt gerçekten silinmiş olabilir. İlk taramada
+(kıyaslanacak temel yokken) sonuç her hâlükârda kabul edilir, yoksa yeni eklenen site
+hiç kaydedilemez.
+
+> 23 Ağustos 2026: Cloudflare, GitHub Actions runner'ını challenge sayfasına düşürdü;
+> beş sitenin de anasayfası 8 kelimelik ara sayfa olarak geldi, hepsi "1 sayfa" tarandı.
+> Puanlar 95 → 66'ya indi, panel "Ortalama 0 iç link/sayfa" gibi uyarılar üretti. Bu kontrol
+> o olaydan sonra eklendi; `test/ucbasa.test.js` senaryoyu birebir tekrarlar.
 
 ## MCP sunucusu (`npm run mcp`)
 

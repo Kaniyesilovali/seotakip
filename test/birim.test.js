@@ -8,6 +8,7 @@ import {
   durumSinifi, sayfaSorunlari, ayniAdres,
 } from '../scripts/lib/sorun-tespit.js';
 import '../assets/sorun-katalogu.js';
+import { taramaDogrula, ESIKLER } from '../scripts/lib/tarama-dogrula.js';
 
 // ---- parmak izi ----
 test('metinParmakIzi: ayni metin ayni iz, farkli metin farkli iz', () => {
@@ -141,4 +142,79 @@ test('sorunlariZenginlestir: seviyeye gore siralar, metinleri doldurur', () => {
   assert.deepEqual(z.map(x => x.tip), ['title-yok', 'h1-yok', 'derin-sayfa']);
   assert.equal(z[0].seviye, 'kritik');
   assert.ok(z[0].nasil.length > 10, 'cozum metni katalogdan gelmeli');
+});
+
+
+// ---- tarama saglik kontrolu ----
+// Saglikli bir tarama nasil gorunur (84 sayfalik gercek bir siteden kisaltilmis)
+const saglikliTarama = {
+  sayfalar: { taranan: 84 },
+  sitemap: { varMi: true, urlSayisi: 84 },
+  robots: { varMi: true },
+  icerik: { ortKelime: 548 },
+  iclink: { ortLink: 25.2 },
+};
+// 23 Agustos 2026'da Cloudflare challenge'i boyle bir sonuc uretti
+const engellenmisTarama = {
+  sayfalar: { taranan: 1 },
+  sitemap: { varMi: true, urlSayisi: 0 },
+  robots: { varMi: false },
+  icerik: { ortKelime: 8 },
+  iclink: { ortLink: 0 },
+};
+
+test('taramaDogrula: engellenen tarama (challenge sayfasi) reddedilir', () => {
+  const r = taramaDogrula(engellenmisTarama, saglikliTarama);
+  assert.equal(r.gecerli, false);
+  const kodlar = r.neden.map(n => n.kod);
+  assert.ok(kodlar.includes('sayfa-cokusu'));
+  assert.ok(kodlar.includes('sitemap-bos'));
+  assert.ok(kodlar.includes('robots-kayboldu'));
+  assert.ok(kodlar.includes('icerik-bos'));
+  assert.ok(kodlar.includes('link-kayboldu'));
+});
+
+test('taramaDogrula: ayni saglikli tarama tekrar gelirse kabul edilir', () => {
+  const r = taramaDogrula(saglikliTarama, saglikliTarama);
+  assert.equal(r.gecerli, true);
+  assert.deepEqual(r.neden, []);
+});
+
+test('taramaDogrula: temel yoksa (ilk tarama) her sonuc kabul edilir', () => {
+  const r = taramaDogrula(engellenmisTarama, {});
+  assert.equal(r.gecerli, true, 'yeni eklenen site hic kaydedilemez hale gelmemeli');
+  assert.equal(r.temelYok, true);
+});
+
+test('taramaDogrula: tek sinyal mesru degisiklik sayilir, veri reddedilmez', () => {
+  // robots.txt gercekten silinmis olabilir — tek basina taramayi cope atmaz
+  const r = taramaDogrula({ ...saglikliTarama, robots: { varMi: false } }, saglikliTarama);
+  assert.equal(r.gecerli, true);
+  assert.deepEqual(r.neden.map(n => n.kod), ['robots-kayboldu']);
+});
+
+test('taramaDogrula: iki sinyal birlikte gelirse reddedilir', () => {
+  const r = taramaDogrula({ ...saglikliTarama, robots: { varMi: false }, icerik: { ortKelime: 5 } }, saglikliTarama);
+  assert.equal(r.gecerli, false);
+  assert.equal(r.neden.length, 2);
+});
+
+test('taramaDogrula: sayfa cokusu tek basina yeter', () => {
+  // sadece sayfa sayisi coktu, digerleri "normal" gorunuyor
+  const r = taramaDogrula({ ...saglikliTarama, sayfalar: { taranan: 1 } }, saglikliTarama);
+  assert.equal(r.gecerli, false);
+  assert.deepEqual(r.neden.map(n => n.kod), ['sayfa-cokusu']);
+});
+
+test('taramaDogrula: gercek buyume/kucuime yanlis alarm uretmez', () => {
+  const buyudu = { ...saglikliTarama, sayfalar: { taranan: 120 }, sitemap: { varMi: true, urlSayisi: 120 } };
+  assert.equal(taramaDogrula(buyudu, saglikliTarama).gecerli, true);
+  // 84 -> 40: yarisi silinmis ama esik (%20) asilmadi
+  const kuculdu = { ...saglikliTarama, sayfalar: { taranan: 40 }, sitemap: { varMi: true, urlSayisi: 40 } };
+  assert.equal(taramaDogrula(kuculdu, saglikliTarama).gecerli, true);
+});
+
+test('taramaDogrula: onceki tarama da kucukse kiyas yapilmaz', () => {
+  const kucukTemel = { ...saglikliTarama, sayfalar: { taranan: ESIKLER.temelSayfa - 1 } };
+  assert.equal(taramaDogrula(engellenmisTarama, kucukTemel).temelYok, true);
 });

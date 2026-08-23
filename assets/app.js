@@ -105,6 +105,16 @@ function tbadge(trend){
   return `<span class="tbadge" style="background:${bg};color:${c}">${up?'▲':'▼'} SEO ${trend}</span>`;
 }
 
+// Tarama saglik kontrolunden gecemeyen site: ekrandaki her sey SON BASARILI
+// taramadan geliyor. Kullanici bunu bilmeden karar vermesin diye her yerde ayni rozet.
+function taramaRozeti(s, kisa){
+  if(!s?.taramaHatasi) return '';
+  const t = (s.taramaHatasi.tarih||'').slice(0,10);
+  const ip = `${s.taramaHatasi.tarih ? t+' taramasi engellendi' : 'tarama engellendi'} — ${(s.taramaHatasi.neden||[]).map(n=>n.mesaj).join(' · ')}`;
+  const kacir = (v)=> String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+  return `<span class="tbadge" title="${kacir(ip)}" style="background:var(--bad-dim);color:var(--bad)">⚠ ${kisa?'bayat':'tarama başarısız — veriler '+t+' öncesinden'}</span>`;
+}
+
 function bolumBaslik(eyebrow, baslik, aciklama){
   return `<div class="bolum-baslik"><div class="eyebrow">${eyebrow}</div><h2>${baslik}</h2><p>${aciklama}</p></div>`;
 }
@@ -197,7 +207,8 @@ function siteKart(s){
         <span class="dot bg-${s.uptime?.durum==='up'?'ok':'bad'}"></span>
         <div><b style="font-family:var(--disp);font-weight:600;font-size:16px">${s.ad}</b>
           <a href="${s.url}" target="_blank" rel="noopener" style="display:block;font-size:12.5px;color:var(--muted)">${kisaUrl(s.url)}</a></div>
-      </div>${tbadge(s.seo?.trend)}
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">${tbadge(s.seo?.trend)}${taramaRozeti(s)}</div>
     </div>
     <div style="display:flex;align-items:center;gap:16px;margin-top:14px">
       ${kadran(s.seo?.puan, 92)}
@@ -407,7 +418,7 @@ const VIEWS = {
   siteler(){
     const satir = (s)=> `<tr>
       <td><div style="display:flex;align-items:center;gap:8px"><span class="dot bg-${s.uptime?.durum==='up'?'ok':'bad'}"></span>
-        <div><div class="site-ad">${s.ad}</div><a href="${s.url}" target="_blank" style="font-size:12px;color:var(--signal)">${kisaUrl(s.url)}</a></div></div></td>
+        <div><div class="site-ad">${s.ad} ${taramaRozeti(s, true)}</div><a href="${s.url}" target="_blank" style="font-size:12px;color:var(--signal)">${kisaUrl(s.url)}</a></div></div></td>
       <td class="ort t-${puanTon(s.seo?.puan)}" style="font-family:var(--disp);font-weight:600">${s.seo?.puan??'–'}</td>
       <td class="ort">${tbadge(s.seo?.trend)}</td>
       <td class="ort">${s.sayfalar?.taranan??'–'}</td>

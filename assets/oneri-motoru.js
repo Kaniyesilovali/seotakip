@@ -14,6 +14,7 @@ const ONCELIK_SIRA = { kritik: 0, yuksek: 1, orta: 2, dusuk: 3 };
 const ETKI = { kritik: 4, yuksek: 3, orta: 2, dusuk: 1 };
 const EFOR = {
   'SSL':1,'Kirik link':1,'Sitemap':1,'Meta':1,'Gorsel alt':1,'Olcum':1,'Schema':1,'AI bot':1,'llms.txt':1,'Schema alan':1,'Robots':1,
+  'Tarama':2,
   'Kirik sayfa':2,'Yonlendirme':2,'Canonical':1,'Yinelenen meta':1,
   'Ince icerik':3,'Yinelenen icerik':3,'Engellenen sayfa':2,
   'Ic link':2,'Orphan':2,'CLS':2,'LCP':2,'Kelime firsati':2,'Kelime dususu':2,'Indeks':2,'Icerik':2,'Kanibalizasyon':2,'Icerik boslugu':2,
@@ -27,6 +28,10 @@ function oneriUret(s){
     const efor = EFOR[alan] || 2;
     o.push({ site:s.ad, siteId:s.id, alan, oncelik, mesaj, efor, etki:ETKI[oncelik], hizliKazanim: efor===1 && (oncelik==='kritik'||oncelik==='yuksek') });
   };
+  // Tarama saglik kontrolunden gecemediyse asagidaki TUM bulgular son basarili
+  // taramadan gelir. Bunu ilk siraya koy; yoksa bayat veriyle is yapilir.
+  if (s.taramaHatasi) ekle('Tarama','kritik',
+    `Son tarama engellendi (${(s.taramaHatasi.tarih||'').slice(0,10)}) — bu sitedeki diğer bulgular son başarılı taramadan. Muhtemel sebep: WAF/bot doğrulaması. WAF'ta tarayıcıya izin ver ve taramayı tekrar çalıştır.`);
   if (s.ssl && !s.ssl.gecerli) ekle('SSL','kritik','SSL yok/geçersiz — hemen kur.');
   else if (s.ssl && s.ssl.kalanGun<=30) ekle('SSL', s.ssl.kalanGun<=14?'kritik':'yuksek', `SSL ${s.ssl.kalanGun} gün sonra doluyor — yenile.`);
   const ko = s.kirikOzet||{};

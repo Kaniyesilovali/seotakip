@@ -13,6 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ayristir as robotsAyristir, izinVar, botOzeti, icerikSinyali, tamamenKapali } from './lib/robots.js';
 import { metinParmakIzi, siteSorunlari, durumSinifi } from './lib/sorun-tespit.js';
+import { taramaDogrula } from './lib/tarama-dogrula.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // SEOTAKIP_KOK: config'i ve ciktilari baska bir klasorden okuyup oraya yazar.
@@ -606,12 +607,35 @@ async function main() {
   const aktif = (cfg.siteler || []).filter(s => s.aktif !== false && s.url && (!argSite || s.id === argSite));
   if (argSite && !aktif.length) { console.error(`✕ --site=${argSite}: sites.config.json'da boyle bir aktif site yok`); process.exit(1); }
   const siteler = [];
+  const basarisizlar = [];   // saglik kontrolunden gecemeyen taramalar
 
   for (const site of aktif) {
     const eski = oncekiSiteler[site.id] || {};
     let tarama;
     try { tarama = await siteTara(site, eski); }
     catch (e) { console.error(`\n  ✕ ${site.ad} hata: ${e.message}`); continue; }
+
+    // Tarama saglik kontrolu: WAF/challenge sayfasi gelmisse sonuc "gercek veri"
+    // degildir. Iyi verinin ustune yazmak yerine onceki kaydi oldugu gibi koru ve
+    // sitenin uzerine "taramaHatasi" isareti birak (panel + Telegram bunu gosterir).
+    const dogrulama = taramaDogrula(tarama, eski);
+    if (!dogrulama.gecerli) {
+      basarisizlar.push({ id: site.id, ad: site.ad, dogrulama });
+      console.error(`\n  ✕ ${site.ad}: TARAMA BASARISIZ — onceki veri korundu (${dogrulama.ozet})`);
+      dogrulama.neden.forEach(n => console.error(`     · ${n.kod}: ${n.mesaj}`));
+      siteler.push({
+        ...eski,
+        id: site.id, ad: site.ad, url: site.url, aktif: true,
+        taramaHatasi: {
+          tarih: bugun(),
+          sayfa: tarama.sayfalar?.taranan ?? 0,
+          oncekiSayfa: eski.sayfalar?.taranan ?? 0,
+          neden: dogrulama.neden,
+          mesaj: 'Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan.',
+        },
+      });
+      continue;
+    }
 
     siteler.push({
       id: site.id, ad: site.ad, url: site.url, aktif: true,
@@ -657,6 +681,10 @@ async function main() {
   // uyarilar
   const uyarilar = [];
   tumSiteler.forEach(s => {
+    // Tarama basarisizsa asagidaki bulgular ESKI (son basarili) taramadan gelir;
+    // once bunu soyle ki panelde/raporda kimse bayat veriye bakip is yapmasin.
+    if (s.taramaHatasi) uyarilar.push({ seviye: 'kritik', site: s.id,
+      mesaj: `Tarama basarisiz (${s.taramaHatasi.tarih.slice(0, 10)}): ${s.taramaHatasi.neden.map(n => n.kod).join(', ')} — veriler son basarili taramadan, puan guncellenmedi` });
     if (s.ssl?.gecerli && s.ssl.kalanGun <= 30) uyarilar.push({ seviye: s.ssl.kalanGun <= 14 ? 'kritik' : 'uyari', site: s.id, mesaj: `SSL sertifikasi ${s.ssl.kalanGun} gun sonra doluyor (${s.ssl.bitis})` });
     if (!s.ssl?.gecerli) uyarilar.push({ seviye: 'kritik', site: s.id, mesaj: 'SSL sertifikasi gecersiz/erisilemez' });
     if (s.uptime?.durum === 'down') uyarilar.push({ seviye: 'kritik', site: s.id, mesaj: 'Site erisilemez (down)' });
@@ -721,8 +749,15 @@ async function main() {
   fs.mkdirSync(path.join(KOK, 'assets'), { recursive: true });
   fs.writeFileSync(path.join(KOK, 'assets', 'fallback-data.js'), 'window.SEO_FALLBACK = ' + JSON.stringify(cikti) + ';\n');
 
-  console.log(`\n✅ Bitti. ${siteler.length} site, ortalama puan ${ortalama}, ${toplamKirik} kirik link, ${uyarilar.length} uyari.`);
+  const basarili = siteler.length - basarisizlar.length;
+  console.log(`\n✅ Bitti. ${basarili}/${siteler.length} site basariyla tarandi, ortalama puan ${ortalama}, ${toplamKirik} kirik link, ${uyarilar.length} uyari.`);
   console.log(`   → data/data.json guncellendi.`);
+  if (basarisizlar.length) {
+    console.log(`\n⚠️  ${basarisizlar.length} sitede tarama BASARISIZ — o sitelerin verisi son basarili taramadan korundu:`);
+    basarisizlar.forEach(b => console.log(`   · ${b.ad}: ${b.dogrulama.neden.map(n => n.kod).join(', ')}`));
+    console.log('   Muhtemel sebep: WAF/bot dogrulamasi (Cloudflare vb.) tarayiciyi challenge sayfasina dusuruyor.');
+    console.log('   Cozum: WAF\'ta bu tarayicinin User-Agent\'ina veya IP\'sine izin ver, sonra taramayi tekrar calistir.');
+  }
 }
 
 main().catch(e => { console.error('HATA:', e); process.exit(1); });
