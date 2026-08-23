@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-23T09:13:37.307Z",
+  "guncelleme": "2026-08-23T11:40:34.561Z",
   "ozet": {
     "toplamSite": 5,
-    "ortalamaSeoPuan": 93,
-    "toplamKirikLink": 10,
+    "ortalamaSeoPuan": 92,
+    "toplamKirikLink": 8,
     "acilUyari": 0
   },
   "siteler": [
@@ -32,11 +32,11 @@
             },
             {
               "yol": "/tr/blog/kedilerde-dis-bakimi",
-              "deger": "166 karakter"
+              "deger": "176 karakter"
             },
             {
               "yol": "/en/blog/cat-dental-care",
-              "deger": "164 karakter"
+              "deger": "179 karakter"
             },
             {
               "yol": "/tr/blog/yaz-sicaginda-evcil-hayvan",
@@ -97,9 +97,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1385,
-        "sonKontrol": "2026-08-23T09:05:06.669Z",
-        "medyanMs": 378
+        "yanitMs": 1929,
+        "sonKontrol": "2026-08-23T11:31:08.048Z",
+        "medyanMs": 441
       },
       "ssl": {
         "gecerli": true,
@@ -200,7 +200,7 @@
         "sorunluSayfa": 0
       },
       "icerik": {
-        "ortKelime": 585,
+        "ortKelime": 650,
         "inceSayfa": 6,
         "esik": 200,
         "ornekler": [
@@ -493,14 +493,14 @@
         "keywordYogunluk": "olculmedi"
       },
       "iclink": {
-        "ortLink": 22.2,
+        "ortLink": 22.3,
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 57,
-        "masaustuPuan": 83,
-        "lcp": 9.4,
-        "inp": 174,
+        "mobilPuan": 40,
+        "masaustuPuan": 89,
+        "lcp": 11.7,
+        "inp": 746,
         "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -758,9 +758,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 830,
-        "sonKontrol": "2026-08-23T09:06:03.905Z",
-        "medyanMs": 216
+        "yanitMs": 870,
+        "sonKontrol": "2026-08-23T11:32:14.910Z",
+        "medyanMs": 241
       },
       "ssl": {
         "gecerli": true,
@@ -858,26 +858,11 @@
         "/sss.html",
         "/terapi-sureci.html"
       ],
-      "kirikLinkler": [
-        {
-          "kaynak": "/en/kvkk.html",
-          "hedef": "https://www.kvkk.gov.tr",
-          "kod": 0,
-          "ic": false,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/kvkk.html",
-          "hedef": "https://www.kvkk.gov.tr",
-          "kod": 0,
-          "ic": false,
-          "sayilir": false
-        }
-      ],
+      "kirikLinkler": [],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 2
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -1413,11 +1398,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 83,
-        "masaustuPuan": 98,
+        "mobilPuan": 75,
+        "masaustuPuan": 99,
         "lcp": 3.6,
-        "inp": 5,
-        "cls": 0.03,
+        "inp": 20,
+        "cls": 0.09,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -1635,9 +1620,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1022,
-        "sonKontrol": "2026-08-23T09:07:29.381Z",
-        "medyanMs": 398
+        "yanitMs": 1156,
+        "sonKontrol": "2026-08-23T11:33:42.062Z",
+        "medyanMs": 447
       },
       "ssl": {
         "gecerli": true,
@@ -2068,9 +2053,9 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 73,
-        "masaustuPuan": 95,
-        "lcp": 7.9,
+        "mobilPuan": 66,
+        "masaustuPuan": 91,
+        "lcp": 8.5,
         "inp": 0,
         "cls": 0,
         "erisilebilirlik": 96,
@@ -2215,8 +2200,8 @@
       "aktif": true,
       "seo": {
         "puan": 87,
-        "onceki": 67,
-        "trend": "+20"
+        "onceki": 87,
+        "trend": "+0"
       },
       "sorunlar": [
         {
@@ -2324,9 +2309,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 766,
-        "sonKontrol": "2026-08-23T09:10:55.069Z",
-        "medyanMs": 210
+        "yanitMs": 744,
+        "sonKontrol": "2026-08-23T11:37:21.709Z",
+        "medyanMs": 241
       },
       "ssl": {
         "gecerli": true,
@@ -3167,7 +3152,7 @@
       },
       "onpage": {
         "altEksik": 0,
-        "ogEksik": 10,
+        "ogEksik": 0,
         "tracking": [
           "GA4"
         ],
@@ -3178,10 +3163,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 65,
-        "masaustuPuan": 89,
-        "lcp": 7.1,
-        "inp": 60,
+        "mobilPuan": 77,
+        "masaustuPuan": 94,
+        "lcp": 5.1,
+        "inp": 104,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -3311,8 +3296,8 @@
       "url": "https://kktcsigortamerkezi.com",
       "aktif": true,
       "seo": {
-        "puan": 86,
-        "onceki": 88,
+        "puan": 84,
+        "onceki": 86,
         "trend": "-2"
       },
       "sorunlar": [
@@ -3504,9 +3489,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 585,
-        "sonKontrol": "2026-08-23T09:12:12.346Z",
-        "medyanMs": 383
+        "yanitMs": 468,
+        "sonKontrol": "2026-08-23T11:38:43.126Z",
+        "medyanMs": 448
       },
       "ssl": {
         "gecerli": true,
@@ -3595,14 +3580,14 @@
           "hedef": "https://kibris.anadolusigorta.com.tr",
           "kod": 0,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         },
         {
           "kaynak": "/tr/sirketler/as-can-sigorta",
           "hedef": "http://ascansigorta.com",
           "kod": 500,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         },
         {
           "kaynak": "/tr/sirketler/axa-sigorta",
@@ -3649,8 +3634,8 @@
       ],
       "kirikOzet": {
         "ic": 0,
-        "dis": 6,
-        "dogrulanmamis": 2
+        "dis": 8,
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -4048,7 +4033,7 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 80,
+        "mobilPuan": 82,
         "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
@@ -4239,15 +4224,9 @@
   ],
   "degisiklikler": [
     {
-      "site": "luxeva",
-      "tip": "artis",
-      "mesaj": "SEO puani 67 → 87 (+20)",
-      "tarih": "2026-08-23"
-    },
-    {
       "site": "kktcsigorta",
       "tip": "dusus",
-      "mesaj": "SEO puani 88 → 86 (-2)",
+      "mesaj": "SEO puani 86 → 84 (-2)",
       "tarih": "2026-08-23"
     },
     {
@@ -4258,6 +4237,12 @@
     }
   ],
   "raporlar": [
+    {
+      "ad": "Haftalık rapor — 23 Ağustos 2026",
+      "tarih": "2026-08-23",
+      "tur": "haftalik",
+      "dosya": "data/raporlar/2026-08-23-haftalik.html"
+    },
     {
       "ad": "Haftalık rapor — 21 Ağustos 2026",
       "tarih": "2026-08-21",
@@ -4361,7 +4346,7 @@
     {
       "seviye": "bilgi",
       "site": "kktcsigorta",
-      "mesaj": "6 kirik dis link — hedef site kapanmis, linki kaldir"
+      "mesaj": "8 kirik dis link — hedef site kapanmis, linki kaldir"
     },
     {
       "seviye": "uyari",
