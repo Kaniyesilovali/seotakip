@@ -353,17 +353,26 @@ bir bildirim varsa panel bunu yazar).
 - [~] Hız / Core Web Vitals — `scripts/pagespeed.js` hazır; **ücretsiz PageSpeed API anahtarı** bekliyor (aşağıya bak)
 - [~] Otomasyon — `.github/workflows/tarama.yml` hazır; GitHub'a **push** bekliyor
 - [~] Aşama 3 — Search Console (`scripts/searchconsole.js`) hazır; **servis hesabı** bekliyor (aşağıda)
-- [~] Aşama 4 — AI içerik üretici (`scripts/aiblog.js`) hazır; **Gemini API anahtarı** bekliyor (aşağıda)
+- [x] Aşama 4 — AI içerik üretici: Claude yolu çalışır (panelden prompt → `scripts/icerik-ekle.js`);
+      Gemini yolu (`scripts/aiblog.js`) yedek, **API anahtarı** bekliyor (aşağıda)
 - [x] Aşama 5 — GEO/AI bot takibi (`geo-ekle.js` + `botlog.js`), HTML/PDF rapor (`rapor.js`),
       Telegram uyarı (`telegram.js`; **bot token'ı** bekliyor — aşağıda)
 
-## AI İçerik / Auto SEO Blog kurulumu (ücretsiz, Gemini)
+## AI İçerik / Auto SEO Blog
+
+**A — Claude ile (önerilen, API anahtarı yok):**
+
+1. Panelde "AI İçerik / Blog" → önerilen konu satırında **"Claude promptu kopyala"**
+2. Bu repoda açık Claude Code oturumuna yapıştır → içerik üretilir
+3. Claude yazıyı frontmatter'lı markdown yapar ve `node scripts/icerik-ekle.js <dosya>` ile panele ekler
+   (elle de çalıştırabilirsin; `.md` frontmatter veya `.json` kabul eder)
+
+**B — Gemini ile (yedek, ücretsiz free tier):**
 
 1. [Google AI Studio → Get API key](https://aistudio.google.com/apikey) → ücretsiz anahtar al
 2. `.env`'e ekle: `GEMINI_API_KEY=SENIN_ANAHTARIN` (istersen `GEMINI_MODEL=gemini-2.0-flash`)
 3. Üretilebilecek fırsat kelimelerini listele: `npm run icerik`
 4. Bir konu için içerik üret: `npm run icerik -- <siteId> "<anahtar kelime>"`
-   (veya panelde "AI İçerik / Blog" bölümünden komutu kopyala)
 5. Tüm sitelerin ilk fırsatı için toplu: `node scripts/aiblog.js --firsatlar`
 
 Üretilen içerik: `data/icerikler/<slug>.md` (sitene yapıştır) + panelde "Üretilen içerikler"de listelenir

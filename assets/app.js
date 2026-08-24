@@ -611,8 +611,17 @@ const VIEWS = {
     const firsatlar = [];
     (VERI.siteler||[]).forEach(s => (s.icerikBoslugu||[]).forEach(g=>{ if(g.tip==='firsat') firsatlar.push({siteId:s.id,site:s.ad,kelime:g.kelime,poz:g.rakipPoz}); }));
     const uretilen = VERI.uretilenIcerikler||[];
+    // Uretim Claude ile: satirin butonu, bu repoda acik Claude Code oturumuna yapistirilacak
+    // hazir promptu kopyalar. Prompt, uretilen yaziyi icerik-ekle.js ile panele de ekletir.
+    const attr = (v)=> String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+    const claudePrompt = (f)=> `${f.site} sitesi (siteId: ${f.siteId}) için "${f.kelime}" anahtar kelimesini hedefleyen `
+      + `SEO uyumlu blog içeriği yaz. Önce seotakip MCP'de baglam_oku(site: "${f.siteId}") ile sitenin bağlamını oku, `
+      + `sonra ai-seo skill'ini kullan. 600-1000 kelime gövde, H2/H3 alt başlıklar, anahtar kelime başlıkta ve ilk `
+      + `paragrafta, sonunda "## Sıkça Sorulan Sorular" bölümü (### soru + cevap). İç linkleri yalnızca sitenin gerçek `
+      + `sayfalarına ver, URL uydurma. Yazıyı frontmatter'lı markdown olarak kaydet (siteId, kelime, baslik, metaAciklama, `
+      + `kaynak: Claude) ve "node scripts/icerik-ekle.js <dosya>" ile panele ekle.`;
     const oneriSatir = (f,i)=>`<tr><td>${f.kelime}</td><td style="color:var(--muted)">${f.site}</td><td class="ort">${cip('#'+f.poz,'warn')}</td>
-      <td class="ort"><input id="cmd-${i}" class="gizli" value='node scripts/aiblog.js ${f.siteId} "${f.kelime}"'><button class="btn mini" onclick="kopyala('cmd-${i}',this)">komutu kopyala</button></td></tr>`;
+      <td class="ort"><input id="cmd-${i}" class="gizli" value="${attr(claudePrompt(f))}"><button class="btn mini" onclick="kopyala('cmd-${i}',this)">Claude promptu kopyala</button></td></tr>`;
     const kart = (c,i)=>`<div class="kart" style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;gap:12px">
       <div><p style="font-family:var(--disp);font-weight:600;margin:0">${c.baslik}</p><p style="font-size:11px;color:var(--faint);margin:2px 0 0">${c.site} · "${c.kelime}" · ${c.kelimeSayisi} kelime · ${c.tarih}${c.kaynak?' · '+c.kaynak:''}</p></div>
       <button class="btn mini" onclick="document.getElementById('body-${i}').classList.toggle('gizli')">göster/gizle</button></div>
@@ -622,8 +631,10 @@ const VIEWS = {
     return bolumBaslik('İçerik & Sıralama','AI İçerik / Auto SEO Blog','SEO uyumlu içerik üret. Fırsat kelimelerine göre konu önerisi + üretilen yazılar.') +
       `<div class="kart" style="margin-bottom:18px;font-size:13.5px;color:var(--muted);line-height:1.6">
         <p style="color:var(--text);font-weight:600;margin:0 0 4px">Nasıl çalışır?</p>
-        <b>A — Claude ile (önerilen):</b> Bu Claude oturumunda "&lt;site&gt; için '&lt;kelime&gt;' içeriği yaz" de. SEO skill'iyle üretir, panele ekler.<br>
-        <b>B — Gemini ile:</b> <code style="color:var(--signal)">.env</code>'e <code style="color:var(--signal)">GEMINI_API_KEY</code> ekle, aşağıdan komutu kopyala.</div>` +
+        <b>A — Claude ile (önerilen):</b> Aşağıdaki satırda <b>“Claude promptu kopyala”</b>ya bas, bu repodaki Claude Code oturumuna yapıştır.
+        İçerik üretilir ve <code style="color:var(--signal)">node scripts/icerik-ekle.js</code> ile panele eklenir — API anahtarı gerekmez.<br>
+        <b>B — Gemini (yedek):</b> <code style="color:var(--signal)">.env</code>'e <code style="color:var(--signal)">GEMINI_API_KEY</code> ekle,
+        <code style="color:var(--signal)">node scripts/aiblog.js &lt;siteId&gt; "&lt;kelime&gt;"</code> çalıştır.</div>` +
       stBaslik('Önerilen konular', firsatlar.length) +
       (firsatlar.length ? `<div class="tablo-kap"><table class="tablo" style="min-width:520px"><thead><tr><th>Kelime</th><th>Site</th><th class="ort">Poz</th><th class="ort">Üret</th></tr></thead><tbody>${firsatlar.map(oneriSatir).join('')}</tbody></table></div>` : bosDurum('Fırsat kelimesi yok — Search Console bağla.')) +
       stBaslik('Üretilen içerikler', uretilen.length) +
