@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-24T04:05:28.880Z",
+  "guncelleme": "2026-08-24T04:02:40.908Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 93,
@@ -451,10 +451,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 61,
-        "masaustuPuan": 85,
-        "lcp": 9.8,
-        "inp": 127,
+        "mobilPuan": 64,
+        "masaustuPuan": 81,
+        "lcp": 9.7,
+        "inp": 52,
         "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -1352,11 +1352,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 89,
-        "masaustuPuan": 82,
-        "lcp": 3.6,
-        "inp": 42,
-        "cls": 0.02,
+        "mobilPuan": 94,
+        "masaustuPuan": 99,
+        "lcp": 2.8,
+        "inp": 24,
+        "cls": 0.03,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -2007,8 +2007,8 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 66,
-        "masaustuPuan": 91,
+        "mobilPuan": 71,
+        "masaustuPuan": 85,
         "lcp": 8.5,
         "inp": 0,
         "cls": 0,
@@ -3117,10 +3117,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 80,
-        "masaustuPuan": 94,
-        "lcp": 4.8,
-        "inp": 8,
+        "mobilPuan": 82,
+        "masaustuPuan": 96,
+        "lcp": 4.3,
+        "inp": 71,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4198,12 +4198,6 @@
     }
   ],
   "raporlar": [
-    {
-      "ad": "Haftalık rapor — 24 Ağustos 2026",
-      "tarih": "2026-08-24",
-      "tur": "haftalik",
-      "dosya": "data/raporlar/2026-08-24-haftalik.html"
-    },
     {
       "ad": "Haftalık rapor — 23 Ağustos 2026",
       "tarih": "2026-08-23",
