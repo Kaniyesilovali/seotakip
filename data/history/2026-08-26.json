@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-26T04:05:10.942Z",
+  "guncelleme": "2026-08-26T04:02:34.760Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 92,
@@ -451,10 +451,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 64,
-        "masaustuPuan": 88,
-        "lcp": 9.9,
-        "inp": 34,
+        "mobilPuan": 63,
+        "masaustuPuan": 0,
+        "lcp": 11,
+        "inp": 100,
         "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -1395,14 +1395,14 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 85,
-        "masaustuPuan": 99,
-        "lcp": 3.6,
-        "inp": 25,
-        "cls": 0.02,
-        "erisilebilirlik": 96,
-        "enIyiUygulama": 100,
-        "lighthouseSeo": 100,
+        "mobilPuan": 0,
+        "masaustuPuan": 80,
+        "lcp": null,
+        "inp": null,
+        "cls": null,
+        "erisilebilirlik": null,
+        "enIyiUygulama": null,
+        "lighthouseSeo": null,
         "kaynak": "lab"
       },
       "indeks": null,
@@ -2444,14 +2444,14 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 68,
-        "masaustuPuan": 91,
-        "lcp": 5.9,
-        "inp": 0,
-        "cls": 0,
-        "erisilebilirlik": 96,
-        "enIyiUygulama": 100,
-        "lighthouseSeo": 100,
+        "mobilPuan": 0,
+        "masaustuPuan": 85,
+        "lcp": null,
+        "inp": null,
+        "cls": null,
+        "erisilebilirlik": null,
+        "enIyiUygulama": null,
+        "lighthouseSeo": null,
         "kaynak": "lab"
       },
       "indeks": null,
@@ -3554,10 +3554,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 80,
-        "masaustuPuan": 94,
-        "lcp": 4.8,
-        "inp": 16,
+        "mobilPuan": 68,
+        "masaustuPuan": 0,
+        "lcp": 6.7,
+        "inp": 10,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4460,7 +4460,7 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 82,
+        "mobilPuan": 80,
         "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
