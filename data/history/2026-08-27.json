@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-08-27T13:55:16.781Z",
+  "guncelleme": "2026-08-27T13:51:45.221Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 92,
@@ -451,10 +451,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 62,
-        "masaustuPuan": 82,
+        "mobilPuan": 64,
+        "masaustuPuan": 88,
         "lcp": 9.9,
-        "inp": 8,
+        "inp": 34,
         "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -1419,11 +1419,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 84,
-        "masaustuPuan": 57,
-        "lcp": 3.2,
-        "inp": 268,
-        "cls": 0,
+        "mobilPuan": 85,
+        "masaustuPuan": 99,
+        "lcp": 3.6,
+        "inp": 25,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -2496,9 +2496,9 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 65,
-        "masaustuPuan": 94,
-        "lcp": 8,
+        "mobilPuan": 68,
+        "masaustuPuan": 91,
+        "lcp": 5.9,
         "inp": 0,
         "cls": 0,
         "erisilebilirlik": 96,
@@ -3634,10 +3634,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 84,
-        "masaustuPuan": 95,
-        "lcp": 4.2,
-        "inp": 30,
+        "mobilPuan": 80,
+        "masaustuPuan": 94,
+        "lcp": 4.8,
+        "inp": 16,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4569,10 +4569,10 @@
       },
       "hiz": {
         "mobilPuan": 82,
-        "masaustuPuan": 97,
+        "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
-        "cls": 0.02,
+        "cls": 0,
         "erisilebilirlik": 93,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
