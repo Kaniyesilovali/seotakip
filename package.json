@@ -19,7 +19,8 @@
     "test": "node --test \"test/*.test.js\"",
     "mcp": "node scripts/mcp.js",
     "baglam": "node scripts/baglam.js",
-    "waf-tani": "node scripts/waf-tani.js"
+    "waf-tani": "node scripts/waf-tani.js",
+    "gsc-tani": "node scripts/gsc-tani.js"
   },
   "keywords": [
     "seo",

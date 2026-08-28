@@ -73,6 +73,14 @@ jobs:
           fi
           printf '%s' "$GSC_KEY_JSON" > gsc-key.json
           trap 'rm -f gsc-key.json' EXIT
+          # Teshis ONCE calisir: asagidaki iki script de ayni zincire baglidir, zincir
+          # kopuksa IKISI BIRDEN "hata" der ama sebebini soylemez. Bu adim sebebi loga
+          # yazar (hangi servis hesabi, hangi property'ler, hangi izin). Cikis kodu
+          # bilerek yutulur -- teshis taramayi dusurmemeli.
+          node scripts/gsc-tani.js || {
+            echo "::warning title=GSC teshisi::Search Console zincirinde sorun raporlandi — adim logunda 'gecis teshisi' bolumune bak"
+            echo "- ⚠ GSC teshisi: **zincirde sorun** — adim logunda detay var" >> "$GITHUB_STEP_SUMMARY"
+          }
           if node scripts/searchconsole.js; then
             echo "- ✅ Search Console: tazelendi" >> "$GITHUB_STEP_SUMMARY"
           else

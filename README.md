@@ -463,7 +463,34 @@ Doldurur: her sitenin gerçek **sıralaması** (Anahtar Kelime bölümü) ve **f
 (İçerik Boşluğu — 2. sayfadaki yüksek gösterimli kelimeler).
 
 **Otomasyon için:** aynı JSON'un tamamını GitHub repo secret'ı olarak `GSC_KEY_JSON` adıyla ekle;
-workflow gece taramasında sıralamayı da otomatik çeker.
+workflow gece taramasında sıralamayı da otomatik çeker. Secret'a **ham JSON** yapıştırılmalı —
+base64 ya da tırnak içine alınmış hâli `JSON.parse` aşamasında patlar ve hem sıralama hem indeks
+adımı aynı anda düşer.
+
+### `npm run gsc-tani` — Search Console zinciri teşhisi
+
+Zincir dört halkalı: **anahtar ayrıştırılabiliyor** → **Google kimliği kabul ediyor** →
+**hesap property'lere ekli** → **izin seviyesi yetiyor**. Halkalardan biri koparsa
+`searchconsole.js` ve `indeks.js` **ikisi birden** düşer ama sebebini söylemez; iş özetinde
+sadece iki "hata" satırı görünür. Sebebi ölç:
+
+```bash
+npm run gsc-tani
+```
+
+Hiçbir şey yazmaz, sadece okur. Yüklü anahtarın **servis hesabı e-postasını**, projesini ve
+parmak izini (`sha256`, anahtarın kendisi asla loga düşmez) yazdırır; hesabın erişebildiği tüm
+property'leri izin seviyeleriyle listeler; sonra her siteyi bir property'e eşleyip karar verir:
+
+| Sonuç | Anlamı |
+|---|---|
+| `TAMAM` | Property eşleşti, izin `siteFullUser`/`siteOwner` — sıralama + indeks çalışır. |
+| `KISMI` | Property eşleşti ama izin "Sınırlı" — sıralama çalışır, **indeks sessizce boş döner**. |
+| `HATA` | Hiçbir property adayı eşleşmedi — servis hesabı bu siteye ekli değil. |
+
+Aynı script gece taramasında da, Search Console adımının başında otomatik çalışır: anahtar
+dosyaya yazıldıktan hemen sonra, iki script denenmeden önce. Çıkış kodu bilerek yutulur —
+teşhis taramayı düşürmemeli.
 
 ## İndeks Monitörü (`npm run indeks`)
 
