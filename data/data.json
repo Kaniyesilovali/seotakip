@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-28T13:02:49.478Z",
+  "guncelleme": "2026-08-28T13:27:44.245Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 92,
-    "toplamKirikLink": 4,
+    "toplamKirikLink": 7,
     "acilUyari": 0
   },
   "siteler": [
@@ -85,9 +85,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 560,
-        "sonKontrol": "2026-08-28T12:56:32.770Z",
-        "medyanMs": 98
+        "yanitMs": 2649,
+        "sonKontrol": "2026-08-28T13:14:25.908Z",
+        "medyanMs": 428
       },
       "ssl": {
         "gecerli": true,
@@ -485,10 +485,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 64,
-        "masaustuPuan": 83,
-        "lcp": 9.1,
-        "inp": 76,
+        "mobilPuan": 63,
+        "masaustuPuan": 82,
+        "lcp": 8.9,
+        "inp": 1,
         "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -857,9 +857,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 125,
-        "sonKontrol": "2026-08-28T12:57:08.951Z",
-        "medyanMs": 54
+        "yanitMs": 712,
+        "sonKontrol": "2026-08-28T13:15:32.055Z",
+        "medyanMs": 222
       },
       "ssl": {
         "gecerli": true,
@@ -867,8 +867,8 @@
         "kalanGun": 38
       },
       "sayfalar": {
-        "taranan": 86,
-        "indekslenebilir": 86,
+        "taranan": 88,
+        "indekslenebilir": 88,
         "noindex": 0
       },
       "sayfaYollari": [
@@ -884,6 +884,7 @@
         "/en/blog",
         "/en/blog/is-online-therapy-effective.html",
         "/en/blog/mental-health-international-students-famagusta.html",
+        "/en/blog/neuropsychological-assessment.html",
         "/en/blog/online-therapy-north-cyprus.html",
         "/en/blog/panic-attack-symptoms.html",
         "/en/blog/psychological-support-north-cyprus.html",
@@ -928,6 +929,7 @@
         "/blog/kuzey-kibris-psikolog-bulma.html",
         "/blog/kuzey-kibris-psikolojik-destek.html",
         "/blog/magusa-uluslararasi-ogrenciler-ruh-sagligi.html",
+        "/blog/noropsikolojik-degerlendirme-magusa.html",
         "/blog/okul-fobisi-cocuk.html",
         "/blog/online-terapi-etkili-mi.html",
         "/blog/panik-atak-belirtileri.html",
@@ -969,6 +971,7 @@
         "/en/blog/find-psychologist-north-cyprus.html": "2026-05-27",
         "/en/blog/is-online-therapy-effective.html": "2026-07-10",
         "/en/blog/mental-health-international-students-famagusta.html": "2026-05-27",
+        "/en/blog/neuropsychological-assessment.html": "2026-08-28",
         "/en/blog/online-therapy-north-cyprus.html": "2026-05-27",
         "/en/blog/panic-attack-symptoms.html": "2026-05-27",
         "/en/blog/psychological-support-north-cyprus.html": "2026-05-27",
@@ -991,6 +994,7 @@
         "/blog/kuzey-kibris-psikolog-bulma.html": "2026-07-06",
         "/blog/kuzey-kibris-psikolojik-destek.html": "2026-05-27",
         "/blog/magusa-uluslararasi-ogrenciler-ruh-sagligi.html": "2026-07-06",
+        "/blog/noropsikolojik-degerlendirme-magusa.html": "2026-08-28",
         "/blog/okul-fobisi-cocuk.html": "2026-07-29",
         "/blog/online-terapi-etkili-mi.html": "2026-07-10",
         "/blog/panik-atak-belirtileri.html": "2026-05-27",
@@ -1001,11 +1005,26 @@
         "/blog/tukenmislik-sendromu.html": "2026-07-18",
         "/blog/universite-ogrencileri-psikolojik-destek.html": "2026-05-27"
       },
-      "kirikLinkler": [],
+      "kirikLinkler": [
+        {
+          "kaynak": "/en/kvkk.html",
+          "hedef": "https://www.kvkk.gov.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/kvkk.html",
+          "hedef": "https://www.kvkk.gov.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        }
+      ],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 0
+        "dogrulanmamis": 2
       },
       "eksikMeta": {
         "title": 0,
@@ -1031,7 +1050,7 @@
         "sorunluSayfa": 32
       },
       "icerik": {
-        "ortKelime": 593,
+        "ortKelime": 612,
         "inceSayfa": 4,
         "esik": 200,
         "ornekler": [
@@ -1058,7 +1077,7 @@
       },
       "sitemap": {
         "varMi": true,
-        "urlSayisi": 86,
+        "urlSayisi": 88,
         "erisilemez": 0,
         "dosyalar": [
           "https://magusapsikoloji.com/sitemap.xml"
@@ -1082,7 +1101,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1094,7 +1113,7 @@
             "not": "ChatGPT arama indeksi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1106,7 +1125,7 @@
             "not": "soru aninda ziyaret",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1118,7 +1137,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1130,7 +1149,7 @@
             "not": "soru aninda ziyaret",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1142,7 +1161,7 @@
             "not": "arama indeksi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1154,7 +1173,7 @@
             "not": "Gemini / AI Overviews",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1166,7 +1185,7 @@
             "not": "Apple Intelligence",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1178,7 +1197,7 @@
             "not": "acik veri seti",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1190,7 +1209,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1202,7 +1221,7 @@
             "not": "Llama / Meta AI",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1214,7 +1233,7 @@
             "not": "klasik arama",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           },
@@ -1226,7 +1245,7 @@
             "not": "klasik arama + Copilot",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 86,
+            "toplamSayfa": 88,
             "tamKapali": false,
             "kural": null
           }
@@ -1235,8 +1254,8 @@
         "toplamAi": 11
       },
       "sayfaDurum": {
-        "toplam": 86,
-        "saglam": 52,
+        "toplam": 88,
+        "saglam": 54,
         "sorunlu": 34,
         "kirik": 0,
         "yonlendirme": 0,
@@ -1537,15 +1556,15 @@
         "keywordYogunluk": "olculmedi"
       },
       "iclink": {
-        "ortLink": 25.5,
+        "ortLink": 25.6,
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 87,
-        "masaustuPuan": 97,
-        "lcp": 3.5,
-        "inp": 46,
-        "cls": 0,
+        "mobilPuan": 96,
+        "masaustuPuan": 98,
+        "lcp": 2.6,
+        "inp": 9,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -1880,9 +1899,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 317,
-        "sonKontrol": "2026-08-28T12:58:06.838Z",
-        "medyanMs": 93
+        "yanitMs": 1688,
+        "sonKontrol": "2026-08-28T13:17:05.493Z",
+        "medyanMs": 433
       },
       "ssl": {
         "gecerli": true,
@@ -2698,11 +2717,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 72,
-        "masaustuPuan": 92,
-        "lcp": 6.8,
+        "mobilPuan": 80,
+        "masaustuPuan": 89,
+        "lcp": 4.1,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -3040,9 +3059,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 246,
-        "sonKontrol": "2026-08-28T13:00:10.333Z",
-        "medyanMs": 48
+        "yanitMs": 940,
+        "sonKontrol": "2026-08-28T13:20:50.830Z",
+        "medyanMs": 215
       },
       "ssl": {
         "gecerli": true,
@@ -3910,10 +3929,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 63,
-        "masaustuPuan": 94,
-        "lcp": 7.3,
-        "inp": 137,
+        "mobilPuan": 69,
+        "masaustuPuan": 95,
+        "lcp": 6.8,
+        "inp": 16,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4243,8 +4262,8 @@
       "aktif": true,
       "seo": {
         "puan": 89,
-        "onceki": 90,
-        "trend": "-1"
+        "onceki": 89,
+        "trend": "+0"
       },
       "sorunlar": [
         {
@@ -4451,9 +4470,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 88,
-        "sonKontrol": "2026-08-28T13:01:12.007Z",
-        "medyanMs": 86
+        "yanitMs": 574,
+        "sonKontrol": "2026-08-28T13:22:07.438Z",
+        "medyanMs": 421
       },
       "ssl": {
         "gecerli": true,
@@ -4593,6 +4612,13 @@
       },
       "kirikLinkler": [
         {
+          "kaynak": "/tr/sirketler/anadolu-sigorta",
+          "hedef": "https://kibris.anadolusigorta.com.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        },
+        {
           "kaynak": "/tr/sirketler/as-can-sigorta",
           "hedef": "http://ascansigorta.com",
           "kod": 500,
@@ -4624,7 +4650,7 @@
       "kirikOzet": {
         "ic": 0,
         "dis": 4,
-        "dogrulanmamis": 0
+        "dogrulanmamis": 1
       },
       "eksikMeta": {
         "title": 0,
@@ -5022,7 +5048,7 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 82,
+        "mobilPuan": 81,
         "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
@@ -5482,18 +5508,6 @@
       "site": "magusapsikoloji",
       "tip": "yeni-sayfa",
       "mesaj": "2 sayfa eklendi",
-      "tarih": "2026-08-28"
-    },
-    {
-      "site": "kktcsigorta",
-      "tip": "dusus",
-      "mesaj": "SEO puani 90 → 89 (-1)",
-      "tarih": "2026-08-28"
-    },
-    {
-      "site": "kktcsigorta",
-      "tip": "yeni-kirik",
-      "mesaj": "1 yeni kirik link",
       "tarih": "2026-08-28"
     }
   ],
