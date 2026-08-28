@@ -58,8 +58,8 @@ jobs:
           elif node scripts/pagespeed.js; then
             echo "- ✅ PageSpeed: tazelendi" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "::warning title=PageSpeed hata::scripts/pagespeed.js hata verdi — hiz verisi bayatliyor"
-            echo "- ⚠ PageSpeed: **hata** — hiz verisi bayatliyor" >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning title=PageSpeed eksik::scripts/pagespeed.js en az bir sitede olcum alamadi — o sitelerin hiz verisi tazelenmedi (eski deger korundu, uzerine 0 yazilmaz)"
+            echo "- ⚠ PageSpeed: **eksik** — bazi sitelerde olcum alinamadi, onceki deger korundu (adim logunda site listesi var)" >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Search Console (servis hesabi varsa)
