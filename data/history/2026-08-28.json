@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-28T07:53:45.554Z",
+  "guncelleme": "2026-08-28T08:21:44.115Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 92,
-    "toplamKirikLink": 4,
+    "toplamKirikLink": 5,
     "acilUyari": 0
   },
   "siteler": [
@@ -85,9 +85,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1856,
-        "sonKontrol": "2026-08-28T07:45:42.302Z",
-        "medyanMs": 282
+        "yanitMs": 827,
+        "sonKontrol": "2026-08-28T08:12:57.339Z",
+        "medyanMs": 320
       },
       "ssl": {
         "gecerli": true,
@@ -712,9 +712,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 212,
-        "sonKontrol": "2026-08-28T07:46:44.209Z",
-        "medyanMs": 150
+        "yanitMs": 592,
+        "sonKontrol": "2026-08-28T08:13:53.778Z",
+        "medyanMs": 184
       },
       "ssl": {
         "gecerli": true,
@@ -1584,9 +1584,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 853,
-        "sonKontrol": "2026-08-28T07:48:16.913Z",
-        "medyanMs": 215
+        "yanitMs": 1354,
+        "sonKontrol": "2026-08-28T08:15:01.572Z",
+        "medyanMs": 338
       },
       "ssl": {
         "gecerli": true,
@@ -2657,14 +2657,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 281,
-        "sonKontrol": "2026-08-28T07:51:06.719Z",
-        "medyanMs": 63
+        "yanitMs": 690,
+        "sonKontrol": "2026-08-28T08:18:11.797Z",
+        "medyanMs": 183
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-10-30",
-        "kalanGun": 64
+        "kalanGun": 63
       },
       "sayfalar": {
         "taranan": 96,
@@ -3644,9 +3644,9 @@
       "url": "https://kktcsigortamerkezi.com",
       "aktif": true,
       "seo": {
-        "puan": 90,
-        "onceki": 89,
-        "trend": "+1"
+        "puan": 89,
+        "onceki": 90,
+        "trend": "-1"
       },
       "sorunlar": [
         {
@@ -3853,9 +3853,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 126,
-        "sonKontrol": "2026-08-28T07:52:18.894Z",
-        "medyanMs": 134
+        "yanitMs": 364,
+        "sonKontrol": "2026-08-28T08:19:20.696Z",
+        "medyanMs": 325
       },
       "ssl": {
         "gecerli": true,
@@ -3988,11 +3988,18 @@
       ],
       "kirikLinkler": [
         {
+          "kaynak": "/tr/sirketler/anadolu-sigorta",
+          "hedef": "https://kibris.anadolusigorta.com.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        },
+        {
           "kaynak": "/tr/sirketler/as-can-sigorta",
           "hedef": "http://ascansigorta.com",
           "kod": 500,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         },
         {
           "kaynak": "/tr/sirketler/axa-sigorta",
@@ -4018,7 +4025,7 @@
       ],
       "kirikOzet": {
         "ic": 0,
-        "dis": 3,
+        "dis": 4,
         "dogrulanmamis": 1
       },
       "eksikMeta": {
@@ -4609,8 +4616,14 @@
   "degisiklikler": [
     {
       "site": "kktcsigorta",
-      "tip": "artis",
-      "mesaj": "SEO puani 89 → 90 (+1)",
+      "tip": "dusus",
+      "mesaj": "SEO puani 90 → 89 (-1)",
+      "tarih": "2026-08-28"
+    },
+    {
+      "site": "kktcsigorta",
+      "tip": "yeni-kirik",
+      "mesaj": "1 yeni kirik link",
       "tarih": "2026-08-28"
     }
   ],
@@ -4819,7 +4832,7 @@
     {
       "seviye": "bilgi",
       "site": "kktcsigorta",
-      "mesaj": "3 kirik dis link — hedef site kapanmis, linki kaldir"
+      "mesaj": "4 kirik dis link — hedef site kapanmis, linki kaldir"
     },
     {
       "seviye": "uyari",

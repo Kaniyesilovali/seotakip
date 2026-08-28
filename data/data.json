@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-28T07:53:45.554Z",
+  "guncelleme": "2026-08-28T08:25:35.734Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 92,
-    "toplamKirikLink": 4,
+    "toplamKirikLink": 5,
     "acilUyari": 0
   },
   "siteler": [
@@ -85,9 +85,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1856,
-        "sonKontrol": "2026-08-28T07:45:42.302Z",
-        "medyanMs": 282
+        "yanitMs": 827,
+        "sonKontrol": "2026-08-28T08:12:57.339Z",
+        "medyanMs": 320
       },
       "ssl": {
         "gecerli": true,
@@ -451,14 +451,14 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 62,
-        "masaustuPuan": 82,
-        "lcp": 9.9,
-        "inp": 8,
-        "cls": 0,
-        "erisilebilirlik": 95,
-        "enIyiUygulama": 100,
-        "lighthouseSeo": 100,
+        "mobilPuan": 0,
+        "masaustuPuan": 79,
+        "lcp": null,
+        "inp": null,
+        "cls": null,
+        "erisilebilirlik": null,
+        "enIyiUygulama": null,
+        "lighthouseSeo": null,
         "kaynak": "lab"
       },
       "indeks": {
@@ -712,9 +712,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 212,
-        "sonKontrol": "2026-08-28T07:46:44.209Z",
-        "medyanMs": 150
+        "yanitMs": 592,
+        "sonKontrol": "2026-08-28T08:13:53.778Z",
+        "medyanMs": 184
       },
       "ssl": {
         "gecerli": true,
@@ -1353,10 +1353,10 @@
       },
       "hiz": {
         "mobilPuan": 84,
-        "masaustuPuan": 57,
-        "lcp": 3.2,
-        "inp": 268,
-        "cls": 0,
+        "masaustuPuan": 79,
+        "lcp": 3.5,
+        "inp": 68,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -1584,9 +1584,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 853,
-        "sonKontrol": "2026-08-28T07:48:16.913Z",
-        "medyanMs": 215
+        "yanitMs": 1354,
+        "sonKontrol": "2026-08-28T08:15:01.572Z",
+        "medyanMs": 338
       },
       "ssl": {
         "gecerli": true,
@@ -2401,11 +2401,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 65,
-        "masaustuPuan": 94,
-        "lcp": 8,
+        "mobilPuan": 80,
+        "masaustuPuan": 97,
+        "lcp": 4.1,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -2657,14 +2657,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 281,
-        "sonKontrol": "2026-08-28T07:51:06.719Z",
-        "medyanMs": 63
+        "yanitMs": 690,
+        "sonKontrol": "2026-08-28T08:18:11.797Z",
+        "medyanMs": 183
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-10-30",
-        "kalanGun": 64
+        "kalanGun": 63
       },
       "sayfalar": {
         "taranan": 96,
@@ -3511,10 +3511,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 84,
-        "masaustuPuan": 95,
-        "lcp": 4.2,
-        "inp": 30,
+        "mobilPuan": 68,
+        "masaustuPuan": 96,
+        "lcp": 6.7,
+        "inp": 247,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -3644,9 +3644,9 @@
       "url": "https://kktcsigortamerkezi.com",
       "aktif": true,
       "seo": {
-        "puan": 90,
-        "onceki": 89,
-        "trend": "+1"
+        "puan": 89,
+        "onceki": 90,
+        "trend": "-1"
       },
       "sorunlar": [
         {
@@ -3853,9 +3853,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 126,
-        "sonKontrol": "2026-08-28T07:52:18.894Z",
-        "medyanMs": 134
+        "yanitMs": 364,
+        "sonKontrol": "2026-08-28T08:19:20.696Z",
+        "medyanMs": 325
       },
       "ssl": {
         "gecerli": true,
@@ -3988,11 +3988,18 @@
       ],
       "kirikLinkler": [
         {
+          "kaynak": "/tr/sirketler/anadolu-sigorta",
+          "hedef": "https://kibris.anadolusigorta.com.tr",
+          "kod": 0,
+          "ic": false,
+          "sayilir": false
+        },
+        {
           "kaynak": "/tr/sirketler/as-can-sigorta",
           "hedef": "http://ascansigorta.com",
           "kod": 500,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         },
         {
           "kaynak": "/tr/sirketler/axa-sigorta",
@@ -4018,7 +4025,7 @@
       ],
       "kirikOzet": {
         "ic": 0,
-        "dis": 3,
+        "dis": 4,
         "dogrulanmamis": 1
       },
       "eksikMeta": {
@@ -4418,10 +4425,10 @@
       },
       "hiz": {
         "mobilPuan": 82,
-        "masaustuPuan": 97,
+        "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
-        "cls": 0.02,
+        "cls": 0,
         "erisilebilirlik": 93,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -4609,12 +4616,24 @@
   "degisiklikler": [
     {
       "site": "kktcsigorta",
-      "tip": "artis",
-      "mesaj": "SEO puani 89 → 90 (+1)",
+      "tip": "dusus",
+      "mesaj": "SEO puani 90 → 89 (-1)",
+      "tarih": "2026-08-28"
+    },
+    {
+      "site": "kktcsigorta",
+      "tip": "yeni-kirik",
+      "mesaj": "1 yeni kirik link",
       "tarih": "2026-08-28"
     }
   ],
   "raporlar": [
+    {
+      "ad": "Haftalık rapor — 28 Ağustos 2026",
+      "tarih": "2026-08-28",
+      "tur": "haftalik",
+      "dosya": "data/raporlar/2026-08-28-haftalik.html"
+    },
     {
       "ad": "Haftalık rapor — 24 Ağustos 2026",
       "tarih": "2026-08-24",
@@ -4819,7 +4838,7 @@
     {
       "seviye": "bilgi",
       "site": "kktcsigorta",
-      "mesaj": "3 kirik dis link — hedef site kapanmis, linki kaldir"
+      "mesaj": "4 kirik dis link — hedef site kapanmis, linki kaldir"
     },
     {
       "seviye": "uyari",
