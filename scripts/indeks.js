@@ -184,6 +184,7 @@ async function main() {
   console.log(`   servis hesabi: ${anahtar.client_email}`);
 
   const bayatSinir = Date.now() - TAZELIK_GUN * 864e5;
+  let guncellenen = 0;
 
   for (const site of aktif) {
     process.stdout.write(`\n▶ ${site.ad} … `);
@@ -269,13 +270,22 @@ async function main() {
     if (yonlendirilen) console.log(`     ↪ ${yonlendirilen} URL yonlendirildi, son hali denetlendi (ornek: ${siteCache[sorulacak[0]]?.denetlenen || '-'})`);
     if (kotaBitti) console.log('     ⏸ gunluk kota doldu, kalanlar yarinki calismada sorulacak');
     if (hataliSayi) console.log(`     x ${hataliSayi} URL denetlenemedi`);
+    guncellenen++;
   }
 
   veri.guncelleme = new Date().toISOString();
   fs.writeFileSync(veriYolu, JSON.stringify(veri, null, 2));
   fs.writeFileSync(cacheYolu, JSON.stringify(cache, null, 2));
   fs.writeFileSync(path.join(KOK, 'assets', 'fallback-data.js'), 'window.SEO_FALLBACK = ' + JSON.stringify(veri) + ';\n');
-  console.log('\n✅ Indeks verisi data.json\'a islendi.');
+  console.log(`\n${guncellenen ? '✅' : '✕'} Indeks: ${guncellenen}/${aktif.length} site guncellendi.`);
+  // searchconsole.js ile ayni kural: hicbir site guncellenmediyse is YESIL gorunmesin.
+  // Sessiz basari, veriyi haftalarca dondurup panelde bayat sayiyi taze gibi gosteriyordu.
+  if (!guncellenen) {
+    console.error('\n✕ Hicbir siteden indeks verisi alinamadi — indeks durumu TAZELENMEDI.');
+    console.error('  URL Inspection API "Sinirli" izinle CALISMAZ: GSC > Ayarlar > Kullanicilar ve izinler');
+    console.error(`  -> servis hesabina "Tam" izin ver: ${anahtar.client_email}`);
+    process.exit(1);
+  }
 }
 
 main().catch(e => { console.error('HATA:', e.message); process.exit(1); });

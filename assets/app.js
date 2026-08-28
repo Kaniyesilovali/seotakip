@@ -120,6 +120,15 @@ function bolumBaslik(eyebrow, baslik, aciklama){
 }
 const bosDurum = (m)=> `<div class="bos">${m}</div>`;
 const asamaRozeti = (n)=> `<span class="asama">Aşama ${n}</span>`;
+// Search Console verisi ne zaman cekildi? Damga yoksa/bayatsa tablo basliginda soyle —
+// pozisyon 28 GUNLUK ORTALAMA'dir, tarihi gormeden okunursa bugunun siralamasi sanilir.
+const olcumNotu = (s)=>{
+  if (!s.siralamaTarih) return ' <span style="font-size:11px;color:var(--faint);font-weight:400">· ölçüm tarihi bilinmiyor</span>';
+  const gun = Math.floor((Date.now() - new Date(s.siralamaTarih).getTime())/86400000);
+  const pen = s.siralamaPencere ? `${s.siralamaPencere.baslangic} → ${s.siralamaPencere.bitis}` : '28 gün';
+  const bayat = gun > 4;
+  return ` <span style="font-size:11px;font-weight:400;color:var(--${bayat?'warn':'faint'})">· ${pen} ortalaması${bayat?` · ${gun} gündür yenilenmedi`:''}</span>`;
+};
 const stBaslik = (baslik, sayi, more)=> `<div class="st"><h3>${baslik}</h3>${sayi!=null?`<span class="count">${sayi}</span>`:''}${more?`<button class="more" onclick="${more}">tümü →</button>`:''}</div>`;
 
 // site filtresi
@@ -564,7 +573,7 @@ const VIEWS = {
         return `<tr><td>${k.kelime}</td><td class="ort" style="font-family:var(--disp);font-weight:600">#${k.pozisyon}</td>
         <td class="ort ${rk}">${yon} ${Math.abs((k.onceki||k.pozisyon)-k.pozisyon)||''}</td><td class="ort" style="color:var(--muted)">${k.gosterim??'–'}</td>
         <td class="ort" style="color:var(--muted)">${k.tik??'–'}</td></tr>`; };
-      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}</div>
+      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}${olcumNotu(s)}</div>
         <table class="tablo" style="min-width:520px"><thead><tr><th>Anahtar kelime</th><th class="ort">Pozisyon</th><th class="ort">Değişim</th><th class="ort">Gösterim</th><th class="ort">Tık</th></tr></thead>
         <tbody>${list.map(satir).join('')}</tbody></table></div>`; }).join('');
     return bolumBaslik('İçerik & Sıralama','Anahtar Kelime','Search Console gerçek sıralama + trend.') + filtreBar() +
@@ -576,7 +585,7 @@ const VIEWS = {
       const firsatMi = list.some(g=>g.tip==='firsat');
       const satir=(g)=>{ const konum = g.tip==='firsat' ? `<span class="t-warn">#${g.rakipPoz}</span> <span style="color:var(--faint)">(sayfa ${Math.ceil(g.rakipPoz/10)})</span>` : `${g.rakip} <span style="color:var(--faint)">#${g.rakipPoz}</span>`;
         return `<tr><td>${g.kelime}</td><td class="ort">${g.hacim}</td><td>${konum}</td><td class="ort">${g.hacim>=200?cip('yüksek fırsat','ok'):cip('fırsat','warn')}</td></tr>`; };
-      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}</div>
+      return `<div class="tablo-kap" style="margin-bottom:14px"><div class="tablo-bas">${s.ad}${olcumNotu(s)}</div>
         <table class="tablo" style="min-width:520px"><thead><tr><th>Kelime</th><th class="ort">Gösterim</th><th>${firsatMi?'Senin pozisyonun':'Rakip'}</th><th class="ort">Durum</th></tr></thead>
         <tbody>${list.map(satir).join('')}</tbody></table></div>`; }).join('');
     return bolumBaslik('İçerik & Sıralama','İçerik Boşluğu / Fırsat','2. sayfada yüksek gösterimli kelimeler = az itmeyle 1. sayfaya çıkacak fırsatlar.') + filtreBar() +

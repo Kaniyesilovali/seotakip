@@ -59,15 +59,24 @@ function adaylar(siteUrl) {
 async function siteVerisi(site) {
   // Tum erisilebilir property adaylarini dene, VERISI EN COK olani sec (bos http:// varyantina takilmasin).
   let property = null, rows = null, erisilenVarBos = false;
+  const hatalar = [];   // aday -> hata: hicbiri tutmazsa SEBEBI yazabilelim
   for (const aday of [...new Set(adaylar(site.url))]) {
     try {
       const r = await saQuery(aday, BASLANGIC, BITIS);
       erisilenVarBos = true;
       if (rows == null || r.length > rows.length) { rows = r; property = aday; }
       if (r.length > 0 && aday.startsWith('sc-domain:')) break; // domain property + veri = en iyisi
-    } catch (e) { /* 403/404 -> sonraki aday */ }
+    } catch (e) {
+      // 403/404 normal (o varyant yok). Ama kimlik/ag hatasini yutup "property yok"
+      // demek yanlis teshise goturur -> hepsini sakla, asagida ozetle.
+      const kod = e?.response?.status || e?.code || '?';
+      hatalar.push(`${aday} → ${kod} ${String(e?.message || e).slice(0, 120)}`);
+    }
   }
-  if (property == null) return { hata: 'property bulunamadi (servis hesabi bu siteye ekli mi?)' };
+  if (property == null) return {
+    hata: 'property bulunamadi (servis hesabi bu siteye ekli mi?)',
+    detay: hatalar,
+  };
   if (rows.length === 0) return { property, siralama: [], firsat: [], bos: true };
 
   // onceki donem (trend)
@@ -101,10 +110,15 @@ async function main() {
   const aktif = (cfg.siteler || []).filter(s => s.aktif !== false && s.url);
   console.log(`🔎 Search Console: ${BASLANGIC} → ${BITIS} (servis hesabi: ${anahtar.client_email})`);
 
+  let guncellenen = 0;
   for (const site of aktif) {
     process.stdout.write(`\n▶ ${site.ad} …`);
     const d = await siteVerisi(site);
-    if (d.hata) { console.log(` ✕ ${d.hata}`); continue; }
+    if (d.hata) {
+      console.log(` ✕ ${d.hata}`);
+      (d.detay || []).forEach(h => console.log(`     · ${h}`));
+      continue;
+    }
     if (d.bos) { console.log(` ⚠ property bagli ama VERI YOK: ${d.property} — dogru property'e (https/www veya domain) ekle`); continue; }
     const hedef = veri.siteler.find(s => s.id === site.id);
     if (!hedef) continue;
@@ -113,18 +127,32 @@ async function main() {
     hedef._siralamaGercek = true;
     hedef.icerikBoslugu = d.firsat;
     hedef._gapGercek = true;
+    // Bu adim CI'da sessizce atlanabiliyor (|| echo). Damga olmazsa crawl.js eski blogu
+    // "gercek veri" bayragiyla tasir ve panel bayat sayiyi taze gibi gosterir -> tarihi yaz.
+    hedef.siralamaTarih = new Date().toISOString().slice(0, 10);
+    hedef.siralamaPencere = { baslangic: BASLANGIC, bitis: BITIS };
 
     // NOT: indeks verisi burada DOLDURULMAZ. Sitemaps API'sindeki "indexed" alani kullanimdan
     // kalkti (hep 0 doner) -> yanlis sayi uretiyordu. Gercek indeks durumu URL Inspection API
     // ister (URL basina 1 istek, kotali): scripts/indeks.js.
 
+    guncellenen++;
     console.log(` ✓ ${d.siralama.length} kelime, ${d.firsat.length} firsat [${d.property}]`);
   }
 
   veri.guncelleme = new Date().toISOString();
   fs.writeFileSync(veriYolu, JSON.stringify(veri, null, 2));
   fs.writeFileSync(path.join(KOK, 'assets', 'fallback-data.js'), 'window.SEO_FALLBACK = ' + JSON.stringify(veri) + ';\n');
-  console.log('\n✅ Search Console verisi data.json\'a islendi.');
+  console.log(`\n${guncellenen ? '✅' : '✕'} Search Console: ${guncellenen}/${aktif.length} site guncellendi.`);
+  // KRITIK: eskiden hicbir site guncellenmese bile 0 ile cikiliyordu. CI'daki
+  // `|| echo "atlandi"` bile devreye girmiyordu -> is YESIL gorunurken siralama
+  // verisi haftalarca donuyordu. Hicbir sey alinamadiysa bunu hata olarak bildir.
+  if (!guncellenen) {
+    console.error('\n✕ Hicbir siteden Search Console verisi alinamadi — siralama/icerik boslugu TAZELENMEDI.');
+    console.error('  Kontrol: servis hesabi her GSC property\'sinde kullanici olarak ekli mi?');
+    console.error(`  Servis hesabi: ${anahtar.client_email}`);
+    process.exit(1);
+  }
 }
 
 main().catch(e => { console.error('HATA:', e.message); process.exit(1); });

@@ -99,6 +99,7 @@ async function main() {
       kaynak: m.alanVerisi ? 'alan (CrUX)' : 'lab',
     };
     hedef._hizGercek = true; // crawl.js bir sonraki taramada bu alani korusun
+    hedef.hizTarih = new Date().toISOString().slice(0, 10); // olcum tarihi: bayat veriyi panelde isaretlemek icin
     console.log(` ✓ mobil ${m.puan} / masaustu ${d.puan} · LCP ${m.lcp}s · CLS ${m.cls} · ${hedef.hiz.kaynak}`);
     console.log(`     erisilebilirlik ${m.erisilebilirlik ?? '—'} · en iyi uygulama ${m.enIyiUygulama ?? '—'} · Lighthouse SEO ${m.lighthouseSeo ?? '—'}`);
   }

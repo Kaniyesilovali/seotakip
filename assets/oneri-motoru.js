@@ -22,6 +22,39 @@ const EFOR = {
 };
 const EFOR_AD = { 1:'kolay', 2:'orta', 3:'zor' };
 
+// Bir olcum tarihinin uzerinden kac gun gecti? Tarih yoksa/bozuksa null.
+function gunGecti(tarih){
+  if (!tarih) return null;
+  const t = new Date(tarih); if (isNaN(t)) return null;
+  return Math.floor((Date.now() - t.getTime()) / 86400000);
+}
+
+// Turkce ekler yuzunden kelime ile URL slug'i tam eslesmez ("klinikleri" vs "klinigi").
+// Kaba kok yaklasimi: harfleri sadelestir, her kelimenin ilk 5 harfini al.
+const TR_HARF = { 'ı':'i','ğ':'g','ü':'u','ş':'s','ö':'o','ç':'c' };
+const sadelestir = (t) => (t||'').toLowerCase().replace(/[ıığüşöç]/g, c=>TR_HARF[c]||c).replace(/[^a-z0-9]+/g,'-');
+const DOLGU = new Set(['icin','ile','nasil','nedir','ve','the','for','and','of','in','to','how','what','best','near','with','your']);
+
+// Bu kelimeyi hedefleyen bir sayfa var mi? Varsa yolunu dondur.
+function kelimeyiKarsilayanSayfa(kelime, yollar){
+  const kokler = sadelestir(kelime).split('-').filter(p => p.length>=4 && !DOLGU.has(p)).map(p => p.slice(0,5));
+  if (!kokler.length) return null;
+  for (const yol of (yollar||[])) {
+    const y = sadelestir(yol);
+    if (kokler.every(k => y.includes(k))) return yol;
+  }
+  return null;
+}
+
+// Pozisyon bir ORTALAMADIR. Az gosterimli bir kelimede tek bir dusuk gosterim 28 gunluk
+// ortalamayi basamaklarca kaydirir; bu bir siralama kaybi degil, olcum gurultusudur.
+// Anlamli sayilacak en kucuk dusus, veri hacmiyle ters orantili olsun:
+//   gosterim 10 -> 10 basamak · 27 -> 6 · 100 -> 3 · 200 -> 3
+const anlamliDusus = (gosterim) => Math.max(3, Math.ceil(30 / Math.sqrt(Math.max(gosterim||0, 1))));
+// Firsatin degeri gosterimle orantili. Eski 500 esigi bu portfoyde hicbir kelimede
+// tutmuyordu -> her firsat 'orta' cikip listeyi doldurup onceligi anlamsizlastiriyordu.
+const hacimOncelik = (g) => (g >= 100 ? 'yuksek' : g >= 25 ? 'orta' : 'dusuk');
+
 function oneriUret(s){
   const o = [];
   const ekle = (alan, oncelik, mesaj) => {
@@ -40,6 +73,25 @@ function oneriUret(s){
     ekle('Tarama','kritik',
       `Son tarama engellendi (${(s.taramaHatasi.tarih||'').slice(0,10)}) — bu sitedeki diğer bulgular son başarılı taramadan. ${sebep} Teşhis için: npm run waf-tani`);
   }
+  // Olcum TAZELIGI. GSC/PageSpeed/indeks adimlari CI'da sessizce atlanabiliyor
+  // (`node scripts/searchconsole.js || echo ...`). Adim atlaninca crawl.js eski blogu
+  // _<alan>Gercek bayragiyla oldugu gibi tasir; panel bayat sayiyi taze gibi gosterir.
+  // Bayrak "bir zamanlar gercekti" demek, "guncel" demek degil -> tarihine bakip soyle.
+  [
+    ['Search Console (sıralama + içerik boşluğu)', s.siralamaTarih,    (s.siralama||[]).length > 0, 4,  'kelime fırsatı/düşüşü ve içerik boşluğu'],
+    ['PageSpeed (hız)',                            s.hizTarih,         !!s.hiz,                    10, 'hız/LCP/CLS'],
+    ['İndeks denetimi',                            s.indeks?.tarih,    !!s.indeks,                 10, 'indeks'],
+    ['GEO (AI motor görünürlüğü)',                 s.geoTarih,         !!s.geo,                    30, 'GEO'],
+  ].forEach(([ad, tarih, veriVar, esik, etkilenen]) => {
+    if (!veriVar) return;
+    const gun = gunGecti(tarih);
+    // "Tarihi bilmiyoruz" ile "12 gundur bayat" ayni sey degil; ilki daha zayif bir sinyal.
+    if (gun == null)
+      ekle('Olcum','dusuk', `${ad} verisinin ölçüm tarihi yok — ne zaman alındığı bilinmiyor, güncel sayma. Bir kez yenile, damga otomatik düşecek.`);
+    else if (gun > esik)
+      ekle('Olcum', gun > esik*2 ? 'yuksek' : 'orta',
+        `${ad} verisi ${gun} gündür yenilenmedi (son ölçüm: ${String(tarih).slice(0,10)}) — aşağıdaki ${etkilenen} maddeleri o günün fotoğrafı, bugünün durumu değil. İlgili adım hata veriyor olabilir.`);
+  });
   if (s.ssl && !s.ssl.gecerli) ekle('SSL','kritik','SSL yok/geçersiz — hemen kur.');
   else if (s.ssl && s.ssl.kalanGun<=30) ekle('SSL', s.ssl.kalanGun<=14?'kritik':'yuksek', `SSL ${s.ssl.kalanGun} gün sonra doluyor — yenile.`);
   const ko = s.kirikOzet||{};
@@ -92,10 +144,34 @@ function oneriUret(s){
   });
   if (s.aiBotlar){ const b=s.aiBotlar; if (((b.gptbot||0)+(b.claudebot||0)+(b.perplexitybot||0))<20) ekle('AI bot','orta','AI botları siteni az tarıyor — llms.txt ekle, robots\'ta izin ver.'); }
   if (s.geo && !s.geo.chatgpt && !s.geo.perplexity && !s.geo.gemini && !s.geo.claude) ekle('GEO','orta','Hiçbir AI motorunda görünmüyorsun — schema + net cevap formatlı içerik gerek.');
+  // Ayni kelime hem burada hem icerikBoslugu listesinde cikabiliyor (ikisi de GSC kaynakli,
+  // araliklar cakisiyor) -> asagida mukerrer madde uretmemek icin isaretle.
+  const firsatKelimeler = new Set();
+  // Bu kelime icin YENI yayinlanmis bir sayfa var mi? Varsa siralama daha oturmamistir:
+  // GSC 28 gunluk ortalama verir, yayin oncesi gunler de o ortalamanin icindedir.
+  // {sayfa, yas} dondurur; yoksa null.
+  const yeniSayfa = (kelime) => {
+    const yol = kelimeyiKarsilayanSayfa(kelime, s.sayfaYollari);
+    if (!yol) return null;
+    const yas = gunGecti(s.sayfaTarih?.[yol]);
+    return (yas != null && yas < 45) ? { yol, yas } : null;
+  };
   (s.siralama||[]).forEach(k=>{
-    if (k.pozisyon>=4 && k.pozisyon<=10 && (k.gosterim||0)>=500) ekle('Kelime firsati','yuksek', `"${k.kelime}" #${k.pozisyon} + yüksek gösterim — az itmeyle ilk 3'e girer.`);
-    else if (k.pozisyon>=11 && k.pozisyon<=20) ekle('Kelime firsati','orta', `"${k.kelime}" #${k.pozisyon} (2. sayfa) — içeriği güçlendir.`);
-    if (k.onceki && k.pozisyon>k.onceki) ekle('Kelime dususu','orta', `"${k.kelime}" ${k.onceki}→${k.pozisyon} düştü — incele.`);
+    const gos = k.gosterim || 0;
+    if (k.pozisyon>=4 && k.pozisyon<=10 && gos>=100) {
+      firsatKelimeler.add(k.kelime);
+      ekle('Kelime firsati','yuksek', `"${k.kelime}" #${k.pozisyon} + ${gos} gösterim — az itmeyle ilk 3'e girer.`);
+    } else if (k.pozisyon>=11 && k.pozisyon<=20) {
+      firsatKelimeler.add(k.kelime);
+      const yeni = yeniSayfa(k.kelime);
+      if (yeni) ekle('Kelime firsati','dusuk', `"${k.kelime}" #${k.pozisyon} — ${yeni.yol} ${yeni.yas} gün önce yayınlandı, 28 günlük ortalama hâlâ yayın öncesini kapsıyor. Sıralama oturmadı, bekle.`);
+      else ekle('Kelime firsati', hacimOncelik(gos), `"${k.kelime}" #${k.pozisyon} (2. sayfa, ${gos} gösterim) — içeriği güçlendir.`);
+    }
+    // Dusus: sadece ulasilabilir mesafede (ilk 3 sayfa) ve olcum gurultusunden BUYUKSE.
+    // 81→88 gibi hareketler ya da 10 gosterimlik bir kelimedeki 5 basamak, sinyal degil.
+    const dusus = k.onceki ? k.pozisyon - k.onceki : 0;
+    if (dusus > 0 && k.pozisyon<=30 && dusus >= anlamliDusus(gos))
+      ekle('Kelime dususu','orta', `"${k.kelime}" ${k.onceki}→${k.pozisyon} düştü (${gos} gösterim) — incele.`);
   });
   // ---- crawl.js'in sorun listesinden gelen YENI bulgular ----
   // Yukaridaki kurallarin ZATEN kapsadigi tipler (title-yok, ince-icerik, kirik-ic-link...)
@@ -126,7 +202,24 @@ function oneriUret(s){
   });
 
   (s.kanibalizasyon||[]).forEach(k=> ekle('Kanibalizasyon','orta', `"${k.kelime}" için ${k.sayfalar.length} sayfa yarışıyor — birini ana yap, diğerlerini birleştir.`));
-  (s.icerikBoslugu||[]).forEach(g=> ekle('Icerik boslugu', g.hacim>=500?'yuksek':'orta', `"${g.kelime}" (~${g.hacim} gösterim) — içeriği güçlendir/yaz.`));
+  // icerikBoslugu Search Console'dan gelir (pozisyon 8-50 + gosterim var) ve "bu kelime
+  // icin sayfa var mi" bilgisini TASIMAZ. Sayfalara bakmadan "yaz" demek, yeni yayinlanmis
+  // icerigi yokmus gibi gosteriyordu: 28 gunluk ortalama yayin ONCESI donemi de kapsadigi
+  // icin taze sayfa dogal olarak hala geride gorunur.
+  (s.icerikBoslugu||[]).forEach(g=>{
+    if (firsatKelimeler.has(g.kelime)) return;   // ayni kelime yukarida "Kelime firsati" olarak cikti
+    const hacim = g.hacim || 0;
+    const sayfa = kelimeyiKarsilayanSayfa(g.kelime, s.sayfaYollari);
+    if (!sayfa) {
+      ekle('Icerik boslugu', hacimOncelik(hacim), `"${g.kelime}" (~${hacim} gösterim, #${g.rakipPoz}) — bu kelimeyi hedefleyen sayfa yok, yaz.`);
+      return;
+    }
+    const yeni = yeniSayfa(g.kelime);
+    if (yeni)
+      ekle('Icerik boslugu','dusuk', `"${g.kelime}" için ${yeni.yol} ${yeni.yas} gün önce yayınlandı — GSC'nin 28 günlük ortalaması hâlâ yayın öncesini kapsıyor, sıralama oturmadı. Yeni içerik yazma, bekle.`);
+    else
+      ekle('Icerik boslugu', hacimOncelik(hacim), `"${g.kelime}" (~${hacim} gösterim, #${g.rakipPoz}) — sayfa var (${sayfa}), yenisini yazma: başlık/H1'de kelimeyi kullan ve iç link ver.`);
+  });
   return o;
 }
 

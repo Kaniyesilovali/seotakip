@@ -264,6 +264,7 @@ function sayfaAyristir(html, sayfaUrl, host, { xRobots = '' } = {}) {
   // JSON-LD schema (tip listesi + Google'in bekledigi eksik alanlar)
   const jsonld = [];
   const semaEksik = [];   // ['BlogPosting.image', ...]
+  let yayinTarihi = null; // schema'daki datePublished — "icerik yeni mi" sorusunu cevaplar
   $('script[type="application/ld+json"]').each((_, el) => {
     try {
       const d = JSON.parse($(el).contents().text());
@@ -272,6 +273,7 @@ function sayfaAyristir(html, sayfaUrl, host, { xRobots = '' } = {}) {
         if (!o || !o['@type']) return;
         const tip = Array.isArray(o['@type']) ? o['@type'][0] : o['@type'];
         jsonld.push(tip);
+        if (!yayinTarihi && o.datePublished) yayinTarihi = String(o.datePublished).slice(0, 10);
         const gerek = SEMA_GEREK[tip] || (YEREL_ISLETME.has(tip) ? SEMA_GEREK.LocalBusiness : null);
         if (gerek) gerek.forEach(k => { if (!alanVar(o, k)) semaEksik.push(`${tip}.${k}`); });
       });
@@ -305,7 +307,7 @@ function sayfaAyristir(html, sayfaUrl, host, { xRobots = '' } = {}) {
   });
 
   return { title, desc, h1, canonical, canonicalListe, noindex, noindexKaynak, baslikSeviyeleri,
-    og, hreflang, imgYok, jsonld, semaEksik, kelime, metinIzi,
+    og, hreflang, imgYok, jsonld, semaEksik, kelime, metinIzi, yayinTarihi,
     tracking: [...new Set(tracking)], icLink: [...icLink], disLink: [...disLink] };
 }
 
@@ -638,6 +640,12 @@ async function siteTara(site, eski = {}) {
     uptime, ssl,
     sayfalar: { taranan: toplam, indekslenebilir: toplam - noindex, noindex },
     sayfaYollari: [...sayfalar.keys()].map(u => { try { return new URL(u).pathname; } catch { return u; } }).slice(0, 150),
+    // yol -> datePublished. Oneri motoru bunu "bu icerik yeni yayinlandi, GSC'nin 28 gunluk
+    // ortalamasi henuz yayin oncesi donemi kapsiyor" demek icin kullanir.
+    sayfaTarih: Object.fromEntries([...sayfalar.entries()]
+      .filter(([, p]) => p.yayinTarihi)
+      .map(([u, p]) => { try { return [new URL(u).pathname, p.yayinTarihi]; } catch { return [u, p.yayinTarihi]; } })
+      .slice(0, 150)),
     kirikLinkler,
     kirikOzet: { ic: kirikIc, dis: kirikLinkler.filter(k => !k.ic && k.sayilir).length, dogrulanmamis: kirikDogrulanmamis },
     eksikMeta,
@@ -740,6 +748,15 @@ async function main() {
       rakip: eski._rakipGercek ? eski.rakip : [],
       kanibalizasyon: [],
       icerikBoslugu: eski._gapGercek ? eski.icerikBoslugu : [],
+      // Olcum TARIHLERI de tasinmali. Bunlar tasinmazsa veri "gercek" bayragiyla
+      // korunur ama ne zaman olculdugu kaybolur -> bayat sayi taze gibi gorunur.
+      // (geoTarih/geoDetay eskiden burada dusuyordu; oneri motoru bayatligi bu
+      //  alanlardan okuyor, silinirse bayatlik uyarisi hic cikmaz.)
+      ...(eski.siralamaTarih ? { siralamaTarih: eski.siralamaTarih } : {}),
+      ...(eski.siralamaPencere ? { siralamaPencere: eski.siralamaPencere } : {}),
+      ...(eski.hizTarih ? { hizTarih: eski.hizTarih } : {}),
+      ...(eski.geoTarih ? { geoTarih: eski.geoTarih } : {}),
+      ...(eski.geoDetay ? { geoDetay: eski.geoDetay } : {}),
       // gercek-veri bayraklarini sonraki taramaya tasi (yoksa GSC/PageSpeed verisi silinir)
       ...(eski._hizGercek ? { _hizGercek: true } : {}),
       ...(eski._siralamaGercek ? { _siralamaGercek: true } : {}),

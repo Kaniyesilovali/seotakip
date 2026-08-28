@@ -44,27 +44,48 @@ jobs:
           SEOTAKIP_ANAHTAR: ${{ secrets.SEOTAKIP_ANAHTAR }}
         run: node scripts/crawl.js
 
+      # NOT: asagidaki adimlar bilerek isi DUSURMEZ (bir API bozuksa gunluk tarama yine
+      # yayinlansin). Ama sessizce gecmesinler: her sonuc is ozetine yazilir, boylece
+      # calisma sayfasinda tek bakista gorunur. Verinin kendisi de tarih damgasi tasir
+      # (siralamaTarih/hizTarih/indeks.tarih) -> oneri motoru bayatlarsa panelde uyarir.
       - name: PageSpeed (anahtar varsa)
         env:
           PAGESPEED_KEY: ${{ secrets.PAGESPEED_KEY }}
         run: |
-          if [ -n "$PAGESPEED_KEY" ]; then
-            node scripts/pagespeed.js || echo "pagespeed atlandi"
+          if [ -z "$PAGESPEED_KEY" ]; then
+            echo "::warning title=PageSpeed atlandi::PAGESPEED_KEY secret tanimsiz — hiz verisi tazelenmedi"
+            echo "- ⏭ PageSpeed: **atlandi** (PAGESPEED_KEY secret yok)" >> "$GITHUB_STEP_SUMMARY"
+          elif node scripts/pagespeed.js; then
+            echo "- ✅ PageSpeed: tazelendi" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "PAGESPEED_KEY secret yok — hiz olcumu atlandi"
+            echo "::warning title=PageSpeed hata::scripts/pagespeed.js hata verdi — hiz verisi bayatliyor"
+            echo "- ⚠ PageSpeed: **hata** — hiz verisi bayatliyor" >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Search Console (servis hesabi varsa)
         env:
           GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
         run: |
-          if [ -n "$GSC_KEY_JSON" ]; then
-            printf '%s' "$GSC_KEY_JSON" > gsc-key.json
-            node scripts/searchconsole.js || echo "search console atlandi"
-            node scripts/indeks.js || echo "indeks denetimi atlandi"
-            rm -f gsc-key.json
+          if [ -z "$GSC_KEY_JSON" ]; then
+            echo "::warning title=Search Console atlandi::GSC_KEY_JSON secret tanimsiz — siralama ve indeks verisi TAZELENMEDI"
+            echo "- ⏭ Search Console + indeks: **atlandi** (GSC_KEY_JSON secret yok)" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          printf '%s' "$GSC_KEY_JSON" > gsc-key.json
+          trap 'rm -f gsc-key.json' EXIT
+          if node scripts/searchconsole.js; then
+            echo "- ✅ Search Console: tazelendi" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "GSC_KEY_JSON secret yok — siralama/anahtar kelime atlandi"
+            echo "::warning title=Search Console hata::scripts/searchconsole.js hata verdi — siralama verisi bayatliyor"
+            echo "- ⚠ Search Console: **hata** — siralama verisi bayatliyor" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          # URL Inspection API URL basina 1 istek harcar; ~450 URL ≈ 10-12 dk surer.
+          # Adim zaman asimina dusmesin diye ustune sinir koyuyoruz.
+          if timeout 25m node scripts/indeks.js; then
+            echo "- ✅ Indeks denetimi: tazelendi" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning title=Indeks denetimi hata::scripts/indeks.js hata verdi veya sureye takildi — indeks verisi bayatliyor"
+            echo "- ⚠ Indeks denetimi: **hata/zaman asimi** — indeks verisi bayatliyor" >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Haftalik rapor (pazartesileri + elle tetiklemede)

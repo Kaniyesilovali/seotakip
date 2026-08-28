@@ -172,11 +172,21 @@ const ARACLAR = [
       const s = siteBul(veriOku(), site);
       const sr = s.siralama || [], gap = s.icerikBoslugu || [];
       if (!sr.length && !gap.length) return `${s.ad}: Search Console verisi yok. "npm run gsc" ile cek (kurulum README'de).`;
-      return `# ${s.ad} anahtar kelimeler\n\n## Siralama (${sr.length})\n` +
-        sr.map(k => `  #${String(k.pozisyon).padStart(3)}  ${k.kelime}  (gosterim ${k.gosterim ?? '—'}, tik ${k.tik ?? '—'})`).join('\n') +
+      // Olcum tarihi ve penceresi olmadan bu sayilar yanlis okunuyor: pozisyon 28 GUNLUK
+      // ORTALAMA'dir, tek gunluk siralama degil. Bayatsa en uste uyari koy.
+      const gun = s.siralamaTarih ? Math.floor((Date.now() - new Date(s.siralamaTarih).getTime()) / 86400000) : null;
+      const pen = s.siralamaPencere ? `${s.siralamaPencere.baslangic} → ${s.siralamaPencere.bitis}` : 'bilinmiyor';
+      const bayat = gun != null && gun > 4
+        ? `\n\n⚠ BAYAT: bu veri ${gun} gundur yenilenmedi (son cekim ${s.siralamaTarih}). "npm run gsc" ile tazele.` : '';
+      return `# ${s.ad} anahtar kelimeler\n\n` +
+        `Son cekim: ${s.siralamaTarih || 'bilinmiyor'} · GSC penceresi: ${pen} (28 gunluk ORTALAMA)${bayat}\n\n` +
+        `## Siralama (${sr.length})\n` +
+        sr.map(k => `  #${String(k.pozisyon).padStart(3)} (onceki #${k.onceki ?? '—'})  ${k.kelime}  (gosterim ${k.gosterim ?? '—'}, tik ${k.tik ?? '—'})`).join('\n') +
         `\n\n## Firsat / icerik boslugu (${gap.length})\n` +
         gap.map(g => `  ~${g.hacim} gosterim · #${g.rakipPoz} · ${g.kelime}`).join('\n') +
-        `\n\nNot: "hacim" gercek arama hacmi degil, Search Console GOSTERIM sayisidir.`;
+        `\n\nNot: "hacim" gercek arama hacmi degil, Search Console GOSTERIM sayisidir.\n` +
+        `Not: Az gosterimli kelimede pozisyon ortalamasi gurultuludur — tek bir dusuk gosterim\n` +
+        `28 gunluk ortalamayi basamaklarca kaydirir. ~25 gosterimin altinda "dustu/cikti" yorumu yapma.`;
     },
   },
   {
