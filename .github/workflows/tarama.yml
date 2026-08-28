@@ -25,6 +25,18 @@ jobs:
       - name: Bagimliliklar
         run: npm ci
 
+      - name: WAF gecis teshisi
+        # Engellenme YALNIZCA runner IP'sinde yasaniyor; teshisi de burada yapmak
+        # gerekir. Taramayi bloke etmesin diye cikis kodu yutulur — amaci, tarama
+        # yine engellenirse loglarda "hangi halka koptu" cevabinin hazir olmasi.
+        env:
+          SEOTAKIP_ANAHTAR: ${{ secrets.SEOTAKIP_ANAHTAR }}
+        run: |
+          if [ -z "$SEOTAKIP_ANAHTAR" ]; then
+            echo "::warning::SEOTAKIP_ANAHTAR secret'i tanimsiz — gecis basligi gonderilmeyecek, tarama Cloudflare challenge'ina takilabilir."
+          fi
+          node scripts/waf-tani.js || echo "waf-tani: gecis zincirinde sorun raporlandi (yukariya bak)"
+
       - name: Siteleri tara
         env:
           # Cloudflare/WAF gecis anahtari — yoksa baslik hic gonderilmez, tarama

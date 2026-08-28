@@ -163,8 +163,12 @@ export function sunucuBaslat() {
     // challengeAc() cagrilinca sunucu HER yola (robots.txt ve sitemap.xml dahil)
     // ara sayfayi doner — WAF'a takilan bir taramanin birebir taklidi.
     let challenge = false;
+    // challengeGecici(n): ilk n istege ara sayfa doner, sonra kendini kapatir.
+    // Gercek dunyada IP itibarina dayali engeller boyle davranir — kalkarlar.
+    let geciciKalan = 0;
     const sunucu = http.createServer(async (req, res) => {
-      if (challenge) {
+      if (challenge || geciciKalan > 0) {
+        if (geciciKalan > 0) geciciKalan--;
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
         return res.end(CHALLENGE_HTML);
       }
@@ -200,6 +204,8 @@ export function sunucuBaslat() {
     sunucu.listen(0, '127.0.0.1', () => {
       const { port } = sunucu.address();
       resolve({ sunucu, kok: `http://127.0.0.1:${port}`, challengeAc: () => { challenge = true; },
+        challengeKapat: () => { challenge = false; geciciKalan = 0; },
+        challengeGecici: (adet) => { geciciKalan = adet; },
         kapat: () => new Promise(r => sunucu.close(r)) });
     });
   });

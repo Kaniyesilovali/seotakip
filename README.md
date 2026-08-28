@@ -208,6 +208,18 @@ Bunun yerine gizli bir başlık:
      + Super Bot Fight Mode + (products) Browser Integrity Check, Security Level, User Agent Blocking
    - Kuralı listenin en üstüne al
 
+### Geçici engelde yeniden deneme
+
+27 Ağustos'ta tarama, engeli görür görmez **8 saniyede** pes etti ve beş sitenin de
+gecelik verisi kaybedildi. IP itibarına dayalı challenge'lar çoğu zaman geçici
+olduğu için `crawl.js` artık pes etmeden önce yeniden dener — bekleme her denemede
+katlanır (15 sn, 30 sn, 45 sn). `sites.config.json` → `ayarlar`:
+
+| Ayar | Varsayılan | Ne yapar |
+|---|---|---|
+| `engelDenemeSayisi` | `3` | Engel görülünce kaç kez yeniden denenir |
+| `engelBeklemeMs` | `15000` | İlk bekleme; her denemede katlanır |
+
 `crawl.js` başlığı **yalnızca `sites.config.json`'daki kendi host'larımıza** gönderir;
 kırık link kontrolü dış sitelere de istek attığı için anahtar oralara sızmasın diye.
 Anahtar tanımlı değilse başlık hiç gönderilmez, tarama normal çalışır.
@@ -215,6 +227,63 @@ Anahtar tanımlı değilse başlık hiç gönderilmez, tarama normal çalışır
 > Cloudflare Free planında 5 custom rule ve Skip action var — ek ücret gerekmez.
 > Tek istisna: Free plandaki **Bot Fight Mode** skip edilemez; Security → Bots'tan
 > kapatman gerekir (Pro'daki Super Bot Fight Mode skip edilebilir).
+
+### `npm run waf-tani` — geçiş zinciri teşhisi
+
+Geçiş üç halkalı: **anahtar tanımlı** → **Cloudflare kuralı bu zone'da var** →
+**istek challenge'a düşmüyor**. Tarama engellendiğinde hangi halkanın koptuğunu
+tahmin etmek yerine ölç:
+
+```bash
+npm run waf-tani                 # tüm aktif siteler
+npm run waf-tani -- --site=animare
+```
+
+Her site için anasayfa/robots.txt/sitemap.xml'i **anahtarsız ve anahtarlı** çeker,
+`cf-ray` + `cf-mitigated` başlıklarıyla birlikte yazdırır ve karar verir:
+
+| Sonuç | Anlamı |
+|---|---|
+| `TAMAM` | Anahtarsız engelleniyor, anahtarlı geçiyor — kural çalışıyor. |
+| `HATA` | Anahtar gönderildiği hâlde engellendi → bu zone'da Skip kuralı yok, ifade yanlış yazılmış veya değer eşleşmiyor. |
+| `BELİRSİZ` | Bu IP zaten engellenmiyor — kural buradan doğrulanamaz. |
+
+Çıktının başındaki `sha256:` parmak izi, anahtarın kendisini sızdırmadan
+karşılaştırma yapmanı sağlar — Cloudflare kuralına yazdığın değeri aynı şekilde
+hash'leyip iki izin tuttuğunu doğrula:
+
+```bash
+printf %s '<cloudflare-kuralindaki-deger>' | shasum -a 256 | cut -c1-12
+```
+
+**Önemli:** engellenme yalnızca **datacenter IP'lerinde** (GitHub Actions runner'ı)
+yaşanır; kendi bağlantından koştuğunda sonuç neredeyse hep `BELİRSİZ` çıkar. Bu
+yüzden teşhis `tarama.yml`'e ayrı bir adım olarak eklendi — gece taraması yine
+engellenirse cevap Actions loglarında hazır olur.
+
+### 27 Ağustos 2026 vakası — ne olduğu ve nelerin elendiği
+
+Beş sitenin **hepsi aynı anda** engellendi (13:51 UTC, 8 saniye içinde, her biri
+1 sayfa). Elimizdeki kanıtla şunlar **elendi**:
+
+| Şüpheli | Neden elendi |
+|---|---|
+| `SEOTAKIP_ANAHTAR` secret'i yok | 25 ve 26 Ağustos taramaları **aynı kodla** sorunsuz geçti |
+| Bot Fight Mode açık | Daha önce kapatıldı |
+| Runner'ın interneti yok | Aynı koşuda **PageSpeed verisi güncellendi** (animare mobil 64→62, masaüstü 88→82) |
+| Siteler gerçekten kapalı | PageSpeed ölçümü Google'ın siteyi çekebildiğini gösteriyor |
+
+Geriye kalan tablo: runner'ın interneti çalışıyordu, Google siteleri çekebiliyordu,
+**yalnızca bizim tarayıcımız o IP'den geçemedi** — ve aynı kurulum iki gün önce
+çalışmıştı. Bu, sabit bir yapılandırma hatasından çok **IP itibarına bağlı,
+aralıklı** bir engellemeye benziyor (GitHub runner'ları paylaşımlı Azure IP'leri
+kullanır; Cloudflare'in Security Level / IP reputation kontrolü bunları gün içinde
+farklı skorlar). Bu kontrolün Skip kuralıyla atlanabilmesi için kuralın Skip
+seçeneklerinde **Security Level**'ın da işaretli olması gerekir.
+
+Kesin cevap ancak engellenme **tekrarlandığında** alınabilir; bunun için teşhis
+adımı `tarama.yml`'e eklendi ve bir sonraki engellemede `cf-ray` + `cf-mitigated`
+değerleriyle birlikte loglara düşecek.
 
 ## Tarama sağlık kontrolü (engellenen taramalar)
 

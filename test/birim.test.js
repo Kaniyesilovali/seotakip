@@ -9,6 +9,7 @@ import {
 } from '../scripts/lib/sorun-tespit.js';
 import '../assets/sorun-katalogu.js';
 import { taramaDogrula, ESIKLER } from '../scripts/lib/tarama-dogrula.js';
+import { engelTespit } from '../scripts/lib/engel-tespit.js';
 
 // ---- parmak izi ----
 test('metinParmakIzi: ayni metin ayni iz, farkli metin farkli iz', () => {
@@ -217,4 +218,51 @@ test('taramaDogrula: gercek buyume/kucuime yanlis alarm uretmez', () => {
 test('taramaDogrula: onceki tarama da kucukse kiyas yapilmaz', () => {
   const kucukTemel = { ...saglikliTarama, sayfalar: { taranan: ESIKLER.temelSayfa - 1 } };
   assert.equal(taramaDogrula(engellenmisTarama, kucukTemel).temelYok, true);
+});
+
+
+// ---- engel (challenge) tespiti ----
+const CHALLENGE_GOVDE = `<!DOCTYPE html><html><head><title>Just a moment...</title></head>
+<body><div id="cf-wrapper"><script src="/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1"></script>
+<form id="challenge-form" action="/?__cf_chl_f_tk=abc"></form></div></body></html>`;
+
+test('engelTespit: cf-mitigated basligi tek basina yeter', () => {
+  const t = engelTespit({ status: 403, basliklar: { 'cf-mitigated': 'challenge', server: 'cloudflare' } });
+  assert.equal(t.engel, true);
+  assert.equal(t.saglayici, 'cloudflare');
+  assert.match(t.kanit[0], /cf-mitigated/);
+});
+
+test('engelTespit: 200 donen interstitial sayfa da engeldir', () => {
+  // Cloudflare "Just a moment" sayfasi HTTP 200 doner — koda bakmak yetmez.
+  const t = engelTespit({ status: 200, basliklar: { server: 'cloudflare' }, govde: CHALLENGE_GOVDE });
+  assert.equal(t.engel, true);
+  assert.equal(t.saglayici, 'cloudflare');
+});
+
+test('engelTespit: gercek sayfa engel sayilmaz', () => {
+  const govde = '<html><head><title>Animare Veteriner Klinigi</title></head><body>' +
+    '<h1>Kibris veteriner</h1><p>' + 'icerik '.repeat(500) + '</p></body></html>';
+  assert.equal(engelTespit({ status: 200, basliklar: { server: 'cloudflare' }, govde }).engel, false);
+});
+
+test('engelTespit: Cloudflare\'dan bahseden normal sayfa yanlis alarm vermez', () => {
+  // Tek desen + supheli olmayan kod -> engel degil (en az iki desen aranir).
+  const govde = '<html><body><h1>Blog</h1><p>Sitemizi Cloudflare uzerinden yayinliyoruz.</p></body></html>';
+  assert.equal(engelTespit({ status: 200, basliklar: { server: 'cloudflare' }, govde }).engel, false);
+});
+
+test('engelTespit: govde okunamasa bile 403 + WAF sunucusu sinyaldir', () => {
+  const t = engelTespit({ status: 403, basliklar: { server: 'cloudflare' }, govde: '' });
+  assert.equal(t.engel, true);
+  assert.match(t.kanit[0], /HTTP 403/);
+});
+
+test('engelTespit: saglikli 404 engel degildir', () => {
+  assert.equal(engelTespit({ status: 404, basliklar: { server: 'cloudflare' }, govde: '<html>Sayfa bulunamadi</html>' }).engel, false);
+});
+
+test('engelTespit: Headers nesnesi de duz nesne de kabul edilir', () => {
+  const h = new Headers({ 'cf-mitigated': 'challenge' });
+  assert.equal(engelTespit({ status: 403, basliklar: h }).engel, true);
 });

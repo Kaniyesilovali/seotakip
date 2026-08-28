@@ -26,7 +26,9 @@ before(async () => {
   gecici = fs.mkdtempSync(path.join(os.tmpdir(), 'seotakip-test-'));
   fs.writeFileSync(path.join(gecici, 'sites.config.json'), JSON.stringify({
     // istekAralikMs=0: test hizli kosmali. Gercek taramada 400 ms nezaket bekleme suresi var.
-    ayarlar: { maxSayfa: 100, istekAralikMs: 0, zamanAsimiMs: 10000, kullaniciAjani: 'SeoTakipBot/1.0 (test)' },
+    // engelBeklemeMs=10: yeniden deneme mantigi olculsun ama test 90 saniye beklemesin.
+    ayarlar: { maxSayfa: 100, istekAralikMs: 0, zamanAsimiMs: 10000, engelBeklemeMs: 10,
+      kullaniciAjani: 'SeoTakipBot/1.0 (test)' },
     siteler: [{ id: 'fixture', ad: 'Bozuk Test Sitesi', url: fixture.kok, aktif: true, diller: ['tr'] }],
   }));
   await calistir('node', [path.join(PROJE, 'scripts', 'crawl.js')], {
@@ -141,6 +143,14 @@ test('WAF challenge sayfasi: bozuk tarama eski veriyi ezmez', async () => {
   assert.equal(s2.taramaHatasi.sayfa, 1, 'challenge sayfasinda 1 sayfa gorulebilir');
   assert.ok(s2.taramaHatasi.neden.some(n => n.kod === 'sayfa-cokusu'));
 
+  // Kiyaslamadan BAGIMSIZ dogrudan tespit: challenge sayfasi yanitin kendisinden
+  // taninmali ki temeli olmayan (yeni eklenen) sitede de engel gorulebilsin.
+  assert.ok(s2.taramaHatasi.engel, 'challenge yanitindan dogrudan kanit cikarilmali');
+  assert.ok(s2.taramaHatasi.engel.nerede.includes('anasayfa'), 'anasayfa yanitinda engel goruldu diye isaretlenmeli');
+  assert.ok(s2.taramaHatasi.engel.nerede.includes('robots.txt'), 'robots.txt yerine gelen challenge da yakalanmali');
+  assert.ok(s2.taramaHatasi.neden.some(n => n.kod === 'waf-challenge'), 'waf-challenge nedeni eklenmeli');
+  assert.match(s2.taramaHatasi.mesaj, /bot dogrulamasiyla engellendi/i, 'mesaj "muhtemelen" demeyip kanita dayanmali');
+
   // veri korunmus mu — panelin gosterdigi her sey eski haliyle durmali
   assert.equal(s2.sayfalar.taranan, site.sayfalar.taranan, 'sayfa sayisi korunmali');
   assert.equal(s2.seo.puan, site.seo.puan, 'puan guncellenmemeli');
@@ -154,6 +164,33 @@ test('WAF challenge sayfasi: bozuk tarama eski veriyi ezmez', async () => {
   // oneri motoru da bayat veriyi gizlememeli
   await import('../assets/oneri-motoru.js');
   const oneriler = globalThis.oneriUret(s2);
-  assert.ok(oneriler.some(o => o.alan === 'Tarama' && o.oncelik === 'kritik'),
-    'panelde ilk sirada "tarama engellendi" onerisi cikmali');
+  const taramaOneri = oneriler.find(o => o.alan === 'Tarama' && o.oncelik === 'kritik');
+  assert.ok(taramaOneri, 'panelde ilk sirada "tarama engellendi" onerisi cikmali');
+  assert.match(taramaOneri.mesaj, /waf-tani/, 'panel mesaji teshis komutunu gostermeli');
+  assert.match(taramaOneri.mesaj, /geçiş anahtarı/i, 'panel mesaji anahtarin gonderilip gonderilmedigini yazmali');
+});
+
+
+// REGRESYON: 27 Agustos 2026'da tarama, engeli gorur gormez 8 SANIYEDE pes etti ve
+// bes sitenin de gecelik verisi "engellendi" olarak isaretlendi. Oysa IP itibarina
+// dayali challenge'lar cogu zaman gecicidir. Artik once birkac kez yeniden denenir.
+test('gecici challenge: yeniden denemeyle tarama kurtarilir', async () => {
+  fixture.challengeKapat();
+  fixture.challengeGecici(1);   // yalnizca ilk istek (anasayfa) ara sayfaya duser
+
+  await calistir('node', [path.join(PROJE, 'scripts', 'crawl.js')], {
+    env: { ...process.env, SEOTAKIP_KOK: gecici }, timeout: 180000, maxBuffer: 32 * 1024 * 1024,
+  });
+  const sonra = JSON.parse(fs.readFileSync(path.join(gecici, 'data', 'data.json'), 'utf8'));
+  const s3 = sonra.siteler[0];
+
+  assert.equal(s3.taramaHatasi, undefined, 'engel kalktiysa tarama basarili sayilmali');
+  assert.equal(s3.sayfalar.taranan, site.sayfalar.taranan, 'ayni fixture ayni sayfa sayisini vermeli');
+  // Asil olculen: govde GERCEKTEN geldi mi? Challenge sayfasi gecseydi bu ucu de bos olurdu.
+  assert.ok(s3.icerik.ortKelime > 100, `ort. kelime bos gelmemeli: ${s3.icerik.ortKelime}`);
+  assert.ok(s3.iclink.ortLink > 0, 'ic linkler bulunmali');
+  assert.ok((s3.sorunlar || []).length > 0, 'bulgu listesi yeniden uretilmeli');
+  // Puan ilk taramayla birebir ayni OLMAZ: kirik linkler tekrar goruldukce
+  // "dogrulanmamis" olmaktan cikip puana girer. Onemli olan cokmemis olmasi.
+  assert.ok(s3.seo.puan >= 40, `puan cokmus gorunuyor: ${s3.seo.puan}`);
 });

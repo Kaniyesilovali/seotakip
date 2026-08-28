@@ -14,6 +14,7 @@ import { fileURLToPath } from 'node:url';
 import { ayristir as robotsAyristir, izinVar, botOzeti, icerikSinyali, tamamenKapali } from './lib/robots.js';
 import { metinParmakIzi, siteSorunlari, durumSinifi } from './lib/sorun-tespit.js';
 import { taramaDogrula } from './lib/tarama-dogrula.js';
+import { engelTespit } from './lib/engel-tespit.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // SEOTAKIP_KOK: config'i ve ciktilari baska bir klasorden okuyup oraya yazar.
@@ -26,6 +27,11 @@ const MAX_SAYFA = A.maxSayfa ?? 200;
 const ARALIK = A.istekAralikMs ?? 400;
 const ZAMANASIMI = A.zamanAsimiMs ?? 15000;
 const UA = A.kullaniciAjani ?? 'SeoTakipBot/1.0';
+// Engel goruldugunde kac kez, ne araliklarla tekrar denenecek. IP itibarina dayali
+// challenge'lar cogu zaman GECICIDIR; 27 Agustos 2026'da tarama 8 saniyede pes edip
+// bes sitenin de gecesini kaybetti. Bekleme her denemede katlanir (15s, 30s, 45s).
+const ENGEL_DENEME = A.engelDenemeSayisi ?? 3;
+const ENGEL_BEKLEME = A.engelBeklemeMs ?? 15000;
 
 // ---- WAF gecis anahtari ----
 // User-Agent'i herkes taklit edebilir; UA'ya izin veren bir WAF kurali fiilen
@@ -120,6 +126,9 @@ async function istek(url, method = 'GET', { maxAdim = 5 } = {}) {
       if (method === 'GET' && (r.headers.get('content-type') || '').includes('text/html')) html = await r.text();
       return { ok: true, status: r.status, url: hedef, html, sure: Date.now() - t0,
         contentType: r.headers.get('content-type') || '',
+        // Engel tespiti icin gereken iki baslik. Headers nesnesini disari vermiyoruz:
+        // bu nesne data.json'a serilesirse bos {} olarak yazilir ve kanit kaybolur.
+        wafBaslik: { 'cf-mitigated': r.headers.get('cf-mitigated') || '', server: r.headers.get('server') || '' },
         // X-Robots-Tag: noindex meta etiketi olmadan da sayfayi indeksten cikarir.
         // Sadece <meta name="robots"> okumak eksik denetimdi.
         xRobots: (r.headers.get('x-robots-tag') || '').toLowerCase(),
@@ -142,11 +151,16 @@ async function metinGetir(url) {
   const t = setTimeout(() => ctrl.abort(), ZAMANASIMI);
   try {
     const r = await fetch(url, { redirect: 'follow', signal: ctrl.signal, headers: baslik(url) });
-    if (!r.ok || r.status >= 400) return { ok: false, status: r.status, metin: null };
+    const wafBaslik = { 'cf-mitigated': r.headers.get('cf-mitigated') || '', server: r.headers.get('server') || '' };
+    // 4xx/5xx'te de govdeyi OKURUZ. Challenge yaniti tam olarak buradan gecer
+    // (403 + challenge HTML); erken donseydik engelin tek kaniti cope giderdi.
     const metin = await r.text();
+    if (!r.ok || r.status >= 400) return { ok: false, status: r.status, metin: null, hamGovde: metin, wafBaslik };
     const htmlMi = /text\/html/.test(r.headers.get('content-type') || '') || /^\s*<(!doctype|html)/i.test(metin);
-    return { ok: !htmlMi, status: r.status, metin: htmlMi ? null : metin };
-  } catch { return { ok: false, status: 0, metin: null }; }
+    // htmlMi ise dosya "yok" sayilir; ama govdeyi ATMIYORUZ: robots.txt yerine
+    // challenge sayfasi geldiyse kaniti yalnizca bu govdede bulabiliriz.
+    return { ok: !htmlMi, status: r.status, metin: htmlMi ? null : metin, hamGovde: metin, wafBaslik };
+  } catch { return { ok: false, status: 0, metin: null, hamGovde: '', wafBaslik: null }; }
   finally { clearTimeout(t); }
 }
 
@@ -319,7 +333,16 @@ async function siteTara(site, eski = {}) {
   process.stdout.write(`\n▶ ${site.ad} (${host}) taraniyor…\n`);
 
   // 1) uptime + SSL
-  const anasayfa = await istek(kok, 'GET');
+  // Engel gorulurse hemen pes etme: challenge kalkarsa gecenin taramasi kurtulur.
+  let anasayfa = await istek(kok, 'GET');
+  for (let deneme = 1; deneme <= ENGEL_DENEME; deneme++) {
+    const t = engelTespit({ status: anasayfa.status, basliklar: anasayfa.wafBaslik, govde: anasayfa.html });
+    if (!t.engel) break;
+    const beklenecek = ENGEL_BEKLEME * deneme;
+    process.stdout.write(`  ⟳ ${t.saglayici || 'WAF'} engeli — ${Math.round(beklenecek / 1000)} sn sonra yeniden denenecek (${deneme}/${ENGEL_DENEME})\n`);
+    await bekle(beklenecek);
+    anasayfa = await istek(kok, 'GET');
+  }
   const ssl = await sslKontrol(host.replace(/^www\./, ''));
   const uptime = { durum: anasayfa.ok && anasayfa.status < 400 ? 'up' : 'down', yanitMs: anasayfa.sure || null, sonKontrol: bugun() };
 
@@ -328,6 +351,25 @@ async function siteTara(site, eski = {}) {
   const robotsR = await metinGetir(new URL('/robots.txt', kok).toString());
   const rob = robotsAyristir(robotsR.ok ? robotsR.metin : null);
   const robotsVar = robotsR.ok && !!robotsR.metin;
+
+  // 1b) ENGEL TESPITI — yanitin kendisine bak (bkz. lib/engel-tespit.js).
+  // tarama-dogrula.js engellenmeyi ancak onceki taramayla kiyaslayarak anlar; bu
+  // yuzden temeli olmayan (yeni eklenen) sitede engel gorunmez. Burada anasayfa ve
+  // robots.txt yanitlarindaki challenge imzasini dogrudan ariyoruz.
+  const engelAdaylari = [
+    ['anasayfa', engelTespit({ status: anasayfa.status, basliklar: anasayfa.wafBaslik, govde: anasayfa.html })],
+    ['robots.txt', engelTespit({ status: robotsR.status, basliklar: robotsR.wafBaslik, govde: robotsR.hamGovde })],
+  ].filter(([, t]) => t.engel);
+  const engel = engelAdaylari.length ? {
+    saglayici: engelAdaylari[0][1].saglayici,
+    anahtarGonderildi: !!ANAHTAR && bizimMi(kok),
+    nerede: engelAdaylari.map(([ad]) => ad),
+    kanit: engelAdaylari.map(([ad, t]) => `${ad}: HTTP ${t.kod} — ${t.kanit.join(' · ')}`),
+  } : null;
+  if (engel) {
+    process.stdout.write(`  ⛔ ${engel.saglayici} engeli: ${engel.kanit.join(' | ')}\n`);
+    process.stdout.write(`     gecis anahtari ${engel.anahtarGonderildi ? 'GONDERILDI ama ise yaramadi (Cloudflare kurali eksik/yanlis olabilir)' : 'GONDERILMEDI (SEOTAKIP_ANAHTAR tanimsiz)'}\n`);
+  }
   const sm = await sitemapUrller(kok, rob.sitemapler);
 
   // 2b) llms.txt (AI motorlari icin site ozeti). HTML donen sunucular soft-404 yapiyor -> onu yok say.
@@ -586,6 +628,9 @@ async function siteTara(site, eski = {}) {
   puan = Math.max(0, Math.min(100, Math.round(puan)));
 
   return {
+    // Engel bulunduysa main() bunu kiyaslamadan bagimsiz olarak "basarisiz tarama"
+    // sayar; null ise alan data.json'a hic yazilmaz.
+    ...(engel ? { engel } : {}),
     seo: { puan },
     // Sorun listesi puana GIRMEZ (katalogdaki puana:false olanlar). Puan formulu
     // eski taramalarla karsilastirilabilir kalsin diye dondurulmus durumda.
@@ -640,8 +685,23 @@ async function main() {
     // degildir. Iyi verinin ustune yazmak yerine onceki kaydi oldugu gibi koru ve
     // sitenin uzerine "taramaHatasi" isareti birak (panel + Telegram bunu gosterir).
     const dogrulama = taramaDogrula(tarama, eski);
+    // Yanitta dogrudan challenge imzasi bulunduysa kiyaslama sonucuna BAKMAYIZ:
+    // engel kesindir. (Yeni eklenen sitede kiyaslanacak temel olmadigi icin
+    // taramaDogrula tek basina "gecerli" diyebiliyordu.)
+    // Kanit, kiyaslama zaten "basarisiz" demis olsa da kaydedilir: neden listesinin
+    // ilk satiri tahmin degil olcum olsun diye en basa konur.
+    if (tarama.engel) {
+      dogrulama.neden = [{ kod: 'waf-challenge',
+        mesaj: `${tarama.engel.saglayici} bot dogrulama sayfasi dondu (${tarama.engel.nerede.join(', ')})` },
+        ...dogrulama.neden];
+      if (dogrulama.gecerli) {
+        dogrulama.gecerli = false;
+        dogrulama.temelYok = false;
+      }
+      dogrulama.ozet = `${tarama.engel.saglayici} engeli dogrudan tespit edildi`;
+    }
     if (!dogrulama.gecerli) {
-      basarisizlar.push({ id: site.id, ad: site.ad, dogrulama });
+      basarisizlar.push({ id: site.id, ad: site.ad, dogrulama, engel: tarama.engel || null });
       console.error(`\n  ✕ ${site.ad}: TARAMA BASARISIZ — onceki veri korundu (${dogrulama.ozet})`);
       dogrulama.neden.forEach(n => console.error(`     · ${n.kod}: ${n.mesaj}`));
       siteler.push({
@@ -652,7 +712,13 @@ async function main() {
           sayfa: tarama.sayfalar?.taranan ?? 0,
           oncekiSayfa: eski.sayfalar?.taranan ?? 0,
           neden: dogrulama.neden,
-          mesaj: 'Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan.',
+          // Kanit varsa "muhtemelen" demeyiz; hangi urun engelledigini ve gecis
+          // anahtarinin gonderilip gonderilmedigini de yaziyoruz — panelde ve
+          // Telegram uyarisinda tek bakista teshis edilsin diye.
+          ...(tarama.engel ? { engel: tarama.engel } : {}),
+          mesaj: tarama.engel
+            ? `Tarama ${tarama.engel.saglayici} bot dogrulamasiyla engellendi — veriler son basarili taramadan.`
+            : 'Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan.',
         },
       });
       continue;
@@ -776,8 +842,19 @@ async function main() {
   if (basarisizlar.length) {
     console.log(`\n⚠️  ${basarisizlar.length} sitede tarama BASARISIZ — o sitelerin verisi son basarili taramadan korundu:`);
     basarisizlar.forEach(b => console.log(`   · ${b.ad}: ${b.dogrulama.neden.map(n => n.kod).join(', ')}`));
-    console.log('   Muhtemel sebep: WAF/bot dogrulamasi (Cloudflare vb.) tarayiciyi challenge sayfasina dusuruyor.');
-    console.log('   Cozum: WAF\'ta bu tarayicinin User-Agent\'ina veya IP\'sine izin ver, sonra taramayi tekrar calistir.');
+    const kanitli = basarisizlar.filter(b => b.engel);
+    if (kanitli.length) {
+      console.log(`   Kanit: ${kanitli.length} sitede dogrudan bot dogrulama sayfasi goruldu.`);
+      kanitli.forEach(b => b.engel.kanit.forEach(k => console.log(`   · ${b.ad} — ${k}`)));
+    } else {
+      console.log('   Muhtemel sebep: WAF/bot dogrulamasi (Cloudflare vb.) tarayiciyi challenge sayfasina dusuruyor.');
+    }
+    console.log(`   Gecis anahtari (X-Seotakip-Anahtar): ${ANAHTAR ? 'TANIMLI — istekle birlikte gonderildi' : 'TANIMSIZ — hicbir istege eklenmedi'}`);
+    if (!ANAHTAR) {
+      console.log('   → CI\'da calisiyorsan GitHub Settings → Secrets → Actions altinda SEOTAKIP_ANAHTAR secret\'ini tanimla.');
+    } else {
+      console.log('   → Anahtar gonderildigi halde engellendiyse Cloudflare kurali eksik/yanlis. Teshis icin: npm run waf-tani');
+    }
   }
 }
 

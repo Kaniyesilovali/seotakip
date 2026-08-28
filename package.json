@@ -18,7 +18,8 @@
     "build": "node scripts/build.js",
     "test": "node --test \"test/*.test.js\"",
     "mcp": "node scripts/mcp.js",
-    "baglam": "node scripts/baglam.js"
+    "baglam": "node scripts/baglam.js",
+    "waf-tani": "node scripts/waf-tani.js"
   },
   "keywords": [
     "seo",

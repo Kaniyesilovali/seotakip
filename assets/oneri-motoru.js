@@ -30,8 +30,16 @@ function oneriUret(s){
   };
   // Tarama saglik kontrolunden gecemediyse asagidaki TUM bulgular son basarili
   // taramadan gelir. Bunu ilk siraya koy; yoksa bayat veriyle is yapilir.
-  if (s.taramaHatasi) ekle('Tarama','kritik',
-    `Son tarama engellendi (${(s.taramaHatasi.tarih||'').slice(0,10)}) — bu sitedeki diğer bulgular son başarılı taramadan. Muhtemel sebep: WAF/bot doğrulaması. WAF'ta tarayıcıya izin ver ve taramayı tekrar çalıştır.`);
+  if (s.taramaHatasi) {
+    // crawl.js kanit bulduysa (challenge sayfasi dogrudan goruldu) tahmin yurutme:
+    // hangi urunun engelledigini ve gecis anahtarinin gonderilip gonderilmedigini yaz.
+    const e = s.taramaHatasi.engel;
+    const sebep = e
+      ? `${e.saglayici} bot doğrulaması (${(e.nerede||[]).join(', ')}) — geçiş anahtarı ${e.anahtarGonderildi ? 'gönderildi ama işe yaramadı: Cloudflare Skip kuralı eksik/yanlış' : 'gönderilmedi: SEOTAKIP_ANAHTAR tanımsız'}.`
+      : 'Muhtemel sebep: WAF/bot doğrulaması.';
+    ekle('Tarama','kritik',
+      `Son tarama engellendi (${(s.taramaHatasi.tarih||'').slice(0,10)}) — bu sitedeki diğer bulgular son başarılı taramadan. ${sebep} Teşhis için: npm run waf-tani`);
+  }
   if (s.ssl && !s.ssl.gecerli) ekle('SSL','kritik','SSL yok/geçersiz — hemen kur.');
   else if (s.ssl && s.ssl.kalanGun<=30) ekle('SSL', s.ssl.kalanGun<=14?'kritik':'yuksek', `SSL ${s.ssl.kalanGun} gün sonra doluyor — yenile.`);
   const ko = s.kirikOzet||{};
