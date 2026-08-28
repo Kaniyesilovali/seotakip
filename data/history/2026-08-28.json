@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-08-28T13:24:50.659Z",
+  "guncelleme": "2026-08-28T13:51:04.540Z",
   "ozet": {
     "toplamSite": 5,
-    "ortalamaSeoPuan": 92,
-    "toplamKirikLink": 7,
+    "ortalamaSeoPuan": 91,
+    "toplamKirikLink": 36,
     "acilUyari": 0
   },
   "siteler": [
@@ -85,9 +85,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 2649,
-        "sonKontrol": "2026-08-28T13:14:25.908Z",
-        "medyanMs": 428
+        "yanitMs": 1279,
+        "sonKontrol": "2026-08-28T13:42:37.986Z",
+        "medyanMs": 333
       },
       "ssl": {
         "gecerli": true,
@@ -197,11 +197,229 @@
         "/tr/blog/kibris-veteriner-klinigi-secimi": "2026-08-23",
         "/en/blog/choosing-a-vet-clinic-cyprus": "2026-08-23"
       },
-      "kirikLinkler": [],
+      "kirikLinkler": [
+        {
+          "kaynak": "/tr",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hakkimizda",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/iletisim",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/gizlilik",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/genel-muayene",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/asilama",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/cerrahi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/dis-bakimi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/radyoloji",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/acil-hizmet",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/laboratuvar",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/pet-kuafor",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/hizmetler/beslenme-danismanligi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kopek-asi-takvimi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kedilerde-dis-bakimi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/yaz-sicaginda-evcil-hayvan",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/yaz-aylarinda-ektoparazit-koruma",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/acil-veteriner-belirtileri",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/yavru-kedi-asi-takvimi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/farmina-nd-mama-rehberi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kedilerde-idrar-tikanikligi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/zehirli-yiyecekler-ve-bitkiler",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kedi-kopek-otitis-eksterna",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kopeklerde-leishmaniasis",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kopeklerde-kene-hastaliklari",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kedi-kopek-kisirlastirma",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kedilerde-kronik-bobrek-hastaligi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kedi-kopek-mama-cesitleri",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kibris-veteriner-klinigi-secimi",
+          "hedef": "https://animare.vet/tr/blog",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        }
+      ],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 0
+        "dogrulanmamis": 31
       },
       "eksikMeta": {
         "title": 0,
@@ -248,7 +466,7 @@
       "sitemap": {
         "varMi": true,
         "urlSayisi": 62,
-        "erisilemez": 0,
+        "erisilemez": 1,
         "dosyalar": [
           "https://animare.vet/sitemap.xml"
         ]
@@ -485,10 +703,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 64,
-        "masaustuPuan": 83,
-        "lcp": 9.1,
-        "inp": 76,
+        "mobilPuan": 63,
+        "masaustuPuan": 82,
+        "lcp": 8.9,
+        "inp": 1,
         "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -857,9 +1075,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 712,
-        "sonKontrol": "2026-08-28T13:15:32.055Z",
-        "medyanMs": 222
+        "yanitMs": 886,
+        "sonKontrol": "2026-08-28T13:43:36.368Z",
+        "medyanMs": 187
       },
       "ssl": {
         "gecerli": true,
@@ -1005,26 +1223,11 @@
         "/blog/tukenmislik-sendromu.html": "2026-07-18",
         "/blog/universite-ogrencileri-psikolojik-destek.html": "2026-05-27"
       },
-      "kirikLinkler": [
-        {
-          "kaynak": "/en/kvkk.html",
-          "hedef": "https://www.kvkk.gov.tr",
-          "kod": 0,
-          "ic": false,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/kvkk.html",
-          "hedef": "https://www.kvkk.gov.tr",
-          "kod": 0,
-          "ic": false,
-          "sayilir": false
-        }
-      ],
+      "kirikLinkler": [],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 2
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -1050,7 +1253,7 @@
         "sorunluSayfa": 32
       },
       "icerik": {
-        "ortKelime": 612,
+        "ortKelime": 618,
         "inceSayfa": 4,
         "esik": 200,
         "ornekler": [
@@ -1560,11 +1763,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 87,
-        "masaustuPuan": 97,
-        "lcp": 3.5,
-        "inp": 46,
-        "cls": 0,
+        "mobilPuan": 96,
+        "masaustuPuan": 98,
+        "lcp": 2.6,
+        "inp": 9,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -1899,9 +2102,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1688,
-        "sonKontrol": "2026-08-28T13:17:05.493Z",
-        "medyanMs": 433
+        "yanitMs": 1391,
+        "sonKontrol": "2026-08-28T13:44:47.640Z",
+        "medyanMs": 344
       },
       "ssl": {
         "gecerli": true,
@@ -2717,11 +2920,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 72,
-        "masaustuPuan": 92,
-        "lcp": 6.8,
+        "mobilPuan": 80,
+        "masaustuPuan": 89,
+        "lcp": 4.1,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -3059,9 +3262,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 940,
-        "sonKontrol": "2026-08-28T13:20:50.830Z",
-        "medyanMs": 215
+        "yanitMs": 635,
+        "sonKontrol": "2026-08-28T13:47:57.760Z",
+        "medyanMs": 175
       },
       "ssl": {
         "gecerli": true,
@@ -3929,10 +4132,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 63,
-        "masaustuPuan": 94,
-        "lcp": 7.3,
-        "inp": 137,
+        "mobilPuan": 69,
+        "masaustuPuan": 95,
+        "lcp": 6.8,
+        "inp": 16,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4261,9 +4464,9 @@
       "url": "https://kktcsigortamerkezi.com",
       "aktif": true,
       "seo": {
-        "puan": 89,
+        "puan": 88,
         "onceki": 89,
-        "trend": "+0"
+        "trend": "-1"
       },
       "sorunlar": [
         {
@@ -4470,9 +4673,9 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 574,
-        "sonKontrol": "2026-08-28T13:22:07.438Z",
-        "medyanMs": 421
+        "yanitMs": 365,
+        "sonKontrol": "2026-08-28T13:49:07.575Z",
+        "medyanMs": 323
       },
       "ssl": {
         "gecerli": true,
@@ -4616,7 +4819,7 @@
           "hedef": "https://kibris.anadolusigorta.com.tr",
           "kod": 0,
           "ic": false,
-          "sayilir": false
+          "sayilir": true
         },
         {
           "kaynak": "/tr/sirketler/as-can-sigorta",
@@ -4649,8 +4852,8 @@
       ],
       "kirikOzet": {
         "ic": 0,
-        "dis": 4,
-        "dogrulanmamis": 1
+        "dis": 5,
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -5048,7 +5251,7 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 82,
+        "mobilPuan": 81,
         "masaustuPuan": 98,
         "lcp": 3.6,
         "inp": 0,
@@ -5505,9 +5708,15 @@
   ],
   "degisiklikler": [
     {
-      "site": "magusapsikoloji",
-      "tip": "yeni-sayfa",
-      "mesaj": "2 sayfa eklendi",
+      "site": "kktcsigorta",
+      "tip": "dusus",
+      "mesaj": "SEO puani 89 → 88 (-1)",
+      "tarih": "2026-08-28"
+    },
+    {
+      "site": "kktcsigorta",
+      "tip": "yeni-kirik",
+      "mesaj": "1 yeni kirik link",
       "tarih": "2026-08-28"
     }
   ],
@@ -5722,7 +5931,7 @@
     {
       "seviye": "bilgi",
       "site": "kktcsigorta",
-      "mesaj": "4 kirik dis link — hedef site kapanmis, linki kaldir"
+      "mesaj": "5 kirik dis link — hedef site kapanmis, linki kaldir"
     },
     {
       "seviye": "uyari",

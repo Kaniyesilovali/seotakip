@@ -1899,6 +1899,58 @@
       "canonicalSayfa": "https://magusapsikoloji.com/kvkk.html",
       "sonTarama": "2026-08-09T20:18:20Z",
       "httpKod": 200
+    },
+    "https://magusapsikoloji.com/en/blog/child-psychologist.html": {
+      "t": "2026-08-28T13:53:43.040Z",
+      "denetlenen": "https://magusapsikoloji.com/en/blog/child-psychologist.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/en/blog/neuropsychological-assessment.html": {
+      "t": "2026-08-28T13:53:43.377Z",
+      "denetlenen": "https://magusapsikoloji.com/en/blog/neuropsychological-assessment.html",
+      "verdict": "NEUTRAL",
+      "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/blog/cocuk-psikologu-magusa.html": {
+      "t": "2026-08-28T13:53:43.570Z",
+      "denetlenen": "https://magusapsikoloji.com/blog/cocuk-psikologu-magusa.html",
+      "verdict": "NEUTRAL",
+      "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/blog/noropsikolojik-degerlendirme-magusa.html": {
+      "t": "2026-08-28T13:53:49.981Z",
+      "denetlenen": "https://magusapsikoloji.com/blog/noropsikolojik-degerlendirme-magusa.html",
+      "verdict": "NEUTRAL",
+      "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
     }
   },
   "taxsi": {
