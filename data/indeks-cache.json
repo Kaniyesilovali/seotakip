@@ -3955,6 +3955,45 @@
       "canonicalSayfa": "",
       "sonTarama": "",
       "httpKod": 200
+    },
+    "https://thetaxsi.com/en/areas": {
+      "t": "2026-08-29T09:59:49.146Z",
+      "denetlenen": "https://thetaxsi.com/en/areas/",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://thetaxsi.com/en/areas/",
+      "canonicalSayfa": "https://thetaxsi.com/en/areas/",
+      "sonTarama": "2026-08-29T03:33:40Z",
+      "httpKod": 200
+    },
+    "https://thetaxsi.com/tr/bolge": {
+      "t": "2026-08-29T09:59:49.180Z",
+      "denetlenen": "https://thetaxsi.com/tr/bolge/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://thetaxsi.com/ru/rayony": {
+      "t": "2026-08-29T09:59:49.185Z",
+      "denetlenen": "https://thetaxsi.com/ru/rayony/",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://thetaxsi.com/ru/rayony/",
+      "canonicalSayfa": "https://thetaxsi.com/ru/rayony/",
+      "sonTarama": "2026-08-29T06:28:41Z",
+      "httpKod": 200
     }
   },
   "luxeva": {
