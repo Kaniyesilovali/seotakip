@@ -805,6 +805,58 @@
       "canonicalSayfa": "",
       "sonTarama": "",
       "httpKod": 200
+    },
+    "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs": {
+      "t": "2026-08-30T09:10:58.438Z",
+      "denetlenen": "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli": {
+      "t": "2026-08-30T09:10:58.461Z",
+      "denetlenen": "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli/",
+      "verdict": "NEUTRAL",
+      "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman": {
+      "t": "2026-08-30T09:10:58.591Z",
+      "denetlenen": "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman/",
+      "verdict": "NEUTRAL",
+      "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/en/blog/limping-in-dogs-and-cats": {
+      "t": "2026-08-30T09:11:06.384Z",
+      "denetlenen": "https://animare.vet/en/blog/limping-in-dogs-and-cats/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
     }
   },
   "magusapsikoloji": {
