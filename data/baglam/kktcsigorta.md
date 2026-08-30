@@ -173,3 +173,60 @@ sayfalariyla catismiyor.
 6. Turkiye mevzuatini KKTC'ye tasima.
 7. `## Dogrulayamadiklarimiz` ve `## Kaynaklar` bolumlerini ekle.
 8. Puan gectiyse `/tr/metodoloji/` linki ver.
+
+## Guncelleme — 30 Agustos 2026
+
+**Bayat baglam uyarisi.** Bu dosyadaki "Notlar / gecmis kararlar" bolumu 24 Agustos'ta
+`can-sigorta-lefkosa` icin "taslakta birakildi" diyordu; oysa yazi ayni gun yayina
+alinmisti (commit `6e32091`) ve §8'e bir istisna notu duselmisti. Yazi uretmeden once
+bu dosyaya degil, **repodaki plan dosyalarina ve `git log`a** bakin — bu dosya
+gecikmeli guncelleniyor.
+
+### Yayin durumu (bugun degisenler)
+
+- **M5 yayinda** — `/tr/rehber/banka-bagli-sigorta-sirketleri/` (commit `5c55c43`).
+  §10 tablosunda M5 satiri ⬜ kalmisti, bugun ✅ yapildi. Kuyrukta №38 "M5 ile
+  karsilandi" olarak zaten kapaliydi.
+- **M6 yazildi, yayina alinmadi** — `content/tr/rehber/kktc-sigorta-sirketi-guvenilir-mi.md`.
+  `taslak` satiri yok, `uret.py --kontrol` temiz gecti (8 yazi, kirik ic baglanti yok,
+  oksuz sayfa yok). Commit/push edilmedi; canli yayin karari site sahibinde.
+  Yeni konu sayfasi uretti: `/tr/rehber/konu/seffaflik/`.
+
+### Karar: №24 kapatildi, sorgu M6'ya devredildi
+
+M6 ile kuyruktaki №24 birebir ayni hedef sorguyu tasiyordu: `kktc sigorta sirketi
+guvenilir mi`. §10'un sonundaki eski "ikisi birlestirilmez" notu icerik olarak
+hakliydi ama hedef sorgu sutununa bakmamisti. №24'un konusu zaten yayinda —
+`/tr/metodoloji/` sayfasinda "Mali guc ve hasar odeme performansini puanlamiyoruz"
+H2'si var — bu yuzden №24 "metodoloji ile karsilandi" diye kapatildi.
+
+**Kural olarak yazildi:** kuyruga yeni satir girerken hedef sorgunun kuyrukta zaten
+sahibi olup olmadigi kontrol edilir. Ayri konu, ayri sorgu demek degildir.
+
+### Karar: "guven sigorta kktc" yazisi siteye girmedi
+
+Yazi uretildi ve panelde duruyor (`data/icerikler/kktcsigorta-guven-sigorta-kktc.md`),
+ama `/tr/rehber/` altina alinmadi. Gerekce: `/tr/sirketler/guven-sigorta-kibris/`
+profil sayfasi IP-1 sonrasi 1234 kelime ve govdedeki sekiz H2'nin yedisi profille
+cakisiyor ("Nereden ulasiliyor" birebir ayni baslik). 6e32091'in §8'e dustugu istisna
+olcutunu — profilde BULUNMAYAN dogrulanmis bir gozlem tasima sarti — karsilamiyor.
+Yazinin profilde olmayan tek katmani 39 sirketlik karsilastirma verisiydi; o katman
+M6'ya tasindi.
+
+### Teknik not — elle profil linki guvenli
+
+`_build/uret.py:261` (MarkaBaglayici) elle verilmis `/tr/sirketler/<slug>/`
+baglantilarini atlar (`kullanilmis` seti). Govdeye elle profil linki koymak cift
+link uretmez; §8 istisnasindaki "govdesinden profile baglanmali" sarti elle
+karsilanabilir.
+
+### Acik konu — backlink satisi
+
+Site sahibi sigorta sirketlerine backlink satmayi planladigini soyledi. Dikkat:
+`/tr/metodoloji/` sayfasinda **"Puanlari kimse satin alamaz"** basligi ve "Reklam
+alani satin almak bir sirketin puanini, siralamasini veya incelemesinin icerigini
+degistirmez" cumlesi yayinda. Puanlanan sirkete PageRank aktaran link satmak hem bu
+yayimlanmis taahhutle celisir hem de link semasi kapsamina girer. Uyumlu yol
+`rel="sponsored"` ile isaretli, acikca etiketlenmis reklam yerlesimidir — puanlama ve
+profil sayfalarinin disinda. Karar site sahibinde; bu not sadece taahhudun nerede
+yazili oldugunu kaydeder.
