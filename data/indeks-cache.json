@@ -6819,6 +6819,84 @@
       "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/yasal-uyari/",
       "sonTarama": "2026-08-07T21:25:57Z",
       "httpKod": 200
+    },
+    "https://kktcsigortamerkezi.com/tr/rehber/can-sigorta-lefkosa": {
+      "t": "2026-08-31T09:37:30.044Z",
+      "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/can-sigorta-lefkosa/",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/rehber/can-sigorta-lefkosa/",
+      "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/rehber/can-sigorta-lefkosa/",
+      "sonTarama": "2026-08-30T22:37:07Z",
+      "httpKod": 200
+    },
+    "https://kktcsigortamerkezi.com/tr/rehber/kktc-sigorta-sirketi-guvenilir-mi": {
+      "t": "2026-08-31T09:37:30.300Z",
+      "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/kktc-sigorta-sirketi-guvenilir-mi/",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/rehber/kktc-sigorta-sirketi-guvenilir-mi/",
+      "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/rehber/kktc-sigorta-sirketi-guvenilir-mi/",
+      "sonTarama": "2026-08-31T00:17:07Z",
+      "httpKod": 200
+    },
+    "https://kktcsigortamerkezi.com/tr/rehber/banka-bagli-sigorta-sirketleri": {
+      "t": "2026-08-31T09:37:30.398Z",
+      "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/banka-bagli-sigorta-sirketleri/",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/rehber/banka-bagli-sigorta-sirketleri/",
+      "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/rehber/banka-bagli-sigorta-sirketleri/",
+      "sonTarama": "2026-08-30T23:27:07Z",
+      "httpKod": 200
+    },
+    "https://kktcsigortamerkezi.com/tr/rehber/konu/seffaflik": {
+      "t": "2026-08-31T09:37:37.303Z",
+      "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/konu/seffaflik/",
+      "verdict": "NEUTRAL",
+      "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket": {
+      "t": "2026-08-31T09:37:37.385Z",
+      "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket-secimi": {
+      "t": "2026-08-31T09:37:37.517Z",
+      "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket-secimi/",
+      "verdict": "NEUTRAL",
+      "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
     }
   }
 }
