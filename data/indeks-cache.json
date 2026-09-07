@@ -807,10 +807,10 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs": {
-      "t": "2026-08-30T09:10:58.438Z",
+      "t": "2026-09-07T08:15:02.843Z",
       "denetlenen": "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -820,7 +820,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli": {
-      "t": "2026-08-30T09:10:58.461Z",
+      "t": "2026-09-07T08:15:09.870Z",
       "denetlenen": "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -833,7 +833,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman": {
-      "t": "2026-08-30T09:10:58.591Z",
+      "t": "2026-09-07T08:15:11.358Z",
       "denetlenen": "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -846,10 +846,10 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/limping-in-dogs-and-cats": {
-      "t": "2026-08-30T09:11:06.384Z",
+      "t": "2026-09-07T08:15:11.473Z",
       "denetlenen": "https://animare.vet/en/blog/limping-in-dogs-and-cats/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -874,6 +874,32 @@
     "https://animare.vet/tr/blog/nd-quinoa-neutered-kopek-mamasi": {
       "t": "2026-09-05T07:41:43.122Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-quinoa-neutered-kopek-mamasi/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama": {
+      "t": "2026-09-07T08:15:01.192Z",
+      "denetlenen": "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 523
+    },
+    "https://animare.vet/en/blog/nd-prime-grain-free-pet-food": {
+      "t": "2026-09-07T08:15:02.757Z",
+      "denetlenen": "https://animare.vet/en/blog/nd-prime-grain-free-pet-food/",
       "verdict": "NEUTRAL",
       "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
@@ -2080,6 +2106,58 @@
       "canonicalGoogle": "https://magusapsikoloji.com/blog/terapi-dili-turkce-ingilizce.html",
       "canonicalSayfa": "https://magusapsikoloji.com/blog/terapi-dili-turkce-ingilizce.html",
       "sonTarama": "2026-09-03T19:58:23Z",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html": {
+      "t": "2026-09-07T08:15:18.650Z",
+      "denetlenen": "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/blog/cift-terapisi-gazimagusa.html": {
+      "t": "2026-09-07T08:15:18.688Z",
+      "denetlenen": "https://magusapsikoloji.com/blog/cift-terapisi-gazimagusa.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html": {
+      "t": "2026-09-07T08:15:18.761Z",
+      "denetlenen": "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/hizmetler/noropsikolojik-degerlendirme.html": {
+      "t": "2026-09-07T08:15:26.271Z",
+      "denetlenen": "https://magusapsikoloji.com/hizmetler/noropsikolojik-degerlendirme.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
       "httpKod": 200
     }
   },
