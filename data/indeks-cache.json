@@ -2159,6 +2159,58 @@
       "canonicalSayfa": "",
       "sonTarama": "",
       "httpKod": 200
+    },
+    "https://magusapsikoloji.com/en/psychologist-in-famagusta.html": {
+      "t": "2026-09-08T08:08:09.123Z",
+      "denetlenen": "https://magusapsikoloji.com/en/psychologist-in-famagusta.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/gazimagusa-psikolog.html": {
+      "t": "2026-09-08T08:08:09.400Z",
+      "denetlenen": "https://magusapsikoloji.com/gazimagusa-psikolog.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/en/services/couples-therapy.html": {
+      "t": "2026-09-08T08:08:10.212Z",
+      "denetlenen": "https://magusapsikoloji.com/en/services/couples-therapy.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/hizmetler/cift-terapisi.html": {
+      "t": "2026-09-08T08:08:16.312Z",
+      "denetlenen": "https://magusapsikoloji.com/hizmetler/cift-terapisi.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
     }
   },
   "taxsi": {
@@ -6925,7 +6977,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/can-sigorta-lefkosa": {
-      "t": "2026-08-31T09:37:30.044Z",
+      "t": "2026-09-08T08:08:24.117Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/can-sigorta-lefkosa/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6938,7 +6990,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/kktc-sigorta-sirketi-guvenilir-mi": {
-      "t": "2026-08-31T09:37:30.300Z",
+      "t": "2026-09-08T08:08:24.170Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/kktc-sigorta-sirketi-guvenilir-mi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6951,7 +7003,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/banka-bagli-sigorta-sirketleri": {
-      "t": "2026-08-31T09:37:30.398Z",
+      "t": "2026-09-08T08:08:23.918Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/banka-bagli-sigorta-sirketleri/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6964,7 +7016,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/konu/seffaflik": {
-      "t": "2026-08-31T09:37:37.303Z",
+      "t": "2026-09-08T08:08:31.458Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/konu/seffaflik/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -6977,7 +7029,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket": {
-      "t": "2026-08-31T09:37:37.385Z",
+      "t": "2026-09-08T08:08:31.244Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket/",
       "verdict": "NEUTRAL",
       "durum": "URL is unknown to Google",
@@ -6990,7 +7042,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket-secimi": {
-      "t": "2026-08-31T09:37:37.517Z",
+      "t": "2026-09-08T08:08:31.390Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/konu/sirket-secimi/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
