@@ -2237,6 +2237,32 @@
       "canonicalSayfa": "",
       "sonTarama": "",
       "httpKod": 200
+    },
+    "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html": {
+      "t": "2026-09-11T08:03:58.436Z",
+      "denetlenen": "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html",
+      "sonTarama": "2026-09-11T07:44:08Z",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/en/blog/autism-spectrum-disorder-early-signs.html": {
+      "t": "2026-09-11T08:03:58.458Z",
+      "denetlenen": "https://magusapsikoloji.com/en/blog/autism-spectrum-disorder-early-signs.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
     }
   },
   "taxsi": {
