@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-09-13T08:29:24.086Z",
+  "guncelleme": "2026-09-13T08:14:23.148Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 91,
@@ -505,11 +505,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 80,
+        "mobilPuan": 89,
         "masaustuPuan": 96,
-        "lcp": 3.7,
-        "inp": 93,
-        "cls": 0,
+        "lcp": 3.5,
+        "inp": 20,
+        "cls": 0.08,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -724,7 +724,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-09-13T08:22:55.159Z"
+        "tarih": "2026-09-12T07:59:36.195Z"
       },
       "aiBotlar": null,
       "geo": {
@@ -735,16 +735,9 @@
       "siralama": [
         {
           "kelime": "nöbetçi veteriner",
-          "pozisyon": 4,
+          "pozisyon": 5,
           "onceki": 7,
-          "gosterim": 18,
-          "tik": 2
-        },
-        {
-          "kelime": "24 saat açık veteriner",
-          "pozisyon": 3,
-          "onceki": 7,
-          "gosterim": 5,
+          "gosterim": 15,
           "tik": 2
         },
         {
@@ -755,36 +748,29 @@
           "tik": 2
         },
         {
-          "kelime": "nöbetçi veteriner kktc",
-          "pozisyon": 5,
-          "onceki": 5,
-          "gosterim": 40,
-          "tik": 1
-        },
-        {
           "kelime": "gönyeli veteriner",
           "pozisyon": 1,
           "onceki": 1,
-          "gosterim": 35,
+          "gosterim": 41,
           "tik": 1
         },
         {
           "kelime": "kktc veteriner",
           "pozisyon": 9,
           "onceki": 9,
-          "gosterim": 28,
+          "gosterim": 27,
           "tik": 1
         },
         {
           "kelime": "lefkoşa veteriner",
           "pozisyon": 6,
           "onceki": 8,
-          "gosterim": 25,
+          "gosterim": 22,
           "tik": 1
         },
         {
           "kelime": "animare veteriner kliniği",
-          "pozisyon": 12,
+          "pozisyon": 13,
           "onceki": 5,
           "gosterim": 10,
           "tik": 1
@@ -800,28 +786,21 @@
           "kelime": "cat dental care",
           "pozisyon": 33,
           "onceki": 45,
-          "gosterim": 31,
+          "gosterim": 28,
           "tik": 0
         },
         {
-          "kelime": "dog vaccination schedule",
+          "kelime": "cat dental cleaning",
           "pozisyon": 47,
-          "onceki": 52,
-          "gosterim": 27,
-          "tik": 0
-        },
-        {
-          "kelime": "cat dental treatment",
-          "pozisyon": 51,
           "onceki": 59,
           "gosterim": 22,
           "tik": 0
         },
         {
-          "kelime": "cat dental cleaning",
-          "pozisyon": 46,
-          "onceki": 57,
-          "gosterim": 18,
+          "kelime": "cat dental treatment",
+          "pozisyon": 52,
+          "onceki": 59,
+          "gosterim": 19,
           "tik": 0
         },
         {
@@ -832,10 +811,31 @@
           "tik": 0
         },
         {
+          "kelime": "core vaccines for dogs timeline",
+          "pozisyon": 54,
+          "onceki": 54,
+          "gosterim": 8,
+          "tik": 0
+        },
+        {
           "kelime": "animavet clinic",
           "pozisyon": 11,
           "onceki": 9,
           "gosterim": 7,
+          "tik": 0
+        },
+        {
+          "kelime": "anima vet clinic",
+          "pozisyon": 40,
+          "onceki": 30,
+          "gosterim": 6,
+          "tik": 0
+        },
+        {
+          "kelime": "dog injection schedule",
+          "pozisyon": 61,
+          "onceki": 61,
+          "gosterim": 5,
           "tik": 0
         }
       ],
@@ -844,41 +844,35 @@
       "icerikBoslugu": [
         {
           "kelime": "cat dental care",
-          "hacim": 31,
+          "hacim": 28,
           "rakipPoz": 33,
           "tip": "firsat"
         },
         {
           "kelime": "kktc veteriner",
-          "hacim": 28,
+          "hacim": 27,
           "rakipPoz": 9,
           "tip": "firsat"
         },
         {
-          "kelime": "dog vaccination schedule",
-          "hacim": 27,
-          "rakipPoz": 47,
-          "tip": "firsat"
-        },
-        {
           "kelime": "cat dental cleaning",
-          "hacim": 18,
-          "rakipPoz": 46,
+          "hacim": 22,
+          "rakipPoz": 47,
           "tip": "firsat"
         },
         {
           "kelime": "animare veteriner kliniği",
           "hacim": 10,
-          "rakipPoz": 12,
+          "rakipPoz": 13,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-13",
+      "siralamaTarih": "2026-09-12",
       "siralamaPencere": {
-        "baslangic": "2026-08-14",
-        "bitis": "2026-09-10"
+        "baslangic": "2026-08-13",
+        "bitis": "2026-09-09"
       },
-      "hizTarih": "2026-09-13",
+      "hizTarih": "2026-09-12",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -1703,10 +1697,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 94,
-        "masaustuPuan": 78,
-        "lcp": 2.7,
-        "inp": 124,
+        "mobilPuan": 95,
+        "masaustuPuan": 82,
+        "lcp": 2.8,
+        "inp": 48,
         "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
@@ -1876,7 +1870,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-09-13T08:22:55.161Z"
+        "tarih": "2026-09-12T08:03:21.234Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -1884,8 +1878,8 @@
         {
           "kelime": "mağusa psikolog",
           "pozisyon": 8,
-          "onceki": 6,
-          "gosterim": 22,
+          "onceki": 5,
+          "gosterim": 24,
           "tik": 3
         },
         {
@@ -1899,34 +1893,34 @@
           "kelime": "childhood trauma treatment cyprus",
           "pozisyon": 39,
           "onceki": 36,
-          "gosterim": 35,
+          "gosterim": 34,
           "tik": 0
         },
         {
           "kelime": "panik atak nedir belirtileri nelerdir",
-          "pozisyon": 62,
+          "pozisyon": 63,
           "onceki": 96,
-          "gosterim": 21,
+          "gosterim": 19,
           "tik": 0
         },
         {
           "kelime": "panik bozukluk belirtileri",
-          "pozisyon": 68,
-          "onceki": 77,
-          "gosterim": 17,
+          "pozisyon": 69,
+          "onceki": 69,
+          "gosterim": 16,
           "tik": 0
         },
         {
           "kelime": "developmental trauma treatment cyprus",
-          "pozisyon": 39,
+          "pozisyon": 40,
           "onceki": 40,
-          "gosterim": 15,
+          "gosterim": 14,
           "tik": 0
         },
         {
           "kelime": "mental health treatment cyprus",
           "pozisyon": 43,
-          "onceki": 43,
+          "onceki": 55,
           "gosterim": 14,
           "tik": 0
         },
@@ -1941,13 +1935,6 @@
           "kelime": "emotional trauma treatment cyprus",
           "pozisyon": 37,
           "onceki": 37,
-          "gosterim": 12,
-          "tik": 0
-        },
-        {
-          "kelime": "psikolog",
-          "pozisyon": 5,
-          "onceki": 11,
           "gosterim": 12,
           "tik": 0
         },
@@ -1967,8 +1954,8 @@
         },
         {
           "kelime": "psikolog ilaç yazabilir mi",
-          "pozisyon": 78,
-          "onceki": 69,
+          "pozisyon": 76,
+          "onceki": 70,
           "gosterim": 11,
           "tik": 0
         },
@@ -1985,6 +1972,13 @@
           "onceki": 96,
           "gosterim": 10,
           "tik": 0
+        },
+        {
+          "kelime": "psychologist vs psychiatrist",
+          "pozisyon": 77,
+          "onceki": 77,
+          "gosterim": 10,
+          "tik": 0
         }
       ],
       "rakip": [],
@@ -1992,14 +1986,14 @@
       "icerikBoslugu": [
         {
           "kelime": "childhood trauma treatment cyprus",
-          "hacim": 35,
+          "hacim": 34,
           "rakipPoz": 39,
           "tip": "firsat"
         },
         {
           "kelime": "developmental trauma treatment cyprus",
-          "hacim": 15,
-          "rakipPoz": 39,
+          "hacim": 14,
+          "rakipPoz": 40,
           "tip": "firsat"
         },
         {
@@ -2027,12 +2021,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-13",
+      "siralamaTarih": "2026-09-12",
       "siralamaPencere": {
-        "baslangic": "2026-08-14",
-        "bitis": "2026-09-10"
+        "baslangic": "2026-08-13",
+        "bitis": "2026-09-09"
       },
-      "hizTarih": "2026-09-13",
+      "hizTarih": "2026-09-12",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -3012,33 +3006,44 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 69,
-        "masaustuPuan": 83,
-        "lcp": 8.9,
+        "mobilPuan": 70,
+        "masaustuPuan": 93,
+        "lcp": 8.3,
         "inp": 0,
-        "cls": 0.02,
+        "cls": 0,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
         "kaynak": "lab"
       },
       "indeks": {
-        "indeksli": 148,
-        "indekssiz": 2,
-        "aksiyonGereken": 2,
+        "indeksli": 98,
+        "indekssiz": 52,
+        "aksiyonGereken": 52,
         "kontrolEdilen": 150,
         "toplamSayfa": 150,
         "dususVar": false,
         "nedenler": [
           {
             "neden": "Gönderildi ve indekslendi",
-            "adet": 148,
+            "adet": 98,
             "sorun": false,
             "cozum": "",
             "ornekler": [
               "/en",
               "/tr",
               "/ru"
+            ]
+          },
+          {
+            "neden": "Google bu URL'i bilmiyor",
+            "adet": 51,
+            "sorun": true,
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
+            "ornekler": [
+              "/en/areas",
+              "/tr/bolge",
+              "/ru/rayony"
             ]
           },
           {
@@ -3049,18 +3054,24 @@
             "ornekler": [
               "/ru/marshruty/transfer-aeroport-erdzhan-lapta"
             ]
-          },
-          {
-            "neden": "Google bu URL'i bilmiyor",
-            "adet": 1,
-            "sorun": true,
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
-            "ornekler": [
-              "/en/routes/larnaca-airport-to-catalkoy-hotels"
-            ]
           }
         ],
         "sorunlu": [
+          {
+            "yol": "/en/areas",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/bolge",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/rayony",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
           {
             "yol": "/ru/marshruty/transfer-aeroport-erdzhan-lapta",
             "neden": "Bulundu — şu anda indekslenmedi",
@@ -3070,9 +3081,234 @@
             "yol": "/en/routes/larnaca-airport-to-catalkoy-hotels",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/larnaka-havalimani-lapta-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-larnaka-lapta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/larnaca-airport-to-karsiyaka",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/larnaka-havalimani-karsiyaka-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-larnaka-karshiyaka",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/larnaca-airport-to-esentepe-hotels",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/larnaka-havalimani-esentepe-otelleri-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-larnaka-oteli-esentepe",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/larnaca-airport-to-bogaz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/larnaka-havalimani-bogaz-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-larnaka-bogaz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/larnaca-airport-to-karpaz-hotels",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/larnaka-havalimani-karpaz-otelleri-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-larnaka-oteli-karpaza",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/larnaca-airport-to-lefke",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/larnaka-havalimani-lefke-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-larnaka-lefke",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-nicosia",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-lefkosa-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-nikosiya",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-kyrenia",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-girne-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-kireniya",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-kyrenia-hotels",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-girne-otelleri-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-oteli-kirenii",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-famagusta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-gazimagusa-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-famagusta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-iskele-long-beach",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-iskele-long-beach-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-iskele-long-bich",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-bafra-hotels",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-bafra-otelleri-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-oteli-bafry",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-guzelyurt",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-guzelyurt-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-gyuzelyurt",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-catalkoy-hotels",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-catalkoy-otelleri-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-oteli-chatalkoya",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-alsancak-hotels",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/guzergahlar/baf-havalimani-alsancak-otelleri-transfer",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/ru/marshruty/transfer-aeroport-pafos-oteli-alsandzhaka",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/routes/paphos-airport-to-lapta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-09-13T08:25:39.036Z"
+        "tarih": "2026-09-12T08:07:29.085Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -3095,28 +3331,28 @@
           "kelime": "dipkarpaz altınkum",
           "pozisyon": 10,
           "onceki": 10,
-          "gosterim": 34,
+          "gosterim": 33,
           "tik": 0
         },
         {
           "kelime": "ercan havalimanı girne transfer ücreti",
           "pozisyon": 10,
           "onceki": 10,
-          "gosterim": 18,
+          "gosterim": 17,
           "tik": 0
         },
         {
           "kelime": "altınkum plajı kktc",
           "pozisyon": 22,
           "onceki": 22,
-          "gosterim": 16,
+          "gosterim": 14,
           "tik": 0
         },
         {
           "kelime": "ercan havalimanı lefke avrupa üniversitesi arası kaç km",
           "pozisyon": 6,
           "onceki": 6,
-          "gosterim": 10,
+          "gosterim": 9,
           "tik": 0
         },
         {
@@ -3127,23 +3363,23 @@
           "tik": 0
         },
         {
+          "kelime": "gazimağusa surlariçi",
+          "pozisyon": 10,
+          "onceki": 10,
+          "gosterim": 8,
+          "tik": 0
+        },
+        {
           "kelime": "famagusta bay",
           "pozisyon": 20,
           "onceki": 20,
-          "gosterim": 8,
+          "gosterim": 7,
           "tik": 0
         },
         {
           "kelime": "famagusta beach cyprus",
           "pozisyon": 74,
           "onceki": 74,
-          "gosterim": 7,
-          "tik": 0
-        },
-        {
-          "kelime": "gazimağusa surlariçi",
-          "pozisyon": 10,
-          "onceki": 12,
           "gosterim": 7,
           "tik": 0
         },
@@ -3176,9 +3412,9 @@
           "tik": 0
         },
         {
-          "kelime": "ercan havalimanından lefke ye nasıl gidilir",
-          "pozisyon": 11,
-          "onceki": 11,
+          "kelime": "ercan arrivals",
+          "pozisyon": 14,
+          "onceki": 14,
           "gosterim": 4,
           "tik": 0
         }
@@ -3194,19 +3430,19 @@
         },
         {
           "kelime": "dipkarpaz altınkum",
-          "hacim": 34,
+          "hacim": 33,
           "rakipPoz": 10,
           "tip": "firsat"
         },
         {
           "kelime": "ercan havalimanı girne transfer ücreti",
-          "hacim": 18,
+          "hacim": 17,
           "rakipPoz": 10,
           "tip": "firsat"
         },
         {
           "kelime": "altınkum plajı kktc",
-          "hacim": 16,
+          "hacim": 14,
           "rakipPoz": 22,
           "tip": "firsat"
         },
@@ -3223,18 +3459,18 @@
           "tip": "firsat"
         },
         {
-          "kelime": "famagusta bay",
+          "kelime": "gazimağusa surlariçi",
           "hacim": 8,
-          "rakipPoz": 20,
+          "rakipPoz": 10,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-13",
+      "siralamaTarih": "2026-09-12",
       "siralamaPencere": {
-        "baslangic": "2026-08-14",
-        "bitis": "2026-09-10"
+        "baslangic": "2026-08-13",
+        "bitis": "2026-09-09"
       },
-      "hizTarih": "2026-09-13",
+      "hizTarih": "2026-09-12",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -4290,10 +4526,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 82,
-        "masaustuPuan": 96,
-        "lcp": 4,
-        "inp": 189,
+        "mobilPuan": 69,
+        "masaustuPuan": 94,
+        "lcp": 6.4,
+        "inp": 42,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4302,10 +4538,10 @@
       },
       "indeks": {
         "indeksli": 71,
-        "indekssiz": 37,
-        "aksiyonGereken": 37,
-        "kontrolEdilen": 108,
-        "toplamSayfa": 108,
+        "indekssiz": 25,
+        "aksiyonGereken": 25,
+        "kontrolEdilen": 96,
+        "toplamSayfa": 96,
         "dususVar": false,
         "nedenler": [
           {
@@ -4332,13 +4568,13 @@
           },
           {
             "neden": "Google bu URL'i bilmiyor",
-            "adet": 15,
+            "adet": 3,
             "sorun": true,
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
             "ornekler": [
-              "/en/blog/how-to-order-what-you-cant-find-in-cyprus.html",
-              "/en/blog/where-to-buy-designer-bags-in-cyprus.html",
-              "/en/blog/where-to-find-coach-bags-in-cyprus.html"
+              "/en/product/steve-madden-asiel",
+              "/en/product/cizgili-blazer-elbise",
+              "/urun/gucci-gunes-gozlugu"
             ]
           },
           {
@@ -4353,66 +4589,6 @@
           }
         ],
         "sorunlu": [
-          {
-            "yol": "/en/blog/how-to-order-what-you-cant-find-in-cyprus.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/en/blog/where-to-buy-designer-bags-in-cyprus.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/en/blog/where-to-find-coach-bags-in-cyprus.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/en/blog/where-to-find-tory-burch-bags-in-cyprus.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/en/blog/where-to-find-michael-kors-bags-in-cyprus.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/en/blog/where-to-buy-occasion-shoes-in-cyprus.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/blog/kibrista-bulamadigim-urunu-nasil-getirtirim.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/blog/kibrista-marka-canta-nereden-alinir.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/blog/kibrista-coach-canta-nereden-bulunur.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/blog/kibrista-tory-burch-canta-nereden-bulunur.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/blog/kibrista-michael-kors-canta-nereden-bulunur.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/blog/kibrista-davet-ayakkabisi-nereden-alinir.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
           {
             "yol": "/urun/guess-suet-sandalet",
             "neden": "Bulundu — şu anda indekslenmedi",
@@ -4539,7 +4715,7 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-09-13T08:26:09.431Z"
+        "tarih": "2026-09-12T08:11:13.912Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -4547,8 +4723,8 @@
         {
           "kelime": "jw pei cyprus",
           "pozisyon": 8,
-          "onceki": 5,
-          "gosterim": 13,
+          "onceki": 8,
+          "gosterim": 14,
           "tik": 5
         },
         {
@@ -4569,7 +4745,7 @@
           "kelime": "cyprus wedding guest outfit",
           "pozisyon": 27,
           "onceki": 27,
-          "gosterim": 26,
+          "gosterim": 25,
           "tik": 0
         },
         {
@@ -4594,17 +4770,31 @@
           "tik": 0
         },
         {
-          "kelime": "luxeva reviews",
-          "pozisyon": 9,
-          "onceki": 9,
-          "gosterim": 8,
-          "tik": 0
-        },
-        {
           "kelime": "girne çanta mağazaları",
           "pozisyon": 9,
           "onceki": 9,
           "gosterim": 6,
+          "tik": 0
+        },
+        {
+          "kelime": "luxeva reviews",
+          "pozisyon": 9,
+          "onceki": 9,
+          "gosterim": 6,
+          "tik": 0
+        },
+        {
+          "kelime": "hakiki deri",
+          "pozisyon": 88,
+          "onceki": 88,
+          "gosterim": 5,
+          "tik": 0
+        },
+        {
+          "kelime": "how to test for leather",
+          "pozisyon": 86,
+          "onceki": 86,
+          "gosterim": 4,
           "tik": 0
         },
         {
@@ -4622,13 +4812,6 @@
           "tik": 0
         },
         {
-          "kelime": "hakiki deri",
-          "pozisyon": 90,
-          "onceki": 86,
-          "gosterim": 3,
-          "tik": 0
-        },
-        {
           "kelime": "hakiki deri nasıl anlaşılır",
           "pozisyon": 94,
           "onceki": 94,
@@ -4641,13 +4824,6 @@
           "onceki": 81,
           "gosterim": 3,
           "tik": 0
-        },
-        {
-          "kelime": "how to test for leather",
-          "pozisyon": 86,
-          "onceki": 87,
-          "gosterim": 3,
-          "tik": 0
         }
       ],
       "rakip": [],
@@ -4655,13 +4831,13 @@
       "icerikBoslugu": [
         {
           "kelime": "cyprus wedding guest outfit",
-          "hacim": 26,
+          "hacim": 25,
           "rakipPoz": 27,
           "tip": "firsat"
         },
         {
           "kelime": "jw pei cyprus",
-          "hacim": 13,
+          "hacim": 14,
           "rakipPoz": 8,
           "tip": "firsat"
         },
@@ -4676,20 +4852,14 @@
           "hacim": 8,
           "rakipPoz": 12,
           "tip": "firsat"
-        },
-        {
-          "kelime": "luxeva reviews",
-          "hacim": 8,
-          "rakipPoz": 9,
-          "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-13",
+      "siralamaTarih": "2026-09-12",
       "siralamaPencere": {
-        "baslangic": "2026-08-14",
-        "bitis": "2026-09-10"
+        "baslangic": "2026-08-13",
+        "bitis": "2026-09-09"
       },
-      "hizTarih": "2026-09-13",
+      "hizTarih": "2026-09-12",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -5717,16 +5887,16 @@
         "kaynak": "lab"
       },
       "indeks": {
-        "indeksli": 86,
-        "indekssiz": 26,
-        "aksiyonGereken": 26,
+        "indeksli": 70,
+        "indekssiz": 42,
+        "aksiyonGereken": 42,
         "kontrolEdilen": 112,
         "toplamSayfa": 112,
         "dususVar": false,
         "nedenler": [
           {
             "neden": "Gönderildi ve indekslendi",
-            "adet": 86,
+            "adet": 70,
             "sorun": false,
             "cozum": "",
             "ornekler": [
@@ -5736,19 +5906,8 @@
             ]
           },
           {
-            "neden": "Bulundu — şu anda indekslenmedi",
-            "adet": 15,
-            "sorun": true,
-            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır.",
-            "ornekler": [
-              "/en/guides/topic/claims",
-              "/tr/sirketler/karsilastirma/anadolu-sigorta-kktc-turkiye",
-              "/tr/sirketler/karsilastirma/eurocity-sigorta-eig-sigorta"
-            ]
-          },
-          {
             "neden": "Google bu URL'i bilmiyor",
-            "adet": 10,
+            "adet": 28,
             "sorun": true,
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
             "ornekler": [
@@ -5758,12 +5917,14 @@
             ]
           },
           {
-            "neden": "Tarandı — şu anda indekslenmedi",
-            "adet": 1,
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "adet": 14,
             "sorun": true,
-            "cozum": "Kalite sorunu: içerik ince/kopya. Derinleştir, özgünleştir, iç link ver.",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır.",
             "ornekler": [
-              "/tr/sirketler/karsilastirma/turk-sigorta-turkiye-sigorta"
+              "/en/guides/topic/claims",
+              "/tr/sirketler/karsilastirma/anadolu-sigorta-kktc-turkiye",
+              "/tr/sirketler/karsilastirma/eurocity-sigorta-eig-sigorta"
             ]
           }
         ],
@@ -5835,18 +5996,23 @@
           },
           {
             "yol": "/tr/sirketler/karsilastirma/turk-sigorta-turkiye-sigorta",
-            "neden": "Tarandı — şu anda indekslenmedi",
-            "cozum": "Kalite sorunu: içerik ince/kopya. Derinleştir, özgünleştir, iç link ver."
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
             "yol": "/tr/sirketler/isyeri",
-            "neden": "Bulundu — şu anda indekslenmedi",
-            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/sirketler/iyi-gelecek-sigorta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
             "yol": "/tr/sirketler/seyahat",
-            "neden": "Bulundu — şu anda indekslenmedi",
-            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
             "yol": "/tr/rehber/kktc-garanti-fonu-basvuru",
@@ -5884,6 +6050,11 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
+            "yol": "/tr/rehber/konu/sinir-gecisi",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
             "yol": "/tr/rehber/konu/sirket-secimi",
             "neden": "Bulundu — şu anda indekslenmedi",
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
@@ -5897,9 +6068,79 @@
             "yol": "/tr/rehber/konu/yabancilar",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/rehber/ogrenci-saglik-sigortasi",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/rehber/sinir-gecisi-sigortasi",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/duzeltme",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/gizlilik",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/hakkimizda",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/iletisim",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/sigorta/isyeri",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/sigorta/kasko",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/sigorta/konut",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/sigorta/saglik",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/sigorta/seyahat",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/sigorta/trafik",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/tr/yasal-uyari",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-09-13T08:29:24.086Z"
+        "tarih": "2026-09-12T08:11:41.504Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -5912,38 +6153,31 @@
           "tik": 3
         },
         {
-          "kelime": "segure sigorta",
-          "pozisyon": 6,
-          "onceki": 6,
-          "gosterim": 16,
-          "tik": 2
-        },
-        {
           "kelime": "kıbrıs öğrenci sağlık sigortası",
           "pozisyon": 4,
           "onceki": 6,
-          "gosterim": 15,
+          "gosterim": 14,
           "tik": 2
-        },
-        {
-          "kelime": "kksbm",
-          "pozisyon": 7,
-          "onceki": 12,
-          "gosterim": 201,
-          "tik": 1
         },
         {
           "kelime": "dağlı sigorta",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 199,
+          "gosterim": 205,
+          "tik": 1
+        },
+        {
+          "kelime": "kksbm",
+          "pozisyon": 8,
+          "onceki": 12,
+          "gosterim": 162,
           "tik": 1
         },
         {
           "kelime": "kktc sigorta bilgi merkezi",
-          "pozisyon": 8,
-          "onceki": 23,
-          "gosterim": 70,
+          "pozisyon": 9,
+          "onceki": 12,
+          "gosterim": 68,
           "tik": 1
         },
         {
@@ -5957,7 +6191,7 @@
           "kelime": "kktc sağlık sigortası öğrenci ücreti",
           "pozisyon": 6,
           "onceki": 5,
-          "gosterim": 23,
+          "gosterim": 22,
           "tik": 1
         },
         {
@@ -5970,15 +6204,22 @@
         {
           "kelime": "güven sigorta kktc",
           "pozisyon": 9,
-          "onceki": 9,
-          "gosterim": 15,
+          "onceki": 8,
+          "gosterim": 18,
           "tik": 1
         },
         {
           "kelime": "kuzey kıbrıs sigorta bilgi merkezi",
-          "pozisyon": 14,
-          "onceki": 14,
-          "gosterim": 15,
+          "pozisyon": 15,
+          "onceki": 15,
+          "gosterim": 14,
+          "tik": 1
+        },
+        {
+          "kelime": "segure sigorta",
+          "pozisyon": 6,
+          "onceki": 6,
+          "gosterim": 14,
           "tik": 1
         },
         {
@@ -5992,21 +6233,21 @@
           "kelime": "creditwest pert",
           "pozisyon": 7,
           "onceki": 6,
-          "gosterim": 190,
+          "gosterim": 202,
           "tik": 0
         },
         {
           "kelime": "güven sigorta",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 74,
+          "gosterim": 77,
           "tik": 0
         },
         {
-          "kelime": "sigorta bilgi merkezi kktc",
-          "pozisyon": 10,
+          "kelime": "kksrsb",
+          "pozisyon": 7,
           "onceki": 7,
-          "gosterim": 47,
+          "gosterim": 44,
           "tik": 0
         }
       ],
@@ -6014,26 +6255,26 @@
       "kanibalizasyon": [],
       "icerikBoslugu": [
         {
+          "kelime": "kksbm",
+          "hacim": 162,
+          "rakipPoz": 8,
+          "tip": "firsat"
+        },
+        {
           "kelime": "güven sigorta",
-          "hacim": 74,
+          "hacim": 77,
           "rakipPoz": 8,
           "tip": "firsat"
         },
         {
           "kelime": "kktc sigorta bilgi merkezi",
-          "hacim": 70,
-          "rakipPoz": 8,
-          "tip": "firsat"
-        },
-        {
-          "kelime": "sigorta bilgi merkezi kktc",
-          "hacim": 47,
-          "rakipPoz": 10,
+          "hacim": 68,
+          "rakipPoz": 9,
           "tip": "firsat"
         },
         {
           "kelime": "kktcsigorta",
-          "hacim": 44,
+          "hacim": 43,
           "rakipPoz": 9,
           "tip": "firsat"
         },
@@ -6051,7 +6292,7 @@
         },
         {
           "kelime": "limasol sigorta",
-          "hacim": 28,
+          "hacim": 29,
           "rakipPoz": 9,
           "tip": "firsat"
         },
@@ -6062,22 +6303,22 @@
           "tip": "firsat"
         },
         {
-          "kelime": "sigorta bilgi merkezi",
-          "hacim": 23,
-          "rakipPoz": 14,
+          "kelime": "axa sigorta kktc",
+          "hacim": 22,
+          "rakipPoz": 10,
           "tip": "firsat"
         },
         {
-          "kelime": "axa sigorta kktc",
-          "hacim": 21,
-          "rakipPoz": 10,
+          "kelime": "güven sigorta kktc",
+          "hacim": 18,
+          "rakipPoz": 9,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-13",
+      "siralamaTarih": "2026-09-12",
       "siralamaPencere": {
-        "baslangic": "2026-08-14",
-        "bitis": "2026-09-10"
+        "baslangic": "2026-08-13",
+        "bitis": "2026-09-09"
       },
       "hizTarih": "2026-09-12",
       "_hizGercek": true,
