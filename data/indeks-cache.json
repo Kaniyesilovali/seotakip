@@ -1,7 +1,7 @@
 {
   "animare": {
     "https://animare.vet/en": {
-      "t": "2026-09-12T07:59:07.073Z",
+      "t": "2026-09-19T08:07:13.558Z",
       "denetlenen": "https://animare.vet/en/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -14,7 +14,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler": {
-      "t": "2026-09-12T07:59:06.686Z",
+      "t": "2026-09-19T08:07:14.043Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -27,7 +27,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr": {
-      "t": "2026-09-12T07:59:14.087Z",
+      "t": "2026-09-19T08:07:21.481Z",
       "denetlenen": "https://animare.vet/tr/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -36,11 +36,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/",
       "canonicalSayfa": "https://animare.vet/tr/",
-      "sonTarama": "2026-09-09T18:48:16Z",
+      "sonTarama": "2026-09-14T11:17:59Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hakkimizda": {
-      "t": "2026-09-12T07:59:15.064Z",
+      "t": "2026-09-19T08:07:25.741Z",
       "denetlenen": "https://animare.vet/tr/hakkimizda/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -49,11 +49,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/hakkimizda/",
       "canonicalSayfa": "https://animare.vet/tr/hakkimizda/",
-      "sonTarama": "2026-08-31T00:11:11Z",
+      "sonTarama": "2026-09-14T16:51:48Z",
       "httpKod": 200
     },
     "https://animare.vet/en/about": {
-      "t": "2026-09-12T07:59:13.933Z",
+      "t": "2026-09-19T08:07:20.646Z",
       "denetlenen": "https://animare.vet/en/about/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -66,7 +66,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services": {
-      "t": "2026-09-12T07:59:21.521Z",
+      "t": "2026-09-19T08:07:28.945Z",
       "denetlenen": "https://animare.vet/en/services/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -79,7 +79,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/iletisim": {
-      "t": "2026-09-12T07:59:22.441Z",
+      "t": "2026-09-19T08:07:33.532Z",
       "denetlenen": "https://animare.vet/tr/iletisim/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -88,11 +88,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/iletisim/",
       "canonicalSayfa": "https://animare.vet/tr/iletisim/",
-      "sonTarama": "2026-09-10T00:48:30Z",
+      "sonTarama": "2026-09-18T21:48:06Z",
       "httpKod": 200
     },
     "https://animare.vet/en/contact": {
-      "t": "2026-09-12T07:59:21.051Z",
+      "t": "2026-09-19T08:07:28.704Z",
       "denetlenen": "https://animare.vet/en/contact/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -105,7 +105,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/gizlilik": {
-      "t": "2026-09-12T07:59:30.222Z",
+      "t": "2026-09-19T08:07:41.609Z",
       "denetlenen": "https://animare.vet/tr/gizlilik/",
       "verdict": "NEUTRAL",
       "durum": "Excluded by ‘noindex’ tag",
@@ -118,7 +118,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/privacy": {
-      "t": "2026-09-12T07:59:29.941Z",
+      "t": "2026-09-19T08:07:36.617Z",
       "denetlenen": "https://animare.vet/en/privacy/",
       "verdict": "NEUTRAL",
       "durum": "Excluded by ‘noindex’ tag",
@@ -131,7 +131,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/general-checkup": {
-      "t": "2026-09-12T07:59:28.843Z",
+      "t": "2026-09-19T08:07:37.200Z",
       "denetlenen": "https://animare.vet/en/services/general-checkup/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -144,7 +144,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/genel-muayene": {
-      "t": "2026-09-12T07:59:36.193Z",
+      "t": "2026-09-19T08:07:44.155Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/genel-muayene/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -153,11 +153,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/hizmetler/genel-muayene/",
       "canonicalSayfa": "https://animare.vet/tr/hizmetler/genel-muayene/",
-      "sonTarama": "2026-08-21T12:50:17Z",
+      "sonTarama": "2026-09-13T20:49:30Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/cerrahi": {
-      "t": "2026-09-12T07:56:58.066Z",
+      "t": "2026-09-19T08:04:57.429Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/cerrahi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -170,7 +170,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/vaccination": {
-      "t": "2026-09-12T07:57:05.827Z",
+      "t": "2026-09-19T08:05:04.678Z",
       "denetlenen": "https://animare.vet/en/services/vaccination/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -179,11 +179,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/en/services/vaccination/",
       "canonicalSayfa": "https://animare.vet/en/services/vaccination/",
-      "sonTarama": "2026-08-30T19:22:14Z",
+      "sonTarama": "2026-09-19T01:38:59Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/asilama": {
-      "t": "2026-09-12T07:57:06.500Z",
+      "t": "2026-09-19T08:05:05.028Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/asilama/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -196,7 +196,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/surgery": {
-      "t": "2026-09-12T07:57:06.060Z",
+      "t": "2026-09-19T08:05:04.757Z",
       "denetlenen": "https://animare.vet/en/services/surgery/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -209,7 +209,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/dental-care": {
-      "t": "2026-09-12T07:57:13.648Z",
+      "t": "2026-09-19T08:05:12.337Z",
       "denetlenen": "https://animare.vet/en/services/dental-care/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -218,11 +218,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/en/services/dental-care/",
       "canonicalSayfa": "https://animare.vet/en/services/dental-care/",
-      "sonTarama": "2026-08-30T16:13:27Z",
+      "sonTarama": "2026-09-15T01:49:47Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/dis-bakimi": {
-      "t": "2026-09-12T07:57:13.838Z",
+      "t": "2026-09-19T08:05:12.692Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/dis-bakimi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -235,7 +235,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/radiology": {
-      "t": "2026-09-12T07:57:13.629Z",
+      "t": "2026-09-19T08:05:12.349Z",
       "denetlenen": "https://animare.vet/en/services/radiology/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -244,11 +244,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/en/services/radiology/",
       "canonicalSayfa": "https://animare.vet/en/services/radiology/",
-      "sonTarama": "2026-09-04T03:02:57Z",
+      "sonTarama": "2026-09-15T14:21:38Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/radyoloji": {
-      "t": "2026-09-12T07:57:21.024Z",
+      "t": "2026-09-19T08:05:19.979Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/radyoloji/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -257,11 +257,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/hizmetler/radyoloji/",
       "canonicalSayfa": "https://animare.vet/tr/hizmetler/radyoloji/",
-      "sonTarama": "2026-08-23T21:56:06Z",
+      "sonTarama": "2026-09-15T11:51:39Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/acil-hizmet": {
-      "t": "2026-09-12T07:57:20.644Z",
+      "t": "2026-09-19T08:05:20.087Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/acil-hizmet/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -274,7 +274,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/laboratory": {
-      "t": "2026-09-12T07:57:21.441Z",
+      "t": "2026-09-19T08:05:20.247Z",
       "denetlenen": "https://animare.vet/en/services/laboratory/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -283,11 +283,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/en/services/laboratory/",
       "canonicalSayfa": "https://animare.vet/en/services/laboratory/",
-      "sonTarama": "2026-09-05T23:12:09Z",
+      "sonTarama": "2026-09-19T07:00:02Z",
       "httpKod": 200
     },
     "https://animare.vet/en/services/emergency": {
-      "t": "2026-09-12T07:57:29.653Z",
+      "t": "2026-09-19T08:05:27.787Z",
       "denetlenen": "https://animare.vet/en/services/emergency/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -296,11 +296,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/en/services/emergency/",
       "canonicalSayfa": "https://animare.vet/en/services/emergency/",
-      "sonTarama": "2026-08-30T16:17:17Z",
+      "sonTarama": "2026-09-15T09:42:58Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/laboratuvar": {
-      "t": "2026-09-12T07:57:28.956Z",
+      "t": "2026-09-19T08:05:27.738Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/laboratuvar/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -309,11 +309,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/hizmetler/laboratuvar/",
       "canonicalSayfa": "https://animare.vet/tr/hizmetler/laboratuvar/",
-      "sonTarama": "2026-08-30T17:56:39Z",
+      "sonTarama": "2026-09-05T19:27:12Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/pet-kuafor": {
-      "t": "2026-09-12T07:57:29.065Z",
+      "t": "2026-09-19T08:05:27.773Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/pet-kuafor/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -326,7 +326,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/pet-grooming": {
-      "t": "2026-09-12T07:57:37.060Z",
+      "t": "2026-09-19T08:05:35.512Z",
       "denetlenen": "https://animare.vet/en/services/pet-grooming/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -339,7 +339,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/hizmetler/beslenme-danismanligi": {
-      "t": "2026-09-12T07:57:37.262Z",
+      "t": "2026-09-19T08:05:35.569Z",
       "denetlenen": "https://animare.vet/tr/hizmetler/beslenme-danismanligi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -348,11 +348,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/hizmetler/beslenme-danismanligi/",
       "canonicalSayfa": "https://animare.vet/tr/hizmetler/beslenme-danismanligi/",
-      "sonTarama": "2026-08-27T23:03:09Z",
+      "sonTarama": "2026-09-15T13:06:37Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/blog": {
-      "t": "2026-09-12T07:57:36.478Z",
+      "t": "2026-09-19T08:05:34.841Z",
       "denetlenen": "https://animare.vet/tr/blog/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -365,7 +365,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/services/nutrition-consulting": {
-      "t": "2026-09-12T07:57:44.253Z",
+      "t": "2026-09-19T08:05:42.462Z",
       "denetlenen": "https://animare.vet/en/services/nutrition-consulting/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -374,11 +374,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/en/services/nutrition-consulting/",
       "canonicalSayfa": "https://animare.vet/en/services/nutrition-consulting/",
-      "sonTarama": "2026-09-04T04:18:00Z",
+      "sonTarama": "2026-09-15T21:45:11Z",
       "httpKod": 200
     },
     "https://animare.vet/en/blog": {
-      "t": "2026-09-12T07:57:44.440Z",
+      "t": "2026-09-19T08:05:42.709Z",
       "denetlenen": "https://animare.vet/en/blog/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -387,11 +387,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/en/blog/",
       "canonicalSayfa": "https://animare.vet/en/blog/",
-      "sonTarama": "2026-09-04T00:32:37Z",
+      "sonTarama": "2026-09-12T07:54:31Z",
       "httpKod": 200
     },
     "https://animare.vet/en/blog/dog-vaccination-schedule": {
-      "t": "2026-09-12T07:57:44.666Z",
+      "t": "2026-09-19T08:05:43.174Z",
       "denetlenen": "https://animare.vet/en/blog/dog-vaccination-schedule/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -404,7 +404,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kopek-asi-takvimi": {
-      "t": "2026-09-12T07:57:51.871Z",
+      "t": "2026-09-19T08:05:50.517Z",
       "denetlenen": "https://animare.vet/tr/blog/kopek-asi-takvimi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -413,11 +413,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/blog/kopek-asi-takvimi/",
       "canonicalSayfa": "https://animare.vet/tr/blog/kopek-asi-takvimi/",
-      "sonTarama": "2026-08-22T17:44:14Z",
+      "sonTarama": "2026-09-19T05:46:04Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kedilerde-dis-bakimi": {
-      "t": "2026-09-12T07:57:51.634Z",
+      "t": "2026-09-19T08:05:50.927Z",
       "denetlenen": "https://animare.vet/tr/blog/kedilerde-dis-bakimi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -430,7 +430,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/yaz-sicaginda-evcil-hayvan": {
-      "t": "2026-09-12T07:57:52.019Z",
+      "t": "2026-09-19T08:05:50.667Z",
       "denetlenen": "https://animare.vet/tr/blog/yaz-sicaginda-evcil-hayvan/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -443,7 +443,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/cat-dental-care": {
-      "t": "2026-09-12T07:57:59.203Z",
+      "t": "2026-09-19T08:05:58.337Z",
       "denetlenen": "https://animare.vet/en/blog/cat-dental-care/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -456,7 +456,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/summer-heat-pet-safety": {
-      "t": "2026-09-12T07:57:59.033Z",
+      "t": "2026-09-19T08:05:58.147Z",
       "denetlenen": "https://animare.vet/en/blog/summer-heat-pet-safety/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -469,7 +469,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/yaz-aylarinda-ektoparazit-koruma": {
-      "t": "2026-09-12T07:58:00.382Z",
+      "t": "2026-09-19T08:05:58.284Z",
       "denetlenen": "https://animare.vet/tr/blog/yaz-aylarinda-ektoparazit-koruma/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -482,7 +482,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/ectoparasite-protection-summer": {
-      "t": "2026-09-12T07:58:06.430Z",
+      "t": "2026-09-19T08:06:06.057Z",
       "denetlenen": "https://animare.vet/en/blog/ectoparasite-protection-summer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -495,7 +495,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/acil-veteriner-belirtileri": {
-      "t": "2026-09-12T07:58:06.971Z",
+      "t": "2026-09-19T08:06:05.938Z",
       "denetlenen": "https://animare.vet/tr/blog/acil-veteriner-belirtileri/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -508,7 +508,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/yavru-kedi-asi-takvimi": {
-      "t": "2026-09-12T07:58:08.026Z",
+      "t": "2026-09-19T08:06:05.918Z",
       "denetlenen": "https://animare.vet/tr/blog/yavru-kedi-asi-takvimi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -517,11 +517,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/blog/yavru-kedi-asi-takvimi/",
       "canonicalSayfa": "https://animare.vet/tr/blog/yavru-kedi-asi-takvimi/",
-      "sonTarama": "2026-09-04T00:00:49Z",
+      "sonTarama": "2026-09-16T00:15:11Z",
       "httpKod": 200
     },
     "https://animare.vet/en/blog/pet-emergency-signs": {
-      "t": "2026-09-12T07:58:13.877Z",
+      "t": "2026-09-19T08:06:13.409Z",
       "denetlenen": "https://animare.vet/en/blog/pet-emergency-signs/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -534,7 +534,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/kitten-vaccination-schedule": {
-      "t": "2026-09-12T07:58:14.234Z",
+      "t": "2026-09-19T08:06:13.506Z",
       "denetlenen": "https://animare.vet/en/blog/kitten-vaccination-schedule/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -547,7 +547,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/farmina-nd-pet-food-guide": {
-      "t": "2026-09-12T07:58:14.961Z",
+      "t": "2026-09-19T08:06:13.621Z",
       "denetlenen": "https://animare.vet/en/blog/farmina-nd-pet-food-guide/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -560,10 +560,10 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kedilerde-idrar-tikanikligi": {
-      "t": "2026-09-12T07:58:21.265Z",
+      "t": "2026-09-19T08:06:20.620Z",
       "denetlenen": "https://animare.vet/tr/blog/kedilerde-idrar-tikanikligi/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -573,7 +573,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/farmina-nd-mama-rehberi": {
-      "t": "2026-09-12T07:58:21.556Z",
+      "t": "2026-09-19T08:06:20.803Z",
       "denetlenen": "https://animare.vet/tr/blog/farmina-nd-mama-rehberi/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -586,21 +586,8 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/zehirli-yiyecekler-ve-bitkiler": {
-      "t": "2026-09-12T07:58:22.347Z",
+      "t": "2026-09-19T08:06:20.860Z",
       "denetlenen": "https://animare.vet/tr/blog/zehirli-yiyecekler-ve-bitkiler/",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
-      "httpKod": 200
-    },
-    "https://animare.vet/en/blog/toxic-foods-and-plants-for-pets": {
-      "t": "2026-09-12T07:58:29.378Z",
-      "denetlenen": "https://animare.vet/en/blog/toxic-foods-and-plants-for-pets/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
@@ -611,8 +598,21 @@
       "sonTarama": "",
       "httpKod": 200
     },
+    "https://animare.vet/en/blog/toxic-foods-and-plants-for-pets": {
+      "t": "2026-09-19T08:06:28.508Z",
+      "denetlenen": "https://animare.vet/en/blog/toxic-foods-and-plants-for-pets/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
     "https://animare.vet/en/blog/cat-urinary-blockage": {
-      "t": "2026-09-12T07:58:29.321Z",
+      "t": "2026-09-19T08:06:29.871Z",
       "denetlenen": "https://animare.vet/en/blog/cat-urinary-blockage/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -625,7 +625,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kedi-kopek-otitis-eksterna": {
-      "t": "2026-09-12T07:58:29.773Z",
+      "t": "2026-09-19T08:06:28.458Z",
       "denetlenen": "https://animare.vet/tr/blog/kedi-kopek-otitis-eksterna/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -638,10 +638,10 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kopeklerde-leishmaniasis": {
-      "t": "2026-09-12T07:58:36.663Z",
+      "t": "2026-09-19T08:06:36.324Z",
       "denetlenen": "https://animare.vet/tr/blog/kopeklerde-leishmaniasis/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -651,7 +651,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/otitis-externa-cats-dogs": {
-      "t": "2026-09-12T07:58:37.147Z",
+      "t": "2026-09-19T08:06:36.860Z",
       "denetlenen": "https://animare.vet/en/blog/otitis-externa-cats-dogs/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -664,10 +664,10 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/leishmaniasis-in-dogs": {
-      "t": "2026-09-12T07:58:36.740Z",
+      "t": "2026-09-19T08:06:36.031Z",
       "denetlenen": "https://animare.vet/en/blog/leishmaniasis-in-dogs/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -677,7 +677,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kopeklerde-kene-hastaliklari": {
-      "t": "2026-09-12T07:58:44.400Z",
+      "t": "2026-09-19T08:06:43.872Z",
       "denetlenen": "https://animare.vet/tr/blog/kopeklerde-kene-hastaliklari/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -690,10 +690,10 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/tick-borne-diseases-in-dogs": {
-      "t": "2026-09-12T07:58:43.624Z",
+      "t": "2026-09-19T08:07:10.725Z",
       "denetlenen": "https://animare.vet/en/blog/tick-borne-diseases-in-dogs/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -703,7 +703,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma": {
-      "t": "2026-09-12T07:58:45.137Z",
+      "t": "2026-09-19T08:06:44.431Z",
       "denetlenen": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -716,7 +716,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/spaying-neutering-cats-dogs": {
-      "t": "2026-09-12T07:58:51.082Z",
+      "t": "2026-09-19T08:06:51.186Z",
       "denetlenen": "https://animare.vet/en/blog/spaying-neutering-cats-dogs/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -729,7 +729,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kedilerde-kronik-bobrek-hastaligi": {
-      "t": "2026-09-12T07:58:51.729Z",
+      "t": "2026-09-19T08:06:51.548Z",
       "denetlenen": "https://animare.vet/tr/blog/kedilerde-kronik-bobrek-hastaligi/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -742,7 +742,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/chronic-kidney-disease-in-cats": {
-      "t": "2026-09-12T07:58:52.675Z",
+      "t": "2026-09-19T08:06:58.591Z",
       "denetlenen": "https://animare.vet/en/blog/chronic-kidney-disease-in-cats/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -755,7 +755,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kedi-kopek-mama-cesitleri": {
-      "t": "2026-09-12T07:58:58.245Z",
+      "t": "2026-09-19T08:06:59.004Z",
       "denetlenen": "https://animare.vet/tr/blog/kedi-kopek-mama-cesitleri/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -768,10 +768,10 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/cat-and-dog-food-range": {
-      "t": "2026-09-12T07:58:59.500Z",
+      "t": "2026-09-19T08:07:06.299Z",
       "denetlenen": "https://animare.vet/en/blog/cat-and-dog-food-range/",
       "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
+      "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -781,7 +781,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/choosing-a-vet-clinic-cyprus": {
-      "t": "2026-09-12T07:59:00.500Z",
+      "t": "2026-09-19T08:07:06.626Z",
       "denetlenen": "https://animare.vet/en/blog/choosing-a-vet-clinic-cyprus/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -794,7 +794,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kibris-veteriner-klinigi-secimi": {
-      "t": "2026-09-12T07:59:07.441Z",
+      "t": "2026-09-19T08:07:18.342Z",
       "denetlenen": "https://animare.vet/tr/blog/kibris-veteriner-klinigi-secimi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -859,7 +859,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-quinoa-neutered-dog-food": {
-      "t": "2026-09-12T07:56:58.129Z",
+      "t": "2026-09-19T08:04:57.259Z",
       "denetlenen": "https://animare.vet/en/blog/nd-quinoa-neutered-dog-food/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -872,7 +872,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-quinoa-neutered-kopek-mamasi": {
-      "t": "2026-09-12T07:56:58.226Z",
+      "t": "2026-09-19T08:04:57.171Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-quinoa-neutered-kopek-mamasi/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -965,7 +965,7 @@
   },
   "magusapsikoloji": {
     "https://magusapsikoloji.com/en/about.html": {
-      "t": "2026-09-12T07:59:57.179Z",
+      "t": "2026-09-19T08:08:04.834Z",
       "denetlenen": "https://magusapsikoloji.com/en/about.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -978,7 +978,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/brain-body-connection.html": {
-      "t": "2026-09-12T07:59:57.196Z",
+      "t": "2026-09-19T08:08:05.331Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/brain-body-connection.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -987,11 +987,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/blog/brain-body-connection.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/blog/brain-body-connection.html",
-      "sonTarama": "2026-07-25T22:45:40Z",
+      "sonTarama": "2026-09-16T11:32:59Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/before-starting-therapy.html": {
-      "t": "2026-09-12T07:59:57.191Z",
+      "t": "2026-09-19T08:08:04.659Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/before-starting-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1004,7 +1004,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/burnout-syndrome.html": {
-      "t": "2026-09-12T08:00:03.765Z",
+      "t": "2026-09-19T08:08:12.128Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/burnout-syndrome.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1017,7 +1017,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/couples-therapy-famagusta.html": {
-      "t": "2026-09-12T08:00:03.865Z",
+      "t": "2026-09-19T08:08:12.353Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/couples-therapy-famagusta.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1030,7 +1030,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/coping-with-exam-anxiety.html": {
-      "t": "2026-09-12T08:00:03.777Z",
+      "t": "2026-09-19T08:08:11.964Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/coping-with-exam-anxiety.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1043,7 +1043,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/family-therapy-famagusta.html": {
-      "t": "2026-09-12T08:00:10.632Z",
+      "t": "2026-09-19T08:08:19.028Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/family-therapy-famagusta.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1056,7 +1056,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/find-psychologist-north-cyprus.html": {
-      "t": "2026-09-12T08:00:10.394Z",
+      "t": "2026-09-19T08:08:18.701Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/find-psychologist-north-cyprus.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1069,7 +1069,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog": {
-      "t": "2026-09-12T08:00:10.891Z",
+      "t": "2026-09-19T08:08:19.588Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1082,7 +1082,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/mental-health-international-students-famagusta.html": {
-      "t": "2026-09-12T08:00:16.952Z",
+      "t": "2026-09-19T08:08:25.525Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/mental-health-international-students-famagusta.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1095,7 +1095,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/is-online-therapy-effective.html": {
-      "t": "2026-09-12T08:00:17.439Z",
+      "t": "2026-09-19T08:08:26.253Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/is-online-therapy-effective.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1108,7 +1108,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/online-therapy-north-cyprus.html": {
-      "t": "2026-09-12T08:00:17.514Z",
+      "t": "2026-09-19T08:08:26.300Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/online-therapy-north-cyprus.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1121,7 +1121,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/panic-attack-symptoms.html": {
-      "t": "2026-09-12T08:00:23.821Z",
+      "t": "2026-09-19T08:08:32.480Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/panic-attack-symptoms.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1134,7 +1134,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/psychological-support-north-cyprus.html": {
-      "t": "2026-09-12T08:00:23.844Z",
+      "t": "2026-09-19T08:08:33.922Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/psychological-support-north-cyprus.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1147,7 +1147,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/psychologist-or-psychiatrist.html": {
-      "t": "2026-09-12T08:00:24.423Z",
+      "t": "2026-09-19T08:08:34.044Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/psychologist-or-psychiatrist.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1156,11 +1156,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/blog/psychologist-or-psychiatrist.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/blog/psychologist-or-psychiatrist.html",
-      "sonTarama": "2026-08-27T20:55:12Z",
+      "sonTarama": "2026-09-14T03:50:14Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/school-refusal-in-children.html": {
-      "t": "2026-09-12T08:00:30.661Z",
+      "t": "2026-09-19T08:08:39.637Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/school-refusal-in-children.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1169,11 +1169,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/blog/school-refusal-in-children.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/blog/school-refusal-in-children.html",
-      "sonTarama": "2026-07-31T14:42:10Z",
+      "sonTarama": "2026-09-15T12:20:13Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/what-is-adhd-symptoms-in-children.html": {
-      "t": "2026-09-12T08:00:30.821Z",
+      "t": "2026-09-19T08:08:42.170Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/what-is-adhd-symptoms-in-children.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1182,11 +1182,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/blog/what-is-adhd-symptoms-in-children.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/blog/what-is-adhd-symptoms-in-children.html",
-      "sonTarama": "2026-08-11T12:18:20Z",
+      "sonTarama": "2026-09-18T00:45:33Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/university-students-north-cyprus-psychological-support.html": {
-      "t": "2026-09-12T08:00:31.369Z",
+      "t": "2026-09-19T08:08:40.734Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/university-students-north-cyprus-psychological-support.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1199,7 +1199,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/what-is-depression.html": {
-      "t": "2026-09-12T08:00:37.506Z",
+      "t": "2026-09-19T08:08:47.455Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/what-is-depression.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1212,7 +1212,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/what-is-anxiety.html": {
-      "t": "2026-09-12T08:00:37.552Z",
+      "t": "2026-09-19T08:08:47.604Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/what-is-anxiety.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1225,7 +1225,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder.html": {
-      "t": "2026-09-12T08:00:38.989Z",
+      "t": "2026-09-19T08:08:48.775Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1238,7 +1238,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/faq.html": {
-      "t": "2026-09-12T08:00:44.295Z",
+      "t": "2026-09-19T08:08:54.321Z",
       "denetlenen": "https://magusapsikoloji.com/en/faq.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1251,20 +1251,20 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/contact.html": {
-      "t": "2026-09-12T08:00:44.353Z",
+      "t": "2026-09-19T08:08:54.364Z",
       "denetlenen": "https://magusapsikoloji.com/en/contact.html",
       "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "durum": "Server error (5xx)",
+      "robots": "ALLOWED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "getirme": "SERVER_ERROR",
       "canonicalGoogle": "",
       "canonicalSayfa": "",
-      "sonTarama": "",
+      "sonTarama": "2026-09-19T00:15:51Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/when-to-go-to-therapy.html": {
-      "t": "2026-09-12T08:00:46.023Z",
+      "t": "2026-09-19T08:08:55.865Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/when-to-go-to-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1277,7 +1277,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/our-approach.html": {
-      "t": "2026-09-12T08:00:50.978Z",
+      "t": "2026-09-19T08:09:01.235Z",
       "denetlenen": "https://magusapsikoloji.com/en/our-approach.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1290,7 +1290,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/kvkk.html": {
-      "t": "2026-09-12T08:00:53.151Z",
+      "t": "2026-09-19T08:09:02.666Z",
       "denetlenen": "https://magusapsikoloji.com/en/kvkk.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1299,11 +1299,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/kvkk.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/kvkk.html",
-      "sonTarama": "2026-09-09T23:42:07Z",
+      "sonTarama": "2026-09-18T21:28:46Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en": {
-      "t": "2026-09-12T08:00:52.019Z",
+      "t": "2026-09-19T08:09:01.649Z",
       "denetlenen": "https://magusapsikoloji.com/en/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1316,7 +1316,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/privacy.html": {
-      "t": "2026-09-12T08:00:57.883Z",
+      "t": "2026-09-19T08:09:08.047Z",
       "denetlenen": "https://magusapsikoloji.com/en/privacy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1329,7 +1329,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/adolescent-psychology.html": {
-      "t": "2026-09-12T08:00:59.180Z",
+      "t": "2026-09-19T08:09:08.618Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/adolescent-psychology.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1342,7 +1342,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/act-therapy.html": {
-      "t": "2026-09-12T08:00:59.968Z",
+      "t": "2026-09-19T08:09:09.234Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/act-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1355,7 +1355,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/cbt-therapy.html": {
-      "t": "2026-09-12T08:01:04.987Z",
+      "t": "2026-09-19T08:09:14.732Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/cbt-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1368,7 +1368,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/adult-psychology.html": {
-      "t": "2026-09-12T08:01:05.826Z",
+      "t": "2026-09-19T08:09:15.202Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/adult-psychology.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1381,7 +1381,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/child-psychology.html": {
-      "t": "2026-09-12T08:01:06.531Z",
+      "t": "2026-09-19T08:09:15.655Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/child-psychology.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1394,7 +1394,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/family-therapy.html": {
-      "t": "2026-09-12T08:01:11.862Z",
+      "t": "2026-09-19T08:09:21.285Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/family-therapy.html",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -1407,7 +1407,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services": {
-      "t": "2026-09-12T08:01:13.408Z",
+      "t": "2026-09-19T08:09:22.302Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1420,7 +1420,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/individual-therapy.html": {
-      "t": "2026-09-12T08:01:16.377Z",
+      "t": "2026-09-19T08:09:22.716Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/individual-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1429,11 +1429,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/services/individual-therapy.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/services/individual-therapy.html",
-      "sonTarama": "2026-09-09T13:02:54Z",
+      "sonTarama": "2026-09-18T17:43:46Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/motivational-interviewing.html": {
-      "t": "2026-09-12T08:01:18.714Z",
+      "t": "2026-09-19T08:09:28.563Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/motivational-interviewing.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1446,20 +1446,20 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/online-therapy.html": {
-      "t": "2026-09-12T08:01:20.362Z",
+      "t": "2026-09-19T08:09:29.174Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/online-therapy.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
       "canonicalGoogle": "",
       "canonicalSayfa": "",
       "sonTarama": "",
-      "httpKod": 523
+      "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/psychodynamic-therapy.html": {
-      "t": "2026-09-12T08:01:23.630Z",
+      "t": "2026-09-19T08:09:29.661Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/psychodynamic-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1472,7 +1472,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/young-adult-psychology.html": {
-      "t": "2026-09-12T08:01:25.244Z",
+      "t": "2026-09-19T08:09:35.403Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/young-adult-psychology.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1485,7 +1485,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/student-counselling.html": {
-      "t": "2026-09-12T08:01:27.261Z",
+      "t": "2026-09-19T08:09:36.092Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/student-counselling.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1498,7 +1498,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/therapy-process.html": {
-      "t": "2026-09-12T08:01:30.700Z",
+      "t": "2026-09-19T08:09:36.471Z",
       "denetlenen": "https://magusapsikoloji.com/en/therapy-process.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1524,7 +1524,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/anksiyete-nedir.html": {
-      "t": "2026-09-12T08:01:32.688Z",
+      "t": "2026-09-19T08:09:42.462Z",
       "denetlenen": "https://magusapsikoloji.com/blog/anksiyete-nedir.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1537,7 +1537,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/beyin-beden.html": {
-      "t": "2026-09-12T08:01:34.228Z",
+      "t": "2026-09-19T08:09:42.934Z",
       "denetlenen": "https://magusapsikoloji.com/blog/beyin-beden.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1563,7 +1563,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/dehb-belirtileri-cocuk.html": {
-      "t": "2026-09-12T08:01:37.742Z",
+      "t": "2026-09-19T08:09:44.336Z",
       "denetlenen": "https://magusapsikoloji.com/blog/dehb-belirtileri-cocuk.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1576,7 +1576,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/depresyon-nedir.html": {
-      "t": "2026-09-12T08:01:39.219Z",
+      "t": "2026-09-19T08:09:49.226Z",
       "denetlenen": "https://magusapsikoloji.com/blog/depresyon-nedir.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1589,7 +1589,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/kaygi-bozuklugu-nedir.html": {
-      "t": "2026-09-12T08:01:41.122Z",
+      "t": "2026-09-19T08:09:49.533Z",
       "denetlenen": "https://magusapsikoloji.com/blog/kaygi-bozuklugu-nedir.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1602,7 +1602,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog": {
-      "t": "2026-09-12T08:01:45.031Z",
+      "t": "2026-09-19T08:09:51.612Z",
       "denetlenen": "https://magusapsikoloji.com/blog/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1611,11 +1611,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/blog/",
       "canonicalSayfa": "https://magusapsikoloji.com/blog/",
-      "sonTarama": "2026-09-08T09:53:46Z",
+      "sonTarama": "2026-09-18T23:51:29Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/kuzey-kibris-online-terapi.html": {
-      "t": "2026-09-12T08:01:46.376Z",
+      "t": "2026-09-19T08:09:56.018Z",
       "denetlenen": "https://magusapsikoloji.com/blog/kuzey-kibris-online-terapi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1628,7 +1628,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/kuzey-kibris-psikolog-bulma.html": {
-      "t": "2026-09-12T08:01:47.750Z",
+      "t": "2026-09-19T08:09:55.986Z",
       "denetlenen": "https://magusapsikoloji.com/blog/kuzey-kibris-psikolog-bulma.html",
       "verdict": "NEUTRAL",
       "durum": "Crawled - currently not indexed",
@@ -1654,7 +1654,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/kuzey-kibris-psikolojik-destek.html": {
-      "t": "2026-09-12T08:01:51.906Z",
+      "t": "2026-09-19T08:10:01.650Z",
       "denetlenen": "https://magusapsikoloji.com/blog/kuzey-kibris-psikolojik-destek.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1667,7 +1667,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/okul-fobisi-cocuk.html": {
-      "t": "2026-09-12T08:01:55.586Z",
+      "t": "2026-09-19T08:10:02.897Z",
       "denetlenen": "https://magusapsikoloji.com/blog/okul-fobisi-cocuk.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1680,7 +1680,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/online-terapi-etkili-mi.html": {
-      "t": "2026-09-12T08:01:59.057Z",
+      "t": "2026-09-19T08:10:02.809Z",
       "denetlenen": "https://magusapsikoloji.com/blog/online-terapi-etkili-mi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1693,7 +1693,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/panik-atak-belirtileri.html": {
-      "t": "2026-09-12T08:02:01.086Z",
+      "t": "2026-09-19T08:10:08.850Z",
       "denetlenen": "https://magusapsikoloji.com/blog/panik-atak-belirtileri.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1706,7 +1706,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/psikolog-mu-psikiyatrist-mi.html": {
-      "t": "2026-09-12T08:02:02.689Z",
+      "t": "2026-09-19T08:10:10.239Z",
       "denetlenen": "https://magusapsikoloji.com/blog/psikolog-mu-psikiyatrist-mi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1719,7 +1719,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/sinav-kaygisiyla-bas-etme.html": {
-      "t": "2026-09-12T08:02:06.620Z",
+      "t": "2026-09-19T08:10:09.803Z",
       "denetlenen": "https://magusapsikoloji.com/blog/sinav-kaygisiyla-bas-etme.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1732,7 +1732,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/terapiye-baslamadan-once.html": {
-      "t": "2026-09-12T08:02:08.399Z",
+      "t": "2026-09-19T08:10:15.787Z",
       "denetlenen": "https://magusapsikoloji.com/blog/terapiye-baslamadan-once.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1745,7 +1745,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/terapiye-ne-zaman-gidilmeli.html": {
-      "t": "2026-09-12T08:02:09.644Z",
+      "t": "2026-09-19T08:10:16.529Z",
       "denetlenen": "https://magusapsikoloji.com/blog/terapiye-ne-zaman-gidilmeli.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1758,7 +1758,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/tukenmislik-sendromu.html": {
-      "t": "2026-09-12T08:02:13.307Z",
+      "t": "2026-09-19T08:10:17.203Z",
       "denetlenen": "https://magusapsikoloji.com/blog/tukenmislik-sendromu.html",
       "verdict": "NEUTRAL",
       "durum": "Crawled - currently not indexed",
@@ -1771,7 +1771,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/universite-ogrencileri-psikolojik-destek.html": {
-      "t": "2026-09-12T08:02:15.275Z",
+      "t": "2026-09-19T08:10:22.763Z",
       "denetlenen": "https://magusapsikoloji.com/blog/universite-ogrencileri-psikolojik-destek.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1784,7 +1784,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hakkimizda.html": {
-      "t": "2026-09-12T08:02:16.578Z",
+      "t": "2026-09-19T08:10:24.064Z",
       "denetlenen": "https://magusapsikoloji.com/hakkimizda.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1797,7 +1797,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/felsefemiz.html": {
-      "t": "2026-09-12T08:02:19.868Z",
+      "t": "2026-09-19T08:10:23.902Z",
       "denetlenen": "https://magusapsikoloji.com/felsefemiz.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1810,7 +1810,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/gizlilik.html": {
-      "t": "2026-09-12T08:02:22.361Z",
+      "t": "2026-09-19T08:10:29.651Z",
       "denetlenen": "https://magusapsikoloji.com/gizlilik.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1823,10 +1823,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/aile-terapisi.html": {
-      "t": "2026-09-12T08:02:24.521Z",
+      "t": "2026-09-19T08:10:30.810Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/aile-terapisi.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -1836,7 +1836,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/act-terapisi.html": {
-      "t": "2026-09-12T08:02:26.495Z",
+      "t": "2026-09-19T08:10:30.911Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/act-terapisi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1849,7 +1849,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/bdt-terapisi.html": {
-      "t": "2026-09-12T08:02:28.782Z",
+      "t": "2026-09-19T08:10:37.166Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/bdt-terapisi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1858,11 +1858,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/hizmetler/bdt-terapisi.html",
       "canonicalSayfa": "https://magusapsikoloji.com/hizmetler/bdt-terapisi.html",
-      "sonTarama": "2026-09-11T08:50:25Z",
+      "sonTarama": "2026-09-18T18:58:51Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/cocuk-psikolojisi.html": {
-      "t": "2026-09-12T08:02:31.115Z",
+      "t": "2026-09-19T08:10:37.656Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/cocuk-psikolojisi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1871,11 +1871,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/hizmetler/cocuk-psikolojisi.html",
       "canonicalSayfa": "https://magusapsikoloji.com/hizmetler/cocuk-psikolojisi.html",
-      "sonTarama": "2026-09-11T11:20:25Z",
+      "sonTarama": "2026-09-15T01:05:13Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/bireysel-terapi.html": {
-      "t": "2026-09-12T08:02:33.661Z",
+      "t": "2026-09-19T08:10:37.593Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/bireysel-terapi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1888,7 +1888,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/ergen-psikolojisi.html": {
-      "t": "2026-09-12T08:02:35.523Z",
+      "t": "2026-09-19T08:10:43.870Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/ergen-psikolojisi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1901,7 +1901,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/genc-yetiskinlik.html": {
-      "t": "2026-09-12T08:02:38.000Z",
+      "t": "2026-09-19T08:10:44.532Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/genc-yetiskinlik.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1910,11 +1910,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/hizmetler/genc-yetiskinlik.html",
       "canonicalSayfa": "https://magusapsikoloji.com/hizmetler/genc-yetiskinlik.html",
-      "sonTarama": "2026-09-11T06:08:08Z",
+      "sonTarama": "2026-09-16T17:40:09Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/motivasyonel-gorusme.html": {
-      "t": "2026-09-12T08:02:40.578Z",
+      "t": "2026-09-19T08:10:44.414Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/motivasyonel-gorusme.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1927,7 +1927,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler": {
-      "t": "2026-09-12T08:02:43.036Z",
+      "t": "2026-09-19T08:10:50.974Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1936,11 +1936,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/hizmetler/",
       "canonicalSayfa": "https://magusapsikoloji.com/hizmetler/",
-      "sonTarama": "2026-09-02T04:08:08Z",
+      "sonTarama": "2026-09-14T17:01:09Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/ogrenci-danismanlik.html": {
-      "t": "2026-09-12T08:02:44.796Z",
+      "t": "2026-09-19T08:10:51.163Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/ogrenci-danismanlik.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1949,11 +1949,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/hizmetler/ogrenci-danismanlik.html",
       "canonicalSayfa": "https://magusapsikoloji.com/hizmetler/ogrenci-danismanlik.html",
-      "sonTarama": "2026-09-04T23:04:43Z",
+      "sonTarama": "2026-09-18T17:13:08Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/psikodinamik-terapi.html": {
-      "t": "2026-09-12T08:02:47.256Z",
+      "t": "2026-09-19T08:10:51.230Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/psikodinamik-terapi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1966,10 +1966,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/online-terapi.html": {
-      "t": "2026-09-12T08:02:51.099Z",
+      "t": "2026-09-19T08:10:57.581Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/online-terapi.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -1979,7 +1979,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/iletisim.html": {
-      "t": "2026-09-12T08:02:51.370Z",
+      "t": "2026-09-19T08:10:58.005Z",
       "denetlenen": "https://magusapsikoloji.com/iletisim.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1988,11 +1988,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/iletisim.html",
       "canonicalSayfa": "https://magusapsikoloji.com/iletisim.html",
-      "sonTarama": "2026-09-08T05:44:57Z",
+      "sonTarama": "2026-09-17T09:44:31Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/yetiskin-psikolojisi.html": {
-      "t": "2026-09-12T08:02:54.298Z",
+      "t": "2026-09-19T08:10:57.957Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/yetiskin-psikolojisi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2005,7 +2005,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/": {
-      "t": "2026-09-12T08:02:58.073Z",
+      "t": "2026-09-19T08:11:04.321Z",
       "denetlenen": "https://magusapsikoloji.com/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2014,11 +2014,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/",
       "canonicalSayfa": "https://magusapsikoloji.com/",
-      "sonTarama": "2026-09-09T15:04:05Z",
+      "sonTarama": "2026-09-19T02:29:09Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/sss.html": {
-      "t": "2026-09-12T08:02:58.199Z",
+      "t": "2026-09-19T08:11:04.860Z",
       "denetlenen": "https://magusapsikoloji.com/sss.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2027,11 +2027,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/sss.html",
       "canonicalSayfa": "https://magusapsikoloji.com/sss.html",
-      "sonTarama": "2026-09-07T04:07:18Z",
+      "sonTarama": "2026-09-19T00:28:59Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/terapi-sureci.html": {
-      "t": "2026-09-12T08:03:00.731Z",
+      "t": "2026-09-19T08:11:04.720Z",
       "denetlenen": "https://magusapsikoloji.com/terapi-sureci.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2044,7 +2044,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/kvkk.html": {
-      "t": "2026-09-12T08:03:04.848Z",
+      "t": "2026-09-19T08:11:11.188Z",
       "denetlenen": "https://magusapsikoloji.com/kvkk.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2057,7 +2057,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/child-psychologist.html": {
-      "t": "2026-09-12T08:03:04.938Z",
+      "t": "2026-09-19T08:11:11.317Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/child-psychologist.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2070,7 +2070,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/neuropsychological-assessment.html": {
-      "t": "2026-09-12T08:03:07.544Z",
+      "t": "2026-09-19T08:11:11.711Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/neuropsychological-assessment.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2083,7 +2083,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/cocuk-psikologu-magusa.html": {
-      "t": "2026-09-12T08:03:11.889Z",
+      "t": "2026-09-19T08:11:18.663Z",
       "denetlenen": "https://magusapsikoloji.com/blog/cocuk-psikologu-magusa.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2096,7 +2096,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/noropsikolojik-degerlendirme-magusa.html": {
-      "t": "2026-09-12T08:03:11.715Z",
+      "t": "2026-09-19T08:11:17.934Z",
       "denetlenen": "https://magusapsikoloji.com/blog/noropsikolojik-degerlendirme-magusa.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2109,7 +2109,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/ebeveyn-danismanligi-magusa.html": {
-      "t": "2026-09-12T08:03:14.271Z",
+      "t": "2026-09-19T08:11:18.523Z",
       "denetlenen": "https://magusapsikoloji.com/blog/ebeveyn-danismanligi-magusa.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2122,7 +2122,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/parent-counselling.html": {
-      "t": "2026-09-12T08:03:18.081Z",
+      "t": "2026-09-19T08:11:24.559Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/parent-counselling.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2132,10 +2132,10 @@
       "canonicalGoogle": "https://magusapsikoloji.com/en/blog/parent-counselling.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/blog/parent-counselling.html",
       "sonTarama": "2026-09-08T16:41:58Z",
-      "httpKod": 523
+      "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/therapy-language-turkish-english.html": {
-      "t": "2026-09-12T08:03:18.518Z",
+      "t": "2026-09-19T08:11:25.331Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/therapy-language-turkish-english.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2148,7 +2148,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/terapi-dili-turkce-ingilizce.html": {
-      "t": "2026-09-12T08:03:21.233Z",
+      "t": "2026-09-19T08:11:25.796Z",
       "denetlenen": "https://magusapsikoloji.com/blog/terapi-dili-turkce-ingilizce.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2291,62 +2291,62 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/learning-difficulties-in-children.html": {
-      "t": "2026-09-12T07:59:43.937Z",
+      "t": "2026-09-19T08:07:51.227Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/learning-difficulties-in-children.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/en/blog/learning-difficulties-in-children.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/en/blog/learning-difficulties-in-children.html",
+      "sonTarama": "2026-09-14T20:46:09Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/anxiety-and-separation-anxiety-in-children.html": {
-      "t": "2026-09-12T07:59:43.970Z",
+      "t": "2026-09-19T08:07:51.363Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/anxiety-and-separation-anxiety-in-children.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/en/blog/anxiety-and-separation-anxiety-in-children.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/en/blog/anxiety-and-separation-anxiety-in-children.html",
+      "sonTarama": "2026-09-12T09:24:50Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/tantrums-and-anger-in-children.html": {
-      "t": "2026-09-12T07:59:43.976Z",
+      "t": "2026-09-19T08:07:50.940Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/tantrums-and-anger-in-children.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/en/blog/tantrums-and-anger-in-children.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/en/blog/tantrums-and-anger-in-children.html",
+      "sonTarama": "2026-09-15T00:50:59Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/cocuklarda-kaygi-ayrilik-kaygisi.html": {
-      "t": "2026-09-12T07:59:50.539Z",
+      "t": "2026-09-19T08:07:58.016Z",
       "denetlenen": "https://magusapsikoloji.com/blog/cocuklarda-kaygi-ayrilik-kaygisi.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/blog/cocuklarda-kaygi-ayrilik-kaygisi.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/blog/cocuklarda-kaygi-ayrilik-kaygisi.html",
+      "sonTarama": "2026-09-12T11:44:39Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/ogrenme-guclugu-belirtileri.html": {
-      "t": "2026-09-12T07:59:50.550Z",
+      "t": "2026-09-19T08:07:58.091Z",
       "denetlenen": "https://magusapsikoloji.com/blog/ogrenme-guclugu-belirtileri.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -2356,16 +2356,16 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/cocuklarda-ofke-nobetleri.html": {
-      "t": "2026-09-12T07:59:50.565Z",
+      "t": "2026-09-19T08:07:58.258Z",
       "denetlenen": "https://magusapsikoloji.com/blog/cocuklarda-ofke-nobetleri.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/blog/cocuklarda-ofke-nobetleri.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/blog/cocuklarda-ofke-nobetleri.html",
+      "sonTarama": "2026-09-15T00:09:45Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html": {
@@ -2410,7 +2410,7 @@
   },
   "taxsi": {
     "https://thetaxsi.com/en": {
-      "t": "2026-09-12T08:03:28.677Z",
+      "t": "2026-09-19T08:11:32.747Z",
       "denetlenen": "https://thetaxsi.com/en/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2423,7 +2423,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru": {
-      "t": "2026-09-12T08:03:28.199Z",
+      "t": "2026-09-19T08:11:33.088Z",
       "denetlenen": "https://thetaxsi.com/ru/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2436,7 +2436,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr": {
-      "t": "2026-09-12T08:03:28.858Z",
+      "t": "2026-09-19T08:11:32.725Z",
       "denetlenen": "https://thetaxsi.com/tr/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2449,7 +2449,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/book": {
-      "t": "2026-09-12T08:03:35.657Z",
+      "t": "2026-09-19T08:11:39.877Z",
       "denetlenen": "https://thetaxsi.com/en/book/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2462,7 +2462,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/rezervasyon": {
-      "t": "2026-09-12T08:03:35.835Z",
+      "t": "2026-09-19T08:11:40.118Z",
       "denetlenen": "https://thetaxsi.com/tr/rezervasyon/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2475,7 +2475,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/bronirovanie": {
-      "t": "2026-09-12T08:03:36.379Z",
+      "t": "2026-09-19T08:11:40.282Z",
       "denetlenen": "https://thetaxsi.com/ru/bronirovanie/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2484,11 +2484,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/ru/bronirovanie/",
       "canonicalSayfa": "https://thetaxsi.com/ru/bronirovanie/",
-      "sonTarama": "2026-08-29T01:04:27Z",
+      "sonTarama": "2026-09-18T15:08:36Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes": {
-      "t": "2026-09-12T08:03:43.233Z",
+      "t": "2026-09-19T08:11:47.494Z",
       "denetlenen": "https://thetaxsi.com/en/routes/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2501,7 +2501,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar": {
-      "t": "2026-09-12T08:03:42.961Z",
+      "t": "2026-09-19T08:11:47.001Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2514,7 +2514,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty": {
-      "t": "2026-09-12T08:03:43.285Z",
+      "t": "2026-09-19T08:11:47.142Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2523,11 +2523,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/ru/marshruty/",
       "canonicalSayfa": "https://thetaxsi.com/ru/marshruty/",
-      "sonTarama": "2026-09-02T04:50:51Z",
+      "sonTarama": "2026-09-18T18:41:01Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/en/blog": {
-      "t": "2026-09-12T08:03:53.536Z",
+      "t": "2026-09-19T08:11:54.932Z",
       "denetlenen": "https://thetaxsi.com/en/blog/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2540,7 +2540,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/blog": {
-      "t": "2026-09-12T08:03:50.298Z",
+      "t": "2026-09-19T08:11:54.199Z",
       "denetlenen": "https://thetaxsi.com/tr/blog/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2553,7 +2553,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/blog": {
-      "t": "2026-09-12T08:03:50.535Z",
+      "t": "2026-09-19T08:11:54.213Z",
       "denetlenen": "https://thetaxsi.com/ru/blog/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2562,11 +2562,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/ru/blog/",
       "canonicalSayfa": "https://thetaxsi.com/ru/blog/",
-      "sonTarama": "2026-08-21T23:48:05Z",
+      "sonTarama": "2026-09-18T16:54:23Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/en/about": {
-      "t": "2026-09-12T08:03:58.324Z",
+      "t": "2026-09-19T08:12:01.583Z",
       "denetlenen": "https://thetaxsi.com/en/about/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2575,11 +2575,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/about/",
       "canonicalSayfa": "https://thetaxsi.com/en/about/",
-      "sonTarama": "2026-08-25T18:04:28Z",
+      "sonTarama": "2026-09-12T16:14:24Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/hakkimizda": {
-      "t": "2026-09-12T08:04:00.868Z",
+      "t": "2026-09-19T08:12:01.799Z",
       "denetlenen": "https://thetaxsi.com/tr/hakkimizda/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2588,11 +2588,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/hakkimizda/",
       "canonicalSayfa": "https://thetaxsi.com/tr/hakkimizda/",
-      "sonTarama": "2026-08-20T20:29:22Z",
+      "sonTarama": "2026-09-18T16:36:45Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/o-nas": {
-      "t": "2026-09-12T08:03:57.551Z",
+      "t": "2026-09-19T08:12:01.076Z",
       "denetlenen": "https://thetaxsi.com/ru/o-nas/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2601,11 +2601,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/ru/o-nas/",
       "canonicalSayfa": "https://thetaxsi.com/ru/o-nas/",
-      "sonTarama": "2026-08-21T10:55:15Z",
+      "sonTarama": "2026-09-12T14:57:12Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/en/contact": {
-      "t": "2026-09-12T08:04:07.749Z",
+      "t": "2026-09-19T08:12:09.093Z",
       "denetlenen": "https://thetaxsi.com/en/contact/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2618,7 +2618,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/iletisim": {
-      "t": "2026-09-12T08:04:04.586Z",
+      "t": "2026-09-19T08:12:08.287Z",
       "denetlenen": "https://thetaxsi.com/tr/iletisim/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2631,7 +2631,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/kontakty": {
-      "t": "2026-09-12T08:04:05.734Z",
+      "t": "2026-09-19T08:12:08.939Z",
       "denetlenen": "https://thetaxsi.com/ru/kontakty/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2644,7 +2644,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/faq": {
-      "t": "2026-09-12T08:04:13.095Z",
+      "t": "2026-09-19T08:12:16.049Z",
       "denetlenen": "https://thetaxsi.com/en/faq/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2657,7 +2657,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/sss": {
-      "t": "2026-09-12T08:04:12.018Z",
+      "t": "2026-09-19T08:12:15.616Z",
       "denetlenen": "https://thetaxsi.com/tr/sss/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2670,7 +2670,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/voprosy-i-otvety": {
-      "t": "2026-09-12T08:04:14.548Z",
+      "t": "2026-09-19T08:12:16.264Z",
       "denetlenen": "https://thetaxsi.com/ru/voprosy-i-otvety/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2683,7 +2683,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/privacy": {
-      "t": "2026-09-12T08:04:19.055Z",
+      "t": "2026-09-19T08:12:22.804Z",
       "denetlenen": "https://thetaxsi.com/en/privacy/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2696,7 +2696,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/gizlilik-politikasi": {
-      "t": "2026-09-12T08:04:20.708Z",
+      "t": "2026-09-19T08:12:23.421Z",
       "denetlenen": "https://thetaxsi.com/tr/gizlilik-politikasi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2709,7 +2709,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/politika-konfidentsialnosti": {
-      "t": "2026-09-12T08:04:21.221Z",
+      "t": "2026-09-19T08:12:23.516Z",
       "denetlenen": "https://thetaxsi.com/ru/politika-konfidentsialnosti/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2722,7 +2722,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/terms": {
-      "t": "2026-09-12T08:04:26.428Z",
+      "t": "2026-09-19T08:12:30.140Z",
       "denetlenen": "https://thetaxsi.com/en/terms/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2735,7 +2735,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/kullanim-kosullari": {
-      "t": "2026-09-12T08:04:31.513Z",
+      "t": "2026-09-19T08:12:30.697Z",
       "denetlenen": "https://thetaxsi.com/tr/kullanim-kosullari/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2748,7 +2748,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/usloviya-ispolzovaniya": {
-      "t": "2026-09-12T08:04:27.937Z",
+      "t": "2026-09-19T08:12:30.575Z",
       "denetlenen": "https://thetaxsi.com/ru/usloviya-ispolzovaniya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2761,7 +2761,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-nicosia": {
-      "t": "2026-09-12T08:04:33.417Z",
+      "t": "2026-09-19T08:12:37.397Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-nicosia/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2770,11 +2770,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/ercan-airport-to-nicosia/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/ercan-airport-to-nicosia/",
-      "sonTarama": "2026-08-26T03:06:21Z",
+      "sonTarama": "2026-09-18T14:55:22Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-nikosiya": {
-      "t": "2026-09-12T08:04:35.085Z",
+      "t": "2026-09-19T08:12:37.772Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-nikosiya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2783,11 +2783,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-nikosiya/",
       "canonicalSayfa": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-nikosiya/",
-      "sonTarama": "2026-08-26T21:15:32Z",
+      "sonTarama": "2026-09-18T17:54:51Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lefkosa-transfer": {
-      "t": "2026-09-12T08:04:38.879Z",
+      "t": "2026-09-19T08:12:38.103Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lefkosa-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2800,7 +2800,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-kyrenia": {
-      "t": "2026-09-12T08:04:40.812Z",
+      "t": "2026-09-19T08:12:44.671Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-kyrenia/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2809,11 +2809,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/ercan-airport-to-kyrenia/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/ercan-airport-to-kyrenia/",
-      "sonTarama": "2026-08-22T04:26:30Z",
+      "sonTarama": "2026-09-14T15:39:44Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-girne-transfer": {
-      "t": "2026-09-12T08:04:42.035Z",
+      "t": "2026-09-19T08:12:45.073Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-girne-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2822,11 +2822,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-girne-transfer/",
       "canonicalSayfa": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-girne-transfer/",
-      "sonTarama": "2026-08-21T19:16:45Z",
+      "sonTarama": "2026-09-19T04:22:13Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-kireniya": {
-      "t": "2026-09-12T08:04:45.627Z",
+      "t": "2026-09-19T08:12:45.254Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-kireniya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2839,7 +2839,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-kyrenia-hotels": {
-      "t": "2026-09-12T08:04:48.206Z",
+      "t": "2026-09-19T08:12:52.195Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-kyrenia-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
