@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-09-21T08:55:24.741Z",
+  "guncelleme": "2026-09-21T08:50:24.368Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 93,
@@ -508,11 +508,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 92,
-        "masaustuPuan": 96,
-        "lcp": 2.7,
-        "inp": 48,
-        "cls": 0.08,
+        "mobilPuan": 82,
+        "masaustuPuan": 97,
+        "lcp": 3.6,
+        "inp": 14,
+        "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -520,10 +520,10 @@
       },
       "indeks": {
         "indeksli": 41,
-        "indekssiz": 35,
-        "aksiyonGereken": 35,
-        "kontrolEdilen": 76,
-        "toplamSayfa": 76,
+        "indekssiz": 33,
+        "aksiyonGereken": 33,
+        "kontrolEdilen": 74,
+        "toplamSayfa": 74,
         "dususVar": false,
         "nedenler": [
           {
@@ -549,17 +549,6 @@
             ]
           },
           {
-            "neden": "Google bu URL'i bilmiyor",
-            "adet": 4,
-            "sorun": true,
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
-            "ornekler": [
-              "/en/blog/toxic-foods-and-plants-for-pets",
-              "/en/blog/cat-and-dog-food-range",
-              "/tr/blog/nd-tropical-meyveli-mama"
-            ]
-          },
-          {
             "neden": "'noindex' etiketiyle hariç tutuldu",
             "adet": 2,
             "sorun": true,
@@ -567,6 +556,16 @@
             "ornekler": [
               "/tr/gizlilik",
               "/en/privacy"
+            ]
+          },
+          {
+            "neden": "Google bu URL'i bilmiyor",
+            "adet": 2,
+            "sorun": true,
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
+            "ornekler": [
+              "/en/blog/toxic-foods-and-plants-for-pets",
+              "/en/blog/cat-and-dog-food-range"
             ]
           }
         ],
@@ -735,19 +734,9 @@
             "yol": "/en/blog/nd-pumpkin-pet-food",
             "neden": "Bulundu — şu anda indekslenmedi",
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
-          },
-          {
-            "yol": "/tr/blog/nd-tropical-meyveli-mama",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/en/blog/nd-tropical-pet-food",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-09-21T08:54:05.871Z"
+        "tarih": "2026-09-20T08:38:33.341Z"
       },
       "aiBotlar": null,
       "geo": {
@@ -760,7 +749,7 @@
           "kelime": "nöbetçi veteriner kktc",
           "pozisyon": 4,
           "onceki": 7,
-          "gosterim": 48,
+          "gosterim": 45,
           "tik": 4
         },
         {
@@ -788,14 +777,14 @@
           "kelime": "gönyeli veteriner",
           "pozisyon": 1,
           "onceki": 1,
-          "gosterim": 22,
+          "gosterim": 24,
           "tik": 1
         },
         {
           "kelime": "lefkoşa veteriner",
           "pozisyon": 6,
           "onceki": 7,
-          "gosterim": 22,
+          "gosterim": 24,
           "tik": 1
         },
         {
@@ -835,16 +824,16 @@
         },
         {
           "kelime": "dog vaccination schedule",
-          "pozisyon": 45,
-          "onceki": 51,
-          "gosterim": 18,
+          "pozisyon": 46,
+          "onceki": 52,
+          "gosterim": 20,
           "tik": 0
         },
         {
           "kelime": "cat dental cleaning",
-          "pozisyon": 43,
+          "pozisyon": 44,
           "onceki": 57,
-          "gosterim": 14,
+          "gosterim": 15,
           "tik": 0
         },
         {
@@ -855,10 +844,10 @@
           "tik": 0
         },
         {
-          "kelime": "anima vet clinic",
-          "pozisyon": 24,
-          "onceki": 35,
-          "gosterim": 10,
+          "kelime": "dental treatment for cats",
+          "pozisyon": 47,
+          "onceki": 55,
+          "gosterim": 9,
           "tik": 0
         }
       ],
@@ -885,14 +874,14 @@
         },
         {
           "kelime": "dog vaccination schedule",
-          "hacim": 18,
-          "rakipPoz": 45,
+          "hacim": 20,
+          "rakipPoz": 46,
           "tip": "firsat"
         },
         {
           "kelime": "cat dental cleaning",
-          "hacim": 14,
-          "rakipPoz": 43,
+          "hacim": 15,
+          "rakipPoz": 44,
           "tip": "firsat"
         },
         {
@@ -902,24 +891,24 @@
           "tip": "firsat"
         },
         {
-          "kelime": "anima vet clinic",
-          "hacim": 10,
-          "rakipPoz": 24,
-          "tip": "firsat"
-        },
-        {
           "kelime": "dental treatment for cats",
           "hacim": 9,
           "rakipPoz": 47,
           "tip": "firsat"
+        },
+        {
+          "kelime": "anima vet clinic",
+          "hacim": 8,
+          "rakipPoz": 28,
+          "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-21",
+      "siralamaTarih": "2026-09-20",
       "siralamaPencere": {
-        "baslangic": "2026-08-22",
-        "bitis": "2026-09-18"
+        "baslangic": "2026-08-21",
+        "bitis": "2026-09-17"
       },
-      "hizTarih": "2026-09-21",
+      "hizTarih": "2026-09-20",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -1495,10 +1484,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 82,
-        "masaustuPuan": 81,
-        "lcp": 3.7,
-        "inp": 156,
+        "mobilPuan": 84,
+        "masaustuPuan": 82,
+        "lcp": 3.6,
+        "inp": 103,
         "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
@@ -1506,16 +1495,16 @@
         "kaynak": "lab"
       },
       "indeks": {
-        "indeksli": 98,
+        "indeksli": 96,
         "indekssiz": 12,
         "aksiyonGereken": 12,
-        "kontrolEdilen": 110,
-        "toplamSayfa": 110,
+        "kontrolEdilen": 108,
+        "toplamSayfa": 108,
         "dususVar": false,
         "nedenler": [
           {
             "neden": "Gönderildi ve indekslendi",
-            "adet": 98,
+            "adet": 96,
             "sorun": false,
             "cozum": "",
             "ornekler": [
@@ -1526,7 +1515,7 @@
           },
           {
             "neden": "Bulundu — şu anda indekslenmedi",
-            "adet": 5,
+            "adet": 6,
             "sorun": true,
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır.",
             "ornekler": [
@@ -1537,7 +1526,7 @@
           },
           {
             "neden": "Google bu URL'i bilmiyor",
-            "adet": 4,
+            "adet": 3,
             "sorun": true,
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
             "ornekler": [
@@ -1613,6 +1602,11 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
+            "yol": "/hizmetler/noropsikolojik-degerlendirme.html",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+          },
+          {
             "yol": "/hizmetler/online-terapi.html",
             "neden": "Bulundu — şu anda indekslenmedi",
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
@@ -1621,14 +1615,9 @@
             "yol": "/hizmetler/travma-terapisi.html",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/kaynaklar.html",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-09-21T08:54:19.910Z"
+        "tarih": "2026-09-20T08:38:33.344Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -1637,7 +1626,7 @@
           "kelime": "mağusa psikolog",
           "pozisyon": 8,
           "onceki": 6,
-          "gosterim": 22,
+          "gosterim": 20,
           "tik": 3
         },
         {
@@ -1651,7 +1640,7 @@
           "kelime": "childhood trauma treatment cyprus",
           "pozisyon": 39,
           "onceki": 37,
-          "gosterim": 33,
+          "gosterim": 34,
           "tik": 0
         },
         {
@@ -1663,9 +1652,9 @@
         },
         {
           "kelime": "developmental trauma treatment cyprus",
-          "pozisyon": 37,
+          "pozisyon": 36,
           "onceki": 41,
-          "gosterim": 23,
+          "gosterim": 22,
           "tik": 0
         },
         {
@@ -1679,7 +1668,7 @@
           "kelime": "psikolog",
           "pozisyon": 4,
           "onceki": 10,
-          "gosterim": 20,
+          "gosterim": 19,
           "tik": 0
         },
         {
@@ -1714,27 +1703,27 @@
           "kelime": "emotional trauma treatment cyprus",
           "pozisyon": 37,
           "onceki": 37,
-          "gosterim": 8,
-          "tik": 0
-        },
-        {
-          "kelime": "kıbrıs psikolog",
-          "pozisyon": 44,
-          "onceki": 63,
-          "gosterim": 8,
+          "gosterim": 9,
           "tik": 0
         },
         {
           "kelime": "ptsd treatment cyprus",
           "pozisyon": 54,
           "onceki": 54,
-          "gosterim": 8,
+          "gosterim": 9,
           "tik": 0
         },
         {
           "kelime": "trauma and mental health treatment cyprus",
           "pozisyon": 41,
           "onceki": 42,
+          "gosterim": 9,
+          "tik": 0
+        },
+        {
+          "kelime": "mental health treatment cyprus",
+          "pozisyon": 43,
+          "onceki": 43,
           "gosterim": 8,
           "tik": 0
         }
@@ -1744,47 +1733,47 @@
       "icerikBoslugu": [
         {
           "kelime": "childhood trauma treatment cyprus",
-          "hacim": 33,
+          "hacim": 34,
           "rakipPoz": 39,
           "tip": "firsat"
         },
         {
           "kelime": "developmental trauma treatment cyprus",
-          "hacim": 23,
-          "rakipPoz": 37,
+          "hacim": 22,
+          "rakipPoz": 36,
           "tip": "firsat"
         },
         {
           "kelime": "mağusa psikolog",
-          "hacim": 22,
+          "hacim": 20,
           "rakipPoz": 8,
           "tip": "firsat"
         },
         {
           "kelime": "emotional trauma treatment cyprus",
-          "hacim": 8,
+          "hacim": 9,
           "rakipPoz": 37,
           "tip": "firsat"
         },
         {
-          "kelime": "kıbrıs psikolog",
-          "hacim": 8,
-          "rakipPoz": 44,
+          "kelime": "trauma and mental health treatment cyprus",
+          "hacim": 9,
+          "rakipPoz": 41,
           "tip": "firsat"
         },
         {
-          "kelime": "trauma and mental health treatment cyprus",
+          "kelime": "mental health treatment cyprus",
           "hacim": 8,
-          "rakipPoz": 41,
+          "rakipPoz": 43,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-21",
+      "siralamaTarih": "2026-09-20",
       "siralamaPencere": {
-        "baslangic": "2026-08-22",
-        "bitis": "2026-09-18"
+        "baslangic": "2026-08-21",
+        "bitis": "2026-09-17"
       },
-      "hizTarih": "2026-09-21",
+      "hizTarih": "2026-09-20",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -2764,11 +2753,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 71,
-        "masaustuPuan": 92,
-        "lcp": 7.8,
+        "mobilPuan": 68,
+        "masaustuPuan": 83,
+        "lcp": 9.4,
         "inp": 0,
-        "cls": 0,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -2824,23 +2813,23 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-09-21T08:55:04.161Z"
+        "tarih": "2026-09-20T08:43:21.077Z"
       },
       "aiBotlar": null,
       "geo": null,
       "siralama": [
         {
           "kelime": "güzelyurt taksi",
-          "pozisyon": 19,
+          "pozisyon": 20,
           "onceki": 32,
-          "gosterim": 12,
+          "gosterim": 11,
           "tik": 1
         },
         {
           "kelime": "ercan havalimanı odtü arası kaç km",
           "pozisyon": 4,
           "onceki": 4,
-          "gosterim": 9,
+          "gosterim": 4,
           "tik": 1
         },
         {
@@ -2868,7 +2857,7 @@
           "kelime": "dipkarpaz altınkum",
           "pozisyon": 10,
           "onceki": 10,
-          "gosterim": 49,
+          "gosterim": 46,
           "tik": 0
         },
         {
@@ -2886,6 +2875,13 @@
           "tik": 0
         },
         {
+          "kelime": "ercan havalimanı girne transfer ücreti",
+          "pozisyon": 10,
+          "onceki": 10,
+          "gosterim": 21,
+          "tik": 0
+        },
+        {
           "kelime": "ercan havalimanı lefke arası kaç km",
           "pozisyon": 2,
           "onceki": 1,
@@ -2893,17 +2889,10 @@
           "tik": 0
         },
         {
-          "kelime": "ercan havalimanı girne transfer ücreti",
-          "pozisyon": 10,
-          "onceki": 11,
-          "gosterim": 20,
-          "tik": 0
-        },
-        {
           "kelime": "famagusta bay",
-          "pozisyon": 18,
-          "onceki": 18,
-          "gosterim": 12,
+          "pozisyon": 19,
+          "onceki": 19,
+          "gosterim": 11,
           "tik": 0
         },
         {
@@ -2946,7 +2935,7 @@
         },
         {
           "kelime": "dipkarpaz altınkum",
-          "hacim": 49,
+          "hacim": 46,
           "rakipPoz": 10,
           "tip": "firsat"
         },
@@ -2958,20 +2947,20 @@
         },
         {
           "kelime": "ercan havalimanı girne transfer ücreti",
-          "hacim": 20,
+          "hacim": 21,
           "rakipPoz": 10,
           "tip": "firsat"
         },
         {
           "kelime": "güzelyurt taksi",
-          "hacim": 12,
-          "rakipPoz": 19,
+          "hacim": 11,
+          "rakipPoz": 20,
           "tip": "firsat"
         },
         {
           "kelime": "famagusta bay",
-          "hacim": 12,
-          "rakipPoz": 18,
+          "hacim": 11,
+          "rakipPoz": 19,
           "tip": "firsat"
         },
         {
@@ -2987,12 +2976,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-21",
+      "siralamaTarih": "2026-09-20",
       "siralamaPencere": {
-        "baslangic": "2026-08-22",
-        "bitis": "2026-09-18"
+        "baslangic": "2026-08-21",
+        "bitis": "2026-09-17"
       },
-      "hizTarih": "2026-09-21",
+      "hizTarih": "2026-09-20",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -4049,9 +4038,9 @@
       },
       "hiz": {
         "mobilPuan": 82,
-        "masaustuPuan": 94,
+        "masaustuPuan": 93,
         "lcp": 4.2,
-        "inp": 79,
+        "inp": 88,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4059,16 +4048,16 @@
         "kaynak": "lab"
       },
       "indeks": {
-        "indeksli": 87,
-        "indekssiz": 21,
-        "aksiyonGereken": 21,
+        "indeksli": 79,
+        "indekssiz": 29,
+        "aksiyonGereken": 29,
         "kontrolEdilen": 108,
         "toplamSayfa": 108,
         "dususVar": false,
         "nedenler": [
           {
             "neden": "Gönderildi ve indekslendi",
-            "adet": 87,
+            "adet": 79,
             "sorun": false,
             "cozum": "",
             "ornekler": [
@@ -4090,12 +4079,13 @@
           },
           {
             "neden": "Google bu URL'i bilmiyor",
-            "adet": 2,
+            "adet": 10,
             "sorun": true,
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
             "ornekler": [
-              "/urun/coach-kartlik",
-              "/en/product/karl-lagerfeld-sapka"
+              "/en/blog/where-to-find-michael-kors-bags-in-cyprus.html",
+              "/en/blog/where-to-buy-occasion-shoes-in-cyprus.html",
+              "/blog/kibrista-bulamadigim-urunu-nasil-getirtirim.html"
             ]
           },
           {
@@ -4109,6 +4099,46 @@
           }
         ],
         "sorunlu": [
+          {
+            "yol": "/en/blog/where-to-find-michael-kors-bags-in-cyprus.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/blog/where-to-buy-occasion-shoes-in-cyprus.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/blog/kibrista-bulamadigim-urunu-nasil-getirtirim.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/blog/kibrista-marka-canta-nereden-alinir.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/blog/kibrista-coach-canta-nereden-bulunur.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/blog/kibrista-tory-burch-canta-nereden-bulunur.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/blog/kibrista-michael-kors-canta-nereden-bulunur.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/blog/kibrista-davet-ayakkabisi-nereden-alinir.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
           {
             "yol": "/urun/guess-suet-sandalet",
             "neden": "Bulundu — şu anda indekslenmedi",
@@ -4215,7 +4245,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-09-21T08:55:24.740Z"
+        "tarih": "2026-09-20T08:47:16.680Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -4224,14 +4254,14 @@
           "kelime": "jw pei cyprus",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 13,
+          "gosterim": 12,
           "tik": 5
         },
         {
           "kelime": "kıbrıs ta çanta nereden alınır",
           "pozisyon": 5,
           "onceki": 7,
-          "gosterim": 34,
+          "gosterim": 33,
           "tik": 1
         },
         {
@@ -4250,9 +4280,16 @@
         },
         {
           "kelime": "cyprus wedding guest outfit",
-          "pozisyon": 28,
-          "onceki": 26,
-          "gosterim": 21,
+          "pozisyon": 27,
+          "onceki": 27,
+          "gosterim": 22,
+          "tik": 0
+        },
+        {
+          "kelime": "what to wear to a wedding in cyprus",
+          "pozisyon": 7,
+          "onceki": 7,
+          "gosterim": 16,
           "tik": 0
         },
         {
@@ -4260,13 +4297,6 @@
           "pozisyon": 8,
           "onceki": 8,
           "gosterim": 15,
-          "tik": 0
-        },
-        {
-          "kelime": "what to wear to a wedding in cyprus",
-          "pozisyon": 7,
-          "onceki": 7,
-          "gosterim": 14,
           "tik": 0
         },
         {
@@ -4287,7 +4317,7 @@
           "kelime": "kıbrıs takı",
           "pozisyon": 12,
           "onceki": 12,
-          "gosterim": 6,
+          "gosterim": 5,
           "tik": 0
         },
         {
@@ -4295,13 +4325,6 @@
           "pozisyon": 10,
           "onceki": 10,
           "gosterim": 5,
-          "tik": 0
-        },
-        {
-          "kelime": "mk cyprus",
-          "pozisyon": 9,
-          "onceki": 9,
-          "gosterim": 4,
           "tik": 0
         },
         {
@@ -4319,10 +4342,17 @@
           "tik": 0
         },
         {
-          "kelime": "michael kors cyprus",
-          "pozisyon": 25,
-          "onceki": 25,
-          "gosterim": 3,
+          "kelime": "gerçek deri nasıl anlaşılır",
+          "pozisyon": 91,
+          "onceki": 96,
+          "gosterim": 2,
+          "tik": 0
+        },
+        {
+          "kelime": "hakiki deri nasıl anlaşılır",
+          "pozisyon": 93,
+          "onceki": 98,
+          "gosterim": 2,
           "tik": 0
         }
       ],
@@ -4331,13 +4361,13 @@
       "icerikBoslugu": [
         {
           "kelime": "cyprus wedding guest outfit",
-          "hacim": 21,
-          "rakipPoz": 28,
+          "hacim": 22,
+          "rakipPoz": 27,
           "tip": "firsat"
         },
         {
           "kelime": "jw pei cyprus",
-          "hacim": 13,
+          "hacim": 12,
           "rakipPoz": 8,
           "tip": "firsat"
         },
@@ -4354,12 +4384,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-21",
+      "siralamaTarih": "2026-09-20",
       "siralamaPencere": {
-        "baslangic": "2026-08-22",
-        "bitis": "2026-09-18"
+        "baslangic": "2026-08-21",
+        "bitis": "2026-09-17"
       },
-      "hizTarih": "2026-09-21",
+      "hizTarih": "2026-09-20",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -5537,72 +5567,72 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-09-21T08:55:24.741Z"
+        "tarih": "2026-09-20T08:50:59.667Z"
       },
       "aiBotlar": null,
       "geo": null,
       "siralama": [
         {
           "kelime": "kksbm",
-          "pozisyon": 5,
+          "pozisyon": 6,
           "onceki": 10,
-          "gosterim": 412,
-          "tik": 3
+          "gosterim": 382,
+          "tik": 2
         },
         {
           "kelime": "kktc sigorta bilgi merkezi",
           "pozisyon": 7,
           "onceki": 14,
-          "gosterim": 97,
+          "gosterim": 94,
           "tik": 2
         },
         {
           "kelime": "kktc sigorta şirketleri",
           "pozisyon": 11,
           "onceki": 10,
-          "gosterim": 23,
+          "gosterim": 25,
           "tik": 2
         },
         {
           "kelime": "segure sigorta",
           "pozisyon": 6,
           "onceki": 6,
-          "gosterim": 23,
+          "gosterim": 22,
           "tik": 2
         },
         {
           "kelime": "kıbrıs öğrenci sağlık sigortası",
-          "pozisyon": 5,
+          "pozisyon": 4,
           "onceki": 5,
-          "gosterim": 22,
+          "gosterim": 20,
           "tik": 2
         },
         {
           "kelime": "dağlı sigorta",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 113,
+          "gosterim": 123,
           "tik": 1
         },
         {
           "kelime": "kktc sağlık sigortası",
           "pozisyon": 9,
           "onceki": 10,
-          "gosterim": 28,
+          "gosterim": 33,
           "tik": 1
         },
         {
           "kelime": "kuzey kıbrıs sigorta bilgi merkezi",
-          "pozisyon": 9,
+          "pozisyon": 7,
           "onceki": 33,
-          "gosterim": 23,
+          "gosterim": 19,
           "tik": 1
         },
         {
           "kelime": "güven sigorta kktc",
           "pozisyon": 8,
           "onceki": 9,
-          "gosterim": 8,
+          "gosterim": 9,
           "tik": 1
         },
         {
@@ -5616,28 +5646,28 @@
           "kelime": "creditwest pert",
           "pozisyon": 8,
           "onceki": 6,
-          "gosterim": 95,
+          "gosterim": 104,
           "tik": 0
         },
         {
           "kelime": "kktcsigorta",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 59,
-          "tik": 0
-        },
-        {
-          "kelime": "kksrsb",
-          "pozisyon": 7,
-          "onceki": 7,
-          "gosterim": 39,
+          "gosterim": 55,
           "tik": 0
         },
         {
           "kelime": "güven sigorta",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 38,
+          "gosterim": 42,
+          "tik": 0
+        },
+        {
+          "kelime": "kksrsb",
+          "pozisyon": 7,
+          "onceki": 7,
+          "gosterim": 42,
           "tik": 0
         },
         {
@@ -5652,39 +5682,33 @@
       "kanibalizasyon": [],
       "icerikBoslugu": [
         {
-          "kelime": "creditwest pert",
-          "hacim": 95,
+          "kelime": "dağlı sigorta",
+          "hacim": 123,
           "rakipPoz": 8,
           "tip": "firsat"
         },
         {
           "kelime": "kktcsigorta",
-          "hacim": 59,
+          "hacim": 55,
           "rakipPoz": 8,
           "tip": "firsat"
         },
         {
           "kelime": "güven sigorta",
-          "hacim": 38,
+          "hacim": 42,
           "rakipPoz": 8,
           "tip": "firsat"
         },
         {
           "kelime": "kktc sağlık sigortası",
-          "hacim": 28,
+          "hacim": 33,
           "rakipPoz": 9,
           "tip": "firsat"
         },
         {
           "kelime": "kktc sigorta şirketleri",
-          "hacim": 23,
+          "hacim": 25,
           "rakipPoz": 11,
-          "tip": "firsat"
-        },
-        {
-          "kelime": "kuzey kıbrıs sigorta bilgi merkezi",
-          "hacim": 23,
-          "rakipPoz": 9,
           "tip": "firsat"
         },
         {
@@ -5701,7 +5725,7 @@
         },
         {
           "kelime": "güven sigorta kktc",
-          "hacim": 8,
+          "hacim": 9,
           "rakipPoz": 8,
           "tip": "firsat"
         },
@@ -5710,14 +5734,20 @@
           "hacim": 8,
           "rakipPoz": 12,
           "tip": "firsat"
+        },
+        {
+          "kelime": "dağlı sigorta mağusa",
+          "hacim": 8,
+          "rakipPoz": 12,
+          "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-09-21",
+      "siralamaTarih": "2026-09-20",
       "siralamaPencere": {
-        "baslangic": "2026-08-22",
-        "bitis": "2026-09-18"
+        "baslangic": "2026-08-21",
+        "bitis": "2026-09-17"
       },
-      "hizTarih": "2026-09-21",
+      "hizTarih": "2026-09-19",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -5745,12 +5775,6 @@
     }
   ],
   "raporlar": [
-    {
-      "ad": "Haftalık rapor — 21 Eylül 2026",
-      "tarih": "2026-09-21",
-      "tur": "haftalik",
-      "dosya": "data/raporlar/2026-09-21-haftalik.html"
-    },
     {
       "ad": "Haftalık rapor — 14 Eylül 2026",
       "tarih": "2026-09-14",
