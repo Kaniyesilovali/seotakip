@@ -937,30 +937,30 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-pumpkin-balkabakli-mama": {
-      "t": "2026-09-16T08:34:22.043Z",
-      "denetlenen": "https://animare.vet/tr/blog/nd-pumpkin-balkabakli-mama/",
+      "t": "2026-09-24T08:26:42.881Z",
+      "denetlenen": "https://animare.vet/tr/blog/nd-pumpkin-balkabakli-mama",
       "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
+      "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
       "canonicalGoogle": "",
       "canonicalSayfa": "",
       "sonTarama": "",
-      "httpKod": 200
+      "httpKod": 523
     },
     "https://animare.vet/en/blog/nd-pumpkin-pet-food": {
-      "t": "2026-09-16T08:34:22.460Z",
-      "denetlenen": "https://animare.vet/en/blog/nd-pumpkin-pet-food/",
+      "t": "2026-09-24T08:26:42.546Z",
+      "denetlenen": "https://animare.vet/en/blog/nd-pumpkin-pet-food",
       "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
+      "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
       "canonicalGoogle": "",
       "canonicalSayfa": "",
       "sonTarama": "",
-      "httpKod": 200
+      "httpKod": 523
     },
     "https://animare.vet/tr/blog/nd-tropical-meyveli-mama": {
       "t": "2026-09-21T08:53:49.194Z",
@@ -2395,10 +2395,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html": {
-      "t": "2026-09-16T08:34:29.825Z",
+      "t": "2026-09-24T08:26:49.671Z",
       "denetlenen": "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -7458,7 +7458,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/kktc-konut-sigortasi-kapsam": {
-      "t": "2026-09-16T08:34:37.453Z",
+      "t": "2026-09-24T08:26:57.071Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/kktc-konut-sigortasi-kapsam/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7471,7 +7471,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/kktc-online-trafik-sigortasi": {
-      "t": "2026-09-16T08:34:37.527Z",
+      "t": "2026-09-24T08:26:56.687Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/kktc-online-trafik-sigortasi/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -7484,7 +7484,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/kktc-garanti-fonu-basvuru": {
-      "t": "2026-09-16T08:34:37.142Z",
+      "t": "2026-09-24T08:26:56.602Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/kktc-garanti-fonu-basvuru/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -7497,7 +7497,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/companies": {
-      "t": "2026-09-16T08:34:44.012Z",
+      "t": "2026-09-24T08:27:03.404Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/companies/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7510,7 +7510,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en": {
-      "t": "2026-09-16T08:34:44.116Z",
+      "t": "2026-09-24T08:27:03.607Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7519,11 +7519,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/en/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/en/",
-      "sonTarama": "2026-09-09T23:37:45Z",
+      "sonTarama": "2026-09-18T13:20:55Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/rehber/konu/urun": {
-      "t": "2026-09-16T08:34:45.070Z",
+      "t": "2026-09-24T08:27:03.730Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/rehber/konu/urun/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7549,7 +7549,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/motor-third-party": {
-      "t": "2026-09-16T08:34:51.338Z",
+      "t": "2026-09-24T08:27:10.430Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/motor-third-party/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
