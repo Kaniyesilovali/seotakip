@@ -807,7 +807,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs": {
-      "t": "2026-09-21T08:53:57.903Z",
+      "t": "2026-09-28T09:40:10.329Z",
       "denetlenen": "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -820,7 +820,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli": {
-      "t": "2026-09-21T08:54:05.869Z",
+      "t": "2026-09-28T09:40:21.417Z",
       "denetlenen": "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -833,7 +833,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman": {
-      "t": "2026-09-21T08:53:58.211Z",
+      "t": "2026-09-28T09:40:18.661Z",
       "denetlenen": "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -846,7 +846,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/limping-in-dogs-and-cats": {
-      "t": "2026-09-21T08:54:04.513Z",
+      "t": "2026-09-28T09:40:21.511Z",
       "denetlenen": "https://animare.vet/en/blog/limping-in-dogs-and-cats/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -885,7 +885,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama": {
-      "t": "2026-09-21T08:53:50.801Z",
+      "t": "2026-09-28T09:39:56.232Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -898,7 +898,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-prime-grain-free-pet-food": {
-      "t": "2026-09-21T08:53:56.581Z",
+      "t": "2026-09-28T09:40:10.391Z",
       "denetlenen": "https://animare.vet/en/blog/nd-prime-grain-free-pet-food/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -963,23 +963,23 @@
       "httpKod": 523
     },
     "https://animare.vet/tr/blog/nd-tropical-meyveli-mama": {
-      "t": "2026-09-21T08:53:49.194Z",
+      "t": "2026-09-28T09:39:55.645Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-tropical-meyveli-mama/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "durum": "Crawled - currently not indexed",
+      "robots": "ALLOWED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "getirme": "SUCCESSFUL",
       "canonicalGoogle": "",
       "canonicalSayfa": "",
-      "sonTarama": "",
+      "sonTarama": "2026-09-27T23:43:28Z",
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-tropical-pet-food": {
-      "t": "2026-09-21T08:53:49.901Z",
+      "t": "2026-09-28T09:39:55.641Z",
       "denetlenen": "https://animare.vet/en/blog/nd-tropical-pet-food/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -2213,7 +2213,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html": {
-      "t": "2026-09-21T08:54:19.881Z",
+      "t": "2026-09-28T09:41:05.661Z",
       "denetlenen": "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2222,11 +2222,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html",
       "canonicalSayfa": "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html",
-      "sonTarama": "2026-09-16T07:47:59Z",
+      "sonTarama": "2026-09-27T19:17:16Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/cift-terapisi-gazimagusa.html": {
-      "t": "2026-09-21T08:54:12.943Z",
+      "t": "2026-09-28T09:40:43.655Z",
       "denetlenen": "https://magusapsikoloji.com/blog/cift-terapisi-gazimagusa.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2235,11 +2235,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/blog/cift-terapisi-gazimagusa.html",
       "canonicalSayfa": "https://magusapsikoloji.com/blog/cift-terapisi-gazimagusa.html",
-      "sonTarama": "2026-09-08T15:27:04Z",
+      "sonTarama": "2026-09-23T13:52:15Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html": {
-      "t": "2026-09-21T08:54:19.881Z",
+      "t": "2026-09-28T09:40:53.703Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2252,7 +2252,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/noropsikolojik-degerlendirme.html": {
-      "t": "2026-09-21T08:54:19.909Z",
+      "t": "2026-09-28T09:40:53.740Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/noropsikolojik-degerlendirme.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2460,20 +2460,20 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/kaynaklar.html": {
-      "t": "2026-09-21T08:54:12.882Z",
+      "t": "2026-09-28T09:40:43.660Z",
       "denetlenen": "https://magusapsikoloji.com/kaynaklar.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/kaynaklar.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/kaynaklar.html",
+      "sonTarama": "2026-09-26T02:40:53Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/sources.html": {
-      "t": "2026-09-21T08:54:12.978Z",
+      "t": "2026-09-28T09:40:43.762Z",
       "denetlenen": "https://magusapsikoloji.com/en/sources.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4230,7 +4230,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-bafry": {
-      "t": "2026-09-21T08:54:27.598Z",
+      "t": "2026-09-28T09:41:15.951Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-bafry/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4243,7 +4243,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-guzelyurt": {
-      "t": "2026-09-21T08:54:27.210Z",
+      "t": "2026-09-28T09:41:18.959Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-guzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4256,7 +4256,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-guzelyurt-transfer": {
-      "t": "2026-09-21T08:54:34.766Z",
+      "t": "2026-09-28T09:41:24.036Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-guzelyurt-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4269,7 +4269,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-gyuzelyurt": {
-      "t": "2026-09-21T08:54:34.724Z",
+      "t": "2026-09-28T09:41:23.592Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-gyuzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4282,7 +4282,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels": {
-      "t": "2026-09-21T08:54:27.533Z",
+      "t": "2026-09-28T09:41:16.457Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4291,11 +4291,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels/",
-      "sonTarama": "2026-08-25T13:47:17Z",
+      "sonTarama": "2026-09-25T00:06:20Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-catalkoy-otelleri-transfer": {
-      "t": "2026-09-21T08:54:34.800Z",
+      "t": "2026-09-28T09:41:29.153Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-catalkoy-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4308,7 +4308,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-chatalkoya": {
-      "t": "2026-09-21T08:54:41.967Z",
+      "t": "2026-09-28T09:41:31.196Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-chatalkoya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4321,7 +4321,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-alsancak-hotels": {
-      "t": "2026-09-21T08:54:42.286Z",
+      "t": "2026-09-28T09:41:31.248Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-alsancak-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4330,11 +4330,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/paphos-airport-to-alsancak-hotels/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/paphos-airport-to-alsancak-hotels/",
-      "sonTarama": "2026-08-24T23:42:33Z",
+      "sonTarama": "2026-09-23T12:05:35Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-alsancak-otelleri-transfer": {
-      "t": "2026-09-21T08:54:42.355Z",
+      "t": "2026-09-28T09:41:36.810Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-alsancak-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4343,11 +4343,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-alsancak-otelleri-transfer/",
       "canonicalSayfa": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-alsancak-otelleri-transfer/",
-      "sonTarama": "2026-08-24T01:16:14Z",
+      "sonTarama": "2026-09-22T02:45:41Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-alsandzhaka": {
-      "t": "2026-09-21T08:54:49.511Z",
+      "t": "2026-09-28T09:41:37.972Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-alsandzhaka/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4360,7 +4360,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-lapta": {
-      "t": "2026-09-21T08:54:49.843Z",
+      "t": "2026-09-28T09:41:44.385Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-lapta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4373,7 +4373,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-lapta-transfer": {
-      "t": "2026-09-21T08:54:49.533Z",
+      "t": "2026-09-28T09:41:38.035Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-lapta-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4386,7 +4386,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-lapta": {
-      "t": "2026-09-21T08:54:57.103Z",
+      "t": "2026-09-28T09:41:45.400Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-lapta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4438,7 +4438,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/areas": {
-      "t": "2026-09-21T08:54:57.104Z",
+      "t": "2026-09-28T09:41:52.024Z",
       "denetlenen": "https://thetaxsi.com/en/areas/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4451,7 +4451,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/bolge": {
-      "t": "2026-09-21T08:55:04.160Z",
+      "t": "2026-09-28T09:42:08.189Z",
       "denetlenen": "https://thetaxsi.com/tr/bolge/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4464,7 +4464,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/rayony": {
-      "t": "2026-09-21T08:54:56.967Z",
+      "t": "2026-09-28T09:41:48.169Z",
       "denetlenen": "https://thetaxsi.com/ru/rayony/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5779,7 +5779,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/en/blog/where-to-find-michael-kors-bags-in-cyprus.html": {
-      "t": "2026-09-21T08:55:11.132Z",
+      "t": "2026-09-28T09:42:15.277Z",
       "denetlenen": "https://www.luxeva-cyprus.com/en/blog/where-to-find-michael-kors-bags-in-cyprus.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5788,11 +5788,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://www.luxeva-cyprus.com/en/blog/where-to-find-michael-kors-bags-in-cyprus.html",
       "canonicalSayfa": "https://www.luxeva-cyprus.com/en/blog/where-to-find-michael-kors-bags-in-cyprus.html",
-      "sonTarama": "2026-09-15T13:17:48Z",
+      "sonTarama": "2026-09-26T02:43:28Z",
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/en/blog/where-to-buy-occasion-shoes-in-cyprus.html": {
-      "t": "2026-09-21T08:55:11.171Z",
+      "t": "2026-09-28T09:42:15.366Z",
       "denetlenen": "https://www.luxeva-cyprus.com/en/blog/where-to-buy-occasion-shoes-in-cyprus.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5805,7 +5805,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-bulamadigim-urunu-nasil-getirtirim.html": {
-      "t": "2026-09-21T08:55:11.260Z",
+      "t": "2026-09-28T09:42:18.282Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-bulamadigim-urunu-nasil-getirtirim.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5818,7 +5818,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-coach-canta-nereden-bulunur.html": {
-      "t": "2026-09-21T08:55:17.937Z",
+      "t": "2026-09-28T09:42:22.104Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-coach-canta-nereden-bulunur.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5827,11 +5827,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://www.luxeva-cyprus.com/blog/kibrista-coach-canta-nereden-bulunur.html",
       "canonicalSayfa": "https://www.luxeva-cyprus.com/blog/kibrista-coach-canta-nereden-bulunur.html",
-      "sonTarama": "2026-09-15T19:38:39Z",
+      "sonTarama": "2026-09-19T13:47:32Z",
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-marka-canta-nereden-alinir.html": {
-      "t": "2026-09-21T08:55:17.958Z",
+      "t": "2026-09-28T09:42:22.213Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-marka-canta-nereden-alinir.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5844,7 +5844,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-michael-kors-canta-nereden-bulunur.html": {
-      "t": "2026-09-21T08:55:18.089Z",
+      "t": "2026-09-28T09:42:25.163Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-michael-kors-canta-nereden-bulunur.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5857,7 +5857,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-davet-ayakkabisi-nereden-alinir.html": {
-      "t": "2026-09-21T08:55:24.692Z",
+      "t": "2026-09-28T09:42:28.892Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-davet-ayakkabisi-nereden-alinir.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5870,7 +5870,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-tory-burch-canta-nereden-bulunur.html": {
-      "t": "2026-09-21T08:55:24.740Z",
+      "t": "2026-09-28T09:42:44.009Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-tory-burch-canta-nereden-bulunur.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
