@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-10-04T09:50:57.043Z",
+  "guncelleme": "2026-10-04T09:35:56.906Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 90,
@@ -512,10 +512,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 80,
-        "masaustuPuan": 99,
-        "lcp": 3.7,
-        "inp": 80,
+        "mobilPuan": 92,
+        "masaustuPuan": 96,
+        "lcp": 2.9,
+        "inp": 67,
         "cls": 0.08,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -731,7 +731,7 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-10-04T09:38:45.100Z"
+        "tarih": "2026-10-03T09:10:49.154Z"
       },
       "aiBotlar": null,
       "geo": {
@@ -751,7 +751,14 @@
           "kelime": "gönyeli veteriner",
           "pozisyon": 1,
           "onceki": 1,
-          "gosterim": 26,
+          "gosterim": 30,
+          "tik": 3
+        },
+        {
+          "kelime": "nöbetçi veteriner",
+          "pozisyon": 4,
+          "onceki": 5,
+          "gosterim": 22,
           "tik": 2
         },
         {
@@ -769,17 +776,10 @@
           "tik": 1
         },
         {
-          "kelime": "nöbetçi veteriner",
-          "pozisyon": 4,
-          "onceki": 5,
-          "gosterim": 19,
-          "tik": 1
-        },
-        {
           "kelime": "kıbrıs veteriner klinikleri",
-          "pozisyon": 8,
+          "pozisyon": 9,
           "onceki": 13,
-          "gosterim": 13,
+          "gosterim": 18,
           "tik": 1
         },
         {
@@ -819,9 +819,9 @@
         },
         {
           "kelime": "anima vet clinic",
-          "pozisyon": 20,
-          "onceki": 19,
-          "gosterim": 16,
+          "pozisyon": 19,
+          "onceki": 25,
+          "gosterim": 17,
           "tik": 0
         },
         {
@@ -880,6 +880,12 @@
           "tip": "firsat"
         },
         {
+          "kelime": "kıbrıs veteriner klinikleri",
+          "hacim": 18,
+          "rakipPoz": 9,
+          "tip": "firsat"
+        },
+        {
           "kelime": "dental care cats",
           "hacim": 18,
           "rakipPoz": 19,
@@ -887,8 +893,8 @@
         },
         {
           "kelime": "anima vet clinic",
-          "hacim": 16,
-          "rakipPoz": 20,
+          "hacim": 17,
+          "rakipPoz": 19,
           "tip": "firsat"
         },
         {
@@ -904,12 +910,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-04",
+      "siralamaTarih": "2026-10-03",
       "siralamaPencere": {
-        "baslangic": "2026-09-04",
-        "bitis": "2026-10-01"
+        "baslangic": "2026-09-03",
+        "bitis": "2026-09-30"
       },
-      "hizTarih": "2026-10-04",
+      "hizTarih": "2026-10-03",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -1450,11 +1456,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 84,
-        "masaustuPuan": 81,
-        "lcp": 3.6,
-        "inp": 10,
-        "cls": 0.02,
+        "mobilPuan": 74,
+        "masaustuPuan": 80,
+        "lcp": 3.9,
+        "inp": 308,
+        "cls": 0,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -1466,7 +1472,7 @@
         "aksiyonGereken": 8,
         "kontrolEdilen": 108,
         "toplamSayfa": 108,
-        "dususVar": false,
+        "dususVar": true,
         "nedenler": [
           {
             "neden": "Gönderildi ve indekslendi",
@@ -1554,7 +1560,7 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-10-04T09:38:45.103Z"
+        "tarih": "2026-10-03T09:14:35.184Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -1563,8 +1569,8 @@
           "kelime": "mağusa psikolog",
           "pozisyon": 5,
           "onceki": 7,
-          "gosterim": 40,
-          "tik": 3
+          "gosterim": 41,
+          "tik": 4
         },
         {
           "kelime": "klinik psikoloji",
@@ -1576,22 +1582,29 @@
         {
           "kelime": "psikolog",
           "pozisyon": 4,
-          "onceki": 4,
+          "onceki": 10,
           "gosterim": 58,
           "tik": 0
         },
         {
           "kelime": "developmental trauma treatment cyprus",
-          "pozisyon": 26,
-          "onceki": 44,
-          "gosterim": 29,
+          "pozisyon": 27,
+          "onceki": 48,
+          "gosterim": 31,
           "tik": 0
         },
         {
           "kelime": "childhood trauma treatment cyprus",
           "pozisyon": 33,
           "onceki": 38,
-          "gosterim": 25,
+          "gosterim": 27,
+          "tik": 0
+        },
+        {
+          "kelime": "panik atak nedir belirtileri nelerdir",
+          "pozisyon": 60,
+          "onceki": 70,
+          "gosterim": 22,
           "tik": 0
         },
         {
@@ -1602,24 +1615,17 @@
           "tik": 0
         },
         {
-          "kelime": "panik atak nedir belirtileri nelerdir",
-          "pozisyon": 60,
-          "onceki": 66,
-          "gosterim": 19,
-          "tik": 0
-        },
-        {
           "kelime": "panik bozukluk belirtileri",
           "pozisyon": 68,
-          "onceki": 72,
-          "gosterim": 18,
+          "onceki": 77,
+          "gosterim": 20,
           "tik": 0
         },
         {
           "kelime": "panik atak belirtileri",
-          "pozisyon": 91,
-          "onceki": 82,
-          "gosterim": 11,
+          "pozisyon": 90,
+          "onceki": 81,
+          "gosterim": 12,
           "tik": 0
         },
         {
@@ -1670,13 +1676,13 @@
       "icerikBoslugu": [
         {
           "kelime": "developmental trauma treatment cyprus",
-          "hacim": 29,
-          "rakipPoz": 26,
+          "hacim": 31,
+          "rakipPoz": 27,
           "tip": "firsat"
         },
         {
           "kelime": "childhood trauma treatment cyprus",
-          "hacim": 25,
+          "hacim": 27,
           "rakipPoz": 33,
           "tip": "firsat"
         },
@@ -1687,12 +1693,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-04",
+      "siralamaTarih": "2026-10-03",
       "siralamaPencere": {
-        "baslangic": "2026-09-04",
-        "bitis": "2026-10-01"
+        "baslangic": "2026-09-03",
+        "bitis": "2026-09-30"
       },
-      "hizTarih": "2026-10-04",
+      "hizTarih": "2026-10-03",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -2672,8 +2678,8 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 68,
-        "masaustuPuan": 95,
+        "mobilPuan": 69,
+        "masaustuPuan": 84,
         "lcp": 8.3,
         "inp": 0,
         "cls": 0,
@@ -2732,7 +2738,7 @@
             "cozum": "Kalite sorunu: içerik ince/kopya. Derinleştir, özgünleştir, iç link ver."
           }
         ],
-        "tarih": "2026-10-04T09:42:52.601Z"
+        "tarih": "2026-10-03T09:16:02.567Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -2883,12 +2889,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-04",
+      "siralamaTarih": "2026-10-03",
       "siralamaPencere": {
-        "baslangic": "2026-09-04",
-        "bitis": "2026-10-01"
+        "baslangic": "2026-09-03",
+        "bitis": "2026-09-30"
       },
-      "hizTarih": "2026-10-04",
+      "hizTarih": "2026-10-03",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -3944,10 +3950,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 89,
-        "masaustuPuan": 95,
-        "lcp": 3.2,
-        "inp": 66,
+        "mobilPuan": 76,
+        "masaustuPuan": 87,
+        "lcp": 3.3,
+        "inp": 514,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -3979,9 +3985,9 @@
             "sorun": true,
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır.",
             "ornekler": [
+              "/urun/guess-suet-sandalet",
               "/en/product/guess-suet-sandalet",
-              "/urun/steve-madden-asiel",
-              "/en/product/steve-madden-asiel"
+              "/urun/steve-madden-asiel"
             ]
           },
           {
@@ -3990,17 +3996,17 @@
             "sorun": true,
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
             "ornekler": [
-              "/urun/guess-suet-sandalet",
+              "/en/product/steve-madden-asiel",
               "/en/product/cizgili-blazer-elbise",
-              "/urun/guess-krem-kemer"
+              "/urun/gucci-gunes-gozlugu"
             ]
           }
         ],
         "sorunlu": [
           {
             "yol": "/urun/guess-suet-sandalet",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
             "yol": "/en/product/guess-suet-sandalet",
@@ -4014,8 +4020,8 @@
           },
           {
             "yol": "/en/product/steve-madden-asiel",
-            "neden": "Bulundu — şu anda indekslenmedi",
-            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
             "yol": "/urun/bordo-dantel-maxi",
@@ -4049,8 +4055,8 @@
           },
           {
             "yol": "/urun/gucci-gunes-gozlugu",
-            "neden": "Bulundu — şu anda indekslenmedi",
-            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
             "yol": "/en/product/gucci-gunes-gozlugu",
@@ -4059,8 +4065,8 @@
           },
           {
             "yol": "/urun/coach-bileklik",
-            "neden": "Bulundu — şu anda indekslenmedi",
-            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
             "yol": "/en/product/coach-bileklik",
@@ -4079,8 +4085,8 @@
           },
           {
             "yol": "/urun/guess-krem-kemer",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
             "yol": "/en/product/guess-krem-kemer",
@@ -4089,8 +4095,8 @@
           },
           {
             "yol": "/urun/karl-lagerfeld-sapka",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
             "yol": "/en/product/karl-lagerfeld-sapka",
@@ -4098,7 +4104,7 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-10-04T09:46:41.818Z"
+        "tarih": "2026-10-03T09:16:02.568Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -4135,7 +4141,7 @@
           "kelime": "kıbrıs ta çanta nereden alınır",
           "pozisyon": 5,
           "onceki": 6,
-          "gosterim": 21,
+          "gosterim": 24,
           "tik": 0
         },
         {
@@ -4156,7 +4162,7 @@
           "kelime": "cyprus wedding guest outfit",
           "pozisyon": 30,
           "onceki": 26,
-          "gosterim": 12,
+          "gosterim": 13,
           "tik": 0
         },
         {
@@ -4164,6 +4170,13 @@
           "pozisyon": 22,
           "onceki": 22,
           "gosterim": 9,
+          "tik": 0
+        },
+        {
+          "kelime": "kıbrıs ta kışın ne giyilir",
+          "pozisyon": 11,
+          "onceki": 9,
+          "gosterim": 8,
           "tik": 0
         },
         {
@@ -4181,13 +4194,6 @@
           "tik": 0
         },
         {
-          "kelime": "kıbrıs ta kışın ne giyilir",
-          "pozisyon": 8,
-          "onceki": 14,
-          "gosterim": 6,
-          "tik": 0
-        },
-        {
           "kelime": "coach bags cyprus",
           "pozisyon": 10,
           "onceki": 10,
@@ -4202,10 +4208,10 @@
           "tik": 0
         },
         {
-          "kelime": "coach bags cy",
-          "pozisyon": 10,
-          "onceki": 10,
-          "gosterim": 3,
+          "kelime": "kıbrıs alışveriş",
+          "pozisyon": 73,
+          "onceki": 73,
+          "gosterim": 4,
           "tik": 0
         }
       ],
@@ -4220,7 +4226,7 @@
         },
         {
           "kelime": "cyprus wedding guest outfit",
-          "hacim": 12,
+          "hacim": 13,
           "rakipPoz": 30,
           "tip": "firsat"
         },
@@ -4237,18 +4243,24 @@
           "tip": "firsat"
         },
         {
+          "kelime": "kıbrıs ta kışın ne giyilir",
+          "hacim": 8,
+          "rakipPoz": 11,
+          "tip": "firsat"
+        },
+        {
           "kelime": "mk cyprus",
           "hacim": 8,
           "rakipPoz": 9,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-04",
+      "siralamaTarih": "2026-10-03",
       "siralamaPencere": {
-        "baslangic": "2026-09-04",
-        "bitis": "2026-10-01"
+        "baslangic": "2026-09-03",
+        "bitis": "2026-09-30"
       },
-      "hizTarih": "2026-10-04",
+      "hizTarih": "2026-10-03",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -5400,27 +5412,16 @@
         "kaynak": "lab"
       },
       "indeks": {
-        "indeksli": 36,
-        "indekssiz": 109,
-        "aksiyonGereken": 109,
-        "kontrolEdilen": 145,
-        "toplamSayfa": 150,
-        "dususVar": true,
+        "indeksli": 93,
+        "indekssiz": 19,
+        "aksiyonGereken": 19,
+        "kontrolEdilen": 112,
+        "toplamSayfa": 112,
+        "dususVar": false,
         "nedenler": [
           {
-            "neden": "Google bu URL'i bilmiyor",
-            "adet": 101,
-            "sorun": true,
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
-            "ornekler": [
-              "/en/guides/topic/claims",
-              "/tr/sirketler/akfinans-sigorta/ferdi-kaza",
-              "/tr/sirketler/akfinans-sigorta/hirsizlik"
-            ]
-          },
-          {
             "neden": "Gönderildi ve indekslendi",
-            "adet": 36,
+            "adet": 93,
             "sorun": false,
             "cozum": "",
             "ornekler": [
@@ -5431,13 +5432,24 @@
           },
           {
             "neden": "Bulundu — şu anda indekslenmedi",
-            "adet": 8,
+            "adet": 15,
             "sorun": true,
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır.",
             "ornekler": [
               "/en/guides/topic/border-crossing",
               "/tr/sirketler/karsilastirma/anadolu-sigorta-kktc-turkiye",
               "/tr/sirketler/karsilastirma/eurocity-sigorta-eig-sigorta"
+            ]
+          },
+          {
+            "neden": "Google bu URL'i bilmiyor",
+            "adet": 4,
+            "sorun": true,
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
+            "ornekler": [
+              "/en/guides/topic/claims",
+              "/tr/sirketler/isyeri",
+              "/tr/rehber/kktc-online-trafik-sigortasi"
             ]
           }
         ],
@@ -5488,212 +5500,57 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/ferdi-kaza",
+            "yol": "/tr/sirketler/isyeri",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/hirsizlik",
+            "yol": "/tr/sirketler/seyahat",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+          },
+          {
+            "yol": "/tr/rehber/kktc-garanti-fonu-basvuru",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
+          },
+          {
+            "yol": "/tr/rehber/kktc-online-trafik-sigortasi",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/isletme",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "yol": "/tr/rehber/kktc-taban-tarife",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/kasko",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "yol": "/tr/rehber/konu/ayrim",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/muhendislik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "yol": "/tr/rehber/konu/hasar",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/nakliyat",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "yol": "/tr/rehber/konu/seffaflik",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/trafik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+            "yol": "/tr/rehber/konu/sirket-secimi",
+            "neden": "Bulundu — şu anda indekslenmedi",
+            "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
-            "yol": "/tr/sirketler/akfinans-sigorta/yangin",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/alfa-sigorta/acil-saglik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/alfa-sigorta/ferdi-kaza",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/alfa-sigorta/isyeri",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/alfa-sigorta/kasko",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/alfa-sigorta/konut",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/alfa-sigorta/trafik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/ferdi-kaza",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/kasko",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/konut",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/nakliyat",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/saglik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/seyahat-saglik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/ticari-paket",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/allsafe-insurance/trafik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/ferdi-kaza",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/gunes-paneli",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/isyeri-paket",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/kasko",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/konut",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/muhendislik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/patim-guvende",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/saglik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/seyahat",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/sinir-kapisi",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/site-apartman",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/sorumluluk",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/tekne-nakliyat",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/anadolu-sigorta/trafik",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/as-can-sigorta/asansor",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/as-can-sigorta/cam",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/as-can-sigorta/elektronik-cihaz",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/as-can-sigorta/emniyeti-suistimal",
-            "neden": "Google bu URL'i bilmiyor",
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
-          },
-          {
-            "yol": "/tr/sirketler/as-can-sigorta/ferdi-kaza",
+            "yol": "/tr/rehber/konu/yabancilar",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-10-04T09:50:57.043Z"
+        "tarih": "2026-10-03T09:16:02.568Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -5702,14 +5559,14 @@
           "kelime": "kktc sigorta bilgi merkezi",
           "pozisyon": 6,
           "onceki": 10,
-          "gosterim": 117,
+          "gosterim": 124,
           "tik": 5
         },
         {
           "kelime": "kksbm",
           "pozisyon": 5,
           "onceki": 10,
-          "gosterim": 831,
+          "gosterim": 832,
           "tik": 4
         },
         {
@@ -5722,8 +5579,8 @@
         {
           "kelime": "kuzey kıbrıs sigorta bilgi merkezi",
           "pozisyon": 8,
-          "onceki": 28,
-          "gosterim": 42,
+          "onceki": 33,
+          "gosterim": 43,
           "tik": 1
         },
         {
@@ -5751,28 +5608,28 @@
           "kelime": "sigorta bilgi merkezi kktc",
           "pozisyon": 7,
           "onceki": 7,
-          "gosterim": 96,
+          "gosterim": 98,
           "tik": 0
         },
         {
           "kelime": "creditwest pert",
           "pozisyon": 11,
           "onceki": 7,
-          "gosterim": 43,
+          "gosterim": 47,
           "tik": 0
         },
         {
           "kelime": "kktcsigorta",
           "pozisyon": 7,
           "onceki": 9,
-          "gosterim": 42,
+          "gosterim": 43,
           "tik": 0
         },
         {
           "kelime": "dağlı sigorta",
           "pozisyon": 9,
           "onceki": 8,
-          "gosterim": 34,
+          "gosterim": 35,
           "tik": 0
         },
         {
@@ -5783,6 +5640,13 @@
           "tik": 0
         },
         {
+          "kelime": "bicare insurance",
+          "pozisyon": 7,
+          "onceki": 7,
+          "gosterim": 21,
+          "tik": 0
+        },
+        {
           "kelime": "kıbrıs öğrenci sağlık sigortası",
           "pozisyon": 5,
           "onceki": 4,
@@ -5790,17 +5654,10 @@
           "tik": 0
         },
         {
-          "kelime": "bicare insurance",
-          "pozisyon": 7,
-          "onceki": 8,
-          "gosterim": 20,
-          "tik": 0
-        },
-        {
           "kelime": "kksrsb",
           "pozisyon": 7,
           "onceki": 7,
-          "gosterim": 18,
+          "gosterim": 20,
           "tik": 0
         }
       ],
@@ -5809,13 +5666,13 @@
       "icerikBoslugu": [
         {
           "kelime": "creditwest pert",
-          "hacim": 43,
+          "hacim": 47,
           "rakipPoz": 11,
           "tip": "firsat"
         },
         {
           "kelime": "dağlı sigorta",
-          "hacim": 34,
+          "hacim": 35,
           "rakipPoz": 9,
           "tip": "firsat"
         },
@@ -5833,8 +5690,8 @@
         },
         {
           "kelime": "sigorta bilgi merkezi",
-          "hacim": 16,
-          "rakipPoz": 13,
+          "hacim": 19,
+          "rakipPoz": 12,
           "tip": "firsat"
         },
         {
@@ -5856,12 +5713,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-04",
+      "siralamaTarih": "2026-10-03",
       "siralamaPencere": {
-        "baslangic": "2026-09-04",
-        "bitis": "2026-10-01"
+        "baslangic": "2026-09-03",
+        "bitis": "2026-09-30"
       },
-      "hizTarih": "2026-10-04",
+      "hizTarih": "2026-10-03",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
