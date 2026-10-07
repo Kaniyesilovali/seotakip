@@ -2265,7 +2265,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/psychologist-in-famagusta.html": {
-      "t": "2026-09-30T09:38:27.085Z",
+      "t": "2026-10-07T10:10:45.953Z",
       "denetlenen": "https://magusapsikoloji.com/en/psychologist-in-famagusta.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2278,7 +2278,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/gazimagusa-psikolog.html": {
-      "t": "2026-09-30T09:38:27.073Z",
+      "t": "2026-10-07T10:10:39.414Z",
       "denetlenen": "https://magusapsikoloji.com/gazimagusa-psikolog.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2287,7 +2287,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/gazimagusa-psikolog.html",
       "canonicalSayfa": "https://magusapsikoloji.com/gazimagusa-psikolog.html",
-      "sonTarama": "2026-09-11T04:40:26Z",
+      "sonTarama": "2026-10-04T16:20:59Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/couples-therapy.html": {
@@ -2501,6 +2501,32 @@
     "https://magusapsikoloji.com/en/services/group-work.html": {
       "t": "2026-10-03T09:10:56.591Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/group-work.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html": {
+      "t": "2026-10-07T10:10:39.310Z",
+      "denetlenen": "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html": {
+      "t": "2026-10-07T10:10:39.348Z",
+      "denetlenen": "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html",
       "verdict": "NEUTRAL",
       "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
