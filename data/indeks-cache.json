@@ -950,10 +950,10 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-pumpkin-pet-food": {
-      "t": "2026-10-01T10:03:19.495Z",
+      "t": "2026-10-08T10:20:56.193Z",
       "denetlenen": "https://animare.vet/en/blog/nd-pumpkin-pet-food/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -2421,7 +2421,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html": {
-      "t": "2026-10-01T10:03:27.091Z",
+      "t": "2026-10-08T10:22:57.199Z",
       "denetlenen": "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2430,7 +2430,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html",
       "canonicalSayfa": "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html",
-      "sonTarama": "2026-09-27T23:03:09Z",
+      "sonTarama": "2026-10-03T03:13:02Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/travma-terapisi.html": {
