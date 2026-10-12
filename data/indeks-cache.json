@@ -807,7 +807,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs": {
-      "t": "2026-10-05T10:19:12.698Z",
+      "t": "2026-10-12T10:35:50.811Z",
       "denetlenen": "https://animare.vet/en/blog/blood-tests-for-cats-and-dogs/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -820,7 +820,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli": {
-      "t": "2026-10-05T10:19:20.591Z",
+      "t": "2026-10-12T10:36:05.770Z",
       "denetlenen": "https://animare.vet/tr/blog/kan-tahlili-neden-gerekli/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -833,7 +833,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman": {
-      "t": "2026-10-05T10:19:15.240Z",
+      "t": "2026-10-12T10:35:58.112Z",
       "denetlenen": "https://animare.vet/tr/blog/topallama-rontgen-ne-zaman/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -846,7 +846,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/limping-in-dogs-and-cats": {
-      "t": "2026-10-05T10:19:20.533Z",
+      "t": "2026-10-12T10:35:58.064Z",
       "denetlenen": "https://animare.vet/en/blog/limping-in-dogs-and-cats/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -885,29 +885,29 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama": {
-      "t": "2026-10-05T10:19:05.657Z",
+      "t": "2026-10-12T10:35:50.066Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama/",
-      "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama/",
+      "canonicalSayfa": "https://animare.vet/tr/blog/nd-prime-tahilsiz-mama/",
+      "sonTarama": "2026-10-09T08:01:46Z",
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-prime-grain-free-pet-food": {
-      "t": "2026-10-05T10:19:13.299Z",
+      "t": "2026-10-12T10:35:58.218Z",
       "denetlenen": "https://animare.vet/en/blog/nd-prime-grain-free-pet-food/",
-      "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://animare.vet/en/blog/nd-prime-grain-free-pet-food/",
+      "canonicalSayfa": "https://animare.vet/en/blog/nd-prime-grain-free-pet-food/",
+      "sonTarama": "2026-10-10T02:43:13Z",
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-ancestral-grain-pet-food": {
@@ -963,7 +963,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-tropical-meyveli-mama": {
-      "t": "2026-10-05T10:19:05.155Z",
+      "t": "2026-10-12T10:35:42.526Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-tropical-meyveli-mama/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -976,7 +976,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-tropical-pet-food": {
-      "t": "2026-10-05T10:19:08.184Z",
+      "t": "2026-10-12T10:35:50.924Z",
       "denetlenen": "https://animare.vet/en/blog/nd-tropical-pet-food/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1006,6 +1006,32 @@
       "denetlenen": "https://animare.vet/tr/blog/kucuk-hayvan-cerrahisi/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/tr/blog/nd-ocean-balikli-mama": {
+      "t": "2026-10-12T10:35:42.234Z",
+      "denetlenen": "https://animare.vet/tr/blog/nd-ocean-balikli-mama/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/en/blog/nd-ocean-fish-pet-food": {
+      "t": "2026-10-12T10:35:42.980Z",
+      "denetlenen": "https://animare.vet/en/blog/nd-ocean-fish-pet-food/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -2213,7 +2239,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html": {
-      "t": "2026-10-05T10:19:34.434Z",
+      "t": "2026-10-12T10:36:19.662Z",
       "denetlenen": "https://magusapsikoloji.com/blog/aile-terapisi-magusa.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2239,7 +2265,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html": {
-      "t": "2026-10-05T10:19:27.540Z",
+      "t": "2026-10-12T10:36:12.853Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2248,11 +2274,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/services/neuropsychological-assessment.html",
-      "sonTarama": "2026-10-04T23:33:59Z",
+      "sonTarama": "2026-10-09T21:55:45Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/noropsikolojik-degerlendirme.html": {
-      "t": "2026-10-05T10:19:34.193Z",
+      "t": "2026-10-12T10:36:19.628Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/noropsikolojik-degerlendirme.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2460,7 +2486,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/kaynaklar.html": {
-      "t": "2026-10-05T10:19:27.541Z",
+      "t": "2026-10-12T10:36:12.722Z",
       "denetlenen": "https://magusapsikoloji.com/kaynaklar.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2469,11 +2495,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/kaynaklar.html",
       "canonicalSayfa": "https://magusapsikoloji.com/kaynaklar.html",
-      "sonTarama": "2026-09-26T02:40:53Z",
+      "sonTarama": "2026-10-02T17:12:00Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/sources.html": {
-      "t": "2026-10-05T10:19:27.520Z",
+      "t": "2026-10-12T10:36:12.924Z",
       "denetlenen": "https://magusapsikoloji.com/en/sources.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2482,7 +2508,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/sources.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/sources.html",
-      "sonTarama": "2026-09-21T06:55:28Z",
+      "sonTarama": "2026-10-12T03:58:08Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/grup-calismalari.html": {
@@ -4282,7 +4308,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-bafry": {
-      "t": "2026-10-05T10:19:41.844Z",
+      "t": "2026-10-12T10:36:27.391Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-bafry/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4295,7 +4321,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-guzelyurt": {
-      "t": "2026-10-05T10:19:41.943Z",
+      "t": "2026-10-12T10:36:27.161Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-guzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4308,7 +4334,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-guzelyurt-transfer": {
-      "t": "2026-10-05T10:19:48.826Z",
+      "t": "2026-10-12T10:36:34.152Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-guzelyurt-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4321,7 +4347,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-gyuzelyurt": {
-      "t": "2026-10-05T10:19:48.961Z",
+      "t": "2026-10-12T10:36:34.553Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-gyuzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4334,7 +4360,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels": {
-      "t": "2026-10-05T10:19:41.883Z",
+      "t": "2026-10-12T10:36:26.755Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4343,11 +4369,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/paphos-airport-to-catalkoy-hotels/",
-      "sonTarama": "2026-09-25T00:06:20Z",
+      "sonTarama": "2026-10-01T05:09:56Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-catalkoy-otelleri-transfer": {
-      "t": "2026-10-05T10:19:49.202Z",
+      "t": "2026-10-12T10:36:34.805Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-catalkoy-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4360,7 +4386,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-chatalkoya": {
-      "t": "2026-10-05T10:19:55.984Z",
+      "t": "2026-10-12T10:36:41.601Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-chatalkoya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4373,7 +4399,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-alsancak-hotels": {
-      "t": "2026-10-05T10:19:55.793Z",
+      "t": "2026-10-12T10:36:41.288Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-alsancak-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4386,7 +4412,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-alsancak-otelleri-transfer": {
-      "t": "2026-10-05T10:19:56.339Z",
+      "t": "2026-10-12T10:36:45.390Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-alsancak-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4399,7 +4425,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-alsandzhaka": {
-      "t": "2026-10-05T10:20:02.972Z",
+      "t": "2026-10-12T10:36:48.348Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-oteli-alsandzhaka/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4412,7 +4438,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-lapta": {
-      "t": "2026-10-05T10:20:03.160Z",
+      "t": "2026-10-12T10:36:48.581Z",
       "denetlenen": "https://thetaxsi.com/en/routes/paphos-airport-to-lapta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4425,7 +4451,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-lapta-transfer": {
-      "t": "2026-10-05T10:20:03.175Z",
+      "t": "2026-10-12T10:36:52.517Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/baf-havalimani-lapta-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4490,7 +4516,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/areas": {
-      "t": "2026-10-05T10:20:10.367Z",
+      "t": "2026-10-12T10:36:56.192Z",
       "denetlenen": "https://thetaxsi.com/en/areas/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4503,7 +4529,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/bolge": {
-      "t": "2026-10-05T10:20:17.181Z",
+      "t": "2026-10-12T10:36:59.116Z",
       "denetlenen": "https://thetaxsi.com/tr/bolge/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4516,7 +4542,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/rayony": {
-      "t": "2026-10-05T10:20:10.071Z",
+      "t": "2026-10-12T10:36:54.990Z",
       "denetlenen": "https://thetaxsi.com/ru/rayony/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5285,7 +5311,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/en/product/kahve-suet-loafer": {
-      "t": "2026-10-05T10:20:23.896Z",
+      "t": "2026-10-12T10:37:06.128Z",
       "denetlenen": "https://www.luxeva-cyprus.com/en/product/kahve-suet-loafer",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5831,7 +5857,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/en/blog/where-to-find-michael-kors-bags-in-cyprus.html": {
-      "t": "2026-10-05T10:20:23.923Z",
+      "t": "2026-10-12T10:37:06.049Z",
       "denetlenen": "https://www.luxeva-cyprus.com/en/blog/where-to-find-michael-kors-bags-in-cyprus.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5844,7 +5870,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/en/blog/where-to-buy-occasion-shoes-in-cyprus.html": {
-      "t": "2026-10-05T10:20:23.900Z",
+      "t": "2026-10-12T10:37:05.963Z",
       "denetlenen": "https://www.luxeva-cyprus.com/en/blog/where-to-buy-occasion-shoes-in-cyprus.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5857,7 +5883,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-bulamadigim-urunu-nasil-getirtirim.html": {
-      "t": "2026-10-05T10:20:30.561Z",
+      "t": "2026-10-12T10:37:12.625Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-bulamadigim-urunu-nasil-getirtirim.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5870,7 +5896,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-coach-canta-nereden-bulunur.html": {
-      "t": "2026-10-05T10:20:30.629Z",
+      "t": "2026-10-12T10:37:12.834Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-coach-canta-nereden-bulunur.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5883,7 +5909,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-marka-canta-nereden-alinir.html": {
-      "t": "2026-10-05T10:20:30.439Z",
+      "t": "2026-10-12T10:37:12.806Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-marka-canta-nereden-alinir.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5896,7 +5922,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-michael-kors-canta-nereden-bulunur.html": {
-      "t": "2026-10-05T10:20:37.252Z",
+      "t": "2026-10-12T10:37:19.640Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-michael-kors-canta-nereden-bulunur.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5909,7 +5935,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-davet-ayakkabisi-nereden-alinir.html": {
-      "t": "2026-10-05T10:20:37.108Z",
+      "t": "2026-10-12T10:37:19.549Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-davet-ayakkabisi-nereden-alinir.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5922,7 +5948,7 @@
       "httpKod": 200
     },
     "https://luxeva-cyprus.com/blog/kibrista-tory-burch-canta-nereden-bulunur.html": {
-      "t": "2026-10-05T10:20:37.190Z",
+      "t": "2026-10-12T10:37:19.776Z",
       "denetlenen": "https://www.luxeva-cyprus.com/blog/kibrista-tory-burch-canta-nereden-bulunur.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5937,10 +5963,10 @@
   },
   "kktcsigorta": {
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/anadolu-sigorta-kktc-turkiye": {
-      "t": "2026-10-05T10:20:57.773Z",
+      "t": "2026-10-12T10:37:46.604Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/anadolu-sigorta-kktc-turkiye/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -5963,7 +5989,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/akfinans-sigorta-akfinans-bank": {
-      "t": "2026-10-05T10:20:57.887Z",
+      "t": "2026-10-12T10:37:40.933Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/akfinans-sigorta-akfinans-bank/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5989,7 +6015,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/axa-sigorta-kktc-kibris-subesi": {
-      "t": "2026-10-05T10:20:51.133Z",
+      "t": "2026-10-12T10:37:33.914Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/axa-sigorta-kktc-kibris-subesi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -5998,7 +6024,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/axa-sigorta-kktc-kibris-subesi/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/axa-sigorta-kktc-kibris-subesi/",
-      "sonTarama": "2026-08-31T01:17:07Z",
+      "sonTarama": "2026-10-08T00:55:52Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/bicare-insurance-anadolu-sigorta": {
@@ -6067,7 +6093,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/can-sigorta-as-can-sigorta": {
-      "t": "2026-10-05T10:21:04.556Z",
+      "t": "2026-10-12T10:37:48.146Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/can-sigorta-as-can-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6076,7 +6102,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/can-sigorta-as-can-sigorta/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/can-sigorta-as-can-sigorta/",
-      "sonTarama": "2026-08-26T07:02:57Z",
+      "sonTarama": "2026-10-06T11:02:36Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/can-sigorta-guven-sigorta-kibris": {
@@ -6145,7 +6171,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/creditwest-sigorta-creditwest-bank": {
-      "t": "2026-10-05T10:20:57.946Z",
+      "t": "2026-10-12T10:37:41.006Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/creditwest-sigorta-creditwest-bank/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6262,10 +6288,10 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/eurocity-sigorta-eig-sigorta": {
-      "t": "2026-10-05T10:21:04.617Z",
+      "t": "2026-10-12T10:37:48.040Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/eurocity-sigorta-eig-sigorta/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -6275,7 +6301,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/gig-sigorta-kktc": {
-      "t": "2026-10-05T10:21:11.460Z",
+      "t": "2026-10-12T10:37:54.971Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/gig-sigorta-kktc/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -6301,7 +6327,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/guven-sigorta-kibris-turkiye": {
-      "t": "2026-10-05T10:21:11.596Z",
+      "t": "2026-10-12T10:37:55.281Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/guven-sigorta-kibris-turkiye/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -6327,7 +6353,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/kibris-iktisat-sigorta-iktisatbank": {
-      "t": "2026-10-05T10:21:04.948Z",
+      "t": "2026-10-12T10:37:53.622Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/kibris-iktisat-sigorta-iktisatbank/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6379,7 +6405,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/kibris-sigorta-iktisat-kapital": {
-      "t": "2026-10-05T10:21:11.686Z",
+      "t": "2026-10-12T10:38:00.501Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/kibris-sigorta-iktisat-kapital/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6431,10 +6457,10 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/limasol-sigorta-limasol-bankasi": {
-      "t": "2026-10-05T10:21:18.683Z",
+      "t": "2026-10-12T10:38:02.206Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/limasol-sigorta-limasol-bankasi/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -6444,7 +6470,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/london-insurance-birlesik-krallik": {
-      "t": "2026-10-05T10:21:18.689Z",
+      "t": "2026-10-12T10:38:07.617Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/london-insurance-birlesik-krallik/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6457,7 +6483,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/mapfree-insurance-mapfre": {
-      "t": "2026-10-05T10:21:18.500Z",
+      "t": "2026-10-12T10:38:01.881Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/mapfree-insurance-mapfre/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -6470,10 +6496,10 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/seker-sigorta-kibris-turkiye": {
-      "t": "2026-10-05T10:21:25.677Z",
+      "t": "2026-10-12T10:38:14.909Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/seker-sigorta-kibris-turkiye/",
       "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
+      "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -6483,7 +6509,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/zurich-sigorta-kktc": {
-      "t": "2026-10-05T10:21:32.361Z",
+      "t": "2026-10-12T10:38:16.344Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/zurich-sigorta-kktc/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6496,7 +6522,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/turk-sigorta-turkiye-sigorta": {
-      "t": "2026-10-05T10:21:25.361Z",
+      "t": "2026-10-12T10:38:08.847Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/karsilastirma/turk-sigorta-turkiye-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6509,7 +6535,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler": {
-      "t": "2026-10-05T10:21:25.495Z",
+      "t": "2026-10-12T10:38:09.210Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6518,11 +6544,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/sirketler/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/sirketler/",
-      "sonTarama": "2026-10-04T18:31:36Z",
+      "sonTarama": "2026-10-11T08:17:38Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/akfinans-sigorta": {
-      "t": "2026-10-05T10:21:32.291Z",
+      "t": "2026-10-12T10:38:15.626Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/akfinans-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6531,11 +6557,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/sirketler/akfinans-sigorta/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/sirketler/akfinans-sigorta/",
-      "sonTarama": "2026-08-06T11:08:20Z",
+      "sonTarama": "2026-10-09T23:59:09Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/alfa-sigorta": {
-      "t": "2026-10-05T10:21:45.733Z",
+      "t": "2026-10-12T10:38:29.858Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/alfa-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6548,7 +6574,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/allsafe-insurance": {
-      "t": "2026-10-05T10:21:35.488Z",
+      "t": "2026-10-12T10:38:21.991Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/allsafe-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6561,7 +6587,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/anadolu-sigorta": {
-      "t": "2026-10-05T10:21:39.121Z",
+      "t": "2026-10-12T10:38:23.617Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/anadolu-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6574,7 +6600,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/as-can-sigorta": {
-      "t": "2026-10-05T10:21:38.995Z",
+      "t": "2026-10-12T10:38:22.363Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/as-can-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6587,7 +6613,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/aveon-sigorta": {
-      "t": "2026-10-05T10:21:46.105Z",
+      "t": "2026-10-12T10:38:30.497Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/aveon-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6600,7 +6626,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/bicare-insurance": {
-      "t": "2026-10-05T10:21:42.297Z",
+      "t": "2026-10-12T10:38:28.965Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/bicare-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6609,11 +6635,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/tr/sirketler/bicare-insurance/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/tr/sirketler/bicare-insurance/",
-      "sonTarama": "2026-09-11T15:43:25Z",
+      "sonTarama": "2026-10-05T08:59:53Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/axa-sigorta": {
-      "t": "2026-10-05T10:21:52.800Z",
+      "t": "2026-10-12T10:38:37.622Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/axa-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6626,7 +6652,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/can-sigorta": {
-      "t": "2026-10-05T10:21:48.958Z",
+      "t": "2026-10-12T10:38:35.861Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/can-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6639,7 +6665,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance": {
-      "t": "2026-10-05T10:21:52.618Z",
+      "t": "2026-10-12T10:38:36.519Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6652,7 +6678,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/correct-choice-insurance": {
-      "t": "2026-10-05T10:21:55.463Z",
+      "t": "2026-10-12T10:38:42.647Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/correct-choice-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6665,7 +6691,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/creditwest-sigorta": {
-      "t": "2026-10-05T10:21:59.423Z",
+      "t": "2026-10-12T10:38:43.521Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/creditwest-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -6678,7 +6704,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/dagli-sigorta": {
-      "t": "2026-10-05T10:21:59.488Z",
+      "t": "2026-10-12T10:38:44.381Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/dagli-sigorta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9096,10 +9122,10 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/nakliyat": {
-      "t": "2026-10-05T10:20:44.238Z",
+      "t": "2026-10-12T10:37:26.640Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/nakliyat/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -9109,10 +9135,10 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/sorumluluk": {
-      "t": "2026-10-05T10:20:44.319Z",
+      "t": "2026-10-12T10:37:26.873Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/sorumluluk/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -9122,7 +9148,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/seyahat-saglik": {
-      "t": "2026-10-05T10:20:44.464Z",
+      "t": "2026-10-12T10:37:27.041Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/seyahat-saglik/",
       "verdict": "NEUTRAL",
       "durum": "URL is unknown to Google",
@@ -9135,10 +9161,10 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/yangin": {
-      "t": "2026-10-05T10:20:51.069Z",
+      "t": "2026-10-12T10:37:33.464Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/commercial-insurance/yangin/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -9148,10 +9174,10 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/tr/sirketler/dagli-sigorta/acil-saglik": {
-      "t": "2026-10-05T10:20:51.121Z",
+      "t": "2026-10-12T10:37:33.845Z",
       "denetlenen": "https://kktcsigortamerkezi.com/tr/sirketler/dagli-sigorta/acil-saglik/",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
