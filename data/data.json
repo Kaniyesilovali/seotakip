@@ -1,9 +1,9 @@
 {
-  "guncelleme": "2026-10-12T10:38:44.382Z",
+  "guncelleme": "2026-10-13T10:27:32.135Z",
   "ozet": {
     "toplamSite": 5,
     "ortalamaSeoPuan": 93,
-    "toplamKirikLink": 2,
+    "toplamKirikLink": 7,
     "acilUyari": 0
   },
   "siteler": [
@@ -85,14 +85,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 974,
-        "sonKontrol": "2026-10-12T10:21:20.923Z",
-        "medyanMs": 397
+        "yanitMs": 1814,
+        "sonKontrol": "2026-10-13T10:11:48.728Z",
+        "medyanMs": 483
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-12-16",
-        "kalanGun": 65
+        "kalanGun": 64
       },
       "sayfalar": {
         "taranan": 80,
@@ -233,11 +233,61 @@
         "/tr/blog/nd-ocean-balikli-mama": "2026-10-12",
         "/en/blog/nd-ocean-fish-pet-food": "2026-10-12"
       },
-      "kirikLinkler": [],
+      "kirikLinkler": [
+        {
+          "kaynak": "/tr/hizmetler/cerrahi",
+          "hedef": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog",
+          "hedef": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kedilerde-dis-bakimi",
+          "hedef": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/en/blog/spaying-neutering-cats-dogs",
+          "hedef": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kan-tahlili-neden-gerekli",
+          "hedef": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/nd-quinoa-neutered-kopek-mamasi",
+          "hedef": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        },
+        {
+          "kaynak": "/tr/blog/kucuk-hayvan-cerrahisi",
+          "hedef": "https://animare.vet/tr/blog/kedi-kopek-kisirlastirma",
+          "kod": 523,
+          "ic": true,
+          "sayilir": false
+        }
+      ],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 0
+        "dogrulanmamis": 7
       },
       "eksikMeta": {
         "title": 0,
@@ -516,11 +566,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 97,
-        "masaustuPuan": 97,
-        "lcp": 1.8,
-        "inp": 44,
-        "cls": 0.08,
+        "mobilPuan": 80,
+        "masaustuPuan": 98,
+        "lcp": 3.8,
+        "inp": 83,
+        "cls": 0,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -664,7 +714,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-10-12T10:36:05.772Z"
+        "tarih": "2026-10-13T10:27:17.026Z"
       },
       "aiBotlar": null,
       "geo": {
@@ -677,7 +727,7 @@
           "kelime": "nöbetçi veteriner kktc",
           "pozisyon": 2,
           "onceki": 5,
-          "gosterim": 52,
+          "gosterim": 50,
           "tik": 8
         },
         {
@@ -691,7 +741,7 @@
           "kelime": "kktc veteriner",
           "pozisyon": 8,
           "onceki": 9,
-          "gosterim": 70,
+          "gosterim": 68,
           "tik": 1
         },
         {
@@ -705,14 +755,21 @@
           "kelime": "nöbetçi veteriner",
           "pozisyon": 4,
           "onceki": 4,
-          "gosterim": 21,
+          "gosterim": 19,
           "tik": 1
         },
         {
           "kelime": "kıbrıs veteriner klinikleri",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 13,
+          "gosterim": 14,
+          "tik": 1
+        },
+        {
+          "kelime": "animal veterinary clinic",
+          "pozisyon": 1,
+          "onceki": 1,
+          "gosterim": 1,
           "tik": 1
         },
         {
@@ -723,17 +780,24 @@
           "tik": 1
         },
         {
+          "kelime": "pet clinic",
+          "pozisyon": 1,
+          "onceki": 1,
+          "gosterim": 1,
+          "tik": 1
+        },
+        {
           "kelime": "cat dental care",
           "pozisyon": 38,
-          "onceki": 35,
-          "gosterim": 143,
+          "onceki": 36,
+          "gosterim": 145,
           "tik": 0
         },
         {
           "kelime": "cat dental treatment",
-          "pozisyon": 35,
-          "onceki": 51,
-          "gosterim": 63,
+          "pozisyon": 34,
+          "onceki": 48,
+          "gosterim": 61,
           "tik": 0
         },
         {
@@ -747,7 +811,7 @@
           "kelime": "cat dental cleaning",
           "pozisyon": 49,
           "onceki": 46,
-          "gosterim": 35,
+          "gosterim": 36,
           "tik": 0
         },
         {
@@ -763,20 +827,6 @@
           "onceki": 40,
           "gosterim": 17,
           "tik": 0
-        },
-        {
-          "kelime": "dental care cats",
-          "pozisyon": 17,
-          "onceki": 38,
-          "gosterim": 17,
-          "tik": 0
-        },
-        {
-          "kelime": "cat tartar on teeth",
-          "pozisyon": 7,
-          "onceki": 9,
-          "gosterim": 16,
-          "tik": 0
         }
       ],
       "rakip": [],
@@ -784,20 +834,20 @@
       "icerikBoslugu": [
         {
           "kelime": "cat dental care",
-          "hacim": 143,
+          "hacim": 145,
           "rakipPoz": 38,
           "tip": "firsat"
         },
         {
           "kelime": "kktc veteriner",
-          "hacim": 70,
+          "hacim": 68,
           "rakipPoz": 8,
           "tip": "firsat"
         },
         {
           "kelime": "cat dental treatment",
-          "hacim": 63,
-          "rakipPoz": 35,
+          "hacim": 61,
+          "rakipPoz": 34,
           "tip": "firsat"
         },
         {
@@ -808,7 +858,7 @@
         },
         {
           "kelime": "cat dental cleaning",
-          "hacim": 35,
+          "hacim": 36,
           "rakipPoz": 49,
           "tip": "firsat"
         },
@@ -837,18 +887,18 @@
           "tip": "firsat"
         },
         {
-          "kelime": "cat teeth cleaning",
-          "hacim": 13,
-          "rakipPoz": 48,
+          "kelime": "kıbrıs veteriner klinikleri",
+          "hacim": 14,
+          "rakipPoz": 8,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-12",
+      "siralamaTarih": "2026-10-13",
       "siralamaPencere": {
-        "baslangic": "2026-09-12",
-        "bitis": "2026-10-09"
+        "baslangic": "2026-09-13",
+        "bitis": "2026-10-10"
       },
-      "hizTarih": "2026-10-12",
+      "hizTarih": "2026-10-13",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -885,22 +935,26 @@
           ]
         },
         {
+          "tip": "description-uzun",
+          "adet": 2,
+          "ornekler": [
+            {
+              "yol": "/en/blog/post-traumatic-stress-disorder.html",
+              "deger": "161 karakter"
+            },
+            {
+              "yol": "/en/blog/social-anxiety-vs-shyness.html",
+              "deger": "185 karakter"
+            }
+          ]
+        },
+        {
           "tip": "yinelenen-title",
           "adet": 2,
           "ornekler": [
             {
               "yol": "/gazimagusa-psikolog.html, /",
               "deger": "Gazimağusa Psikolog | Mağusa Psikoloji Merkezi"
-            }
-          ]
-        },
-        {
-          "tip": "description-uzun",
-          "adet": 1,
-          "ornekler": [
-            {
-              "yol": "/en/blog/post-traumatic-stress-disorder.html",
-              "deger": "161 karakter"
             }
           ]
         },
@@ -931,18 +985,18 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1717,
-        "sonKontrol": "2026-10-12T10:22:44.417Z",
-        "medyanMs": 217
+        "yanitMs": 857,
+        "sonKontrol": "2026-10-13T10:13:17.114Z",
+        "medyanMs": 260
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-12-03",
-        "kalanGun": 52
+        "kalanGun": 51
       },
       "sayfalar": {
-        "taranan": 110,
-        "indekslenebilir": 110,
+        "taranan": 112,
+        "indekslenebilir": 112,
         "noindex": 0
       },
       "sayfaYollari": [
@@ -968,6 +1022,7 @@
         "/en/blog/psychological-support-north-cyprus.html",
         "/en/blog/psychologist-or-psychiatrist.html",
         "/en/blog/school-refusal-in-children.html",
+        "/en/blog/social-anxiety-vs-shyness.html",
         "/en/blog/tantrums-and-anger-in-children.html",
         "/en/blog/therapy-language-turkish-english.html",
         "/en/blog/university-students-north-cyprus-psychological-support.html",
@@ -1024,6 +1079,7 @@
         "/blog/panik-atak-belirtileri.html",
         "/blog/psikolog-mu-psikiyatrist-mi.html",
         "/blog/sinav-kaygisiyla-bas-etme.html",
+        "/blog/sosyal-fobi-utangaclik-farki.html",
         "/blog/terapi-dili-turkce-ingilizce.html",
         "/blog/terapiye-baslamadan-once.html",
         "/blog/terapiye-ne-zaman-gidilmeli.html",
@@ -1078,6 +1134,7 @@
         "/en/blog/psychological-support-north-cyprus.html": "2026-05-27",
         "/en/blog/psychologist-or-psychiatrist.html": "2026-05-27",
         "/en/blog/school-refusal-in-children.html": "2026-07-29",
+        "/en/blog/social-anxiety-vs-shyness.html": "2026-10-12",
         "/en/blog/tantrums-and-anger-in-children.html": "2026-09-11",
         "/en/blog/therapy-language-turkish-english.html": "2026-08-28",
         "/en/blog/university-students-north-cyprus-psychological-support.html": "2026-05-27",
@@ -1108,6 +1165,7 @@
         "/blog/panik-atak-belirtileri.html": "2026-05-27",
         "/blog/psikolog-mu-psikiyatrist-mi.html": "2026-05-27",
         "/blog/sinav-kaygisiyla-bas-etme.html": "2026-05-27",
+        "/blog/sosyal-fobi-utangaclik-farki.html": "2026-10-12",
         "/blog/terapi-dili-turkce-ingilizce.html": "2026-08-28",
         "/blog/terapiye-baslamadan-once.html": "2026-05-27",
         "/blog/terapiye-ne-zaman-gidilmeli.html": "2024-05-20",
@@ -1115,26 +1173,11 @@
         "/blog/tukenmislik-sendromu.html": "2026-07-18",
         "/blog/universite-ogrencileri-psikolojik-destek.html": "2026-05-27"
       },
-      "kirikLinkler": [
-        {
-          "kaynak": "/en/kvkk.html",
-          "hedef": "https://www.kvkk.gov.tr",
-          "kod": 0,
-          "ic": false,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/kvkk.html",
-          "hedef": "https://www.kvkk.gov.tr",
-          "kod": 0,
-          "ic": false,
-          "sayilir": false
-        }
-      ],
+      "kirikLinkler": [],
       "kirikOzet": {
         "ic": 0,
         "dis": 0,
-        "dogrulanmamis": 2
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -1156,7 +1199,7 @@
         "sorunluSayfa": 0
       },
       "icerik": {
-        "ortKelime": 794,
+        "ortKelime": 801,
         "inceSayfa": 2,
         "esik": 200,
         "ornekler": [
@@ -1175,7 +1218,7 @@
       },
       "sitemap": {
         "varMi": true,
-        "urlSayisi": 110,
+        "urlSayisi": 112,
         "erisilemez": 0,
         "dosyalar": [
           "https://magusapsikoloji.com/sitemap.xml"
@@ -1199,7 +1242,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1211,7 +1254,7 @@
             "not": "ChatGPT arama indeksi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1223,7 +1266,7 @@
             "not": "soru aninda ziyaret",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1235,7 +1278,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1247,7 +1290,7 @@
             "not": "soru aninda ziyaret",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1259,7 +1302,7 @@
             "not": "arama indeksi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1271,7 +1314,7 @@
             "not": "Gemini / AI Overviews",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1283,7 +1326,7 @@
             "not": "Apple Intelligence",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1295,7 +1338,7 @@
             "not": "acik veri seti",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1307,7 +1350,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1319,7 +1362,7 @@
             "not": "Llama / Meta AI",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1331,7 +1374,7 @@
             "not": "klasik arama",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           },
@@ -1343,7 +1386,7 @@
             "not": "klasik arama + Copilot",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 110,
+            "toplamSayfa": 112,
             "tamKapali": false,
             "kural": null
           }
@@ -1352,8 +1395,8 @@
         "toplamAi": 11
       },
       "sayfaDurum": {
-        "toplam": 110,
-        "saglam": 108,
+        "toplam": 112,
+        "saglam": 110,
         "sorunlu": 2,
         "kirik": 0,
         "yonlendirme": 0,
@@ -1400,10 +1443,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 92,
-        "masaustuPuan": 82,
-        "lcp": 2.8,
-        "inp": 186,
+        "mobilPuan": 80,
+        "masaustuPuan": 79,
+        "lcp": 3.7,
+        "inp": 162,
         "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
@@ -1412,10 +1455,10 @@
       },
       "indeks": {
         "indeksli": 101,
-        "indekssiz": 9,
-        "aksiyonGereken": 9,
-        "kontrolEdilen": 110,
-        "toplamSayfa": 110,
+        "indekssiz": 11,
+        "aksiyonGereken": 11,
+        "kontrolEdilen": 112,
+        "toplamSayfa": 112,
         "dususVar": false,
         "nedenler": [
           {
@@ -1431,13 +1474,13 @@
           },
           {
             "neden": "Google bu URL'i bilmiyor",
-            "adet": 4,
+            "adet": 6,
             "sorun": true,
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
             "ornekler": [
               "/en/blog/post-traumatic-stress-disorder.html",
-              "/en",
-              "/en/services/family-therapy.html"
+              "/en/blog/social-anxiety-vs-shyness.html",
+              "/en"
             ]
           },
           {
@@ -1469,6 +1512,11 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           },
           {
+            "yol": "/en/blog/social-anxiety-vs-shyness.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
             "yol": "/en",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
@@ -1494,6 +1542,11 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           },
           {
+            "yol": "/blog/sosyal-fobi-utangaclik-farki.html",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
             "yol": "/blog/travma-sonrasi-stres-bozuklugu.html",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
@@ -1509,7 +1562,7 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-10-12T10:36:19.664Z"
+        "tarih": "2026-10-13T10:27:24.347Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -1518,7 +1571,7 @@
           "kelime": "mağusa psikolog",
           "pozisyon": 4,
           "onceki": 9,
-          "gosterim": 49,
+          "gosterim": 48,
           "tik": 4
         },
         {
@@ -1539,7 +1592,7 @@
           "kelime": "psikolog",
           "pozisyon": 3,
           "onceki": 4,
-          "gosterim": 83,
+          "gosterim": 85,
           "tik": 0
         },
         {
@@ -1550,24 +1603,17 @@
           "tik": 0
         },
         {
-          "kelime": "developmental trauma treatment cyprus",
-          "pozisyon": 19,
-          "onceki": 39,
-          "gosterim": 27,
-          "tik": 0
-        },
-        {
           "kelime": "panik atak belirtileri",
-          "pozisyon": 77,
-          "onceki": 88,
-          "gosterim": 23,
+          "pozisyon": 71,
+          "onceki": 89,
+          "gosterim": 26,
           "tik": 0
         },
         {
-          "kelime": "childhood trauma treatment cyprus",
-          "pozisyon": 26,
-          "onceki": 39,
-          "gosterim": 19,
+          "kelime": "developmental trauma treatment cyprus",
+          "pozisyon": 18,
+          "onceki": 38,
+          "gosterim": 25,
           "tik": 0
         },
         {
@@ -1578,6 +1624,13 @@
           "tik": 0
         },
         {
+          "kelime": "childhood trauma treatment cyprus",
+          "pozisyon": 25,
+          "onceki": 39,
+          "gosterim": 18,
+          "tik": 0
+        },
+        {
           "kelime": "emotional behavior disorder treatment cyprus",
           "pozisyon": 26,
           "onceki": 26,
@@ -1585,16 +1638,16 @@
           "tik": 0
         },
         {
-          "kelime": "european association for psychotherapy (eap)",
-          "pozisyon": 10,
-          "onceki": 10,
-          "gosterim": 11,
+          "kelime": "kaygı ne demek",
+          "pozisyon": 87,
+          "onceki": 84,
+          "gosterim": 13,
           "tik": 0
         },
         {
-          "kelime": "kaygı ne demek",
-          "pozisyon": 85,
-          "onceki": 81,
+          "kelime": "european association for psychotherapy (eap)",
+          "pozisyon": 10,
+          "onceki": 10,
           "gosterim": 11,
           "tik": 0
         },
@@ -1625,14 +1678,14 @@
       "icerikBoslugu": [
         {
           "kelime": "developmental trauma treatment cyprus",
-          "hacim": 27,
-          "rakipPoz": 19,
+          "hacim": 25,
+          "rakipPoz": 18,
           "tip": "firsat"
         },
         {
           "kelime": "childhood trauma treatment cyprus",
-          "hacim": 19,
-          "rakipPoz": 26,
+          "hacim": 18,
+          "rakipPoz": 25,
           "tip": "firsat"
         },
         {
@@ -1654,12 +1707,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-12",
+      "siralamaTarih": "2026-10-13",
       "siralamaPencere": {
-        "baslangic": "2026-09-12",
-        "bitis": "2026-10-09"
+        "baslangic": "2026-09-13",
+        "bitis": "2026-10-10"
       },
-      "hizTarih": "2026-10-12",
+      "hizTarih": "2026-10-13",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -1821,14 +1874,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 837,
-        "sonKontrol": "2026-10-12T10:24:32.400Z",
-        "medyanMs": 395
+        "yanitMs": 1508,
+        "sonKontrol": "2026-10-13T10:15:09.231Z",
+        "medyanMs": 473
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-12-17",
-        "kalanGun": 66
+        "kalanGun": 65
       },
       "sayfalar": {
         "taranan": 200,
@@ -2639,11 +2692,11 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 67,
-        "masaustuPuan": 92,
-        "lcp": 8.3,
-        "inp": 0,
-        "cls": 0,
+        "mobilPuan": 70,
+        "masaustuPuan": 97,
+        "lcp": 7.9,
+        "inp": 9,
+        "cls": 0.02,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
         "lighthouseSeo": 100,
@@ -2685,7 +2738,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-10-12T10:36:59.116Z"
+        "tarih": "2026-10-13T10:27:32.133Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -2694,8 +2747,8 @@
           "kelime": "lefke taksi",
           "pozisyon": 2,
           "onceki": 2,
-          "gosterim": 55,
-          "tik": 7
+          "gosterim": 62,
+          "tik": 8
         },
         {
           "kelime": "ercan havalimanı odtü arası kaç km",
@@ -2706,16 +2759,16 @@
         },
         {
           "kelime": "gemikonağı taksi",
-          "pozisyon": 2,
-          "onceki": 2,
-          "gosterim": 7,
+          "pozisyon": 3,
+          "onceki": 3,
+          "gosterim": 9,
           "tik": 2
         },
         {
           "kelime": "mehmet taksi lefke",
           "pozisyon": 5,
           "onceki": 5,
-          "gosterim": 7,
+          "gosterim": 11,
           "tik": 1
         },
         {
@@ -2750,21 +2803,28 @@
           "kelime": "dipkarpaz altınkum",
           "pozisyon": 9,
           "onceki": 10,
-          "gosterim": 48,
+          "gosterim": 44,
           "tik": 0
         },
         {
           "kelime": "altınkum plajı kktc",
-          "pozisyon": 36,
-          "onceki": 23,
-          "gosterim": 35,
+          "pozisyon": 34,
+          "onceki": 27,
+          "gosterim": 34,
+          "tik": 0
+        },
+        {
+          "kelime": "bostancı sınır kapısı",
+          "pozisyon": 7,
+          "onceki": 7,
+          "gosterim": 22,
           "tik": 0
         },
         {
           "kelime": "famagusta bay",
           "pozisyon": 12,
-          "onceki": 20,
-          "gosterim": 18,
+          "onceki": 19,
+          "gosterim": 17,
           "tik": 0
         },
         {
@@ -2775,13 +2835,6 @@
           "tik": 0
         },
         {
-          "kelime": "altınkum plajı",
-          "pozisyon": 12,
-          "onceki": 13,
-          "gosterim": 13,
-          "tik": 0
-        },
-        {
           "kelime": "ercan havalimanı lefke avrupa üniversitesi arası kaç km",
           "pozisyon": 4,
           "onceki": 6,
@@ -2789,10 +2842,10 @@
           "tik": 0
         },
         {
-          "kelime": "ercan havalimanı lefke arası kaç km",
-          "pozisyon": 1,
-          "onceki": 3,
-          "gosterim": 12,
+          "kelime": "altınkum plajı",
+          "pozisyon": 11,
+          "onceki": 13,
+          "gosterim": 11,
           "tik": 0
         }
       ],
@@ -2801,35 +2854,35 @@
       "icerikBoslugu": [
         {
           "kelime": "dipkarpaz altınkum",
-          "hacim": 48,
+          "hacim": 44,
           "rakipPoz": 9,
           "tip": "firsat"
         },
         {
           "kelime": "altınkum plajı kktc",
-          "hacim": 35,
-          "rakipPoz": 36,
+          "hacim": 34,
+          "rakipPoz": 34,
           "tip": "firsat"
         },
         {
           "kelime": "famagusta bay",
-          "hacim": 18,
+          "hacim": 17,
           "rakipPoz": 12,
           "tip": "firsat"
         },
         {
           "kelime": "altınkum plajı",
-          "hacim": 13,
-          "rakipPoz": 12,
+          "hacim": 11,
+          "rakipPoz": 11,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-12",
+      "siralamaTarih": "2026-10-13",
       "siralamaPencere": {
-        "baslangic": "2026-09-12",
-        "bitis": "2026-10-09"
+        "baslangic": "2026-09-13",
+        "bitis": "2026-10-10"
       },
-      "hizTarih": "2026-10-12",
+      "hizTarih": "2026-10-13",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -2991,14 +3044,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 689,
-        "sonKontrol": "2026-10-12T10:28:00.856Z",
-        "medyanMs": 208
+        "yanitMs": 841,
+        "sonKontrol": "2026-10-13T10:18:57.766Z",
+        "medyanMs": 271
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-12-29",
-        "kalanGun": 78
+        "kalanGun": 77
       },
       "sayfalar": {
         "taranan": 108,
@@ -3885,10 +3938,10 @@
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 91,
-        "masaustuPuan": 95,
-        "lcp": 3,
-        "inp": 27,
+        "mobilPuan": 76,
+        "masaustuPuan": 90,
+        "lcp": 5.7,
+        "inp": 37,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -4027,7 +4080,7 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-10-12T10:37:19.777Z"
+        "tarih": "2026-10-13T10:27:32.134Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -4043,7 +4096,7 @@
           "kelime": "coach bags cyprus",
           "pozisyon": 10,
           "onceki": 10,
-          "gosterim": 101,
+          "gosterim": 106,
           "tik": 1
         },
         {
@@ -4055,9 +4108,9 @@
         },
         {
           "kelime": "girne çanta mağazaları",
-          "pozisyon": 11,
+          "pozisyon": 10,
           "onceki": 9,
-          "gosterim": 4,
+          "gosterim": 5,
           "tik": 1
         },
         {
@@ -4069,9 +4122,9 @@
         },
         {
           "kelime": "michael kors cyprus",
-          "pozisyon": 13,
-          "onceki": 13,
-          "gosterim": 43,
+          "pozisyon": 12,
+          "onceki": 12,
+          "gosterim": 45,
           "tik": 0
         },
         {
@@ -4082,9 +4135,9 @@
           "tik": 0
         },
         {
-          "kelime": "jw pei cyprus",
-          "pozisyon": 9,
-          "onceki": 8,
+          "kelime": "cyprus wedding guest outfit",
+          "pozisyon": 22,
+          "onceki": 27,
           "gosterim": 17,
           "tik": 0
         },
@@ -4096,16 +4149,9 @@
           "tik": 0
         },
         {
-          "kelime": "cyprus wedding guest outfit",
-          "pozisyon": 22,
-          "onceki": 27,
-          "gosterim": 16,
-          "tik": 0
-        },
-        {
-          "kelime": "kıbrıs ta çanta nereden alınır",
-          "pozisyon": 5,
-          "onceki": 6,
+          "kelime": "jw pei cyprus",
+          "pozisyon": 9,
+          "onceki": 8,
           "gosterim": 16,
           "tik": 0
         },
@@ -4114,6 +4160,13 @@
           "pozisyon": 6,
           "onceki": 7,
           "gosterim": 16,
+          "tik": 0
+        },
+        {
+          "kelime": "kıbrıs ta çanta nereden alınır",
+          "pozisyon": 5,
+          "onceki": 5,
+          "gosterim": 15,
           "tik": 0
         },
         {
@@ -4131,8 +4184,8 @@
           "tik": 0
         },
         {
-          "kelime": "luxeva reviews",
-          "pozisyon": 7,
+          "kelime": "mk cyprus",
+          "pozisyon": 9,
           "onceki": 9,
           "gosterim": 10,
           "tik": 0
@@ -4143,14 +4196,14 @@
       "icerikBoslugu": [
         {
           "kelime": "coach bags cyprus",
-          "hacim": 101,
+          "hacim": 106,
           "rakipPoz": 10,
           "tip": "firsat"
         },
         {
           "kelime": "michael kors cyprus",
-          "hacim": 43,
-          "rakipPoz": 13,
+          "hacim": 45,
+          "rakipPoz": 12,
           "tip": "firsat"
         },
         {
@@ -4160,9 +4213,9 @@
           "tip": "firsat"
         },
         {
-          "kelime": "jw pei cyprus",
+          "kelime": "cyprus wedding guest outfit",
           "hacim": 17,
-          "rakipPoz": 9,
+          "rakipPoz": 22,
           "tip": "firsat"
         },
         {
@@ -4172,9 +4225,9 @@
           "tip": "firsat"
         },
         {
-          "kelime": "cyprus wedding guest outfit",
+          "kelime": "jw pei cyprus",
           "hacim": 16,
-          "rakipPoz": 22,
+          "rakipPoz": 9,
           "tip": "firsat"
         },
         {
@@ -4202,12 +4255,12 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-12",
+      "siralamaTarih": "2026-10-13",
       "siralamaPencere": {
-        "baslangic": "2026-09-12",
-        "bitis": "2026-10-09"
+        "baslangic": "2026-09-13",
+        "bitis": "2026-10-10"
       },
-      "hizTarih": "2026-10-12",
+      "hizTarih": "2026-10-13",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -4452,14 +4505,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 490,
-        "sonKontrol": "2026-10-12T10:29:28.547Z",
-        "medyanMs": 388
+        "yanitMs": 602,
+        "sonKontrol": "2026-10-13T10:20:27.421Z",
+        "medyanMs": 466
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-12-30",
-        "kalanGun": 79
+        "kalanGun": 78
       },
       "sayfalar": {
         "taranan": 200,
@@ -5434,7 +5487,7 @@
             "cozum": "Tarama bütçesi zayıf: iç linkleme artır, sitemap'i temizle, sunucuyu hızlandır."
           }
         ],
-        "tarih": "2026-10-12T10:38:44.382Z"
+        "tarih": "2026-10-13T10:27:32.135Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -5443,14 +5496,14 @@
           "kelime": "kksbm",
           "pozisyon": 5,
           "onceki": 7,
-          "gosterim": 970,
+          "gosterim": 984,
           "tik": 4
         },
         {
           "kelime": "kktc sigorta bilgi merkezi",
           "pozisyon": 6,
           "onceki": 8,
-          "gosterim": 125,
+          "gosterim": 128,
           "tik": 3
         },
         {
@@ -5462,30 +5515,30 @@
         },
         {
           "kelime": "kktc öğrenci sağlık sigortası ücreti",
-          "pozisyon": 7,
+          "pozisyon": 6,
           "onceki": 8,
-          "gosterim": 11,
+          "gosterim": 10,
           "tik": 1
         },
         {
           "kelime": "sigorta bilgi merkezi kktc",
           "pozisyon": 7,
           "onceki": 7,
-          "gosterim": 102,
+          "gosterim": 112,
           "tik": 0
         },
         {
           "kelime": "kktcsigorta",
           "pozisyon": 7,
           "onceki": 9,
-          "gosterim": 44,
+          "gosterim": 47,
           "tik": 0
         },
         {
           "kelime": "creditwest pert",
           "pozisyon": 10,
           "onceki": 7,
-          "gosterim": 42,
+          "gosterim": 39,
           "tik": 0
         },
         {
@@ -5499,14 +5552,21 @@
           "kelime": "kktc sağlık sigortası",
           "pozisyon": 11,
           "onceki": 9,
-          "gosterim": 26,
+          "gosterim": 25,
           "tik": 0
         },
         {
           "kelime": "kktc sigorta şirketleri",
           "pozisyon": 12,
           "onceki": 10,
-          "gosterim": 24,
+          "gosterim": 25,
+          "tik": 0
+        },
+        {
+          "kelime": "metehan sınır kapısı sigorta çalışma saatleri",
+          "pozisyon": 9,
+          "onceki": 8,
+          "gosterim": 20,
           "tik": 0
         },
         {
@@ -5524,13 +5584,6 @@
           "tik": 0
         },
         {
-          "kelime": "metehan sınır kapısı sigorta çalışma saatleri",
-          "pozisyon": 9,
-          "onceki": 8,
-          "gosterim": 17,
-          "tik": 0
-        },
-        {
           "kelime": "commercial insurance",
           "pozisyon": 36,
           "onceki": 22,
@@ -5539,7 +5592,7 @@
         },
         {
           "kelime": "kktc sağlık sigortası öğrenci ücreti",
-          "pozisyon": 7,
+          "pozisyon": 6,
           "onceki": 6,
           "gosterim": 14,
           "tik": 0
@@ -5550,25 +5603,25 @@
       "icerikBoslugu": [
         {
           "kelime": "creditwest pert",
-          "hacim": 42,
+          "hacim": 39,
           "rakipPoz": 10,
           "tip": "firsat"
         },
         {
           "kelime": "kktc sağlık sigortası",
-          "hacim": 26,
+          "hacim": 25,
           "rakipPoz": 11,
           "tip": "firsat"
         },
         {
           "kelime": "kktc sigorta şirketleri",
-          "hacim": 24,
+          "hacim": 25,
           "rakipPoz": 12,
           "tip": "firsat"
         },
         {
           "kelime": "metehan sınır kapısı sigorta çalışma saatleri",
-          "hacim": 17,
+          "hacim": 20,
           "rakipPoz": 9,
           "tip": "firsat"
         },
@@ -5577,20 +5630,14 @@
           "hacim": 16,
           "rakipPoz": 36,
           "tip": "firsat"
-        },
-        {
-          "kelime": "sigorta bilgi merkezi",
-          "hacim": 13,
-          "rakipPoz": 8,
-          "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-10-12",
+      "siralamaTarih": "2026-10-13",
       "siralamaPencere": {
-        "baslangic": "2026-09-12",
-        "bitis": "2026-10-09"
+        "baslangic": "2026-09-13",
+        "bitis": "2026-10-10"
       },
-      "hizTarih": "2026-10-12",
+      "hizTarih": "2026-10-13",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
@@ -5599,10 +5646,10 @@
   ],
   "degisiklikler": [
     {
-      "site": "animare",
+      "site": "magusapsikoloji",
       "tip": "yeni-sayfa",
       "mesaj": "2 sayfa eklendi",
-      "tarih": "2026-10-12"
+      "tarih": "2026-10-13"
     }
   ],
   "raporlar": [
