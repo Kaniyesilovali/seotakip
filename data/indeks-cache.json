@@ -2291,7 +2291,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/psychologist-in-famagusta.html": {
-      "t": "2026-10-07T10:10:45.953Z",
+      "t": "2026-10-15T08:17:50.645Z",
       "denetlenen": "https://magusapsikoloji.com/en/psychologist-in-famagusta.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2300,11 +2300,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/psychologist-in-famagusta.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/psychologist-in-famagusta.html",
-      "sonTarama": "2026-09-11T19:37:06Z",
+      "sonTarama": "2026-10-14T23:24:26Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/gazimagusa-psikolog.html": {
-      "t": "2026-10-07T10:10:39.414Z",
+      "t": "2026-10-15T08:17:43.675Z",
       "denetlenen": "https://magusapsikoloji.com/gazimagusa-psikolog.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2538,10 +2538,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html": {
-      "t": "2026-10-07T10:10:39.310Z",
+      "t": "2026-10-15T08:17:43.809Z",
       "denetlenen": "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -2551,10 +2551,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html": {
-      "t": "2026-10-07T10:10:39.348Z",
+      "t": "2026-10-15T08:17:43.785Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
