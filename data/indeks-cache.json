@@ -2590,10 +2590,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/social-anxiety-vs-shyness.html": {
-      "t": "2026-10-13T10:27:24.249Z",
+      "t": "2026-10-21T08:32:33.813Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/social-anxiety-vs-shyness.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -2603,10 +2603,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/sosyal-fobi-utangaclik-farki.html": {
-      "t": "2026-10-13T10:27:24.346Z",
+      "t": "2026-10-21T08:32:33.554Z",
       "denetlenen": "https://magusapsikoloji.com/blog/sosyal-fobi-utangaclik-farki.html",
       "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
+      "durum": "Discovered - currently not indexed",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -4594,7 +4594,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-lapta": {
-      "t": "2026-10-13T10:27:32.133Z",
+      "t": "2026-10-21T08:32:40.964Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-lapta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4603,7 +4603,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-lapta/",
       "canonicalSayfa": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-pafos-lapta/",
-      "sonTarama": "2026-09-09T19:37:19Z",
+      "sonTarama": "2026-10-13T20:51:37Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/paphos-airport-to-karsiyaka": {
