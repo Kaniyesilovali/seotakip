@@ -2590,7 +2590,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html": {
-      "t": "2026-10-22T08:36:27.878Z",
+      "t": "2026-10-29T09:43:56.447Z",
       "denetlenen": "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -2603,10 +2603,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html": {
-      "t": "2026-10-22T08:36:27.838Z",
+      "t": "2026-10-29T09:43:56.486Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html",
       "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
+      "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
