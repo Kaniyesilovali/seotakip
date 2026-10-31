@@ -911,7 +911,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-ancestral-grain-pet-food": {
-      "t": "2026-10-24T08:11:25.980Z",
+      "t": "2026-10-31T09:35:58.623Z",
       "denetlenen": "https://animare.vet/en/blog/nd-ancestral-grain-pet-food/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -924,7 +924,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-ancestral-grain-az-tahilli-mama": {
-      "t": "2026-10-24T08:11:18.550Z",
+      "t": "2026-10-31T09:35:51.169Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-ancestral-grain-az-tahilli-mama/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -937,7 +937,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-pumpkin-balkabakli-mama": {
-      "t": "2026-10-24T08:11:17.963Z",
+      "t": "2026-10-31T09:35:51.769Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-pumpkin-balkabakli-mama/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -989,7 +989,7 @@
       "httpKod": 523
     },
     "https://animare.vet/en/blog/small-animal-surgery": {
-      "t": "2026-10-24T08:11:17.883Z",
+      "t": "2026-10-31T09:35:51.790Z",
       "denetlenen": "https://animare.vet/en/blog/small-animal-surgery/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -1002,7 +1002,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/kucuk-hayvan-cerrahisi": {
-      "t": "2026-10-24T08:11:25.988Z",
+      "t": "2026-10-31T09:36:00.789Z",
       "denetlenen": "https://animare.vet/tr/blog/kucuk-hayvan-cerrahisi/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -2395,7 +2395,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html": {
-      "t": "2026-10-24T08:11:40.190Z",
+      "t": "2026-10-31T09:36:15.574Z",
       "denetlenen": "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2408,7 +2408,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/autism-spectrum-disorder-early-signs.html": {
-      "t": "2026-10-24T08:11:47.137Z",
+      "t": "2026-10-31T09:36:22.082Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/autism-spectrum-disorder-early-signs.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2512,7 +2512,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/travma-terapisi.html": {
-      "t": "2026-10-24T08:11:40.197Z",
+      "t": "2026-10-31T09:36:15.086Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/travma-terapisi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2525,7 +2525,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/trauma-therapy.html": {
-      "t": "2026-10-24T08:11:47.087Z",
+      "t": "2026-10-31T09:36:21.957Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/trauma-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2642,7 +2642,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/family-transitions-parent-counselling.html": {
-      "t": "2026-10-24T08:11:33.179Z",
+      "t": "2026-10-31T09:36:07.960Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/family-transitions-parent-counselling.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2651,24 +2651,24 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/blog/family-transitions-parent-counselling.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/blog/family-transitions-parent-counselling.html",
-      "sonTarama": "2026-10-19T00:48:10Z",
+      "sonTarama": "2026-10-25T13:10:09Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/parent-counselling.html": {
-      "t": "2026-10-24T08:11:33.092Z",
+      "t": "2026-10-31T09:36:08.068Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/parent-counselling.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/en/services/parent-counselling.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/en/services/parent-counselling.html",
+      "sonTarama": "2026-10-29T00:04:19Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/ailede-zor-donemler-ebeveyn-danismanligi.html": {
-      "t": "2026-10-24T08:11:33.173Z",
+      "t": "2026-10-31T09:36:07.896Z",
       "denetlenen": "https://magusapsikoloji.com/blog/ailede-zor-donemler-ebeveyn-danismanligi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2681,16 +2681,16 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html": {
-      "t": "2026-10-24T08:11:40.070Z",
+      "t": "2026-10-31T09:36:14.923Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html",
-      "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html",
+      "sonTarama": "2026-10-29T01:19:21Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/bilissel-davranisci-terapi-nedir.html": {
@@ -7809,7 +7809,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/companies": {
-      "t": "2026-10-24T08:11:54.452Z",
+      "t": "2026-10-31T09:36:29.226Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/companies/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7822,7 +7822,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en": {
-      "t": "2026-10-24T08:11:54.497Z",
+      "t": "2026-10-31T09:36:29.381Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7861,7 +7861,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/motor-third-party": {
-      "t": "2026-10-24T08:11:54.508Z",
+      "t": "2026-10-31T09:36:29.453Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/motor-third-party/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7874,7 +7874,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/border-crossing-insurance": {
-      "t": "2026-10-24T08:12:01.482Z",
+      "t": "2026-10-31T09:36:36.441Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/border-crossing-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7887,7 +7887,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/first-48-hours-after-an-accident": {
-      "t": "2026-10-24T08:12:01.739Z",
+      "t": "2026-10-31T09:36:36.453Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/first-48-hours-after-an-accident/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7896,11 +7896,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/en/guides/first-48-hours-after-an-accident/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/en/guides/first-48-hours-after-an-accident/",
-      "sonTarama": "2026-10-05T03:47:32Z",
+      "sonTarama": "2026-10-28T10:09:33Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides": {
-      "t": "2026-10-24T08:12:01.640Z",
+      "t": "2026-10-31T09:36:36.553Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7909,11 +7909,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/en/guides/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/en/guides/",
-      "sonTarama": "2026-10-16T00:26:32Z",
+      "sonTarama": "2026-10-19T10:19:51Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/topic/claims": {
-      "t": "2026-10-24T08:12:08.681Z",
+      "t": "2026-10-31T09:36:43.729Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/topic/claims/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -7926,7 +7926,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/student-health-insurance": {
-      "t": "2026-10-24T08:12:08.892Z",
+      "t": "2026-10-31T09:36:43.442Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/student-health-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7939,7 +7939,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/topic/border-crossing": {
-      "t": "2026-10-24T08:12:08.929Z",
+      "t": "2026-10-31T09:36:43.903Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/topic/border-crossing/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -7952,7 +7952,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/topic/foreign-nationals": {
-      "t": "2026-10-24T08:12:15.906Z",
+      "t": "2026-10-31T09:36:50.880Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/topic/foreign-nationals/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7965,7 +7965,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/business": {
-      "t": "2026-10-24T08:12:15.692Z",
+      "t": "2026-10-31T09:36:50.668Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/business/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7978,7 +7978,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/comprehensive": {
-      "t": "2026-10-24T08:12:16.143Z",
+      "t": "2026-10-31T09:36:50.848Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/comprehensive/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -7991,7 +7991,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/health": {
-      "t": "2026-10-24T08:12:22.914Z",
+      "t": "2026-10-31T09:36:57.722Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/health/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -8004,7 +8004,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/home": {
-      "t": "2026-10-24T08:12:23.181Z",
+      "t": "2026-10-31T09:36:57.885Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/home/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -8013,11 +8013,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/en/insurance/home/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/en/insurance/home/",
-      "sonTarama": "2026-10-06T03:01:27Z",
+      "sonTarama": "2026-10-28T08:54:36Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/travel": {
-      "t": "2026-10-24T08:12:23.140Z",
+      "t": "2026-10-31T09:36:58.035Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/travel/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
