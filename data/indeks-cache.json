@@ -430,7 +430,7 @@
       "httpKod": 523
     },
     "https://animare.vet/tr/blog/yaz-sicaginda-evcil-hayvan": {
-      "t": "2026-10-25T08:24:15.236Z",
+      "t": "2026-11-02T10:53:32.480Z",
       "denetlenen": "https://animare.vet/tr/blog/yaz-sicaginda-evcil-hayvan/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -439,7 +439,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://animare.vet/tr/blog/yaz-sicaginda-evcil-hayvan/",
       "canonicalSayfa": "https://animare.vet/tr/blog/yaz-sicaginda-evcil-hayvan/",
-      "sonTarama": "2026-10-17T02:06:00Z",
+      "sonTarama": "2026-11-01T14:13:46Z",
       "httpKod": 200
     },
     "https://animare.vet/en/blog/cat-dental-care": {
@@ -1041,7 +1041,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/mesane-tasi-sistotomi": {
-      "t": "2026-10-26T08:49:11.752Z",
+      "t": "2026-11-02T10:53:33.347Z",
       "denetlenen": "https://animare.vet/tr/blog/mesane-tasi-sistotomi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1054,7 +1054,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/bladder-stones-cystotomy": {
-      "t": "2026-10-26T08:49:11.717Z",
+      "t": "2026-11-02T10:53:32.801Z",
       "denetlenen": "https://animare.vet/en/blog/bladder-stones-cystotomy/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1095,7 +1095,7 @@
   },
   "magusapsikoloji": {
     "https://magusapsikoloji.com/en/about.html": {
-      "t": "2026-10-26T08:49:18.424Z",
+      "t": "2026-11-02T10:53:40.391Z",
       "denetlenen": "https://magusapsikoloji.com/en/about.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1104,7 +1104,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/en/about.html",
       "canonicalSayfa": "https://magusapsikoloji.com/en/about.html",
-      "sonTarama": "2026-10-18T02:50:57Z",
+      "sonTarama": "2026-10-28T12:25:43Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/brain-body-connection.html": {
@@ -3216,7 +3216,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-girne-otelleri-transfer": {
-      "t": "2026-10-26T08:49:25.601Z",
+      "t": "2026-11-02T10:53:48.024Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-girne-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3229,7 +3229,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-kirenii": {
-      "t": "2026-10-26T08:49:25.586Z",
+      "t": "2026-11-02T10:53:48.031Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-kirenii/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3242,7 +3242,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-famagusta": {
-      "t": "2026-10-26T08:49:32.719Z",
+      "t": "2026-11-02T10:53:55.697Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-famagusta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3255,7 +3255,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-gazimagusa-transfer": {
-      "t": "2026-10-26T08:49:25.635Z",
+      "t": "2026-11-02T10:53:48.103Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-gazimagusa-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3264,11 +3264,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-gazimagusa-transfer/",
       "canonicalSayfa": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-gazimagusa-transfer/",
-      "sonTarama": "2026-09-21T09:45:55Z",
+      "sonTarama": "2026-10-26T14:03:01Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-famagusta": {
-      "t": "2026-10-26T08:49:32.729Z",
+      "t": "2026-11-02T10:53:55.664Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-famagusta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3281,7 +3281,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-iskele-long-beach": {
-      "t": "2026-10-26T08:49:39.392Z",
+      "t": "2026-11-02T10:54:02.757Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-iskele-long-beach/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3290,11 +3290,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/ercan-airport-to-iskele-long-beach/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/ercan-airport-to-iskele-long-beach/",
-      "sonTarama": "2026-10-03T01:44:08Z",
+      "sonTarama": "2026-10-27T09:37:12Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-iskele-long-beach-transfer": {
-      "t": "2026-10-26T08:49:32.349Z",
+      "t": "2026-11-02T10:53:55.584Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-iskele-long-beach-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3307,7 +3307,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-iskele-long-bich": {
-      "t": "2026-10-26T08:49:53.519Z",
+      "t": "2026-11-02T10:54:17.415Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-iskele-long-bich/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3320,7 +3320,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-bafra-hotels": {
-      "t": "2026-10-26T08:49:39.795Z",
+      "t": "2026-11-02T10:54:02.860Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-bafra-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3333,7 +3333,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-bafra-otelleri-transfer": {
-      "t": "2026-10-26T08:49:39.466Z",
+      "t": "2026-11-02T10:54:02.853Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-bafra-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3346,7 +3346,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-bafry": {
-      "t": "2026-10-26T08:49:46.525Z",
+      "t": "2026-11-02T10:54:10.384Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-bafry/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3359,7 +3359,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-guzelyurt": {
-      "t": "2026-10-26T08:49:46.862Z",
+      "t": "2026-11-02T10:54:10.419Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-guzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3372,7 +3372,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-guzelyurt-transfer": {
-      "t": "2026-10-26T08:49:46.462Z",
+      "t": "2026-11-02T10:54:10.310Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-guzelyurt-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3385,7 +3385,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-gyuzelyurt": {
-      "t": "2026-10-26T08:49:53.611Z",
+      "t": "2026-11-02T10:54:17.938Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-gyuzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3398,7 +3398,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-catalkoy-hotels": {
-      "t": "2026-10-26T08:49:53.911Z",
+      "t": "2026-11-02T10:54:17.983Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-catalkoy-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3411,7 +3411,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-catalkoy-otelleri-transfer": {
-      "t": "2026-10-26T08:50:00.790Z",
+      "t": "2026-11-02T10:54:25.499Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-catalkoy-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3424,7 +3424,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-chatalkoya": {
-      "t": "2026-10-26T08:50:00.978Z",
+      "t": "2026-11-02T10:54:25.534Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-chatalkoya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3437,7 +3437,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-alsancak-hotels": {
-      "t": "2026-10-26T08:50:00.694Z",
+      "t": "2026-11-02T10:54:24.570Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-alsancak-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3450,7 +3450,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-alsancak-otelleri-transfer": {
-      "t": "2026-10-26T08:50:08.295Z",
+      "t": "2026-11-02T10:54:32.685Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-alsancak-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3463,7 +3463,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-alsandzhaka": {
-      "t": "2026-10-26T08:50:08.122Z",
+      "t": "2026-11-02T10:54:32.671Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-alsandzhaka/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3476,7 +3476,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-lapta": {
-      "t": "2026-10-26T08:50:15.167Z",
+      "t": "2026-11-02T10:54:39.848Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-lapta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3485,11 +3485,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/ercan-airport-to-lapta/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/ercan-airport-to-lapta/",
-      "sonTarama": "2026-09-20T13:30:45Z",
+      "sonTarama": "2026-10-24T15:26:15Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lapta-transfer": {
-      "t": "2026-10-26T08:50:15.054Z",
+      "t": "2026-11-02T10:54:39.660Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lapta-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3498,11 +3498,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lapta-transfer/",
       "canonicalSayfa": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lapta-transfer/",
-      "sonTarama": "2026-09-24T01:35:31Z",
+      "sonTarama": "2026-10-28T23:17:12Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-lapta": {
-      "t": "2026-10-26T08:50:08.029Z",
+      "t": "2026-11-02T10:54:32.120Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-lapta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3515,7 +3515,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-karsiyaka": {
-      "t": "2026-10-26T08:50:22.064Z",
+      "t": "2026-11-02T10:54:47.366Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-karsiyaka/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3528,7 +3528,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-karsiyaka-transfer": {
-      "t": "2026-10-26T08:50:15.117Z",
+      "t": "2026-11-02T10:54:39.836Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-karsiyaka-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3541,7 +3541,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-karshiyaka": {
-      "t": "2026-10-26T08:50:22.252Z",
+      "t": "2026-11-02T10:54:47.405Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-karshiyaka/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3554,7 +3554,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-esentepe-hotels": {
-      "t": "2026-10-26T08:50:29.006Z",
+      "t": "2026-11-02T10:54:54.398Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-esentepe-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3567,7 +3567,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-esentepe-otelleri-transfer": {
-      "t": "2026-10-26T08:50:21.921Z",
+      "t": "2026-11-02T10:54:46.834Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-esentepe-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3580,7 +3580,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-esentepe": {
-      "t": "2026-10-26T08:50:29.370Z",
+      "t": "2026-11-02T10:54:54.564Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-esentepe/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3593,7 +3593,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-bogaz": {
-      "t": "2026-10-26T08:50:29.155Z",
+      "t": "2026-11-02T10:54:54.516Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-bogaz/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3606,7 +3606,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-bogaz-transfer": {
-      "t": "2026-10-26T08:50:36.452Z",
+      "t": "2026-11-02T10:55:01.721Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-bogaz-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3615,11 +3615,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-bogaz-transfer/",
       "canonicalSayfa": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-bogaz-transfer/",
-      "sonTarama": "2026-09-25T16:02:59Z",
+      "sonTarama": "2026-10-29T09:32:43Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-bogaz": {
-      "t": "2026-10-26T08:50:36.090Z",
+      "t": "2026-11-02T10:55:02.082Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-bogaz/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3632,7 +3632,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-karpaz-hotels": {
-      "t": "2026-10-26T08:50:43.079Z",
+      "t": "2026-11-02T10:55:08.894Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-karpaz-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3645,7 +3645,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-karpaz-otelleri-transfer": {
-      "t": "2026-10-26T08:50:35.969Z",
+      "t": "2026-11-02T10:55:01.932Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-karpaz-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3658,7 +3658,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-karpaza": {
-      "t": "2026-10-26T08:50:43.182Z",
+      "t": "2026-11-02T10:55:09.484Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-oteli-karpaza/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3671,7 +3671,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/ercan-airport-to-lefke": {
-      "t": "2026-10-26T08:50:43.257Z",
+      "t": "2026-11-02T10:55:09.622Z",
       "denetlenen": "https://thetaxsi.com/en/routes/ercan-airport-to-lefke/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3684,7 +3684,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-lefke": {
-      "t": "2026-10-26T08:50:50.320Z",
+      "t": "2026-11-02T10:55:17.160Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-erdzhan-lefke/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3697,7 +3697,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lefke-transfer": {
-      "t": "2026-10-26T08:50:50.081Z",
+      "t": "2026-11-02T10:55:16.453Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/ercan-havalimani-lefke-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3710,7 +3710,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-nicosia": {
-      "t": "2026-10-26T08:50:50.244Z",
+      "t": "2026-11-02T10:55:17.067Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-nicosia/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3723,7 +3723,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-lefkosa-transfer": {
-      "t": "2026-10-26T08:50:57.271Z",
+      "t": "2026-11-02T10:55:24.575Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-lefkosa-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3736,7 +3736,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-nikosiya": {
-      "t": "2026-10-26T08:50:57.431Z",
+      "t": "2026-11-02T10:55:24.339Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-nikosiya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3749,7 +3749,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-kyrenia": {
-      "t": "2026-10-26T08:50:57.134Z",
+      "t": "2026-11-02T10:55:24.035Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-kyrenia/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3762,7 +3762,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-girne-transfer": {
-      "t": "2026-10-26T08:51:04.218Z",
+      "t": "2026-11-02T10:55:31.550Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-girne-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3775,7 +3775,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-kireniya": {
-      "t": "2026-10-26T08:51:04.333Z",
+      "t": "2026-11-02T10:55:31.884Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-kireniya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3788,7 +3788,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-girne-otelleri-transfer": {
-      "t": "2026-10-26T08:51:04.501Z",
+      "t": "2026-11-02T10:55:32.228Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-girne-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3801,7 +3801,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-kyrenia-hotels": {
-      "t": "2026-10-26T08:51:11.336Z",
+      "t": "2026-11-02T10:55:39.101Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-kyrenia-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3810,11 +3810,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/larnaca-airport-to-kyrenia-hotels/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/larnaca-airport-to-kyrenia-hotels/",
-      "sonTarama": "2026-10-02T13:50:46Z",
+      "sonTarama": "2026-10-27T06:30:47Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-kirenii": {
-      "t": "2026-10-26T08:51:11.558Z",
+      "t": "2026-11-02T10:55:39.405Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-kirenii/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3827,7 +3827,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-famagusta": {
-      "t": "2026-10-26T08:51:11.400Z",
+      "t": "2026-11-02T10:55:39.428Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-famagusta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3836,11 +3836,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/larnaca-airport-to-famagusta/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/larnaca-airport-to-famagusta/",
-      "sonTarama": "2026-09-21T05:32:16Z",
+      "sonTarama": "2026-10-26T13:23:11Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-gazimagusa-transfer": {
-      "t": "2026-10-26T08:51:18.412Z",
+      "t": "2026-11-02T10:55:46.656Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-gazimagusa-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3849,11 +3849,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-gazimagusa-transfer/",
       "canonicalSayfa": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-gazimagusa-transfer/",
-      "sonTarama": "2026-09-24T06:35:31Z",
+      "sonTarama": "2026-10-28T16:23:24Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-famagusta": {
-      "t": "2026-10-26T08:51:18.610Z",
+      "t": "2026-11-02T10:55:46.961Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-famagusta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3866,7 +3866,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-iskele-long-beach": {
-      "t": "2026-10-26T08:51:18.687Z",
+      "t": "2026-11-02T10:55:46.563Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-iskele-long-beach/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3879,7 +3879,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-iskele-long-beach-transfer": {
-      "t": "2026-10-26T08:51:25.939Z",
+      "t": "2026-11-02T10:55:54.128Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-iskele-long-beach-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3892,7 +3892,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-iskele-long-bich": {
-      "t": "2026-10-26T08:51:25.671Z",
+      "t": "2026-11-02T10:55:54.078Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-iskele-long-bich/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3905,7 +3905,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-bafra-hotels": {
-      "t": "2026-10-26T08:51:25.731Z",
+      "t": "2026-11-02T10:55:57.215Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-bafra-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3918,7 +3918,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-bafra-otelleri-transfer": {
-      "t": "2026-10-26T08:51:32.927Z",
+      "t": "2026-11-02T10:56:01.691Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-bafra-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3931,7 +3931,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-bafry": {
-      "t": "2026-10-26T08:51:33.053Z",
+      "t": "2026-11-02T10:56:04.389Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-bafry/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3944,7 +3944,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-guzelyurt": {
-      "t": "2026-10-26T08:51:32.775Z",
+      "t": "2026-11-02T10:56:01.585Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-guzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3957,7 +3957,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-guzelyurt-transfer": {
-      "t": "2026-10-26T08:51:39.841Z",
+      "t": "2026-11-02T10:56:09.099Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-guzelyurt-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3970,7 +3970,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-gyuzelyurt": {
-      "t": "2026-10-26T08:51:40.375Z",
+      "t": "2026-11-02T10:56:11.976Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-gyuzelyurt/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3983,7 +3983,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-catalkoy-hotels": {
-      "t": "2026-10-26T08:51:40.176Z",
+      "t": "2026-11-02T10:56:08.812Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-catalkoy-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -3992,11 +3992,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/larnaca-airport-to-catalkoy-hotels/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/larnaca-airport-to-catalkoy-hotels/",
-      "sonTarama": "2026-10-04T19:33:59Z",
+      "sonTarama": "2026-10-28T01:15:05Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-catalkoy-otelleri-transfer": {
-      "t": "2026-10-26T08:51:47.444Z",
+      "t": "2026-11-02T10:56:18.803Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-catalkoy-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4009,7 +4009,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-chatalkoya": {
-      "t": "2026-10-26T08:51:46.966Z",
+      "t": "2026-11-02T10:56:16.366Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-chatalkoya/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4022,7 +4022,7 @@
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-alsancak-hotels": {
-      "t": "2026-10-26T08:51:47.241Z",
+      "t": "2026-11-02T10:56:16.277Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-alsancak-hotels/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4031,11 +4031,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/en/routes/larnaca-airport-to-alsancak-hotels/",
       "canonicalSayfa": "https://thetaxsi.com/en/routes/larnaca-airport-to-alsancak-hotels/",
-      "sonTarama": "2026-09-14T00:49:43Z",
+      "sonTarama": "2026-10-19T08:04:38Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-alsancak-otelleri-transfer": {
-      "t": "2026-10-26T08:51:54.026Z",
+      "t": "2026-11-02T10:56:23.834Z",
       "denetlenen": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-alsancak-otelleri-transfer/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4044,11 +4044,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-alsancak-otelleri-transfer/",
       "canonicalSayfa": "https://thetaxsi.com/tr/guzergahlar/larnaka-havalimani-alsancak-otelleri-transfer/",
-      "sonTarama": "2026-09-27T00:00:19Z",
+      "sonTarama": "2026-10-30T22:18:18Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-alsandzhaka": {
-      "t": "2026-10-26T08:51:54.498Z",
+      "t": "2026-11-02T10:56:25.994Z",
       "denetlenen": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-alsandzhaka/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -4057,11 +4057,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-alsandzhaka/",
       "canonicalSayfa": "https://thetaxsi.com/ru/marshruty/transfer-aeroport-larnaka-oteli-alsandzhaka/",
-      "sonTarama": "2026-09-26T03:21:01Z",
+      "sonTarama": "2026-10-30T04:00:04Z",
       "httpKod": 200
     },
     "https://thetaxsi.com/en/routes/larnaca-airport-to-lapta": {
-      "t": "2026-10-26T08:51:54.206Z",
+      "t": "2026-11-02T10:56:23.140Z",
       "denetlenen": "https://thetaxsi.com/en/routes/larnaca-airport-to-lapta/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
