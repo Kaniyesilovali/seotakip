@@ -2590,10 +2590,10 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html": {
-      "t": "2026-10-29T09:43:56.447Z",
+      "t": "2026-11-05T10:40:05.565Z",
       "denetlenen": "https://magusapsikoloji.com/blog/travma-sonrasi-stres-bozuklugu.html",
       "verdict": "NEUTRAL",
-      "durum": "Discovered - currently not indexed",
+      "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "indeksleme": "INDEXING_STATE_UNSPECIFIED",
       "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -2603,16 +2603,16 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html": {
-      "t": "2026-10-29T09:43:56.486Z",
+      "t": "2026-11-05T10:40:05.619Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html",
+      "canonicalSayfa": "https://magusapsikoloji.com/en/blog/post-traumatic-stress-disorder.html",
+      "sonTarama": "2026-11-03T09:45:08Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/social-anxiety-vs-shyness.html": {
