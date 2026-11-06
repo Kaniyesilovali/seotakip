@@ -950,16 +950,16 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-pumpkin-pet-food": {
-      "t": "2026-10-30T09:56:24.886Z",
+      "t": "2026-11-06T10:41:45.778Z",
       "denetlenen": "https://animare.vet/en/blog/nd-pumpkin-pet-food/",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://animare.vet/en/blog/nd-pumpkin-pet-food/",
+      "canonicalSayfa": "https://animare.vet/en/blog/nd-pumpkin-pet-food/",
+      "sonTarama": "2026-11-04T21:13:27Z",
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-tropical-meyveli-mama": {
@@ -2499,7 +2499,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html": {
-      "t": "2026-10-30T09:56:32.847Z",
+      "t": "2026-11-06T10:41:52.792Z",
       "denetlenen": "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2508,7 +2508,7 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html",
       "canonicalSayfa": "https://magusapsikoloji.com/blog/magusa-uluslararasi-ogrenciler-psikolojik-destek.html",
-      "sonTarama": "2026-10-03T03:13:02Z",
+      "sonTarama": "2026-11-04T04:40:22Z",
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/travma-terapisi.html": {
