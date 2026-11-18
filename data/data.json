@@ -1,10 +1,10 @@
 {
-  "guncelleme": "2026-11-17T11:53:46.071Z",
+  "guncelleme": "2026-11-18T11:36:03.035Z",
   "ozet": {
     "toplamSite": 5,
-    "ortalamaSeoPuan": 89,
-    "toplamKirikLink": 93,
-    "acilUyari": 5
+    "ortalamaSeoPuan": 92,
+    "toplamKirikLink": 1,
+    "acilUyari": 0
   },
   "siteler": [
     {
@@ -13,9 +13,9 @@
       "url": "https://animare.vet",
       "aktif": true,
       "seo": {
-        "puan": 80,
-        "onceki": 100,
-        "trend": "-20"
+        "puan": 100,
+        "onceki": 80,
+        "trend": "+20"
       },
       "sorunlar": [
         {
@@ -81,64 +81,18 @@
               "deger": "186 kelime"
             }
           ]
-        },
-        {
-          "tip": "kirik-ic-link",
-          "adet": 42,
-          "ornekler": [
-            {
-              "yol": "/tr",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/hizmetler",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/hakkimizda",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/iletisim",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/gizlilik",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/hizmetler/genel-muayene",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/hizmetler/asilama",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/hizmetler/cerrahi",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/hizmetler/dis-bakimi",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            },
-            {
-              "yol": "/tr/hizmetler/radyoloji",
-              "deger": "-> https://animare.vet/tr/hizmetler/beslenme-danismanligi (523)"
-            }
-          ]
         }
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 1708,
-        "sonKontrol": "2026-11-16T10:43:13.288Z",
-        "medyanMs": 454
+        "yanitMs": 1754,
+        "sonKontrol": "2026-11-18T11:13:54.582Z",
+        "medyanMs": 470
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2027-02-13",
-        "kalanGun": 89
+        "kalanGun": 87
       },
       "sayfalar": {
         "taranan": 84,
@@ -287,304 +241,9 @@
         "/tr/blog/kedi-kopek-kusma-ishal": "2026-10-26",
         "/en/blog/vomiting-diarrhoea-cats-dogs": "2026-10-26"
       },
-      "kirikLinkler": [
-        {
-          "kaynak": "/tr",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hakkimizda",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/iletisim",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/gizlilik",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/genel-muayene",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/asilama",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/cerrahi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/dis-bakimi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/radyoloji",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/acil-hizmet",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/laboratuvar",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/pet-kuafor",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/hizmetler/beslenme-danismanligi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kopek-asi-takvimi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kedilerde-dis-bakimi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/yaz-sicaginda-evcil-hayvan",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/yaz-aylarinda-ektoparazit-koruma",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/acil-veteriner-belirtileri",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/yavru-kedi-asi-takvimi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/farmina-nd-mama-rehberi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kedilerde-idrar-tikanikligi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/zehirli-yiyecekler-ve-bitkiler",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kedi-kopek-otitis-eksterna",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kopeklerde-leishmaniasis",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kopeklerde-kene-hastaliklari",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kedi-kopek-kisirlastirma",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kedilerde-kronik-bobrek-hastaligi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kedi-kopek-mama-cesitleri",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kibris-veteriner-klinigi-secimi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kan-tahlili-neden-gerekli",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/topallama-rontgen-ne-zaman",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/nd-quinoa-neutered-kopek-mamasi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/nd-prime-tahilsiz-mama",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/nd-ancestral-grain-az-tahilli-mama",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/nd-pumpkin-balkabakli-mama",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/nd-tropical-meyveli-mama",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kucuk-hayvan-cerrahisi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/nd-ocean-balikli-mama",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/mesane-tasi-sistotomi",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/tr/blog/kedi-kopek-kusma-ishal",
-          "hedef": "https://animare.vet/tr/hizmetler/beslenme-danismanligi",
-          "kod": 523,
-          "ic": true,
-          "sayilir": true
-        }
-      ],
+      "kirikLinkler": [],
       "kirikOzet": {
-        "ic": 42,
+        "ic": 0,
         "dis": 0,
         "dogrulanmamis": 0
       },
@@ -633,7 +292,7 @@
       "sitemap": {
         "varMi": true,
         "urlSayisi": 84,
-        "erisilemez": 1,
+        "erisilemez": 0,
         "dosyalar": [
           "https://animare.vet/sitemap.xml"
         ]
@@ -873,7 +532,7 @@
         "mobilPuan": 94,
         "masaustuPuan": 99,
         "lcp": 2.5,
-        "inp": 16,
+        "inp": 53,
         "cls": 0.08,
         "erisilebilirlik": 95,
         "enIyiUygulama": 100,
@@ -886,7 +545,7 @@
         "aksiyonGereken": 78,
         "kontrolEdilen": 84,
         "toplamSayfa": 84,
-        "dususVar": true,
+        "dususVar": false,
         "nedenler": [
           {
             "neden": "Google bu URL'i bilmiyor",
@@ -1172,7 +831,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-11-17T11:38:04.660Z"
+        "tarih": "2026-11-18T11:29:53.833Z"
       },
       "aiBotlar": null,
       "geo": {
@@ -1185,8 +844,8 @@
           "kelime": "nöbetçi veteriner",
           "pozisyon": 2,
           "onceki": 3,
-          "gosterim": 16,
-          "tik": 5
+          "gosterim": 19,
+          "tik": 6
         },
         {
           "kelime": "nöbetçi veteriner kktc",
@@ -1203,6 +862,13 @@
           "tik": 2
         },
         {
+          "kelime": "açık veteriner",
+          "pozisyon": 3,
+          "onceki": 4,
+          "gosterim": 7,
+          "tik": 2
+        },
+        {
           "kelime": "nöbetçi veteriner lefkoşa",
           "pozisyon": 6,
           "onceki": 6,
@@ -1213,14 +879,14 @@
           "kelime": "veteriner",
           "pozisyon": 7,
           "onceki": 7,
-          "gosterim": 264,
+          "gosterim": 258,
           "tik": 1
         },
         {
           "kelime": "ancestral grain ne demek",
           "pozisyon": 7,
           "onceki": 7,
-          "gosterim": 122,
+          "gosterim": 119,
           "tik": 1
         },
         {
@@ -1228,13 +894,6 @@
           "pozisyon": 7,
           "onceki": 7,
           "gosterim": 62,
-          "tik": 1
-        },
-        {
-          "kelime": "açık veteriner",
-          "pozisyon": 4,
-          "onceki": 4,
-          "gosterim": 7,
           "tik": 1
         },
         {
@@ -1252,16 +911,16 @@
           "tik": 1
         },
         {
-          "kelime": "7 24 açık veteriner",
-          "pozisyon": 1,
-          "onceki": 1,
-          "gosterim": 1,
+          "kelime": "acil veteriner",
+          "pozisyon": 2,
+          "onceki": 2,
+          "gosterim": 2,
           "tik": 1
         },
         {
-          "kelime": "acil veteriner",
+          "kelime": "7 24 açık veteriner",
           "pozisyon": 1,
-          "onceki": 2,
+          "onceki": 1,
           "gosterim": 1,
           "tik": 1
         },
@@ -1292,58 +951,28 @@
       "icerikBoslugu": [
         {
           "kelime": "anima vet clinic",
-          "hacim": 32,
+          "hacim": 33,
           "rakipPoz": 9,
           "tip": "firsat"
         },
         {
           "kelime": "anima vet",
-          "hacim": 16,
+          "hacim": 15,
           "rakipPoz": 10,
-          "tip": "firsat"
-        },
-        {
-          "kelime": "animed veteriner kliniği",
-          "hacim": 8,
-          "rakipPoz": 9,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-11-17",
+      "siralamaTarih": "2026-11-18",
       "siralamaPencere": {
-        "baslangic": "2026-10-18",
-        "bitis": "2026-11-14"
+        "baslangic": "2026-10-19",
+        "bitis": "2026-11-15"
       },
-      "hizTarih": "2026-11-17",
+      "hizTarih": "2026-11-18",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
       "_indeksGercek": true,
-      "_geoGercek": true,
-      "taramaHatasi": {
-        "tarih": "2026-11-17T11:32:07.720Z",
-        "sayfa": 1,
-        "oncekiSayfa": 84,
-        "neden": [
-          {
-            "kod": "sayfa-cokusu",
-            "mesaj": "84 sayfadan 1 sayfaya dustu — kuyruk hic dolmamis"
-          },
-          {
-            "kod": "sitemap-bos",
-            "mesaj": "sitemap.xml 84 URL yerine 0 URL verdi — XML yerine HTML donmus olabilir"
-          },
-          {
-            "kod": "icerik-bos",
-            "mesaj": "ort. kelime 938 → 8 — govde bos geldi"
-          },
-          {
-            "kod": "link-kayboldu",
-            "mesaj": "ort. ic link 24.1 → 0 — sayfalarda hic <a> bulunamadi"
-          }
-        ],
-        "mesaj": "Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan."
-      }
+      "_geoGercek": true
     },
     {
       "id": "magusapsikoloji",
@@ -1351,30 +980,22 @@
       "url": "https://magusapsikoloji.com",
       "aktif": true,
       "seo": {
-        "puan": 99,
-        "onceki": 100,
-        "trend": "-1"
+        "puan": 100,
+        "onceki": 99,
+        "trend": "+1"
       },
       "sorunlar": [
         {
-          "tip": "derin-sayfa",
-          "adet": 4,
+          "tip": "yavas-yanit",
+          "adet": 2,
           "ornekler": [
             {
-              "yol": "/blog/baglanma-nedir.html",
-              "deger": "4 tiklama"
+              "yol": "/en",
+              "deger": "2130 ms"
             },
             {
-              "yol": "/blog/bilissel-davranisci-terapi-nedir.html",
-              "deger": "4 tiklama"
-            },
-            {
-              "yol": "/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html",
-              "deger": "4 tiklama"
-            },
-            {
-              "yol": "/blog/psikodinamik-psikoterapi-nedir.html",
-              "deger": "4 tiklama"
+              "yol": "/hizmetler",
+              "deger": "2060 ms"
             }
           ]
         },
@@ -1385,16 +1006,6 @@
             {
               "yol": "/blog/sinav-kaygisiyla-bas-etme.html",
               "deger": "26 karakter"
-            }
-          ]
-        },
-        {
-          "tip": "sunucu-hatasi",
-          "adet": 1,
-          "ornekler": [
-            {
-              "yol": "/blog",
-              "deger": "HTTP 523"
             }
           ]
         },
@@ -1415,18 +1026,18 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 827,
-        "sonKontrol": "2026-11-16T10:44:42.784Z",
-        "medyanMs": 257
+        "yanitMs": 839,
+        "sonKontrol": "2026-11-18T11:15:23.654Z",
+        "medyanMs": 259
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2027-01-31",
-        "kalanGun": 76
+        "kalanGun": 74
       },
       "sayfalar": {
-        "taranan": 115,
-        "indekslenebilir": 115,
+        "taranan": 116,
+        "indekslenebilir": 116,
         "noindex": 0
       },
       "sayfaYollari": [
@@ -1499,6 +1110,7 @@
         "/blog/dehb-belirtileri-cocuk.html",
         "/blog/depresyon-nedir.html",
         "/blog/ebeveyn-danismanligi-magusa.html",
+        "/blog",
         "/blog/kaygi-bozuklugu-nedir.html",
         "/blog/kuzey-kibris-online-terapi.html",
         "/blog/kuzey-kibris-psikolog-bulma.html",
@@ -1612,362 +1224,11 @@
         "/blog/tukenmislik-sendromu.html": "2026-07-18",
         "/blog/universite-ogrencileri-psikolojik-destek.html": "2026-05-27"
       },
-      "kirikLinkler": [
-        {
-          "kaynak": "/en/about.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/anxiety-and-separation-anxiety-in-children.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/autism-spectrum-disorder-early-signs.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/before-starting-therapy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/brain-body-connection.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/burnout-syndrome.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/child-psychologist.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/coping-with-exam-anxiety.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/family-transitions-parent-counselling.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/find-psychologist-north-cyprus.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/is-online-therapy-effective.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/learning-difficulties-in-children.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/mental-health-international-students-famagusta.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/neuropsychological-assessment.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/online-therapy-north-cyprus.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/panic-attack-symptoms.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/parent-counselling.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/post-traumatic-stress-disorder.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/psychological-support-north-cyprus.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/psychologist-or-psychiatrist.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/school-refusal-in-children.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/social-anxiety-vs-shyness.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/tantrums-and-anger-in-children.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/therapy-language-turkish-english.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/university-students-north-cyprus-psychological-support.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/what-is-adhd-symptoms-in-children.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/what-is-anxiety-disorder.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/what-is-anxiety.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/what-is-attachment.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/what-is-cognitive-behavioural-therapy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/what-is-depression.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/what-is-psychodynamic-psychotherapy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/blog/when-to-go-to-therapy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/contact.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/faq.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/kvkk.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/kvkk.html",
-          "hedef": "https://www.kvkk.gov.tr",
-          "kod": 500,
-          "ic": false,
-          "sayilir": true
-        },
-        {
-          "kaynak": "/en/our-approach.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/privacy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/act-therapy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/adolescent-psychology.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/adult-psychology.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/cbt-therapy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/child-psychology.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/group-work.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/individual-therapy.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        },
-        {
-          "kaynak": "/en/services/motivational-interviewing.html",
-          "hedef": "https://magusapsikoloji.com/en/blog/what-is-anxiety-disorder…",
-          "kod": 523,
-          "ic": true,
-          "sayilir": false
-        }
-      ],
+      "kirikLinkler": [],
       "kirikOzet": {
         "ic": 0,
-        "dis": 1,
-        "dogrulanmamis": 49
+        "dis": 0,
+        "dogrulanmamis": 0
       },
       "eksikMeta": {
         "title": 0,
@@ -1989,7 +1250,7 @@
         "sorunluSayfa": 0
       },
       "icerik": {
-        "ortKelime": 833,
+        "ortKelime": 835,
         "inceSayfa": 2,
         "esik": 200,
         "ornekler": [
@@ -2009,7 +1270,7 @@
       "sitemap": {
         "varMi": true,
         "urlSayisi": 116,
-        "erisilemez": 1,
+        "erisilemez": 0,
         "dosyalar": [
           "https://magusapsikoloji.com/sitemap.xml"
         ]
@@ -2186,21 +1447,13 @@
       },
       "sayfaDurum": {
         "toplam": 116,
-        "saglam": 113,
+        "saglam": 114,
         "sorunlu": 2,
-        "kirik": 1,
+        "kirik": 0,
         "yonlendirme": 0,
         "engelli": 0
       },
-      "kirikSayfalar": [
-        {
-          "yol": "/blog",
-          "kod": 523,
-          "durum": "kirik",
-          "hata": null,
-          "sinif": "sunucu-hatasi"
-        }
-      ],
+      "kirikSayfalar": [],
       "yonlendirmeler": [],
       "engelliSayfalar": [],
       "sorunluSayfalar": [
@@ -2237,14 +1490,14 @@
         "keywordYogunluk": "olculmedi"
       },
       "iclink": {
-        "ortLink": 27.6,
+        "ortLink": 27.8,
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 95,
-        "masaustuPuan": 82,
+        "mobilPuan": 98,
+        "masaustuPuan": 100,
         "lcp": 1.4,
-        "inp": 228,
+        "inp": 149,
         "cls": 0,
         "erisilebilirlik": 96,
         "enIyiUygulama": 100,
@@ -2252,16 +1505,16 @@
         "kaynak": "alan (CrUX)"
       },
       "indeks": {
-        "indeksli": 104,
+        "indeksli": 105,
         "indekssiz": 11,
         "aksiyonGereken": 11,
-        "kontrolEdilen": 115,
-        "toplamSayfa": 115,
-        "dususVar": true,
+        "kontrolEdilen": 116,
+        "toplamSayfa": 116,
+        "dususVar": false,
         "nedenler": [
           {
             "neden": "Gönderildi ve indekslendi",
-            "adet": 104,
+            "adet": 105,
             "sorun": false,
             "cozum": "",
             "ornekler": [
@@ -2359,7 +1612,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-11-17T11:42:05.235Z"
+        "tarih": "2026-11-18T11:30:02.362Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -2368,7 +1621,7 @@
           "kelime": "mağusa psikolog",
           "pozisyon": 2,
           "onceki": 3,
-          "gosterim": 51,
+          "gosterim": 50,
           "tik": 9
         },
         {
@@ -2387,22 +1640,22 @@
         },
         {
           "kelime": "panik atak belirtileri",
-          "pozisyon": 60,
+          "pozisyon": 59,
           "onceki": 65,
-          "gosterim": 30,
+          "gosterim": 28,
           "tik": 0
         },
         {
           "kelime": "childhood trauma treatment cyprus",
-          "pozisyon": 17,
-          "onceki": 20,
-          "gosterim": 24,
+          "pozisyon": 16,
+          "onceki": 21,
+          "gosterim": 23,
           "tik": 0
         },
         {
           "kelime": "developmental trauma treatment cyprus",
           "pozisyon": 12,
-          "onceki": 15,
+          "onceki": 14,
           "gosterim": 23,
           "tik": 0
         },
@@ -2410,56 +1663,56 @@
           "kelime": "mental health treatment cyprus",
           "pozisyon": 9,
           "onceki": 9,
-          "gosterim": 18,
+          "gosterim": 19,
+          "tik": 0
+        },
+        {
+          "kelime": "online ψυχοθεραπεία κύπρος",
+          "pozisyon": 41,
+          "onceki": 41,
+          "gosterim": 15,
           "tik": 0
         },
         {
           "kelime": "depresyon nedir",
           "pozisyon": 80,
-          "onceki": 82,
+          "onceki": 83,
           "gosterim": 14,
-          "tik": 0
-        },
-        {
-          "kelime": "kaygı bozukluğu nedir",
-          "pozisyon": 70,
-          "onceki": 66,
-          "gosterim": 14,
-          "tik": 0
-        },
-        {
-          "kelime": "online ψυχοθεραπεία κύπρος",
-          "pozisyon": 39,
-          "onceki": 39,
-          "gosterim": 14,
-          "tik": 0
-        },
-        {
-          "kelime": "complex ptsd treatment cyprus",
-          "pozisyon": 50,
-          "onceki": 50,
-          "gosterim": 12,
-          "tik": 0
-        },
-        {
-          "kelime": "emotional behavior disorder treatment cyprus",
-          "pozisyon": 24,
-          "onceki": 26,
-          "gosterim": 12,
-          "tik": 0
-        },
-        {
-          "kelime": "anksiyete nedir belirtileri",
-          "pozisyon": 60,
-          "onceki": 60,
-          "gosterim": 11,
           "tik": 0
         },
         {
           "kelime": "gazimağusa psikolog",
           "pozisyon": 2,
           "onceki": 2,
+          "gosterim": 14,
+          "tik": 0
+        },
+        {
+          "kelime": "kaygı bozukluğu nedir",
+          "pozisyon": 68,
+          "onceki": 73,
+          "gosterim": 13,
+          "tik": 0
+        },
+        {
+          "kelime": "complex ptsd treatment cyprus",
+          "pozisyon": 50,
+          "onceki": 51,
           "gosterim": 11,
+          "tik": 0
+        },
+        {
+          "kelime": "emotional behavior disorder treatment cyprus",
+          "pozisyon": 24,
+          "onceki": 26,
+          "gosterim": 11,
+          "tik": 0
+        },
+        {
+          "kelime": "anksiyete nedir belirtileri",
+          "pozisyon": 61,
+          "onceki": 48,
+          "gosterim": 10,
           "tik": 0
         },
         {
@@ -2475,8 +1728,8 @@
       "icerikBoslugu": [
         {
           "kelime": "childhood trauma treatment cyprus",
-          "hacim": 24,
-          "rakipPoz": 17,
+          "hacim": 23,
+          "rakipPoz": 16,
           "tip": "firsat"
         },
         {
@@ -2487,25 +1740,31 @@
         },
         {
           "kelime": "mental health treatment cyprus",
-          "hacim": 18,
+          "hacim": 19,
           "rakipPoz": 9,
           "tip": "firsat"
         },
         {
           "kelime": "online ψυχοθεραπεία κύπρος",
-          "hacim": 14,
-          "rakipPoz": 39,
+          "hacim": 15,
+          "rakipPoz": 41,
+          "tip": "firsat"
+        },
+        {
+          "kelime": "complex ptsd treatment cyprus",
+          "hacim": 11,
+          "rakipPoz": 50,
           "tip": "firsat"
         },
         {
           "kelime": "emotional behavior disorder treatment cyprus",
-          "hacim": 12,
+          "hacim": 11,
           "rakipPoz": 24,
           "tip": "firsat"
         },
         {
           "kelime": "emotional trauma treatment cyprus",
-          "hacim": 9,
+          "hacim": 10,
           "rakipPoz": 44,
           "tip": "firsat"
         },
@@ -2516,44 +1775,16 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-11-17",
+      "siralamaTarih": "2026-11-18",
       "siralamaPencere": {
-        "baslangic": "2026-10-18",
-        "bitis": "2026-11-14"
+        "baslangic": "2026-10-19",
+        "bitis": "2026-11-15"
       },
-      "hizTarih": "2026-11-17",
+      "hizTarih": "2026-11-18",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
-      "_indeksGercek": true,
-      "taramaHatasi": {
-        "tarih": "2026-11-17T11:32:09.800Z",
-        "sayfa": 1,
-        "oncekiSayfa": 115,
-        "neden": [
-          {
-            "kod": "sayfa-cokusu",
-            "mesaj": "115 sayfadan 1 sayfaya dustu — kuyruk hic dolmamis"
-          },
-          {
-            "kod": "sitemap-bos",
-            "mesaj": "sitemap.xml 116 URL yerine 0 URL verdi — XML yerine HTML donmus olabilir"
-          },
-          {
-            "kod": "robots-kayboldu",
-            "mesaj": "robots.txt duz metin yerine HTML dondu — dosya \"yok\" sayildi"
-          },
-          {
-            "kod": "icerik-bos",
-            "mesaj": "ort. kelime 833 → 8 — govde bos geldi"
-          },
-          {
-            "kod": "link-kayboldu",
-            "mesaj": "ort. ic link 27.6 → 0 — sayfalarda hic <a> bulunamadi"
-          }
-        ],
-        "mesaj": "Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan."
-      }
+      "_indeksGercek": true
     },
     {
       "id": "taxsi",
@@ -2711,14 +1942,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 923,
-        "sonKontrol": "2026-11-16T10:46:40.748Z",
-        "medyanMs": 455
+        "yanitMs": 1483,
+        "sonKontrol": "2026-11-18T11:17:28.179Z",
+        "medyanMs": 461
       },
       "ssl": {
         "gecerli": true,
-        "bitis": "2026-12-17",
-        "kalanGun": 31
+        "bitis": "2027-02-14",
+        "kalanGun": 88
       },
       "sayfalar": {
         "taranan": 200,
@@ -3530,7 +2761,7 @@
       },
       "hiz": {
         "mobilPuan": 84,
-        "masaustuPuan": 98,
+        "masaustuPuan": 99,
         "lcp": 4.4,
         "inp": 0,
         "cls": 0,
@@ -3545,7 +2776,7 @@
         "aksiyonGereken": 100,
         "kontrolEdilen": 150,
         "toplamSayfa": 150,
-        "dususVar": true,
+        "dususVar": false,
         "nedenler": [
           {
             "neden": "Google bu URL'i bilmiyor",
@@ -3822,7 +3053,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-11-17T11:46:02.704Z"
+        "tarih": "2026-11-18T11:32:09.456Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -3831,7 +3062,7 @@
           "kelime": "lefke taksi",
           "pozisyon": 3,
           "onceki": 2,
-          "gosterim": 72,
+          "gosterim": 70,
           "tik": 7
         },
         {
@@ -3843,7 +3074,7 @@
         },
         {
           "kelime": "altınkum plajı kktc",
-          "pozisyon": 27,
+          "pozisyon": 30,
           "onceki": 25,
           "gosterim": 56,
           "tik": 0
@@ -3852,7 +3083,7 @@
           "kelime": "bostancı sınır kapısı",
           "pozisyon": 7,
           "onceki": 5,
-          "gosterim": 44,
+          "gosterim": 46,
           "tik": 0
         },
         {
@@ -3866,7 +3097,7 @@
           "kelime": "ercan airport",
           "pozisyon": 14,
           "onceki": 8,
-          "gosterim": 21,
+          "gosterim": 23,
           "tik": 0
         },
         {
@@ -3891,17 +3122,17 @@
           "tik": 0
         },
         {
-          "kelime": "famagouste au départ de larnaca",
-          "pozisyon": 17,
-          "onceki": 17,
-          "gosterim": 17,
-          "tik": 0
-        },
-        {
           "kelime": "gemikonağı taksi",
           "pozisyon": 3,
           "onceki": 3,
           "gosterim": 17,
+          "tik": 0
+        },
+        {
+          "kelime": "famagouste au départ de larnaca",
+          "pozisyon": 17,
+          "onceki": 18,
+          "gosterim": 16,
           "tik": 0
         },
         {
@@ -3926,9 +3157,9 @@
           "tik": 0
         },
         {
-          "kelime": "da larnaca a famagosta",
-          "pozisyon": 29,
-          "onceki": 29,
+          "kelime": "deryneia border crossing",
+          "pozisyon": 76,
+          "onceki": 78,
           "gosterim": 7,
           "tik": 0
         }
@@ -3939,12 +3170,12 @@
         {
           "kelime": "altınkum plajı kktc",
           "hacim": 56,
-          "rakipPoz": 27,
+          "rakipPoz": 30,
           "tip": "firsat"
         },
         {
           "kelime": "ercan airport",
-          "hacim": 21,
+          "hacim": 23,
           "rakipPoz": 14,
           "tip": "firsat"
         },
@@ -3962,7 +3193,7 @@
         },
         {
           "kelime": "famagouste au départ de larnaca",
-          "hacim": 17,
+          "hacim": 16,
           "rakipPoz": 17,
           "tip": "firsat"
         },
@@ -3979,44 +3210,16 @@
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-11-17",
+      "siralamaTarih": "2026-11-18",
       "siralamaPencere": {
-        "baslangic": "2026-10-18",
-        "bitis": "2026-11-14"
+        "baslangic": "2026-10-19",
+        "bitis": "2026-11-15"
       },
-      "hizTarih": "2026-11-17",
+      "hizTarih": "2026-11-18",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
-      "_indeksGercek": true,
-      "taramaHatasi": {
-        "tarih": "2026-11-17T11:32:11.749Z",
-        "sayfa": 1,
-        "oncekiSayfa": 200,
-        "neden": [
-          {
-            "kod": "sayfa-cokusu",
-            "mesaj": "200 sayfadan 1 sayfaya dustu — kuyruk hic dolmamis"
-          },
-          {
-            "kod": "sitemap-bos",
-            "mesaj": "sitemap.xml 435 URL yerine 0 URL verdi — XML yerine HTML donmus olabilir"
-          },
-          {
-            "kod": "robots-kayboldu",
-            "mesaj": "robots.txt duz metin yerine HTML dondu — dosya \"yok\" sayildi"
-          },
-          {
-            "kod": "icerik-bos",
-            "mesaj": "ort. kelime 545 → 8 — govde bos geldi"
-          },
-          {
-            "kod": "link-kayboldu",
-            "mesaj": "ort. ic link 28.4 → 0 — sayfalarda hic <a> bulunamadi"
-          }
-        ],
-        "mesaj": "Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan."
-      }
+      "_indeksGercek": true
     },
     {
       "id": "luxeva",
@@ -4024,60 +3227,52 @@
       "url": "https://luxeva-cyprus.com",
       "aktif": true,
       "seo": {
-        "puan": 89,
+        "puan": 86,
         "onceki": 89,
-        "trend": "+0"
+        "trend": "-3"
       },
       "sorunlar": [
         {
           "tip": "derin-sayfa",
-          "adet": 10,
+          "adet": 8,
           "ornekler": [
             {
-              "yol": "/en/product/coach-tabby-chain",
+              "yol": "/en/product/guess-suet-omuz",
               "deger": "4 tiklama"
             },
             {
-              "yol": "/en/product/jwpei-noor-kahve",
+              "yol": "/en/product/mk-monogram-omuz",
               "deger": "4 tiklama"
             },
             {
-              "yol": "/en/product/tory-burch-fleming",
+              "yol": "/en/product/bordo-devekusu-canta",
               "deger": "4 tiklama"
             },
             {
-              "yol": "/en/product/guess-anitha-suet",
+              "yol": "/en/product/haki-deri-kutu-canta",
               "deger": "4 tiklama"
             },
             {
-              "yol": "/urun/siyah-tote-buyuk",
+              "yol": "/en/product/ugg-funkette",
               "deger": "4 tiklama"
-            },
-            {
-              "yol": "/en/product/siyah-tote-buyuk",
-              "deger": "5 tiklama"
             },
             {
               "yol": "/en/product/puma-speedcat-ballet",
               "deger": "4 tiklama"
             },
             {
-              "yol": "/en/product/guess-slingback",
-              "deger": "4 tiklama"
-            },
-            {
-              "yol": "/en/product/mk-milan-babet",
-              "deger": "4 tiklama"
-            },
-            {
               "yol": "/en/product/steve-madden-asiel",
+              "deger": "4 tiklama"
+            },
+            {
+              "yol": "/en/product/vizon-suet-makosen",
               "deger": "4 tiklama"
             }
           ]
         },
         {
           "tip": "title-uzun",
-          "adet": 5,
+          "adet": 6,
           "ornekler": [
             {
               "yol": "/en/blog/where-to-buy-designer-bags-in-cyprus.html",
@@ -4098,6 +3293,24 @@
             {
               "yol": "/blog/kibrista-davet-ayakkabisi-nereden-alinir.html",
               "deger": "61 karakter"
+            },
+            {
+              "yol": "/urun/mk-monogram-haki-mini",
+              "deger": "61 karakter"
+            }
+          ]
+        },
+        {
+          "tip": "yinelenen-title",
+          "adet": 4,
+          "ornekler": [
+            {
+              "yol": "/urun/jwpei-kemerli-taba, /urun/jwpei-kemerli-gri",
+              "deger": "JW Pei — Kemerli Üstten Saplı Çanta | Luxeva Cyprus"
+            },
+            {
+              "yol": "/en/product/jwpei-kemerli-taba, /en/product/jwpei-kemerli-gri",
+              "deger": "JW Pei — Belted Top-Handle Bag | Luxeva Cyprus"
             }
           ]
         },
@@ -4117,7 +3330,7 @@
         },
         {
           "tip": "ince-icerik",
-          "adet": 68,
+          "adet": 142,
           "ornekler": [
             {
               "yol": "/yorumlar.html",
@@ -4129,44 +3342,44 @@
             },
             {
               "yol": "/urun/swarovski-kolye",
-              "deger": "157 kelime"
+              "deger": "158 kelime"
             },
             {
               "yol": "/urun/coach-kartlik",
-              "deger": "157 kelime"
+              "deger": "158 kelime"
             },
             {
               "yol": "/urun/swarovski-saat",
-              "deger": "158 kelime"
+              "deger": "159 kelime"
             },
             {
               "yol": "/urun/coach-bileklik",
-              "deger": "158 kelime"
-            },
-            {
-              "yol": "/urun/cizgili-blazer-elbise",
               "deger": "159 kelime"
             },
             {
-              "yol": "/urun/siyah-korseli-mini",
-              "deger": "159 kelime"
+              "yol": "/urun/saint-laurent-oval-gozluk",
+              "deger": "160 kelime"
+            },
+            {
+              "yol": "/urun/siyah-fiyonklu-babet",
+              "deger": "160 kelime"
             },
             {
               "yol": "/urun/gucci-gunes-gozlugu",
-              "deger": "159 kelime"
+              "deger": "160 kelime"
             },
             {
               "yol": "/urun/dkny-tasli-bileklik",
-              "deger": "159 kelime"
+              "deger": "160 kelime"
             }
           ]
         },
         {
           "tip": "schema-alan-eksik",
-          "adet": 66,
+          "adet": 144,
           "ornekler": [
             {
-              "yol": "66 sayfa",
+              "yol": "144 sayfa",
               "deger": "Product.offers"
             }
           ]
@@ -4174,18 +3387,18 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 799,
-        "sonKontrol": "2026-11-16T10:50:23.973Z",
-        "medyanMs": 254
+        "yanitMs": 800,
+        "sonKontrol": "2026-11-18T11:21:14.614Z",
+        "medyanMs": 245
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-12-29",
-        "kalanGun": 43
+        "kalanGun": 41
       },
       "sayfalar": {
-        "taranan": 108,
-        "indekslenebilir": 108,
+        "taranan": 186,
+        "indekslenebilir": 186,
         "noindex": 0
       },
       "sayfaYollari": [
@@ -4231,72 +3444,114 @@
         "/blog/kibrista-tory-burch-canta-nereden-bulunur.html",
         "/blog/kibrista-michael-kors-canta-nereden-bulunur.html",
         "/blog/kibrista-davet-ayakkabisi-nereden-alinir.html",
-        "/urun/coach-tabby-chain",
-        "/en/product/coach-tabby-chain",
-        "/urun/jwpei-noor-kahve",
-        "/en/product/jwpei-noor-kahve",
-        "/urun/tory-burch-fleming",
-        "/en/product/tory-burch-fleming",
-        "/urun/guess-anitha-suet",
-        "/en/product/guess-anitha-suet",
-        "/urun/siyah-tote-buyuk",
-        "/en/product/siyah-tote-buyuk",
-        "/urun/mavi-denim-mini",
-        "/en/product/mavi-denim-mini",
-        "/urun/patchwork-halka",
-        "/en/product/patchwork-halka",
-        "/urun/siyah-clutch",
-        "/en/product/siyah-clutch",
-        "/urun/guess-suet-sandalet",
-        "/en/product/guess-suet-sandalet",
+        "/urun/guess-suet-omuz",
+        "/en/product/guess-suet-omuz",
+        "/urun/mk-monogram-omuz",
+        "/en/product/mk-monogram-omuz",
+        "/urun/jwpei-kemerli-taba",
+        "/en/product/jwpei-kemerli-taba",
+        "/urun/saint-laurent-oval-gozluk",
+        "/en/product/saint-laurent-oval-gozluk",
+        "/urun/bordo-devekusu-canta",
+        "/en/product/bordo-devekusu-canta",
+        "/urun/haki-deri-kutu-canta",
+        "/en/product/haki-deri-kutu-canta",
+        "/urun/coach-tabby-signature-bordo",
+        "/en/product/coach-tabby-signature-bordo",
+        "/urun/mk-monogram-satchel",
+        "/en/product/mk-monogram-satchel",
+        "/urun/siyah-v-dikisli-canta",
+        "/en/product/siyah-v-dikisli-canta",
+        "/urun/guess-g-logo-tote",
+        "/en/product/guess-g-logo-tote",
+        "/urun/ck-bordo-monogram-tote",
+        "/en/product/ck-bordo-monogram-tote",
+        "/urun/ck-kahve-omuz",
+        "/en/product/ck-kahve-omuz",
+        "/urun/jwpei-siyah-kroko-kutu",
+        "/en/product/jwpei-siyah-kroko-kutu",
+        "/urun/siyah-suet-omuz",
+        "/en/product/siyah-suet-omuz",
+        "/urun/bordo-suet-mini-suslu",
+        "/en/product/bordo-suet-mini-suslu",
+        "/urun/mk-monogram-uzun-omuz",
+        "/en/product/mk-monogram-uzun-omuz",
+        "/urun/jwpei-kemerli-gri",
+        "/en/product/jwpei-kemerli-gri",
+        "/urun/mk-monogram-haki-mini",
+        "/en/product/mk-monogram-haki-mini",
+        "/urun/ck-rugan-tote",
+        "/en/product/ck-rugan-tote",
+        "/urun/ck-suet-baget-vizon",
+        "/en/product/ck-suet-baget-vizon",
+        "/urun/zadig-rock-grafiti",
+        "/en/product/zadig-rock-grafiti",
+        "/urun/ck-suet-haki-omuz",
+        "/en/product/ck-suet-haki-omuz",
+        "/urun/monogram-jakarli-sneaker",
+        "/en/product/monogram-jakarli-sneaker",
+        "/urun/ugg-funkette",
+        "/en/product/ugg-funkette",
         "/urun/puma-speedcat-ballet",
         "/en/product/puma-speedcat-ballet",
-        "/urun/guess-slingback",
-        "/en/product/guess-slingback",
-        "/urun/mk-milan-babet",
-        "/en/product/mk-milan-babet",
         "/urun/steve-madden-asiel",
         "/en/product/steve-madden-asiel",
-        "/urun/kahve-suet-loafer",
-        "/en/product/kahve-suet-loafer",
-        "/urun/mexx-kapitone-terlik",
-        "/en/product/mexx-kapitone-terlik",
-        "/urun/siyah-parmak-arasi-topuklu",
-        "/en/product/siyah-parmak-arasi-topuklu",
-        "/urun/bordo-dantel-maxi",
-        "/en/product/bordo-dantel-maxi",
+        "/urun/vizon-suet-makosen",
+        "/en/product/vizon-suet-makosen",
+        "/urun/siyah-fiyonklu-babet",
+        "/en/product/siyah-fiyonklu-babet",
+        "/urun/bej-suet-katlamali-cizme",
+        "/en/product/bej-suet-katlamali-cizme",
+        "/urun/steve-madden-leopar-babet",
+        "/en/product/steve-madden-leopar-babet",
+        "/urun/kahve-suet-kurk-bot",
+        "/en/product/kahve-suet-kurk-bot",
+        "/urun/kahve-suet-pelus-cizme",
+        "/en/product/kahve-suet-pelus-cizme",
+        "/urun/bej-suet-puskullu-loafer",
+        "/en/product/bej-suet-puskullu-loafer",
+        "/urun/steve-madden-slingback-nude",
+        "/en/product/steve-madden-slingback-nude",
+        "/urun/moon-boot-icon-siyah",
+        "/en/product/moon-boot-icon-siyah",
+        "/urun/zimbali-suet-babet",
+        "/en/product/zimbali-suet-babet",
+        "/urun/siyah-bilekten-bagli-babet",
+        "/en/product/siyah-bilekten-bagli-babet",
+        "/urun/tommy-hilfiger-chelsea-vizon",
+        "/en/product/tommy-hilfiger-chelsea-vizon",
+        "/urun/siyah-suet-loafer-terlik",
+        "/en/product/siyah-suet-loafer-terlik",
+        "/urun/siyah-diz-ustu-cizme",
+        "/en/product/siyah-diz-ustu-cizme",
+        "/urun/vizon-ceket-pantolon-takim",
+        "/en/product/vizon-ceket-pantolon-takim",
         "/urun/cizgili-blazer-elbise",
         "/en/product/cizgili-blazer-elbise",
-        "/urun/pullu-kahve-maxi",
-        "/en/product/pullu-kahve-maxi",
-        "/urun/sagaza-krem-mini",
-        "/en/product/sagaza-krem-mini",
-        "/urun/sagaza-puantiyeli-mini",
-        "/en/product/sagaza-puantiyeli-mini",
-        "/urun/siyah-dekolteli-maxi",
-        "/en/product/siyah-dekolteli-maxi",
-        "/urun/siyah-korseli-mini",
-        "/en/product/siyah-korseli-mini",
-        "/urun/swarovski-saat",
-        "/en/product/swarovski-saat",
-        "/urun/gucci-gunes-gozlugu",
-        "/en/product/gucci-gunes-gozlugu",
-        "/urun/swarovski-kolye",
-        "/en/product/swarovski-kolye",
-        "/urun/coach-bileklik",
-        "/en/product/coach-bileklik",
-        "/urun/coach-kartlik",
-        "/en/product/coach-kartlik",
-        "/urun/coach-kiraz-suslu",
-        "/en/product/coach-kiraz-suslu",
-        "/urun/dkny-tasli-bileklik",
-        "/en/product/dkny-tasli-bileklik",
-        "/urun/dkny-pave-bileklik",
-        "/en/product/dkny-pave-bileklik",
-        "/urun/guess-krem-kemer",
-        "/en/product/guess-krem-kemer",
-        "/urun/karl-lagerfeld-sapka",
-        "/en/product/karl-lagerfeld-sapka"
+        "/urun/lacivert-denim-takim",
+        "/en/product/lacivert-denim-takim",
+        "/urun/siyah-pencere-yaka-mini",
+        "/en/product/siyah-pencere-yaka-mini",
+        "/urun/kahve-kurk-ceket",
+        "/en/product/kahve-kurk-ceket",
+        "/urun/bordo-rugan-ceket",
+        "/en/product/bordo-rugan-ceket",
+        "/urun/sari-kroko-deri-takim",
+        "/en/product/sari-kroko-deri-takim",
+        "/urun/bordo-tasli-blazer-elbise",
+        "/en/product/bordo-tasli-blazer-elbise",
+        "/urun/pembe-dugum-dugmeli-ceket",
+        "/en/product/pembe-dugum-dugmeli-ceket",
+        "/urun/kirmizi-tasli-drapeli-mini",
+        "/en/product/kirmizi-tasli-drapeli-mini",
+        "/urun/desenli-zimbali-takim",
+        "/en/product/desenli-zimbali-takim",
+        "/urun/siyah-kare-yaka-ceket",
+        "/en/product/siyah-kare-yaka-ceket",
+        "/urun/kakao-suet-kemerli-ceket",
+        "/en/product/kakao-suet-kemerli-ceket",
+        "/urun/krem-sal-yaka-blazer-elbise",
+        "/en/product/krem-sal-yaka-blazer-elbise"
       ],
       "sayfaTarih": {
         "/blog/kibrista-taki-secimi-ve-bakimi.html": "2026-08-08",
@@ -4352,14 +3607,14 @@
         "eksikAlan": [
           {
             "alan": "Product.offers",
-            "adet": 66
+            "adet": 144
           }
         ],
-        "sorunluSayfa": 66
+        "sorunluSayfa": 144
       },
       "icerik": {
-        "ortKelime": 408,
-        "inceSayfa": 68,
+        "ortKelime": 317,
+        "inceSayfa": 142,
         "esik": 200,
         "ornekler": [
           {
@@ -4372,35 +3627,35 @@
           },
           {
             "yol": "/urun/swarovski-kolye",
-            "kelime": 157
+            "kelime": 158
           },
           {
             "yol": "/urun/coach-kartlik",
-            "kelime": 157
+            "kelime": 158
           },
           {
             "yol": "/urun/swarovski-saat",
-            "kelime": 158
+            "kelime": 159
           },
           {
             "yol": "/urun/coach-bileklik",
-            "kelime": 158
-          },
-          {
-            "yol": "/urun/cizgili-blazer-elbise",
             "kelime": 159
           },
           {
-            "yol": "/urun/siyah-korseli-mini",
-            "kelime": 159
+            "yol": "/urun/saint-laurent-oval-gozluk",
+            "kelime": 160
+          },
+          {
+            "yol": "/urun/siyah-fiyonklu-babet",
+            "kelime": 160
           },
           {
             "yol": "/urun/gucci-gunes-gozlugu",
-            "kelime": 159
+            "kelime": 160
           },
           {
             "yol": "/urun/dkny-tasli-bileklik",
-            "kelime": 159
+            "kelime": 160
           }
         ]
       },
@@ -4409,7 +3664,7 @@
       },
       "sitemap": {
         "varMi": true,
-        "urlSayisi": 108,
+        "urlSayisi": 186,
         "erisilemez": 0,
         "dosyalar": [
           "https://www.luxeva-cyprus.com/sitemap.xml",
@@ -4435,7 +3690,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4447,7 +3702,7 @@
             "not": "ChatGPT arama indeksi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4459,7 +3714,7 @@
             "not": "soru aninda ziyaret",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4471,7 +3726,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4483,7 +3738,7 @@
             "not": "soru aninda ziyaret",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4495,7 +3750,7 @@
             "not": "arama indeksi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4507,7 +3762,7 @@
             "not": "Gemini / AI Overviews",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4519,7 +3774,7 @@
             "not": "Apple Intelligence",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4531,7 +3786,7 @@
             "not": "acik veri seti",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4543,7 +3798,7 @@
             "not": "model egitimi",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4555,7 +3810,7 @@
             "not": "Llama / Meta AI",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4567,7 +3822,7 @@
             "not": "klasik arama",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           },
@@ -4579,7 +3834,7 @@
             "not": "klasik arama + Copilot",
             "izin": true,
             "engelliSayfa": 0,
-            "toplamSayfa": 108,
+            "toplamSayfa": 186,
             "tamKapali": false,
             "kural": null
           }
@@ -4588,9 +3843,9 @@
         "toplamAi": 11
       },
       "sayfaDurum": {
-        "toplam": 108,
+        "toplam": 186,
         "saglam": 40,
-        "sorunlu": 68,
+        "sorunlu": 146,
         "kirik": 0,
         "yonlendirme": 0,
         "engelli": 0
@@ -4616,196 +3871,70 @@
           ]
         },
         {
-          "yol": "/urun/coach-tabby-chain",
+          "yol": "/urun/guess-suet-omuz",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (169 kelime)",
+            "ince icerik (175 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/coach-tabby-chain",
+          "yol": "/en/product/guess-suet-omuz",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (192 kelime)",
+            "ince icerik (195 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/jwpei-noor-kahve",
+          "yol": "/urun/mk-monogram-omuz",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (170 kelime)",
+            "ince icerik (177 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/jwpei-noor-kahve",
+          "yol": "/en/product/mk-monogram-omuz",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (192 kelime)",
+            "ince icerik (196 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/tory-burch-fleming",
+          "yol": "/urun/jwpei-kemerli-taba",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (170 kelime)",
+            "ince icerik (177 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/tory-burch-fleming",
+          "yol": "/en/product/jwpei-kemerli-taba",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (192 kelime)",
+            "ince icerik (196 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/guess-anitha-suet",
+          "yol": "/urun/saint-laurent-oval-gozluk",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (168 kelime)",
+            "ince icerik (160 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/guess-anitha-suet",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (191 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/siyah-tote-buyuk",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (169 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/siyah-tote-buyuk",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (191 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/mavi-denim-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (168 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/mavi-denim-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (191 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/patchwork-halka",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (169 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/patchwork-halka",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (191 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/siyah-clutch",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (167 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/siyah-clutch",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (190 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/guess-suet-sandalet",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (162 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/guess-suet-sandalet",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (185 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/puma-speedcat-ballet",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (162 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/puma-speedcat-ballet",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (185 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/guess-slingback",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (162 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/guess-slingback",
+          "yol": "/en/product/saint-laurent-oval-gozluk",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
@@ -4814,106 +3943,124 @@
           ]
         },
         {
-          "yol": "/urun/mk-milan-babet",
+          "yol": "/urun/bordo-devekusu-canta",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (162 kelime)",
+            "ince icerik (175 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/mk-milan-babet",
+          "yol": "/en/product/bordo-devekusu-canta",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (186 kelime)",
+            "ince icerik (194 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/steve-madden-asiel",
+          "yol": "/urun/haki-deri-kutu-canta",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (163 kelime)",
+            "ince icerik (175 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/steve-madden-asiel",
+          "yol": "/en/product/haki-deri-kutu-canta",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (186 kelime)",
+            "ince icerik (195 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/kahve-suet-loafer",
+          "yol": "/urun/coach-tabby-signature-bordo",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (160 kelime)",
+            "ince icerik (175 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/kahve-suet-loafer",
+          "yol": "/en/product/coach-tabby-signature-bordo",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (185 kelime)",
+            "ince icerik (195 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/mexx-kapitone-terlik",
+          "yol": "/urun/mk-monogram-satchel",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (162 kelime)",
+            "ince icerik (175 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/mexx-kapitone-terlik",
+          "yol": "/en/product/mk-monogram-satchel",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (186 kelime)",
+            "ince icerik (194 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/siyah-parmak-arasi-topuklu",
+          "yol": "/urun/siyah-v-dikisli-canta",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (163 kelime)",
+            "ince icerik (173 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/siyah-parmak-arasi-topuklu",
+          "yol": "/en/product/siyah-v-dikisli-canta",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (186 kelime)",
+            "ince icerik (192 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/urun/bordo-dantel-maxi",
+          "yol": "/urun/guess-g-logo-tote",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (160 kelime)",
+            "ince icerik (174 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/bordo-dantel-maxi",
+          "yol": "/en/product/guess-g-logo-tote",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (193 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/ck-bordo-monogram-tote",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (172 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/ck-bordo-monogram-tote",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
@@ -4922,16 +4069,214 @@
           ]
         },
         {
-          "yol": "/urun/cizgili-blazer-elbise",
+          "yol": "/urun/ck-kahve-omuz",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (159 kelime)",
+            "ince icerik (175 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/cizgili-blazer-elbise",
+          "yol": "/en/product/ck-kahve-omuz",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (196 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/jwpei-siyah-kroko-kutu",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (176 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/jwpei-siyah-kroko-kutu",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (194 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/siyah-suet-omuz",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (170 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/siyah-suet-omuz",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (191 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/bordo-suet-mini-suslu",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (171 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/bordo-suet-mini-suslu",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (192 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/mk-monogram-uzun-omuz",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (175 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/mk-monogram-uzun-omuz",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (196 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/jwpei-kemerli-gri",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (175 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/jwpei-kemerli-gri",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (193 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/mk-monogram-haki-mini",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (178 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/mk-monogram-haki-mini",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (196 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/ck-rugan-tote",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (173 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/ck-rugan-tote",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (193 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/ck-suet-baget-vizon",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (173 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/ck-suet-baget-vizon",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (193 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/zadig-rock-grafiti",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (178 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/zadig-rock-grafiti",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (198 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/ck-suet-haki-omuz",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (173 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/ck-suet-haki-omuz",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (194 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/urun/monogram-jakarli-sneaker",
+          "kod": 200,
+          "durum": "sorunlu",
+          "sorunlar": [
+            "ince icerik (163 kelime)",
+            "schema alani eksik (Product.offers)"
+          ]
+        },
+        {
+          "yol": "/en/product/monogram-jakarli-sneaker",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
@@ -4940,110 +4285,20 @@
           ]
         },
         {
-          "yol": "/urun/pullu-kahve-maxi",
+          "yol": "/urun/ugg-funkette",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
-            "ince icerik (160 kelime)",
+            "ince icerik (164 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         },
         {
-          "yol": "/en/product/pullu-kahve-maxi",
+          "yol": "/en/product/ugg-funkette",
           "kod": 200,
           "durum": "sorunlu",
           "sorunlar": [
             "ince icerik (190 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/sagaza-krem-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (161 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/sagaza-krem-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (191 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/sagaza-puantiyeli-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (161 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/sagaza-puantiyeli-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (191 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/siyah-dekolteli-maxi",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (160 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/siyah-dekolteli-maxi",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (188 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/siyah-korseli-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (159 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/siyah-korseli-mini",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (189 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/urun/swarovski-saat",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (158 kelime)",
-            "schema alani eksik (Product.offers)"
-          ]
-        },
-        {
-          "yol": "/en/product/swarovski-saat",
-          "kod": 200,
-          "durum": "sorunlu",
-          "sorunlar": [
-            "ince icerik (181 kelime)",
             "schema alani eksik (Product.offers)"
           ]
         }
@@ -5064,14 +4319,14 @@
         "keywordYogunluk": "olculmedi"
       },
       "iclink": {
-        "ortLink": 18.2,
+        "ortLink": 18.6,
         "orphan": []
       },
       "hiz": {
-        "mobilPuan": 81,
-        "masaustuPuan": 96,
-        "lcp": 4.3,
-        "inp": 199,
+        "mobilPuan": 93,
+        "masaustuPuan": 94,
+        "lcp": 3,
+        "inp": 43,
         "cls": 0,
         "erisilebilirlik": 100,
         "enIyiUygulama": 100,
@@ -5079,31 +4334,33 @@
         "kaynak": "lab"
       },
       "indeks": {
-        "indeksli": 107,
-        "indekssiz": 1,
-        "aksiyonGereken": 1,
-        "kontrolEdilen": 108,
-        "toplamSayfa": 108,
+        "indeksli": 47,
+        "indekssiz": 101,
+        "aksiyonGereken": 101,
+        "kontrolEdilen": 148,
+        "toplamSayfa": 150,
         "dususVar": true,
         "nedenler": [
           {
+            "neden": "Google bu URL'i bilmiyor",
+            "adet": 101,
+            "sorun": true,
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
+            "ornekler": [
+              "/en",
+              "/urun/guess-suet-omuz",
+              "/en/product/guess-suet-omuz"
+            ]
+          },
+          {
             "neden": "Gönderildi ve indekslendi",
-            "adet": 107,
+            "adet": 47,
             "sorun": false,
             "cozum": "",
             "ornekler": [
               "/",
               "/koleksiyon.html",
               "/canli-cekim.html"
-            ]
-          },
-          {
-            "neden": "Google bu URL'i bilmiyor",
-            "adet": 1,
-            "sorun": true,
-            "cozum": "Sitemap'e ekle ve bir yerden iç link ver.",
-            "ornekler": [
-              "/en"
             ]
           }
         ],
@@ -5112,9 +4369,254 @@
             "yol": "/en",
             "neden": "Google bu URL'i bilmiyor",
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/guess-suet-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/guess-suet-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/mk-monogram-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/mk-monogram-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/jwpei-kemerli-taba",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/jwpei-kemerli-taba",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/saint-laurent-oval-gozluk",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/saint-laurent-oval-gozluk",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/bordo-devekusu-canta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/bordo-devekusu-canta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/haki-deri-kutu-canta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/haki-deri-kutu-canta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/coach-tabby-signature-bordo",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/coach-tabby-signature-bordo",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/mk-monogram-satchel",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/mk-monogram-satchel",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/siyah-v-dikisli-canta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/siyah-v-dikisli-canta",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/guess-g-logo-tote",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/guess-g-logo-tote",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/ck-bordo-monogram-tote",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/ck-bordo-monogram-tote",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/ck-kahve-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/ck-kahve-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/jwpei-siyah-kroko-kutu",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/jwpei-siyah-kroko-kutu",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/siyah-suet-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/siyah-suet-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/bordo-suet-mini-suslu",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/bordo-suet-mini-suslu",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/mk-monogram-uzun-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/mk-monogram-uzun-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/jwpei-kemerli-gri",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/jwpei-kemerli-gri",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/mk-monogram-haki-mini",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/mk-monogram-haki-mini",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/ck-rugan-tote",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/ck-rugan-tote",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/ck-suet-baget-vizon",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/ck-suet-baget-vizon",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/zadig-rock-grafiti",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/zadig-rock-grafiti",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/ck-suet-haki-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/ck-suet-haki-omuz",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/monogram-jakarli-sneaker",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/monogram-jakarli-sneaker",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/ugg-funkette",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/en/product/ugg-funkette",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
+          },
+          {
+            "yol": "/urun/vizon-suet-makosen",
+            "neden": "Google bu URL'i bilmiyor",
+            "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-11-17T11:49:54.873Z"
+        "tarih": "2026-11-18T11:36:03.034Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -5142,37 +4644,37 @@
         },
         {
           "kelime": "coach bags cyprus",
-          "pozisyon": 9,
+          "pozisyon": 10,
           "onceki": 10,
-          "gosterim": 129,
+          "gosterim": 122,
           "tik": 0
         },
         {
           "kelime": "tory burch cyprus",
           "pozisyon": 8,
           "onceki": 9,
-          "gosterim": 37,
+          "gosterim": 36,
           "tik": 0
         },
         {
           "kelime": "jw pei cyprus",
           "pozisyon": 10,
           "onceki": 9,
-          "gosterim": 34,
+          "gosterim": 35,
           "tik": 0
         },
         {
           "kelime": "coach bag cyprus",
           "pozisyon": 9,
           "onceki": 9,
-          "gosterim": 23,
+          "gosterim": 22,
           "tik": 0
         },
         {
           "kelime": "coach outlet cyprus",
           "pozisyon": 8,
           "onceki": 9,
-          "gosterim": 21,
+          "gosterim": 20,
           "tik": 0
         },
         {
@@ -5186,35 +4688,35 @@
           "kelime": "coach bileklik",
           "pozisyon": 4,
           "onceki": 4,
-          "gosterim": 13,
+          "gosterim": 15,
           "tik": 0
         },
         {
           "kelime": "girne çanta mağazaları",
           "pozisyon": 8,
           "onceki": 11,
-          "gosterim": 13,
+          "gosterim": 14,
           "tik": 0
         },
         {
           "kelime": "how do i protect a designer bag from salt air at the beach?",
           "pozisyon": 4,
           "onceki": 1,
-          "gosterim": 12,
+          "gosterim": 13,
           "tik": 0
         },
         {
           "kelime": "michael kors cyprus",
           "pozisyon": 14,
           "onceki": 11,
-          "gosterim": 12,
+          "gosterim": 11,
           "tik": 0
         },
         {
           "kelime": "michael kors bags cyprus",
           "pozisyon": 8,
           "onceki": 10,
-          "gosterim": 6,
+          "gosterim": 7,
           "tik": 0
         },
         {
@@ -5230,32 +4732,26 @@
       "icerikBoslugu": [
         {
           "kelime": "coach bags cyprus",
-          "hacim": 129,
-          "rakipPoz": 9,
+          "hacim": 122,
+          "rakipPoz": 10,
           "tip": "firsat"
         },
         {
           "kelime": "tory burch cyprus",
-          "hacim": 37,
+          "hacim": 36,
           "rakipPoz": 8,
           "tip": "firsat"
         },
         {
           "kelime": "jw pei cyprus",
-          "hacim": 34,
+          "hacim": 35,
           "rakipPoz": 10,
           "tip": "firsat"
         },
         {
           "kelime": "coach bag cyprus",
-          "hacim": 23,
+          "hacim": 22,
           "rakipPoz": 9,
-          "tip": "firsat"
-        },
-        {
-          "kelime": "coach outlet cyprus",
-          "hacim": 21,
-          "rakipPoz": 8,
           "tip": "firsat"
         },
         {
@@ -5265,56 +4761,22 @@
           "tip": "firsat"
         },
         {
-          "kelime": "girne çanta mağazaları",
-          "hacim": 13,
-          "rakipPoz": 8,
-          "tip": "firsat"
-        },
-        {
           "kelime": "michael kors cyprus",
-          "hacim": 12,
+          "hacim": 11,
           "rakipPoz": 14,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-11-17",
+      "siralamaTarih": "2026-11-18",
       "siralamaPencere": {
-        "baslangic": "2026-10-18",
-        "bitis": "2026-11-14"
+        "baslangic": "2026-10-19",
+        "bitis": "2026-11-15"
       },
-      "hizTarih": "2026-11-17",
+      "hizTarih": "2026-11-18",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
-      "_indeksGercek": true,
-      "taramaHatasi": {
-        "tarih": "2026-11-17T11:32:14.239Z",
-        "sayfa": 1,
-        "oncekiSayfa": 108,
-        "neden": [
-          {
-            "kod": "sayfa-cokusu",
-            "mesaj": "108 sayfadan 1 sayfaya dustu — kuyruk hic dolmamis"
-          },
-          {
-            "kod": "sitemap-bos",
-            "mesaj": "sitemap.xml 108 URL yerine 0 URL verdi — XML yerine HTML donmus olabilir"
-          },
-          {
-            "kod": "robots-kayboldu",
-            "mesaj": "robots.txt duz metin yerine HTML dondu — dosya \"yok\" sayildi"
-          },
-          {
-            "kod": "icerik-bos",
-            "mesaj": "ort. kelime 408 → 8 — govde bos geldi"
-          },
-          {
-            "kod": "link-kayboldu",
-            "mesaj": "ort. ic link 18.2 → 0 — sayfalarda hic <a> bulunamadi"
-          }
-        ],
-        "mesaj": "Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan."
-      }
+      "_indeksGercek": true
     },
     {
       "id": "kktcsigorta",
@@ -5555,14 +5017,14 @@
       ],
       "uptime": {
         "durum": "up",
-        "yanitMs": 494,
-        "sonKontrol": "2026-11-16T10:51:57.605Z",
-        "medyanMs": 445
+        "yanitMs": 514,
+        "sonKontrol": "2026-11-18T11:23:45.099Z",
+        "medyanMs": 460
       },
       "ssl": {
         "gecerli": true,
         "bitis": "2026-12-30",
-        "kalanGun": 44
+        "kalanGun": 42
       },
       "sayfalar": {
         "taranan": 200,
@@ -6241,7 +5703,7 @@
         ]
       },
       "hiz": {
-        "mobilPuan": 98,
+        "mobilPuan": 99,
         "masaustuPuan": 100,
         "lcp": 1.5,
         "inp": 0,
@@ -6257,7 +5719,7 @@
         "aksiyonGereken": 113,
         "kontrolEdilen": 150,
         "toplamSayfa": 150,
-        "dususVar": true,
+        "dususVar": false,
         "nedenler": [
           {
             "neden": "Google bu URL'i bilmiyor",
@@ -6554,7 +6016,7 @@
             "cozum": "Sitemap'e ekle ve bir yerden iç link ver."
           }
         ],
-        "tarih": "2026-11-17T11:53:46.071Z"
+        "tarih": "2026-11-18T11:36:03.035Z"
       },
       "aiBotlar": null,
       "geo": null,
@@ -6563,14 +6025,14 @@
           "kelime": "kktc sigorta bilgi merkezi",
           "pozisyon": 5,
           "onceki": 6,
-          "gosterim": 123,
+          "gosterim": 120,
           "tik": 2
         },
         {
           "kelime": "sigorta bilgi merkezi kktc",
           "pozisyon": 6,
           "onceki": 6,
-          "gosterim": 194,
+          "gosterim": 197,
           "tik": 1
         },
         {
@@ -6598,14 +6060,14 @@
           "kelime": "kksbm",
           "pozisyon": 6,
           "onceki": 5,
-          "gosterim": 529,
+          "gosterim": 517,
           "tik": 0
         },
         {
           "kelime": "kktcsigorta",
           "pozisyon": 7,
           "onceki": 6,
-          "gosterim": 107,
+          "gosterim": 102,
           "tik": 0
         },
         {
@@ -6616,17 +6078,24 @@
           "tik": 0
         },
         {
+          "kelime": "online commercial property insurance quote",
+          "pozisyon": 6,
+          "onceki": 6,
+          "gosterim": 36,
+          "tik": 0
+        },
+        {
           "kelime": "sigorta bilgi merkezi",
           "pozisyon": 7,
           "onceki": 9,
-          "gosterim": 37,
+          "gosterim": 35,
           "tik": 0
         },
         {
           "kelime": "ascan sigorta",
           "pozisyon": 8,
           "onceki": 8,
-          "gosterim": 30,
+          "gosterim": 31,
           "tik": 0
         },
         {
@@ -6640,21 +6109,14 @@
           "kelime": "limasol sigorta",
           "pozisyon": 11,
           "onceki": 8,
-          "gosterim": 25,
-          "tik": 0
-        },
-        {
-          "kelime": "online commercial property insurance quote",
-          "pozisyon": 6,
-          "onceki": 6,
-          "gosterim": 22,
+          "gosterim": 24,
           "tik": 0
         },
         {
           "kelime": "creditwest pert",
           "pozisyon": 9,
           "onceki": 10,
-          "gosterim": 16,
+          "gosterim": 14,
           "tik": 0
         },
         {
@@ -6682,13 +6144,13 @@
         },
         {
           "kelime": "limasol sigorta",
-          "hacim": 25,
+          "hacim": 24,
           "rakipPoz": 11,
           "tip": "firsat"
         },
         {
           "kelime": "creditwest pert",
-          "hacim": 16,
+          "hacim": 14,
           "rakipPoz": 9,
           "tip": "firsat"
         },
@@ -6712,52 +6174,55 @@
         },
         {
           "kelime": "kktc özel sağlık sigortası",
-          "hacim": 10,
-          "rakipPoz": 11,
+          "hacim": 9,
+          "rakipPoz": 10,
           "tip": "firsat"
         }
       ],
-      "siralamaTarih": "2026-11-17",
+      "siralamaTarih": "2026-11-18",
       "siralamaPencere": {
-        "baslangic": "2026-10-18",
-        "bitis": "2026-11-14"
+        "baslangic": "2026-10-19",
+        "bitis": "2026-11-15"
       },
-      "hizTarih": "2026-11-17",
+      "hizTarih": "2026-11-18",
       "_hizGercek": true,
       "_siralamaGercek": true,
       "_gapGercek": true,
-      "_indeksGercek": true,
-      "taramaHatasi": {
-        "tarih": "2026-11-17T11:32:15.732Z",
-        "sayfa": 1,
-        "oncekiSayfa": 200,
-        "neden": [
-          {
-            "kod": "sayfa-cokusu",
-            "mesaj": "200 sayfadan 1 sayfaya dustu — kuyruk hic dolmamis"
-          },
-          {
-            "kod": "sitemap-bos",
-            "mesaj": "sitemap.xml 247 URL yerine 0 URL verdi — XML yerine HTML donmus olabilir"
-          },
-          {
-            "kod": "robots-kayboldu",
-            "mesaj": "robots.txt duz metin yerine HTML dondu — dosya \"yok\" sayildi"
-          },
-          {
-            "kod": "icerik-bos",
-            "mesaj": "ort. kelime 613 → 8 — govde bos geldi"
-          },
-          {
-            "kod": "link-kayboldu",
-            "mesaj": "ort. ic link 23.9 → 0 — sayfalarda hic <a> bulunamadi"
-          }
-        ],
-        "mesaj": "Tarama engellendi (muhtemelen WAF/bot dogrulamasi) — veriler son basarili taramadan."
-      }
+      "_indeksGercek": true
     }
   ],
-  "degisiklikler": [],
+  "degisiklikler": [
+    {
+      "site": "animare",
+      "tip": "artis",
+      "mesaj": "SEO puani 80 → 100 (+20)",
+      "tarih": "2026-11-18"
+    },
+    {
+      "site": "magusapsikoloji",
+      "tip": "artis",
+      "mesaj": "SEO puani 99 → 100 (+1)",
+      "tarih": "2026-11-18"
+    },
+    {
+      "site": "magusapsikoloji",
+      "tip": "yeni-sayfa",
+      "mesaj": "1 sayfa eklendi",
+      "tarih": "2026-11-18"
+    },
+    {
+      "site": "luxeva",
+      "tip": "dusus",
+      "mesaj": "SEO puani 89 → 86 (-3)",
+      "tarih": "2026-11-18"
+    },
+    {
+      "site": "luxeva",
+      "tip": "yeni-sayfa",
+      "mesaj": "78 sayfa eklendi",
+      "tarih": "2026-11-18"
+    }
+  ],
   "raporlar": [
     {
       "ad": "Haftalık rapor — 16 Kasım 2026",
@@ -7124,11 +6589,6 @@
   ],
   "uyarilar": [
     {
-      "seviye": "kritik",
-      "site": "animare",
-      "mesaj": "Tarama basarisiz (2026-11-17): sayfa-cokusu, sitemap-bos, icerik-bos, link-kayboldu — veriler son basarili taramadan, puan guncellenmedi"
-    },
-    {
       "seviye": "uyari",
       "site": "animare",
       "mesaj": "7/11 AI botu robots.txt ile engelli (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended…) — AI cevaplarinda kaynak gosterilemezsin"
@@ -7136,27 +6596,7 @@
     {
       "seviye": "uyari",
       "site": "animare",
-      "mesaj": "42 kirik IC link — kendi sayfalarina 404 veriyor"
-    },
-    {
-      "seviye": "uyari",
-      "site": "animare",
       "mesaj": "3 sayfa 200 kelimenin altinda (ince icerik)"
-    },
-    {
-      "seviye": "kritik",
-      "site": "magusapsikoloji",
-      "mesaj": "Tarama basarisiz (2026-11-17): sayfa-cokusu, sitemap-bos, robots-kayboldu, icerik-bos, link-kayboldu — veriler son basarili taramadan, puan guncellenmedi"
-    },
-    {
-      "seviye": "uyari",
-      "site": "magusapsikoloji",
-      "mesaj": "1 sayfa taramada hata verdi (404/5xx)"
-    },
-    {
-      "seviye": "bilgi",
-      "site": "magusapsikoloji",
-      "mesaj": "1 kirik dis link — hedef site kapanmis, linki kaldir"
     },
     {
       "seviye": "uyari",
@@ -7164,34 +6604,19 @@
       "mesaj": "2 sayfa 200 kelimenin altinda (ince icerik)"
     },
     {
-      "seviye": "kritik",
-      "site": "taxsi",
-      "mesaj": "Tarama basarisiz (2026-11-17): sayfa-cokusu, sitemap-bos, robots-kayboldu, icerik-bos, link-kayboldu — veriler son basarili taramadan, puan guncellenmedi"
-    },
-    {
       "seviye": "uyari",
       "site": "taxsi",
       "mesaj": "200 sayfada schema alani eksik (LocalBusiness.telephone) — zengin sonuc cikmaz"
     },
     {
-      "seviye": "kritik",
+      "seviye": "uyari",
       "site": "luxeva",
-      "mesaj": "Tarama basarisiz (2026-11-17): sayfa-cokusu, sitemap-bos, robots-kayboldu, icerik-bos, link-kayboldu — veriler son basarili taramadan, puan guncellenmedi"
+      "mesaj": "144 sayfada schema alani eksik (Product.offers) — zengin sonuc cikmaz"
     },
     {
       "seviye": "uyari",
       "site": "luxeva",
-      "mesaj": "66 sayfada schema alani eksik (Product.offers) — zengin sonuc cikmaz"
-    },
-    {
-      "seviye": "uyari",
-      "site": "luxeva",
-      "mesaj": "68 sayfa 200 kelimenin altinda (ince icerik)"
-    },
-    {
-      "seviye": "kritik",
-      "site": "kktcsigorta",
-      "mesaj": "Tarama basarisiz (2026-11-17): sayfa-cokusu, sitemap-bos, robots-kayboldu, icerik-bos, link-kayboldu — veriler son basarili taramadan, puan guncellenmedi"
+      "mesaj": "142 sayfa 200 kelimenin altinda (ince icerik)"
     },
     {
       "seviye": "bilgi",
