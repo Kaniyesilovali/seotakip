@@ -911,20 +911,20 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-ancestral-grain-pet-food": {
-      "t": "2026-11-14T10:05:37.077Z",
-      "denetlenen": "https://animare.vet/en/blog/nd-ancestral-grain-pet-food",
-      "verdict": "NEUTRAL",
-      "durum": "URL is unknown to Google",
-      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
-      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
-      "canonicalGoogle": "",
-      "canonicalSayfa": "",
-      "sonTarama": "",
-      "httpKod": 523
+      "t": "2026-11-21T10:56:55.442Z",
+      "denetlenen": "https://animare.vet/en/blog/nd-ancestral-grain-pet-food/",
+      "verdict": "PASS",
+      "durum": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indeksleme": "INDEXING_ALLOWED",
+      "getirme": "SUCCESSFUL",
+      "canonicalGoogle": "https://animare.vet/en/blog/nd-ancestral-grain-pet-food/",
+      "canonicalSayfa": "https://animare.vet/en/blog/nd-ancestral-grain-pet-food/",
+      "sonTarama": "2026-10-16T15:04:43Z",
+      "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-ancestral-grain-az-tahilli-mama": {
-      "t": "2026-11-14T10:05:30.945Z",
+      "t": "2026-11-21T10:56:49.247Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-ancestral-grain-az-tahilli-mama/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -937,7 +937,7 @@
       "httpKod": 200
     },
     "https://animare.vet/tr/blog/nd-pumpkin-balkabakli-mama": {
-      "t": "2026-11-14T10:05:30.727Z",
+      "t": "2026-11-21T10:56:48.908Z",
       "denetlenen": "https://animare.vet/tr/blog/nd-pumpkin-balkabakli-mama/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -950,7 +950,7 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/nd-pumpkin-pet-food": {
-      "t": "2026-11-13T10:56:22.885Z",
+      "t": "2026-11-21T10:56:41.808Z",
       "denetlenen": "https://animare.vet/en/blog/nd-pumpkin-pet-food/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -989,20 +989,20 @@
       "httpKod": 200
     },
     "https://animare.vet/en/blog/small-animal-surgery": {
-      "t": "2026-11-14T10:05:30.671Z",
-      "denetlenen": "https://animare.vet/en/blog/small-animal-surgery/",
-      "verdict": "PASS",
-      "durum": "Submitted and indexed",
-      "robots": "ALLOWED",
-      "indeksleme": "INDEXING_ALLOWED",
-      "getirme": "SUCCESSFUL",
-      "canonicalGoogle": "https://animare.vet/en/blog/small-animal-surgery/",
-      "canonicalSayfa": "https://animare.vet/en/blog/small-animal-surgery/",
-      "sonTarama": "2026-11-03T09:01:01Z",
-      "httpKod": 200
+      "t": "2026-11-21T10:56:48.355Z",
+      "denetlenen": "https://animare.vet/en/blog/small-animal-surgery",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 523
     },
     "https://animare.vet/tr/blog/kucuk-hayvan-cerrahisi": {
-      "t": "2026-11-14T10:05:38.850Z",
+      "t": "2026-11-21T10:56:56.024Z",
       "denetlenen": "https://animare.vet/tr/blog/kucuk-hayvan-cerrahisi/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -1082,6 +1082,32 @@
     "https://animare.vet/en/blog/vomiting-diarrhoea-cats-dogs": {
       "t": "2026-11-17T11:37:42.705Z",
       "denetlenen": "https://animare.vet/en/blog/vomiting-diarrhoea-cats-dogs",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/tr/blog/cam-kese-tirtili": {
+      "t": "2026-11-21T10:56:42.177Z",
+      "denetlenen": "https://animare.vet/tr/blog/cam-kese-tirtili/",
+      "verdict": "NEUTRAL",
+      "durum": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indeksleme": "INDEXING_STATE_UNSPECIFIED",
+      "getirme": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "canonicalGoogle": "",
+      "canonicalSayfa": "",
+      "sonTarama": "",
+      "httpKod": 200
+    },
+    "https://animare.vet/en/blog/pine-processionary-caterpillar": {
+      "t": "2026-11-21T10:56:42.187Z",
+      "denetlenen": "https://animare.vet/en/blog/pine-processionary-caterpillar/",
       "verdict": "NEUTRAL",
       "durum": "URL is unknown to Google",
       "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
@@ -2395,7 +2421,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html": {
-      "t": "2026-11-14T10:05:53.298Z",
+      "t": "2026-11-21T10:57:09.464Z",
       "denetlenen": "https://magusapsikoloji.com/blog/otizm-spektrum-bozuklugu-erken-belirtiler.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2408,7 +2434,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/autism-spectrum-disorder-early-signs.html": {
-      "t": "2026-11-14T10:05:59.653Z",
+      "t": "2026-11-21T10:57:16.576Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/autism-spectrum-disorder-early-signs.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2512,7 +2538,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/travma-terapisi.html": {
-      "t": "2026-11-14T10:05:53.329Z",
+      "t": "2026-11-21T10:57:09.663Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/travma-terapisi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2525,7 +2551,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/trauma-therapy.html": {
-      "t": "2026-11-14T10:05:58.884Z",
+      "t": "2026-11-21T10:57:16.134Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/trauma-therapy.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2642,7 +2668,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/blog/family-transitions-parent-counselling.html": {
-      "t": "2026-11-14T10:05:45.642Z",
+      "t": "2026-11-21T10:57:03.075Z",
       "denetlenen": "https://magusapsikoloji.com/en/blog/family-transitions-parent-counselling.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2655,7 +2681,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/en/services/parent-counselling.html": {
-      "t": "2026-11-14T10:05:45.603Z",
+      "t": "2026-11-21T10:57:02.805Z",
       "denetlenen": "https://magusapsikoloji.com/en/services/parent-counselling.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2668,7 +2694,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/ailede-zor-donemler-ebeveyn-danismanligi.html": {
-      "t": "2026-11-14T10:05:45.690Z",
+      "t": "2026-11-21T10:57:02.802Z",
       "denetlenen": "https://magusapsikoloji.com/blog/ailede-zor-donemler-ebeveyn-danismanligi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2681,7 +2707,7 @@
       "httpKod": 200
     },
     "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html": {
-      "t": "2026-11-14T10:05:52.222Z",
+      "t": "2026-11-21T10:57:09.645Z",
       "denetlenen": "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -2691,7 +2717,7 @@
       "canonicalGoogle": "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html",
       "canonicalSayfa": "https://magusapsikoloji.com/hizmetler/ebeveyn-danismanligi.html",
       "sonTarama": "2026-11-07T10:20:14Z",
-      "httpKod": 523
+      "httpKod": 200
     },
     "https://magusapsikoloji.com/blog/bilissel-davranisci-terapi-nedir.html": {
       "t": "2026-11-17T11:38:18.807Z",
@@ -9135,7 +9161,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/companies": {
-      "t": "2026-11-14T10:06:06.800Z",
+      "t": "2026-11-21T10:57:23.764Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/companies/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9148,7 +9174,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en": {
-      "t": "2026-11-14T10:06:06.916Z",
+      "t": "2026-11-21T10:57:23.438Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9187,7 +9213,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/motor-third-party": {
-      "t": "2026-11-14T10:06:06.588Z",
+      "t": "2026-11-21T10:57:23.698Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/motor-third-party/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9200,7 +9226,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/border-crossing-insurance": {
-      "t": "2026-11-14T10:06:13.510Z",
+      "t": "2026-11-21T10:57:30.475Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/border-crossing-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9213,7 +9239,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/first-48-hours-after-an-accident": {
-      "t": "2026-11-14T10:06:13.727Z",
+      "t": "2026-11-21T10:57:30.418Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/first-48-hours-after-an-accident/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9226,7 +9252,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides": {
-      "t": "2026-11-14T10:06:13.666Z",
+      "t": "2026-11-21T10:57:30.351Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9239,7 +9265,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/topic/claims": {
-      "t": "2026-11-14T10:06:20.439Z",
+      "t": "2026-11-21T10:57:37.278Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/topic/claims/",
       "verdict": "NEUTRAL",
       "durum": "Discovered - currently not indexed",
@@ -9252,7 +9278,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/student-health-insurance": {
-      "t": "2026-11-14T10:06:20.467Z",
+      "t": "2026-11-21T10:57:37.350Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/student-health-insurance/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9265,7 +9291,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/topic/border-crossing": {
-      "t": "2026-11-14T10:06:20.662Z",
+      "t": "2026-11-21T10:57:37.489Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/topic/border-crossing/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9278,7 +9304,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/guides/topic/foreign-nationals": {
-      "t": "2026-11-14T10:06:27.506Z",
+      "t": "2026-11-21T10:57:44.228Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/guides/topic/foreign-nationals/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9291,7 +9317,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/business": {
-      "t": "2026-11-14T10:06:27.548Z",
+      "t": "2026-11-21T10:57:44.356Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/business/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9304,7 +9330,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/comprehensive": {
-      "t": "2026-11-14T10:06:27.457Z",
+      "t": "2026-11-21T10:57:44.049Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/comprehensive/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9313,11 +9339,11 @@
       "getirme": "SUCCESSFUL",
       "canonicalGoogle": "https://kktcsigortamerkezi.com/en/insurance/comprehensive/",
       "canonicalSayfa": "https://kktcsigortamerkezi.com/en/insurance/comprehensive/",
-      "sonTarama": "2026-11-03T15:53:55Z",
+      "sonTarama": "2026-11-04T03:22:55Z",
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/health": {
-      "t": "2026-11-14T10:06:34.682Z",
+      "t": "2026-11-21T10:57:51.357Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/health/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9330,7 +9356,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/home": {
-      "t": "2026-11-14T10:06:34.166Z",
+      "t": "2026-11-21T10:57:50.950Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/home/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
@@ -9343,7 +9369,7 @@
       "httpKod": 200
     },
     "https://kktcsigortamerkezi.com/en/insurance/travel": {
-      "t": "2026-11-14T10:06:34.441Z",
+      "t": "2026-11-21T10:57:51.166Z",
       "denetlenen": "https://kktcsigortamerkezi.com/en/insurance/travel/",
       "verdict": "PASS",
       "durum": "Submitted and indexed",
